@@ -1,0 +1,63 @@
+.kevux > .content-block > .nav-block {
+  position: fixed;
+  bottom: 0px;
+
+  box-sizing: border-box;
+
+  border-top: 1px dashed #556000;
+
+  width: 100%;
+  z-index: 1;
+}
+
+.kevux > .content-block > .nav-block > .nav-menu > .nav-item > .nav-text.link {
+  text-decoration: underline;
+
+  padding: 2px 0px;
+}
+
+.kevux > .content-block > .nav-block:target {
+  position: initial;
+
+  width: 100vw;
+
+  border-top: 0px;
+  border-bottom: 1px dashed #556000;
+}
+
+.kevux > .content-block > .nav-block:target > .nav-menu > .nav-item:not(:last-of-type) {
+  border-bottom: 1px dashed #556000;
+}
+
+.kevux > .content-block > .nav-block:not(:target) > .nav-menu {
+  padding-bottom: 10px;
+}
+
+.kevux > .content-block > .nav-block:not(:target) > .nav-menu > .nav-item > .nav-text {
+  display: none;
+}
+
+.kevux > .content-block > .nav-block:target > .nav-menu > .nav-item,
+.kevux > .content-block > .nav-block:target > .nav-menu > .nav-item.ellipses {
+  padding: 5px 0px;
+}
+
+.kevux > .content-block > .nav-block:target > .nav-menu > .nav-item > .nav-text,
+.kevux > .content-block > .nav-block:target > .nav-menu > .nav-item.ellipses > .nav-text.close,
+.kevux > .content-block > .nav-block:not(:target) > .nav-menu > .nav-item.ellipses > .nav-text.open {
+  display: block;
+}
+
+.kevux > .content-block > .nav-block:target > .nav-menu > .nav-item.ellipses > .nav-text.open,
+.kevux > .content-block > .nav-block:not(:target) > .nav-menu > .nav-item.ellipses > .nav-text.close {
+  display: none;
+}
+
+.kevux > .content-block > .nav-block > .nav-menu > .nav-item,
+.kevux > .content-block > .nav-block > .nav-menu > .nav-item.ellipses {
+  text-align: center;
+}
+
+.kevux > .content-block > .main-block {
+  margin-bottom: 35px;
+}

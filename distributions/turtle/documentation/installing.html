@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Documentation - Turtle Kevux - Installing Turtle Kevux</title>
+
+    <base href="../../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Turtle Kevux Documentation for installing the system.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, Turtle, Documentation">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+    <link type="text/css" rel="stylesheet" media="all" href="distributions/turtle/documentation/css/documentation.css">
+
+    <link rel="canonical" href="documentation/turtle/installing.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+    <link type="text/html" rel="next" href="distributions.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js distributions">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item active"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="distributions/turtle/documentation.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">Documentation</div>
+            <div class="nav-text unlink">Turtle Kevux</div>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/software.html" class="nav-text link">Software Listing</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/running.html" class="nav-text link">Booting and Running</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text unlink">Installing Turtle Kevux</div>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/configuring.html" class="nav-text link">System Configuration</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/servers.html" class="nav-text link">Server Configuration</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/additional.html" class="nav-text link">Additional Notes</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/problems.html" class="nav-text link">Known Issues</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/credits.html" class="nav-text link">Credits</a>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="distributions/turtle/documentation/installing.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="distributions/turtle/documentation/installing.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header separate">
+            <h1 class="section-title h h1">Installing Turtle Kevux</h1>
+          </header>
+
+          <div class="main-content">
+            <div id="partitioningthesystem">
+              <header class="section-header header">
+                <h2 class="h h2">Partitioning the System</h2>
+              </header>
+              <a href="distributions/turtle/documentation/images/HowTo_Partition-1.png"><img src="distributions/turtle/documentation/images_small/HowTo_Partition-1.png" alt="Screenshot of how to partition step 1." align="top" border="0"></a><br>
+              <p>
+                <span class="bold error"><i>WARNING: Partitioning a system can be dangerous, do not perform these operations on a system with important information on it.<br>
+                Get practice on a harddrive that you can afford to have it's data lost before doing this on a working system.</i></span><br>
+                <br>
+                Due to the complexity and risks of partitioning, this tutorial is mostly going to assume you have an entire harddrive to be formatted.<br>
+                The partitioner tool can be found on the effective <i>"Start Menu"</i> under <span class="notice">Utilities -> Disk Partitioner</span>.<br>
+                <span class="bold important">NOTE: For the more experienced users, fdisk and pdisk both exist on the system as well as the mke2fs and similar utilities.</span><br>
+              </p>
+              <a href="distributions/turtle/documentation/images/HowTo_Partition-2.png"><img src="distributions/turtle/documentation/images_small/HowTo_Partition-2.png" alt="Screenshot of how to partition step 2." align="top" border="0"></a><br>
+              <p>
+                The first thing you will have to figure out is which harddrive (if you have more than one) are you using.<br>
+                If you cannot figure out what harddrive to use, then <span class="bold error">do not continue</span> until you have properly identified your correct harddrive.<br>
+                On the top-right of the partitioner, there is a drop down box that has something like <span class="notice">/dev/sda</span>.<br>
+                This drop-down box is used to select the correct harddrive.<br>
+              </p>
+              <a href="distributions/turtle/documentation/images/HowTo_Partition-3.png"><img src="distributions/turtle/documentation/images_small/HowTo_Partition-3.png" alt="Screenshot of how to partition step 3." align="top" border="0"></a><br>
+              <p>
+                There are some important names and rules that must be learned at this point.<br>
+                Harddrives can be broken down into pieces that are called partitions.<br>
+                Harddrives can be broken down into <span class="notice">at most 4 partitions</span>.<br>
+                To increase the number of available partitions, an <span class="notice">extended partition</span> must be created.<br>
+                <span class="notice">Extended partitions</span> should be avoided unless you need them and then you usually want to place them as the last partition (sda4, for example).<br>
+                <br>
+                Now that you have the partitions taken care of, lets focus on the <span class="notice">filesystems</span>.<br>
+                The <span class="notice">filesystems</span> are pretty technical and specify how the data is stored and retrieved.<br>
+                What you need to worry about is what <span class="notice">Operating System</span> uses which partitions.<br>
+                <br>
+                In general, the <span class="notice">ntfs</span> filesystem is used by the Microsoft Windows Operating System.<br>
+                Standard usb memory sticks generally use the <span class="notice">vfat</span> filesystem, which is used by old Microsoft Windows Operating Systems (Windows 98 and older).<br>
+                Linux Operating Systems (like Kevux) use the <span class="notice">ext3</span>, <span class="notice">ext2</span>, and <span class="notice">linux swap</span> filesystems.<br>
+                If general, you want to use <span class="notice">ext3</span> for linux because it can handle large filesystems quickly.<br>
+                If you have a usb memory stick to run Kevux off of, then use <span class="notice">ext2</span> to increase the potential lifetime of the stick (for highly technical reasons).<br>
+                The <span class="notice">linux swap</span> filesystem is used to help extend memory, but because you are using a Kevux system, yuu will probably not need any swap.<br>
+                Of course, if you have an old system, say 128 or less MB of ram, then feel free to create a <span class="notice">linux swap</span> filesystem of perhaps 512MB.<br>
+                <br>
+                The grey space that has <span class="notice">unallocated</span> means that a partition is not created for that particular area.<br>
+                What this means is that the <span class="notice">unallocated</span> area will not be available for use.<br>
+                <br>
+                <span class="bold error">Don't use NTFS for any linux system.</span><br>
+              </p>
+            <a href="distributions/turtle/documentation/images/HowTo_Partition-4.png"><img src="distributions/turtle/documentation/images_small/HowTo_Partition-4.png" alt="Screenshot of how to partition step 4." align="top" border="0"></a><br>
+              <p>
+                Again, this example is assuming that you are going to use the entire harddrive.<br>
+                Make sure to delete any existing partitions by selecting each individual partition and deleting that partition (<span class="notice">partition -> delete</span>).<br>
+                Once everything is deleted, you should only see a single massive unallocated area.<br>
+              </p>
+            <a href="distributions/turtle/documentation/images/HowTo_Partition-5.png"><img src="distributions/turtle/documentation/images_small/HowTo_Partition-5.png" alt="Screenshot of how to partition step 5." align="top" border="0"></a><br>
+              <p>
+                Now you should be ready to create partitions.<br>
+                First you should create the <span class="notice">boot partition</span>.<br>
+                The <span class="notice">boot partition</span> should be of one of the following sizes: 16MB, 32MB, 64MB, 128MB, or 256MB.<br>
+                The latter is beyond more than enough space.<br>
+                The filesystem should be <span class="notice">ext2</span> but can safely be <span class="notice">ext3</span>.<br>
+                <br>
+                Next you need to create the <span class="notice">root partition</span>.<br>
+                The <span class="notice">root partition</span> should be of one of the following size: 2048MB, 4096MB, 8192MB, 16384MB, 32768MB, 65536MB.<br>
+                The latter is more than enough space, in fact, it is 64 Gigabytes.<br>
+                <br>
+                Now all the remaining space will be your <span class="notice">home partition</span>.<br>
+                Just fill up every last bit available.<br>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="mountingthecdrom">
+              <header class="section-header header">
+                <h2 class="h h2">Mounting the CD-Rom</h2>
+              </header>
+              <a href="distributions/turtle/documentation/images/Mounting_Cdrom.png"><img src="distributions/turtle/documentation/images_small/Mounting_Cdrom.png" alt="Screenshot of mounting CD-ROM." align="top" border="0"></a><br>
+              <p>
+                Okay, so you need to mount (use) the cdrom.<br>
+                If you have only 1 cdrom drive, then you can simply type in console: <span class="notice">mount /mnt/cdrom/01</span><br>
+                If you have more than one, then you can try mounting them until you get the correct one.<br>
+                In such a case, the next command following above might be <span class="notice">mount /mnt/cdrom/02</span><br>
+                Of course, you can almost guarantee getting the correct cdrom with the following command: <span class="notice">mount LABEL=Turtle-0.8.8-live /mnt/cdrom</span>, where 0.8.0 is the version of Turtle Kevux that you are mounting.<br>
+                <br>
+                Once the cdrom is mounted, you can access the contents at the location it was mounted on.<br>
+                This means that if you ran the command: <span class="notice">mount /mnt/cdrom/03</span>, then you will find the cdrom contents in the directory <span class="notice">/mnt/cdrom/03</span>.<br>
+                Another example is if you mounted the cdrom with <span class="notice">mount LABEL=Turtle-0.8.8-live /mnt/cdrom</span>, then you will find the contents of the cdrom in the directory <span class="notice">/mnt/cdrom</span><br>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="mountingthepartition">
+              <header class="section-header header">
+                <h2 class="h h2">Mounting the Partition</h2>
+              </header>
+              <a href="distributions/turtle/documentation/images/Mounting_Partition.png"><img src="distributions/turtle/documentation/images_small/Mounting_Partition.png" alt="Screenshot of mounting partition." align="top" border="0"></a><br>
+              <p>
+                This will be assuming that you correctly created the partitions and mounted the cdrom based on the tutorials above.<br>
+                Let us pretend that we only have one harddrive and therefore it's device name will be called <span class="notice">/dev/sda</span>.<br>
+                This means we have 3 partitions, a <span class="notice">boot partition</span> at <span class="notice">/dev/sda1</span>, a <span class="notice">root partition</span> at <span class="notice">/dev/sda2</span>, and a <span class="notice">home partition</span> at /dev/sda3.<br>
+                The order in which these are mounted <span class="notice">DOES</span> matter.<br>
+                <br>
+                Now, we need to mount the <span class="notice">root partition</span> first.<br>
+                This is done with the command: <span class="notice">mount /mnt/sda/02</span><br>
+                Once this is mounted, we need to create the directories that our other two directories will be mounted.<br>
+                This is done with the command: <span class="notice">mkdir /mnt/sda/02/{boot,home}</span><br>
+                <br>
+                Now, we need to mount the <span class="notice">boot partition</span>.<br>
+                This is done with the command: <span class="notice">mount /dev/sda1 /mnt/sda/02/boot</span><br>
+                This command will explicitly mount the /dev/sda1 partition to the location /mnt/sda/02/boot.<br>
+                <br>
+                Now, we need to mount the <span class="notice">home partition</span>.<br>
+                This is done with the command: <span class="notice">mount /dev/sda3 /mnt/sda/02/home</span><br>
+                This command will explicitly mount the /dev/sda3 partition to the location /mnt/sda/02/home.<br>
+                <br>
+                You should now be ready to extract the system.<br>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="extractingthesystem">
+              <header class="section-header header">
+                <h2 class="h h2">Extracting the System</h2>
+              </header>
+              <a href="distributions/turtle/documentation/images/Extracting_System-1.png"><img src="distributions/turtle/documentation/images_small/Extracting_System-1.png" alt="Screenshot of extracting system step 1." align="top" border="0"></a><br>
+              <br>
+              <a href="distributions/turtle/documentation/images/Extracting_System-2.png"><img src="distributions/turtle/documentation/images_small/Extracting_System-2.png" alt="Screenshot of extracting system step 2." align="top" border="0"></a><br>
+              <p>
+                Let us assume that you mounted the cdrom on <span class="notice">/mnt/cdrom/</span>.<br>
+                If you have need to know how to do this, read the <a href="#mountingthecdrom">Mounting the CD-Rom</a>.<br>
+                <br>
+                Let us assume that you partitioned the harddrive as explained in <a href="#partitioningthesystem">Partitioning the System</a> and have mounted the partitions as explained in <a href="#mountingthepartition">Mounting the Partition</a> at the location <span class="notice">/mnt/sda/02</span>.<br>
+                <br>
+                There is a program designed to ease the process of the installer and set all permissions correctly.<br>
+                Do not install <span class="notice">without</span> this tool unless you know what you are doing.<br>
+                The program is called: <span class="notice">extract_system</span>.<br>
+                <br>
+                Change to the extraction point: <span class="notice">cd /mnt/sda/02/</span><br>
+                Run the extraction program, specifying the mounted cdrom as the source location: <span class="notice">extract_system -s /mnt/cdrom/</span><br>
+                Wait for the program to finish.<br>
+                You are now done extracting the system, the system is now effectively installed.<br>
+                The next step is to configure the system so that it may boot.<br>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="configuringthesystemtoboot">
+              <header class="section-header header">
+                <h2 class="h h2">Configuring the System to Boot</h2>
+              </header>
+              <p>
+                This is the very last step, aside from physically rebooting your computer.<br>
+                Therefore, you better have read and gone through every other portion of the page.<br>
+                This will be assuming that the system is properly extracted and mounted at: <span class="notice">/mnt/sda/02/</span>.<br>
+                This will be assuming that you have 3 partitions, a <span class="notice">boot</span>, a <span class="notice">root</span>, and a <span class="notice">home</span>.<br>
+                <br>
+                <span class="bold important">NOTE: If at any point during this you need to know what harddrive is what and has what partitions, the command <span class="notice">fdisk -l</span> should be used.<br>
+                You should use the output from <span class="notice">fdisk -l</span> to properly configure the <span class="notice">etc/fstab</span> file.</span><br>
+                <br>
+                Okay, there are two ways to boot your Turtle Kevux System, <span class="notice">dynamically</span> or <span class="notice">statically</span>.<br>
+                The <span class="notice">static method</span> is less adaptable and slightly more technical given that you have to specify the exact partition locations.<br>
+                The <span class="notice">dynamic method</span> is more adaptable but can under certain cases boot/mount the wrong partitions.<br>
+                The <span class="notice">dynamic method</span> is the preferred method because it can cope better with hardware changes.<br>
+                <br>
+                <a href="distributions/turtle/documentation/images/Configuring_ToBoot-1.png"><img src="distributions/turtle/documentation/images_small/Configuring_ToBoot-1.png" alt="Screenshot of configuring boot step 1." align="top" border="0"></a><br>
+                <br>
+                <span class="bold">Static Method</span><br>
+                Edit the file <span class="notice">etc/fstab</span> on your new system, which is located at <span class="notice">/mnt/sda/02/etc/fstab</span><br>
+                Now look for the line that reads: <span class="notice"># Turtle-Kevux Basic Layout (Static)</span>.<br>
+                Below this are commented out commands, and a comment is any line that starts with the pound <span class="notice">#</span> symbol.<br>
+                There are two lines to pay attention to, the ones that begin with <span class="notice">#/dev/sda1</span> and <span class="notice">#/dev/sda3</span>.<br>
+                Uncomment these lines by deleting the leading pound <span class="notice">#</span> symbol.<br>
+                These are already pre-configured to work as is based on this documentation.<br>
+                <br>
+                <a href="distributions/turtle/documentation/images/Configuring_ToBoot-2.png"><img src="distributions/turtle/documentation/images_small/Configuring_ToBoot-2.png" alt="Screenshot of configuring boot step 2." align="top" border="0"></a><br>
+                <br>
+                The next step is to edit the <span class="notice">boot/grub/menu.lst</span> file currently located at <span class="notice">/mnt/sda/02/boot/grub/menu.lst</span><br>
+                There are a lot of notes in this file, so you will need to search for the following lines:<br>
+                - The line: <span class="notice">splashimage=(hd0,0)/boot/grub/turtle_grub.xpm.gz</span><br>
+                - The line: <span class="notice">title Boot System</span><br>
+                <br>
+                The first thing to pay attention to are the lines with <span class="notice">(hd0,0)</span>.<br>
+                If you followed the instructions in this documentation, then you will not have to pay attention to these.<br>
+                However, the importance of these lines deem it necessary to at least make you take not of them for future reference.<br>
+                Now that that is out of the way, the only line you should have to pay attention is the second line below <span class="notice">title Boot System</span>.<br>
+                It is the line that begins with <span class="notice">kernel</span><br>
+                <br>
+                On this line, you need to scroll down that entire <span class="bold">long</span> line and change <span class="notice">finalroot=LABEL=turtle_/</span> to <span class="notice">/dev/sda2</span><br>
+                Notice how this information directly relates to what you did with the <span class="notice">etc/fstab</span> file that is currently located at <span class="notice">/mnt/sda/02/etc/fstab</span><br>
+                <br>
+                You are now done with the static configuration, skip below to the <span class="bold">grub/mbr installation</span> below.<br>
+                <br>
+                <span class="bold error">WARNING: When editing any and all files, don't forget to save them before quitting or all of the typing that you did will have to be repeated.</span><br>
+                <br>
+                <a href="distributions/turtle/documentation/images/Configuring_ToBoot-1.png"><img src="distributions/turtle/documentation/images_small/Configuring_ToBoot-1.png" alt="Screenshot of configuring boot step 1." align="top" border="0"></a><br>
+                <br>
+                <span class="bold">Dynamic Method</span><br>
+                Edit the file <span class="notice">etc/fstab</span> on your new system, which is located at <span class="notice">/mnt/sda/02/etc/fstab</span><br>
+                Now at the very top of the file you should see: <span class="notice"># Turtle-Kevux Embedded Layout (Dynamic)</span><br>
+                There are two lines to pay attention to, the ones that begin with: <span class="notice">#LABEL=turtle_/boot</span> and <span class="notice">#LABEL=turtle_/home</span><br>
+                Uncomment these lines by deleting the leading pound <span class="notice">#</span> symbol.<br>
+                Notice that each of these lines start with <span class="notice">LABEL=</span>, this means that you are using the devices based on a name that you give them.<br>
+                These devices currently do not have names, so we need to create them.<br>
+                The names <span class="notice">MUST</span> be identical to the names define in the <span class="notice">etc/fstab</span> file located at <span class="notice">/mnt/sda/02/etc/fstab</span>.<br>
+                <br>
+                To create the name for the first one, the <span class="notice">boot partition</span> which is currently the partition defined at <span class="notice">/dev/sda1</span>, you need to type the following: <span class="notice">e2label /dev/sda1 turtle_/boot</span><br>
+                Notice that there is no <span class="notice">LABEL=</span> preceding the <span class="notice">turtle_/boot</span>.<br>
+                If you were to execute the command <span class="notice">e2label /dev/sda1 LABEL=turtle_/boot</span>, then your <span class="notice">etc/fstab</span> file would have to have the line: <span class="notice">LABEL=LABEL=turtle_/boot</span>.<br>
+                Repeat the process, this time for the <span class="notice">root partition</span> currently located at <span class="notice">/dev/sda2</span>: <span class="notice">e2label /dev/sda2 turtle_/</span><br>
+                repeat the process, this time for the <span class="notice">home partition</span> currently located at <span class="notice">/dev/sda3</span>: e2label /dev/sda3 turtle_/home</span><br>
+                If you change the names of these partitions to something else, make sure to reflect the changes in the <span class="notice">etc/fstab</span> file which is currently located at <span class="notice">/mnt/sda/02/etc/fstab</span>.<br>
+                <br>
+                <span class="bold error">WARNING: The command e2label will not work if you did not format the partitions with the ext2 or ext3 filesystems.</span><br>
+                <span class="bold error">WARNING: Because the dynamic method mounts based on names, if two partitions have the same name, then something will most likely go wrong.<br>
+                This is one of the few problems with the dynamic method.</span><br>
+                <br>
+                <a href="distributions/turtle/documentation/images/Configuring_ToBoot-2.png"><img src="distributions/turtle/documentation/images_small/Configuring_ToBoot-2.png" alt="Screenshot of configuring boot step 2." align="top" border="0"></a><br>
+                <br>
+                The next step is to edit the <span class="notice">boot/grub/menu.lst</span> file currently located at <span class="notice">/mnt/sda/02/boot/grub/menu.lst</span><br>
+                There are a lot of notes in this file, so you will need to search for the following lines:<br>
+                - The line: <span class="notice">splashimage=(hd0,0)/boot/grub/turtle_grub.xpm.gz</span><br>
+                - The line: <span class="notice">title Boot System</span><br>
+                <br>
+                The first thing to pay attention to are the lines with <span class="notice">(hd0,0)</span>.<br>
+                If you followed the instructions in this documentation, then you will not have to pay attention to these.<br>
+                However, the importance of these lines deem it necessary to at least make you take not of them for future reference.<br>
+                Now that that is out of the way, the only line you should have to pay attention is the second line below <span class="notice">title Boot System</span>.<br>
+                It is the line that begins with <span class="notice">kernel</span><br>
+                <br>
+                On this line, you need to scroll down that entire <span class="bold">long</span> line and look at the part that has <span class="notice">finalroot=LABEL=turtle_/</span>.<br>
+                Notice how this information directly relates to what you did with the <span class="notice">etc/fstab</span> file that is currently located at <span class="notice">/mnt/sda/02/etc/fstab</span><br>
+                This is the line that tells the boot process which partition is the <span class="notice">root partition</span>.<br>
+                Because the file is pre-configured to use the <span class="notice">dynamic method</span> you will not have to change this unless you gave the <span class="notice">root partition</span> a name different from <span class="notice">turtle_/</span>.<br>
+                <br>
+                You are now done with the dynamic configuration, skip below to the <span class="bold">grub/mbr installation</span> below.<br>
+                <br>
+                <span class="bold error">WARNING: When editing any and all files, don't forget to save them before quitting or all of the typing that you did will have to be repeated.</span><br>
+                <br>
+                <a href="distributions/turtle/documentation/images/Configuring_ToBoot-3.png"><img src="distributions/turtle/documentation/images_small/Configuring_ToBoot-3.png" alt="Screenshot of configuring boot step 3." align="top" border="0"></a><br>
+                <br>
+                <a href="distributions/turtle/documentation/images/Configuring_ToBoot-4.png"><img src="distributions/turtle/documentation/images_small/Configuring_ToBoot-4.png" alt="Screenshot of configuring boot step 4." align="top" border="0"></a><br>
+                <br>
+                <span class="bold">grub/mbr installation</span><br>
+                The grub file was configured, but it was not installed into what is called the <span class="notice">mbr</span> (master boot record).<br>
+                This <span class="notice">mbr</span> tells the system how to boot.<br>
+                Therefore it needs to be installed.<br>
+                <br>
+                The first step is to start the program by running: <span class="notice">grub</span>.<br>
+                Now, remember those <span class="notice">(hd0,0)</span> lines from the <span class="notice">boot/grub/menu.lst</span> file currently location at <span class="notice">/mnt/sda/02/boot/grub/menu.lst</span>?<br>
+                Well, now you have to type the following: <span class="notice">root (hd0,0)</span><br>
+                Don't forget to press the enter key.<br>
+                That line tells the <span class="notice">grub</span> program that you will install to the first harddrive <i>(the 0 to the left of the comma)</i> and to look for the <span class="notice">boot/grub/menu.lst</span> file on the first partition <i>(the 0 to the right of the comma)</i> of that harddrive.<br>
+                The next command installs the <span class="notice">grub</span> program to the <span class="notice">mbr</span>.<br>
+                The command to install <span class="notice">grub</span> is: <span class="notice">root (hd0)</span><br>
+                This will install <span class="notice">grub</span> to the <span class="notice">mbr</span> of the first harddrive.<br>
+                Now exit the program <i>(assuming everything worked)</i> with the quit command:<span class="notice">quit</span>.<br>
+                <br>
+                You should now be completely finished the installation process and can reboot your machine.<br>
+                an easy way to do this is type the command: <span class="notice">reboot</span> or press the <span class="notice">Control + Alt + Delete</span> key sequence.<br>
+              </p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

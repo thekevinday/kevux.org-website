@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Documentation - FSS Embedded List Write</title>
+
+    <base href="../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="FSS Embedded List Write program documentation.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Make, Fake, Open-Source">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="documentation/fss_embedded_list_write.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js documentation">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item active"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="documentation.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">Documentation</div>
+            <div class="nav-text unlink">FSS Embedded List Write</div>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fss_embedded_list_write.html#about" class="nav-text link">About</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fss_embedded_list_write.html#parameters-standard" class="nav-text link">Standard Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fss_embedded_list_write.html#parameters-program" class="nav-text link">Program Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Specifications</div>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">APIs</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="documentation/fss_embedded_list_write.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="documentation/fss_embedded_list_write.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">FSS Embedded List Write Documentation</h1>
+          </header>
+
+          <section id="about" class="section">
+            <header class="section-header header">
+              <h2 class="section-title h h2">About</h2>
+            </header>
+            <div class="section-content">
+              <p>
+                The <strong>fss_embedded_list_write</strong> program is a tool for generating strings that follow the FSS-0008 (Embedded List) standard.
+              </p>
+              <p>
+                This tool is designed to be scriptable and accepts piped input using a special format.
+              </p>
+              <p>
+                This tool shares parameters between with the other <abbr title="Featureless Settings Specification">FSS</abbr> Read and Write programs to make scripting consistent across the <abbr title="Featureless Settings Specification">FSS</abbr> Read and Write programs even if any given program neither needs nor uses the parameter.
+              </p>
+            </div>
+          </section>
+
+          <section id="parameters-standard" class="section">
+            <header class="section-header header separate">
+              <h2 class="section-title h h2">Standard Parameters</h2>
+            </header>
+
+            <div class="section-content">
+              <div class="center">
+                <table class="table context-parameters">
+                  <thead class="head set">
+                    <tr class="row">
+                      <th class="column">Short</th>
+                      <th class="column">Long</th>
+                      <th class="column">Description</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="body set">
+                    <tr class="row">
+                      <td class="column"><code class="code">-h</code></td>
+                      <td class="column"><code class="code">--help</code></td>
+                      <td class="column">Print the help message.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+d</code></td>
+                      <td class="column"><code class="code">++dark</code></td>
+                      <td class="column">Output using colors that show up better on dark backgrounds.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+l</code></td>
+                      <td class="column"><code class="code">++light</code></td>
+                      <td class="column">Output using colors that show up better on light backgrounds.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+n</code></td>
+                      <td class="column"><code class="code">++no_color</code></td>
+                      <td class="column">Do not print using color.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+q</code></td>
+                      <td class="column"><code class="code">++quiet</code></td>
+                      <td class="column">Decrease verbosity, silencing most output.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+n</code></td>
+                      <td class="column"><code class="code">++normal</code></td>
+                      <td class="column">Set verbosity to normal.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+V</code></td>
+                      <td class="column"><code class="code">++verbose</code></td>
+                      <td class="column">Increase verbosity beyond normal output.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+D</code></td>
+                      <td class="column"><code class="code">++debug</code></td>
+                      <td class="column">Enable debugging, significantly increasing verbosity beyond normal output.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+v</code></td>
+                      <td class="column"><code class="code">++version</code></td>
+                      <td class="column">Print only the version number.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                The <code>+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code>+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code>+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
+              </p>
+              <p>
+                The <code>+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
+              </p>
+            </div>
+          </section>
+
+          <section id="parameters-program" class="section">
+            <header class="section-header header separate">
+              <h2 class="section-title h h2">Program Parameters</h2>
+            </header>
+
+            <div class="section-content">
+              <div class="center">
+                <table class="table context-parameters">
+                  <thead class="head set">
+                    <tr class="row">
+                      <th class="column">Short</th>
+                      <th class="column">Long</th>
+                      <th class="column">Description</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="body set">
+                    <tr class="row">
+                      <td class="column"><code class="code">-f</code></td>
+                      <td class="column"><code class="code">--file</code></td>
+                      <td class="column">Specify a file to send data to.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-c</code></td>
+                      <td class="column"><code class="code">--content</code></td>
+                      <td class="column">The Content to write.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-I</code></td>
+                      <td class="column"><code class="code">--ignore</code></td>
+                      <td class="column">Ignore a given range within a Content.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-d</code></td>
+                      <td class="column"><code class="code">--double</code></td>
+                      <td class="column">Use double quotes (default).</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-o</code></td>
+                      <td class="column"><code class="code">--object</code></td>
+                      <td class="column">The Object to write.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-p</code></td>
+                      <td class="column"><code class="code">--partial</code></td>
+                      <td class="column">Do not file end of Object/Content character.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-P</code></td>
+                      <td class="column"><code class="code">--prepend</code></td>
+                      <td class="column">Prepend the given white space characters to the start of each multi-line Content.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-s</code></td>
+                      <td class="column"><code class="code">--single</code></td>
+                      <td class="column">Use single quotes.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-T</code></td>
+                      <td class="column"><code class="code">--trim</code></td>
+                      <td class="column">Trim Object names.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                This special piped input format uses the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> Backspace character '<kbd>\b</kbd>' (U+0008), Form Feed character '\f' (U+000C), and Vertical Line character '\v' (U+000B).
+              </p>
+              <p>
+                The Backspace character '<kbd>\b</kbd>' (U+0008) is used to designate the start of a Content.
+              </p>
+              <p>
+                The Form Feed character '<kbd>\f</kbd>' (U+000C) is used to designate the end of the last Content.
+              </p>
+              <p>
+                The Vertical Line character '<kbd>\v</kbd>' (U+000B) is used to ignore a Content range, which does nothing in this program.
+              </p>
+              <p>
+                For the pipe, an Object is terminated by either a Backspace character '<kbd>\b</kbd>' (U+0008) or a Form Feed character '<kbd>\f</kbd>' (U+000C). The end of the pipe represents the end of any Object or Content.
+              </p>
+              <p>
+                The FSS-0008 (Embedded List) specification does not support quoted names, therefore the parameters <code>--single</code> and <code>--double</code> do nothing.
+              </p>
+              <p>
+                This program uses the parameter <code>--ignore</code>, which designates to not escape any valid nested Object or Content within some Content. This parameter requires two values. This parameter is not used for ignoring anything from the input pipe. This parameter must be specified after a <code>--content</code> parameter and this applies only to the Content represented by that specific <code>--content</code> parameter.
+              </p>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

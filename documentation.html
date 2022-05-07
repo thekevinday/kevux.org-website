@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kevux Systems and Software - Documentation</title>
+
+    <base href="">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Documentation of numerous Kevux Systems projects and software.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Make, Fake, Controller, UTF-8, Open-Source, Documentation">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="documentation.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+    <link type="text/html" rel="next" href="distributions.html">
+  </head>
+
+  <body id="kevux" class="kevux no-jSS Extended List Writes documentation">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item active"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block">
+            <div class="nav-text notice">Projects</div>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/byte_dump.html" class="nav-text link">Byte Dump</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/control.html" class="nav-text link">Control</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller.html" class="nav-text link">Controller</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fake.html" class="nav-text link">Featureless Make</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/firewall.html" class="nav-text link">Firewall</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fss_identify.html" class="nav-text link">FSS Identify</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fss_basic_read.html" class="nav-text link">FSS Basic Read</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fss_basic_write.html" class="nav-text link">FSS Basic Write</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fss_basic_list_read.html" class="nav-text link">FSS Basic List Read</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fss_basic_list_write.html" class="nav-text link">FSS Basic List Write</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fss_embedded_list_read.html" class="nav-text link">FSS Embedded List Read</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fss_embedded_list_write.html" class="nav-text link">FSS Embedded List Write</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fss_extended_read.html" class="nav-text link">FSS Extended Read</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fss_extended_write.html" class="nav-text link">FSS Extended Write</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fss_extended_list_read.html" class="nav-text link">FSS Extended List Read</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fss_extended_list_write.html" class="nav-text link">FSS Extended List Write</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fss_payload_read.html" class="nav-text link">FSS Payload Read</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fss_payload_write.html" class="nav-text link">FSS Payload Write</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fss_status_code.html" class="nav-text link">FSS Status Code</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/status_code.html" class="nav-text link">Status Code</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/iki_read.html" class="nav-text link">IKI Read</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/iki_write.html" class="nav-text link">IKI Write</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/utf8.html" class="nav-text link">UTF8</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Specifications</div>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">APIs</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="documentation.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="documentation.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">Documentation</h1>
+          </header>
+
+          <article class="article">
+            <header class="article-header header">
+              <h2 class="article-title h h2">Projects</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                Documentation for the following projects are provided within their own sub-pages.
+              </p>
+              <div class="grid wide expand columns-4">
+                <div class="grid-item"><a href="documentation/byte_dump.html" class="link">Byte Dump</a></div>
+                <div class="grid-item"><a href="documentation/control.html" class="link">Control</a></div>
+                <div class="grid-item"><a href="documentation/controller.html" class="link">Controller</a></div>
+                <div class="grid-item"><a href="documentation/fake.html" class="link">Featureless Make</a></div>
+                <div class="grid-item"><a href="documentation/firewall.html" class="link">Firewall</a></div>
+                <div class="grid-item"><a href="documentation/fss_identify.html" class="link">FSS Identify</a></div>
+                <div class="grid-item"><a href="documentation/fss_basic_read.html" class="link">FSS Basic Read</a></div>
+                <div class="grid-item"><a href="documentation/fss_basic_write.html" class="link">FSS Basic Write</a></div>
+                <div class="grid-item"><a href="documentation/fss_basic_list_read.html" class="link">FSS Basic List Read</a></div>
+                <div class="grid-item"><a href="documentation/fss_basic_list_write.html" class="link">FSS Basic List Write</a></div>
+                <div class="grid-item"><a href="documentation/fss_embedded_list_read.html" class="link">FSS Embedded List Read</a></div>
+                <div class="grid-item"><a href="documentation/fss_embedded_list_write.html" class="link">FSS Embedded List Write</a></div>
+                <div class="grid-item"><a href="documentation/fss_extended_read.html" class="link">FSS Extended Read</a></div>
+                <div class="grid-item"><a href="documentation/fss_extended_write.html" class="link">FSS Extended Write</a></div>
+                <div class="grid-item"><a href="documentation/fss_extended_list_read.html" class="link">FSS Extended List Read</a></div>
+                <div class="grid-item"><a href="documentation/fss_extended_list_write.html" class="link">FSS Extended List Write</a></div>
+                <div class="grid-item"><a href="documentation/fss_payload_read.html" class="link">FSS Payload Read</a></div>
+                <div class="grid-item"><a href="documentation/fss_payload_write.html" class="link">FSS Payload Write</a></div>
+                <div class="grid-item"><a href="documentation/fss_status_code.html" class="link">FSS Status Code</a></div>
+                <div class="grid-item"><a href="documentation/status_code.html" class="link">Status Code</a></div>
+                <div class="grid-item"><a href="documentation/iki_read.html" class="link">IKI Read</a></div>
+                <div class="grid-item"><a href="documentation/iki_write.html" class="link">IKI Write</a></div>
+                <div class="grid-item"><a href="documentation/utf8.html" class="link">UTF8</a></div>
+              </div>
+              <ul>
+              </ul>
+            </div>
+          </article>
+
+          <article class="article">
+            <header class="article-header header">
+              <h2 class="article-title h h2">Specifications</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                Projects like the Featureless Linux Library are focused entirely around provided standards for every aspect of the project. Numerous specifications are available describing these standards. At this time, the specifications have not been transcribed into a format for the web. They are stored in plain text within the source code repositories.
+              </p>
+              <p>
+                Many of these specifications may be found here:
+              </p>
+              <ul>
+                <li><a href="https://sourceforge.net/p/fll/git/ci/development/tree/specifications/" class="link external">https://sourceforge.net/p/fll/git/ci/development/tree/specifications/</a></li>
+                <li><a href="https://sourceforge.net/p/fll/git/ci/development/tree/level_3/control/specifications/" class="link external">https://sourceforge.net/p/fll/git/ci/development/tree/level_3/control/specifications/</a></li>
+                <li><a href="https://sourceforge.net/p/fll/git/ci/development/tree/level_3/controller/specifications/" class="link external">https://sourceforge.net/p/fll/git/ci/development/tree/level_3/controller/specifications/</a></li>
+                <li><a href="https://sourceforge.net/p/fll/git/ci/development/tree/level_3/fake/specifications/" class="link external">https://sourceforge.net/p/fll/git/ci/development/tree/level_3/fake/specifications/</a></li>
+                <li><a href="https://sourceforge.net/p/fll/git/ci/development/tree/level_3/utf8/specifications/" class="link external">https://sourceforge.net/p/fll/git/ci/development/tree/level_3/utf8/specifications/</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">APIs</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                The <abbr title="Application Programming Interface">API</abbr>s have not yet been generated and are not available in an easy to consume form outside of the source code itself.
+              </p>
+              <p>
+                The <abbr title="Application Programming Interface">API</abbr> can be viewed by navigating the source code for the <abbr title="Featureless Linux Library">FLL</abbr> here:
+              </p>
+              <ul>
+                <li><a href="https://sourceforge.net/p/fll/git/ci/development/tree/" class="link external">https://sourceforge.net/p/fll/git/ci/development/tree/</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">Terminology</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                One of the biggest problems with an <abbr title="Application Programming Interface">API</abbr> is the mis-use or misunderstanding of the meaning and purpose of one. The term itself is not the most accurate and is also not ideal. A more appropriate term would be a <strong>Library Interface</strong> or a <strong>Software Interface</strong>.
+              </p>
+
+              <section class="section">
+                <header class="article-header header">
+                  <h3 class="section-title h h3">Standard</h3>
+                </header>
+                <div class="section-content">
+                  <p>
+                    A set of rules and guidelines.
+                  </p>
+                </div>
+              </section>
+
+              <section class="section">
+                <header class="article-header header">
+                  <h3 class="section-title h h3">Specification</h3>
+                </header>
+                <div class="section-content">
+                  <p>
+                    A specific interpretation, clarification, or description of a Standard, such as the documentation that describes how to use or follow a Standard.
+                  </p>
+                </div>
+              </section>
+
+              <section class="section">
+                <header class="article-header header">
+                  <h3 class="section-title h h3">Implementation</h3>
+                </header>
+                <div class="section-content">
+                  <p>
+                    The applying of some Standard or Specification.
+                  </p>
+                </div>
+              </section>
+
+              <section class="section">
+                <header class="article-header header">
+                  <h3 class="section-title h h3">Application Programming Interface (API)</h3>
+                </header>
+                <div class="section-content">
+                  <p>
+                    The <abbr title="Application Programming Interface">API</abbr> term is commonly mis-represented as Services or Protocols (such as "Web API"). An <abbr title="Application Programming Interface">API</abbr> instructs a programmer how to use a dependency when programming some software that utilizes said dependency. An <abbr title="Application Programming Interface">API</abbr> is a Specification of some Implementation of a Standard be it a formally defined standard or an informally defined standard. An <abbr title="Application Programming Interface">API</abbr> may be an Implementation of a Standard or a part of an Implementation of a Standard. An <abbr title="Application Programming Interface">API</abbr> is, in effect, documentation.
+                  </p>
+                </div>
+              </section>
+
+              <section class="section">
+                <header class="article-header header">
+                  <h3 class="section-title h h3">Application Binary Interface (ABI)</h3>
+                </header>
+                <div class="section-content">
+                  <p>
+                    The <abbr title="Application Binary Interface">ABI</abbr> term refers to an Application Binary Interface and represents the compiled implementation of some <abbr title="Application Programming Interface">API</abbr>. An <abbr title="Application Binary Interface">ABI</abbr> may not always exist for some <abbr title="Application Programming Interface">API</abbr>, such as for pure scripting languages. An <abbr title="Application Binary Interface">ABI</abbr> is neither a Specification nor a Standard. An <abbr title="Application Binary Interface">ABI</abbr> is an Implementation of an <abbr title="Application Programming Interface">API</abbr> making it an Implementation of a Standard or Specification.
+                  </p>
+                </div>
+              </section>
+
+              <section class="section">
+                <header class="article-header header">
+                  <h3 class="section-title h h3">Service</h3>
+                </header>
+                <div class="section-content">
+                  <p>
+                    Any action or labor performed by one party for another party (such as one person helping another person).
+                  </p>
+                </div>
+              </section>
+
+              <section class="section">
+                <header class="article-header header">
+                  <h3 class="section-title h h3">Protocol</h3>
+                </header>
+                <div class="section-content">
+                  <p>
+                    In the context of computers and software, this is a Standard focused on communication between two parties (often referring to Internet communication).
+                  </p>
+                </div>
+              </section>
+            </div>
+          </article>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+:root {
+  --width_side: 150px;
+}
+
+.kevux > .content-block {
+  display: flex;
+}
+
+.kevux > .content-block > .nav-block {
+  word-break: normal;
+
+  min-height: calc(var(--height_screen) - var(--height_header_site));
+
+  min-width: 150px;
+  max-width: 240px;
+
+  border-right: 1px dashed #556000;
+  border-bottom: 1px dashed #556000;
+  border-left: 1px dashed #556000;
+}
+
+.kevux > .content-block > .nav-block > .nav-menu > .nav-item {
+  padding: 4px 0px;
+}
+
+.kevux > .content-block > .nav-block > .nav-menu > .nav-item:not(:last-of-type) {
+  border-bottom: 1px dashed #556000;
+}
+
+.kevux > .content-block > .nav-block > .nav-menu > .nav-item.ellipses {
+  display: none;
+}
+
+.kevux > .content-block > .nav-block > .nav-menu > .nav-item.unlink {
+  border-left: 1px dashed #556000;
+  border-right: 1px dashed #556000;
+}
+
+.kevux > .content-block > .nav-block > .nav-menu > .nav-item:first-of-type.unlink {
+  border-top: 1px dashed #556000;
+}
+
+.kevux > .content-block > .nav-block > .nav-menu > .nav-item:last-of-type.unlink {
+  border-top: 1px dashed #556000;
+}

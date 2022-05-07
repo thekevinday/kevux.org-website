@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kevux Systems and Software - Projects</title>
+
+    <base href="">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Kevux managed projects such as the Controller program, the Byte Dump program, and the Featureless Make program.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Make, Fake, Controller, UTF-8, Open-Source">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="projects.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+    <link type="text/html" rel="next" href="distributions.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js projects">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item active"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block">
+            <div class="nav-text notice">Projects</div>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#byte_dump" class="nav-text link">Byte Dump</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#control" class="nav-text link">Control</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#controller" class="nav-text link">Controller</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#fake" class="nav-text link">Featureless Make</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#firewall" class="nav-text link">Firewall</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#fss_basic_list_read" class="nav-text link">FSS Basic List Read</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#fss_basic_list_write" class="nav-text link">FSS Basic List Write</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#fss_basic_read" class="nav-text link">FSS Basic Read</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#fss_basic_write" class="nav-text link">FSS Basic Write</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#fss_embedded_list_read" class="nav-text link">FSS Embedded List Read</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#fss_embedded_list_write" class="nav-text link">FSS Embedded List Write</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#fss_extended_list_read" class="nav-text link">FSS Extended List Read</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#fss_extended_list_write" class="nav-text link">FSS Extended List Write</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#fss_extended_read" class="nav-text link">FSS Extended Read</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#fss_extended_write" class="nav-text link">FSS Extended Write</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#fss_identify" class="nav-text link">FSS Identify</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#fss_payload_read" class="nav-text link">FSS Payload Read</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#fss_payload_write" class="nav-text link">FSS Payload Write</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#fss_status_code" class="nav-text link">FSS Status Code</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#iki_read" class="nav-text link">IKI Read</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#iki_write" class="nav-text link">IKI Write</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#status_code" class="nav-text link">Status Code</a>
+          </div>
+          <div class="nav-item block">
+            <a href="projects.html#utf8" class="nav-text link">UTF8</a>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="projects.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="projects.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">Projects</h1>
+          </header>
+
+          <article id="programs" class="article">
+            <header class="article-header header">
+              <h2 class="article-title h h2">Programs</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                The Featureless Linux Library is a major project and has several sub-parts, including several programs. The <abbr title="Featureless Linux Library">FLL</abbr> is broken up into multiple sub-projects that are libraries themselves or programs. This page describes those programs from <abbr title="Featureless Linux Library">FLL</abbr> as well as any other programs and projects associated with Kevux Systems or Kevin Day.
+              </p>
+              <p>
+                Of particular note is that most, if not all, of the Kevux Systems programs are written to provide an <abbr title="Application Programming Interface">API</abbr> (and its respective <abbr title="Application Binary Interface">ABI</abbr>). This allows the programs themselves to be used as a library.
+              </p>
+              <p>
+                The programs themselves follow <abbr title="Featureless Linux Library">FLL</abbr> design principles on making the interface human-friendly. Software should be a tool for humans, and not a tool for machines.
+              </p>
+            </div>
+          </article>
+
+          <article id="byte_dump" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">Byte Dump</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                This tool is a nifty way to get a <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> friendly <code>hexdump</code> alternative.<br>
+                The output is intended to honor some of the feel of hexdump but do so in an <abbr title="Featureless Linux Library">FLL</abbr> way.
+              </p>
+            </div>
+          </article>
+
+          <article id="control" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">Control</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                This project is not complete and development is planned for the <abbr title="Featureless Linux Library">FLL</abbr> 0.7 development series.<br>
+                <br>
+                The goal of this is to communicate with the "Controller" program, such as starting or stopping services.
+              </p>
+            </div>
+          </article>
+
+          <article id="controller" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">Controller</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                This project is not complete and development is planned for the <abbr title="Featureless Linux Library">FLL</abbr> 0.7 development series.
+              </p>
+              <p>
+                The goal of this is to provide task and service management similar to sysvinit, initng, and systemd.<br>
+                This is designed to be used for booting the system as if it were <code>/sbin/init</code>.
+              </p>
+              <p>
+                This should be controllable from user-space via the "Control" program.
+              </p>
+            </div>
+          </article>
+
+          <article id="fake" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">Featureless Make</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                The Featureless Make is the original program and goal of the <abbr title="Featureless Linux Library">FLL</abbr>.<br>
+                The GNU Make, Autoconf, and all those build processes are unnecessarily complex.
+              </p>
+              <p>
+                A major problem with these build systems is that they try to manage installation as well as compilation.<br>
+                A build system should be just that a build system.<br>
+                Trying to handle how the built package gets installed should be done by system administrators or distributors.<br>
+                By avoiding this, the code becomes simpler, more "featureless", easier to maintain, and easier to hack.
+              </p>
+              <p>
+                The Featureless Make, also called Fake, provides two primary ways to compile C, C++, and possibly other compiled languages:
+              </p>
+              <ul>
+                <li>Using the "build" command.</li>
+                <li>Using the "make" command.</li>
+              </ul>
+              <p>
+                The build command is as simple as it can be and follows a Featureless Settings Specification (FSS).<br>
+                The make command (and its respective fakefile) provides a more advanced interface for handling complex build processes or compiling languages other than C/C++.
+              </p>
+              <p>
+                The build command (and subsequently the make command) currently provide some hard coded program settings, such as the indexer "ar" runs ar rcs.<br>
+                Eventually such things will be expanded into an FSS setting and made customizable.
+              </p>
+              <p>
+                Both the build and make commands support a small subset of make and autoconf functionality to make transitioning easier or make it easy to work alongside make and autoconf.
+              </p>
+              <p>
+                To help with understanding and using the Featureless Make program, fully functional example build settings and fakefiles are created for the program bzip (specifically version 1.0.8):
+              </p>
+              <ul>
+                <li><a href="https://sourceforge.net/p/fll/git/ci/development/tree/level_3/fake/data/projects/bzip2/1.0.8/fakefile" class="link external">https://sourceforge.net/p/fll/git/ci/development/tree/level_3/fake/data/projects/bzip2/1.0.8/fakefile</a></li>
+                <li><a href="https://sourceforge.net/p/fll/git/ci/development/tree/level_3/fake/data/projects/bzip2/1.0.8/settings-bzip2" class="link external">https://sourceforge.net/p/fll/git/ci/development/tree/level_3/fake/data/projects/bzip2/1.0.8/settings-bzip2</a></li>
+                <li><a href="https://sourceforge.net/p/fll/git/ci/development/tree/level_3/fake/data/projects/bzip2/1.0.8/settings-bzip2recover" class="link external">https://sourceforge.net/p/fll/git/ci/development/tree/level_3/fake/data/projects/bzip2/1.0.8/settings-bzip2recover</a></li>
+              </ul>
+              <p>
+                There is also a fakefile pre-configured to run GNU Make within itself to compile the Linux kernel fom source:
+              </p>
+              <ul>
+                <li><a href="https://sourceforge.net/p/fll/git/ci/development/tree/level_3/fake/data/build/fakefile-example-linux_using_make" class="link external">https://sourceforge.net/p/fll/git/ci/development/tree/level_3/fake/data/build/fakefile-example-linux_using_make</a></li>
+              </ul>
+              <p>
+                Bzip2 may be found here:
+              </p>
+              <ul>
+                <li><a href="https://sourceware.org/bzip2/" class="link external">https://sourceware.org/bzip2/</a></li>
+              </ul>
+            </div>
+          </article>
+
+          <article id="firewall" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">Firewall</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                This is one of the earliest proof of concept and functional example of the FLL library.<br>
+                Now it is currently outdated, but it still remains operational as an iptables wrapper.<br>
+                This program is actively used on the Turtle Kevux distribution.<br>
+                This requires iptables to be installed and executable.
+              </p>
+            </div>
+          </article>
+
+          <article id="fss_identify" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">FSS Identify</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                This is a program reading a file and determining what Featureless Settings Specification.<br>
+                This only detects files that provide an <abbr title="Featureless Settings Specification">FSS</abbr> header.
+              </p>
+            </div>
+          </article>
+
+          <article id="fss_basic_read" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">FSS Basic Read</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                This is a program implementing the Featureless Settings Specification FSS-0000 (Basic).<br>
+                This performs read operations related to the FSS-0000 (Basic) standard.
+              </p>
+            </div>
+          </article>
+
+          <article id="fss_basic_write" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">FSS Basic Write</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                This is a program implementing the Featureless Settings Specification FSS-0000 (Basic).<br>
+                This performs write operations related to the FSS-0002 (Basic) standard.
+              </p>
+            </div>
+          </article>
+
+          <article id="fss_basic_list_read" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">FSS Basic List Read</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                This is a program implementing the Featureless Settings Specification FSS-0002 (Basic List).<br>
+                This performs read operations related to the FSS-0002 (Basic List) standard.
+              </p>
+            </div>
+          </article>
+
+          <article id="fss_basic_list_write" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">FSS Basic List Write</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                This is a program implementing the Featureless Settings Specification FSS-0002 (Basic List).<br>
+                This performs write operations related to the FSS-0002 (Basic List) standard.
+              </p>
+            </div>
+          </article>
+
+          <article id="fss_embedded_list_read" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">FSS Embedded List Read</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                This is a program implementing the Featureless Settings Specification FSS-0008 (Embedded List).<br>
+                This performs read operations related to the FSS-0008 (Embedded List) standard.
+              </p>
+            </div>
+          </article>
+
+          <article id="fss_embedded_list_write" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">FSS Embedded List Write</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                This is a program implementing the Featureless Settings Specification FSS-0008 (Embedded List).<br>
+                This performs write operations related to the FSS-0008 (Embedded List) standard.
+              </p>
+            </div>
+          </article>
+
+          <article id="fss_extended_read" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">FSS Extended Read</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                This is a program implementing the Featureless Settings Specification FSS-0001 (Extended).<br>
+                This performs read operations related to the FSS-0001 (Extended) standard.
+              </p>
+            </div>
+          </article>
+
+          <article id="fss_extended_write" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">FSS Extended Write</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                This is a program implementing the Featureless Settings Specification FSS-0001 (Extended).<br>
+                This performs write operations related to the FSS-0001 (Extended) standard.
+              </p>
+            </div>
+          </article>
+
+          <article id="fss_extended_list_read" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">FSS Extended List Read</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                This is a program implementing the Featureless Settings Specification FSS-0003 (Extended List).<br>
+                This performs read operations related to the FSS-0003 (Extended List) standard.
+              </p>
+            </div>
+          </article>
+
+          <article id="fss_extended_list_write" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">FSS Extended List Write</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                This is a program implementing the Featureless Settings Specification FSS-0003 (Extended List).<br>
+                This performs write operations related to the FSS-0003 (Extended List) standard.
+              </p>
+            </div>
+          </article>
+
+          <article id="fss_payload_read" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">FSS Payload Read</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                This is a program implementing the Featureless Settings Specification FSS-000E (Payload).<br>
+                This performs read operations related to the FSS-000E (Payload) standard.<br>
+              <p>
+              <p>
+                The FSS-000E (Payload) is focused on network communication and is intended to be used inside a network packet.<br>
+                This program can be used to manually read a network packet or data from the network.
+              </p>
+            </div>
+          </article>
+
+          <article id="fss_payload_write" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">FSS Payload Write</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                This is a program implementing the Featureless Settings Specification FSS-000E (Payload).<br>
+                This performs write operations related to the FSS-000E (Payload) standard.<br>
+              <p>
+              <p>
+                The FSS-000E (Payload) is focused on network communication and is intended to be used inside a network packet.<br>
+                This program can be used to manually write the payload portion of a network packet.
+              </p>
+            </div>
+          </article>
+
+          <article id="fss_status_code" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">FSS Status Code</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                This program is designed to interpret status codes returned by any <abbr title="Featureless Settings Specification">FSS</abbr> program.<br>
+                The status codes are converted to or from a code and a label.
+              </p>
+              <p>
+                This program handles more status codes that the <code>status_code</code> program.
+              </p>
+            </div>
+          </article>
+
+          <article id="status_code" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">Status Code</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                This program is designed to interpret status codes returned by any <abbr title="Featureless Linux Libray">FLL</abbr> based program.<br>
+                The status codes are converted to or from a code and a label.
+              </p>
+              <p>
+                This program specifically handles only the core status codes provided by the <abbr title="Featureless Linux Library">FLL</abbr>.<br>
+                Other programs that utilize custom status codes should provide their own implementation of this program, such as is done with the <strong>FSS Status Code</strong> program.
+              </p>
+            </div>
+          </article>
+
+          <article id="iki_read" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">IKI Read</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                Similar to the FSS Read programs, this is a program implementing the Featureless Settings Specification IKI-0000 (Unrestricted).<br>
+                This performs read operations related to the Unrestricted IKI standard (IKI-0000).<br>
+              <p>
+              <p>
+                The IKI settings specification plays on how it is simpler than a Wiki syntax.<br>
+                The IKI could be used for anything from e-mails and text-messages to word-processors.<br>
+                The goal with IKI is to be very easily readably by a human, such as: <code>iki:"example"</code> or <code>url:"https://sourceforge.net/projects/fll/"</code>.
+              </p>
+              <p>
+                This program is a swiss army knife for reading files that contain IKI syntax.
+              </p>
+            </div>
+          </article>
+
+          <article id="iki_write" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">IKI Write</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                Similar to the FSS Write programs, this is a program implementing the Featureless Settings Specification IKI-0000 (Unrestricted).<br>
+                This performs write operations related to the Unrestricted IKI standard (IKI-0000).<br>
+              <p>
+              <p>
+                The IKI settings specification plays on how it is simpler than a Wiki syntax.<br>
+                The IKI could be used for anything from e-mails and text-messages to word-processors.<br>
+                The goal with IKI is to be very easily readably by a human, such as: <code>iki:"example"</code> or <code>url:"https://sourceforge.net/projects/fll/"</code>.
+              </p>
+              <p>
+                This program is a swiss army knife for writing files that contain IKI syntax.
+              </p>
+            </div>
+          </article>
+
+          <article id="utf8" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">UTF8</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                A tool to convert one or more <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> characters from the codepoint representation to a binary representation and back.
+              </p>
+              <p>
+                This program can convert complete files into a text file of <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> bytecode values.<br>
+                This program can convert complete files into a text file of space separated codepoint values.
+              </p>
+            </div>
+          </article>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

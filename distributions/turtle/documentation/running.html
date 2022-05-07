@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Documentation - Turtle Kevux - Booting and Running</title>
+
+    <base href="../../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Turtle Kevux Documentation describing booting and running the system.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, Turtle, Documentation">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+    <link type="text/css" rel="stylesheet" media="all" href="distributions/turtle/documentation/css/documentation.css">
+
+    <link rel="canonical" href="documentation/turtle/running.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+    <link type="text/html" rel="next" href="distributions.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js distributions">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item active"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="distributions/turtle/documentation.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">Documentation</div>
+            <div class="nav-text unlink">Turtle Kevux</div>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/software.html" class="nav-text link">Software Listing</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text unlink">Booting and Running</div>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/installing.html" class="nav-text link">Installing Turtle Kevux</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/configuring.html" class="nav-text link">System Configuration</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/servers.html" class="nav-text link">Server Configuration</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/additional.html" class="nav-text link">Additional Notes</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/problems.html" class="nav-text link">Known Issues</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/credits.html" class="nav-text link">Credits</a>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="distributions/turtle/documentation/running.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="distributions/turtle/documentation/running.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header separate">
+            <h1 class="section-title h h1">Booting and Running</h1>
+          </header>
+
+          <div class="main-content">
+            <div id="BootingLiveSystem">
+              <header class="section-header header">
+                <h2 class="h h2">Booting Live System</h2>
+              </header>
+              <a href="distributions/turtle/documentation/images/Startup.png"><img src="distributions/turtle/documentation/images_small/Startup.png" alt="Screenshot of system bootup." align="top" border="0"></a><br>
+              <p>
+                This tutorial is assuming that you have either a live-usb or a live-cdrom.<br>
+                In order to boot the Live system you need to have your computer boot the device by rebooting the computer.<br>
+                While booting your machine, you may have to press a key to select <span class="bold">boot options</span> or something of similar meaning.<br>
+                Note: live-usb's cannot be directly booted to on most machines that only support usb 1.1 or less.<br>
+                <i>To boot a live-usb on a usb 1.1 system, you will need a live cdrom that contains the appropriate grub.</i><br>
+                <br>
+                <span class="bold">Available Boot Options:</span><br>
+                <code><span class="notice">
+                  &nbsp;&nbsp;&nbsp;Install Kevux System<br>
+                  &nbsp;&nbsp;&nbsp;Boot Live System - Run From Memory<br>
+                  &nbsp;&nbsp;&nbsp;Boot Live System - Run From CD-Rom<br>
+                  &nbsp;&nbsp;&nbsp;Maintenance Mode<br>
+                  &nbsp;&nbsp;&nbsp;Check Memory<br>
+                </span></code>
+              <br>
+              <ul>
+                <li><span class="bold notice">Install Kevux System:</span><br>
+                  This boots to a live install system that runs either from memory or from the cdrom.<br>
+                  The installation system is called KiWI and includes documentation on how to install the system.<br>
+                  <br>
+                </li>
+                <li><span class="bold notice">Boot Live System - Run From Memory:</span><br>
+                  This is the default boot option.<br>
+                  This boot process will copy the compressed system into ram and run itself from ram.<br>
+                  This boot process requires 384MB to 512MB of System Ram for the "everything" build.<br>
+                  To calculate how much memory your particular build will require add the files sizes of the following files:<br>
+                  <ul>
+                    <li>bin.sfs</li>
+                    <li>lib.sfs</li>
+                    <li>sbin.sfs</li>
+                    <li>share.sfs</li>
+                    <li>home.sfs</li>
+                    <li>etc.sfs</li>
+                  </ul>
+                  Once these file sizes are added up, add 70MB (for approximate runtime memory usage) to the results.<br>
+                  Round the results to the nearest memory size; usually one of the following: 4, 8, 16, 32, 64, 96, 128, 192, 256, 384, 512, 768, 1024, 1536, 2048<br>
+                  This boot option will take some amount of time, ~20 seconds, to copy itself into memory.<br>
+                  Once the system is booted, the cdrom or usb may be removed without causing any problems.<br>
+                  Once the system is booted, most/all programs start instantly or within the first 1 to 6 seconds of waiting.<br>
+                  <br>
+                </li>
+                <li><span class="bold notice">Boot Live System - Run From CD-Rom:</span><br>
+                  This is the least flexible boot option.<br>
+                  This will not copy itself into memory, saving boot time by not having to copy itself into memory.<br>
+                  The downside is that much more time is lost because the system has to read the device every single time something is needed, slowing the execution process significantly.<br>
+                  This boot process requires 64MB to 128MB or System Ram for the "everything" build.<br>
+                  Once the system is booted, the cdrom or usb <span style="bold error">must NOT be removed</span> or problems will occur.<br>
+                  Once the system is booted, most programs will start within the 5 to 30 seconds.<br>
+                  <br>
+                </li>
+                <li><span class="bold notice">Maintenance Mode:</span><br>
+                  This will immediately drop to the initrd bash environment.<br>
+                  This allows you to manually and safely run fsck or similar commands for a particular system.<br>
+                  When any of the boot options above fail, you will always be dropped into this mode.<br>
+                  This is especially useful when the rootfs doesn't exist, the kernel will not lockup and you can still hit control+alt+delete<br>
+                  <br>
+                </li>
+                <li><span class="bold notice">Check Memory:</span><br>
+                  This will start a dedicated memory tester.<br>
+                  Run this for a few hours to give a decently thorough memory check.<br>
+                  Reboot the machine to get out of this mode.<br>
+                  <br>
+                </li>
+              </ul>
+              <br>
+              <span class="bold">Advanced Kevux-Specific Boot Options</span><br>
+              <ul>
+                <li id="boot_option_finalroot"><span class="bold notice">finalroot=</span><br>
+                  Specifies the what root device partition is to be used before starting the system.<br>
+                  Unlike the standard root=, finalroot= allows for any device naming system that the mount command can use.<br>
+                  The primary use of finalroot= is to boot to a device by name and not by the device's physical number.<br>
+                  This is especially useful for livecd's, liveusb's, and other dynamic systems.<br>
+                  Do not use root= to boot a root filesystem, if you are using a kevux initrd.<br>
+                  The root= option tells the kernel to load the initrd as the first rootfs.<br>
+                  <br>
+                </li>
+                <li id="boot_option_finalinit"><span class="bold notice">finalinit=</span><br>
+                  Specifies what the init program is to be called after switching to the finalroot.<br>
+                  Do not use init= to specify the init program, if you are using a kevux initrd.<br>
+                  The init= option tells the kernel to load the initrd specific init program.<br>
+                  <br>
+                </li>
+                <li id="boot_option_subroot"><span class="bold notice">subroot=</span><br>
+                  Allows one to load a rootfs from a specific folder inside of the finalroot device.<br>
+                  This should allow one to have multiple rootfs's on a single partition.<br>
+                  This can be useful for having different versions of the same system on a single partition without having any conflicts.<br>
+                  Because the system will be running from withing the subroot, the final system will not be able to directly see any of the other subroots or the / of the actual partition.<br>
+                  <br>
+                </li>
+                <li id="boot_option_maintenance"><span class="bold notice">maintenance</span><br>
+                  This tells the initrd to immediately drop to the initrd's /bin/bash.<br>
+                  This normally loads the maintenance initrd.<br>
+                  <br>
+                </li>
+                <li id="boot_option_settings"><span class="bold notice">settings=</span><br>
+                  This specifies a device that contains additional settings information in the same way finalroot= specifies a device.<br>
+                  The additional settings information currently only supports encrypted boot settings.<br>
+                  In the future, this is expected to be expanded and will also be used to perform network booting.<br>
+                  All settings data is expected to be stored in the /boot/settings/ directory within the settings device.<br>
+                  <br>
+                </li>
+                <li id="boot_option_settingsname"><span class="bold notice">settingsname=</span><br>
+                  The settings name represent a sub-directory within the /boot/settings/ directory.<br>
+                  This allows for having multiple different settings data on a single settings device without conflicts.<br>
+                  For example, lets say you have two sub-directories called: encrypted and network.<br>
+                  By specifying the settingsname=network would mean that the network boot settings would be processed.<br>
+                  By specifying the settingsname=encrypted would mean that the encrypted boot settings would be processed.<br>
+                  If not settings name is passed, then the default is to use the files found within the /boot/settings/ directory and not some sub-directory.<br>
+                  <br>
+                </li>
+                <li id="boot_option_settingscdromsearch"><span class="bold notice">settingscdromsearch=</span><br>
+                  This is identical to the cdromsearch= option explained below but only for finding the settings device.<br>
+                  <br>
+                </li>
+                <li id="boot_option_settingsmmcsearch"><span class="bold notice">settingsmmcsearch=</span><br>
+                  This is identical to the mmcsearch= option explained below but only for finding the settings device.<br>
+                  <br>
+                </li>
+                <li id="boot_option_runlevel"><span class="bold notice">runlevel=</span><br>
+                  Use this to execute a specific set of init instructions during system boot.<br>
+                  These instructions are defined in <span class="notice">/etc/initng/runlevel/</span>.<br>
+                  The default runlevel is called: <span class="notice">/etc/initng/runlevel/default.runlevel</span>.<br>
+                  The KiWI installer uses the runlevel called: <span class="notice">/etc/initng/runlevel/kiwi.runlevel</span>.<br>
+                  <br>
+                  Example:<br>
+                  If you wish to boot to a runlevel called single (<span class="notice">/etc/initng/runlevel/single.runlevel</span>), you would use the boot command: <span class="notice">runlevel=single</span>.<br>
+                  <br>
+                </li>
+                <li id="boot_option_squashboot"><span class="bold notice">squashboot=</span><br>
+                  This tells the initrd to execute the live_init script using the squash compressed files.<br>
+                  When this is specified, the finalroot= option is expected to be the partition, cdrom, or some device where the squash files are located.<br>
+                  The squash files are expected to be in the directory <i>/boot/live/</i> of the finalroot device.<br>
+                  There are the following parameters available:<br>
+                  <ul>
+                    <li><span class="notice">device</span> - this means run the squash files directly from the finalroot device</li>
+                    <li><span class="notice">memory</span> - this means copy the squash files into memory and run from memory</li>
+                    <li><span class="notice">extract</span> - this means extract the squash files into memory and run from memory</li>
+                  </ul>
+                  The live_init defines an entirely new set of options explicitly useful for booting a livecdrom, a liveusb, or any system compressed into squash files<br>
+                  <br>
+                  <span class="bold">Squash Specific Boot Options</span><br>
+                  <ul>
+                    <li id="boot_option_squashpath"><span class="bold notice">squashpath=</span><br>
+                      Specify a subdirectory or path on the finalroot= device that contains the squash files.<br>
+                      This applies to both squashboot and squishboot boot modes.<br>
+                      <br>
+                    </li>
+                    <li id="boot_option_filesystemlimit"><span class="bold notice">filesystemlimit=</span><br>
+                      Specify a hard limit on how large the memory filesystem will be.<br>
+                      By default, no limit is set.<br>
+                      The <i>Boot Live System - Run From Memory (uncompressed)</i> boot option does set a size limit that is over a 1GB<br>
+                      <br>
+                    </li>
+                    <li id="boot_option_etcdevice"><span class="bold notice">etcdevice=</span><br>
+                      Specify the physical partition that contains the etc directory.<br>
+                      This will be mounted to the /etc directory of the finalroot system.<br>
+                      For using an ecrypted partition, this should be set to something like: <code>etcdevice=/dev/mapper/etc</code><br>
+                      <br>
+                    </li>
+                    <li id="boot_option_homedevice"><span class="bold notice">homedevice=</span><br>
+                      Specify the physical partition that contains the home directory.<br>
+                      This will be mounted to the /home directory of the finalroot system.<br>
+                      For using an ecrypted partition, this should be set to something like: <code>homedevice=/dev/mapper/home</code><br>
+                      <br>
+                    </li>
+                    <li id="boot_option_vardevice"><span class="bold notice">vardevice=</span><br>
+                      Specify the physical partition that contains the var directory.<br>
+                      This will be mounted to the /var directory of the finalroot system.<br>
+                      For using an ecrypted partition, this should be set to something like: <code>vardevice=/dev/mapper/var</code><br>
+                      <br>
+                    </li>
+                    <li id="boot_option_tmpdevice"><span class="bold notice">tmpdevice=</span><br>
+                      Specify the physical partition that contains the tmp directory.<br>
+                      This will be mounted to the /tmp directory of the finalroot system.<br>
+                      For using an ecrypted partition, this should be set to something like: <code>tmpdevice=/dev/mapper/tmp</code><br>
+                      <br>
+                    </li>
+                    <li id="boot_option_xorg"><span class="bold notice">xorg=</span><br>
+                      Manually specify whether or not xorg should be started on boot.<br>
+                      Whether or not this works is explicitly dependent on whether or not any of the boot terminals are set to auto-start.<br>
+                      The default action is to auto-start a terminal on tty1 and that terminal will start xorg.<br>
+                      There are the following parameters available:<br>
+                      <ul>
+                        <li><span class="notice">yes</span> - this means to start xorg if terminal auto-start is enabled on the system. (this is the default)</li>
+                        <li><span class="notice">no</span> - this means do not start xorg if terminal auto-start is enabled on the system and therefore only a terminal is started.</li>
+                      </ul>
+                      <br>
+                    </li>
+                    <li id="boot_option_share"><span class="bold notice">share=</span><br>
+                      Specify whether or not to make the share available on a live system.<br>
+                      For the squashinit=extract and squashinit=memory commands, more memory than normal is needed to cope with the additional space needed for the share.<br>
+                      There are the following parameters available:<br>
+                      <ul>
+                        <li><span class="notice">yes</span> - this means to include the share.sfs file when booting the live system. (this is the default)</li>
+                        <li><span class="notice">no</span> - this means to not include the share.sfs file when booting the live system, saving memory.</li>
+                      </ul>
+                      <br>
+                    </li>
+                    <li id="boot_option_toolchain"><span class="bold notice">toolchain=</span><br>
+                      Specify whether or not to make the toolchain available on a live system.<br>
+                      For the squashinit=extract and squashinit=memory commands, more memory than normal is needed to cope with the additional space needed for the toolchain.<br>
+                      Use this for compilation software such as gcc.<br>
+                      There are the following parameters available:<br>
+                      <ul>
+                        <li><span class="notice">yes</span> - this means to include the toolchain.sfs file when booting the live system.</li>
+                        <li><span class="notice">no</span> - this means to not include the toolchain.sfs file when booting the live system, saving memory. (this is the default)</li>
+                      </ul>
+                      <br>
+                    </li>
+                    <li id="boot_option_toolchain"><span class="bold notice">documentation=</span><br>
+                      Specify whether or not to make the documentation available on a live system.<br>
+                      For the squashinit=extract and squashinit=memory commands, more memory than normal is needed to cope with the additional space needed for the documentation.<br>
+                      There are the following parameters available:<br>
+                      <ul>
+                        <li><span class="notice">yes</span> - this means to include the documentation.sfs file when booting the live system.</li>
+                        <li><span class="notice">no</span> - this means to not include the documentation.sfs file when booting the live system, saving memory. (this is the default)</li>
+                      </ul>
+                      <br>
+                    </li>
+                    <li id="boot_option_package"><span class="bold notice">package=</span><br>
+                      Specify whether or not to make the package available on a live system.<br>
+                      For the squashinit=extract and squashinit=memory commands, more memory than normal is needed to cope with the additional space needed for the package.<br>
+                      Use this for package management (installing and uninstalling software).<br>
+                      There are the following parameters available:<br>
+                      <ul>
+                        <li><span class="notice">yes</span> - this means to include the package.sfs file when booting the live system.</li>
+                        <li><span class="notice">no</span> - this means to not include the package.sfs file when booting the live system, saving memory. (this is the default)</li>
+                      </ul>
+                      <br>
+                    </li>
+                    <li id="boot_option_python"><span class="bold notice">python=</span><br>
+                      Specify whether or not to make the python available on a live system.<br>
+                      For the squashinit=extract and squashinit=memory commands, more memory than normal is needed to cope with the additional space needed for the python.<br>
+                      There are the following parameters available:<br>
+                      <ul>
+                        <li><span class="notice">yes</span> - this means to include the python.sfs file when booting the live system.</li>
+                        <li><span class="notice">no</span> - this means to not include the python.sfs file when booting the live system, saving memory. (this is the default)</li>
+                      </ul>
+                      <br>
+                    </li>
+                    <li id="boot_option_perl"><span class="bold notice">perl=</span><br>
+                      Specify whether or not to make the perl available on a live system.<br>
+                      For the squashinit=extract and squashinit=memory commands, more memory than normal is needed to cope with the additional space needed for the perl.<br>
+                      There are the following parameters available:<br>
+                      <ul>
+                        <li><span class="notice">yes</span> - this means to include the perl.sfs file when booting the live system.</li>
+                        <li><span class="notice">no</span> - this means to not include the perl.sfs file when booting the live system, saving memory. (this is the default)</li>
+                      </ul>
+                      <br>
+                    </li>
+                    <li id="boot_option_installation"><span class="bold notice">install=</span><br>
+                      Specify whether or not to make the installation files available on a live system so that installation may properly function.<br>
+                      You should also specify <span class="notice">runlevel=kiwi</span> to boot to the installation program.<br>
+                      There are the following parameters available:<br>
+                      <ul>
+                        <li><span class="notice">kiwi</span> - this means that the squash installation files are at the <span class="notice">/boot/live</span> directory of the final root device. (this is the default)</li>
+                        <li><span class="notice">/path/to/installation/directory</span> - this means that the installation squash files are the specified path of the final root device. (this must begin with a leading slash)</li>
+                      </ul>
+                      <br>
+                    </li>
+                  </ul>
+                  <span class="bold important"><i>
+                    NOTE: Nothing can be written to the primary system files when squashinit=device and squashboot=memory are used.<br>
+                    NOTE: When squashboot=extract is used, these files can be written to, but will be lost during reboots.<br>
+                  </i></span>
+                  <br>
+                </li>
+                <li id="boot_option_squishboot"><span class="bold notice">squishboot=</span><br>
+                  This is a hybrid between booting with squashboot and normal boot.<br>
+                  Instead of running the entire system from squash files, only the primary binaries /bin, /sbin, /lib, and /toolchain are mounted via squash.<br>
+                  Everything else is expected to be on the final root fs, already extracted.<br>
+                  This allows for having compressed binaries on a small device while maintaining normal write behavior for most things.<br>
+                  This method requires much less ram than squashboot.<br>
+                  The squash files are expected to be in /live/boot/ of the final root system by default.<br>
+                  Most of the additionaly squashboot options are supported and are renamed from squash to squish accordingly.<br>
+                  For parameter conflict resolution, squishboot will override squashboot.<br>
+                  This is particularly useful for embedded devices and the OLPC-XO.<br>
+                  <br>
+                </li>
+              </ul>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="whatshouldhappen">
+              <header class="section-header header">
+                <h2 class="h h2">What Should Happen</h2>
+              </header>
+              <a href="distributions/turtle/documentation/images/Desktop.png"><img src="distributions/turtle/documentation/images_small/Desktop.png" alt="Screenshot of desktop." align="top" border="0"></a><br>
+              <p>
+                When all things work correctly, you should end up sitting on an XFCE desktop screen with a backgroup picture of a stream in a forest.<br>
+                This is the default desktop environment and the default layout.<br>
+                Enjoy.<br>
+                <br>
+                If you do not want a graphical display to appear on system startup, then you can append <span class="notice">xorg=no</span> as a kernel boot parameter.<br>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="somethingwentwrong">
+              <header class="section-header header">
+                <h2 class="h h2">Something Went Wrong</h2>
+              </header>
+              <a href="distributions/turtle/documentation/images/Startup_Failure.png"><img src="distributions/turtle/documentation/images_small/Startup_Failure.png" alt="Screenshot of boot failure." align="top" border="0"></a><br>
+              <p>
+                Unfortunately, not all things work all of the time.<br>
+                Whenever something goes wrong with the boot process, you will get stuck with a login prompt.<br>
+                In order to Login, see <a href="#loggingin">Logging In Below</a>.<br>
+                <br>
+                Okay, so the system started up but you are not sitting in a graphical <span class="notice">XFCE</span> desktop with the kevux logo in the background.<br>
+                In this situation, the most probably cause is that the <span class="notice">Xorg</span> (and therefore XFCE) failed to start.<br>
+                The most common cause of this is a video card problem.<br>
+                To fix this problem, you will need to manually tell xorg to use your particular video card or use <span class="notice">vesa</span>.<br>
+                <br>
+                <span class="bold error">WARNING: This may require some moderate to advanced knowledge of the linux command line and understanding of what your video card specifically is.</span><br>
+                <br>
+                If the system is not responding then you may need to be able to boot the system without xorg, so add the <span class="notice">xorg=no</span> boot parameter in the grub config at boot time.<br>
+                Once you find a way to login you need to edit the <span class="notice">/etc/X11/xorg.conf</span> file to work with your appropriate video card.<br>
+                To add your video card to the xorg.conf file, scroll to the bottom of that file looking for the part that begins with <span class="notice">Section "Device"</span><br>
+                Inside of this section, look for the part that begins with <span class="notice">#Driver</span><br>
+                Uncomment this line by removing the leading <span class="notice">#</span>.<br>
+                On the same line, to the immediate right, you should see something text surrounded in double quotes.<br>
+                Replace that text with the appropriate video card driver name.<br>
+                If you do not know the proper driver then you will have to do some researching or asking for assistance as determining this is advanced and may be complex.<br>
+                You may be able to identify your video card by running the command <span class="notice">lspci</span> and looking for a line that has <span class="notice">VGA Compatible controller</span> or <span class="notice">Display controller</span>.<br>
+                <br>
+                For the actual login process, see the <span class="notice">Logging In</span> below.<br>
+                <br>
+                If all else fails and you still cannot get into the system, try booting into maintenance mode by passing the grub command line option: <span class="notice">maintenance</span>.<br>
+                However, using maintenance mode almost definitely requires advanced to expert knowledge.<br>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="loggingin">
+              <header class="section-header header">
+                <h2 class="h h2">Logging In</h2>
+              </header>
+              <a href="distributions/turtle/documentation/images/Logging_On-1.png"><img src="distributions/turtle/documentation/images_small/Logging_On-1.png" alt="Screenshot of logging in step 1." align="top" border="0"></a><br>
+              <p>
+                The login screen is pretty straight-forward.<br>
+                Just type in your username and you will be prompted for a password.<br>
+                The default username is <span class="notice">turtle</span><br>
+                The default password is <span class="notice">kevux\</span><br>
+                <span class="bold important"><i>Do not forget the trailing slash: <span class="notice">\</span></i></span><br>
+              </p>
+              <br>
+              <a href="distributions/turtle/documentation/images/Logging_On-2.png"><img src="distributions/turtle/documentation/images_small/Logging_On-2.png" alt="Screenshot of logging in step 2." align="top" border="0"></a><br>
+              <p>
+                Immediately following a successful login, you will be prompted for the particular type of login.<br>
+                <br>
+                <span class="bold">Login Types:</span><br>
+                &nbsp;&nbsp;<span class="notice">Terminal</span> - Drop to a Terminal (Console).<br>
+                &nbsp;&nbsp;<span class="notice">Webbrowser</span> - Drop to a command-line webbrowser (Console).<br>
+                &nbsp;&nbsp;<span class="notice">Xorg</span> - Start Xorg (Graphical Display) using the manager defined in ~/.xinitrc (This is the default).<br>
+              </p>
+              <br>
+              <a href="distributions/turtle/documentation/images/Logging_On-3.png"><img src="distributions/turtle/documentation/images_small/Logging_On-3.png" alt="Screenshot of logging in step 3." align="top" border="0"></a><br>
+              <p>
+                If you selected <span class="notice">Terminal</span>, then you will see a login prompt where you can type in any console commands you desire.<br>
+                This console environment uses the <span class="notice">bash</span> shell.<br>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="virtualmachines">
+              <header class="section-header header">
+                <h2 class="h h2">Virtual Machines</h2>
+              </header>
+              <p>
+                Running Kevux on a virtual machine is pretty straight-foward and therefore only known issues will be listed here.<br>
+                <br>
+                Physical Address Extension, aka <span class="notice">PAE</span>, is used by this system.<br>
+                If the virtual machine does not have <span class="notice">PAE</span>, support enabled, then the system will not boot.<br>
+                <br>
+                Hardware Virtualization features such as <span class="notice">VT-z/AMD-V</span>, are know to prevent GRUB from booting properly.<br>
+                If for any reason your system does not boot, try disabling <span class="notice">VT-z/AMD-V</span>, support.<br>
+              </p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

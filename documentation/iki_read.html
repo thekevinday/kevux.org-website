@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Documentation - IKI Read</title>
+
+    <base href="../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="IKI Read program documentation.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Make, Fake, Open-Source">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="documentation/iki_read.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js documentation">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item active"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="documentation.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">Documentation</div>
+            <div class="nav-text unlink">IKI Read</div>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/iki_read.html#about" class="nav-text link">About</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/iki_read.html#parameters-standard" class="nav-text link">Standard Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/iki_read.html#parameters-program" class="nav-text link">Program Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Specifications</div>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">APIs</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="documentation/iki_read.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="documentation/iki_read.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">IKI Read Documentation</h1>
+          </header>
+
+          <section id="about" class="section">
+            <header class="section-header header">
+              <h2 class="section-title h h2">About</h2>
+            </header>
+
+            <div class="section-content">
+              <p>
+                The <strong>iki_read</strong> program is a tool for processing strings that follow the IKI standard, specifically IKI-0000 (Unrestricted).
+              </p>
+              <p>
+                This tool is designed to be scriptable and accepts piped input.
+              </p>
+              <p>
+                Different ways of interpreting and printing strings are available.
+              </p>
+              <p>
+                The entire string can be printed, replacing all IKI Variables and even allowing for primitive substitution or only the IKI Variables (or their Content) can be printed.
+              </p>
+            </div>
+          </section>
+
+          <section id="parameters-standard" class="section">
+            <header class="section-header header separate">
+              <h2 class="section-title h h2">Standard Parameters</h2>
+            </header>
+
+            <div class="section-content">
+              <div class="center">
+                <table class="table context-parameters">
+                  <thead class="head set">
+                    <tr class="row">
+                      <th class="column">Short</th>
+                      <th class="column">Long</th>
+                      <th class="column">Description</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="body set">
+                    <tr class="row">
+                      <td class="column"><code class="code">-h</code></td>
+                      <td class="column"><code class="code">--help</code></td>
+                      <td class="column">Print the help message.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+d</code></td>
+                      <td class="column"><code class="code">++dark</code></td>
+                      <td class="column">Output using colors that show up better on dark backgrounds.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+l</code></td>
+                      <td class="column"><code class="code">++light</code></td>
+                      <td class="column">Output using colors that show up better on light backgrounds.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+n</code></td>
+                      <td class="column"><code class="code">++no_color</code></td>
+                      <td class="column">Do not print using color.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+q</code></td>
+                      <td class="column"><code class="code">++quiet</code></td>
+                      <td class="column">Decrease verbosity, silencing most output.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+n</code></td>
+                      <td class="column"><code class="code">++normal</code></td>
+                      <td class="column">Set verbosity to normal.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+V</code></td>
+                      <td class="column"><code class="code">++verbose</code></td>
+                      <td class="column">Increase verbosity beyond normal output.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+D</code></td>
+                      <td class="column"><code class="code">++debug</code></td>
+                      <td class="column">Enable debugging, significantly increasing verbosity beyond normal output.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+v</code></td>
+                      <td class="column"><code class="code">++version</code></td>
+                      <td class="column">Print only the version number.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                The <code>+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code>+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code>+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
+              </p>
+              <p>
+                The <code>+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
+              </p>
+            </div>
+          </section>
+
+          <section id="parameters-program" class="section">
+            <header class="section-header header separate">
+              <h2 class="section-title h h2">Program Parameters</h2>
+            </header>
+
+            <div class="section-content">
+              <div class="center">
+                <table class="table context-parameters">
+                  <thead class="head set">
+                    <tr class="row">
+                      <th class="column">Short</th>
+                      <th class="column">Long</th>
+                      <th class="column">Description</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="body set">
+                    <tr class="row">
+                      <td class="column"><code class="code">-a</code></td>
+                      <td class="column"><code class="code">--at</code></td>
+                      <td class="column">Select variable at this numeric index.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-l</code></td>
+                      <td class="column"><code class="code">--line</code></td>
+                      <td class="column">Print only the variables at the given line within the file.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-n</code></td>
+                      <td class="column"><code class="code">--name</code></td>
+                      <td class="column">Select variables with this name.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-w</code></td>
+                      <td class="column"><code class="code">--whole</code></td>
+                      <td class="column">Print all of the data instead of just the IKI variable data.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-c</code></td>
+                      <td class="column"><code class="code">--content</code></td>
+                      <td class="column">Print the variable content (default).</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-L</code></td>
+                      <td class="column"><code class="code">--literal</code></td>
+                      <td class="column">Print the entire variable (aka: object, content, and syntax).</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-o</code></td>
+                      <td class="column"><code class="code">--object</code></td>
+                      <td class="column">Print the variable name (aka: object).</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-t</code></td>
+                      <td class="column"><code class="code">--total</code></td>
+                      <td class="column">Print the total number of variables.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-s</code></td>
+                      <td class="column"><code class="code">--substitute</code></td>
+                      <td class="column">Substitute the entire variable for the given name and content value with the given string.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                This <code>-s/--substitute</code> option, requires 3 additional parameters: <code>&lt;vocabulary&gt; &lt;replace&gt; &lt;with&gt;</code>.
+              </p>
+              <dl class="dl">
+                <div class="di">
+                  <dt class="dt">vocabulary</dt><dd class="dd">The name of the vocabulary whose content is to be substituted.</dd>
+                </div>
+                <div class="di">
+                  <dt class="dt">replace</dt><dd class="dd">The content matching this exact string will be substituted.</dd>
+                </div>
+                <div class="di">
+                  <dt class="dt">with</dt><dd class="dd">The new string to use as the substitute.</dd>
+                </div>
+              </dl>
+              <p>
+                The <em>vocabulary</em> and <em>replacement</em> are case-sensitive and must exactly match.
+              </p>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

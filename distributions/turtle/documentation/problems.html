@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Documentation - Turtle Kevux - Known Issues</title>
+
+    <base href="../../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Turtle Kevux Documentation describing known issues.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, Turtle, Documentation">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+    <link type="text/css" rel="stylesheet" media="all" href="distributions/turtle/documentation/css/documentation.css">
+
+    <link rel="canonical" href="documentation/turtle/problems.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+    <link type="text/html" rel="next" href="distributions.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js distributions">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item active"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="distributions/turtle/documentation.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">Documentation</div>
+            <div class="nav-text unlink">Turtle Kevux</div>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/running.html" class="nav-text link">Booting and Running</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/installing.html" class="nav-text link">Installing Turtle Kevux</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/configuring.html" class="nav-text link">System Configuration</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/servers.html" class="nav-text link">Server Configuration</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/additional.html" class="nav-text link">Additional Notes</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text unlink">Known Issues</div>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/credits.html" class="nav-text link">Credits</a>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="distributions/turtle/documentation/problems.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="distributions/turtle/documentation/problems.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header separate">
+            <h1 class="section-title h h1">Known Issues</h1>
+          </header>
+
+          <div class="main-content">
+            <div id="printingsupport">
+              <header class="section-header header">
+                <h2 class="h h2">Printing Support</h2>
+              </header>
+              <ul>
+                <li>No real printer support, current printer support is experimental.</li>
+                <li>The only available printing software on linux in general is quite lacking, not well written, and very unstable.</li>
+                <li>LPR is available for anyone willing to learn how to use it.</li>
+                <li>Anyone willing to help get printing to work and work properly within the requirements of Kevux, your assistance is welcome.</li>
+                <li>Good Luck with printing.</li>
+              </ul>
+            </div>
+
+            <hr>
+
+            <div id="stackprotection">
+              <header class="section-header header">
+                <h2 class="h h2">Stack Protection</h2>
+              </header>
+              <ul>
+                <li>There are a large number of programs that might crash with "stack smashing attack" as the message.</li>
+                <li>This system has stack protection enabled in a number of programs, when a program tries to do something to harm the system (intentionally or accidentally) then "stack smashing attack" is present and the program exits.</li>
+                <li>This may happen a lot because the quality of software out there is quite poor and insecure programming is quite rampant.</li>
+                <li>Better to have the program quit than to allow the program to damage parts of the system and potentially grant system access to an attacker.</li>
+              </ul>
+            </div>
+
+            <hr>
+
+            <div id="miscellaneousissues">
+              <header class="section-header header">
+                <h2 class="h h2">Miscellaneous Issues</h2>
+              </header>
+
+              <div class="bold notice">Manpage Support</div>
+              <ul>
+                <li>Manpages exist on the system, but there is no tool available to parse and read them on this system.</li>
+              </ul>
+
+              <div class="bold notice">Remote Desktop sftp Support</div>
+              <ul>
+                <li>The remote desktop client, called Remmina, is currently failing to decrypt valid passwords while connected to an SSH server.</li>
+              </ul>
+
+              <div class="bold notice">IPV6 Issues</div>
+              <ul>
+                <li>There is no dhcp support for ipv6 at this time, but support is planned.</li>
+              </ul>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

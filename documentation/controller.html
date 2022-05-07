@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Documentation - Controller</title>
+
+    <base href="../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Controller program documentation.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Make, Fake, Open-Source">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="documentation/controller.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js documentation">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item active"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="documentation.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">Documentation</div>
+            <div class="nav-text unlink">Controller</div>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller.html#about" class="nav-text link">About</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller.html#parameters-standard" class="nav-text link">Standard Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller.html#parameters-program" class="nav-text link">Program Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Specifications</div>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">APIs</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="documentation/controller.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="documentation/controller.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">Controller Documentation</h1>
+          </header>
+
+          <section id="about" class="section">
+            <header class="section-header header">
+              <h2 class="section-title h h2">About</h2>
+            </header>
+            <div class="section-content">
+              <p>
+                The <strong>controller</strong> program is a tool for controller other programs.
+              </p>
+              <p>
+                This tool is designed to configured to perform and execute any tasks given across multiple languages and it also has support for operating as an <strong>init</strong> program. There are special compile-time configurations needed to make this properly operate as an <strong>init</strong> program.
+              </p>
+              <p>
+                This tool operates similar to the <strong>fake</strong> program and can even be seen as an evolution to the <strong>fake</strong> program. The <strong>controller</strong> program, however is not a replacement to the <strong>fake</strong> program as it is more generalized.
+              </p>
+              <p>
+                This tool also provides additional features for making it easierr to test and write controller instructions. These features include partial simulation and validation modes.
+              </p>
+              <p>
+                In partial simulation mode, anything that the <strong>controller</strong> program has full control over and can simulate is simulated. Actual programs and scripts themselves, therefore, cannot be simulated. However, it may be possible to use an environment variables or similar and pass settings to the called program or script if the called program or script is simulation and testing aware.
+              </p>
+              <p>
+                The validation mode is for making this tool more scriptable. By providing validation, the controller instructions can be validated, in which case a success or failure result is returned and any problems or warnings may be printed to the caller of this tool.
+              </p>
+              <p>
+                This tool is not currently fully functional as an <strong>init</strong> program replacement because the networking aspects are not yet written or fully hashed out. The <strong>contol</strong> program is also another key part to the <strong>contoller</strong> program in getting this to work as an <strong>init</strong> program. Ideally, once this support is complete, it should be possible to replace init programs, such as <strong>SystemD</strong>, with the <strong>controller</strong> program.
+              </p>
+              <p>
+                Further development will be made on this once the <strong>controller</strong> program is updated. The next development series is planned to focus on networking, which will include support for this.
+              </p>
+            </div>
+          </section>
+
+          <section id="parameters-standard" class="section">
+            <header class="section-header header separate">
+              <h2 class="section-title h h2">Standard Parameters</h2>
+            </header>
+
+            <div class="section-content">
+              <div class="center">
+                <table class="table context-parameters">
+                  <thead class="head set">
+                    <tr class="row">
+                      <th class="column">Short</th>
+                      <th class="column">Long</th>
+                      <th class="column">Description</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="body set">
+                    <tr class="row">
+                      <td class="column"><code class="code">-h</code></td>
+                      <td class="column"><code class="code">--help</code></td>
+                      <td class="column">Print the help message.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+d</code></td>
+                      <td class="column"><code class="code">++dark</code></td>
+                      <td class="column">Output using colors that show up better on dark backgrounds.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+l</code></td>
+                      <td class="column"><code class="code">++light</code></td>
+                      <td class="column">Output using colors that show up better on light backgrounds.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+n</code></td>
+                      <td class="column"><code class="code">++no_color</code></td>
+                      <td class="column">Do not print using color.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+q</code></td>
+                      <td class="column"><code class="code">++quiet</code></td>
+                      <td class="column">Decrease verbosity, silencing most output.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+n</code></td>
+                      <td class="column"><code class="code">++normal</code></td>
+                      <td class="column">Set verbosity to normal.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+V</code></td>
+                      <td class="column"><code class="code">++verbose</code></td>
+                      <td class="column">Increase verbosity beyond normal output.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+D</code></td>
+                      <td class="column"><code class="code">++debug</code></td>
+                      <td class="column">Enable debugging, significantly increasing verbosity beyond normal output.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+v</code></td>
+                      <td class="column"><code class="code">++version</code></td>
+                      <td class="column">Print only the version number.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                The <code>+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code>+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code>+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
+              </p>
+              <p>
+                The <code>+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
+              </p>
+            </div>
+          </section>
+
+          <section id="parameters-program" class="section">
+            <header class="section-header header separate">
+              <h2 class="section-title h h2">Program Parameters</h2>
+            </header>
+
+            <div class="section-content">
+              <div class="center">
+                <table class="table context-parameters">
+                  <thead class="head set">
+                    <tr class="row">
+                      <th class="column">Short</th>
+                      <th class="column">Long</th>
+                      <th class="column">Description</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="body set">
+                    <tr class="row">
+                      <td class="column"><code class="code">-c</code></td>
+                      <td class="column"><code class="code">--cgroup</code></td>
+                      <td class="column">Specify a custom control group file path, such as '/sys/fs/cgroup/'.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-d</code></td>
+                      <td class="column"><code class="code">--daemon</code></td>
+                      <td class="column">Run in daemon only mode (do not process the entry).</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-I</code></td>
+                      <td class="column"><code class="code">--init</code></td>
+                      <td class="column">The program will run as an init replacement.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-i</code></td>
+                      <td class="column"><code class="code">--interruptible</code></td>
+                      <td class="column">Designate that this program can be interrupted by a signal.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-p</code></td>
+                      <td class="column"><code class="code">--pid</code></td>
+                      <td class="column">Specify a custom pid file path, such as 'controller/run/default.pid'.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-s</code></td>
+                      <td class="column"><code class="code">--settings</code></td>
+                      <td class="column">Specify a custom settings path, such as 'controller/'.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-S</code></td>
+                      <td class="column"><code class="code">--simulate</code></td>
+                      <td class="column">Run as a simulation.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-k</code></td>
+                      <td class="column"><code class="code">--socket</code></td>
+                      <td class="column">Specify a custom socket file path, such as 'controller/run/default.socket'.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-U</code></td>
+                      <td class="column"><code class="code">--uninterruptible</code></td>
+                      <td class="column">Designate that this program cannot be interrupted by a signal.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-v</code></td>
+                      <td class="column"><code class="code">--validate</code></td>
+                      <td class="column">Validate the settings (entry and rules) without running (does not simulate).</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                When both the <code>--simulate</code> parameter and the <code>--validate</code> parameter are specified, then additional information on each would be executed rule is printed but no simulation is performed.
+              </p>
+              <p>
+                The default interrupt behavior is to operate as if the <code>--interruptible</code> parameter is passed.
+              </p>
+              <p>
+                Specify an empty string for the <code>--pid</code> parameter to disable pid file creation for this program.
+              </p>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

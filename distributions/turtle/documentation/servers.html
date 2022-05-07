@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Documentation - Turtle Kevux - Server Configuration</title>
+
+    <base href="../../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Turtle Kevux Documentation for system servers.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, Turtle, Documentation">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+    <link type="text/css" rel="stylesheet" media="all" href="distributions/turtle/documentation/css/documentation.css">
+
+    <link rel="canonical" href="documentation/turtle/servers.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+    <link type="text/html" rel="next" href="distributions.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js distributions">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item active"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="distributions/turtle/documentation.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">Documentation</div>
+            <div class="nav-text unlink">Turtle Kevux</div>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/software.html" class="nav-text link">Software Listing</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/running.html" class="nav-text link">Booting and Running</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/installing.html" class="nav-text link">Installing Turtle Kevux</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/configuring.html" class="nav-text link">System Configuration</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text unlink">Server Configuration</div>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/additional.html" class="nav-text link">Additional Notes</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/problems.html" class="nav-text link">Known Issues</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/credits.html" class="nav-text link">Credits</a>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="distributions/turtle/documentation/servers.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="distributions/turtle/documentation/servers.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header separate">
+            <h1 class="section-title h h1">Server Configuration</h1>
+          </header>
+
+          <div class="main-content">
+            <div id="camsource">
+              <header class="section-header header">
+                <h2 class="h h2">Configuring Camsource Server</h2>
+              </header>
+              <a href="distributions/turtle/documentation/images/Configuring_Camsource_Server.png"><img src="distributions/turtle/documentation/images_small/Configuring_Camsource_Server.png" alt="Screenshot of configuring Camsource server." align="top" border="0"></a><br>
+              <p>
+                <span class="bold">Configuration Path:</span> /home/targets/webcam/settings/<br>
+                <br>
+                <span class="bold">The Files:</span>
+                <ol>
+                  <li>camsource.conf</li>
+                  <li>camsource.conf.v4l1</li>
+                  <li>camsource.conf.v4l2</li>
+                </ol>
+
+                <span class="bold">File 1:</span><br>
+                &nbsp;&nbsp;This is the file processed by the camsource server, changes to this file will effect the server on restart.<br>
+                <br>
+                <span class="bold">File 2:</span><br>
+                &nbsp;&nbsp;This is an example camsource.conf using a Video4Linux 1 Device.<br>
+                <br>
+                <span class="bold">File 3:</span><br>
+                &nbsp;&nbsp;This is an example camsource.conf using a Video4Linux 2 Device.<br>
+                <br>
+
+                <span class="bold">Notes:</span>
+                <ul>
+                  <li>The configuration file is an XML file, XML syntax rules do apply.</li>
+                  <li><code><span class="notice">&lt;path&gt;/dev/video0&lt;/path&gt;</span></code> specifies the Video Device to use</li>
+                  <li><code><span class="notice">&lt;input&gt;0&lt;/input&gt;</span></code> specifies the particular capture port on the card</li>
+                  <li><code><span class="notice">&lt;norm&gt;ntfs0&lt;/norm&gt;</span></code> specifies the media format the signal is transmitted as</li>
+                </ul>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="lighttpd">
+              <header class="section-header header">
+                <h2 class="h h2">Configuring Lighttpd Server</h2>
+              </header>
+              <a href="distributions/turtle/documentation/images/Configuring_Lighttpd_Server.png"><img src="distributions/turtle/documentation/images_small/Configuring_Lighttpd_Server.png" alt="Screenshot of configuring Lighttpd server." align="top" border="0"></a><br>
+              <p>
+                <span class="bold">Configuration Path:</span> /home/targets/web/settings/<br>
+                <br>
+                <span class="bold">The Files:</span>
+                <ol>
+                  <li>lighttpd.conf</li>
+                </ol>
+
+                <span class="bold">File 1:</span><br>
+                &nbsp;&nbsp;This is the configration file for the lighttpd server.<br>
+                <br>
+
+                <span class="bold">Notes:</span>
+                <ul>
+                  <li>The configuration file format is a bash-like syntax; bash comment rules apply.</li>
+                  <li><code><span class="notice">server.document-root</span></code> specifies the system path where the website root exists, default is /home/websites/</li>
+                  <li><code><span class="notice">server.port</span></code> specifies the port the server listens on, default is 80</li>
+                </ul>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="mpd">
+              <header class="section-header header">
+                <h2 class="h h2">Configuring MPD Server</h2>
+              </header>
+              <a href="distributions/turtle/documentation/images/Configuring_MPD_Server.png"><img src="distributions/turtle/documentation/images_small/Configuring_MPD_Server.png" alt="Screenshot of configuring MPD server." align="top" border="0"></a><br>
+              <p>
+                <span class="bold">Configuration Path:</span> /home/targets/music/settings/<br>
+                <br>
+                <span class="bold">The Files:</span>
+                <ol>
+                  <li>mpd.conf</li>
+                </ol>
+
+                <span class="bold">File 1:</span><br>
+                &nbsp;&nbsp;This is the configration file for the mpd server.<br>
+                <br>
+
+                <span class="bold">Notes:</span>
+                <ul>
+                  <li>The configuration file format is a bash-like syntax; bash comment rules apply.</li>
+                  <li><code><span class="notice">music_directory</span></code> specifies where the available music exists, default is /home/music/</li>
+                  <li><code><span class="notice">port</span></code> specifies where the port the server listens on, default is 6600</li>
+                </ul>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="maradns">
+              <header class="section-header header">
+                <h2 class="h h2">Configuring MaraDNS Server</h2>
+              </header>
+              <a href="distributions/turtle/documentation/images/Configuring_Maradns_Server.png"><img src="distributions/turtle/documentation/images_small/Configuring_Maradns_Server.png" alt="Screenshot of configuring MaraDNS server." align="top" border="0"></a><br>
+              <p>
+                <span class="bold">Configuration Path:</span> /home/targets/dns/settings/<br>
+                <br>
+                <span class="bold">The Files:</span>
+                <ol>
+                  <li>mararc</li>
+                  <li>example_authoritative_mararc.txt</li>
+                  <li>example_example_csv1</li>
+                  <li>example_example_csv1.txt</li>
+                  <li>example_example_csv2</li>
+                  <li>example_full_mararc</li>
+                  <li>example_mararc</li>
+                  <li>example_recursive_mararc.txt</li>
+                </ol>
+
+                <span class="bold">File 1:</span><br>
+                &nbsp;&nbsp;This is the configuration file for the mararc server<br>
+                <br>
+                <span class="bold">Files 2-8:</span><br>
+                &nbsp;&nbsp;These are different examples of how to configure mararc<br>
+                &nbsp;&nbsp;<i>* Files 3 & 4 appear to be identical and one will be removed in the future</i><br>
+                <br>
+
+                <span class="bold">Notes:</span>
+                <ul>
+                  <li>The configuration file format is a bash-like syntax; bash comment rules apply.</li>
+                </ul>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="ntp">
+              <header class="section-header header">
+                <h2 class="h h2">Configuring NTP Server</h2>
+              </header>
+              <a href="distributions/turtle/documentation/images/Configuring_NTP_Server-1.png"><img src="distributions/turtle/documentation/images_small/Configuring_NTP_Server-1.png" alt="Screenshot of configuring NTP server." align="top" border="0"></a><br>
+              <p>
+                <span class="bold">Configuration Path:</span> /home/targets/time/settings/<br>
+                <br>
+                <span class="bold">The Files:</span>
+                <ol>
+                  <li>ntp.conf</li>
+                </ol>
+
+                <span class="bold">File 1:</span><br>
+                &nbsp;&nbsp;This is the configuration file for the ntp server<br>
+                <br>
+
+                <span class="bold">Notes:</span>
+                <ul>
+                  <li>The configuration file format is a bash-like syntax; bash comment rules apply.</li>
+                  <li>This is easy to configure, just uncomment the servers you want to pull from and comment out all others</li>
+                </ul>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="postgres">
+              <header class="section-header header">
+                <h2 class="h h2">Configuring Postgres Server</h2>
+              </header>
+              <p>
+                <span class="bold">Configuration Path:</span> /home/targets/database/settings/<br>
+                <br>
+                <span class="bold">The Files:</span>
+                <ol>
+                  <li>postgresql.conf</li>
+                  <li>pg_hba.conf</li>
+                  <li>pg_ident.conf</li>
+                </ol>
+
+                <span class="bold">File 1:</span><br>
+                &nbsp;&nbsp;This is the configuration file for the particular postgres database<br>
+                <br>
+                <span class="bold">File 2:</span><br>
+                &nbsp;&nbsp;This file manages what computers or ip blocks can access the postgres server at all<br>
+                &nbsp;&nbsp;Make sure to read the documentation present in this file<br>
+                <br>
+                <span class="bold">File 3:</span><br>
+                &nbsp;&nbsp;This file maps user names to postgresql database user names<br>
+                &nbsp;&nbsp;This is useful if the current username connects to the database under a different name<br>
+                &nbsp;&nbsp;Make sure to read the documentation present in this file<br>
+                <br>
+
+                <span class="bold">Initial Setup:</span><br>
+                &nbsp;&nbsp;Create the database:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<code><span class="notice">su - t_database -c '/bin/initdb -D /home/targets/database/data -E UTF8 --locale=en_US.UTF-8'</span></code><br>
+                <br>
+
+                <span class="bold">Notes:</span>
+                <ul>
+                  <li>The configuration file format is a bash-like syntax; bash comment rules apply.</li>
+                  <li>The configuration files are specific to each database, such that if you were to change the <i>Create the database</i> path from /home/targets/database/data to /home/targets/database/somewhere then you would need to edit the configuration files at /home/targets/database/somewhere/.
+                </ul>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="rsync">
+              <header class="section-header header">
+                <h2 class="h h2">Configuring RSync Server</h2>
+              </header>
+              <a href="distributions/turtle/documentation/images/Configuring_Rsync_Server.png"><img src="distributions/turtle/documentation/images_small/Configuring_Rsync_Server.png" alt="Screenshot of configuring RSync server." align="top" border="0"></a><br>
+              <p>
+                <span class="bold">Configuration Path:</span> /home/targets/rsync/settings/<br>
+                <br>
+                <span class="bold">The Files:</span>
+                <ol>
+                  <li>rsyncd.conf</li>
+                </ol>
+
+                <span class="bold">File 1:</span><br>
+                &nbsp;&nbsp;This is the configuration file for the rsync server<br>
+                <br>
+
+                <span class="bold">Notes:</span>
+                <ul>
+                  <li>The configuration file <span class="bold">Initial Setup:</span><br>
+                &nbsp;&nbsp;Create the database:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<code><span class="notice">su - postgresd -c '/bin/initdb -D /home/targets/postgresd/database'</span></code><br>
+                <br>format is a bash-like syntax; bash comment rules apply.</li>
+                </ul>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="ssh">
+              <header class="section-header header">
+                <h2 class="h h2">Configuring SSH Server</h2>
+              </header>
+              <a href="distributions/turtle/documentation/images/Configuring_SSH_Server-1.png"><img src="distributions/turtle/documentation/images_small/Configuring_SSH_Server-1.png" alt="Screenshot of configuring SSH server." align="top" border="0"></a><br>
+              <p>
+                <span class="bold">Configuration Path:</span> /home/targets/ssh/settings/<br>
+                <br>
+                <span class="bold">The Files:</span>
+                <ol>
+                  <li>sshd_config</li>
+                  <li>banner</li>
+                  <li>moduli</li>
+                  <li>ssh_prng_cmds</li>
+                  <li>ssh_host_dsa_key</li>
+                  <li>ssh_host_dsa_key.pub</li>
+                  <li>ssh_host_ecdsa_key</li>
+                  <li>ssh_host_ecdsa_key.pub</li>
+                  <li>ssh_host_key</li>
+                  <li>ssh_host_key.pub</li>
+                  <li>ssh_host_rsa_key</li>
+                  <li>ssh_host_rsa_key.pub</li>
+                </ol>
+
+                <span class="bold">File 1:</span><br>
+                &nbsp;&nbsp;This is the ssh server configuration file<br>
+                <br>
+
+                <span class="bold">File 2:</span><br>
+                &nbsp;&nbsp;This will display information to a client making a connection attempt to the server<br>
+                &nbsp;&nbsp;This can expose information to an attacker that might be useful and therefore is disabled by default<br>
+                <br>
+
+                <span class="bold">Files 3 & 4:</span><br>
+                &nbsp;&nbsp;These files are not required and may not even be used anymore; you can safely ignore these.<br>
+                <br>
+
+                <span class="bold">Files 5 to 12:</span><br>
+                &nbsp;&nbsp;These files are auto-generated by the initng start script.<br>
+                &nbsp;&nbsp;You can create these manually by calling the <code><span class="notice">setup_ssh_host_keys</span></code> script.<br>
+                <br>
+
+                <span class="bold">Notes:</span>
+                <ul>
+                  <li>The configuration file format is a bash-like syntax; bash comment rules apply.</li>
+                  <li>The setup_ssh_host_keys command will create more files in the /home/targets/ssh/settings/ directory. These files begin with ssh_host_.</li>
+                  <li><code><span class="notice">Port</span></code> specifies where the port the server listens on, default is 22</li>
+                  <li><code><span class="notice">Banner</span></code> specify a file to enable, comment out to disable</li>
+                </ul>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="subversion">
+              <header class="section-header header">
+                <h2 class="h h2">Configuring Subversion Server</h2>
+              </header>
+              <a href="distributions/turtle/documentation/images/Configuring_Subversion_Server-1.png"><img src="distributions/turtle/documentation/images_small/Configuring_Subversion_Server-1.png" alt="Screenshot of configuring Subversion server step 1." align="top" border="0"></a><br>
+              <p>
+                <span class="bold">Configuration Path:</span> /home/targets/subversion/settings/<br>
+                <br>
+                <span class="bold">The Files:</span>
+                <ol>
+                  <li>servers</li>
+                </ol>
+
+                <span class="bold">File 1:</span><br>
+                &nbsp;&nbsp;This is the subversion server configuration file<br>
+                <br>
+
+                <span class="bold">Notes:</span>
+                <ul>
+                  <li>The configuration file format is a bash-like syntax; bash comment rules apply.</li>
+                  <li><span class="bold important"><i>NOTE: The subversion database should already be created at <span class="notice">/home/targets/subversion/data/</span></i></span></li>
+                  <li><span class="bold important"><i>If the server already exists, then you will need to remove the existing one as shown in the example picture (<span class="notice">rm -Rf /home/targets/subversion/data</span>)</i></span></li>
+                  <li><span class="bold error"><i>WARNING: The subversion server uses plaintext passwords in the configuration file</i></span></li>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

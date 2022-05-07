@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Documentation - Featureless Make</title>
+
+    <base href="../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Featureless Make program documentation.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Make, Fake, Open-Source">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="documentation/fake.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js documentation">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item active"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="documentation.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">Documentation</div>
+            <div class="nav-text unlink">Featureless Make</div>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fake.html#about" class="nav-text link">About</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fake.html#parameters-standard" class="nav-text link">Standard Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fake.html#parameters-program" class="nav-text link">Program Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fake.html#operations" class="nav-text link">Operations</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Specifications</div>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">APIs</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="documentation/fake.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="documentation/fake.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">Featureless Make Documentation</h1>
+          </header>
+
+          <section id="about" class="section">
+            <header class="section-header header">
+              <h2 class="section-title h h2">About</h2>
+            </header>
+            <div class="section-content">
+              <p>
+                The <strong>fake</strong> program, also called <strong>Featureless Make</strong> is the flagship program of the <abbr title="Featureless Linux Library">FLL</abbr> project and provides the ability to compile source code and perform various actions not unlike how the <strong>GNU Make</strong> program operates.
+              </p>
+              <p>
+                This tools is directly intended to be a replacement to the <strong>GNU Make</strong> program but not as a replacement for all of the <strong>GNU Make</strong> functionality. Instead, the <strong>fake</strong> program follows the ideoligy that a build program should not involve itself with system-specific behavior, such as installing to a system.
+              </p>
+              <p>
+                Despite this non-standard ideology, the <strong>fake</strong> program is flexible enough to be used as an installer. In fact, this tool is used to not only build the entire <abbr title="Featureless Linux Library">FLL</abbr> but it can also compile and run unit tests for the project.
+              </p>
+              <p>
+                A bootstrap script is provided in all <abbr title="Featureless Linux Library">FLL</abbr> projects that operates with almost complete one-to-one functionality to this tool to allow for the system to build itself. A great example of this is the test script used to run unit tests on services like Github where this project must compile itself and then use itself to run unit tests against itself.
+              </p>
+              <p>
+                While most of the programs provided with the <abbr title="Featureless Linux Library">FLL</abbr> are young and not well tested, the <strong>fake</strong> program is considered mature.
+              </p>
+              <p>
+                There are two primary operations in which this tool executes:
+              </p>
+              <ol>
+                <li>The <strong>build</strong> operation.</li>
+                <li>The <strong>make</strong> operation.</li>
+              </ol>
+              <p>
+                The <strong>build</strong> mode is derived from the idea that most of the compilation process is redundant and can be simplified to a pre-define set of configuration settings. This reduces the amount of efforted needed to write and mainting a build system at the cost of flexibility.
+              </p>
+              <p>
+                The <strong>make</strong> mode is the mode for operating as a replacement to the <strong>GNU Make</strong> program. This provides scriptable ways to perform just about any task needed when building a system. Many of the <strong>build</strong> mode settings are available (but are not required) and this mode can even call the <strong>build</strong> mode itself.
+              </p>
+            </div>
+          </section>
+
+          <section id="parameters-standard" class="section">
+            <header class="section-header header separate">
+              <h2 class="section-title h h2">Standard Parameters</h2>
+            </header>
+
+            <div class="section-content">
+              <div class="center">
+                <table class="table context-parameters">
+                  <thead class="head set">
+                    <tr class="row">
+                      <th class="column">Short</th>
+                      <th class="column">Long</th>
+                      <th class="column">Description</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="body set">
+                    <tr class="row">
+                      <td class="column"><code class="code">-h</code></td>
+                      <td class="column"><code class="code">--help</code></td>
+                      <td class="column">Print the help message.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+d</code></td>
+                      <td class="column"><code class="code">++dark</code></td>
+                      <td class="column">Output using colors that show up better on dark backgrounds.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+l</code></td>
+                      <td class="column"><code class="code">++light</code></td>
+                      <td class="column">Output using colors that show up better on light backgrounds.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+n</code></td>
+                      <td class="column"><code class="code">++no_color</code></td>
+                      <td class="column">Do not print using color.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+q</code></td>
+                      <td class="column"><code class="code">++quiet</code></td>
+                      <td class="column">Decrease verbosity, silencing most output.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+n</code></td>
+                      <td class="column"><code class="code">++normal</code></td>
+                      <td class="column">Set verbosity to normal.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+V</code></td>
+                      <td class="column"><code class="code">++verbose</code></td>
+                      <td class="column">Increase verbosity beyond normal output.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+D</code></td>
+                      <td class="column"><code class="code">++debug</code></td>
+                      <td class="column">Enable debugging, significantly increasing verbosity beyond normal output.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+v</code></td>
+                      <td class="column"><code class="code">++version</code></td>
+                      <td class="column">Print only the version number.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                The <code>+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code>+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code>+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
+              </p>
+              <p>
+                The <code>+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
+              </p>
+            </div>
+          </section>
+
+          <section id="parameters-program" class="section">
+            <header class="section-header header separate">
+              <h2 class="section-title h h2">Program Parameters</h2>
+            </header>
+
+            <div class="section-content">
+              <div class="center">
+                <table class="table context-parameters">
+                  <thead class="head set">
+                    <tr class="row">
+                      <th class="column">Short</th>
+                      <th class="column">Long</th>
+                      <th class="column">Description</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="body set">
+                    <tr class="row">
+                      <td class="column"><code class="code">-d</code></td>
+                      <td class="column"><code class="code">--define</code></td>
+                      <td class="column">Append an additional define after defines from settings file.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-f</code></td>
+                      <td class="column"><code class="code">--fakefile</code></td>
+                      <td class="column">Use this fakefile.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-m</code></td>
+                      <td class="column"><code class="code">--mode</code></td>
+                      <td class="column">Use this mode when processing the build settings.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-p</code></td>
+                      <td class="column"><code class="code">--process</code></td>
+                      <td class="column">Process name for storing build states.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-s</code></td>
+                      <td class="column"><code class="code">--settings</code></td>
+                      <td class="column">Use this settings file.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-b</code></td>
+                      <td class="column"><code class="code">--build</code></td>
+                      <td class="column">Specify a custom build directory.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-D</code></td>
+                      <td class="column"><code class="code">--data</code></td>
+                      <td class="column">Specify a custom path to the data files.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-S</code></td>
+                      <td class="column"><code class="code">--sources</code></td>
+                      <td class="column">Specify a custom path to the source files.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-w</code></td>
+                      <td class="column"><code class="code">--work</code></td>
+                      <td class="column">Use includes/libraries/programs from this directory instead of system.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                When using the <code>-d/--define</code> parameter the define structure must be passed as-is and may even need to be quoted if there is whitespace.
+              </p>
+              <p>
+                For example, in the <strong>C</strong> programming, passing a macro to the compiler might look like '<code>-DMY_MACRO=1</code>'. To do this using <code>-d/--define</code>, there would be two parameters passed like this: '<code>-d -DMY_MACRO=1</code>'. This works because the parameter after the <code>-d/--define</code> is not interpreted and is treated exactly as is without interpreting it as a parameter to the <strong>fake</strong> program.
+              </p>
+              <p>
+                Because of this, passing '<code>-d -h</code>' would not print the program help because the '<code>-h</code>' is considered a value associated with the '<code>-d</code>' parameter rather than a parameter itself.
+              </p>
+            </div>
+          </section>
+
+          <section id="operations" class="section">
+            <header class="section-header header separate">
+              <h2 class="section-title h h2">Operations</h2>
+            </header>
+
+            <div class="section-content">
+              <div class="center">
+                <table class="table context-parameters">
+                  <thead class="head set">
+                    <tr class="row">
+                      <th class="column">Operation</th>
+                      <th class="column">Description</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="body set">
+                    <tr class="row">
+                      <td class="column"><code class="code">build</code></td>
+                      <td class="column">Build or compile the code based on build settings file.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">clean</code></td>
+                      <td class="column">Delete all build files.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">make</code></td>
+                      <td class="column">Build or compile the code based on fakefile.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">skeleton</code></td>
+                      <td class="column">Build a skeleton directory structure.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                When performing the build operation, the <code>--mode</code> parameter specifies a name (limited to alpha-numeric, underscore, and dash) to be used in addition to the global.
+              </p>
+              <p>
+                For example, when a mode of '<code>fll_monolithic</code>' is specified, build libraries from both '<code>build_libraries</code>' and '<code>build_libraries-fll_monolithic</code>' are used (but not '<code>build_libraries-fll_level</code>').
+              </p>
+              <p>
+                When specifying the <code>fakefile</code> or the settings parameters, the filenames are relative to the data build directory, unless a path is used.
+              </p>
+              <p>
+                For example, with '<code>--fakefile my_fakefile</code>' the fakefile at '<code>./data/build/my_fakefile</code>' would be used, however with '<code>--fakefile ./my_fakefile</code>' the fakefile at '<code>./my_fakefile</code>' would be used.
+              </p>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

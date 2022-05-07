@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Documentation - Turtle Kevux - System Configuration</title>
+
+    <base href="../../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Turtle Kevux Documentation for system configuration.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, Turtle, Documentation">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+    <link type="text/css" rel="stylesheet" media="all" href="distributions/turtle/documentation/css/documentation.css">
+
+    <link rel="canonical" href="documentation/turtle/configuring.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+    <link type="text/html" rel="next" href="distributions.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js distributions">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item active"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="distributions/turtle/documentation.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">Documentation</div>
+            <div class="nav-text unlink">Turtle Kevux</div>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/software.html" class="nav-text link">Software Listing</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/running.html" class="nav-text link">Booting and Running</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/installing.html" class="nav-text link">Installing Turtle Kevux</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text unlink">System Configuration</div>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/servers.html" class="nav-text link">Server Configuration</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/additional.html" class="nav-text link">Additional Notes</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/problems.html" class="nav-text link">Known Issues</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/credits.html" class="nav-text link">Credits</a>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="distributions/turtle/documentation/configuring.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="distributions/turtle/documentation/configuring.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header separate">
+            <h1 class="section-title h h1">System Configuration</h1>
+          </header>
+
+          <div class="main-content">
+            <div id="firsttimerunningconfiguration">
+              <header class="section-header header">
+                <h2 class="h h2">First Time Running Configuration</h2>
+              </header>
+              <p>
+                The very first time the system is run, there are some important things to do.<br>
+                Most important of all is changing the root password and adding users.<br>
+                If you do not change your root password immediately, your system is vulnerable to hacks.<br>
+                If you do not add users, then your users will not be able to use your system unless they run as the root user.<br>
+                <span class="bold error">WARNING: Running as the root user is dangerous, do so at your own lethal risk.</span><br>
+                <br>
+                <span class="bold">Changing the root user password is simple:</span><br>
+                &nbsp;&nbsp;- Login to your root user (by default this is <span class="notice">turtle</span>).<br>
+                &nbsp;&nbsp;- In a command-line prompt (or a terminal), run the command <span class="notice">passwd</span>.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span class="bold important">- NOTE: the command <span class="notice">passwd</span> must not contain the "or", passwd is exactly as the command should be spelled.</span><br>
+                &nbsp;&nbsp;- Follow the instructions and your done.<br>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="settingupusernamesandpasswords">
+              <header class="section-header header">
+                <h2 class="h h2">Setting Up Usernames and Passwords</h2>
+              </header>
+              <p>
+                To add a user to the system, use the command line program called <span class="notice">adduser</span>, which requires root user access.<br>
+                <span class="bold important">NOTE: In previous versions the gadduser program was supplied as a graphical user interface to adding users, but this has been removed for the time being.</span>
+              </p>
+              <a href="distributions/turtle/documentation/images/Adding_Users-1.png"><img src="distributions/turtle/documentation/images_small/Adding_Users-1.png" alt="Screenshot of adding users step 1." align="top" border="0"></a><br>
+              <p>
+                To add a user, open up a terminal and switch to root access.<br>
+                Simply specify the username followed by the permissions group they should belong to.<br>
+                There are 3 major permissions groups: admin, power, and desktop.<br>
+                The admin user has the most priviledges on the system and can gain root access, there is little this user cannot do.<br>
+                The power user is a slightly weakened version of admin and the power user cannot gain root access.<br>
+                The desktop user has the standard permissions needed for standard desktop usage and has no heightened priviledges beyond that.<br>
+              </p>
+              <a href="distributions/turtle/documentation/images/Adding_Users-2.png"><img src="distributions/turtle/documentation/images_small/Adding_Users-2.png" alt="Screenshot of adding users step 2." align="top" border="0"></a><br>
+              <p>
+                After you begin the add user process you will be prompted for a password.<br>
+                Following this, if everything went well the user will have been added to the system.<br>
+                If you ever need to remove a user, the <span class="notice">deluser</span> program can be used and functions in an almost identical fassion.<br>
+                <br>
+                <span class="bold important">
+                  NOTE: By default the deluser program will remove all files own by the deleted user, to prevent this from happing use the unsetup script called none.<br>
+                  For example, normally to delete the user BOB the command would be 'deluser BOB'.<br>
+                  To delete BOB without removing BOB's files, the command would be: 'deluser BOB none'.<br>
+                </span>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="settingupthenetwork">
+              <header class="section-header header">
+                <h2 class="h h2">Setting Up the Network</h2>
+              </header>
+              <a href="distributions/turtle/documentation/images/Network.png"><img src="distributions/turtle/documentation/images_small/Network.png" alt="Screenshot of setting up network." align="top" border="0"></a><br>
+              <p>
+                <span class="bold">Configuration Path:</span> /etc/network/<br>
+                <br>
+                <span class="bold">The Files:</span>
+                <ol>
+                  <li>default-blacklist</li>
+                  <li>default-firewall</li>
+                  <li>default-device</li>
+                  <li>example-device</li>
+                  <li>example-device-firewall</li>
+                  <li>example-device-wpa</li>
+                  <li>example-wireless</li>
+                  <li>example-bridge</li>
+                  <li>hostname</li>
+                  <li>hosts</li>
+                  <li>proc_settings</li>
+                  <li>resolution</li>
+                  <li>protocols</li>
+                  <li>services</li>
+                  <li>gre0, tunl0</li>
+                </ol>
+                <br>
+                <ul>
+                  <li><span class="notice bold">File 1, default-blacklist:</span><br>
+                    This is a list of all ip-addresses that the firewall deny access to this machine.<br>
+                    A single white space (space, tab, or new line) is all that is needed to setup the addresses.<br>
+                    A default whitelist can be created and used as well.<br>
+                    <br>
+                  </li>
+                  <li><span class="notice bold">File 2, default-firewall:</span><br>
+                    Defines all of the firewall rules.<br>
+                    The firewall syntax is broken up into terms: direction, device, action, rule, ip_list.<br>
+                    All of the terms reflect iptables syntax.<br>
+                    Terms must all be lowercase.<br>
+                    When one of the terms direction, device, and action are set, their data is applied to all rules below that line until another term of the same type is set.<br>
+                    What this means is that if a direction of "input" is specified, every rule (or ip_list) following that direction command will apply the direction of "input" until the next direction command is specified.<br>
+                    This file is broken up into two different sections: first and last.<br>
+                    For each ethernet device on the system there may exist a single firewall rule for that device, such as: net0123456789ab-firewall.<br>
+                    The firewall wall rules are applied in this order: default-firewall's section called first, then all ethernet device firewall sections called main, and finally default-firewall's section called last<br>
+                    <br>
+                    <span class="bold">Terminology breakdown:</span><br>
+                    <br>
+                    <span class="notice">direction</span>:
+                    <ul>
+                      <li>Valid directions are: input, output, forward, postrouting, prerouting</li>
+                      <li>Direction specifies the direction in which the connection is coming from</li>
+                      <li>The direction stays in effect until another direction is specified</li>
+                    </ul>
+                    <br>
+                    <span class="notice">device</span>:
+                    <ul>
+                      <li>Valid devices are: all, this, and the name of any device</li>
+                      <li>all is generally used within the default-firewall and applies to all network devices on the system</li>
+                      <li>this can only be used in a device-specific firewall file and refers to the name of the device that the specified file belongs to (for the file net0123456789ab-firewall, 'this' would refer to the device called net0123456789ab)</li>
+                      <li>instead of 'all' or 'this', one can explicitly use the name of a device</li>
+                      <li>The device stays in effect until another device is specified</li>
+                    </ul>
+                    <br>
+                    <span class="notice">action</span>:
+                    <ul>
+                      <li>Valid actions are: append, insert, and policy</li>
+                      <li>Action specifies how a particular rule gets added to the firewall, see the iptables documentation on the details.</li>
+                      <li>The action stays in effect until another action is specified</li>
+                    </ul>
+                    <br>
+                    <span class="notice">rule</span>:
+                    <ul>
+                      <li>Rules are the raw iptable commands, minus the direction, device, and action</li>
+                      <li>The rule is applied immediately and does not carry over to any line beyond its own.</li>
+                    </ul>
+                    <br>
+                    <span class="notice">ip_list</span>:
+                    <ul>
+                      <li>IP Lists are the rules applied to multiple ip addresses</li>
+                      <li>The ip_list is applied immediately and does not carry over to any line beyond its own.</li>
+                    </ul>
+                    <br>
+                    <span class="bold">Example comparison between raw iptables command and the default-firewall syntax:</span><br>
+                    <span class="notice">Raw Iptables Syntax</span>:<br>
+                    <code>
+                      /sbin/iptables -A INPUT -i eth0 -p tcp --dport 47288 -j ACCEPT<br>
+                      /sbin/iptables -A INPUT -i eth0 -p udp --sport 47288:47544 -j ACCEPT<br>
+                      /sbin/iptables -A INPUT -i eth0 -p udp --dport 47288:47544 -j ACCEPT<br>
+                      /sbin/iptables -A OUTPUT -o eth0 -p udp --sport 123 --dport 123 -j ACCEPT<br>
+                    </code><br>
+                    <span class="notice">default-firewall Syntax</span>:<br>
+                    <code>
+                      direction input<br>
+                      device eth0<br>
+                      action append<br>
+                      <br>
+                      rule -p tcp --dport 47288 -j ACCEPT<br>
+                      rule -p udp --sport 47288:47544 -j ACCEPT<br>
+                      rule -p udp --dport 47288:47544 -j ACCEPT<br>
+                      <br>
+                      direction output<br>
+                      rule -p udp --sport 123 --dport 123 -j ACCEPT<br>
+                    </code>
+                    <br>
+                  </li>
+                  <li><span class="notice bold">File 3, default-device:</span><br>
+                    This supplies some default options for all devices.<br>
+                    The term 'default' can be used to specify whether or not to attempt to obtain a dynamic address (DHCP) on all standard network devices if settings file for that device does not exist.<br>
+                    The terms 'search', 'nameserver_1', 'nameserver_2', and 'nameserver_3' are used to enforce a search domain or nameserver.<br>
+                    The enforced search domain and nameservers will override any device specific search domain or nameserver.<br>
+                    <br>
+                  </li>
+                  <li><span class="notice bold">File 4, example-device:</span><br>
+                    This file is provided as an example on how to configure a particular network device.<br>
+                    The actual device filename should be the name of the device.<br>
+                    The core terms: type, signal, and master.<br>
+                    The term 'type' has the following options: ignore, disable, static, and dynamic.<br>
+                    The term type 'ignore' means that the networking tools will not touch that network device so that a user can manually configure without having the network tools change anything.<br>
+                    The term type 'disable' means that under all circumstance that device should be disabled, if at any time the device is noticed as up it will be brought down.<br>
+                    The term type 'static' means that the connection is a static connection (manually defined).<br>
+                    The term type 'dynamic' means that the connection is a dynamic connection (DHCP/auto defined).<br>
+                    The term 'signal' specifies whether or not the signal is 'wired' or 'wireless'.<br>
+                    The term 'master' specifies whether or not this device is the master route, 'yes' or 'no'. If 'yes', then the terms 'search', 'nameserver_1', 'nameserver_2', and 'nameserver_3' will be processed and this device will be setup as the default route.<br>
+                    The common terms are: bond tunnel mac search nameserver_1 nameserver_2 nameserver_3 firewall.<br>
+                    The term 'bond' implies that this device should be bonded between multiple network devices.<br>
+                    To syntax is: bond network_device_1 network_device_2<br>
+                    Where the network_device_1 and network_device_2 are the names of the network devices to bond togethor.<br>
+                    The term 'tunnel' is a works in progress, this could be removed in the future.<br>
+                    The term 'mac' represents the devices mac address and provides the means to change the mac address to something different.<br>
+                    In particular, you can specify random instead of a valid mac address to have the mac address be randomly generated every time the device gets enabled.<br>
+                    For the terms 'search', 'nameserver_1', 'nameserver_2', 'nameserver_3', see the term 'master' above.<br>
+                    The term 'firewall' can be either 'on' or 'off' and represents whether or not the device-specific firewall rules will be processed when the device gets enabled.<br>
+                    The device-specific firewall rules are those specified in the file nameofdevice-firewall.<br>
+                    The static terms are: ip, network, prefix, broadcast, metric, gateway, gtype, gmetric, and family.<br>
+                    The gtype and gmetric represent the gateway type and gateway metric.<br>
+                    The wireless terms are: essid, mode, channel, rate, enc, power, nick, nwid, ap, txpower, sens, retry, rts, frag, modulation, and wpa<br>
+                    The term 'wpa' can be either 'yes' or 'no' and specifies whether or not the target wireless connection is using wpa.<br>
+                    File 7 contains a small example on the using wireless.<br>
+                    File 8 contains a small example on the using bridges.<br>
+                    <br>
+                  </li>
+                  <li><span class="notice bold">File 5, example-device-firewall:</span><br>
+                    This is an example device-specific firewall rules file, see File 2 above for details.<br>
+                    <br>
+                  </li>
+                  <li><span class="notice bold">File 6, example-device-wpa:</span><br>
+                    This is the wpa settings for a specific device, see the wpa_supplicant documentation on the web for how to configure this file (search for wpa_supplicant.conf).<br>
+                    <br>
+                  </li>
+                  <li><span class="notice bold">File 7, example-wireless:</span><br>
+                    This is an example wireless device, see File 4 above for details.<br>
+                    <br>
+                  </li>
+                  <li><span class="notice bold">File 8, example-bridge:</span><br>
+                    This is an example bridged device, see File 4 above for details.<br>
+                    <br>
+                  </li>
+                  <li><span class="notice bold">File 9, hostname:</span><br>
+                    This file contains only the hostname, no extra syntax.<br>
+                    This file is the new location and name of the /etc/hostname file<br>
+                    <br>
+                  </li>
+                  <li><span class="notice bold">File 10, hosts:</span><br>
+                    This file is the new location and name of the /etc/hosts file<br>
+                    <br>
+                  </li>
+                  <li><span class="notice bold">File 11, proc_settings:</span><br>
+                    This file represents proc-specific network settings and get applied at system start.<br>
+                    To reprocess this file, run the command <span class="notice">ngc -r net/network_proc</span>.<br>
+                    <br>
+                  </li>
+                  <li><span class="notice bold">File 12, resolution:</span><br>
+                    This file is the new location and name of the /etc/resolv.conf file<br>
+                    This file should probably not be edited directly, instead edit either the default-device or the appropriate network file and set the search, nameserver_1, nameserver_2, and nameserver_3 appropriately.<br>
+                    <br>
+                  </li>
+                  <li><span class="notice bold">File 13, protocols:</span><br>
+                    This file is the new location and name of the /etc/protocols file<br>
+                    <br>
+                  </li>
+                  <li><span class="notice bold">File 14, services:</span><br>
+                    This file is the new location and name of the /etc/services file<br>
+                    <br>
+                  </li>
+                  <li><span class="notice bold">File 15, gre0, tunl0:</span><br>
+                    The gre0 and tunl0 are disabled by default and these files are doing the disabling.<br>
+                    <br>
+                  </li>
+                  <li><span class="notice bold">Controlling the Network:</span><br>
+                    To control the firewall you will need to use the console command: <span class="notice">firewall</span>.<br>
+                    To control network devices you will need to use the console command: <span class="notice">network</span>.<br>
+                    <br>
+                  </li>
+                </ul>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="settingupthexorgdisplay">
+              <header class="section-header header">
+                <h2 class="h h2">Setting Up the Xorg Display</h2>
+              </header>
+              <a href="distributions/turtle/documentation/images/Configuring_Xorg_Display-1.png"><img src="distributions/turtle/documentation/images_small/Configuring_Xorg_Display-1.png" alt="Screenshot of configuring Xorg Display step 1." align="top" border="0"></a><br>
+              <p>
+                <span class="bold">Configuration Path:</span> /etc/X11/<br>
+                <br>
+                The file to be configured is: <span class="notice">/etc/X11/xorg.conf</span><br>
+                The file <span class="notice">/etc/X11/xorg.conf</span> has examples and slight documentaton on how to configure the xorg display.<br>
+                You can also visit <a href="http://www.x.org/">http://www.x.org/</a> for details.<br>
+                Alternatively visit <a href="http://die.net/">http://die.net/</a> and search for xorg.conf.<br>
+                <br>
+              </p>
+              <a href="distributions/turtle/documentation/images/Configuring_Xorg_Display-2.png"><img src="distributions/turtle/documentation/images_small/Configuring_Xorg_Display-2.png" alt="Screenshot of  configuring Xorg Display step 2." align="top" border="0"></a><br>
+              <p>
+                If you need to use a different video driver, edit the <span class="notice">/etc/X11/xorg.conf</span> file.<br>
+                Scroll to the bottom and uncomment and set the Driver to whatever you need it to be.<br>
+                <br>
+                If you are on an OLPC, you could copy the pre-created olpc xorg configuration file:<br>
+                <code><span class="notice">
+                &nbsp;&nbsp;&nbsp;cd /etc/X11/<br>
+                &nbsp;&nbsp;&nbsp;cp -v xorg.conf.olpc xorg.conf<br>
+                </span></code>
+                <br>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="updatingtheclamavdatabase">
+              <header class="section-header header">
+                <h2 class="h h2">Updating the ClamAV Database</h2>
+              </header>
+              <a href="distributions/turtle/documentation/images/Updating_Clamav_Database.png"><img src="distributions/turtle/documentation/images_small/Updating_Clamav_Database.png" alt="Screenshot of updating ClamAV." align="top" border="0"></a><br>
+              <p>
+                <span class="bold">Configuration Path:</span> /home/services/clamav/database/<br>
+                <br>
+                 You will need to open a terminal and switch to the <span class="notice">clamav</span> user.<br>
+                 Now execute the <span class="notice">freshclam</span> program.<br>
+                 <span class="bold important">NOTE: This requires network access, so this will fail if you have no working network active.</span><br>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="tweakingthebootprocess">
+              <header class="section-header header">
+                <h2 class="h h2">Tweaking the Boot Process</h2>
+              </header>
+              <a href="distributions/turtle/documentation/images/Tweaking_Boot_Process.png"><img src="distributions/turtle/documentation/images_small/Tweaking_Boot_Process.png" alt="Screenshot of tweaking boot process." align="top" border="0"></a><br>
+              <p>
+                <span class="bold">Configuration Path:</span> /etc/initng/<br>
+                <br>
+                The file to be configured is: <span class="notice">/etc/initng/runlevel/default.runlevel</span><br>
+                The <span class="notice">default.runlevel</span> file specifies how the system boots, but not the order.<br>
+                The order is handled by the individual dependencies.<br>
+                <br>
+                Most of the available boot-time software have rules already created such that all you need to do is add them to the default runlevel.<br>
+                To add/remove anything to the boot process, the syntax of the file requires the directory and then the filename (without the extension) on a line by itself.<br>
+                <br>
+                If you wanted to add an <span class="notice">SSH server</span> to your boot process, then you would simple add <span class="notice">target/ssh</span> on any new line in the file.<br>
+                The directory <span class="notice">target/</span> can be found in the <span class="notice">/etc/initng/</span> directory.<br>
+                <br>
+                If you wish to boot using a runlevel other than default, look into the <a href="running.html#boot_option_runlevel">runlevel=</a> boot option.<br>
+                <br>
+                Once settings are changed, you can use the <span class="notice">ngc</span> program to start/stop and do other initng administrative commands.<br>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="updatingpciusbids">
+              <header class="section-header header">
+                <h2 class="h h2">PCI and USB ID Updating</h2>
+              </header>
+              <a href="distributions/turtle/documentation/images/Updating_Ids_Files.png"><img src="distributions/turtle/documentation/images_small/Updating_Ids_Files.png" alt="Screenshot of updating IDs." align="top" border="0"></a><br>
+              <p>
+                <span class="bold">Configuration Path:</span> /etc/<br>
+                <br>
+                The files to be configured are: <span class="notice">/etc/pci.ids</span> and <span class="notice">/etc/usb.ids</span><br>
+                The <span class="notice">/etc/pci.ids</span> and <span class="notice">/etc/usb.ids</span> files specify vender-specific information on what any particular hardware device is.<br>
+                In particular, the lspci and lsusb utilities read this information.<br>
+                <br>
+                To update <span class="notice">/etc/pci.ids</span> to the latest version, download: <a href="http://pciids.sourceforge.net/v2.2/pci.ids">http://pciids.sourceforge.net/v2.2/pci.ids</a><br>
+                To update <span class="notice">/etc/usb.ids</span> to the latest version, download: <a href="http://www.linux-usb.org/usb.ids">http://www.linux-usb.org/usb.ids</a><br>
+                <br>
+                Once this is done, make sure that the file permissions are correct:<br>
+                <code><span class="notice">
+                &nbsp;&nbsp;&nbsp;chgrp hardware_browse /etc/{pci,usb}.ids<br>
+                &nbsp;&nbsp;&nbsp;chmod g-wx+r,o-rwx /etc/{pci,usb}.ids<br>
+                </span></code>
+              </p>
+            </div>
+
+            <hr>
+
+            <div id="usingturtlekevuxontheolpc">
+              <header class="section-header header">
+                <h2 class="h h2">Using Turtle Kevux on the OLPC</h2>
+              </header>
+              <p>
+                The first step is to follow <a href="http://wiki.laptop.org/go/Activation_and_developer_keys">the instructions on the OLPC website</a> to obtain the developer key.<br>
+                This may take a while, so come back a few hours later.<br>
+                <br>
+                There are two possible ways to boot kevux without touching the original OLPC system.<br>
+                The first is to install Turtle Kevux onto a USB-Stick, whose partition should be labelled <span class="notice">turtle-usb-olpc</span><br>
+                The second is to install Turtle Kevux onto a MMC, whose partition should be labelled <span class="notice">turtle-sd-olpc</span><br>
+                If you do not know how to label or format the USB-Stick or MMC:
+                <ol>
+                  <li><a href="installing.html#partitioningthesystem">Read the partitioning tutorial</a></li>
+                  <li>Make sure to properly select the correct USB-Stick or MMC.</li>
+                  <li>Create a single partition and set the label to either <span class="notice">turtle-usb-olpc</span> or <span class="notice">turtle-sd-olpc</span> for USB-Stick and MMC respectively.</li>
+                </ol>
+                <br>
+                The next step is to obtain the custom compiled OLPC kernels from the <a href="http://kevux.org/">kevux website</a>.<br>
+                Once you have the custom OLPC kernel and its appropriate kernel modules, put them on the system.<br>
+                Lets say you downloaded the custom compiled OLPC kernel from kevux.org and it is called <span class="notice">turtle-2.6.26.5-olpc</span> and the maintenance kernel is called <span class="notice">turtle-2.6.26.5-olpc-maintenance</span>.<br>
+                Lets say that you also dowloaded the appropriate kernel modules and it is called <span class="notice">2.6.26.5-olpc.tz2</span>.<br>
+                You will also need to extract the kernel modules to <span class="notice">modules/</span><br>
+                What you would do is:<br>
+                <code><span class="notice">
+                &nbsp;&nbsp;&nbsp;mv -v turtle-2.6.26.5-olpc boot/<br>
+                &nbsp;&nbsp;&nbsp;ln -vs turtle-2.6.26.5-olpc boot/turtle-olpc<br>
+                &nbsp;&nbsp;&nbsp;tar -xf 2.6.26.5-olpc.tz2 -C modules/<br>
+                &nbsp;&nbsp;&nbsp;mv -v turtle-2.6.26.5-olpc-maintenance boot/<br>
+                &nbsp;&nbsp;&nbsp;ln -vs turtle-2.6.26.5-olpc-maintenance boot/turtle-olpc-maintenance<br>
+                </span></code>
+                <br>
+                Replace the default <span class="notice">xorg.conf</span> file with the the <span class="notice">xorg.conf.olpc</span> file so that you can get a working graphical display:<br>
+                <code><span class="notice">
+                &nbsp;&nbsp;&nbsp;cp -v etc/X11/xorg.conf.olpc etc/X11/xorg.conf<br>
+                </span></code>
+                <br>
+                You are now ready to boot to the OLPC.<br>
+                Plug your device into the OLPC and reboot the OLPC.<br>
+                If all goes well, you should get a prompt where you can press a key to select the desired method of booting.<br>
+                <span class="bold important">NOTE: Don't select the Squash or Squish boot methods unless you know what you are doing.</span><br>
+                <br>
+                If all went well, you are sitting in a graphical environment.<br>
+                You now have one more step at tweaking the system.<br>
+              </p>
+              <a href="distributions/turtle/documentation/images/Setting_OLPC_DPI-1.png"><img src="distributions/turtle/documentation/images_small/Setting_OLPC_DPI-1.png" alt="Screenshot of setting up OLPC step 1." align="top" border="0"></a><br>
+              <p>
+                Open up the <span class="notice">Applications->Settings->Appearance</span>.<br>
+              </p>
+              <a href="distributions/turtle/documentation/images/Setting_OLPC_DPI-2.png"><img src="distributions/turtle/documentation/images_small/Setting_OLPC_DPI-2.png" alt="Screenshot of setting up OLPC step 2." align="top" border="0"></a><br>
+              <p>
+                Select the <span class="notice">Fonts</span> tab.<br>
+              </p>
+              <a href="distributions/turtle/documentation/images/Setting_OLPC_DPI-3.png"><img src="distributions/turtle/documentation/images_small/Setting_OLPC_DPI-3.png" alt="Screenshot of setting up OLPC step 3." align="top" border="0"></a><br>
+              <p>
+                Enable the <span class="notice">Custom DPI Settings</span> checkbox and set DPI to <span class="notice">140</span>.<br>
+                <br>
+                You should now be able to fully use OLPC.<br>
+                <span class="bold important">NOTE: Use the TVCard Player called <span class="notice">xawtv</span> to access the camera.</span><br>
+              </p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

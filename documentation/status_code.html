@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Documentation - Status Code</title>
+
+    <base href="../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Status Code program documentation.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Make, Fake, Open-Source">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="documentation/status_code.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js documentation">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item active"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="documentation.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">Documentation</div>
+            <div class="nav-text unlink">Status Code</div>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/status_code.html#about" class="nav-text link">About</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/status_code.html#parameters-standard" class="nav-text link">Standard Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/status_code.html#parameters-program" class="nav-text link">Program Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Specifications</div>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">APIs</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="documentation/status_code.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="documentation/status_code.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">Status Code Documentation</h1>
+          </header>
+
+          <section id="about" class="section">
+            <header class="section-header header">
+              <h2 class="section-title h h2">About</h2>
+            </header>
+
+            <div class="section-content">
+              <p>
+                The <strong>status_code</strong> program is a tool for interpretting and changing the status codes received from programs into code words or vice-versa. This is intended to be easily scriptable. The code words are still machine-friendly and scriptable.
+              </p>
+              <p>
+                This tool only handles standard <abbr title="Featureless Linux Library">FLL</abbr> status codes. The max status code supported is represented by the code words <code>F_status_code_last</code>.
+              </p>
+            </div>
+          </section>
+
+          <section id="parameters-standard" class="section">
+            <header class="section-header header separate">
+              <h2 class="section-title h h2">Standard Parameters</h2>
+            </header>
+
+            <div class="section-content">
+              <div class="center">
+                <table class="table context-parameters">
+                  <thead class="head set">
+                    <tr class="row">
+                      <th class="column">Short</th>
+                      <th class="column">Long</th>
+                      <th class="column">Description</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="body set">
+                    <tr class="row">
+                      <td class="column"><code class="code">-h</code></td>
+                      <td class="column"><code class="code">--help</code></td>
+                      <td class="column">Print the help message.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+d</code></td>
+                      <td class="column"><code class="code">++dark</code></td>
+                      <td class="column">Output using colors that show up better on dark backgrounds.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+l</code></td>
+                      <td class="column"><code class="code">++light</code></td>
+                      <td class="column">Output using colors that show up better on light backgrounds.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+n</code></td>
+                      <td class="column"><code class="code">++no_color</code></td>
+                      <td class="column">Do not print using color.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+q</code></td>
+                      <td class="column"><code class="code">++quiet</code></td>
+                      <td class="column">Decrease verbosity, silencing most output.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+n</code></td>
+                      <td class="column"><code class="code">++normal</code></td>
+                      <td class="column">Set verbosity to normal.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+V</code></td>
+                      <td class="column"><code class="code">++verbose</code></td>
+                      <td class="column">Increase verbosity beyond normal output.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+D</code></td>
+                      <td class="column"><code class="code">++debug</code></td>
+                      <td class="column">Enable debugging, significantly increasing verbosity beyond normal output.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+v</code></td>
+                      <td class="column"><code class="code">++version</code></td>
+                      <td class="column">Print only the version number.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                The <code>+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code>+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code>+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
+              </p>
+              <p>
+                The <code>+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
+              </p>
+            </div>
+          </section>
+
+          <section id="parameters-program" class="section">
+            <header class="section-header header separate">
+              <h2 class="section-title h h2">Program Parameters</h2>
+            </header>
+
+            <div class="section-content">
+              <div class="center">
+                <table class="table context-parameters">
+                  <thead class="head set">
+                    <tr class="row">
+                      <th class="column">Short</th>
+                      <th class="column">Long</th>
+                      <th class="column">Description</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="body set">
+                    <tr class="row">
+                      <td class="column"><code class="code">-f</code></td>
+                      <td class="column"><code class="code">--fine</code></td>
+                      <td class="column">Print <code>F_true</code> or <code>F_false</code> if status code is neither an error nor a warning or print number with neither the error code nor the warning code bits set.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-w</code></td>
+                      <td class="column"><code class="code">--warning</code></td>
+                      <td class="column">Print <code>F_true</code> or <code>F_false</code> if status code is a warning or print number with warning code bit set.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-e</code></td>
+                      <td class="column"><code class="code">--error</code></td>
+                      <td class="column">Print <code>F_true</code> or <code>F_false</code> if status code is an error or print number with error code bit set.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-n</code></td>
+                      <td class="column"><code class="code">--number</code></td>
+                      <td class="column">Convert status code name to number.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

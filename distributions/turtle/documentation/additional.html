@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Documentation - Turtle Kevux - Additional / Miscellaneous Notes</title>
+
+    <base href="../../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Turtle Kevux Documentation for additional or miscellaneous notes.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, Turtle, Documentation">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+    <link type="text/css" rel="stylesheet" media="all" href="distributions/turtle/documentation/css/documentation.css">
+
+    <link rel="canonical" href="documentation/turtle/additional.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+    <link type="text/html" rel="next" href="distributions.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js distributions">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item active"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="distributions/turtle/documentation.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">Documentation</div>
+            <div class="nav-text unlink">Turtle Kevux</div>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/software.html" class="nav-text link">Software Listing</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/running.html" class="nav-text link">Booting and Running</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/installing.html" class="nav-text link">Installing Turtle Kevux</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/configuring.html" class="nav-text link">System Configuration</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/servers.html" class="nav-text link">Server Configuration</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text unlink">Additional / Miscellaneous Notes</div>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/problems.html" class="nav-text link">Known Issues</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/documentation/credits.html" class="nav-text link">Credits</a>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="distributions/turtle/documentation/additional.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="distributions/turtle/documentation/additional.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header separate">
+            <h1 class="section-title h h1">Additional / Miscellaneous Notes</h1>
+          </header>
+
+          <div class="main-content">
+            <div id="spaceconsiderations">
+              <header class="section-header header">
+                <h2 class="h h2">Space Considerations</h2>
+              </header>
+              <p>
+              <font size="2px"><i>Note: <span class="bold">Small Total</span> Represents the amount of space taken with only 1 set of kernel modules and without the documentation, toolchain and checksums.</i></font><br>
+              <table width="700px" border="0">
+                <tr>
+                  <td valign="top">
+                    <table width="350px" border="1" bgcolor="#efffef">
+                      <tr align="center">
+                        <td class="notice bold">Everything Build</td>
+                      </tr>
+                    </table>
+                    <table width="350px" border="1">
+                      <tr align="center" bgcolor="#efffef">
+                        <td class="bold">Root Directory</td>
+                        <td class="bold">Size (MB)</td>
+                      </tr>
+                      <tr>
+                        <td>bin</td>
+                        <td align="right">244</td>
+                      </tr>
+                      <tr>
+                        <td>boot</td>
+                        <td align="right">20</td>
+                      </tr>
+                      <tr>
+                        <td>checksum</td>
+                        <td align="right">84</td>
+                      </tr>
+                      <tr>
+                        <td>documentation</td>
+                        <td align="right">311</td>
+                      </tr>
+                      <tr>
+                        <td>etc</td>
+                        <td align="right">4.7</td>
+                      </tr>
+                      <tr>
+                        <td>firmware</td>
+                        <td align="right">40</td>
+                      </tr>
+                      <tr>
+                        <td>home</td>
+                        <td align="right">8</td>
+                      </tr>
+                      <tr>
+                        <td>lib</td>
+                        <td align="right">578</td>
+                      </tr>
+                      <tr>
+                        <td>modules</td>
+                        <td align="right">59</td>
+                      </tr>
+                      <tr>
+                        <td>sbin</td>
+                        <td align="right">50</td>
+                      </tr>
+                      <tr>
+                        <td>share</td>
+                        <td align="right">371</td>
+                      </tr>
+                      <tr>
+                        <td>toolchain</td>
+                        <td align="right">221</td>
+                      </tr>
+                      <tr>
+                        <td class="notice bold">Total</td>
+                        <td align="right"><span class="notice">1986.46875<br>(1.93991 GB)</span></td>
+                      </tr>
+                      <tr>
+                        <td class="notice bold">Small Total</td>
+                        <td align="right" class="notice">1371.69531<br>(1.33954)</td>
+                      </tr>
+                      <tr>
+                        <td><span class="notice bold">Squashed Total</td>
+                        <td align="right" class="notice">588.82812</td>
+                      </tr>
+                      <tr>
+                        <td class="notice bold">Squashed Small Total</td>
+                        <td align="right" class="notice">485.13281</td>
+                      </tr>
+                    </table>
+                    <br>
+                    <table width="350px" border="1" bgcolor="#efffef">
+                      <tr align="center">
+                        <td class="notice bold">Key Space Consumers for "lib"</td>
+                      </tr>
+                    </table>
+                    <table width="350px" border="1">
+                      <tr align="center" bgcolor="#efffef">
+                        <td class="bold">Directory</td>
+                        <td class="bold">Size (MB)</td>
+                      </tr>
+                      <tr>
+                        <td>Image Magick</td>
+                        <td align="right">3.5</td>
+                      </tr>
+                      <tr>
+                        <td>X11 (xorg)</td>
+                        <td align="right">46</td>
+                      </tr>
+                      <tr>
+                        <td>abiword-2.8</td>
+                        <td align="right">2.2</td>
+                      </tr>
+                      <tr>
+                        <td>avifile-0.7</td>
+                        <td align="right">1.1</td>
+                      </tr>
+                      <tr>
+                        <td>claws-mail</td>
+                        <td align="right">1.3</td>
+                      </tr>
+                      <tr>
+                        <td>gegl-0.0 (gimp)</td>
+                        <td align="right">1.7</td>
+                      </tr>
+                      <tr>
+                        <td>gimp</td>
+                        <td align="right">6.3</td>
+                      </tr>
+                      <tr>
+                        <td>git-core</td>
+                        <td align="right">6.2</td>
+                      </tr>
+                      <tr>
+                        <td>gtk-2.0</td>
+                        <td align="right">1.3</td>
+                      </tr>
+                      <tr>
+                        <td>libgphoto2</td>
+                        <td align="right">2.1</td>
+                      </tr>
+                      <tr>
+                        <td>mysql</td>
+                        <td align="right">9.7</td>
+                      </tr>
+                      <tr>
+                        <td>perl5</td>
+                        <td align="right">56</td>
+                      </tr>
+                      <tr>
+                        <td>php</td>
+                        <td align="right">15</td>
+                      </tr>
+                      <tr>
+                        <td>postgresql</td>
+                        <td align="right">4.3</td>
+                      </tr>
+                      <tr>
+                        <td>purple-2 (pidgin)</td>
+                        <td align="right">4.2</td>
+                      </tr>
+                      <tr>
+                        <td>python2.6</td>
+                        <td align="right">66</td>
+                      </tr>
+                      <tr>
+                        <td>sane</td>
+                        <td align="right">6.1</td>
+                      </tr>
+                      <tr>
+                        <td>seamonkey-2.0</td>
+                        <td align="right">38</td>
+                      </tr>
+                      <tr>
+                        <td>sox</td>
+                        <td align="right">1.1</td>
+                      </tr>
+                      <tr>
+                        <td>tcl8.5</td>
+                        <td align="right">18</td>
+                      </tr>
+                      <tr>
+                        <td>tk8.5</td>
+                        <td align="right">9.6</td>
+                      </tr>
+                      <tr>
+                        <td>transcode</td>
+                        <td align="right">2.3</td>
+                      </tr>
+                      <tr>
+                        <td>wireshark</td>
+                        <td align="right">3.3</td>
+                      </tr>
+                      <tr>
+                        <td>xfce4</td>
+                        <td align="right">3.2</td>
+                      </tr>
+                      <tr>
+                        <td>xine</td>
+                        <td align="right">4.9</td>
+                      </tr>
+                      <tr>
+                        <td>xtables</td>
+                        <td align="right">1.0</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td valign="top">
+                    <table width="350px" border="1" bgcolor="#efffef">
+                      <tr align="center">
+                        <td class="notice bold">Desktop Build</td>
+                      </tr>
+                    </table>
+                    <table width="350px" border="1">
+                      <tr align="center" bgcolor="#efffef">
+                        <td class="bold">Root Directory</td>
+                        <td class="bold">Size (MB)</td>
+                      </tr>
+                      <tr>
+                        <td>bin</td>
+                        <td align="right">85</td>
+                      </tr>
+                      <tr>
+                        <td>boot</td>
+                        <td align="right">21</td>
+                      </tr>
+                      <tr>
+                        <td>checksum</td>
+                        <td align="right">28</td>
+                      </tr>
+                      <tr>
+                        <td>documentation</td>
+                        <td align="right">66</td>
+                      </tr>
+                      <tr>
+                        <td>etc</td>
+                        <td align="right">3.7</td>
+                      </tr>
+                      <tr>
+                        <td>firmware</td>
+                        <td align="right">41</td>
+                      </tr>
+                      <tr>
+                        <td>home</td>
+                        <td align="right">0.90234</td>
+                      </tr>
+                      <tr>
+                        <td>lib</td>
+                        <td align="right">236</td>
+                      </tr>
+                      <tr>
+                        <td>sbin</td>
+                        <td align="right">17</td>
+                      </tr>
+                      <tr>
+                        <td>share</td>
+                        <td align="right">167</td>
+                      </tr>
+                      <tr>
+                        <td>toolchain</td>
+                        <td align="right">296</td>
+                      </tr>
+                      <tr>
+                        <td>modules</td>
+                        <td align="right">54</td>
+                      </tr>
+                      <tr>
+                        <td class="notice bold">Total</td>
+                        <td align="right"><span class="notice">1011.93359<br>(0.98821 GB)</td>
+                      </tr>
+                      <tr>
+                        <td class="notice bold">Small Total</td>
+                        <td align="right" class="notice">623.23437<br>(0.60862 GB)</td>
+                      </tr>
+                      <tr>
+                        <td class="notice bold">Squashed Total</td>
+                        <td align="right" class="notice">282.63281</td>
+                      </tr>
+                      <tr>
+                        <td class="notice bold">Squashed Small Total</td>
+                        <td align="right" class="notice">203.26953</td>
+                      </tr>
+                    </table>
+                    <br>
+                    <table width="350px" border="1" bgcolor="#efffef">
+                      <tr align="center">
+                        <td class="notice bold">Key Space Consumers for "share"</td>
+                      </tr>
+                    </table>
+                    <table width="350px" border="1">
+                      <tr align="center" bgcolor="#efffef">
+                        <td class="bold">Directory</td>
+                        <td class="bold">Size (MB)</td>
+                      </tr>
+                      <tr>
+                        <td>abiword-2.8</td>
+                        <td align="right">8.3</td>
+                      </tr>
+                      <tr>
+                        <td>alsa</td>
+                        <td align="right">5.2</td>
+                      </tr>
+                      <tr>
+                        <td>aspell</td>
+                        <td align="right">5.0</td>
+                      </tr>
+                      <tr>
+                        <td>dvb</td>
+                        <td align="right">3.6</td>
+                      </tr>
+                      <tr>
+                        <td>fonts</td>
+                        <td align="right">19</td>
+                      </tr>
+                      <tr>
+                        <td>freedroidrpg</td>
+                        <td align="right">178</td>
+                      </tr>
+                      <tr>
+                        <td>gimp</td>
+                        <td align="right">6.2</td>
+                      </tr>
+                      <tr>
+                        <td>git-gui</td>
+                        <td align="right">1.1</td>
+                      </tr>
+                      <tr>
+                        <td>icons</td>
+                        <td align="right">31</td>
+                      </tr>
+                      <tr>
+                        <td>kbd</td>
+                        <td align="right">2.8</td>
+                      </tr>
+                      <tr>
+                        <td>lbreakout2</td>
+                        <td align="right">4.4</td>
+                      </tr>
+                      <tr>
+                        <td>link-grammar</td>
+                        <td align="right">1.4</td>
+                      </tr>
+                      <tr>
+                        <td>mime</td>
+                        <td align="right">3.0</td>
+                      </tr>
+                      <tr>
+                        <td>misc</td>
+                        <td align="right">1.8</td>
+                      </tr>
+                      <tr>
+                        <td>multitalk</td>
+                        <td align="right">2.0</td>
+                      </tr>
+                      <tr>
+                        <td>nmap</td>
+                        <td align="right">5.8</td>
+                      </tr>
+                      <tr>
+                        <td>orage</td>
+                        <td align="right">4.0</td>
+                      </tr>
+                      <tr>
+                        <td>poppler</td>
+                        <td align="right">13</td>
+                      </tr>
+                      <tr>
+                        <td>postgresql</td>
+                        <td align="right">2.9</td>
+                      </tr>
+                      <tr>
+                        <td>pygobject</td>
+                        <td align="right">1.2</td>
+                      </tr>
+                      <tr>
+                        <td>pygtk</td>
+                        <td align="right">1.3</td>
+                      </tr>
+                      <tr>
+                        <td>sane</td>
+                        <td align="right">1.6</td>
+                      </tr>
+                      <tr>
+                        <td>sounds</td>
+                        <td align="right">1.8</td>
+                      </tr>
+                      <tr>
+                        <td>themes (xfce)</td>
+                        <td align="right">6</td>
+                      </tr>
+                      <tr>
+                        <td>vim</td>
+                        <td align="right">17</td>
+                      </tr>
+                      <tr>
+                        <td>wireshark</td>
+                        <td align="right">12</td>
+                      </tr>
+                      <tr>
+                        <td>wv</td>
+                        <td align="right">1.9</td>
+                      </tr>
+                      <tr>
+                        <td>xfce4</td>
+                        <td align="right">2.6</td>
+                      </tr>
+                      <tr>
+                        <td>xine</td>
+                        <td align="right">2.0</td>
+                      </tr>
+                      <tr>
+                        <td>qemu</td>
+                        <td align="right">4.0</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              <br>
+            </div>
+
+            <hr>
+
+            <div id="sshhandshaking">
+              <header class="section-header header">
+                <h2 class="h h2">SSH Handshaking</h2>
+              </header>
+              <p>
+                This will assume that you are <span class="notice">on the client machine</span> and need to connect to a server and have working ssh access to the server.
+              </p>
+              <ul>
+                <br>
+                <li><span class="bold">Step 1</span>, generate the key (-d is for DSA, no -d is for RSA)<br>
+                <code>&nbsp;&nbsp;<span class="notice">ssh-keygen -d</span></code></li>
+                <br>
+                <li><span class="bold">Step 2</span>, Skipping password, just press enter on password prompt to leave it empty so that passwordless handshaking can work.<br>
+                This should create the .ssh/id_dsa and the .ssh/id_dsa.pub files, and this may take some time, depending on your hardware.</li>
+                <br>
+                <li><span class="bold">Step 3</span>, Put the necessary files on the remote server to do the handshaking with<br>
+                &nbsp;&nbsp;<span class="notice">username</span> = your username to connect to the server<br>
+                &nbsp;&nbsp;<span class="notice">remotehost</span> = the address used to connect to the server<br>
+                &nbsp;&nbsp;<span class="notice">/yourhome/directiry</span> = the path to your home directory<br>
+                <br>
+                <code>&nbsp;&nbsp;<span class="notice">scp .ssh/id_dsa.pub username@remotehost:/yourhome/directory/</span></code><br>
+                <code>&nbsp;&nbsp;<span class="notice">ssh username@remotehost</span></code><br>
+                <code>&nbsp;&nbsp;<span class="notice">mkdir -p ~/.ssh/</span></code><br>
+                <code>&nbsp;&nbsp;<span class="notice">cat ~/id_dsa.pub >> ~/.ssh/authorized_keys</span></code></li>
+                <br>
+                <li><span class="bold">Step 4</span>, now you can delete the id_dsa.pub file from the remote host and exit.<br>
+                  <code>&nbsp;&nbsp;<span class="notice">rm id_dsa.pub</span></code><br>
+                  <code>&nbsp;&nbsp;<span class="notice">exit</span></code></li>
+                <br>
+                <li><span class="bold">Step 5</span>, DONE<br>
+                You should be able to ssh to the remote host without a password now, given that the .ssh/id_dsa file and the .ssh/id_dsa.pub file exist on your client machine for the user you intend to connect with.</li>
+                <br>
+                <li><span class="bold">Adding SSHFS on top of the SSH Handshaking</span><br>
+                See the SSH Handshaking above first<br>
+                Now that you can handshake from the above example, you should now be able to run the sshfs command and even put it in a logon or boot script, without exposing your password</li>
+                <br>
+                <li>Mounting from sshfs<br>
+                <code>&nbsp;&nbsp;<span class="notice">sshfs username@remotehost:/remote/directory/ /local/directory/</span></code></li>
+                <br>
+                <li>Unmounting from sshfs<br>
+                <code>&nbsp;&nbsp;<span class="notice">fusermount -u /local/directory/</span></code></li>
+                <br>
+                <li>If you did not use the SSH Handshaking above, then you will be prompted for a password on the sshfs command</li>
+                <li>If you did use the SSH Handshaking above, and are still being asked for a password, then there is a problem with the RSA/DSA keys</li>
+                <li>This password will still be prompted for any other client you use that does NOT have the private .ssh/id_dsa key</li>
+              </ul>
+            </div>
+
+            <hr>
+
+            <div id="encryptedbooting">
+              <header class="section-header header">
+                <h2 class="h h2">Encrypted Booting</h2 class="h h2">
+              </header>
+              <p>
+                The encrypted boot process potentially requires additional files to exist on the boot device.<br>
+                This explains what those files are and how to configure these files.<br>
+                <br>
+                Inside of the effective <span class="notice">/boot/</span> directory of the boot device there needs to be a <span class="notice">/settings/</span> directory.<br>
+                Inside this directory there are currently only a few types of files searched for:<br>
+                <ol>
+                  <li><span class="notice">Files that end in: .device</span></li>
+                  <li><span class="notice">Files that end in: .key</span></li>
+                  <li><span class="notice">Files that end in: .ask</span></li>
+                </ol>
+                At this time only a limited set of device files are supported and they are:<br>
+                <ul>
+                  <li><span class="notice">rootfs.device</span></li>
+                  <li><span class="notice">home.device</span></li>
+                  <li><span class="notice">etc.device</span></li>
+                  <li><span class="notice">var.device</span></li>
+                  <li><span class="notice">tmp.device</span></li>
+                </ul>
+                The only thing allowed inside of these files are the name of device to be decrypted.<br>
+                Allowed names are anything allowed by the mount command, such as:<br>
+                <ul>
+                  <li><span class="notice">/dev/sda1</span></li>
+                  <li><span class="notice">my_encrypted_drive</span></li>
+                  <li><span class="notice">98ff3608-7631-4381-a04a-27cc09f42ae1</span></li>
+                </ul>
+                There should be nothing else inside of these files.<br>
+                <br>
+                The <span class="notice">.key</span> and <span class="notice">.ask</span> files are optional and must have the same name as the particular device file they represent.<br>
+                For example, for rootfs.device an ask file would be: <span class="notice">rootfs.ask</span>.<br>
+                <br>
+                The <span class="notice">.key</span> and <span class="notice">.ask</span> files determine how a particular device is decrypted.<br>
+                If a <span class="notice">.ask</span> file exists for a particular device, then during the boot process a prompt for the password will be presented to the user.<br>
+                If a <span class="notice">.key</span> file exists then that file is expected to contain the key that will be used to decrypt the drive.<br>
+                This key will allow for automatic decryption during boot.<br>
+                If both a <span class="notice">.key</span> file and a <span class="notice">.ask</span> file exist, then the <span class="notice">.key</span> will be processed first.<br>
+                If that <span class="notice">.key</span> file fails to decrypt the drive, then the user will be asked to enter in the password to decrypt.<br>
+                <br>
+                Important boot commands to pay attention to when dealing with encrypted booting are:<br>
+                <ul>
+                  <li><span class="notice">settings=</span></li>
+                  <li><span class="notice">settingsname=</span></li>
+                  <li><span class="notice">settingscdromsearch=</span></li>
+                  <li><span class="notice">settingsmmcsearch=</span></li>
+                  <li><span class="notice">etcdevice=</span></li>
+                  <li><span class="notice">homedevice=</span></li>
+                  <li><span class="notice">vardevice=</span></li>
+                  <li><span class="notice">tmpdevice=</span></li>
+                  <li><span class="notice">finalroot=</span></li>
+                </ul>
+                <br>
+                The only device encryption supported at this time is LUKS.<br>
+                </p>
+            </div>
+
+            <hr>
+
+            <div id="encryptingadrive">
+              <header class="section-header header">
+                <h2 class="h h2">Encrypting a Drive</h2>
+              </header>
+              <p>
+                <span class="error bold">WARNING: Creating an encrypted drive requires formatting a device, which will delete all data on that device.</span><br>
+                <br>
+                Lets say you wanted to encrypt a partition (/dev/sda6) and use a key file.<br>
+                <ol>
+                  <li>Fill the drive with random data <span class="error">(this will delete all data on the device /dev/sda6)</span>:<br>
+                    <code><span class="notice">dd if=/dev/urandom of=/dev/sda6</span></code><br>
+                    <br>
+                  </li>
+                  <li>Create a keyfile using randomly generated data:<br>
+                    <code><span class="notice">dd if=/dev/urandom of=~/some.key bs=1c count=512</span></code><br>
+                    <br>
+                  </li>
+                  <li>Use the keyfile to encrypt the device with LUKS encryption:<br>
+                    <code><span class="notice">cryptsetup -c aes-xts-plain:sha512 -s 512 luksFormat /dev/sda6 ~/some.key</span></code><br>
+                    <br>
+                    Alternatively, try this encryption:<br>
+                    <code><span class="notice">cryptsetup -c aes-cbc-essiv:sha256 -s 256 luksFormat /dev/sda6 ~/some.key</span></code><br>
+                    <br>
+                  </li>
+                  <li>Now that the device is encrypted, decrypt the device so that the device can be properly formatted (calling the decrypted device: some_name_here):<br>
+                    <code><span class="notice">cryptsetup luksOpen /dev/sda6 some_name_here -d ~/some-key</span></code><br>
+                    <br>
+                  </li>
+                  <li>Format the decypted device (this example format creates an ext4 filesystem with a label of: some_fs_label):<br>
+                    <code><span class="notice">mkfs.ext4 -L some_fs_label /dev/mapper/some_name_here</span></code><br>
+                    <br>
+                  </li>
+                </ol>
+                <br>
+                Lets say you wanted to encrypt a partition (/dev/sda6) and use a password.<br>
+                <ol>
+                  <li>Fill the drive with random data <span class="error">(this will delete all data on the device /dev/sda6)</span>:<br>
+                    <code><span class="notice">dd if=/dev/urandom of=/dev/sda6</span></code><br>
+                    <br>
+                  </li>
+                  <li>Encrypt the device with LUKS encryption:<br>
+                    <code><span class="notice">cryptsetup -c aes-xts-plain:sha512 -y -s 512 luksFormat /dev/sda6</span></code><br>
+                    Then enter in your desired password when prompted.<br>
+                    <br>
+                    Alternatively, try this encryption:<br>
+                    <code><span class="notice">cryptsetup -c aes-cbc-essiv:sha256 -y -s 256 luksFormat /dev/sda6</span></code><br>
+                    <br>
+                  </li>
+                  <li>Now that the device is encrypted, decrypt the device so that the device can be properly formatted (calling the decrypted device: some_name_here):<br>
+                    <code><span class="notice">cryptsetup luksOpen /dev/sda6 some_name_here</span></code><br>
+                    Enter in the password you used in the previous step when prompted.<br>
+                    <br>
+                  </li>
+                  <li>Format the decypted device (this example format creates an ext4 filesystem with a label of: some_fs_label):<br>
+                    <code><span class="notice">mkfs.ext4 -L some_fs_label /dev/mapper/some_name_here</span></code><br>
+                    <br>
+                  </li>
+                </ol>
+                <br>
+                Lets say you wanted add a new key to an existing encrypted device.<br>
+                <ol>
+                  <li>If not already created, create a new key using random data:<br>
+                    <code><span class="notice">dd if=/dev/urandom of=~/new.key bs=1c count=512</span></code><br>
+                    <br>
+                  </li>
+                  <li>Add the new key (Assuming that the old key is called old.key and is stored in your home directory):<br>
+                    <code><span class="notice">cryptsetup -d ~/old.key luksAddKey /dev/sda6 ~/new.key</span></code><br>
+                    <br>
+                    If the encrypted device did not use a key, then use the following command instead and enter in the appropriate password when prompted:<br>
+                    <code><span class="notice">cryptsetup luksAddKey /dev/sda6 ~/new.key</span></code><br>
+                    <br>
+                  </li>
+                </ol>
+                <br>
+                Lets say you wanted add a new password to an existing encrypted device.<br>
+                <ol>
+                  <li>Add the new key (Assuming that the old key is called old.key and is stored in your home directory):<br>
+                    <code><span class="notice">cryptsetup -d ~/old.key luksAddKey /dev/sda6</span></code><br>
+                    Then enter in your desired password when prompted.<br>
+                    <br>
+                    If the encrypted device did not use a key, then use the following command instead:<br>
+                    <code><span class="notice">cryptsetup luksAddKey /dev/sda6</span></code><br>
+                    You will first be prompted for the decryption password, enter in that first.<br>
+                    Enter in the new password after the first password properly decrypts the device.<br>
+                    <br>
+                  </li>
+                </ol>
+                Lets say you wanted delete an existing password or key file from the drive.<br>
+                <ol>
+                  <li>Both the password and the key file are stored in slots.<br>
+                     In order to delete either of these, you will need to know which slot to delete.<br>
+                     This information can be found by decrypting a device with the key or password you wish to delete.<br>
+                     Whenever the device gets decrypted a message should be presented, stating which key slot was used.<br>
+                     <br>
+                     Once you have the propery slot identified (lets call this desired_slot), delete that slot (Assuming that the old key is called old.key and is stored in your home directory):
+                    <code><span class="notice">cryptsetup -d ~/old.key luksDelKey /dev/sda6 desired_slot</span></code><br>
+                    <br>
+                    If the encrypted device did not use a key, then use the following command instead:<br>
+                    <code><span class="notice">cryptsetup luksDelKey /dev/sda6 desired_slot</span></code><br>
+                    Enter in the decryption password when prompted.<br>
+                    <br>
+                  </li>
+                </ol>
+                To learn how to encrypt using LUKS in detail, visit the <a href="https://gitlab.com/cryptsetup/cryptsetup/-/tree/master">LUKS website</a>.<br>
+              </p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

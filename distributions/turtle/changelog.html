@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Change Log - Turtle Kevux</title>
+
+    <base href="../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Kevux, Linux based, Distribution Change Log.">
+    <meta name="keywords" content="Kevin Day, Kevux, Linux, Distribution, Open-Source, Turtle, Change, Log">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="distributions/changelog.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+    <link type="text/html" rel="next" href="distributions.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js distributions">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item active"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="distributions.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Turtle Kevux</div>
+            <a href="distributions.html#release-turtle-0.9.5" class="nav-text link">0.9.5 Release</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions.html#release-turtle-0.9.4" class="nav-text link">0.9.4 Release</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">TKIS</div>
+            <a href="distributions.html#release-tkis-1.0.1" class="nav-text link">1.0.1 Release</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions.html#release-this-1.0.0" class="nav-text link">1.0.0 Release</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Documentation</div>
+            <a href="distributions/turtle/documentation.html" class="nav-text link">Turtle Kevux</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">Change Log</div>
+            <div class="nav-text unlink">Turtle Kevux</div>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/changelog.html#turtle-0.9.5" class="nav-text link">0.9.5</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions/turtle/changelog.html#turtle-0.9.4" class="nav-text link">0.9.4</a>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="distributions.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="distributions.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header separate">
+            <h1 class="section-title h h1">Turtle Kevux Change Logs</h1>
+          </header>
+
+          <article class="article">
+            <header class="article-header header">
+              <h2 id="turtle-0.9.5" class="article-title h h2">0.9.5</h2>
+            </header>
+            <div class="article-content">
+
+            <div><strong>Fixes of Turtle 0.9.4 Problems:</strong></div>
+            <ul>
+              <li>A large number of kiwi installation problems have been fixed.</li>
+              <li>claws-mail now works.</li>
+              <li>The mpd music server now dmixes properly by default so you can now have more than one program use audio at the same time.</li>
+              <li>Fixed applications that did not look for the mixer device in /dev/snd/mixer.</li>
+              <li>/lib/libudev.so and /lib/libgudev-1.0.so had permissions that prevented desktop users from using any application that depended on either of those libraries.</li>
+              <li>Copy and paste on the desktop now works in xfce.</li>
+              <li>64-bit grub cdroms now boot properly.</li>
+              <li>Fixed boot problems when using software raid.</li>
+            </ul>
+
+            <div><strong>New Software:</strong></div>
+            <ul>
+              <li>Added libffi</li>
+              <li>Added vcdimager</li>
+              <li>Added libblueray</li>
+              <li>Added libaacs</li>
+            </ul>
+
+            <div><strong>Other Changes:</strong></div>
+            <ul>
+              <li>Now using xorg-server 1.11.* and Mesa 7.11.*.</li>
+              <li>Fixed webkit so that SoupSession is in the correct state to allow for pausing and unpausing.</li>
+              <li>The boot process was reworked.</li>
+            </ul>
+          </article>
+
+          <article class="article">
+            <header class="article-header header separate">
+              <h2 id="turtle-0.9.4" class="article-title h h2">0.9.4</h2>
+            </header>
+            <div class="article-content">
+
+            <div><strong>Fixes of Turtle 0.9.3 Problems:</strong></div>
+            <ul>
+              <li>Fix major networking problem in 0.9.3 where devices are improperly started</li>
+              <li>Once again attempt to solve the autologin relogin problem with qingy (this time completely strip out the code that does a timestamp check, if the file exists then do not re-login, period</li>
+              <li>When shutting down or rebooting, make sure to tell all sshd connections to close and turn off network devices</li>
+              <li>Network scripts did not stop dhcpclient, wpa_supplicant, and hostap if it was running when the network script was stopped</li>
+              <li>/etc/hosts was being used instead of /etc/network/hosts</li>
+              <li>Fixed initrd boot process problems</li>
+              <li>Removed floating_root parameter from squish and squash boot options, making floating_root unconditional for squash and squash booting</li>
+            </ul>
+
+            <div><strong>New Software:</strong></div>
+            <ul>
+              <li>Added joy2key</li>
+              <li>Added vala</li>
+              <li>Added gstreamer (which doesn't really work anyway..)</li>
+              <li>Added webkit</li>
+              <li>Added midori (replacing seamonkey)</li>
+              <li>Added libvpx</li>
+              <li>Added tunctl</li>
+              <li>Added bind (replacing maradns)</li>
+              <li>Added celt</li>
+              <li>Added links back now that it appears to be actively maintained once again</li>
+              <li>Added strace to the toolchain</li>
+              <li>Added libpki</li>
+              <li>Added openca-ocspd</li>
+              <li>Added libotr and pidgin-otr for encrypted chat support</li>
+            </ul>
+
+            <div><strong>Removed Software:</strong></div>
+            <ul>
+              <li>Removed seamonkey</li>
+              <li>Removed maradns (does not support dnssec, so it was replaced with bind)</li>
+              <li>Removed ps3-utils</li>
+              <li>Removed tcl/tk</li>
+              <li>Removed pidgin-encryption in favor of pidgin-otr</li>
+            </ul>
+
+            <div><strong>Network Changes:</strong></div>
+            <ul>
+              <li>Removed support for /etc/network/proc_settings</li>
+              <li>Added network device setting file auto-generation and auto-degeneration support</li>
+              <li>Prevent already started or stopped network devices from being re-started or re-stopped</li>
+              <li>Add extension support to dns resolver</li>
+              <li>Add non-standard port support for ipv4 dns resolver</li>
+            </ul>
+
+            <div><strong>Other Changes:</strong></div>
+            <ul>
+              <li>Shortened udev settle time to 4 seconds</li>
+              <li>Added support for /etc/sysctl.conf (this also replaces /etc/network/proc_settings)</li>
+              <li>Desktop build now adds fewer xorg video drivers</li>
+              <li>Now supports custom xorg.conf.d directories at /etc/X11/ (This helps enable KMS)</li>
+            </ul>
+          </article>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

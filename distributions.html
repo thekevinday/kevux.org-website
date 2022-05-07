@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kevux Systems and Software - Distributions</title>
+
+    <base href="">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Kevux, Linux based, Distributions.">
+    <meta name="keywords" content="Kevin Day, Kevux, Linux, Distribution, Open-Source, Turtle">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="distributions.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+    <link type="text/html" rel="next" href="distributions.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js distributions">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item active"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block">
+            <div class="nav-text notice">Turtle Kevux</div>
+            <div class="nav-text normal">0.9.X Release</div>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions.html#release-turtle-0.9.5" class="nav-text link">0.9.5 Release</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions.html#release-turtle-0.9.4" class="nav-text link">0.9.4 Release</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">TKIS</div>
+            <div class="nav-text normal">1.2.X Release</div>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions.html#release-tkis-1.0.1" class="nav-text link">1.0.1 Release</a>
+          </div>
+          <div class="nav-item block">
+            <a href="distributions.html#release-this-1.0.0" class="nav-text link">1.0.0 Release</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Documentation</div>
+            <a href="distributions/turtle/documentation.html" class="nav-text link">Turtle Kevux</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Change Log</div>
+            <a href="distributions/turtle/changelog.html" class="nav-text link">Turtle Kevux</a>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="distributions.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="distributions.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header separate">
+            <h1 class="section-title h h1">Distributions</h1>
+          </header>
+
+          <article id="turtle_kevux" class="article">
+            <header class="article-header header">
+              <h2 class="article-title h h2">Turtle Kevux</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                Turtle Kevux is a Linux system primarily based on GNU software, <abbr title="Featureless Linux Library">FLL</abbr> software, and a Linux kernel. Historically Turtle Kevux was compiled using <a href="https://uclibc.org/" class="link external">uClibc</a> as an alternative to <a href="https://www.gnu.org/software/libc/" class="link external">GLibc</a>. Turtle Kevux now uses <a href="https://musl.libc.org/" class="link external">Musl-Libc</a> in place of <a href="https://www.gnu.org/software/libc/" class="link external">GLibc</a>.
+              </p>
+              <p>
+                This Linux based distribution deviates from Linux and even utilizes modifications to the Linux kernel. Turtle Kevux does not comply with many of the standards that many Linux distributions follow. This is especially true when it comes to SystemD as many parts of the SystemD design is the direct opposite of how Turtle Kevux and its underlying software (<abbr title="Featureless Linux Library">FLL</abbr>) are designed.
+              </p>
+              <p>
+                Turtle Kevux is neither <abbr title="Filesystem Hierarchy Standard">FHS</abbr> nor <abbr title="Linux Standard Base ">LSB</abbr> compliant, which is seen as one of the many security enhancements. Turtle Kevux might closely follow these standards, but those standards are deviated from as desired.
+              </p>
+            </div>
+          </article>
+
+          <article id="turtle_kevux" class="article">
+            <header class="article-header header">
+              <h2 class="article-title h h2">About Releases and Scripts</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                The Turtle Kevux Releases used to provide multiple CD-ROM and DVD-ROMs for different purposes. These have been reduced to the "everything" releases for the older Turtle Kevux releases (0.9.5 and earlier). The "everything" release contains all of the software specially configured to compile and install onto the system as well as all source code archives.
+              </p>
+              <p>
+                The Turtle Kevux Installation Scripts are also provided separately from the DVD-ROMs. These scripts can be used to compile the system entirely from source. Due to the complexity and potential problems with compiling entirely from source, the pre-compiled bootstrap files are also made available as the "tools" downloads.
+              </p>
+            </div>
+          </article>
+
+          <article id="release-turtle" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">Turtle Kevux Releases</h2>
+            </header>
+            <div class="article-content">
+              <section id="release-turtle-0.9.X" class="section">
+                <header class="article-header header">
+                  <h3 class="section-title h h3">Turtle Kevux 0.9.X Release (2022+)</h3>
+                </header>
+                <div class="section-content">
+                  <ul>
+                    <li>Not yet available.</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section id="release-turtle-0.9.5" class="section">
+                <header class="article-header header">
+                  <h3 class="section-title h h3">Turtle Kevux 0.9.5 Release (2012/02/28)</h3>
+                </header>
+                <div class="section-content">
+                  <ul>
+                    <li><a href="release/turtle/0.9/5/everything/x86/turtle-0.9.5-everything_x86-live.iso" class="link download">Turtle 0.9.5 - Everything - 32-bit - CD-ROM</a> (<a href="release/turtle/0.9/5/everything/x86/turtle-0.9.5-everything_x86-live.iso.sha256" class="link download">SHA256</a>)</li>
+                    <li><a href="release/turtle/0.9/5/everything/x86_64/turtle-0.9.5-everything_x86_64-dvd.iso" class="link download">Turtle 0.9.5 - Everything - 64-bit - DVD-ROM</a> (<a href="release/turtle/0.9/5/everything/x86_64/turtle-0.9.5-everything_x86_64-dvd.iso.sha256" class="link download">SHA256</a>)</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section id="release-turtle-0.9.4" class="section">
+                <header class="article-header header">
+                  <h3 class="section-title h h3">Turtle Kevux 0.9.4 Release (2011/12/11)</h3>
+                </header>
+                <div class="section-content">
+                  <ul>
+                    <li><a href="release/turtle/0.9/4/everything/x86/turtle-0.9.4-everything_x86-dvd.iso" class="link download">Turtle 0.9.4 - Everything - 32-bit - DVD-ROM</a> (<a href="release/turtle/0.9/4/everything/x86/turtle-0.9.4-everything_x86-dvd.iso.sha256" class="link download">SHA256</a>)</li>
+                    <li><a href="release/turtle/0.9/4/everything/x86_64/turtle-0.9.4-everything_x86_64-dvd.iso" class="link download">Turtle 0.9.4 - Everything - 64-bit - DVD-ROM</a> (<a href="release/turtle/0.9/4/everything/x86_64/turtle-0.9.4-everything_x86_64-dvd.iso.sha256" class="link download">SHA256</a>)</li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+          </article>
+
+          <article class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">Turtle Kevux Installation Scripts</h2>
+            </header>
+            <div class="article-content">
+              <section id="release-tkis-1.0.1" class="section">
+                <header class="article-header header">
+                  <h3 class="section-title h h3">TKIS 1.2.X Release (2022+)</h3>
+                </header>
+                <div class="section-content">
+                  <ul>
+                    <li>Not yet available.</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section id="release-tkis-1.0.1" class="section">
+                <header class="article-header header">
+                  <h3 class="section-title h h3">TKIS 1.0.1 Release (2012/02/28)</h3>
+                </header>
+                <div class="section-content">
+                  <ul>
+                    <li><a href="release/turtle/0.9/5/common/tkis-1.0.1.txz" class="link download">TKIS 1.0.1</a> (<a href="release/turtle/0.9/5/common/tkis-1.0.1.txz.sha256" class="link download">SHA256</a>)</li>
+                    <li><a href="release/turtle/0.9/5/common/tkis-1.0.1-tools-x86.txz" class="link download">Tools 1.0.1 - 32-bit</a> (<a href="release/turtle/0.9/5/common/tkis-1.0.1-tools-x86.txz.sha256" class="link download">SHA256</a>)</li>
+                    <li><a href="release/turtle/0.9/5/common/tkis-1.0.1-tools-x86_64.txz" class="link download">Tools 1.0.1 - 64-bit</a> (<a href="release/turtle/0.9/5/common/tkis-1.0.1-tools-x86_64.txz.sha256" class="link download">SHA256</a>)</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section id="release-tkis-1.0.0" class="section">
+                <header class="article-header header">
+                  <h3 class="section-title h h3">TKIS 1.0.0 Release (2011/12/11)</h3>
+                </header>
+                <div class="section-content">
+                  <ul>
+                    <li><a href="release/turtle/0.9/4/common/tkis-1.0.0.txz" class="link download">TKIS 1.0.0</a> (<a href="release/turtle/0.9/4/common/tkis-1.0.0.txz.sha256" class="link download">SHA256</a>)</li>
+                    <li><a href="release/turtle/0.9/4/common/tkis-1.0.0-tools-x86.txz" class="link download">Tools 1.0.0 - 32-bit</a> (<a href="release/turtle/0.9/4/common/tkis-1.0.0-tools-x86.txz.sha256" class="link download">SHA256</a>)</li>
+                    <li><a href="release/turtle/0.9/4/common/tkis-1.0.0-tools-x86_64.txz" class="link download">Tools 1.0.0 - 64-bit</a> (<a href="release/turtle/0.9/4/common/tkis-1.0.0-tools-x86_64.txz.sha256" class="link download">SHA256</a>)</li>
+                  </ul>
+                </div>
+              </section>
+            </div>
+          </article>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

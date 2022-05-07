@@ -1,0 +1,74 @@
+.kevux > .content-block > .main-block > .main > .main-content ul,
+.kevux > .content-block > .main-block > .main > .main-content ol {
+  margin: 0px;
+  padding-top: 1px;
+  padding-left: 26px;
+  padding-bottom: 5px;
+}
+
+.kevux > .content-block > .main-block > .main > .main-content a {
+  color: #0009ff;
+
+  text-decoration: none;
+}
+
+.kevux > .content-block > .main-block > .main > .main-content .notice {
+  color: #1a5d03;
+}
+
+.kevux > .content-block > .main-block > .main > .main-content .important {
+  color: #707070;
+}
+
+.kevux > .content-block > .main-block > .main > .main-content .error {
+  color: #ee0000;
+}
+
+.kevux > .content-block > .main-block > .main > .main-content .center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kevux > .content-block > .main-block > .main > .main-content .block {
+  display: block;
+}
+
+.kevux > .content-block > .main-block > .main > .main-content .inline_block {
+  display: inline-block;
+}
+
+.kevux > .content-block > .main-block > .main > .main-content .inline {
+  display: inline;
+}
+
+.kevux > .content-block > .main-block > .main > .main-content .bold {
+  font-weight: bold;
+}
+
+.kevux > .content-block > .main-block > .main > .main-content .vertical_align-top {
+  vertical-align: top;
+}
+
+.kevux > .content-block > .main-block > .main > .main-content hr.margined {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.kevux > .content-block > .main-block > .main > .main-content p {
+  margin: 0;
+}
+
+.kevux > .content-block > .main-block > .main > .main-content .code {
+  background-color: #ffffff;
+  border: 1px dotted #000000;
+  padding: 0.5px 3px;
+}
+
+.kevux > .content-block > .main-block > .main > .main-content .code.inline-block,
+.kevux > .content-block > .main-block > .main > .main-content .code.block {
+  padding: 3px 6px;
+}
+
+.kevux > .content-block > .main-block > .main > .main-content .tab_over {
+  margin-left: 24px;
+}

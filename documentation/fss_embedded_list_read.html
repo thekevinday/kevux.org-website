@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Documentation - FSS Embedded List Read</title>
+
+    <base href="../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="FSS Embedded List Read program documentation.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Make, Fake, Open-Source">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="documentation/fss_embedded_list_read.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js documentation">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item active"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="documentation.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">Documentation</div>
+            <div class="nav-text unlink">FSS Embedded List Read</div>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fss_embedded_list_read.html#about" class="nav-text link">About</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fss_embedded_list_read.html#parameters-standard" class="nav-text link">Standard Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fss_embedded_list_read.html#parameters-program" class="nav-text link">Program Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Specifications</div>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">APIs</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="documentation/fss_embedded_list_read.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="documentation/fss_embedded_list_read.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">FSS Embedded List Read Documentation</h1>
+          </header>
+
+          <section id="about" class="section">
+            <header class="section-header header">
+              <h2 class="section-title h h2">About</h2>
+            </header>
+            <div class="section-content">
+              <p>
+                The <strong>fss_embedded_list_read</strong> program is a tool for reading and processing strings that follow the FSS-0008 (Embedded List) standard.
+              </p>
+              <p>
+                This tool is designed to be scriptable and accepts piped input, treating the piped input as a file being read.
+              </p>
+              <p>
+                This tool shares parameters between with the other <abbr title="Featureless Settings Specification">FSS</abbr> Read and Write programs to make scripting consistent across the <abbr title="Featureless Settings Specification">FSS</abbr> Read and Write programs even if any given program neither needs nor uses the parameter.
+              </p>
+            </div>
+          </section>
+
+          <section id="parameters-standard" class="section">
+            <header class="section-header header separate">
+              <h2 class="section-title h h2">Standard Parameters</h2>
+            </header>
+
+            <div class="section-content">
+              <div class="center">
+                <table class="table context-parameters">
+                  <thead class="head set">
+                    <tr class="row">
+                      <th class="column">Short</th>
+                      <th class="column">Long</th>
+                      <th class="column">Description</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="body set">
+                    <tr class="row">
+                      <td class="column"><code class="code">-h</code></td>
+                      <td class="column"><code class="code">--help</code></td>
+                      <td class="column">Print the help message.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+d</code></td>
+                      <td class="column"><code class="code">++dark</code></td>
+                      <td class="column">Output using colors that show up better on dark backgrounds.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+l</code></td>
+                      <td class="column"><code class="code">++light</code></td>
+                      <td class="column">Output using colors that show up better on light backgrounds.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+n</code></td>
+                      <td class="column"><code class="code">++no_color</code></td>
+                      <td class="column">Do not print using color.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+q</code></td>
+                      <td class="column"><code class="code">++quiet</code></td>
+                      <td class="column">Decrease verbosity, silencing most output.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+n</code></td>
+                      <td class="column"><code class="code">++normal</code></td>
+                      <td class="column">Set verbosity to normal.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+V</code></td>
+                      <td class="column"><code class="code">++verbose</code></td>
+                      <td class="column">Increase verbosity beyond normal output.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+D</code></td>
+                      <td class="column"><code class="code">++debug</code></td>
+                      <td class="column">Enable debugging, significantly increasing verbosity beyond normal output.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+v</code></td>
+                      <td class="column"><code class="code">++version</code></td>
+                      <td class="column">Print only the version number.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                The <code>+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code>+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code>+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
+              </p>
+              <p>
+                The <code>+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
+              </p>
+            </div>
+          </section>
+
+          <section id="parameters-program" class="section">
+            <header class="section-header header separate">
+              <h2 class="section-title h h2">Program Parameters</h2>
+            </header>
+
+            <div class="section-content">
+              <div class="center">
+                <table class="table context-parameters">
+                  <thead class="head set">
+                    <tr class="row">
+                      <th class="column">Short</th>
+                      <th class="column">Long</th>
+                      <th class="column">Description</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="body set">
+                    <tr class="row">
+                      <td class="column"><code class="code">-a</code></td>
+                      <td class="column"><code class="code">--at</code></td>
+                      <td class="column">Select Object at this numeric index.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-c</code></td>
+                      <td class="column"><code class="code">--content</code></td>
+                      <td class="column">Print the Content (default).</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-C</code></td>
+                      <td class="column"><code class="code">--columns</code></td>
+                      <td class="column">Print the total number of columns.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-D</code></td>
+                      <td class="column"><code class="code">--delimit</code></td>
+                      <td class="column">Designate how to handle applying delimits.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-d</code></td>
+                      <td class="column"><code class="code">--depth</code></td>
+                      <td class="column">Select Object at this numeric depth.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-e</code></td>
+                      <td class="column"><code class="code">--empty</code></td>
+                      <td class="column">Include empty Content when processing.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-l</code></td>
+                      <td class="column"><code class="code">--line</code></td>
+                      <td class="column">Print only the Content at the given line.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-n</code></td>
+                      <td class="column"><code class="code">--name</code></td>
+                      <td class="column">Select Object with this name.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-o</code></td>
+                      <td class="column"><code class="code">--object</code></td>
+                      <td class="column">Print the Object.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-p</code></td>
+                      <td class="column"><code class="code">--pipe</code></td>
+                      <td class="column">Print using the special pipe format.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-R</code></td>
+                      <td class="column"><code class="code">--raw</code></td>
+                      <td class="column">Print with the original quotes and escapes.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-s</code></td>
+                      <td class="column"><code class="code">--select</code></td>
+                      <td class="column">Select sub-Content at this index.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-t</code></td>
+                      <td class="column"><code class="code">--total</code></td>
+                      <td class="column">Print the total number of lines.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-T</code></td>
+                      <td class="column"><code class="code">--trim</code></td>
+                      <td class="column">Trim Object names on select or print.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                All numeric positions (indexes) start at 0 instead of 1.
+              </p>
+              <p>
+                For example, a file of 17 lines would range from 0 to 16.
+              </p>
+              <p>
+                When using the <code>--depth</code> option, an order of operations is enforced on the parameters.
+              </p>
+              <p>
+                When this order of operations is in effect, parameters to the right of a depth parameter are influenced by that depth parameter:
+              </p>
+              <dl class="dl">
+                <div class="di">
+                  <dt class="dt"><code>--at</code></dt><dd class="dd">An Object index at the specified depth.</dd>
+                </div>
+                <div class="di">
+                  <dt class="dt"><code>--depth</code></dt><dd class="dd">A new depth within the specified depth, indexed from the root.</dd>
+                </div>
+                <div class="di">
+                  <dt class="dt"><code><code>--name</code></code></dt><dd class="dd">An Object name at the specified depth.</dd>
+                </div>
+              </dl>
+              <p>
+                The parameter <code>--depth</code> must be in numeric order, but values in between may be skipped.
+              </p>
+              <ul>
+                <li>('-d 0 -a 1 -d 2 -a 2' would specify index 1 at depth 0, any index at depth 1, and index 2 at depth 2.)</li>
+                <li>('-d 2 -a 1 -d 0 -a 2' would be invalid because depth 2 is before depth 1.)</li>
+              </ul>
+              <p>
+                The parameter <code>--select</code> selects a Content column.
+              </p>
+              <p>
+                Specify both <code>--object</code> and the --total parameters to get the total objects.
+              </p>
+              <p>
+                When both <code>--at</code> and <code>--name</code> parameters are specified (at the same depth), the <code>--at</code> parameter value will be treated as a position relative to the specified <code>--name</code> parameter value.
+              </p>
+              <p>
+                This program may support parameters, such as <code>--depth</code> or <code>--select</code>, even if not supported by the standard.
+              </p>
+              <p>
+                This is done to help ensure consistency for scripting.
+              </p>
+              <p>
+                For parameters like <code>--depth</code>, if the standard doesn't support nested Content, then only a depth of 0 would be valid.
+              </p>
+              <p>
+                For parameters like <code>--select</code>, if the standard doesn't support multiple Content groups, then only a select of 0 would be valid.
+              </p>
+              <p>
+                The parameter <code>--trim</code> will remove leading and trailing white spaces when selecting objects or when printing objects.
+              </p>
+              <p>
+                When specifying both the <code>--object</code> parameter and the <code>--content</code> parameter, the entire Object and Content are printed, including the formatting.
+              </p>
+              <p>
+                Both the Object and Content printed are already escaped.
+              </p>
+              <p>
+                Both the Object and Content are separated by a New Line character '<kbd>\n</kbd>' (U+000A).
+              </p>
+              <p>
+                The parameter <code>--delimit</code> accepts the following:
+              </p>
+              <dl class="dl">
+                <div class="di">
+                  <dt class="dt">none</dt><dd class="dd">Do not apply delimits.</dd>
+                </div>
+                <div class="di">
+                  <dt class="dt">all</dt><dd class="dd">(default) Apply all delimits.</dd>
+                </div>
+                <div class="di">
+                  <dt class="dt">object</dt><dd class="dd">Apply delimits for Objects.</dd>
+                </div>
+                <div class="di">
+                  <dt class="dt">A number, 0 or greater</dt><dd class="dd">apply delimits for Content at the specified depth.</dd>
+                </div>
+                <div class="di">
+                  <dt class="dt">A number, 0 or greater, followed by a +</dt><dd class="dd">(such as '1+') apply delimits for Content at the specified depth and any greater depth (numerically).</dd>
+                </div>
+                <div class="di">
+                  <dt class="dt">A number, 0 or lesser, followed by a -</dt><dd class="dd">(such as '1-') apply delimits for Content at the specified depth and any lesser depth (numerically).</dd>
+                </div>
+              </dl>
+              <p>
+                The <code>--delimit</code> parameter may be specified multiple times to customize the delimit behavior.
+              </p>
+              <p>
+                The <code>--delimit</code> values none and all, overrule all other delimit values.
+              </p>
+              <p>
+                The parameters <code>--columns</code> and <code>--select</code> refer to a Content column.
+              </p>
+              <p>
+                The word "<em>column</em>" is being loosely defined to refer to a specific Content.
+              </p>
+              <p>
+                This is not to be confused with a depth.
+              </p>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

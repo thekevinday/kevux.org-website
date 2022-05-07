@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kevux Systems and Software - News</title>
+
+    <base href="">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Kevux Systems, providing Featureless Linux Library and related programs as well as the Kevux Linux distributions.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Make, Fake, Controller, UTF-8, Distribution, Open-Source, News">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="index.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+    <link type="text/html" rel="next" href="distributions.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js news">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item active"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block">
+            <div class="nav-text notice">2022 / 05 / 06</div>
+            <a href="news/2022_05_06-basic_program_documentation.html" class="nav-text link">Basic Program Documentation</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">2022 / 05 / 01</div>
+            <a href="news/2022_05_01-website_redesign.html" class="nav-text link">Website Redesign</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Other Content</div>
+            <a href="licenses.html" class="nav-text link">Licenses</a>
+          </div>
+          <div class="nav-item block">
+            <a href="sources.html" class="nav-text link">Source Code</a>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="index.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="index.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">News</h1>
+          </header>
+
+          <article class="article">
+            <header class="article-header header">
+              <h2 class="article-title h h2">2022 / 05 / 06 - Basic Program Documentation</h2>
+            </header>
+            <div class="article-content">
+            <p>
+              Update the website, bringing in my initial pass at the documentation for each of the programs provided by the <abbr title="Featureless Linux Library">FLL</abbr> project. Most of this documentation is copied from the help of each program and any improvements or deviations are incidental.
+            </p>
+            <p>
+              While working on the documentation, I discovered and fixed random problems. In particular, the <strong>iki_read</strong> program in the release candidate has a major regression where it doesn't do anything. This is the result of a very minor mistake in passing the wrong size variable to the file read functions. Essentialy, the <strong>iki_read</strong> program is only processing files of length 0 and as a result never produces any output. This is now fixed upstream and I am even happier with the practice of using release candidates.
+            </p>
+              <p>
+                <a href="news/2022_05_06-basic_program_documentation.html" class="content link">Continue reading…</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="article">
+            <header class="article-header header">
+              <h2 class="article-title h h2">2022 / 05 / 01 - Website Redesign</h2>
+            </header>
+            <div class="article-content">
+              <p>
+                With a stable release of the Featureless Linux Library around the corner and the resuming of development of the Turtle Kevux Distribution, it is now time to refresh the website.
+              </p>
+              <p>
+               The available functionality in the HTML standard has changed a decent amount since this website was last updated. This new design focuses on a very primitive look and feel utilizing a lot of the built in visual tools available to the <abbr title="Hyper Text Markup Language version 5">HTML5</abbr> and <abbr title="Cascading Style Sheets version 3">CSS3</abbr> languages. The website is being built in stages, to allow for prioritizing getting information out over getting information looking great. This website even actively uses <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr>.
+              </p>
+              <p>
+                <a href="news/2022_05_01-website_redesign.html" class="content link">Continue reading…</a>
+              </p>
+            </div>
+          </article>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
