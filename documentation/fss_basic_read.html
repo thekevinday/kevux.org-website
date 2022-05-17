@@ -168,10 +168,10 @@
                 </table>
               </div>
               <p>
-                The <code>+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code>+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code>+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
+                The <code class="code">+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code class="code">+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code class="code">+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
               </p>
               <p>
-                The <code>+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
+                The <code class="code">+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
               </p>
             </div>
           </section>
@@ -273,55 +273,55 @@
                 For example, a file of 17 lines would range from 0 to 16.
               </p>
               <p>
-                When using the <code>--depth</code> option, an order of operations is enforced on the parameters.
+                When using the <code class="code">--depth</code> option, an order of operations is enforced on the parameters.
               </p>
               <p>
                 When this order of operations is in effect, parameters to the right of a depth parameter are influenced by that depth parameter:
               </p>
               <dl class="dl">
                 <div class="di">
-                  <dt class="dt"><code>--at</code></dt><dd class="dd">An Object index at the specified depth.</dd>
+                  <dt class="dt"><code class="code">--at</code></dt><dd class="dd">An Object index at the specified depth.</dd>
                 </div>
                 <div class="di">
-                  <dt class="dt"><code>--depth</code></dt><dd class="dd">A new depth within the specified depth, indexed from the root.</dd>
+                  <dt class="dt"><code class="code">--depth</code></dt><dd class="dd">A new depth within the specified depth, indexed from the root.</dd>
                 </div>
                 <div class="di">
-                  <dt class="dt"><code><code>--name</code></code></dt><dd class="dd">An Object name at the specified depth.</dd>
+                  <dt class="dt"><code class="code"><code class="code">--name</code></code></dt><dd class="dd">An Object name at the specified depth.</dd>
                 </div>
               </dl>
               <p>
-                The parameter <code>--depth</code> must be in numeric order, but values in between may be skipped.
+                The parameter <code class="code">--depth</code> must be in numeric order, but values in between may be skipped.
               </p>
               <ul>
                 <li>('-d 0 -a 1 -d 2 -a 2' would specify index 1 at depth 0, any index at depth 1, and index 2 at depth 2.)</li>
                 <li>('-d 2 -a 1 -d 0 -a 2' would be invalid because depth 2 is before depth 1.)</li>
               </ul>
               <p>
-                The parameter <code>--select</code> selects a Content column.
+                The parameter <code class="code">--select</code> selects a Content column.
               </p>
               <p>
-                Specify both <code>--object</code> and the --total parameters to get the total objects.
+                Specify both <code class="code">--object</code> and the --total parameters to get the total objects.
               </p>
               <p>
-                When both <code>--at</code> and <code>--name</code> parameters are specified (at the same depth), the <code>--at</code> parameter value will be treated as a position relative to the specified <code>--name</code> parameter value.
+                When both <code class="code">--at</code> and <code class="code">--name</code> parameters are specified (at the same depth), the <code class="code">--at</code> parameter value will be treated as a position relative to the specified <code class="code">--name</code> parameter value.
               </p>
               <p>
-                This program may support parameters, such as <code>--depth</code> or <code>--select</code>, even if not supported by the standard.
+                This program may support parameters, such as <code class="code">--depth</code> or <code class="code">--select</code>, even if not supported by the standard.
               </p>
               <p>
                 This is done to help ensure consistency for scripting.
               </p>
               <p>
-                For parameters like <code>--depth</code>, if the standard doesn't support nested Content, then only a depth of 0 would be valid.
+                For parameters like <code class="code">--depth</code>, if the standard doesn't support nested Content, then only a depth of 0 would be valid.
               </p>
               <p>
-                For parameters like <code>--select</code>, if the standard doesn't support multiple Content groups, then only a select of 0 would be valid.
+                For parameters like <code class="code">--select</code>, if the standard doesn't support multiple Content groups, then only a select of 0 would be valid.
               </p>
               <p>
-                The parameter <code>--trim</code> will remove leading and trailing white spaces when selecting objects or when printing objects.
+                The parameter <code class="code">--trim</code> will remove leading and trailing white spaces when selecting objects or when printing objects.
               </p>
               <p>
-                When specifying both the <code>--object</code> parameter and the <code>--content</code> parameter, the entire Object and Content are printed, including the formatting.
+                When specifying both the <code class="code">--object</code> parameter and the <code class="code">--content</code> parameter, the entire Object and Content are printed, including the formatting.
               </p>
               <p>
                 Both the Object and Content printed are already escaped.
@@ -330,7 +330,7 @@
                 Both the Object and Content are separated by a space.
               </p>
               <p>
-                The parameter <code>--delimit</code> accepts the following:
+                The parameter <code class="code">--delimit</code> accepts the following:
               </p>
               <dl class="dl">
                 <div class="di">
@@ -353,13 +353,13 @@
                 </div>
               </dl>
               <p>
-                The <code>--delimit</code> parameter may be specified multiple times to customize the delimit behavior.
+                The <code class="code">--delimit</code> parameter may be specified multiple times to customize the delimit behavior.
               </p>
               <p>
-                The <code>--delimit</code> values none and all, overrule all other delimit values.
+                The <code class="code">--delimit</code> values none and all, overrule all other delimit values.
               </p>
               <p>
-                The parameters <code>--columns</code> and <code>--select</code> refer to a Content column.
+                The parameters <code class="code">--columns</code> and <code class="code">--select</code> refer to a Content column.
               </p>
               <p>
                 The word "<em>column</em>" is being loosely defined to refer to a specific Content.

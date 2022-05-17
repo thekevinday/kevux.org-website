@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FLL - Specifications - FSS-0009 (Reverse Mapping)</title>
+
+    <base href="../../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Featurless Linux Library Specifications">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, specification, standard, fss-0009, reverse mapping">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="fll/specifications/fss/fss-0009.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js fll specifications">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item active"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="fll/specifications.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">FLL Specification</div>
+            <div class="nav-text unlink">FSS</div>
+          </div>
+          <div class="nav-item block">
+            <a href="fll/specifications/fss/fss-0009.html#fss-0009" class="nav-text link"><div>FSS-0009</div><div>(Reverse Mapping)</div></a>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="fll/specifications/fss/fss-0009.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="fll/specifications/fss/fss-0009.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">Featureless Linux Library Specification</h1>
+          </header>
+
+          <section id="fss-0009" class="section">
+            <header class="section-header header">
+              <h2 class="section-title h h2">FSS-0009 (Reverse Mapping)</h2>
+            </header>
+
+            <div class="section-content">
+              <p>
+                This is based off of <code class="code">fss-0000 (Basic)</code>, except the Object is at the end of the line.
+              </p>
+              <p>
+                Each Object starts at the end of a line and white space to the left of the Object is not treated as part of the object.
+                White space separates an Object from the Content.
+                An Object may be preceded by a newline, in which case means that the Object has no Content.
+                If only printing white space precedes a valid Object, that Object is considered to have no Content.
+              </p>
+              <p>
+                Content exists on the same line as the Object.
+                Content is represented as a single Content column that begins at a newline.
+                Content column consists of everything following the first non-white space character at the start of the line until the Object is reached.
+                Content column includes trailing white space before newline is reached.
+                Content column does not include any of the white space between the last non-white space character and the start of the Object.
+                No delimits are supported in the Content.
+              </p>
+              <p>
+                Key:
+              </p>
+              <ul>
+                <li><code class="code">\s</code> = white space, except newline.</li>
+                <li><code class="code">\b</code> = either white space or printable, except newline.</li>
+                <li><code class="code">\q</code> = non-white space or quoted white space with no white space outside of the quotes.</li>
+                <li><code class="code">\n</code> = newline.</li>
+                <li><code class="code">*</code> = zero or more occurrences.</li>
+                <li><code class="code">+</code> = one or more occurrences.</li>
+              </ul>
+              <p>
+                Before Structure:
+              </p>
+              <ul>
+                <li><code class="code"></code></li>
+              </ul>
+              <p>
+                Structure:
+              </p>
+              <ul>
+                <li><code class="code">\s*\b*\s+\q+\s*\n</code></li>
+              </ul>
+              <p>
+                After Structure:
+              </p>
+              <ul>
+                <li><code class="code"></code></li>
+              </ul>
+              <p>
+                Example:
+              </p><pre class="preserve">
+# fss-0009
+# valid comments are ignored.
+Content from newline. "The Object"
+object set. Second
+</pre>
+              <p>
+                Example Results:
+              </p><pre class="preserve">
+Object would be:
+  1) The Object
+  2) Second
+
+Content would be:
+  1.1) Content from newline.
+  2.1) object set.
+</pre>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

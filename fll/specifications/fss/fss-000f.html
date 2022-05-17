@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FLL - Specifications - FSS-000F (Simple Packet)</title>
+
+    <base href="../../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Featurless Linux Library Specifications">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, specification, standard, fss-000f, simple packet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="fll/specifications/fss/fss-000f.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js fll specifications">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item active"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="fll/specifications.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">FLL Specification</div>
+            <div class="nav-text unlink">FSS</div>
+          </div>
+          <div class="nav-item block">
+            <a href="fll/specifications/fss/fss-000f.html#fss-000f" class="nav-text link"><div>FSS-000F</div><div>(Simple Packet)</div></a>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="fll/specifications/fss/fss-000f.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="fll/specifications/fss/fss-000f.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">Featureless Linux Library Specification</h1>
+          </header>
+
+          <section id="fss-000f" class="section">
+            <header class="section-header header">
+              <h2 class="section-title h h2">FSS-000F (Simple Packet)</h2>
+            </header>
+
+            <div class="section-content">
+              <p>
+                This is a network packet format that contains <code class="code">fss-000e (Payload)</code> within it.
+              </p>
+              <p>
+                The Simple Packet structure is described in blocks, of which are structured in bytes.
+              </p>
+              <p>
+                There are only three blocks in this format:
+              </p>
+              <ol>
+                <li>Control Block.</li>
+                <li>Size Block.</li>
+                <li>Payload Block.</li>
+              </ol>
+              <p>
+                The Control Block is the first block in the packet and is considered endianless.
+                There exists only a single byte within the Control Block.
+                Regardless of the endianness of the packet, the leftmost bit is always the <em>string</em> or <em>binary</em> bit.
+                The second bit following that bit represents the endianness bit.
+              </p>
+              <p>
+                The <em>string</em> or <em>binary</em> bit, a value of 0 designates that the packet is in string format and a value of 1 designates that the packet is in binary format.
+                While the packet might be considered to be in string format, it is technically always in binary format due to the Control Block and Size Block.
+                This means that the bit designating the packet as a <em>string</em> packet or a <em>binary</em> packet is referring to whether or not the Payload Block is in <em>string</em> format or is in <em>binary</em> format.
+              </p>
+              <p>
+                The endianness bit designates whether or not the packet is in big endian or little endian format.
+                A bit value of 0 designates that this packet is in little endian and a value of 1 designates that this packet is in big endian format.
+                All binary data within this packet, following the Control Block, must respect this endianness bit (including the Size Block).
+              </p>
+              <p>
+                The remaining bits are not defined by this standard and are expected to be 0.
+                Non-formal or local uses may utilize these remaining 6 bits as desired.
+                However, there may be additional standards that expand upon this and utilize these remaining Control bits.
+                Anything that utilizes these unused Control bits may add or remove additional Blocks after the Control Block as they see fit.
+              </p>
+              <p>
+                The Size Block is an unsigned 32-bit integer representing the size of the entire packet, including the Control Block and Size Block.
+                This size must exactly match the packet to be a valid packet.
+                The size represents number of bytes in the file.
+                The Control Block is 1 byte long and the Size Block is 4 bytes long and so the maximum available size is (2^32)-6.
+              </p>
+              <p>
+                The Payload Block is not defined by this standard of that that it exists and should be in <code class="code">fss-000e (Payload)</code> format.
+                The <code class="code">fss-000e (Payload)</code> may be represented in either string format or binary format.
+                The <code class="code">fss-000e (Payload)</code> may contain multiple <em>header</em>(s) but may only contain a single <em>payload</em>.
+                With this in mind, it is recommended that only a single <em>header</em> be supported in the Payload Block.
+              </p>
+              <p>
+                See the <a href="fll/specifications/fss/fss-000e.html" class="link">fss-000e (Payload)</a> specification for details on the syntax rules for the Payload Block.
+              </p>
+              <p>
+                Example Packet Structure:
+              </p><pre class="preserve">
+[ Control Block ] [ Size Block                                  ] [ Payload Block         ]
+[ 0b10000000    ] [ 0b00000000 0b00000000 0b00000100 0b11010010 ] [ size: 1229 (1234 - 5) ]
+</pre>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

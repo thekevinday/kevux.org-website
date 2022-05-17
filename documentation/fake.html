@@ -189,10 +189,10 @@
                 </table>
               </div>
               <p>
-                The <code>+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code>+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code>+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
+                The <code class="code">+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code class="code">+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code class="code">+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
               </p>
               <p>
-                The <code>+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
+                The <code class="code">+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
               </p>
             </div>
           </section>
@@ -263,13 +263,13 @@
                 </table>
               </div>
               <p>
-                When using the <code>-d/--define</code> parameter the define structure must be passed as-is and may even need to be quoted if there is whitespace.
+                When using the <code class="code">-d/--define</code> parameter the define structure must be passed as-is and may even need to be quoted if there is whitespace.
               </p>
               <p>
-                For example, in the <strong>C</strong> programming, passing a macro to the compiler might look like '<code>-DMY_MACRO=1</code>'. To do this using <code>-d/--define</code>, there would be two parameters passed like this: '<code>-d -DMY_MACRO=1</code>'. This works because the parameter after the <code>-d/--define</code> is not interpreted and is treated exactly as is without interpreting it as a parameter to the <strong>fake</strong> program.
+                For example, in the <strong>C</strong> programming, passing a macro to the compiler might look like '<code class="code">-DMY_MACRO=1</code>'. To do this using <code class="code">-d/--define</code>, there would be two parameters passed like this: '<code class="code">-d -DMY_MACRO=1</code>'. This works because the parameter after the <code class="code">-d/--define</code> is not interpreted and is treated exactly as is without interpreting it as a parameter to the <strong>fake</strong> program.
               </p>
               <p>
-                Because of this, passing '<code>-d -h</code>' would not print the program help because the '<code>-h</code>' is considered a value associated with the '<code>-d</code>' parameter rather than a parameter itself.
+                Because of this, passing '<code class="code">-d -h</code>' would not print the program help because the '<code class="code">-h</code>' is considered a value associated with the '<code class="code">-d</code>' parameter rather than a parameter itself.
               </p>
             </div>
           </section>
@@ -310,16 +310,16 @@
                 </table>
               </div>
               <p>
-                When performing the build operation, the <code>--mode</code> parameter specifies a name (limited to alpha-numeric, underscore, and dash) to be used in addition to the global.
+                When performing the build operation, the <code class="code">--mode</code> parameter specifies a name (limited to alpha-numeric, underscore, and dash) to be used in addition to the global.
               </p>
               <p>
-                For example, when a mode of '<code>fll_monolithic</code>' is specified, build libraries from both '<code>build_libraries</code>' and '<code>build_libraries-fll_monolithic</code>' are used (but not '<code>build_libraries-fll_level</code>').
+                For example, when a mode of '<code class="code">fll_monolithic</code>' is specified, build libraries from both '<code class="code">build_libraries</code>' and '<code class="code">build_libraries-fll_monolithic</code>' are used (but not '<code class="code">build_libraries-fll_level</code>').
               </p>
               <p>
-                When specifying the <code>fakefile</code> or the settings parameters, the filenames are relative to the data build directory, unless a path is used.
+                When specifying the <code class="code">fakefile</code> or the settings parameters, the filenames are relative to the data build directory, unless a path is used.
               </p>
               <p>
-                For example, with '<code>--fakefile my_fakefile</code>' the fakefile at '<code>./data/build/my_fakefile</code>' would be used, however with '<code>--fakefile ./my_fakefile</code>' the fakefile at '<code>./my_fakefile</code>' would be used.
+                For example, with '<code class="code">--fakefile my_fakefile</code>' the fakefile at '<code class="code">./data/build/my_fakefile</code>' would be used, however with '<code class="code">--fakefile ./my_fakefile</code>' the fakefile at '<code class="code">./my_fakefile</code>' would be used.
               </p>
             </div>
           </section>

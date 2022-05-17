@@ -94,7 +94,7 @@
                 The <strong>status_code</strong> program is a tool for interpretting and changing the status codes received from programs into code words or vice-versa. This is intended to be easily scriptable. The code words are still machine-friendly and scriptable.
               </p>
               <p>
-                This tool only handles standard <abbr title="Featureless Linux Library">FLL</abbr> status codes. The max status code supported is represented by the code words <code>F_status_code_last</code>.
+                This tool only handles standard <abbr title="Featureless Linux Library">FLL</abbr> status codes. The max status code supported is represented by the code words <code class="code">F_status_code_last</code>.
               </p>
             </div>
           </section>
@@ -165,10 +165,10 @@
                 </table>
               </div>
               <p>
-                The <code>+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code>+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code>+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
+                The <code class="code">+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code class="code">+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code class="code">+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
               </p>
               <p>
-                The <code>+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
+                The <code class="code">+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
               </p>
             </div>
           </section>
@@ -193,17 +193,17 @@
                     <tr class="row">
                       <td class="column"><code class="code">-f</code></td>
                       <td class="column"><code class="code">--fine</code></td>
-                      <td class="column">Print <code>F_true</code> or <code>F_false</code> if status code is neither an error nor a warning or print number with neither the error code nor the warning code bits set.</td>
+                      <td class="column">Print <code class="code">F_true</code> or <code class="code">F_false</code> if status code is neither an error nor a warning or print number with neither the error code nor the warning code bits set.</td>
                     </tr>
                     <tr class="row">
                       <td class="column"><code class="code">-w</code></td>
                       <td class="column"><code class="code">--warning</code></td>
-                      <td class="column">Print <code>F_true</code> or <code>F_false</code> if status code is a warning or print number with warning code bit set.</td>
+                      <td class="column">Print <code class="code">F_true</code> or <code class="code">F_false</code> if status code is a warning or print number with warning code bit set.</td>
                     </tr>
                     <tr class="row">
                       <td class="column"><code class="code">-e</code></td>
                       <td class="column"><code class="code">--error</code></td>
-                      <td class="column">Print <code>F_true</code> or <code>F_false</code> if status code is an error or print number with error code bit set.</td>
+                      <td class="column">Print <code class="code">F_true</code> or <code class="code">F_false</code> if status code is an error or print number with error code bit set.</td>
                     </tr>
                     <tr class="row">
                       <td class="column"><code class="code">-n</code></td>

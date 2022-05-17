@@ -234,14 +234,14 @@
                     <br>
                     <span class="bold">Example comparison between raw iptables command and the default-firewall syntax:</span><br>
                     <span class="notice">Raw Iptables Syntax</span>:<br>
-                    <code>
+                    <code class="code">
                       /sbin/iptables -A INPUT -i eth0 -p tcp --dport 47288 -j ACCEPT<br>
                       /sbin/iptables -A INPUT -i eth0 -p udp --sport 47288:47544 -j ACCEPT<br>
                       /sbin/iptables -A INPUT -i eth0 -p udp --dport 47288:47544 -j ACCEPT<br>
                       /sbin/iptables -A OUTPUT -o eth0 -p udp --sport 123 --dport 123 -j ACCEPT<br>
                     </code><br>
                     <span class="notice">default-firewall Syntax</span>:<br>
-                    <code>
+                    <code class="code">
                       direction input<br>
                       device eth0<br>
                       action append<br>
@@ -369,7 +369,7 @@
                 Scroll to the bottom and uncomment and set the Driver to whatever you need it to be.<br>
                 <br>
                 If you are on an OLPC, you could copy the pre-created olpc xorg configuration file:<br>
-                <code><span class="notice">
+                <code class="code"><span class="notice">
                 &nbsp;&nbsp;&nbsp;cd /etc/X11/<br>
                 &nbsp;&nbsp;&nbsp;cp -v xorg.conf.olpc xorg.conf<br>
                 </span></code>
@@ -437,7 +437,7 @@
                 To update <span class="notice">/etc/usb.ids</span> to the latest version, download: <a href="http://www.linux-usb.org/usb.ids">http://www.linux-usb.org/usb.ids</a><br>
                 <br>
                 Once this is done, make sure that the file permissions are correct:<br>
-                <code><span class="notice">
+                <code class="code"><span class="notice">
                 &nbsp;&nbsp;&nbsp;chgrp hardware_browse /etc/{pci,usb}.ids<br>
                 &nbsp;&nbsp;&nbsp;chmod g-wx+r,o-rwx /etc/{pci,usb}.ids<br>
                 </span></code>
@@ -470,7 +470,7 @@
                 Lets say that you also dowloaded the appropriate kernel modules and it is called <span class="notice">2.6.26.5-olpc.tz2</span>.<br>
                 You will also need to extract the kernel modules to <span class="notice">modules/</span><br>
                 What you would do is:<br>
-                <code><span class="notice">
+                <code class="code"><span class="notice">
                 &nbsp;&nbsp;&nbsp;mv -v turtle-2.6.26.5-olpc boot/<br>
                 &nbsp;&nbsp;&nbsp;ln -vs turtle-2.6.26.5-olpc boot/turtle-olpc<br>
                 &nbsp;&nbsp;&nbsp;tar -xf 2.6.26.5-olpc.tz2 -C modules/<br>
@@ -479,7 +479,7 @@
                 </span></code>
                 <br>
                 Replace the default <span class="notice">xorg.conf</span> file with the the <span class="notice">xorg.conf.olpc</span> file so that you can get a working graphical display:<br>
-                <code><span class="notice">
+                <code class="code"><span class="notice">
                 &nbsp;&nbsp;&nbsp;cp -v etc/X11/xorg.conf.olpc etc/X11/xorg.conf<br>
                 </span></code>
                 <br>

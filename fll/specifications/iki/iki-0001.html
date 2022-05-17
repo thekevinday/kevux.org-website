@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FLL - Specifications - IKI-0001 (Basic)</title>
+
+    <base href="../../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Featurless Linux Library Specifications">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, specification, standard, iki-0001, basic">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="fll/specifications/iki/iki-0001.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js fll specifications">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item active"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="fll/specifications.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">FLL Specification</div>
+            <div class="nav-text unlink">IKI</div>
+          </div>
+          <div class="nav-item block">
+            <a href="fll/specifications/iki/iki-0001.html#iki-0001" class="nav-text link"><div>IKI-0001</div><div>(Basic)</div></a>
+          </div>
+          <div class="nav-item block">
+            <a href="fll/specifications/iki/iki-0001.html#common" class="nav-text link">Common Specification Rules</a>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="fll/specifications/iki/iki-0001.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="fll/specifications/iki/iki-0001.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">Featureless Linux Library Specification</h1>
+          </header>
+
+          <section id="iki-0001" class="section">
+            <header class="section-header header">
+              <h2 class="section-title h h2">IKI-0001 (Basic)</h2>
+            </header>
+
+            <div class="section-content">
+              <p>
+                This specification provides a small set of vocabulary names meant to be associated with common uses, such as e-mail addresses and <abbr title="Uniform Resource Locator">URL</abbr>s.
+              </p>
+              <p>
+                Vocabulary:
+              </p>
+              <dl class="dl">
+                <div class="di">
+                  <dt class="dt">address</dt>
+                  <dd class="dd">Any mailing address, except for e-mail and <abbr title="Uniform Resource Identifier">URI</abbr>.</dd>
+                </div>
+                <div class="di">
+                  <dt class="dt">code</dt>
+                  <dd class="dd">All text contained within represent code and should be presented as such.</dd>
+                </div>
+                <div class="di">
+                  <dt class="dt">email</dt>
+                  <dd class="dd">Any valid e-mail address.</dd>
+                </div>
+                <div class="di">
+                  <dt class="dt">phone</dt>
+                  <dd class="dd">Any valid phone number.</dd>
+                </div>
+                <div class="di">
+                  <dt class="dt">quote</dt>
+                  <dd class="dd">All text within represents some quote.</dd>
+                </div>
+                <div class="di">
+                  <dt class="dt">uri</dt>
+                  <dd class="dd">Any valid <abbr title="Uniform Resource Identifier">URI</abbr> (allows <abbr title="Uniform Resource Locator">URL</abbr> and <abbr title="Uniform Resource Name">URN</abbr>).</dd>
+                </div>
+                <div class="di">
+                  <dt class="dt">url</dt>
+                  <dd class="dd">Any valid <abbr title="Uniform Resource Locator">URL</abbr>.</dd>
+                </div>
+                <div class="di">
+                  <dt class="dt">urn</dt>
+                  <dd class="dd">Any valid <abbr title="Uniform Resource Name">URN</abbr>.</dd>
+                </div>
+                <div class="di">
+                  <dt class="dt">var</dt>
+                  <dd class="dd">All text contained within represents some sort of variable.</dd>
+                </div>
+              </dl>
+            </div>
+          </section>
+
+          <section id="common" class="section">
+            <header class="section-header header separate">
+              <h2 class="section-title h h2">Common Specification Rules</h2>
+            </header>
+
+            <div class="section-content">
+              <p>
+                IKI is a minimally structured WIKI-like syntax meant to be simpler than WIKI syntax.
+              </p>
+              <p>
+                The IKI syntax provides a vocabulary name (with specific context associated with it) followed by quoted code that is associated with the given vocabulary name.
+                The vocabulary represents a list of allowed variable names that may also have specific contextual meaning defined by a given IKI specification.
+                The variable name is considered the <em>Object</em>.
+                The variable value is considered the <em>Content</em>.
+              </p>
+              <p>
+                The IKI format will use <code class="code">iki-0000</code> to represent an IKI with no explicitly defined vocabulary.
+                Whereas <code class="code">iki-0001</code> and beyond represent a specific IKI vocabulary.
+              </p>
+              <p>
+                A potential IKI variable name starts on word (or <code class="code">_</code>, <code class="code">-</code>, <code class="code">+</code>) characters.
+                White space and non-word (and non <code class="code">_</code>, <code class="code">-</code>, <code class="code">+</code>) character punctuations may not exist as part of the variable name.
+                The only Unicode dash-like characters allowed as a "dash" are those intended to connect, such as the Unicode hyphens (<code class="code">U+2010</code> and <code class="code">U+2011</code>).
+              </p>
+              <p>
+                Any valid IKI data may be escaped to make it treated as non-IKI data by prepending a backslash <code class="code">" before the colon code:</code>:" that is before the opening quote (single or double).
+              </p>
+              <p>
+                Unicode punctuation connector characters are supported just like <code class="code">_</code>, except when they connect outside the current line (such as <code class="code">U+FE33</code> <code class="code">︳</code>).
+                Unicode invisible punctuations (such as invisible plus: <code class="code">U+2064</code>) are not considered a punctuations in this standard (because they a zero-width characters), therefore they are not to be considered a valid <code class="code">_</code>, <code class="code">-</code>, or <code class="code">+</code> Unicode equivalents.
+              </p>
+              <p>
+                Key:
+              </p>
+              <ul>
+                  <li><code class="code">\o</code> = any printable word character, including <code class="code">_</code>, <code class="code">-</code>, <code class="code">+</code> (and Unicode equivalents).</li>
+                  <li><code class="code">\c</code> = any character, including white space and non-printing, and any delimited quote (used as the opening quote) or a any quote (undelimited) not used as the opening quote.</li>
+                  <li><code class="code">\q</code> = either a single quote <code class="code">'</code> or a double quote <code class="code">"</code>.</li>
+                  <li><code class="code">\x</code> = any character.</li>
+                  <li><code class="code">\W</code> = any non-word character, discluding <code class="code">_</code>, <code class="code">-</code>, <code class="code">+</code> (and Unicode equivalents).</li>
+                  <li><code class="code">\e</code> = an optional escape sequence of any number of backslashes, such as <code class="code">\</code>.</li>
+                  <li><code class="code">*</code> = 0 or more occurrences.</li>
+                  <li><code class="code">~</code> = one or more occurrences, or 0 if at start of file.</li>
+              </ul>
+              <p>
+                Before Structure:
+              </p>
+              <ul>
+                <li><code class="code">\x*\W~\*:*</code></li>
+              </ul>
+              <p>
+                Structure:
+              </p>
+              <ul>
+                <li><code class="code">\o\e:\q\c\q</code></li>
+              </ul>
+              <p>
+                After Structure:
+              </p>
+              <ul>
+                <li><code class="code"></code></li>
+              </ul>
+              <p>
+                Example File:
+              </p><pre class="preserve">
+# fss-000c iki-0001
+
+This is my sentence, anything can go here but sometimes I want to emphasis:"emphasize some text".
+
+Other times I want to render a url such as this example url: url:'http://www.example.com/url with space/'.
+
+There are no comments, except for maybe the FSS header (which would not resolve to any IKI syntax anyway).
+
+Quotes may be included, such as: code:"const char *string = \"My \\\"quoted\\\" C string.\";".
+
+The following emphasis\:"is escaped to not be treated as IKI data".
+</pre>
+              <p>
+                Example Results:
+              </p><pre class="preserve margin-below">
+Objects would be:
+  1) emphasis
+  2) url
+  3) code
+
+Contents would be:
+  1.1) emphasize some text
+  2.1) http://www.example.com/url with space/
+  3.1) const char *string = "My \"quoted\" C string.";
+</pre>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

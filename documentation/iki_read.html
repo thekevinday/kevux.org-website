@@ -171,10 +171,10 @@
                 </table>
               </div>
               <p>
-                The <code>+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code>+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code>+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
+                The <code class="code">+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code class="code">+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code class="code">+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
               </p>
               <p>
-                The <code>+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
+                The <code class="code">+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
               </p>
             </div>
           </section>
@@ -255,7 +255,7 @@
                 </table>
               </div>
               <p>
-                The <code>-r/--replace</code> option requires 2 additional parameters: <code>&lt;vocabulary&gt; &lt;with&gt;</code>.
+                The <code class="code">-r/--replace</code> option requires 2 additional parameters: <code class="code">&lt;vocabulary&gt; &lt;with&gt;</code>.
               </p>
               <dl class="dl">
                 <div class="di">
@@ -266,7 +266,7 @@
                 </div>
               </dl>
               <p>
-                The <code>-s/--substitute</code> option requires 3 additional parameters: <code>&lt;vocabulary&gt; &lt;replace&gt; &lt;with&gt;</code>.
+                The <code class="code">-s/--substitute</code> option requires 3 additional parameters: <code class="code">&lt;vocabulary&gt; &lt;replace&gt; &lt;with&gt;</code>.
               </p>
               <dl class="dl">
                 <div class="di">
@@ -283,7 +283,7 @@
                 The <em>vocabulary</em> and <em>replacement</em> are case-sensitive and must exactly match.
               </p>
               <p>
-                The <code>-W/--wrap</code> option requires 3 additional parameters: <code>&lt;vocabulary&gt; &lt;before&gt; &lt;after&gt;</code>.
+                The <code class="code">-W/--wrap</code> option requires 3 additional parameters: <code class="code">&lt;vocabulary&gt; &lt;before&gt; &lt;after&gt;</code>.
               </p>
               <dl class="dl">
                 <div class="di">
@@ -297,13 +297,13 @@
                 </div>
               </dl>
               <p>
-                The difference between <code>-r/--replace</code> and <code>-s/--substitute</code> is that the <code>-r/--replace</code> option substitutes all matching vocabulary names and the <code>-s/--substitute</code> option substitutes all matching vocabulary names that must also have the given matching content.
+                The difference between <code class="code">-r/--replace</code> and <code class="code">-s/--substitute</code> is that the <code class="code">-r/--replace</code> option substitutes all matching vocabulary names and the <code class="code">-s/--substitute</code> option substitutes all matching vocabulary names that must also have the given matching content.
               </p>
               <p>
-                The <code>-s/--substitute</code> option takes priority over the <code>-r/--replace</code> option when matching the same variable.
+                The <code class="code">-s/--substitute</code> option takes priority over the <code class="code">-r/--replace</code> option when matching the same variable.
               </p>
               <p>
-                The <code>-W/--wrap</code> option is ignored when the <code>-s/--substitute</code> option is matching the same variable.
+                The <code class="code">-W/--wrap</code> option is ignored when the <code class="code">-s/--substitute</code> option is matching the same variable.
               </p>
               <p>
                 The default behavior is to only display content portion of the IKI variable.

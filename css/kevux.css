@@ -145,26 +145,49 @@
   border-right: 1px dotted;
 }
 
-.kevux.documentation > .content-block > .main-block .dl {
+.kevux > .content-block > .main-block .dl {
   border: 1px solid #e0e0e0;
 
   width: fit-content;
 }
 
-.kevux.documentation > .content-block > .main-block .dl > .di {
+.kevux > .content-block > .main-block .dl > .di {
   padding: 4px;
 }
 
-.kevux.documentation > .content-block > .main-block .dl > .di > .dt {
+.kevux > .content-block > .main-block .dl > .di > .dt {
   font-weight: bold;
 
   padding: 2px;
 }
 
-.kevux.documentation > .content-block > .main-block .dl > .di:nth-child(odd) {
+.kevux > .content-block > .main-block .dl > .di:nth-child(odd) {
   background-color: #efefef;
 }
 
+.kevux > .content-block > .main-block .preserve {
+  box-sizing: border-box;
+
+  white-space: pre-wrap;
+
+  background-color: #fffff5;
+
+  border: 1px solid #e6e78d;
+  margin: 2px 4px;
+  padding: 4px 8px;
+}
+
+.kevux > .content-block > .main-block .preserve.margin-below {
+  margin-bottom: 1rem;
+}
+
+.kevux > .content-block > .main-block .code {
+  box-sizing: border-box;
+
+  font-family: monospace;
+
+  color: #724801;
+}
 
 .kevux.documentation > .content-block > .main-block .table.context-parameters > .set > .row:nth-child(even) {
   background-color: #efefef;

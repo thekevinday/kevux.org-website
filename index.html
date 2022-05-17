@@ -51,6 +51,10 @@
       <div id="nav-expanded" class="nav-block">
         <nav id="kevux-document-nav" class="nav-menu">
           <div class="nav-item block">
+            <div class="nav-text notice">2022 / 05 / 16</div>
+            <a href="news/2022_05_16-fll_specifications_added.html" class="nav-text link">FLL Specifications Added</a>
+          </div>
+          <div class="nav-item block">
             <div class="nav-text notice">2022 / 05 / 06</div>
             <a href="news/2022_05_06-basic_program_documentation.html" class="nav-text link">Basic Program Documentation</a>
           </div>
@@ -80,15 +84,34 @@
 
           <article class="article">
             <header class="article-header header">
+              <h2 class="article-title h h2">2022 / 05 / 16 - FLL Specifications Added</h2>
+            </header>
+
+            <div class="article-content">
+              <p>
+                Updated the <abbr title="Featureless Linux Library">FLL</abbr> specifications and made them available on the website.
+              </p>
+              <p>
+                Basic styling is applied to make the specifications reasonably readable on a website. I avoided doing any complicated designs so that I can focus on other tasks (such as making a stable release). I took a shortcut on the example results by using the <code class="code">&lt;pre&gt;</code> tag.
+              </p>
+              <p>
+                <a href="news/2022_05_16-fll_specifications_added.html" class="content link">Continue reading…</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="article">
+            <header class="article-header header separate">
               <h2 class="article-title h h2">2022 / 05 / 06 - Basic Program Documentation</h2>
             </header>
+
             <div class="article-content">
-            <p>
-              Update the website, bringing in my initial pass at the documentation for each of the programs provided by the <abbr title="Featureless Linux Library">FLL</abbr> project. Most of this documentation is copied from the help of each program and any improvements or deviations are incidental.
-            </p>
-            <p>
-              While working on the documentation, I discovered and fixed random problems. In particular, the <strong>iki_read</strong> program in the release candidate has a major regression where it doesn't do anything. This is the result of a very minor mistake in passing the wrong size variable to the file read functions. Essentially, the <strong>iki_read</strong> program is only processing files of length 0 and as a result never produces any output. This is now fixed upstream and I am even happier with the practice of using release candidates.
-            </p>
+              <p>
+                Update the website, bringing in my initial pass at the documentation for each of the programs provided by the <abbr title="Featureless Linux Library">FLL</abbr> project. Most of this documentation is copied from the help of each program and any improvements or deviations are incidental.
+              </p>
+              <p>
+                While working on the documentation, I discovered and fixed random problems. In particular, the <strong>iki_read</strong> program in the release candidate has a major regression where it doesn't do anything. This is the result of a very minor mistake in passing the wrong size variable to the file read functions. Essentially, the <strong>iki_read</strong> program is only processing files of length 0 and as a result never produces any output. This is now fixed upstream and I am even happier with the practice of using release candidates.
+              </p>
               <p>
                 <a href="news/2022_05_06-basic_program_documentation.html" class="content link">Continue reading…</a>
               </p>
@@ -99,6 +122,7 @@
             <header class="article-header header separate">
               <h2 class="article-title h h2">2022 / 05 / 01 - Website Redesign</h2>
             </header>
+
             <div class="article-content">
               <p>
                 With a stable release of the Featureless Linux Library around the corner and the resuming of development of the Turtle Kevux Distribution, it is now time to refresh the website.

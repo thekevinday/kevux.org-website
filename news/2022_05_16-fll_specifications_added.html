@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>News - 2022/05/06 - Basic Program Documentation</title>
+    <title>News - 2022/05/16 - FLL Specifications Added</title>
 
     <base href="../">
 
     <meta charset="UTF-8">
     <meta name="author" content="Kevin Day">
-    <meta name="description" content="News post on 2022/05/06.">
+    <meta name="description" content="News post on 2022/05/16.">
     <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, News">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -23,7 +23,7 @@
     <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
     <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
 
-    <link rel="canonical" href="news/2022_05_06-basic_program_documentation.html">
+    <link rel="canonical" href="news/2022_05_16-fll_specifications_added.html">
     <link type="image/x-icon" rel="icon" href="images/kevux.ico">
     <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
     <link type="text/html" rel="license" href="licenses.html">
@@ -53,12 +53,12 @@
             <a href="index.html" class="nav-text link back">Back</a>
           </div>
           <div class="nav-item block unlink">
-            <div class="nav-text notice">2022 / 05 / 06</div>
-            <div class="nav-text unlink">Basic Program Documentation</div>
+            <div class="nav-text notice">2022 / 05 / 16</div>
+            <div class="nav-text unlink">FLL Specifications Added</div>
           </div>
           <div class="nav-item block ellipses">
-            <a href="news/2022_05_06-basic_program_documentation.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
-            <a href="news/2022_05_06-basic_program_documentation.html" class="nav-text link close">Collapse Menu</a>
+            <a href="news/2022_05_16-fll_specifications_added.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="news/2022_05_16-fll_specifications_added.html" class="nav-text link close">Collapse Menu</a>
           </div>
         </nav>
       </div>
@@ -66,24 +66,24 @@
       <div role="document" class="main-block">
         <main class="main">
           <header class="section-header header">
-            <h1 class="section-title h h1">2022 / 05 / 06 - Basic Program Documentation</h1>
+            <h1 class="section-title h h1">2022 / 05 / 16 - FLL Specifications Added</h1>
           </header>
 
           <div class="main-content">
             <p>
-              Update the website, bringing in my initial pass at the documentation for each of the programs provided by the <abbr title="Featureless Linux Library">FLL</abbr> project. Most of this documentation is copied from the help of each program and any improvements or deviations are incidental.
+              Updated the <abbr title="Featureless Linux Library">FLL</abbr> specifications and made them available on the website.
             </p>
             <p>
-              While working on the documentation, I discovered and fixed random problems. In particular, the <strong>iki_read</strong> program in the release candidate has a major regression where it doesn't do anything. This is the result of a very minor mistake in passing the wrong size variable to the file read functions. Essentially, the <strong>iki_read</strong> program is only processing files of length 0 and as a result never produces any output. This is now fixed upstream and I am even happier with the practice of using release candidates.
+              Basic styling is applied to make the specifications reasonably readable on a website. I avoided doing any complicated designs so that I can focus on other tasks (such as making a stable release). I took a shortcut on the example results by using the <code class="code">&lt;pre&gt;</code> tag.
             </p>
             <p>
-              The website has been updated with an appropriate <code class="code">.htaccess</code> file to better handle paths. I even decided to further emphasize the retro-internet feel by redirecting directory paths to html files, if they exist. I imagine this may annoy some of the people out there. Minor problems here and there have been addressed as I discovered them.
+              Only the main <abbr title="Featureless Linux Library">FLL</abbr> specification pages are updated. The specifications (or links to specifications) on the programs pages have not been updated. There is still quite a lot to do in regards to documenting the programs.
             </p>
             <p>
-              This website is also designed to be fully downloadable and readable locally (and even offline). Whenever I have notable changes on the website, I will update the downloadable tarball of this website.
+              Several mistakes on the website, such as incorrect canonical addresses, are now fixed.
             </p>
             <p>
-              A <em>Source Code</em> link has been added on the index page (the main news page) as a way for people who just want a fast way to get to the latest code.
+              I have also added an informal definition of my <a href="fll/specifications.html#completeness_theorem" class="link">Completeness Theorem</a> that I always used for just about all of my personal work. This has been in use by the <abbr title="Featureless Linux Library">FLL</abbr> since I first started working on it. I believe that I just never formally (or informally) wrote down my theory (I believe that the concepts for this were touched on in my thesis).
             </p>
             <p>
               <strong>Kevin Day</strong>

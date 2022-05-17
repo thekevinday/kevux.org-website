@@ -523,7 +523,7 @@
               <ul>
                 <br>
                 <li><span class="bold">Step 1</span>, generate the key (-d is for DSA, no -d is for RSA)<br>
-                <code>&nbsp;&nbsp;<span class="notice">ssh-keygen -d</span></code></li>
+                <code class="code">&nbsp;&nbsp;<span class="notice">ssh-keygen -d</span></code></li>
                 <br>
                 <li><span class="bold">Step 2</span>, Skipping password, just press enter on password prompt to leave it empty so that passwordless handshaking can work.<br>
                 This should create the .ssh/id_dsa and the .ssh/id_dsa.pub files, and this may take some time, depending on your hardware.</li>
@@ -533,14 +533,14 @@
                 &nbsp;&nbsp;<span class="notice">remotehost</span> = the address used to connect to the server<br>
                 &nbsp;&nbsp;<span class="notice">/yourhome/directiry</span> = the path to your home directory<br>
                 <br>
-                <code>&nbsp;&nbsp;<span class="notice">scp .ssh/id_dsa.pub username@remotehost:/yourhome/directory/</span></code><br>
-                <code>&nbsp;&nbsp;<span class="notice">ssh username@remotehost</span></code><br>
-                <code>&nbsp;&nbsp;<span class="notice">mkdir -p ~/.ssh/</span></code><br>
-                <code>&nbsp;&nbsp;<span class="notice">cat ~/id_dsa.pub >> ~/.ssh/authorized_keys</span></code></li>
+                <code class="code">&nbsp;&nbsp;<span class="notice">scp .ssh/id_dsa.pub username@remotehost:/yourhome/directory/</span></code><br>
+                <code class="code">&nbsp;&nbsp;<span class="notice">ssh username@remotehost</span></code><br>
+                <code class="code">&nbsp;&nbsp;<span class="notice">mkdir -p ~/.ssh/</span></code><br>
+                <code class="code">&nbsp;&nbsp;<span class="notice">cat ~/id_dsa.pub >> ~/.ssh/authorized_keys</span></code></li>
                 <br>
                 <li><span class="bold">Step 4</span>, now you can delete the id_dsa.pub file from the remote host and exit.<br>
-                  <code>&nbsp;&nbsp;<span class="notice">rm id_dsa.pub</span></code><br>
-                  <code>&nbsp;&nbsp;<span class="notice">exit</span></code></li>
+                  <code class="code">&nbsp;&nbsp;<span class="notice">rm id_dsa.pub</span></code><br>
+                  <code class="code">&nbsp;&nbsp;<span class="notice">exit</span></code></li>
                 <br>
                 <li><span class="bold">Step 5</span>, DONE<br>
                 You should be able to ssh to the remote host without a password now, given that the .ssh/id_dsa file and the .ssh/id_dsa.pub file exist on your client machine for the user you intend to connect with.</li>
@@ -550,10 +550,10 @@
                 Now that you can handshake from the above example, you should now be able to run the sshfs command and even put it in a logon or boot script, without exposing your password</li>
                 <br>
                 <li>Mounting from sshfs<br>
-                <code>&nbsp;&nbsp;<span class="notice">sshfs username@remotehost:/remote/directory/ /local/directory/</span></code></li>
+                <code class="code">&nbsp;&nbsp;<span class="notice">sshfs username@remotehost:/remote/directory/ /local/directory/</span></code></li>
                 <br>
                 <li>Unmounting from sshfs<br>
-                <code>&nbsp;&nbsp;<span class="notice">fusermount -u /local/directory/</span></code></li>
+                <code class="code">&nbsp;&nbsp;<span class="notice">fusermount -u /local/directory/</span></code></li>
                 <br>
                 <li>If you did not use the SSH Handshaking above, then you will be prompted for a password on the sshfs command</li>
                 <li>If you did use the SSH Handshaking above, and are still being asked for a password, then there is a problem with the RSA/DSA keys</li>
@@ -634,26 +634,26 @@
                 Lets say you wanted to encrypt a partition (/dev/sda6) and use a key file.<br>
                 <ol>
                   <li>Fill the drive with random data <span class="error">(this will delete all data on the device /dev/sda6)</span>:<br>
-                    <code><span class="notice">dd if=/dev/urandom of=/dev/sda6</span></code><br>
+                    <code class="code"><span class="notice">dd if=/dev/urandom of=/dev/sda6</span></code><br>
                     <br>
                   </li>
                   <li>Create a keyfile using randomly generated data:<br>
-                    <code><span class="notice">dd if=/dev/urandom of=~/some.key bs=1c count=512</span></code><br>
+                    <code class="code"><span class="notice">dd if=/dev/urandom of=~/some.key bs=1c count=512</span></code><br>
                     <br>
                   </li>
                   <li>Use the keyfile to encrypt the device with LUKS encryption:<br>
-                    <code><span class="notice">cryptsetup -c aes-xts-plain:sha512 -s 512 luksFormat /dev/sda6 ~/some.key</span></code><br>
+                    <code class="code"><span class="notice">cryptsetup -c aes-xts-plain:sha512 -s 512 luksFormat /dev/sda6 ~/some.key</span></code><br>
                     <br>
                     Alternatively, try this encryption:<br>
-                    <code><span class="notice">cryptsetup -c aes-cbc-essiv:sha256 -s 256 luksFormat /dev/sda6 ~/some.key</span></code><br>
+                    <code class="code"><span class="notice">cryptsetup -c aes-cbc-essiv:sha256 -s 256 luksFormat /dev/sda6 ~/some.key</span></code><br>
                     <br>
                   </li>
                   <li>Now that the device is encrypted, decrypt the device so that the device can be properly formatted (calling the decrypted device: some_name_here):<br>
-                    <code><span class="notice">cryptsetup luksOpen /dev/sda6 some_name_here -d ~/some-key</span></code><br>
+                    <code class="code"><span class="notice">cryptsetup luksOpen /dev/sda6 some_name_here -d ~/some-key</span></code><br>
                     <br>
                   </li>
                   <li>Format the decypted device (this example format creates an ext4 filesystem with a label of: some_fs_label):<br>
-                    <code><span class="notice">mkfs.ext4 -L some_fs_label /dev/mapper/some_name_here</span></code><br>
+                    <code class="code"><span class="notice">mkfs.ext4 -L some_fs_label /dev/mapper/some_name_here</span></code><br>
                     <br>
                   </li>
                 </ol>
@@ -661,24 +661,24 @@
                 Lets say you wanted to encrypt a partition (/dev/sda6) and use a password.<br>
                 <ol>
                   <li>Fill the drive with random data <span class="error">(this will delete all data on the device /dev/sda6)</span>:<br>
-                    <code><span class="notice">dd if=/dev/urandom of=/dev/sda6</span></code><br>
+                    <code class="code"><span class="notice">dd if=/dev/urandom of=/dev/sda6</span></code><br>
                     <br>
                   </li>
                   <li>Encrypt the device with LUKS encryption:<br>
-                    <code><span class="notice">cryptsetup -c aes-xts-plain:sha512 -y -s 512 luksFormat /dev/sda6</span></code><br>
+                    <code class="code"><span class="notice">cryptsetup -c aes-xts-plain:sha512 -y -s 512 luksFormat /dev/sda6</span></code><br>
                     Then enter in your desired password when prompted.<br>
                     <br>
                     Alternatively, try this encryption:<br>
-                    <code><span class="notice">cryptsetup -c aes-cbc-essiv:sha256 -y -s 256 luksFormat /dev/sda6</span></code><br>
+                    <code class="code"><span class="notice">cryptsetup -c aes-cbc-essiv:sha256 -y -s 256 luksFormat /dev/sda6</span></code><br>
                     <br>
                   </li>
                   <li>Now that the device is encrypted, decrypt the device so that the device can be properly formatted (calling the decrypted device: some_name_here):<br>
-                    <code><span class="notice">cryptsetup luksOpen /dev/sda6 some_name_here</span></code><br>
+                    <code class="code"><span class="notice">cryptsetup luksOpen /dev/sda6 some_name_here</span></code><br>
                     Enter in the password you used in the previous step when prompted.<br>
                     <br>
                   </li>
                   <li>Format the decypted device (this example format creates an ext4 filesystem with a label of: some_fs_label):<br>
-                    <code><span class="notice">mkfs.ext4 -L some_fs_label /dev/mapper/some_name_here</span></code><br>
+                    <code class="code"><span class="notice">mkfs.ext4 -L some_fs_label /dev/mapper/some_name_here</span></code><br>
                     <br>
                   </li>
                 </ol>
@@ -686,14 +686,14 @@
                 Lets say you wanted add a new key to an existing encrypted device.<br>
                 <ol>
                   <li>If not already created, create a new key using random data:<br>
-                    <code><span class="notice">dd if=/dev/urandom of=~/new.key bs=1c count=512</span></code><br>
+                    <code class="code"><span class="notice">dd if=/dev/urandom of=~/new.key bs=1c count=512</span></code><br>
                     <br>
                   </li>
                   <li>Add the new key (Assuming that the old key is called old.key and is stored in your home directory):<br>
-                    <code><span class="notice">cryptsetup -d ~/old.key luksAddKey /dev/sda6 ~/new.key</span></code><br>
+                    <code class="code"><span class="notice">cryptsetup -d ~/old.key luksAddKey /dev/sda6 ~/new.key</span></code><br>
                     <br>
                     If the encrypted device did not use a key, then use the following command instead and enter in the appropriate password when prompted:<br>
-                    <code><span class="notice">cryptsetup luksAddKey /dev/sda6 ~/new.key</span></code><br>
+                    <code class="code"><span class="notice">cryptsetup luksAddKey /dev/sda6 ~/new.key</span></code><br>
                     <br>
                   </li>
                 </ol>
@@ -701,11 +701,11 @@
                 Lets say you wanted add a new password to an existing encrypted device.<br>
                 <ol>
                   <li>Add the new key (Assuming that the old key is called old.key and is stored in your home directory):<br>
-                    <code><span class="notice">cryptsetup -d ~/old.key luksAddKey /dev/sda6</span></code><br>
+                    <code class="code"><span class="notice">cryptsetup -d ~/old.key luksAddKey /dev/sda6</span></code><br>
                     Then enter in your desired password when prompted.<br>
                     <br>
                     If the encrypted device did not use a key, then use the following command instead:<br>
-                    <code><span class="notice">cryptsetup luksAddKey /dev/sda6</span></code><br>
+                    <code class="code"><span class="notice">cryptsetup luksAddKey /dev/sda6</span></code><br>
                     You will first be prompted for the decryption password, enter in that first.<br>
                     Enter in the new password after the first password properly decrypts the device.<br>
                     <br>
@@ -719,10 +719,10 @@
                      Whenever the device gets decrypted a message should be presented, stating which key slot was used.<br>
                      <br>
                      Once you have the propery slot identified (lets call this desired_slot), delete that slot (Assuming that the old key is called old.key and is stored in your home directory):
-                    <code><span class="notice">cryptsetup -d ~/old.key luksDelKey /dev/sda6 desired_slot</span></code><br>
+                    <code class="code"><span class="notice">cryptsetup -d ~/old.key luksDelKey /dev/sda6 desired_slot</span></code><br>
                     <br>
                     If the encrypted device did not use a key, then use the following command instead:<br>
-                    <code><span class="notice">cryptsetup luksDelKey /dev/sda6 desired_slot</span></code><br>
+                    <code class="code"><span class="notice">cryptsetup luksDelKey /dev/sda6 desired_slot</span></code><br>
                     Enter in the decryption password when prompted.<br>
                     <br>
                   </li>

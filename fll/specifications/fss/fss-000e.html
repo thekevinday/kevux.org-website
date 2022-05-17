@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FLL - Specifications - FSS-000E (Payload)</title>
+
+    <base href="../../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Featurless Linux Library Specifications">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, specification, standard, fss-000e, payload">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="fll/specifications/fss/fss-000e.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js fll specifications">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item active"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="fll/specifications.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">FLL Specification</div>
+            <div class="nav-text unlink">FSS</div>
+          </div>
+          <div class="nav-item block">
+            <a href="fll/specifications/fss/fss-000e.html#fss-000e" class="nav-text link"><div>FSS-000E</div><div>(Payload)</div></a>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="fll/specifications/fss/fss-000e.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="fll/specifications/fss/fss-000e.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">Featureless Linux Library Specification</h1>
+          </header>
+
+          <section id="fss-000e" class="section">
+            <header class="section-header header">
+              <h2 class="section-title h h2">FSS-000E (Payload)</h2>
+            </header>
+
+            <div class="section-content">
+              <p>
+                This is a <code class="code">fss-0002 (Basic List)</code> with two required objects:
+              </p>
+              <ol>
+                <li><em>header</em>.</li>
+                <li><em>payload</em>.</li>
+              </ol>
+              <p>
+                The <em>header</em>:
+              </p>
+              <ul>
+                <li>The <em>header</em>'s Content is of type <code class="code">fss-0001 (Extended)</code>.</li>
+                <li>The <em>header</em> is recommended to have the Objects <em>length</em>, <em>status</em>, <em>part</em>, and <em>total</em>.</li>
+                <li>The recommended <em>length</em> represents the size of the <em>payload</em>.</li>
+                <li>The recommended <em>part</em> represents a single part of a set of packets for when the data being transmitted is split across multiple payloads.</li>
+                <li>The recommended <em>total</em> represents the total number of parts representing a complete data transmitted across multiple payloads.</li>
+                <li>The recommended <em>status</em> represents status codes (such as success or failure) and multiple.</li>
+                <li>The Content for the recommended <em>length</em> and <em>status</em> are positive whole numbers (including zero) that may be in <em>binary</em>, <em>octal</em>, <em>decimal</em>, <em>duodecimal</em>, or <em>hexidecimal</em> numerical format.</li>
+              </ul>
+              <p>
+                The <em>payload</em>:
+              </p>
+              <ul>
+                <li>The <em>payload</em>'s Content may contain anything, including raw binary data.</li>
+                <li>The <em>payload</em> is <em>required</em> to be the last list Object in the file.</li>
+                <li>The <em>payload</em> is recommended to have its size designated in some manner in the <em>header</em> (such as with the recommended <em>length</em>).</li>
+                <li>The <em>payload</em> is terminated by the <abbr title="End of File">EOF</abbr> character or by the recommended <em>length</em> header.</li>
+                <li>The <em>payload</em> may be empty (length may be zero), but the list Object <em>payload</em> must still exist.</li>
+                <li>Nothing in the <em>payload</em> may be considered a valid list Object by the outer <code class="code">fss-0002 (Basic List)</code> and therefore escaping is unnecessary (No further processing by the outer <code class="code">fss-0002 (Basic List)</code> is allowed at this point).</li>
+                <li>Comments in the <em>payload</em> are not considered comments and are instead considered part of the payload, as-is.</li>
+                <li>Essentially, the <em>payload</em> should be treated as binary data embedded in a text file.</li>
+              </ul>
+              <p>
+                The recommended <em>length</em> <em>header</em> Object used to designate the <em>payload</em> size does not necessarily have to be defined in the <em>header</em>.
+                That is to say, if the <em>payload</em> is expected to be of some pre-defined or static length then a length does not need to be provided in the <em>header</em>.
+              </p>
+              <p>
+                The recommended <em>status</em> <em>header</em> Object may be a string, such as <code class="code">F_none</code>, or a positive whole number.
+                What the status code represents is application specific (or specific to a sub-standard) but may often be used to represent <abbr title="Featureless Linux Library">FLL</abbr> status code.
+              </p>
+              <ul>
+                <li>The <abbr title="Featureless Linux Library">FLL</abbr> status code is a 16-bit digit whose first two high-order bits represent <em>error</em> and <em>warning</em> ( representing <em>signal</em>).</li>
+                <li>The <abbr title="Featureless Linux Library">FLL</abbr> status code as a number is binary sensitive and may not be portable across binaries or systems.</li>
+                <li>For best portability, consider using status as a name string to ensure cross-system or cross-binary compatibility.</li>
+              </ul>
+              <p>
+                Example:
+              </p><pre class="preserve">
+# fss-000e
+# valid comments are ignored.
+header:
+  type error
+  status 296
+  length 30
+
+payload:
+The program is out of memory.
+</pre>
+              <p>
+                Example Results:
+              </p><pre class="preserve">
+Outer Objects would be:
+  1) header
+  2) payload
+
+"header" Objects would be:
+  1.1) type
+  1.2) status
+  1.3) length
+
+"header" Contents would be:
+  1.1.1) error
+  1.2.1) 296
+  1.3.1) 30
+
+The payload would be:
+  2) The program is out of memory.
+</pre>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

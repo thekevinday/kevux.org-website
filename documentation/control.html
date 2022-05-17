@@ -165,10 +165,10 @@
                 </table>
               </div>
               <p>
-                The <code>+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code>+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code>+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
+                The <code class="code">+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code class="code">+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code class="code">+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
               </p>
               <p>
-                The <code>+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
+                The <code class="code">+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
               </p>
             </div>
           </section>
@@ -214,16 +214,16 @@
                 </table>
               </div>
               <p>
-                When the <code>--socket</code> parameter represents a directory path then the file name is generated from either the <code>--name</code> parameter or from the control settings file.
+                When the <code class="code">--socket</code> parameter represents a directory path then the file name is generated from either the <code class="code">--name</code> parameter or from the control settings file.
               </p>
               <p>
-                A rule action allows for either the full rule path, such as '<code>boot/root</code>' as a single parameter or two parameters with the first representing the rule directory path 'boot' and the second representing the rule base name '<code>root</code>'.
+                A rule action allows for either the full rule path, such as '<code class="code">boot/root</code>' as a single parameter or two parameters with the first representing the rule directory path 'boot' and the second representing the rule base name '<code class="code">root</code>'.
               </p>
               <p>
-                The <code>--return</code> parameter is intended to be used for scripting and is of the form "<code>response [type] [action] [status]</code>".
+                The <code class="code">--return</code> parameter is intended to be used for scripting and is of the form "<code class="code">response [type] [action] [status]</code>".
               </p>
               <p>
-                Be sure to use the <code>++quiet</code> parameter to suppress output when using this in scripting.
+                Be sure to use the <code class="code">++quiet</code> parameter to suppress output when using this in scripting.
                 No response is returned on program errors, especially those errors that prevent communicating to the controller.
               </p>
             </div>

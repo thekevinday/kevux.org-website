@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FLL - Specifications - FSS-000D (Basic Rule)</title>
+
+    <base href="../../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Featurless Linux Library Specifications">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, specification, standard, fss-000d, basic rule">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="fll/specifications/fss/fss-000d.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js fll specifications">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="index.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item active"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="fll/specifications.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">FLL Specification</div>
+            <div class="nav-text unlink">FSS</div>
+          </div>
+          <div class="nav-item block">
+            <a href="fll/specifications/fss/fss-000d.html#fss-000d" class="nav-text link"><div>FSS-000D</div><div>(Basic Rule)</div></a>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="fll/specifications/fss/fss-000d.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="fll/specifications/fss/fss-000d.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">Featureless Linux Library Specification</h1>
+          </header>
+
+          <section id="fss-000d" class="section">
+            <header class="section-header header">
+              <h2 class="section-title h h2">FSS-000D (Basic Rule)</h2>
+            </header>
+
+            <div class="section-content">
+              <p>
+                This is a special case that follows <code class="code">fss-0002 (Basic List)</code>, and different <abbr title="Featureless Settings Specifications">FSS</abbr> formats inside this <code class="code">fss-0002 (Basic List)</code>.
+                This <code class="code">fss-0002 (Basic List)</code> is considered the "Outer List" and the Content of this Outer List is considered the "Inner Content".
+              </p>
+              <p>
+                The Inner Content may be any of the following <abbr title="Featureless Settings Specifications">FSS</abbr> formats: <code class="code">fss-0000 (Basic)</code>, <code class="code">fss-0001 (Extended)</code>, and <code class="code">fss-0003 (Extended List)</code>.
+                The way in which each format is determined is first to see if the Inner Content Object would be a valid Extended List Object.
+                If the Inner Content Object is not a valid <code class="code">fss-0003 (Extended List)</code> Object, then check to see if it is an <code class="code">fss-0000 (Basic)</code> or <code class="code">fss-0001 (Extended)</code> Object.
+              </p>
+              <p>
+                The <code class="code">fss-0000 (Basic)</code> and <code class="code">fss-0001 (Extended)</code> Objects have the same format for Object names but the <code class="code">fss-0003 (Extended List)</code> Object is slightly different.
+                Anything that would match an <code class="code">fss-0003 (Extended List)</code> Object must therefore be an <code class="code">fss-0003 (Extended List)</code> Object.
+              </p>
+              <p>
+                This supports the use of <code class="code">iki-0000 (Unrestricted)</code> but only within the Content of the outermost <code class="code">fss-0002 (Basic List)</code>.
+                That is to say, the IKI is only processed once.
+                Additional restrictions on the use of IKI syntax is allowed if explicitly defined in the implementing specification.
+                This additional restriction may also include using a more restrictive IKI syntax, such as <code class="code">iki-0001 (Basic)</code>.
+              </p>
+              <p>
+                Anything implementing this specification may impose its own restrictions on when to determine if the Inner Content is what <abbr title="Featureless Settings Specifications">FSS</abbr> format, based on Object names.
+              </p>
+              <p>
+                See the <a href="fll/specifications/fss/fss-0000.html" class="link">fss-0000 (Basic)</a>, <a href="fll/specifications/fss/fss-0001.html" class="link">fss-0001 (Extended)</a>, and <a href="fll/specifications/fss/fss-0003.html" class="link">fss-0003 (Extended List)</a> specifications for details on the syntax rules.
+              </p>
+              <p>
+                Example:
+              </p><pre class="preserve">
+# fss-000d
+main:
+  name "Boot Devices"
+
+script:
+  start {
+    ip addr add 127.0.0.1/8 label lo dev lo;
+    ip link set lo up;
+  }
+
+  stop {
+    ip link set lo down;
+  }
+
+command:
+  start mount -a -O no_netdev
+  stop umount -arf -O no_netdev
+</pre>
+            <p>
+              Example Results:
+            </p><pre class="preserve">
+Outer List Objects would be:
+  1) main
+  2) script
+  3) command
+
+Outer List Contents would be:
+  1.1) name "Boot Devices"
+
+  2.1) start {
+         ip addr add 127.0.0.1/8 label lo dev lo;
+         ip link set lo up;
+       }
+
+       stop {
+         ip link set lo down;
+       }
+
+  3.1) begin mount -a -O no_netdev
+       end umount -arf -O no_netdev
+
+Inner Content Objects would be:
+  1.1.1) name
+  2.1.1) start
+  2.1.2) stop
+  3.1.1) begin
+  3.1.2) end
+
+Inner Content Contents would be (without breaking Content into its individual parts):
+  1.1.1) Boot Devices
+  2.1.1) ip addr add 127.0.0.1/8 label lo dev lo;
+         ip link set lo up;
+  2.1.2) ip link set lo down;
+  3.1.1) mount -a -O no_netdev
+  3.1.2) umount -arf -O no_netdev
+</pre>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
