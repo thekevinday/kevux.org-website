@@ -194,7 +194,7 @@
               <p>
                 Objects and Contents can include any characters allowed by the specifications.
                 The specification may choose how a given Object or Content are represented and parsed.
-                For example, in <code class="code">fss-0000 (Basic)</code>, Content is treated as a single item whereas in <code class="code">fss-0001 (Extended)</code>, Content is broken apart in multiple sub parts.
+                For example, in <code class="code">fss-0000 (Basic)</code>, Content is treated as a single item whereas in <code class="code">fss-0001 (Extended)</code>, Content is broken apart in multiple sub-parts.
               </p>
               <p>
                 Contents may be broken up into zero or more discrete sets of Content.
@@ -211,9 +211,15 @@
               <p>
                 Unless otherwise specified, all specifications are newline sensitive (<code class="code">\n</code> only).
                 Newline characters are only <code class="code">\n</code> and are never anything else (<code class="code">\r</code> is not considered newline in any manner).
+                These specifications refer to characters that have printable representation as <em>printable</em>.
+                These specifications refer to characters that have no printable representation as <em>non-printable</em>.
+
                 White spaces characters that are printable, such as tabs and spaces, must be considered the same type for the purposes of parsing.
-                Non-printing white spaces characters (zero-width characters) are ignored, are treated as placeholders for processing, or are considered part of the appropriate character if they are Unicode combining characters (this includes zero-width punctuation characters and similar).
+                Non-printing white spaces characters (zero-width characters) are ignored, are treated as placeholders for processing with the exception of combining characters.
+                White spaces that use combining characters result in printable characters and the resulting combination is treated as not white space.
+                Zero-width characters that use combining characters are treated as non-printing characters and are skipped.
                 In terms of processing, it is recommended that the <code class="code">NULL</code> character is not considered the end of a string, but this is only a suggestion.
+                Any specification may chose to limit, restrict, or otherwise prohibit special Unicode characters such as combining characters or zero-width characters.
               </p>
               <p>
                 Unless otherwise specified, newlines designate the potential start (or end) of an Object or Content.

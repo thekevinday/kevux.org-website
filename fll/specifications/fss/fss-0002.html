@@ -80,8 +80,8 @@
             <div class="section-content">
               <p>
                 Each Object starts at the beginning of a line and white space to the left of the Object is not treated as an object.
-                A colon followed by any white space until a newline terminates a valid Object.
-                Non-white space may not follow the colon of a valid Object.
+                A colon <code class="code">:</code> (<code class="code">U+003A</code>) followed by any white space until a newline terminates a valid Object.
+                Non-white space printable characters may not follow the colon of a valid Object.
               </p>
               <p>
                 Content is represented as a single Content column of every line following a valid object until the end of file (or string) or until the next valid Object is found.
@@ -99,8 +99,8 @@
               </p>
               <ul>
                 <li><code class="code">\s</code> = White space, except newline.</li>
-                <li><code class="code">\o</code> = Any printable character, except unescaped ':'.</li>
-                <li><code class="code">\l</code> = Any printable character or white space, except unescaped ':'.</li>
+                <li><code class="code">\o</code> = Any printable character, except unescaped <code class="code">:</code> (<code class="code">U+003A</code>).</li>
+                <li><code class="code">\l</code> = Any printable character or white space, except unescaped <code class="code">:</code> (<code class="code">U+003A</code>).</li>
                 <li><code class="code">\c</code> = either white space or printable, including newline, that not interpretable as an Object.</li>
                 <li><code class="code">\n</code> = Newline.</li>
                 <li><code class="code">*</code> = Zero or more occurrences.</li>
