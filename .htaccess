@@ -1,3 +1,5 @@
+Options +SymLinksIfOwnerMatch
+
 RewriteEngine on
 
 ErrorDocument 403 /access_denied.html
