@@ -167,7 +167,7 @@ tmpfs /tmp tmpfs noatime,size=1024M 0 0
 </pre>
                 </div>
                 <p>
-                  I was able to boot my system and install my desired software. I installed quite a bit of software. Updates were preformed. The details of different programs or problems I encountered are described in the sections following this.
+                  I was able to boot my system and install my desired software. I installed quite a bit of software. Updates were performed. The details of different programs or problems I encountered are described in the sections following this.
                 </p>
               </div>
             </section>
@@ -306,10 +306,10 @@ EOF
                   When I tried sending a picture as a test it appeared to work but the other end did not received the picture. The other end happens to be a <strong>Pinephone</strong>. The <strong>Pinephone</strong> has massive problems with sending and receiving pictures over text messages as well. That means that I do not have a reliable way to test this without bothering some third-party. And asking some less-tech savvy person to spend some time calling me back and forth to confirm or deny that they received or did not receive a text is not a good idea.
                 </p>
                 <p>
-                  I didn't test further because of a big problem this exposed. Infinite messages! No matter how many times I delete the test messages they keep re-appearing. I checked the modem using the <code class="code">mmctl</code> program. This program does not make it easy to use the modem but as far as I can tell the message is not there. I checked the file-system and found chatty file database (I feel the strong urge to rant on the stupidity of an <abbr title="Structured Query Language">SQL</abbr> database for local file settings here). Deleting this database file deletes every text message except the one I want to get rid off.
+                  I didn't test further because of a big problem this exposed. Infinite messages! No matter how many times I delete the test messages they keep re-appearing. I checked the modem using the <code class="code">mmcli</code> program. This program does not make it easy to use the modem but as far as I can tell the message is not there. I checked the file-system and found chatty file database (I feel the strong urge to rant on the stupidity of an <abbr title="Structured Query Language">SQL</abbr> database for local file settings here). Deleting this database file deletes every text message except the one I want to get rid off.
                 </p>
                 <p>
-                  The only thing I can think of is that it is still somewhere in the modem and I need to study more on how to use <code class="code">mmctl</code> program. I find the interface horrendous and I am considering writing a replacement to this program.
+                  The only thing I can think of is that it is still somewhere in the modem and I need to study more on how to use <code class="code">mmcli</code> program. I find the interface horrendous and I am considering writing a replacement to this program.
                 </p>
               </div>
             </section>
