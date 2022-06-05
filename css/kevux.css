@@ -7,6 +7,11 @@
   --width_screen: 100vw;
   --width_screen_90: 90vw;
   --width_side: 0px;
+
+  --float_right_by_width: right;
+  --float_left_by_width: left;
+
+  --margin_by_width_1rem_auto: 1rem;
 }
 
 .kevux {
@@ -195,4 +200,50 @@
 
 .kevux.documentation > .content-block > .main-block .table.context-parameters > .set > .row > .column:nth-child(1) {
   text-align: center;
+}
+
+.kevux > .content-block .image.content {
+  display: block;
+  box-sizing: border-box;
+}
+
+.kevux > .content-block .image.title {
+  border: 1px solid #357837;
+}
+
+.kevux > .content-block .image.left {
+  float: var(--float_left_by_width);
+}
+
+.kevux > .content-block .image.right {
+  float: var(--float_right_by_width);
+}
+
+.kevux > .content-block .image.margin-1rem {
+  margin: var(--margin_by_width_1rem_auto);
+}
+
+.kevux > .content-block .tip {
+  display: block;
+  box-sizing: border-box;
+
+  overflow: auto;
+
+  border: 1px dotted #724801;
+  margin: 0.5rem;
+  padding: 0.75rem;
+
+  background-color: #f9f9f0;
+}
+
+.kevux > .content-block .tip .code.terminal {
+  display: block;
+  box-sizing: border-box;
+
+  border: 1px dashed #000000;
+  margin: 0.5rem;
+  padding: 0.75rem;
+
+  background-color: #404040;
+  color: #ffffff;
 }

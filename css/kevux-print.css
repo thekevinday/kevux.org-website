@@ -16,3 +16,21 @@
   padding-bottom: 1rem;
   margin-bottom: 8px;
 }
+
+.kevux > .content-block .image.content {
+  display: block;
+
+  border: 1px solid #000000;
+}
+
+.kevux > .content-block .image.title {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kevux > .content-block .tip .code.terminal {
+  background-color: #ffffff;
+  color: #000000;
+
+  border-color: #000000;
+}

@@ -1,3 +1,12 @@
+@media (max-width: 800px) {
+  :root {
+    --float_right_by_width: none;
+    --float_left_by_width: none;
+
+    --margin_by_width_1rem_auto: auto;
+  }
+}
+
 .kevux {
   box-sizing: border-box;
 }
@@ -113,4 +122,9 @@
 
   margin: 0px;
   padding: 0px;
+}
+
+.kevux > .content-block .article:not(:last-of-type),
+.kevux > .content-block .section:not(:last-of-type) {
+  margin-bottom: 1rem;
 }
