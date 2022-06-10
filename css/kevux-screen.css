@@ -91,8 +91,8 @@
 }
 
 .kevux > .content-block > .main-block {
-  display: flex;
   position: relative;
+  box-sizing: border-box;
 
   padding: 8px;
 
@@ -100,7 +100,7 @@
 }
 
 .kevux > .content-block > .main-block > .main {
-  flex: auto;
+  max-width: 100%;
 }
 
 .kevux > .content-block > .main-block > .main .header > .h1 {
@@ -127,4 +127,8 @@
 .kevux > .content-block .article:not(:last-of-type),
 .kevux > .content-block .section:not(:last-of-type) {
   margin-bottom: 1rem;
+}
+
+.kevux > .content-block .image.content {
+  max-width: 100%;
 }

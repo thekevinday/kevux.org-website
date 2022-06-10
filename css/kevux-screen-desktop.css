@@ -4,9 +4,13 @@
 
 .kevux > .content-block {
   display: flex;
+  flex-direction: row;
+
+  max-width: 100%;
 }
 
 .kevux > .content-block > .nav-block {
+  flex-shrink: 1;
   word-break: normal;
 
   min-height: calc(var(--height_screen) - var(--height_header_site));

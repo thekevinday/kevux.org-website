@@ -244,6 +244,8 @@
   margin: 0.5rem;
   padding: 0.75rem;
 
+  white-space: pre-line;
+  unicode-bidi: embed;
   background-color: #404040;
   color: #ffffff;
 }

@@ -123,9 +123,7 @@
                 </p>
                 <div class="tip">
                   I recommend backing up your <code class="code">contacts.db</code> file. This file should appear after you first start and configure the <em>Contacts</em> program. The <code class="code">contacts.db</code> file can be located by using the following command on the command line from your home directory:
-                  <code class="code terminal">
-                    # find -name contacts.db
-                  </code>
+                  <samp class="code terminal"># find -name contacts.db</samp>
                 </div>
                 <p>
                   I open up the command line and I cannot login as root. Really? What a pain. The solution is to use <code class="code">sudo -s passwd</code> to change the root password and then login. I then had to change several other files so that the normal user can use sudo properly as well. The appropriate credentials can now be established.
@@ -145,10 +143,9 @@
                 <div class="tip">
                   I recommend always using <code class="code">noatime</code> on all mounted filesystems. The security offered by access times is weak. More importantly, access time increases the amount of input and output to the disk and wears down the drive faster. This is a bad idea for something like a phone that uses flash. These devices have a limited number of writes. Reducing writing to the disk on every read (even if it is a cached write) should also save battery life.
                   This is an example of what an <code class="code">/etc/fstab</code> might look like:
-                  <pre class="code terminal">
-UUID=00000000-0000-0000-0000-000000000000 /boot ext2 errors=remount-ro,noatime 0 2
-UUID=00000000-0000-0000-0000-000000000001 / ext4 errors=remount-ro,noatime 0 1
-</pre>
+                  <samp class="code terminal">UUID=00000000-0000-0000-0000-000000000000 /boot ext2 errors=remount-ro,noatime 0 2
+                    UUID=00000000-0000-0000-0000-000000000001 / ext4 errors=remount-ro,noatime 0 1
+                  </samp>
                 </div>
                 <p>
                   I also edited the <code class="code">/etc/fstab</code> file to ensure that the <code class="code">/tmp</code> directory is mounted as a temporary file-system utilizing <abbr title="Random Access Memory">RAM</abbr>.
@@ -160,11 +157,10 @@ UUID=00000000-0000-0000-0000-000000000001 / ext4 errors=remount-ro,noatime 0 1
                   An important parameter for <code class="code">tmpfs</code> is the <code class="code">size=</code> parameter.
                   The <code class="code">size=</code> allows specifying the upper limit to prevent it from utilizing too much <abbr title="Random Access Memory">RAM</abbr>. If this is too low, then files cannot be written. If this is too large, then the possibility of using too much <abbr title="Random Access Memory">RAM</abbr> exists.
                   This is an example of what an <code class="code">/etc/fstab</code> might look like:
-                  <pre class="code terminal">
-UUID=00000000-0000-0000-0000-000000000000 /boot ext2 errors=remount-ro,noatime 0 2
-UUID=00000000-0000-0000-0000-000000000001 / ext4 errors=remount-ro,noatime 0 1
-tmpfs /tmp tmpfs noatime,size=1024M 0 0
-</pre>
+                  <samp class="code terminal">UUID=00000000-0000-0000-0000-000000000000 /boot ext2 errors=remount-ro,noatime 0 2
+                    UUID=00000000-0000-0000-0000-000000000001 / ext4 errors=remount-ro,noatime 0 1
+                    tmpfs /tmp tmpfs noatime,size=1024M 0 0
+                  </samp>
                 </div>
                 <p>
                   I was able to boot my system and install my desired software. I installed quite a bit of software. Updates were performed. The details of different programs or problems I encountered are described in the sections following this.
@@ -250,27 +246,26 @@ tmpfs /tmp tmpfs noatime,size=1024M 0 0
                 </p>
                 <div class="tip">
                   The commands to perform the factory reset (thereby unbricking your card) from the terminal on the phone:
-                  <pre class="code terminal">
-# cat << EOF > reset.txt
-======
-/hex
-scd serialno
-scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40
-scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40
-scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40
-scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40
-scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
-scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
-scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
-scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
-scd apdu 00 e6 00 00
-scd apdu 00 44 00 00
-/echo card has been reset to factory defaults
-=====
-EOF
+                  <samp class="code terminal"># cat << EOF > reset.txt
+                    ======
+                    /hex
+                    scd serialno
+                    scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40
+                    scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40
+                    scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40
+                    scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40
+                    scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
+                    scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
+                    scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
+                    scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
+                    scd apdu 00 e6 00 00
+                    scd apdu 00 44 00 00
+                    /echo card has been reset to factory defaults
+                    =====
+                    EOF
 
-# gpg-connect-agent < reset.txt
-</pre>
+                    # gpg-connect-agent < reset.txt
+                  </samp>
                 </div>
               </div>
             </section>
@@ -336,7 +331,7 @@ EOF
 
               <div class="section-content">
                 <p>
-                  The keyboad on the <strong>Librem5</strong> is horrible. I get the impression that the programmers, owners, or managers behind the <strong>Librem5</strong> are more akin to the new age phone scroll users rather than the more old schoold keyboard users. The <strong>Pinephone</strong> uses the same software and has the same horrible keyboard.
+                  The keyboard on the <strong>Librem5</strong> is horrible. I get the impression that the programmers, owners, or managers behind the <strong>Librem5</strong> are more akin to the new age phone scroll users rather than the more old school keyboard users. The <strong>Pinephone</strong> uses the same software and has the same horrible keyboard.
                 </p>
               </div>
             </section>
@@ -366,7 +361,7 @@ EOF
                   The current day less-technical person compared to the traditional more-technical person have very different use cases. I have never owned one of these proprietary Android or Apple phones. Having said that, I believe that the interface is focused towards such an audience. I find such an interface tolerable but not very user-friendly.
                 </p>
                 <p>
-                  I believe what the <strong>Librem5</strong> provides achieves this with the exception of pictures. This exception is so big, that I might better word this as calling it the rule rather than the exception. Taking, sending, and receiving pictures is the bread and butter of the average user out in the wild. The <strong>Librem5</strong> (and also the <strong>Pinephone</strong> for that matter) drops the ball on this. This is a major downside and I would argue is a requirement that should be immediately address, two years ago.
+                  I believe what the <strong>Librem5</strong> provides achieves this with the exception of pictures. This exception is so big, that I might better word this as calling it the rule rather than the exception. Taking, sending, and receiving pictures is the bread and butter of the average user out in the wild. The <strong>Librem5</strong> (and also the <strong>Pinephone</strong> for that matter) drops the ball on this. This is a major downside and I would argue is a requirement that should be immediately addressed, two years ago.
                 </p>
               </div>
             </section>
