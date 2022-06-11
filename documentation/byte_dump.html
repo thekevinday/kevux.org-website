@@ -90,13 +90,13 @@
             </header>
 
             <div class="section-content">
-              <p>
+              <p class="p">
                 The <strong>byte_dump</strong> program is a tool for parsing and printing the bytes of all data within one or more files.
               </p>
-              <p>
+              <p class="p">
                 This tool operates similar to the classic <strong>hexdump</strong> program and provides similar functionality. However, the <strong>byte_dump</strong> program is not intended to be a complete replacemenet. Unlike the <strong>hexdump</strong> program, the <strong>byte_dump</strong> program is fully <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> aware and even validates the Unicode sequences.
               </p>
-              <p>
+              <p class="p">
                 This tool is designed to be scriptable and accepts piped input, treating the piped input as a file being read.
               </p>
             </div>
@@ -167,10 +167,10 @@
                   </tbody>
                 </table>
               </div>
-              <p>
+              <p class="p">
                 The <code class="code">+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code class="code">+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code class="code">+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
               </p>
-              <p>
+              <p class="p">
                 The <code class="code">+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
               </p>
             </div>
@@ -261,7 +261,7 @@
                   </tbody>
                 </table>
               </div>
-              <p>
+              <p class="p">
                 The output is broken up into two or three parts.
               </p>
               <ol>

@@ -74,11 +74,11 @@
 
             <section class="section" id="forward">
               <header class="article-header header">
-                <h3 class="section-title h h3">Forward</h3>
+                <h2 class="section-title h h2">Forward</h2>
               </header>
 
               <div class="section-content">
-                <p>
+                <p class="p">
                   I have always thought a phone is a computer and should be seen as a common computer. A common computer, very simply, is a machine that runs software. Software itself is essentially an extension of thought. Thought is yours and yours alone. Thoughts may be shared or withheld as one sees fit. Thoughts are communicated via language, such as a programming language. These thoughts, as represented by a given language through some software, are manifested into reality though the hardware that is a computer. What goes in a computer or comes out of a computer is and should be yours alone at your discretion for computers that belong to you, such as a personal phone. Like how ones mind may contain many thoughts, some that belong to others that have been communicated via some language and others ones own, a computer may contain different software from many different minds than oneself. Regardless of what is or is not on a phone, only the individual whom the phone belongs to should decide what comes in and goes out that phone regardless of whose thoughts they may have originated from. From software programs to text files and voice recordings, this is yours and yours alone.
                 </p>
               </div>
@@ -86,23 +86,23 @@
 
             <section class="section" id="the_dream_for_an_open_source_phone">
               <header class="article-header header separate">
-                <h3 class="section-title h h3">The Dream for an Open Source Phone</h3>
+                <h2 class="section-title h h2">The Dream for an Open Source Phone</h2>
               </header>
 
               <div class="section-content">
-                <p>
+                <p class="p">
                   I am a hacker, a tinkerer, one who likes to modify things into what I desire. I don't want somebody to do anything for me. I want to do anything for myself. While this does not mean I want to do everything, this does mean that want I want to do, I am the one to do it. In this case, I want to tweak and configure and use my phone as I see fit. Open-source gives me the opportunity to review, vet, and configure my computers as I see fit. Liberty such as this is the air that fills my lungs as I sleep at night, dreaming.
                 </p>
-                <p>
+                <p class="p">
                   When I first discovered I could have a phone that respects my freedom, my privacy, and my liberty, I was ecstatic. I don't have to be weigh down by horrible interfaces, horrible software, and horrible flexibility that other people like or otherwise think is a good idea. I would have the opportunity to tweak and adjust the ideas as I see fit within my own personal tolerances and willingness to put the effort in.
                 </p>
-                <p>
+                <p class="p">
                   I supported several phones over years, such as the <strong>OpenMoko Freerunner</strong>, an embarrassing failure in the community to the leap forward pioneered by the <strong>Unbuntu Aquaris</strong>. Many of these phones ultimately failed or faded into the night due to a hostile industry, market, and regulations. The <strong>Librem5</strong> from <a href="https://puri.sm/" class="link external">Purism</a> has now stepped up to the plate, learned from the past mistakes, and delivered a phone that, while not complete or ideal, lives up to their standards and has thus far survived numerous, and blatant, hostile industry actions and economic disasters.
                 </p>
-                <p>
+                <p class="p">
                   I finally have my <strong>Librem5</strong>. I have had to quite painfully, if not patiently, wait for my phone to actually be shipped years late (due to global economic situations). This is my review after having used the phone with respect to the other open-source phones I have used, namely the <strong>Pinephone</strong> from <a href="https://www.pine64.org/" class="link external">Pine64</a>. I have discovered good things, bad things, horrible things, and great things about this phone.
                 </p>
-                <p>
+                <p class="p">
                   The <strong>Pinephone</strong> that I have uses mostly the same software as the <strong>Librem5</strong>. This offers a great comparison. However, much of this software is actually by the <a href="https://puri.sm/" class="link external">Purism</a>. The resulting differences are primarily, but not mostly, the hardware differences.
                 </p>
               </div>
@@ -110,34 +110,34 @@
 
             <section class="section" id="the_experience">
               <header class="article-header header separate">
-                <h3 class="section-title h h3">The Experience</h3>
+                <h2 class="section-title h h2">The Experience</h2>
               </header>
 
               <div class="section-content">
-                <p>
+                <p class="p">
                   I received the <strong>Librem5</strong> phone, charged it up, and then powered it on. The first thing I encountered was the disk encryption. The default password is easy to guess and I did not have to look up documentation to figure it out. I am already familiar with the interface thanks to having installed it onto the <strong>Pinephone</strong>. Most of the software looked the same, except for the camera. I will discuss more on the camera program later on in this document.
                 </p>
                 <img src="images/news/2022_06_04/01-unboxed-400.png" alt="Librem5 phone, manual, and box." title="Unboxed phone." class="image content right margin-1rem">
-                <p>
+                <p class="p">
                   First things first, I need to change the user name and the encryption keys. I've never bothered with this on the <strong>Pinephone</strong> and I do not know how different doing this on the <strong>Pinephone</strong> will be. As for the <strong>Librem5</strong> phone, I found changing the user name did not actually change the user name. The problem is that what I call the user name is the system account name. What the <strong>Librem5</strong> calls the user name is the displayed account name. Fair enough.
                 </p>
                 <div class="tip">
                   I recommend backing up your <code class="code">contacts.db</code> file. This file should appear after you first start and configure the <em>Contacts</em> program. The <code class="code">contacts.db</code> file can be located by using the following command on the command line from your home directory:
                   <samp class="code terminal"># find -name contacts.db</samp>
                 </div>
-                <p>
+                <p class="p">
                   I open up the command line and I cannot login as root. Really? What a pain. The solution is to use <code class="code">sudo -s passwd</code> to change the root password and then login. I then had to change several other files so that the normal user can use sudo properly as well. The appropriate credentials can now be established.
                 </p>
-                <p>
+                <p class="p">
                   I rename the user, changing the home directory, updating the <code class="code">/etc/passwd</code>, <code class="code">/etc/group</code>, <code class="code">/etc/shadow</code>, and several other account related files.
                 </p>
-                <p>
+                <p class="p">
                   I rebooted the <strong>Librem5</strong> phone and it failed to boot. Some part of the boot process is picky about the default name. I found that there is a <a href="https://github.com/dreemurrs-embedded/Jumpdrive" class="link external">Jumpdrive</a> program that allows me to boot the phone and expose the disk to another computer. <a href="https://puri.sm/" class="link external">Purism</a> actually provides their own special project, called <a href="https://source.puri.sm/Librem5/librem5-flash-image" class="link external">Librem5 Flash Image</a> for making this amazingly simple. These two tools when combined are amazing. I've never had an easier time accessing a phone over <abbr title="Universal Serial Bus">USB</abbr>. I could access all files on a different machine as if it were a local disk drive.
                 </p>
-                <p>
+                <p class="p">
                   The <a href="https://source.puri.sm/Librem5/librem5-flash-image" class="link external">Librem5 Flash Image</a> documentation could be improved because the default configuration installs without full disk encryption. I had to re-flash the <strong>Librem5</strong> phone again once I discovered it to be unencrypted. The partition also had to be resized but thanks to the amazingly well designed software (the <a href="https://github.com/dreemurrs-embedded/Jumpdrive" class="link external">Jumpdrive</a> program and the <a href="https://source.puri.sm/Librem5/librem5-flash-image" class="link external">Librem5 Flash Image</a>) I could just open up a graphical partition and easily fix this.
                 </p>
-                <p>
+                <p class="p">
                   I now had easy access to all files on the disk. I found and fixed several of the situations related to the user name change. I also edited the <code class="code">/etc/fstab</code> file to ensure that the filesystem is mounted as <code class="code">noatime</code>.
                 </p>
                 <div class="tip">
@@ -147,7 +147,7 @@
                     UUID=00000000-0000-0000-0000-000000000001 / ext4 errors=remount-ro,noatime 0 1
                   </samp>
                 </div>
-                <p>
+                <p class="p">
                   I also edited the <code class="code">/etc/fstab</code> file to ensure that the <code class="code">/tmp</code> directory is mounted as a temporary file-system utilizing <abbr title="Random Access Memory">RAM</abbr>.
                 </p>
                 <div class="tip">
@@ -162,7 +162,7 @@
                     tmpfs /tmp tmpfs noatime,size=1024M 0 0
                   </samp>
                 </div>
-                <p>
+                <p class="p">
                   I was able to boot my system and install my desired software. I installed quite a bit of software. Updates were performed. The details of different programs or problems I encountered are described in the sections following this.
                 </p>
               </div>
@@ -170,39 +170,51 @@
 
             <section class="section" id="the_battery">
               <header class="article-header header separate">
-                <h3 class="section-title h h3">The Battery, the Battery, the Battery</h3>
+                <h2 class="section-title h h2">The Battery, the Battery, the Battery</h2>
               </header>
 
               <div class="section-content">
-                <p>
+                <p class="p">
                   While waiting an excessively long time to get my phone I have been hearing things about the battery. In my personal experience the battery life is closely comparable to the <strong>Pinephone</strong>. Both the <strong>Librem5</strong> and the <strong>Pinephone</strong> have had problems with the batter life being short. These have both been fixed from a state of horrible to a state of acceptable by the use of software driver improvements. When I first received my <strong>Librem5</strong> phone, the batter life was short. This short life was solved by a simple software update and phone reboot.
                 </p>
-                <p>
+                <p class="p">
                   In physical terms, the <strong>Librem5</strong> is a lot easier to remove than the battery from the <strong>Pinephone</strong>. The batter in the <strong>Librem5</strong> is significantly larger than the battery in the <strong>Pinephone</strong>. I suspect they may last about the same amount of time but I have not bothered to test this.
                 </p>
-                <p>
+                <p class="p">
                   Both the <strong>Librem5</strong> and the <strong>Pinephone</strong> support suspend and it works well on both. The user interface could use some significant improvement by allowing me to specify when to suspend rather than use some pre-configured set. In fact, I want a program to call just to automatically suspend when I say rather than on some schedule.
                 </p>
               </div>
+
+              <section class="subsection box update" id="the_battery-2022_06_11-update">
+                <header class="article-header header">
+                  <h3 class="subsection-title h h3">2022 / 06 / 11 Update</h3>
+                </header>
+
+                <div class="subsection-content">
+                  <p class="p">
+                    I have performed some additional testing and found that the battery life can last quite a long time in the right conditions. I set only the cellular radio on (and with all of the other switches toggled off). I enabled suspend mode. Leaving the phone on over night (the initial charge is around 90% for this test) and found the battery to be between 40% and 50%. I believe that when the phone is idle and the cellular radio is on the phone should be able to achieve between 12 to 24 hours of battery life. This is a very rough approximation but this does provide promising results.
+                  </p>
+                </div>
+              </section>
             </section>
 
             <section class="section" id="the_battery">
               <header class="article-header header separate">
-                <h3 class="section-title h h3">The Librem5 Charger</h3>
+                <h2 class="section-title h h2">The Librem5 Charger</h2>
               </header>
 
               <div class="section-content">
                 <img src="images/news/2022_06_04/02-the_charger-300.png" alt="The Librem5 charger." title="Librem5 charger." class="image content left margin-1rem">
-                <p>
+                <p class="p">
                   This deserves its own section separate from the battery. The provided charger seems cool. The charger looks cool. It is horrible, at least for American standard outlets. The flip switch is nice except that it wobbles and the connectors seem a little short. This results in sparks flying out of the socket. This charger is a fire hazard. The best position is with the part that collapsed opposite to gravity and it seems to work. If you accidentally touch or move the cable you can set off sparks and cause the connection to repeatedly disconnect and connect.
                 </p>
-                <p>
+                <p class="p">
                   To make matters worse, the <strong>Librem5</strong> documentation states that you must only use the charger provided by <strong>Librem5</strong>. You know, the fire hazard charger. Not going to happen. I went to a local store and got a 25 Watt power adapter that supports <abbr title="Programmable Power Supply">PPS</abbr> (the <strong>Librem5</strong> uses <abbr title="Programmable Power Supply">PPS</abbr>).
                 </p>
-                <p>
+                <p class="p">
                   Unlike the <strong>Pinephone</strong>, I have found the <strong>Librem5</strong> requires more power to charge. A higher end power adapter like the ones marketed for high Wattage are recommended. I found that I can charge the <strong>Librem5</strong> using a cheap low Amperage (low Wattage) adapter only when the phone is off.
                 </p>
-                <p>
+                <p class="p">
                   The <strong>Librem5</strong> only gets hot from charger when using one of these high powered chargers. I tested the <strong>Pinephone</strong> with the same adapter and found it also gets hot. I suspect the heating is more of a matter of the physics of the speed of the charge rather than a matter of the physics of the heat diffusion. I tested the <strong>Librem5</strong> with a cheap low Amperage (low Wattage) adapter and found that the phone did not get significantly or otherwise noticeably hot.
                 </p>
               </div>
@@ -210,38 +222,50 @@
 
             <section class="section" id="the_camera">
               <header class="article-header header separate">
-                <h3 class="section-title h h3">The Librem5 Camera</h3>
+                <h2 class="section-title h h2">The Librem5 Camera</h2>
               </header>
 
               <div class="section-content">
-                <p>
+                <p class="p">
                   I consider the camera embarrassing. The light sensitivity does not work properly. The camera program is clearly marked as developmental. I have to have a spotlight in on the target for the phone to get enough light to render anything on the screen. I believe the problem is a software problem. This is good news. Either a driver or a software update will fix the problem.
                 </p>
-                <p>
+                <p class="p">
                   The <strong>Pinephone</strong> camera works reasonably well. Early on, the <strong>Pinephone</strong> had pathetic camera support as well and with software improvements the camera became usable. The <strong>Librem5</strong> uses a modified version of the <code class="code">megapixels</code> program. I attempted to install the original, unmodified version of <code class="code">megapixels</code> and very quickly realized doing so is a bad idea. I did not go past the <em>"Are you Sure?"</em> part.
                 </p>
                 <div class="tip">
                   I recommend never attempting to install the original <code class="code">megapixels</code> program on the <strong>Librem5</strong>. The entire set of <strong>Librem5</strong> specific software is a knot of required dependencies. This would likely uninstall everything custom tailored to make the <strong>Librem5</strong> work well. Most package managers lack the necessary logic to have real custom installs. I believe these package mangers should all abandon hard dependencies and instead use soft dependencies. If you still decide to go ahead with installing the <code class="code">megapixels</code> program, then good luck and be prepared to completely re-install your phone.
                 </div>
-                <p>
+                <p class="p">
                   Maybe in a few months from now an update will result in a fully working <strong>Librem5</strong> camera. Until then, the <strong>Pinephone</strong> wins hands down when it comes to the camera.
                 </p>
               </div>
+
+              <section class="subsection box update" id="the_camera-2022_06_11-update">
+                <header class="article-header header">
+                  <h3 class="subsection-title h h3">2022 / 06 / 11 Update</h3>
+                </header>
+
+                <div class="subsection-content">
+                  <p class="p">
+                    I have discovered that the camera has buttons that simple do not appear as buttons to me. I am able to use these buttons to change the settings and make the camera picture usable. Changing these settings is not preserved. There is still some room for improvement but this is still great news. The camera is not as bad as I initially thought. Check out <a href="https://social.librem.one/tags/shotonlibrem5" class="link external">the "Shot on Librem" Librem Social board</a> for pictures taken by numerous owners of the <strong>Librem5</strong> phone. There is also <a href="https://forums.puri.sm/t/using-megapixels-to-make-photographs/14842" class="link external">a forum page about using Megapixels to make photographs</a>.
+                  </p>
+                </div>
+              </section>
             </section>
 
             <section class="section" id="the_camera">
               <header class="article-header header separate">
-                <h3 class="section-title h h3">The Purism OpenPGP Card</h3>
+                <h2 class="section-title h h2">The Purism OpenPGP Card</h2>
               </header>
 
               <div class="section-content">
-                <p>
+                <p class="p">
                   This is a specialty of the <strong>Librem5</strong> that I have not notice in other phones. The card works great, you just push it in and then go. Follow the instructions to install the correct software, and the card should work.
                 </p>
-                <p>
+                <p class="p">
                   If you play with the card, like I do, however, you may run into some problems. I decided to change the <em>admin PIN</em> using the <code class="code">gpg</code> program. I select the change <abbr title="Personal Identification Number">PIN</abbr>. As I was typing the old <abbr title="Personal Identification Number">PIN</abbr> it suddenly went to another prompt before I hit enter. I thought maybe I accidentally hit enter. I then entered in the new <abbr title="Personal Identification Number">PIN</abbr>. The program then asked for confirmation and I re-entered the <abbr title="Personal Identification Number">PIN</abbr>. This gave me the impression that the <abbr title="Personal Identification Number">PIN</abbr> was properly changed. The <code class="code">gpg</code> did something wrong. I typed in the <abbr title="Personal Identification Number">PIN</abbr> and it had a problem. I again figured I hit a wrong key on this atrocious keyboard and tried again. Come to find out they have an insanely short permanent lock out after three tries. I bricked the card.
                 </p>
-                <p>
+                <p class="p">
                   Not all is lost. There is a factory reset the destroys everything on the card. I found a way to perform the factory reset thanks to <a href="https://www.florian-wolters.de/posts/resetting-openpgp-smartcard/" class="link external">Florian Wolters</a>. With this factory reset code, you can never truly brick your card. The worst is that you lose the encryption keys. There are ways to back up the keys by creating them outside of the card and importing them but this is not to be discussed in this document.
                 </p>
                 <div class="tip">
@@ -272,17 +296,17 @@
 
             <section class="section" id="phone_calls">
               <header class="article-header header separate">
-                <h3 class="section-title h h3">Phone Calls</h3>
+                <h2 class="section-title h h2">Phone Calls</h2>
               </header>
 
               <div class="section-content">
-                <p>
+                <p class="p">
                   Phone calls work out of the box and I have had very few problems. In very rare occasions I have had the modem refuse to work. Rebooting the machine does not solve the problem where the modem refuses to work. I had to power off the mode and then power it back on to fix this problem. This is exceptionally easy thanks to the <strong>Librem5</strong> design.
                 </p>
-                <p>
+                <p class="p">
                   There appears to be built in <abbr title="Voice Over Internet Protocol">VoIP</abbr> support. I have not tried this but it should be interesting to see it work.
                 </p>
-                <p>
+                <p class="p">
                   There is also built in encrypted call support. I have not tried this yet.
                 </p>
               </div>
@@ -290,20 +314,20 @@
 
             <section class="section" id="phone_calls">
               <header class="article-header header separate">
-                <h3 class="section-title h h3">Text messages</h3>
+                <h2 class="section-title h h2">Text messages</h2>
               </header>
 
               <div class="section-content">
-                <p>
+                <p class="p">
                   Normal text messages work fine out of the box. Sending a picture does not.
                 </p>
-                <p>
+                <p class="p">
                   When I tried sending a picture as a test it appeared to work but the other end did not received the picture. The other end happens to be a <strong>Pinephone</strong>. The <strong>Pinephone</strong> has massive problems with sending and receiving pictures over text messages as well. That means that I do not have a reliable way to test this without bothering some third-party. And asking some less-tech savvy person to spend some time calling me back and forth to confirm or deny that they received or did not receive a text is not a good idea.
                 </p>
-                <p>
+                <p class="p">
                   I didn't test further because of a big problem this exposed. Infinite messages! No matter how many times I delete the test messages they keep re-appearing. I checked the modem using the <code class="code">mmcli</code> program. This program does not make it easy to use the modem but as far as I can tell the message is not there. I checked the file-system and found chatty file database (I feel the strong urge to rant on the stupidity of an <abbr title="Structured Query Language">SQL</abbr> database for local file settings here). Deleting this database file deletes every text message except the one I want to get rid off.
                 </p>
-                <p>
+                <p class="p">
                   The only thing I can think of is that it is still somewhere in the modem and I need to study more on how to use <code class="code">mmcli</code> program. I find the interface horrendous and I am considering writing a replacement to this program.
                 </p>
               </div>
@@ -311,14 +335,14 @@
 
             <section class="section" id="screen_off_notification">
               <header class="article-header header separate">
-                <h3 class="section-title h h3">Screen Off Notification</h3>
+                <h2 class="section-title h h2">Screen Off Notification</h2>
               </header>
 
               <div class="section-content">
-                <p>
+                <p class="p">
                   The <strong>Librem5</strong> phone properly handles call and text message notification when the screen is off. This appears to work when the phone is in suspend as well. This is about the same as with the <strong>Pinephone</strong>.
                 </p>
-                <p>
+                <p class="p">
                   The power notification light on the <strong>Librem5</strong> is superior to that on the <strong>Pinephone</strong>. The light better communicates the state of the power and even will turn off after fully charged.
                 </p>
               </div>
@@ -326,11 +350,11 @@
 
             <section class="section" id="the_keyboard">
               <header class="article-header header separate">
-                <h3 class="section-title h h3">The Keyboard</h3>
+                <h2 class="section-title h h2">The Keyboard</h2>
               </header>
 
               <div class="section-content">
-                <p>
+                <p class="p">
                   The keyboard on the <strong>Librem5</strong> is horrible. I get the impression that the programmers, owners, or managers behind the <strong>Librem5</strong> are more akin to the new age phone scroll users rather than the more old school keyboard users. The <strong>Pinephone</strong> uses the same software and has the same horrible keyboard.
                 </p>
               </div>
@@ -338,11 +362,11 @@
 
             <section class="section" id="the_pinephone_dock">
               <header class="article-header header separate">
-                <h3 class="section-title h h3">The Pinephone Dock</h3>
+                <h2 class="section-title h h2">The Pinephone Dock</h2>
               </header>
 
               <div class="section-content">
-                <p>
+                <p class="p">
                   I have the fancy version of the original <strong>Pinephone</strong>. This version comes with a dock. The dock works well on the <strong>Librem5</strong> but only after I did a system update. I think there is more work to do because the Ethernet port is giving that special slow blink that indicates a hardware fault. More than likely a driver update is needed to fix this. If there is not some special souce code driver hack needed that the <strong>Pinephone</strong> uses then an eventual kernel update will get this working.
                 </p>
               </div>
@@ -350,17 +374,17 @@
 
             <section class="section" id="usability">
               <header class="article-header header separate">
-                <h3 class="section-title h h3">Usability</h3>
+                <h2 class="section-title h h2">Usability</h2>
               </header>
 
               <div class="section-content">
-                <p>
+                <p class="p">
                   The <strong>Librem5</strong> is in a bit of an awkward position. The <a href="https://puri.sm/" class="link external">Purism</a> company, from how things appear to me, are marketing towards a security towards an average person using software and tools from a highly technical field.
                 </p>
-                <p>
+                <p class="p">
                   The current day less-technical person compared to the traditional more-technical person have very different use cases. I have never owned one of these proprietary Android or Apple phones. Having said that, I believe that the interface is focused towards such an audience. I find such an interface tolerable but not very user-friendly.
                 </p>
-                <p>
+                <p class="p">
                   I believe what the <strong>Librem5</strong> provides achieves this with the exception of pictures. This exception is so big, that I might better word this as calling it the rule rather than the exception. Taking, sending, and receiving pictures is the bread and butter of the average user out in the wild. The <strong>Librem5</strong> (and also the <strong>Pinephone</strong> for that matter) drops the ball on this. This is a major downside and I would argue is a requirement that should be immediately addressed, two years ago.
                 </p>
               </div>
@@ -368,14 +392,14 @@
 
             <section class="section" id="the_switches">
               <header class="article-header header separate">
-                <h3 class="section-title h h3">The Switches</h3>
+                <h2 class="section-title h h2">The Switches</h2>
               </header>
 
               <div class="section-content">
-                <p>
+                <p class="p">
                   The switches. The <strong>Librem5</strong> has switches on the side of the phone to physically disconnect the modem, the wireless and Bluetooth, and the camera and microphone. This is a major selling point of this phone and the <strong>Librem5</strong> fully achieves this. The <strong>Pinephone</strong> of the falls short like comparing dust devil to a category 5 hurricane.
                 </p>
-                <p>
+                <p class="p">
                   The switches are easy. They are also not easy to accidentally press. This is the product that I expected to get and I got it.
                 </p>
               </div>
@@ -383,17 +407,17 @@
 
             <section class="section" id="the_open_source">
               <header class="article-header header separate">
-                <h3 class="section-title h h3">The Open-Source</h3>
+                <h2 class="section-title h h2">The Open-Source</h2>
               </header>
 
               <div class="section-content">
-                <p>
+                <p class="p">
                   The one biggest advantage of the <strong>Librem5</strong> phone is the open-source design. I can install and I have installed numerous programs on the system. I have even installed my <abbr title="Featureless Linux Library">FLL</abbr> project and related programs onto it. No special or unusual action is needed. This is where the Ubuntu Aquaris fell short.
                 </p>
-                <p>
+                <p class="p">
                   I should not need a system with large amounts of <abbr title="Random Access Memory">RAM</abbr> (Gigabytes) to compile a single Megabyte program. The whole software design behind Ubuntu Aquaris, Android, and the Apple phones is not just embarrassingly bad, it is pathetic. Both the <strong>Librem5</strong> and the <strong>Pinephone</strong> don't suffer from the digital mental disorder.
                 </p>
-                <p>
+                <p class="p">
                   The open-firmware provided by the <strong>Librem5</strong> and the security it offers is truly a hidden gem. This is not something easily shown. Good security is often an unsung hero. Undoubtedly the <strong>Librem5</strong> will never truly get the good credit it deserves for the work and effort put into getting an open-firmware design up and running. The way this world currently is, this is an amazing feat. Truly amazing.
                 </p>
               </div>
@@ -401,36 +425,36 @@
 
             <section class="section" id="bottom_line">
               <header class="article-header header separate">
-                <h3 class="section-title h h3">Bottom Line</h3>
+                <h2 class="section-title h h2">Bottom Line</h2>
               </header>
 
               <div class="section-content">
                 <img src="images/news/2022_06_04/03-librem_pinephone-200.png" alt="A Librem5 phone lying against a Pinephone." title="Librem5 phone and Pinephone." class="image content right margin-1rem">
-                <p>
+                <p class="p">
                   There are bad things about the <strong>Librem5</strong> phone. Things have fallen short. Some are the fault of the company. Some are the fault of the current state of the world. Others are the fault of an industry that does not want to sell to customers willing to pay.
                 </p>
-                <p>
+                <p class="p">
                   I argue that <strong>Librem5</strong> has successfully navigated this mess and has thus far survived where all others failed. The Ubuntu Aquaris was defeated by both their Android-like development stack and the industry refusing to sell what Ubuntu needed.
                 </p>
-                <p>
+                <p class="p">
                   The choice <a href="https://puri.sm/" class="link external">Purism</a> made to design their own hardware has been a gamble. I would argue that this gamble has been worth it. Yes, there are growing pains. I am not happy about some of these pains and I do fault them for their failures in this regard (especially in regards to pictures).
                 </p>
-                <p>
+                <p class="p">
                   The <strong>Librem5</strong> phone is not ready for a regular user. Of course, none of the Linux phones have ever been in my experience. The <strong>Librem5</strong> is so close to being ready for a regular user that I can almost taste it (metaphorically of course). Give them a few months. Give them a year. By then I hope to see many of these problems I have described here to be resolved. Give them a few years and I expect they will be able to get a better hardware form factor to be more portable and sleek.
                 </p>
-                <p>
+                <p class="p">
                   I can get just about any software on this phone. I can use this phone a desktop machine. I can use this phone as a portable radio or satellite communication device. I have only scratched the surface of what is already possible with the current design of this phone. No jails. No hacking. Just using.
                 </p>
-                <p>
+                <p class="p">
                   I think <strong>Librem5</strong> has a chance to win. So long as they do not drop the ball. We are heading into a crazy future where the manufacturing and chipset is in a dire and bleak situation. If <a href="https://puri.sm/" class="link external">Purism</a> can withstand these trials then they will likely have the best phone on the market, despite these growing pains.
                 </p>
-                <p>
+                <p class="p">
                   I have used several open-source phones. Phones like the <strong>OpenMoko Freerunner</strong>, I did not get want I wanted. Phones like the <strong>Aquaris Ubuntu</strong>, I almost got what I wanted and I accepted the situation. Phones like the <strong>Pinephone</strong>, I got a phone that provides no software and accepted that. With the <strong>Librem5</strong>, I got the phone that I wanted and expected.
                 </p>
               </div>
             </section>
 
-            <p>
+            <p class="p">
               <strong>Kevin Day</strong>
             </p>
           </div>

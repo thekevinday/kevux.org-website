@@ -236,6 +236,27 @@
   background-color: #f9f9f0;
 }
 
+.kevux > .content-block .subsection.box > .subsection-content > .p:first-of-type {
+  margin-top: 0px;
+}
+
+.kevux > .content-block .subsection.box > .subsection-content > .p:last-of-type {
+  margin-bottom: 0px;
+}
+
+.kevux > .content-block .subsection.box {
+  display: block;
+  box-sizing: border-box;
+
+  overflow: auto;
+
+  border: 1px dotted #724801;
+  margin: 0.5rem;
+  padding: 0.75rem;
+
+  background-color: #e7f1ff;
+}
+
 .kevux > .content-block .tip .code.terminal {
   display: block;
   box-sizing: border-box;

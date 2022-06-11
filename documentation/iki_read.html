@@ -90,16 +90,16 @@
             </header>
 
             <div class="section-content">
-              <p>
+              <p class="p">
                 The <strong>iki_read</strong> program is a tool for processing strings that follow the IKI standard, specifically IKI-0000 (Unrestricted).
               </p>
-              <p>
+              <p class="p">
                 This tool is designed to be scriptable and accepts piped input.
               </p>
-              <p>
+              <p class="p">
                 Different ways of interpreting and printing strings are available.
               </p>
-              <p>
+              <p class="p">
                 The entire string can be printed, replacing all IKI Variables and even allowing for primitive substitution or only the IKI Variables (or their Content) can be printed.
               </p>
             </div>
@@ -170,10 +170,10 @@
                   </tbody>
                 </table>
               </div>
-              <p>
+              <p class="p">
                 The <code class="code">+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code class="code">+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code class="code">+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
               </p>
-              <p>
+              <p class="p">
                 The <code class="code">+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
               </p>
             </div>
@@ -254,7 +254,7 @@
                   </tbody>
                 </table>
               </div>
-              <p>
+              <p class="p">
                 The <code class="code">-r/--replace</code> option requires 2 additional parameters: <code class="code">&lt;vocabulary&gt; &lt;with&gt;</code>.
               </p>
               <dl class="dl">
@@ -265,7 +265,7 @@
                   <dt class="dt">with</dt><dd class="dd">The new string to use as the substitute.</dd>
                 </div>
               </dl>
-              <p>
+              <p class="p">
                 The <code class="code">-s/--substitute</code> option requires 3 additional parameters: <code class="code">&lt;vocabulary&gt; &lt;replace&gt; &lt;with&gt;</code>.
               </p>
               <dl class="dl">
@@ -279,10 +279,10 @@
                   <dt class="dt">with</dt><dd class="dd">The new string to use as the substitute.</dd>
                 </div>
               </dl>
-              <p>
+              <p class="p">
                 The <em>vocabulary</em> and <em>replacement</em> are case-sensitive and must exactly match.
               </p>
-              <p>
+              <p class="p">
                 The <code class="code">-W/--wrap</code> option requires 3 additional parameters: <code class="code">&lt;vocabulary&gt; &lt;before&gt; &lt;after&gt;</code>.
               </p>
               <dl class="dl">
@@ -296,16 +296,16 @@
                   <dt class="dt">after</dt><dd class="dd">The string to append.</dd>
                 </div>
               </dl>
-              <p>
+              <p class="p">
                 The difference between <code class="code">-r/--replace</code> and <code class="code">-s/--substitute</code> is that the <code class="code">-r/--replace</code> option substitutes all matching vocabulary names and the <code class="code">-s/--substitute</code> option substitutes all matching vocabulary names that must also have the given matching content.
               </p>
-              <p>
+              <p class="p">
                 The <code class="code">-s/--substitute</code> option takes priority over the <code class="code">-r/--replace</code> option when matching the same variable.
               </p>
-              <p>
+              <p class="p">
                 The <code class="code">-W/--wrap</code> option is ignored when the <code class="code">-s/--substitute</code> option is matching the same variable.
               </p>
-              <p>
+              <p class="p">
                 The default behavior is to only display content portion of the IKI variable.
               </p>
             </div>

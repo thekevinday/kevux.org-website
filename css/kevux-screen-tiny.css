@@ -44,6 +44,14 @@
   line-height: 1.1rem;
 }
 
+.kevux .subsection.update > .header > .h3,
+.kevux .subsection.update > .header > .h4,
+.kevux .subsection.update > .header > .h5,
+.kevux .subsection.update > .header > .h6 {
+  font-size: 0.5rem;
+  line-height: 0.9rem;
+}
+
 .kevux > .content-block > .main-block .grid.expand.columns-4 {
   grid-template-columns: auto;
 }

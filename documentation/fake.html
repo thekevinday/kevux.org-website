@@ -92,32 +92,32 @@
             </header>
 
             <div class="section-content">
-              <p>
+              <p class="p">
                 The <strong>fake</strong> program, also called <strong>Featureless Make</strong> is the flagship program of the <abbr title="Featureless Linux Library">FLL</abbr> project and provides the ability to compile source code and perform various actions not unlike how the <strong>GNU Make</strong> program operates.
               </p>
-              <p>
+              <p class="p">
                 This tools is directly intended to be a replacement to the <strong>GNU Make</strong> program but not as a replacement for all of the <strong>GNU Make</strong> functionality. Instead, the <strong>fake</strong> program follows the ideology that a build program should not involve itself with system-specific behavior, such as installing to a system.
               </p>
-              <p>
+              <p class="p">
                 Despite this non-standard ideology, the <strong>fake</strong> program is flexible enough to be used as an installer. In fact, this tool is used to not only build the entire <abbr title="Featureless Linux Library">FLL</abbr> but it can also compile and run unit tests for the project.
               </p>
-              <p>
+              <p class="p">
                 A bootstrap script is provided in all <abbr title="Featureless Linux Library">FLL</abbr> projects that operates with almost complete one-to-one functionality to this tool to allow for the system to build itself. A great example of this is the test script used to run unit tests on services like Github where this project must compile itself and then use itself to run unit tests against itself.
               </p>
-              <p>
+              <p class="p">
                 While most of the programs provided with the <abbr title="Featureless Linux Library">FLL</abbr> are young and not well tested, the <strong>fake</strong> program is considered mature.
               </p>
-              <p>
+              <p class="p">
                 There are two primary operations in which this tool executes:
               </p>
               <ol>
                 <li>The <strong>build</strong> operation.</li>
                 <li>The <strong>make</strong> operation.</li>
               </ol>
-              <p>
+              <p class="p">
                 The <strong>build</strong> mode is derived from the idea that most of the compilation process is redundant and can be simplified to a pre-define set of configuration settings. This reduces the amount of efforted needed to write and mainting a build system at the cost of flexibility.
               </p>
-              <p>
+              <p class="p">
                 The <strong>make</strong> mode is the mode for operating as a replacement to the <strong>GNU Make</strong> program. This provides scriptable ways to perform just about any task needed when building a system. Many of the <strong>build</strong> mode settings are available (but are not required) and this mode can even call the <strong>build</strong> mode itself.
               </p>
             </div>
@@ -188,10 +188,10 @@
                   </tbody>
                 </table>
               </div>
-              <p>
+              <p class="p">
                 The <code class="code">+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code class="code">+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code class="code">+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
               </p>
-              <p>
+              <p class="p">
                 The <code class="code">+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
               </p>
             </div>
@@ -262,13 +262,13 @@
                   </tbody>
                 </table>
               </div>
-              <p>
+              <p class="p">
                 When using the <code class="code">-d/--define</code> parameter the define structure must be passed as-is and may even need to be quoted if there is whitespace.
               </p>
-              <p>
+              <p class="p">
                 For example, in the <strong>C</strong> programming, passing a macro to the compiler might look like '<code class="code">-DMY_MACRO=1</code>'. To do this using <code class="code">-d/--define</code>, there would be two parameters passed like this: '<code class="code">-d -DMY_MACRO=1</code>'. This works because the parameter after the <code class="code">-d/--define</code> is not interpreted and is treated exactly as is without interpreting it as a parameter to the <strong>fake</strong> program.
               </p>
-              <p>
+              <p class="p">
                 Because of this, passing '<code class="code">-d -h</code>' would not print the program help because the '<code class="code">-h</code>' is considered a value associated with the '<code class="code">-d</code>' parameter rather than a parameter itself.
               </p>
             </div>
@@ -309,16 +309,16 @@
                   </tbody>
                 </table>
               </div>
-              <p>
+              <p class="p">
                 When performing the build operation, the <code class="code">--mode</code> parameter specifies a name (limited to alpha-numeric, underscore, and dash) to be used in addition to the global.
               </p>
-              <p>
+              <p class="p">
                 For example, when a mode of '<code class="code">fll_monolithic</code>' is specified, build libraries from both '<code class="code">build_libraries</code>' and '<code class="code">build_libraries-fll_monolithic</code>' are used (but not '<code class="code">build_libraries-fll_level</code>').
               </p>
-              <p>
+              <p class="p">
                 When specifying the <code class="code">fakefile</code> or the settings parameters, the filenames are relative to the data build directory, unless a path is used.
               </p>
-              <p>
+              <p class="p">
                 For example, with '<code class="code">--fakefile my_fakefile</code>' the fakefile at '<code class="code">./data/build/my_fakefile</code>' would be used, however with '<code class="code">--fakefile ./my_fakefile</code>' the fakefile at '<code class="code">./my_fakefile</code>' would be used.
               </p>
             </div>

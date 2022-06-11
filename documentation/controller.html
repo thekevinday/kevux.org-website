@@ -90,28 +90,28 @@
             </header>
 
             <div class="section-content">
-              <p>
+              <p class="p">
                 The <strong>controller</strong> program is a tool for controller other programs.
               </p>
-              <p>
+              <p class="p">
                 This tool is designed to configured to perform and execute any tasks given across multiple languages and it also has support for operating as an <strong>init</strong> program. There are special compile-time configurations needed to make this properly operate as an <strong>init</strong> program.
               </p>
-              <p>
+              <p class="p">
                 This tool operates similar to the <strong>fake</strong> program and can even be seen as an evolution to the <strong>fake</strong> program. The <strong>controller</strong> program, however is not a replacement to the <strong>fake</strong> program as it is more generalized.
               </p>
-              <p>
+              <p class="p">
                 This tool also provides additional features for making it easierr to test and write controller instructions. These features include partial simulation and validation modes.
               </p>
-              <p>
+              <p class="p">
                 In partial simulation mode, anything that the <strong>controller</strong> program has full control over and can simulate is simulated. Actual programs and scripts themselves, therefore, cannot be simulated. However, it may be possible to use an environment variables or similar and pass settings to the called program or script if the called program or script is simulation and testing aware.
               </p>
-              <p>
+              <p class="p">
                 The validation mode is for making this tool more scriptable. By providing validation, the controller instructions can be validated, in which case a success or failure result is returned and any problems or warnings may be printed to the caller of this tool.
               </p>
-              <p>
+              <p class="p">
                 This tool is not currently fully functional as an <strong>init</strong> program replacement because the networking aspects are not yet written or fully hashed out. The <strong>contol</strong> program is also another key part to the <strong>contoller</strong> program in getting this to work as an <strong>init</strong> program. Ideally, once this support is complete, it should be possible to replace init programs, such as <strong>SystemD</strong>, with the <strong>controller</strong> program.
               </p>
-              <p>
+              <p class="p">
                 Further development will be made on this once the <strong>controller</strong> program is updated. The next development series is planned to focus on networking, which will include support for this.
               </p>
             </div>
@@ -182,10 +182,10 @@
                   </tbody>
                 </table>
               </div>
-              <p>
+              <p class="p">
                 The <code class="code">+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code class="code">+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code class="code">+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
               </p>
-              <p>
+              <p class="p">
                 The <code class="code">+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
               </p>
             </div>
@@ -261,13 +261,13 @@
                   </tbody>
                 </table>
               </div>
-              <p>
+              <p class="p">
                 When both the <code class="code">--simulate</code> parameter and the <code class="code">--validate</code> parameter are specified, then additional information on each would be executed rule is printed but no simulation is performed.
               </p>
-              <p>
+              <p class="p">
                 The default interrupt behavior is to operate as if the <code class="code">--interruptible</code> parameter is passed.
               </p>
-              <p>
+              <p class="p">
                 Specify an empty string for the <code class="code">--pid</code> parameter to disable pid file creation for this program.
               </p>
             </div>

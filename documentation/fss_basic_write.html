@@ -90,13 +90,13 @@
             </header>
 
             <div class="section-content">
-              <p>
+              <p class="p">
                 The <strong>fss_basic_write</strong> program is a tool for generating strings that follow the FSS-0000 (Basic) standard.
               </p>
-              <p>
+              <p class="p">
                 This tool is designed to be scriptable and accepts piped input using a special format.
               </p>
-              <p>
+              <p class="p">
                 This tool shares parameters between with the other <abbr title="Featureless Settings Specification">FSS</abbr> Read and Write programs to make scripting consistent across the <abbr title="Featureless Settings Specification">FSS</abbr> Read and Write programs even if any given program neither needs nor uses the parameter.
               </p>
             </div>
@@ -167,10 +167,10 @@
                   </tbody>
                 </table>
               </div>
-              <p>
+              <p class="p">
                 The <code class="code">+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code class="code">+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code class="code">+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
               </p>
-              <p>
+              <p class="p">
                 The <code class="code">+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
               </p>
             </div>
@@ -241,25 +241,25 @@
                   </tbody>
                 </table>
               </div>
-              <p>
+              <p class="p">
                 This special piped input format uses the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> Backspace character '<kbd>\b</kbd>' (U+0008), Form Feed character '\f' (U+000C), and Vertical Line character '\v' (U+000B).
               </p>
-              <p>
+              <p class="p">
                 The Backspace character '<kbd>\b</kbd>' (U+0008) is used to designate the start of a Content.
               </p>
-              <p>
+              <p class="p">
                 The Form Feed character '<kbd>\f</kbd>' (U+000C) is used to designate the end of the last Content.
               </p>
-              <p>
+              <p class="p">
                 The Vertical Line character '<kbd>\v</kbd>' (U+000B) is used to ignore a Content range, which does nothing in this program.
               </p>
-              <p>
+              <p class="p">
                 For the pipe, an Object is terminated by either a Backspace character '<kbd>\b</kbd>' (U+0008) or a Form Feed character '<kbd>\f</kbd>' (U+000C). The end of the pipe represents the end of any Object or Content.
               </p>
-              <p>
+              <p class="p">
                 The FSS-0000 (Basic) specification does not support multi-line Content, therefore the parameter <code class="code">--prepend</code> does nothing.
               </p>
-              <p>
+              <p class="p">
                 This program does not use the parameter <code class="code">--ignore</code>, which therefore does nothing. This parameter requires two values.
               </p>
             </div>
