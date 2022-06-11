@@ -17,6 +17,12 @@
   margin-bottom: 8px;
 }
 
+.kevux > .content-block .section > .header,
+.kevux > .content-block .subsection > .header {
+  break-before: auto;
+  break-after: avoid-page;
+}
+
 .kevux > .content-block .image.content {
   display: block;
 
