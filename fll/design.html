@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FLL - Design and Principles</title>
+
+    <base href="../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Featurless Linux Library Design and Principles">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, design, principle">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="fll/design.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js fll specifications">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="news.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item active"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="fll.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">Featureless Linux Library</div>
+          </div>
+          <div class="nav-item block">
+            <a href="fll/design.html#principles" class="nav-text link">Design and Principles</a>
+          </div>
+          <div class="nav-item block">
+            <a href="fll/design.html#core_perspectives" class="nav-text link">Core Perspectives</a>
+          </div>
+          <div class="nav-item block">
+            <a href="fll/design.html#core_design" class="nav-text link">Core Design</a>
+          </div>
+          <div class="nav-item block">
+            <a href="fll/design.html#art_of_communication" class="nav-text link">Art of Communication</a>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="fll/design.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="fll/design.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">Featureless Linux Library</h1>
+          </header>
+
+          <section id="principles" class="section">
+            <header class="section-header header">
+              <h2 class="section-title h h2">Design and Principles</h2>
+            </header>
+
+            <div class="section-content">
+              <p class="p">
+                The Featureless Linux Library has a specific design with a specific set of principles. This design and these principles direct and govern how, what, and in what way the projects are built, styled, released, maintained, documented, and evolved.
+              </p>
+              <p class="p">
+                The <abbr title="Featureless Linux Library">FLL</abbr> project is a collection of different sub-projects, standards, specifications, and programs. Each of these has its own set of rules, guidelines, and principles. All of these are primarily drive by open-source design and principles but the specific way in which this happens is dependent on the specific type of material or data as well as the intended purpose or target audience.
+              </p>
+            </div>
+          </section>
+
+          <section id="core_perspectives" class="section">
+            <header class="section-header header separate">
+              <h2 class="section-title h h2">Core Perspectives</h2>
+            </header>
+
+            <div class="section-content">
+              <p class="p">
+                To better understand the core principles and even philosophy behind this <abbr title="Featureless Linux Library">FLL</abbr> project one must first understand some key terminology from the perspective of what the terms do or are for rather than what the direct meaning of the words are.
+              </p>
+              <p class="p">
+                 The term <em>software</em> is understood as thought. That is to say, if you have an idea in your mind then treat this idea as software. This perspective introduces a problem, a problem of ambiguity. <em>Software</em> is more than an idea when it is on a computer. The general definition of <em>software</em> can refer to source code, binaries, or data (data encompasses both source code and binaries but for the purposes here please ignore this fact). A <em>binary</em> is usually created from <em>source code</em>.
+              </p>
+              <p class="p">
+                 The perspective on <em>source code</em> should be described first to address the problem. <em>Source Code</em> is an idea communicated through some <em>language</em>. A single idea may be expressed differently between two distinct languages and still be the same idea. However, the representation of that idea may be limited or otherwise influenced by the constraints or limitation of a language.
+              </p>
+              <p class="p">
+                When the <em>source code</em> is compiled, interpreted, or otherwise converted into machine code, the idea behind the <em>source code</em> is now represented in a new language, the machine language. This resulting representation in the machine language is the <em>binary</em>.
+              </p>
+              <p class="p">
+                At this point the <em>software</em>, be it the <em>source code</em> or the <em>binary</em> is synonymous with spoken words. There is no product, only just a spoken and recored idea constrained by the language it is spoken in.
+              </p>
+              <p class="p">
+                The magic happens when the machine computes. This computation of the communicated idea requires <em>hardware</em>. It is this <em>hardware</em> that manifests the idea into reality. A product, therefore, may only exist in conjunction with some <em>hardware</em>.
+              </p>
+              <p class="p">
+                The world as it currently exists is a world of restrictions and patents. Supposedly an idea is not patentable. Supposedly math cannot be patented. Yet with <em>software</em> effectively being a written or spoken idea, often represented in mathematical equations, is treated as patentable.
+              </p>
+              <p class="p">
+                Associating, or otherwise linking, an idea is somehow treated as if the originator of the first spoken idea spoke the second idea. Take a conversation, for example. If the first person says "<em>I like cake.</em>" and the second person says "<em>I like candles on cake.</em>" then does that mean the first person is the one who originated the statement "<em>I like candles on cake.</em>"? Of course not. But the legal system in the United States of America, and perhaps the world, have decided otherwise. That is to say, linking one binary to another (somehow) creates a combined product. This appears to be some sort of magical fairy dust lawyers use to convince people that what you are smelling is actually a rose rather than something bovine herders have to shovel up from time to time.
+              </p>
+              <p class="p">
+                The core principle of this project is to use legal means to make such an absurdity illegal. Thus the copyrights, such as the <abbr title="GNU Lesser General Public License version 2.1 or greater">LGPLv2.1+</abbr> license, are utilized. The goal here is not to deny a person the ability to make a product and sell it. Instead, the goal here is so that a person who makes a product can actually make and sell it. Just because a bird house has nails in it doesn't mean the originator of the nails now owns all rights to the bird house. Just because an <abbr title="Advanced Micro Devices">AMD</abbr> motherboard has an Nvidia graphics card connected to it does not mean <abbr title="Advanced Micro Devices">AMD</abbr> now owns all rights to the Nvidia graphics card.
+              </p>
+              <p class="p">
+                The <abbr title="Featureless Linux Library">FLL</abbr> is a set of nails, screws, gears, and clockwork all designed and intended to be taken apart and used in whatever way another person deems necessary. For convenience, this library includes fully functionaly programs as an example on how to use the project. They too can be taken apart.
+              </p>
+            </div>
+          </section>
+
+          <section id="core_design" class="section">
+            <header class="section-header header separate">
+              <h2 class="section-title h h2">Core Design</h2>
+            </header>
+
+            <div class="section-content">
+              <p class="p">
+                The <abbr title="Featureless Linux Library">FLL</abbr> project, sub-projects, and related projects are all being built in stages. These stages are not temporal based but are instead goal based. There are temporal constraints to keep development within reason and to provide cut-off points. Each of these goal posts are separated by development and stable releases. A stable release may also be referred to as a production release.
+              </p>
+              <p class="p">
+                Long term stability is a flag ship goal of this project. To that extent, stable releases are to be maintained indefinitely. Ideally, this will hold true only for 1.0 releases and beyond but in practice pre-1.0 may also seek this goal. For long term stability, <abbr title="Application Programming Interface">API</abbr> breakage is not allowed with a stable release. For those people out there who blindly apply infinites to everything, stop it. If there is some major security issue or other such extreme problem then <abbr title="Application Programming Interface">API</abbr> breakage can be considered. This will, however, be strongly resisted to ensure only necessary breakage occurs. Strong resistence is not the same as never allowing.
+              </p>
+              <p class="p">
+                The term "<em>featureless</em>" is loosely used in this project to describe the idea that a project should not constantly add features like a kid in a candy shop wanting to try every new piece of candy they find. The entire <abbr title="Featureless Linux Library">FLL</abbr> project is designed so that you can do as you will so long as you do not deny another person the same. This means that you are free to add as many features as you like. In your own project. Or in your own hacked variation. This project shall attempt to maintain a discrete set of functionality specific to each stable release and the goals of that release.
+              </p>
+              <p class="p">
+                Temporal constraints may result in a stable release being made without all of the intended features. These such cases should be treated on a per-situation basis. Changes to a stable release to add features that did not make it is still discouraged and should be avoided. Futhermore, there is an undescribed point in time in which if a stable release has not achieve a planned or intended feature then that feature should never be added. Time matters. For example, if version 1.0 was supposed to bake a cake and failed to get that functionality but then 10-years later (when 3d-printing evolved into 3d-baking) the version 1.0 must not have the "bake a cake" feature added. Too much time has passed. Just make a 1.2 release for baking cakes. The rule of thumb is flexibility for short term and rigidity for long term.
+              </p>
+              <p class="p">
+                The <abbr title="Featureless Linux Library">FLL</abbr> project has the word "<em>library</em>" in the name. For good reason. The primary purpose of this project is to be used as a library. The original flag ship of this project is the <strong>Featureless Make</strong> program. Notice the word "<em>program</em>". The <abbr title="Featureless Linux Library">FLL</abbr> project does contain related programs but these are kept to a minimal. The purpose of the programs in this project are to have fully functional and usable example programs. They are not examples in the traditional sense but are instead full blown implementations.
+              </p>
+              <p class="p">
+                The <strong>Featureless Make</strong> is also an exception case. I wrote a thesis regarding the GNU make system and I proposed the <strong>Featureless Make</strong> as a solution that utilizes the <strong>Featureless Settings Specification</strong>. This is the foundation that birthed the <strong>Featureless Linux Library</strong>. For this reason, the <strong>Featureless Make</strong> will always be part of the <abbr title="Featureless Linux Library">FLL</abbr> project.
+              </p>
+              <p class="p">
+                Many of the programs provided by the <abbr title="Featureless Linux Library">FLL</abbr> are a way of extending the library in such a way that a shell script, such as GNU Bash, can utilize the library. Programs like the <strong>FSS Basic Read</strong> are examples of this.
+              </p>
+              <p class="p">
+                Other programs, namely the <strong>Controller</strong> program are not intended to be directly part of this project in the long term. They exist within this project for development convenience. Eventually they will budd off into their own separate project. These separate projects will still depend on and use the <abbr title="Featureless Linux Library">FLL</abbr>.
+              </p>
+              <p class="p">
+                The way in which data is stored, utilized, and communicated should also follow similar design and principles. The standards and their accompanying specifications are provided by the <abbr title="Featureless Linux Library">FLL</abbr> to achieve this.
+              </p>
+              <p class="p">
+                Keep it simple is one of the goals of the project. But again, all of you people out there that love infinitives, stop it. This project follows "<em>keep it simple</em>" rather than "<em>keep it absolutely simple</em>". There are many situations where complexity is not only encouraged but also necessary.
+              </p>
+            </div>
+          </section>
+
+          <section id="art_of_communication" class="section">
+            <header class="section-header header separate">
+              <h2 class="section-title h h2">Art of Communication</h2>
+            </header>
+
+            <div class="section-content">
+              <p class="p">
+                An important aspect of the design and principles of the <abbr title="Featureless Linux Library">FLL</abbr> project is that of communication. All aspects of the project are designed to have both explicit and implicit meaning. From the syntax and styling to the standards and protocols.
+              </p>
+              <p class="p">
+                The project hosts numerous plain text files following a given <abbr title="Featureless Settings Specification">FSS</abbr> format. The IKI format may be used in many of these files to provide further assistance in communicating different aspects of the documentation.
+              </p>
+              <p class="p">
+                These text files are then process either through scripts or manually and presented in different formats. One such format is on the Kevux website where this document might reside. This results in a bit of redudancy and complexity but achieves the goal of communication.
+              </p>
+              <p class="p">
+                Idealistically the <abbr title="Featureless Linux Library">FLL</abbr> project will be written in multiple programming languages. This would mean that the ideas represented by this project are communicated through different software languages. Given the complexity of this task, this is not a goal post but is instead an ideal. To that end, the design of the <abbr title="Featureless Linux Library">FLL</abbr> and related projects is done in such a way to be open-ended and better allow for additional languages even if no additional language is ever used.
+              </p>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
