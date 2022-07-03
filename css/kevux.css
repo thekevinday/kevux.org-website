@@ -133,9 +133,13 @@
 
 .kevux > .content-block > .main-block .table {
   border-collapse: collapse;
-  margin: 1rem;
+  margin: 0px;
 
   max-width: calc(var(--width_screen_90) - var(--width_side));
+}
+
+.kevux > .content-block > .main-block .table > .caption {
+  font-weight: bold;
 }
 
 .kevux > .content-block > .main-block .table > .head {
@@ -152,8 +156,6 @@
 
 .kevux > .content-block > .main-block .dl {
   border: 1px solid #e0e0e0;
-
-  width: fit-content;
 }
 
 .kevux > .content-block > .main-block .dl > .di {
@@ -186,6 +188,10 @@
   margin-bottom: 1rem;
 }
 
+.kevux > .content-block > .main-block .link {
+  word-break: break-word;
+}
+
 .kevux > .content-block > .main-block .code {
   box-sizing: border-box;
 
@@ -199,6 +205,19 @@
 }
 
 .kevux.documentation > .content-block > .main-block .table.context-parameters > .set > .row > .column:nth-child(1) {
+  text-align: center;
+}
+
+.kevux > .content-block > .main-block .table.fll-release > .head > .row > .column {
+  font-weight: bold;
+}
+
+.kevux > .content-block > .main-block .table.fll-release > .set > .row:nth-child(even) {
+  background-color: #efefef;
+}
+
+.kevux > .content-block > .main-block .table.fll-release > .set > .row > .column:nth-child(2),
+.kevux > .content-block > .main-block .table.fll-release > .set > .row > .column:nth-child(3) {
   text-align: center;
 }
 

@@ -106,8 +106,165 @@
             </header>
             <div class="article-content">
               <p class="p">
-                The current stable release series of <abbr title="Featureless Linux Library">FLL</abbr> is <strong>0.6</strong>. At this time, the official stable release for the <strong>0.6</strong> series is not yet released but a release candidate is already out. The release candidate is version <strong>0.5.9</strong>.
+                The current stable release series of <abbr title="Featureless Linux Library">FLL</abbr> is <strong>0.6</strong>. At this time, the official stable release for the <strong>0.6</strong> series is not yet released but a release candidate is already out. The release candidate is version <strong>0.5.10</strong>.
               </p>
+              <p class="p">
+                There are two different ways in which the project is released. The <em>bare release</em> and the <em>pre-packaged release</em>.
+              </p>
+              <p class="p">
+                 A <em>bare release</em> is the original project structure exactly as it appears in the Git source code repositories. The project is designed and intended to be hacked. As a result, the project must be converted into a package. There are different default supported package structures like <em>monolithic</em>, <em>level</em>, and <em>individual</em>.
+              </p>
+              <p class="p">
+                 A <em>pre-packaged release</em> is the project packaged into a <em>monolithic</em> structure. The programs are also pre-packaged to expect to link against a <em>monolithic</em> <abbr title="Featureless Linux Library">FLL</abbr> package.
+              </p>
+              <div class="center">
+                <table class="table fll-release">
+                  <caption class="caption"><abbr title="Featureless Linux Library">FLL</abbr> Pre-packaged Files</caption>
+                  <thead class="head set">
+                    <tr class="row">
+                      <td class="column">Package</td>
+                      <td class="column">Hash</td>
+                      <td class="column">Sign</td>
+                    </tr>
+                  </thead>
+                  <tbody class="body set">
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/monolithic/fll-0.5.10.tar.gz" class="link download">FLL 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/monolithic/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/monolithic/fll-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/byte_dump-0.5.10.tar.gz" class="link download">Byte Dump 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/byte_dump-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/control-0.5.10.tar.gz" class="link download">Control 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/control-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/controller-0.5.10.tar.gz" class="link download">Controller 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/controller-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/fake-0.5.10.tar.gz" class="link download">Fake 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fake-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/firewall-0.5.10.tar.gz" class="link download">Firewall 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/firewall-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_basic_list_read-0.5.10.tar.gz" class="link download">FSS Basic List Read 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_basic_list_read-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_basic_list_write-0.5.10.tar.gz" class="link download">FSS Basic List Write 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_basic_list_write-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_basic_read-0.5.10.tar.gz" class="link download">FSS Basic Read 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_basic_read-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_basic_write-0.5.10.tar.gz" class="link download">FSS Basic Write 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_basic_write-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_embedded_list_read-0.5.10.tar.gz" class="link download">FSS Embedded List Read 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_embedded_list_read-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_embedded_list_write-0.5.10.tar.gz" class="link download">FSS Embedded List Write 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_embedded_list_write-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_extended_list_read-0.5.10.tar.gz" class="link download">FSS Extended List Read 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_extended_list_read-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_extended_list_write-0.5.10.tar.gz" class="link download">FSS Extended List Write 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_extended_list_write-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_extended_read-0.5.10.tar.gz" class="link download">FSS Extended Read 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_extended_read-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_extended_write-0.5.10.tar.gz" class="link download">FSS Extended Write 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_extended_write-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_identify-0.5.10.tar.gz" class="link download">FSS Identify 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_identify-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_payload_read-0.5.10.tar.gz" class="link download">FSS Payload Read 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_payload_read-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_payload_write-0.5.10.tar.gz" class="link download">FSS Payload Write 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_payload_write-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_status_code-0.5.10.tar.gz" class="link download">FSS Status Code 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fss_status_code-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/iki_read-0.5.10.tar.gz" class="link download">IKI Read 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/iki_read-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/iki_write-0.5.10.tar.gz" class="link download">IKI Write 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/iki_write-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/status_code-0.5.10.tar.gz" class="link download">Status Code 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/status_code-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><a href="release/fll/0.5/10/programs/utf8-0.5.10.tar.gz" class="link download">Utf8 0.5.10 - Pre-packaged</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/fll-0.5.10.tar.sha256" class="link download">SHA256</a></td>
+                      <td class="column"><a href="release/fll/0.5/10/programs/utf8-0.5.10.tar.asc" class="link download">GPG</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="p">
+                The pre-packaged releases may also be found on the following external websites:
+              </p>
+              <ul>
+                <li><strong>Sourceforge, Monolithic</strong>: <a href="https://sourceforge.net/projects/fll/files/FLL-0.5/0.5.10/monolithic/" class="link external">https://sourceforge.net/projects/fll/files/FLL-0.5/0.5.10/monolithic/</a></li>
+                <li><strong>Sourceforge, Programs</strong>: <a href="https://sourceforge.net/projects/fll/files/FLL-0.5/0.5.10/programs/" class="link external">https://sourceforge.net/projects/fll/files/FLL-0.5/0.5.10/programs/</a></li>
+              </ul>
+              <p class="p">
+                The bare releases may be found on the following websites:
+              </p>
+              <ul>
+                <li><strong>Github</strong>: <a href="https://github.com/thekevinday/fll/releases/tag/0.5.10" class="link external">https://github.com/thekevinday/fll/releases/tag/0.5.10</a></li>
+                <li><strong>Gitlab</strong>: <a href="https://gitlab.com/kevuxer/fll/-/releases/0.5.10" class="link external">https://gitlab.com/kevuxer/fll/-/releases/0.5.10</a></li>
+              </ul>
             </div>
           </article>
         </main>
