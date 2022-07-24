@@ -140,12 +140,17 @@
                       <td class="column">Do not print using color.</td>
                     </tr>
                     <tr class="row">
-                      <td class="column"><code class="code">+q</code></td>
+                      <td class="column"><code class="code">+Q</code></td>
                       <td class="column"><code class="code">++quiet</code></td>
                       <td class="column">Decrease verbosity, silencing most output.</td>
                     </tr>
                     <tr class="row">
-                      <td class="column"><code class="code">+n</code></td>
+                      <td class="column"><code class="code">+E</code></td>
+                      <td class="column"><code class="code">++error</code></td>
+                      <td class="column">Decrease verbosity, using only error output.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+N</code></td>
                       <td class="column"><code class="code">++normal</code></td>
                       <td class="column">Set verbosity to normal.</td>
                     </tr>
@@ -168,10 +173,10 @@
                 </table>
               </div>
               <p class="p">
-                The <code class="code">+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code class="code">+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code class="code">+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
+                The <code class="code">+Q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code class="code">+Q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code class="code">+Q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
               </p>
               <p class="p">
-                The <code class="code">+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
+                The <code class="code">+N/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
               </p>
             </div>
           </section>
@@ -211,7 +216,7 @@
                     <tr class="row">
                       <td class="column"><code class="code">-n</code></td>
                       <td class="column"><code class="code">--name</code></td>
-                      <td class="column">Select FSS using this full or partial type name or code.</td>
+                      <td class="column">Select <abbr title="Featureless Settings Specifications">FSS</abbr> using this full or partial type name or code.</td>
                     </tr>
                     <tr class="row">
                       <td class="column"><code class="code">-t</code></td>
@@ -231,7 +236,7 @@
                 When specifying the <code class="code">--total</code> parameter, neither the <code class="code">--object</code> nor the <code class="code">--content</code> parameter may be specified.
               </p>
               <p class="p">
-                An FSS file is identified by the format "<code class="code"># Object-Content</code>" where the Object, is a machine-name representing the name and may only consist of "word" characters and the Content is a 4-digit hexidecimal number representing a particular variant of the Object. This identifier, if provided, must exist on the first line in a file and must begin with the pound character: "<code class="code">#</code>". White space must follow this pound character. There may be multiple Object and Content pairs, separated by white space, such as: "<code class="code"># fss-0002 fss-0000 iki-0002</code>".
+                An <abbr title="Featureless Settings Specifications">FSS</abbr> file is identified by the format "<code class="code"># Object-Content</code>" where the Object, is a machine-name representing the name and may only consist of "word" characters and the Content is a 4-digit hexidecimal number representing a particular variant of the Object. This identifier, if provided, must exist on the first line in a file and must begin with the pound character: "<code class="code">#</code>". White space must follow this pound character. There may be multiple Object and Content pairs, separated by white space, such as: "<code class="code"># fss-0002 fss-0000 iki-0002</code>".
               </p>
             </div>
           </section>

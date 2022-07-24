@@ -161,12 +161,17 @@
                       <td class="column">Do not print using color.</td>
                     </tr>
                     <tr class="row">
-                      <td class="column"><code class="code">+q</code></td>
+                      <td class="column"><code class="code">+Q</code></td>
                       <td class="column"><code class="code">++quiet</code></td>
                       <td class="column">Decrease verbosity, silencing most output.</td>
                     </tr>
                     <tr class="row">
-                      <td class="column"><code class="code">+n</code></td>
+                      <td class="column"><code class="code">+E</code></td>
+                      <td class="column"><code class="code">++error</code></td>
+                      <td class="column">Decrease verbosity, using only error output.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">+N</code></td>
                       <td class="column"><code class="code">++normal</code></td>
                       <td class="column">Set verbosity to normal.</td>
                     </tr>
@@ -189,10 +194,10 @@
                 </table>
               </div>
               <p class="p">
-                The <code class="code">+q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code class="code">+q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code class="code">+q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
+                The <code class="code">+Q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code class="code">+Q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code class="code">+Q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
               </p>
               <p class="p">
-                The <code class="code">+n/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
+                The <code class="code">+N/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
               </p>
             </div>
           </section>
@@ -259,6 +264,36 @@
                       <td class="column"><code class="code">--work</code></td>
                       <td class="column">Use includes/libraries/programs from this directory instead of system.</td>
                     </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code"></code></td>
+                      <td class="column"><code class="code">--disable-doc</code></td>
+                      <td class="column">Forcibly do not build documents files.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code"></code></td>
+                      <td class="column"><code class="code">--enable-doc</code></td>
+                      <td class="column">Forcibly do build documents files.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code"></code></td>
+                      <td class="column"><code class="code">--disable-shared</code></td>
+                      <td class="column">Forcibly do not build shared files.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code"></code></td>
+                      <td class="column"><code class="code">--enable-shared</code></td>
+                      <td class="column">Forcibly do build shared files.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code"></code></td>
+                      <td class="column"><code class="code">--disable-static</code></td>
+                      <td class="column">Forcibly do not build static files.</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code"></code></td>
+                      <td class="column"><code class="code">--enable-static</code></td>
+                      <td class="column">Forcibly do build static files.</td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -316,16 +351,19 @@
                 For example, when a mode of '<code class="code">fll_monolithic</code>' is specified, build libraries from both '<code class="code">build_libraries</code>' and '<code class="code">build_libraries-fll_monolithic</code>' are used (but not '<code class="code">build_libraries-fll_level</code>').
               </p>
               <p class="p">
-                When specifying the <code class="code">fakefile</code> or the settings parameters, the filenames are relative to the data build directory, unless a path is used.
+                When specifying the <code class="code">fakefile</code> or the settings parameters, the project root is seached first and then the build data director is searched when the given file does not contain a directory separator.
               </p>
               <p class="p">
-                For example, with '<code class="code">--fakefile my_fakefile</code>' the fakefile at '<code class="code">./data/build/my_fakefile</code>' would be used, however with '<code class="code">--fakefile ./my_fakefile</code>' the fakefile at '<code class="code">./my_fakefile</code>' would be used.
+                For example, with '<code class="code">--fakefile my_fakefile</code>' the fakefile at '<code class="code">./my_fakefile</code>' is used if found, but if it is not found then '<code class="code">./data/build/my_fakefile</code>' is used if found.
+              </p>
+              <p class="p">
+                For example, with '<code class="code">--fakefile ./my_fakefile</code>' the fakefile at '<code class="code">./my_fakefile</code>' is used if found, but if it is not found then no other paths are attempted.
               </p>
               <p class="p">
                 When piping data to this program, the piped data is treated as a <code class="code">fakefile</code>.
               </p>
               <p class="p">
-                Only the <code class="code">make</code> operation is supported when using piped data.
+                Only the <strong>make</strong> operation is supported when using piped data.
               </p>
             </div>
           </section>
