@@ -4,9 +4,9 @@
 #
 
 Featureless Settings Specification: 0005 - Somewhat Basic List:
-  This is a fss-0002 Basic List whose Content is then processed as fss-0001 Extended.
+  This is a code"fss-0002 (Basic List)" whose Content is then processed as "FSS-0001 (Extended)".
 
-  All Basic List (fss-0002) escapes are applied before any Extended (fss-0001) is identified.
+  All "FSS-0002 (Basic List)" escapes are applied before any "FSS-0001 (Extended)" is identified.
 
   See the fss-0001.txt and fss-0002.txt specification files for details on the syntax rules.
 
@@ -19,7 +19,7 @@ Featureless Settings Specification: 0005 - Somewhat Basic List:
       This Does\\\:
     Second\:
       Continues until EOS/EOF.
-      All whitespace, including newline (and leading whitespace) is "part of content."
+      All white space, including newline (and leading white space) is "part of content."
       # Valid comments are still ignored.
 
   Outer Objects would be\:
@@ -53,11 +53,11 @@ Featureless Settings Specification: 0005 - Somewhat Basic List:
     2.1.1) until
     2.1.2) EOS/EOF.
 
-    2.2.1) whitespace,
+    2.2.1) white space,
     2.2.2) including
     2.2.3) newline
     2.2.4) (and
     2.2.5) leading
-    2.2.6) whitespace)
+    2.2.6) white space)
     2.2.7) is
     2.2.8) part of content.

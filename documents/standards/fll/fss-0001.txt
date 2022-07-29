@@ -4,31 +4,33 @@
 #
 
 Featureless Settings Specification: 0001 - Extended:
-  Each Object starts at the beginning of a line and whitespace to the left of the Object is not treated as an object.
-  Whitespace separates an Object from the Content.
+  Each Object starts at the beginning of a line and white space to the left of the Object is not treated as an object.
+  White space separates an Object from the Content.
   An Object may be followed by a newline, in which case means that the Object has no Content.
-  If only printing whitespace follows a valid Object, that Object is considered to have no Content.
+  If only printing white spaces or non-printable characters follow a valid Object, then that Object is considered to have no Content.
 
   Content exists on the same line as the Object.
   Content is represented as multiple Content columns.
-  Content columns are whitespace separated parts within the Content and terminated by a newline.
+  Content columns are white space separated parts within the Content and terminated by a newline.
   Any number of Content columns may exist in the Content until the newline is reached.
 
   Key\:
-    \s = whitespace, except newline.
-    \b = either whitespace or printable, except newline.
-    \q = non-whitespace or quoteded whitespace, no whitespace outside of quotes.
-    \n = newline.
-    * = 0 or more occurrences.
-    + = one or more occurrences.
-    ()* = grouping that repeats 0 or more times.
+    "\s" = White space, except newline.
+    "\b" = Either white space or printable, except newline.
+    "\q" = Non-white space or quoted white space, no white space outside of quotes.
+    "\n" = Newline.
+    "*" = Zero or more occurrences.
+    "+" = One or more occurrences.
+    "()*" = Grouping that repeats zero or more times.
 
   Before Structure\:
+    ""
 
   Structure\:
-    \s*\q+\s+(\s*\q+)*\s*\n
+    "\s*\q+\s+(\s*\q+)*\s*\n"
 
   After Structure\:
+    ""
 
   Example\:
     # fss-0001

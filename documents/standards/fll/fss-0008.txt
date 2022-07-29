@@ -4,7 +4,7 @@
 #
 
 Featureless Settings Specification: 0008 - Embedded List:
-  This is a fss-0003 Extended List whose Content is then recursively processed as fss-0003 Extended List.
+  This is a "FSS-0003 (Extended List)" whose Content is then recursively processed as "FSS-0003 (Extended List)".
 
   See the fss-0003.txt specification file for details on the syntax rules.
 

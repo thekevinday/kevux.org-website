@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Documentation - Controller - Specification - Packet</title>
+
+    <base href="../../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Controller program Packet specification.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Controller, Open-Source, Specification">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="documentation/controller/specifications/packet.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js specification">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="news.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item active"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="documentation.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Documentation</div>
+            <a href="documentation/controller.html" class="nav-text link">Controller</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller.html#parameters-standard" class="nav-text link">Standard Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller.html#parameters-program" class="nav-text link">Program Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller.html#simulate" class="nav-text link">Simulate</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller.html#time" class="nav-text link">Time</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">Specifications</div>
+            <a href="documentation/controller/specifications.html" class="nav-text link">Controller</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller/specifications/action.html" class="nav-text link">Action</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller/specifications/entry.html" class="nav-text link">Entry</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller/specifications/exit.html" class="nav-text link">Exit</a>
+          </div>
+          <div class="nav-item highlight block">
+            <a href="documentation/controller/specifications/packet.html" class="nav-text link">Packet</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller/specifications/rule.html" class="nav-text link">Rule</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">APIs</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="documentation/controller/specifications/packet.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="documentation/controller/specifications/packet.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">Controller Packet Specifications</h1>
+          </header>
+
+          <div class="main-content">
+            <p class="p">
+              The <strong>controller</strong> program communicates use the <code class="code">FSS-000F (Packet)</code>.
+            </p>
+            <p class="p">
+              This specification declares how the Payload Block, which is in <code class="code">FSS-000E (Payload)</code> format, is required to be used.
+            </p>
+            <p class="p">
+              Only a single <code class="code">header</code> is allowed.
+            </p>
+            <p class="p">
+              Only a single <code class="code">payload</code> is allowed.
+            </p>
+            <p class="p">
+              Packet Structure:
+            </p>
+            <ul>
+              <li>
+                <p class="p">
+                  Packet is grouped into the following blocks:
+                </p>
+                <ul>
+                  <li><code class="code">control</code>: A single 1-byte block representing control codes.</li>
+                  <li><code class="code">size</code>: A single 4-byte block representing the size of the entire packet, including the control block.</li>
+                </ul>
+              </li>
+            </ul>
+            <p class="p">
+              The <code class="code">header</code> Object contains the following <code class="code">FSS-0001 (Extended Object)</code> (depending on <code class="code">type</code>):
+            </p>
+            <ul>
+              <li><code class="code">action</code>: A valid action type: <code class="code">freeze</code>, <code class="code">kexec</code>, <code class="code">kill</code>, <code class="code">pause</code>, <code class="code">reboot</code>, <code class="code">reload</code>, <code class="code">rerun</code>, <code class="code">restart</code>, <code class="code">resume</code>, <code class="code">shutdown</code>, <code class="code">start</code>, <code class="code">stop</code>, or <code class="code">thaw</code>.</li>
+              <li><code class="code">length</code>: A positive whole number inclusively between 0 and 4294965248 representing the length of the <code class="code">payload</code> (may be in binary, octal, decimal, duodecimal, or hexidecimal).</li>
+              <li><code class="code">status</code>: The status code name or number representing an <abbr title="Featureless Settings Specifications">FSS</abbr> status code, such as <code class="code">F_none</code>, <code class="code">F_failure</code>, or <code class="code">200</code> (where a number may have error and warning bits and may be in binary, octal, decimal, duodecimal, or hexidecimal).</li>
+              <li><code class="code">type</code>: The packet type that is one of <code class="code">controller</code>, <code class="code">error</code>, or <code class="code">init</code>.</li>
+            </ul>
+            <p class="p">
+              When there are multiple Objects of the same name inside the <code class="code">header</code>:
+            </p>
+            <ul>
+              <li><code class="code">action</code>: The order represents the order in which the actions are performed..</li>
+              <li><code class="code">length</code>: There may only be one length Object, all others after the first are ignored (may be in binary, octal, decimal, duodecimal, or hexidecimal).</li>
+              <li><code class="code">status</code>: A status for each action, in the same order as the order of the action, such as F_none, F_failure, or 200 (where a number may have error and warning bits and may be in binary, octal, decimal, duodecimal, or hexidecimal).</li>
+              <li><code class="code">type</code>: The first represent the type and all others represents a sub-type.</li>
+            </ul>
+            <p class="p">
+              There are different headers and payload properties based on the <code class="code">type</code>.
+            </p>
+            <p class="p">
+              The <code class="code">controller</code> type:
+            </p>
+            <ul>
+              <li>Supports the following headers: <code class="code">action</code>, <code class="code">length</code>, <code class="code">status</code>, and <code class="code">type</code>.</li>
+              <li>Only a single <code class="code">action</code> may be provided and must exist for request and response packets.</li>
+              <li>Only a single <code class="code">status</code> may be provided and must exist for response packets.</li>
+              <li>The <code class="code">payload</code> is dependent on the <code class="code">action</code>.</li>
+            </ul>
+            <p class="p">
+              The <code class="code">error</code> type:
+            </p>
+            <ul>
+              <li>Supports the following headers: <code class="code">length</code>, <code class="code">status</code>, and <code class="code">type</code>.</li>
+              <li>Only a single <code class="code">status</code> may be provided and must exist for request and response packets.</li>
+              <li>The <code class="code">payload</code> is a NULL terminated string whose length is defined by the <code class="code">length</code> <code class="code">header</code> Content.</li>
+            </ul>
+            <p class="p">
+              There are different headers and payload properties based on the <code class="code">type</code>.
+            </p>
+            <p class="p">
+              The <code class="code">init</code> type:
+            </p>
+            <ul>
+              <li>Supports the following headers: <code class="code">action</code>, <code class="code">length</code>, <code class="code">status</code>, and <code class="code">type</code>.</li>
+              <li>Only a single <code class="code">action</code> may be provided and must exist for request and response packets.</li>
+              <li>Only a single <code class="code">status</code> may be provided and must exist for response packets.</li>
+              <li>The <code class="code">payload</code> is dependent on the <code class="code">action</code>.</li>
+            </ul>
+          </div>
+
+          <section id="documentation" class="section sub separate">
+            <header class="section-header header">
+              <h2 class="section-title h h2">Packet Documentation</h2>
+            </header>
+
+            <div class="section-content">
+              <p class="p">
+                Describes how a packet is designed and intended to be used.
+              </p>
+              <p class="p">
+                The <code class="code">packet</code> is the general category in which multiple types of packets belong.
+                This describes the different packets based on their <code class="code">type</code>.
+              </p>
+              <p class="p">
+                Each packet begins with a control block and a size block followed by a payload block.
+              </p>
+              <p class="p">
+                The <code class="code">control</code> block:
+              </p>
+              <ul>
+                <li>The leading bit (starting from the left) designates the the format of the payload, which is 0 for string and 1 for binary.</li>
+                <li>The second bit (starting from the left) designates the the byte order for the rest of the packet, which 0 is for little endian and 1 is for big endian.</li>
+                <li>The remaining 6-bits are reserved for future use.</li>
+                <li>
+                  <p class="p">
+                    The size block:
+                  </p>
+                  <ul>
+                    <li>The size block represents the size of the entire packet (the control block, the size blocks, and the payload block).</li>
+                    <li>This number is a single 32-bit unsigned integer.</li>
+                  </ul>
+                </li>
+                <li>
+                  <p class="p">
+                    Example packet structure:
+                  </p>
+                  <pre class="preserve">[ Control Block ] [ Size Block                                  ] [ Payload Block         ]
+[ 0b10000000    ] [ 0b00000000 0b00000000 0b00000100 0b11010010 ] [ size: 1229 (1234 - 5) ]</pre>
+                </li>
+                <li>
+                  <p class="p">
+                    The payload block:
+                  </p>
+                  <p class="p">
+                    This block is represented by the <code class="code">FSS-000E</code> payload specification and its structure ad use is described in the next sections.
+                  </p>
+                  <p class="p">
+                    The following types of payload are received or sent:
+                  </p>
+                  <ol>
+                    <li>controller payload.</li>
+                    <li>error payload.</li>
+                    <li>init payload.</li>
+                  </ol>
+                </li>
+              </ul>
+              <p class="p">
+                The <strong>controller</strong> payload:
+              </p>
+              <ul>
+                <li>Commands being sent to the <strong>controller</strong> and their respective responses utilize a <strong>controller</strong> payload.</li>
+                <li>These are pre-defined commands to rules or the <strong>controller</strong> program itself.</li>
+                <li>Commands such as starting or stopping some rule, for example.</li>
+                <li>
+                  <div>A <strong>controller</strong> payload is also sent in response to a <strong>controller</strong> payload request to represent a success.</div>
+                  <ul>
+                    <li>The <code class="code">now</code> condition designates that the kexec, reboot, or shutdown is to begin immediately.</li>
+                    <li>The <code class="code">at</code> condition designates that the kexec, reboot, or shutdown is to begin once a specific date and time is reached by the system clock.</li>
+                    <li>The <code class="code">in</code> condition designates that the kexec, reboot, or shutdown is to begin once a specific amount of time is passed by the system clock since the execution of this command started.</li>
+                  </ul>
+                </li>
+              </ul>
+              <p class="p">
+                For these <code class="code">time</code> conditions, different units of time should be supported, such as <code class="code">seconds</code>, <code class="code">days</code>, <code class="code">years</code> as standard time, Time, or UNIX Time (Epoch Time).
+              </p>
+              <p class="p">
+                The normal <code class="code">controller</code> payload commands are any valid Rule Action that performs some action.
+                This does not include Actions that provide some setting or configuration (such as <code class="code">with_pid</code>).
+                Some of the supported commands are: <code class="code">freeze</code>, <code class="code">kill</code>, <code class="code">pause</code>, <code class="code">reload</code>, <code class="code">rerun</code>, <code class="code">restart</code>, <code class="code">resume</code>, <code class="code">start</code>, <code class="code">stop</code>, or <code class="code">thaw</code>.
+                Multiple commands may be sent multiple <code class="code">action</code> headers.
+                The <code class="code">action</code> headers are order sensitive, executing from top to bottom, and one does not start until the previous successfully completes.
+              </p>
+              <p class="p">
+                Multiple <code class="code">status</code> headers may exist in the response so long as they each match an <code class="code">action</code> in the request.
+              </p>
+              <p class="p">
+                The <code class="code">payload</code> is expected to be empty and have a length of 0 for a request.
+                The <code class="code">payload</code> may have an <code class="code">FSS-0000 (Basic)</code> format containing a single Object <code class="code">message</code> to represent a message associated with an action.
+                Multiple <code class="code">message</code> may exist in the response so long as they each match an <code class="code">action</code> in the request.
+              </p>
+              <p class="p">
+                The <strong>error</strong> payload:
+              </p>
+              <ul>
+                <li>The error payload is intended to communicate some sort of failure.</li>
+                <li>The error payload is only sent in response to some request (and not in response to another response).</li>
+                <li>The control (the client) is not expected to send error payloads and the controller (the service) should send an error in response to an error payload or ignore it entirely.</li>
+                <li>The <code class="code">status</code> from the <code class="code">header</code> designates the status code as either a status code name string or a status code number (where a number may have error and warning bits).</li>
+                <li>The <code class="code">payload</code> will contain a NULL terminated string representing the message used to describe the error.</li>
+              </ul>
+              <p class="p">
+                The <strong>init</strong> payload:
+              </p>
+              <ul>
+                <li>The init payload is intended exclusively for the <code class="code">init</code> operation mode and is expected to only be available when running as <code class="code">init</code>.</li>
+                <li>This is used to provide special actions, namely <code class="code">kexec</code>, <code class="code">reboot</code>, and <code class="code">shutdown</code>.</li>
+
+                <li>The <code class="code">kexec</code> is for booting into another kernel, which may effectively be the same as a <code class="code">reboot</code> (<code class="code">kexec</code> is currently neither supported nor implemented).</li>
+                <li>The <code class="code">reboot</code> is for rebooting the machine (currently not implemented).</li>
+                <li>The <code class="code">shutdown</code> is for shutting down the machine (currently not implemented).</li>
+                <li>These three commands are configurable to fire off based on conditions.</li>
+              </ul>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

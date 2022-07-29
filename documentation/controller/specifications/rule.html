@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Documentation - Controller - Specification - Rule</title>
+
+    <base href="../../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Controller program Rule specification.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Controller, Open-Source, Specification">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="documentation/controller/specifications/rule.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js specification">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="news.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item active"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="documentation.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Documentation</div>
+            <a href="documentation/controller.html" class="nav-text link">Controller</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller.html#parameters-standard" class="nav-text link">Standard Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller.html#parameters-program" class="nav-text link">Program Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller.html#simulate" class="nav-text link">Simulate</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller.html#time" class="nav-text link">Time</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">Specifications</div>
+            <a href="documentation/controller/specifications.html" class="nav-text link">Controller</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller/specifications/action.html" class="nav-text link">Action</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller/specifications/entry.html" class="nav-text link">Entry</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller/specifications/exit.html" class="nav-text link">Exit</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller/specifications/packet.html" class="nav-text link">Packet</a>
+          </div>
+          <div class="nav-item highlight block">
+            <a href="documentation/controller/specifications/rule.html" class="nav-text link">Rule</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">APIs</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="documentation/controller/specifications/rule.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="documentation/controller/specifications/rule.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">Controller Rule Specification</h1>
+          </header>
+
+          <div class="main-content">
+            <p class="p">
+              The Rule files follow the <code class="code">FSS-000D (Basic Rule)</code> format with <code class="code">IKI-0000 (Unrestricted)</code>.
+            </p>
+            <p class="p">
+              A Rule file name is expected to have the file extension <code class="code">.rule</code>.
+            </p>
+            <p class="p">
+              For each Rule file:
+            </p>
+            <ul>
+              <li>The outer most part is a <code class="code">FSS-0002 (Basic List)</code>.</li>
+              <li>The outer most part is a <code class="code">FSS-0002 (Basic List)</code>.</li>
+              <li>The Basic List Object is considered the <em>Rule Type</em>.</li>
+              <li>The Basic List Content is determined by the specific <em>Rule Type</em>.</li>
+              <li>The Content for each <em>Rule Type</em> is called the <em>Item</em>.</li>
+              <li>Each Item Object is the <em>Item Name</em>.</li>
+              <li>Each Item Content is either the <em>Action</em> or the <em>Setting</em>.</li>
+              <li>Each Action Object is the <em>Action Name</em>.</li>
+              <li>Each Action Content are the <em>Action Parameters</em>.</li>
+              <li>Each Setting Object is the <em>Setting Name</em>.</li>
+              <li>Each Setting Content are the <em>Setting Values</em>.</li>
+            </ul>
+            <p class="p">
+              The Rule Types:
+            </p>
+            <ul>
+              <li><code class="code">command</code>: Follows either <code class="code">FSS-0003 (Extended List)</code> or <code class="code">FSS-0001 (Extended)</code>.</li>
+              <li><code class="code">script</code>: Follows either <code class="code">FSS-0003 (Extended List)</code> or <code class="code">FSS-0001 (Extended)</code>.</li>
+              <li><code class="code">service</code>: Follows either <code class="code">FSS-0003 (Extended List)</code> or <code class="code">FSS-0001 (Extended)</code>.</li>
+              <li><code class="code">settings</code>: Is required and follows either <code class="code">FSS-0001 (Extended)</code>.</li>
+              <li><code class="code">utility</code>: Follows either <code class="code">FSS-0003 (Extended List)</code> or <code class="code">FSS-0001 (Extended)</code>.</li>
+            </ul>
+            <p class="p">
+              For the above Rule Types, <code class="code">settings</code> may be specified only once whereas the others may be specifed multiple times.
+            </p>
+            <p class="p">
+              The <code class="code">settings</code> Rule Type is always processed first, regardless of position.
+            </p>
+            <p class="p">
+              The other Rule Types are processed top-down.
+            </p>
+            <p class="p">
+              The <code class="code">settings</code> Rule Type has the following <code class="code">FSS-0001 (Extended)</code>:
+            </p>
+            <ul>
+              <li><code class="code">affinity</code>: One or more Content, each must be a 0 or greater whole number.</li>
+              <li><code class="code">capability</code>: One Content representing capabilities.</li>
+              <li><code class="code">cgroup</code>: Two or more Content, the first Content being either <code class="code">existing</code> or <code class="code">new</code> and the remaining representing a valid cgroup (control group) name, must have at least 1 graph character (non white space printing character) (leading and trailing white space are trimmed off).</li>
+              <li><code class="code">define</code>: Two Content, the first Content must be a case-sensitive valid environment variable name (alpha-numeric or underscore, but no leading digits).</li>
+              <li><code class="code">engine</code>: One or more Content representing a valid program name or path (such as <code class="code">bash</code> or <code class="code">/bin/bash</code>) and any optional arguments.</li>
+              <li><code class="code">environment</code>: Zero or more Content, each must be a case-sensitive valid environment variable name (alpha-numeric or underscore, but no leading digits).</li>
+              <li><code class="code">group</code>: One or more Content representing group names or group ids.</li>
+              <li><code class="code">limit</code>: Three Content, with the first representing a valid resource type and the second and third being a valid resource limit number (positive whole number or 0).</li>
+              <li><code class="code">name</code>: One Content, must have at least 1 graph character (non white space printing character) (leading and trailing white space are trimmed off).</li>
+              <li><code class="code">nice</code>: One Content, must be a valid number for process <em>niceness</em> (Any whole number inclusively between -20 to 19).</li>
+              <li><code class="code">on</code>: Four Content, the first being a Rule Action, the second being <code class="code">need</code>, <code class="code">want</code>, or <code class="code">wish</code>, the third being a partial path, and the fourth being a Rule file name without <code class="code">.rule</code> extension.</li>
+              <li><code class="code">parameter</code>: Two Content, the first Content must be a case-sensitive valid IKI name and the second being an IKI value.</li>
+              <li><code class="code">path</code>: One Content representing a valid PATH environment string (such as <code class="code">/bin:/sbin:/usr/bin</code>).</li>
+              <li><code class="code">scheduler</code>: One or two Content representing a scheduler name and the optional numeric priority (Any whole number inclusively between 0 and 99).</li>
+              <li><code class="code">timeout</code>: One or two content with the first being one of <code class="code">exit</code>, <code class="code">start</code>, <code class="code">stop</code>, or <code class="code">kill</code> and the (optional) second Content being a positive whole number or 0.</li>
+              <li><code class="code">user</code>: One Content representing a user name or user id.</li>
+            </ul>
+            <p class="p">
+              The <code class="code">command</code> and <code class="code">script</code> Rule Types allow the following the <code class="code">FSS-0001 (Extended)</code>:
+            </p>
+            <ul>
+              <li><code class="code">freeze</code>: One or more Content representing a program being executed and its arguments.</li>
+              <li><code class="code">kill</code>: One or more Content representing a program being executed and its arguments.</li>
+              <li><code class="code">pause</code>: One or more Content representing a program being executed and its arguments.</li>
+              <li><code class="code">reload</code>: One or more Content representing a program being executed and its arguments.</li>
+              <li><code class="code">rerun</code>: Two or more Content representing a Rule type that executes and its properties.</li>
+              <li><code class="code">restart</code>: One or more Content representing a program being executed and its arguments.</li>
+              <li><code class="code">resume</code>: One or more Content representing a program being executed and its arguments.</li>
+              <li><code class="code">start</code>: One or more Content representing a program being executed and its arguments.</li>
+              <li><code class="code">stop</code>: One or more Content representing a program being executed and its arguments.</li>
+              <li><code class="code">thaw</code>: One or more Content representing a program being executed and its arguments.</li>
+              <li><code class="code">with</code>: One or more Content representing special options for the Rule Type.</li>
+            </ul>
+            <p class="p">
+              The <code class="code">service</code> and <code class="code">utility</code> Rule Types allow the following the <code class="code">FSS-0001 (Extended)</code>:
+            </p>
+            <ul>
+              <li><code class="code">pid_file</code>: One Content representing the path to a <abbr title="Process Identifier"><abbr title="Process Identifier">PID</abbr></abbr> file.</li>
+              <li><code class="code">rerun</code>: Two or more Content representing a Rule type that executes and its properties.</li>
+              <li><code class="code">with</code>: One or more Content being one of <code class="code">full_path</code>, <code class="code">session_new</code>, or <code class="code">session_same</code>.</li>
+            </ul>
+            <p class="p">
+              The <code class="code">command</code> and <code class="code">service</code> Rule Types allow the following the <code class="code">FSS-0003 (Extended List)</code>:
+            </p>
+            <ul>
+              <li><code class="code">freeze</code>: A list repesenting multiple programs and their respective arguments to execute.</li>
+              <li><code class="code">kill</code>: A list repesenting multiple programs and their respective arguments to execute.</li>
+              <li><code class="code">pause</code>: A list repesenting multiple programs and their respective arguments to execute.</li>
+              <li><code class="code">reload</code>: A list repesenting multiple programs and their respective arguments to execute.</li>
+              <li><code class="code">restart</code>: A list repesenting multiple programs and their respective arguments to execute.</li>
+              <li><code class="code">resume</code>: A list repesenting multiple programs and their respective arguments to execute.</li>
+              <li><code class="code">start</code>: A list repesenting multiple programs and their respective arguments to execute.</li>
+              <li><code class="code">stop</code>: A list repesenting multiple programs and their respective arguments to execute.</li>
+              <li><code class="code">thaw</code>: A list repesenting multiple programs and their respective arguments to execute.</li>
+            </ul>
+            <p class="p">
+              The <code class="code">script</code> and <code class="code">utility</code> Rule Types allow the following the <code class="code">FSS-0003 (Extended List)</code>:
+            </p>
+            <ul>
+              <li><code class="code">freeze</code>: A list repesenting the contents of a script, such as a GNU Bash shell.</li>
+              <li><code class="code">kill</code>: A list repesenting the contents of a script, such as a GNU Bash shell.</li>
+              <li><code class="code">pause</code>: A list repesenting the contents of a script, such as a GNU Bash shell.</li>
+              <li><code class="code">reload</code>: A list repesenting the contents of a script, such as a GNU Bash shell.</li>
+              <li><code class="code">restart</code>: A list repesenting the contents of a script, such as a GNU Bash shell.</li>
+              <li><code class="code">resume</code>: A list repesenting the contents of a script, such as a GNU Bash shell.</li>
+              <li><code class="code">start</code>: A list repesenting the contents of a script, such as a GNU Bash shell.</li>
+              <li><code class="code">stop</code>: A list repesenting the contents of a script, such as a GNU Bash shell.</li>
+              <li><code class="code">thaw</code>: A list repesenting the contents of a script, such as a GNU Bash shell.</li>
+            </ul>
+            <p class="p">
+              The <code class="code">rerun</code> Rule Type Content has the following structure.
+            </p>
+            <ul>
+              <li>The first Content represents one of: <code class="code">freeze</code>, <code class="code">kill</code>, <code class="code">pause</code>, <code class="code">reload</code>, <code class="code">restart</code>, <code class="code">resume</code>, <code class="code">start</code>, <code class="code">stop</code>, or <code class="code">thaw</code>.</li>
+              <li>The second Content represents one of: <code class="code">success</code> or <code class="code">failure</code>.</li>
+              <li>The third and more Content represents one of: <code class="code">delay</code>, <code class="code">max</code>, or <code class="code">reset</code>.</li>
+              <li>Where <code class="code">delay</code> and <code class="code">max</code> must be followed by a positive number or the number 0.</li>
+            </ul>
+          </div>
+
+          <section id="documentation" class="section sub separate">
+            <header class="section-header header">
+              <h2 class="section-title h h2">Rule Documentation</h2>
+            </header>
+
+            <div class="section-content">
+              <p class="p">
+                This describes the intent and purpose of a Rule file.
+              </p>
+              <p class="p">
+                A Rule file, such as <code class="code">ssh.rule</code>, is intended to designate what to execute.
+              </p>
+              <p class="p">
+                The rule file is read top-down, except for the outer most list <code class="code">settings</code>, which is intended to store setting data for this rule.
+                Multiple outer most list Objects may be specified and they are executed as provided, in a top-down manner.
+              </p>
+              <p class="p">
+                The <code class="code">settings</code> Rule Type has the following <code class="code">FSS-0001 (Extended)</code> Content:
+              </p>
+              <ul>
+                <li><code class="code">affinity</code>: Define one or more processors to restrict this rule by with each number representing a specific processor by its id (starting at 0).</li>
+                <li><code class="code">capability</code>: Define a set of capabilities in which to use, using the capability <code class="code">text</code> format (such as <code class="code">= cap_chown+ep</code>).</li>
+                <li><code class="code">cgroup</code>: Define a cgroup (control group) in which everything within this rule executes under.</li>
+                <li><code class="code">define</code>: A single environment variable name and its associated value that is automatically exposed to processes executed within this rule.</li>
+                <li><code class="code">engine</code>: An executable name of a script, such as <code class="code">bash</code>, to use for the <code class="code">script</code> Rule Type (which likely defaults to <code class="code">bash</code> if not specified).</li>
+                <li><code class="code">environment</code>: A set of environment variables to expose to the processes executed within this rule (<code class="code">PATH</code> is always exposed).</li>
+                <li><code class="code">group</code>: A set of group names or IDs to execute as with the first group being the primary group and all remaining being supplementary groups.</li>
+                <li><code class="code">limit</code>: Define a resource limit to use (multiple limits may be specified, but only once for each type).</li>
+                <li><code class="code">name</code>: A name used to represent this rule, which is printed to the user, screen, logs, etc...</li>
+                <li><code class="code">nice</code>: A single niceness value to run all processes executed within this rule as (-20 gets to be greediest in CPU usage and 19 being the nicest in CPU usage).</li>
+                <li><code class="code">on</code>: Define a Rule Action in which a specified dependency is needed, wanted, or wished for.</li>
+                <li><code class="code">parameter</code>: An IKI name and its associated value for use in this rule file.</li>
+                <li><code class="code">path</code>: A single Content used to set a custom <code class="code">PATH</code> environment variable value.</li>
+                <li><code class="code">scheduler</code>: A valid name of a scheduler to use followed by an optional priority number.</li>
+                <li><code class="code">timeout</code>: A set of timeouts to wait for in which to perform a set action or to consider failure.</li>
+                <li><code class="code">user</code>: A single user name or ID to execute as.</li>
+              </ul>
+              <p class="p">
+                The <code class="code">capability</code> setting:
+              </p>
+              <ul>
+                <li>If the user the controller program is run as does not have the desired capabilities already, they cannot be added.</li>
+                <li>This essentially maintains or reduces the capabilities already available.</li>
+                <li>Due to capabilities only being a draft in the POSIX standard, one may expect <code class="code">capabilities</code> support may not be available and in such a case this setting will do nothing.</li>
+                <li>If the dependent project (f_capability) does not have libcap support enabled, then capabilities will be unsupported by the compilation of this project.</li>
+              </ul>
+              <p class="p">
+                The <code class="code">control</code> setting:
+              </p>
+              <ul>
+                <li>The first argument is either <code class="code">existing</code> or <code class="code">new</code>, where for <code class="code">existing</code> the process is run inside the existing control used by the parent and when <code class="code">new</code> the process is executed within a new control group namespace entirely.</li>
+              </ul>
+              <p class="p">
+                The <code class="code">define</code> setting:
+              </p>
+              <ul>
+                <li>Use this to define an environment variable (this overwrites any existing environment variable with this name).</li>
+                <li>A define is both exported as an environment variable as well as exposed as an IKI variable.</li>
+                <li>Example IKI variable substitution: for <code class="code">define PATH /bin:/sbin</code>, the associated IKI variable would look like: <code class="code">define:"PATH"</code>.</li>
+                <li>All environment variables, including those defined using this, must be in the <code class="code">environment</code> list to be exported to the executed process.</li>
+                <li>Environment variables added here that are not added to the environment are still exposed as an IKI variable.</li>
+              </ul>
+              <p class="p">
+                The <code class="code">engine</code> setting:
+              </p>
+              <ul>
+                <li>This engine is used for both <code class="code">script</code> and <code class="code">utility</code> Rule Types.</li>
+                <li>The program that engine refers to must accept a standard input pipe to be supported.</li>
+                <li>Additional parameters may be passed to the engine.</li>
+              </ul>
+              <p class="p">
+                The <code class="code">group</code> and <code class="code">user</code> settings:
+              </p>
+              <ul>
+                <li>Only users and groups that the user the controller program is being run as is allowed to use may be used.</li>
+              </ul>
+              <p class="p">
+                The <code class="code">limit</code> setting:
+              </p>
+              <ul>
+                <li>The first parameter must be one of: <code class="code">as</code>, <code class="code">core</code>, <code class="code">cpu</code>, <code class="code">data</code>, <code class="code">fsize</code>, <code class="code">locks</code>, <code class="code">memlock</code>, <code class="code">msgqueue</code>, <code class="code">nice</code>, <code class="code">nofile</code>, <code class="code">nproc</code>, <code class="code">rss</code>, <code class="code">rtprio</code>, <code class="code">rttime</code>, <code class="code">sigpending</code>, or <code class="code">stack</code>.</li>
+                <li>The second parameter represents the soft limit.</li>
+                <li>The third parameter represents the hard limit.</li>
+                <li>This may be specified multiply times, but only once for each type.</li>
+              </ul>
+              <p class="p">
+                The <code class="code">on</code> setting:
+              </p>
+              <ul>
+                <li>The first parameter represents the Action the dependency exists under and must be one of: <code class="code">freeze</code>, <code class="code">kill</code>, <code class="code">pause</code>, <code class="code">reload</code>, <code class="code">restart</code>, <code class="code">resume</code>, <code class="code">start</code>, <code class="code">stop</code>, or <code class="code">thaw</code>.</li>
+                <li>The second parameter represents how the dependency is required and must be one of: <code class="code">need</code>, <code class="code">want</code>, or <code class="code">wish</code>.</li>
+                <li>The third parameter is a partial path to the rule file.</li>
+                <li>The fourth parameter represents the name of the rule file.</li>
+              </ul>
+              <p class="p">
+                In the case of the second parameter:
+              </p>
+              <ul>
+                <li>A <code class="code">need</code> designates that the dependent rule is required to be executed (must exist and must succeed).</li>
+                <li>A <code class="code">want</code> designates that the dependent rule is to be executed (may exist and if it does, then it must succeed).</li>
+                <li>A <code class="code">wish</code> designates that the dependent rule is to be executed (may exist and if it does, but it does not need to succeed).</li>
+              </ul>
+              <p class="p">
+                In the case of <code class="code">want</code> and <code class="code">wish</code>, if the desired rule is either not found or is otherwise disabled, then this will not fail or otherwise block the wanting or wishing rule.
+              </p>
+              <p class="p">
+                The <code class="code">path</code> setting:
+              </p>
+              <ul>
+                <li>When specified, the <code class="code">PATH</code> environment variable is automatically added to the <code class="code">environment</code> setting.</li>
+              </ul>
+              <p class="p">
+                The <code class="code">parameter</code> setting:
+              </p>
+              <ul>
+                <li>Use this to define an IKI variable name and value.</li>
+                <li>These do not conflict with environment variables and are not exposed as environment variables.</li>
+                <li>Example IKI variable substitution: for <code class="code">parameter hello world</code>, the associated IKI variable would look like: <code class="code">parameter:"hello"</code>.</li>
+              </ul>
+              <p class="p">
+                The <code class="code">scheduler</code> setting:
+              </p>
+              <ul>
+                <li>The valid range of the priority number is dependent on the scheduler.</li>
+                <li>For example, non-real-time schedulers (such as <code class="code">idle</code>) only support a value of 0 whereas real-time schedulers (such as <code class="code">fifo</code>) only support an inclusive range of 1 to 99.</li>
+                <li>Supported non-real-time schedulers are: <code class="code">batch</code>, <code class="code">idle</code>, and <code class="code">other</code> (aka: <code class="code">normal/default</code>).</li>
+                <li>Supported real-time schedulers are: <code class="code">deadline</code>, <code class="code">fifo</code>, <code class="code">round_robin</code>.</li>
+              </ul>
+              <p class="p">
+                The <code class="code">timeout</code> setting:
+              </p>
+              <ul>
+                <li>(This is not currently implemented.)</li>
+                <li>Provides settings for each of the three special situations: <code class="code">kill</code>, <code class="code">start</code>, and <code class="code">stop</code>.</li>
+                <li>Each of these may only have a single one exist at a time (one <code class="code">kill</code>, one <code class="code">start</code>, and one <code class="code">stop</code>).</li>
+                <li>Each successive <code class="code">timeout</code> Item Action, specific to each Action Name (such as <code class="code">start</code>), specified replaces the previously defined <code class="code">timeout</code> Action (in a top-down manner).</li>
+                <li>The second Content for each of these, when specified, may be a 0 or greater whole number representing the number of <em>MegaTime</em> (MT) (equivalent to milliseconds).</li>
+                <li>For <code class="code">kill</code>, this represents the number of <em>MegaTime</em> to wait after stopping some Rule and that Rule has not yet stopped to forcefully stop the Rule (aka kill the Rule).</li>
+                <li>For <code class="code">start</code>, this represents the number of <em>MegaTime</em> to wait after starting some Rule before assuming something went wrong and the Rule is returned as failed.</li>
+                <li>For <code class="code">stop</code>, this represents the number of <em>MegaTime</em> to wait after stopping some Rule before assuming something went wrong and the Rule is returned as failed.</li>
+                <li>If the second Content is not specified, then this disables the type (prevents the specified timeout action).</li>
+              </ul>
+              <p class="p">
+                There are four available Rule Types to choose from: <code class="code">command</code>, <code class="code">service</code>, <code class="code">script</code>, and <code class="code">utility</code>.
+              </p>
+              <p class="p">
+                The <code class="code">command</code> Rule Type provides a simple command to run under the different circumstances: <code class="code">start</code>, <code class="code">stop</code>, <code class="code">restart</code>, and <code class="code">reload</code>.
+                A <code class="code">command</code> always operates in the foreground.
+              </p>
+              <p class="p">
+                The <code class="code">service</code> Rule Type provides a <code class="code">command</code> accompanied with a <abbr title="Process Identifier">PID</abbr> file (Process Identifier file).
+              </p>
+              <p class="p">
+                The <code class="code">script</code> Rule Type provides a series of lines to be executed by some engine, such as GNU Bash.
+                This <code class="code">script</code> operates in the foreground, but individual things done within the script may operate in foreground or background.
+                The last return state is treated as an error, so be sure to finish the script with a return code of 0 to designate no error and any other whole number, such a 1, to designate an error.
+                Therefore passing <code class="code">exit 1</code> would return as an error and passing <code class="code">exit 0</code> would return as a success.
+                A <code class="code">script</code> is assumed to be in GNU Bash, which is the default expected behavior, but the specification does not explicitly require this.
+                Another scripting language can be used but changing this incurs the responsibility to ensure all rules are updated to the appropriate scripting language.
+              </p>
+              <p class="p">
+                The <code class="code">utility</code> Rule Type provides a <code class="code">script</code> accompanied with a <abbr title="Process Identifier">PID</abbr> file (Process Identifier file).
+              </p>
+              <p class="p">
+                There are nine Rule Actions used to execute (<code class="code">freeze</code>, <code class="code">kill</code>, <code class="code">pause</code>, <code class="code">reload</code>, <code class="code">restart</code>, <code class="code">resume</code>, <code class="code">start</code>, <code class="code">stop</code>, and <code class="code">thaw</code>):
+              </p>
+              <p class="p">
+                When <code class="code">restart</code> Object's Content is not provided, then <code class="code">start</code> and <code class="code">stop</code> is called when the rule is executed using the restart Action, if both <code class="code">start</code> and <code class="code">stop</code> are provided.
+              </p>
+              <p class="p">
+                When <code class="code">reload</code>, <code class="code">start</code>, or <code class="code">stop</code> Object's Content are not provided, then no respective Action is performed.
+              </p>
+              <p class="p">
+                Commands are conditionally available depending on the presence of these, such as if <code class="code">stop</code> is not provided then <code class="code">stop</code> (and <code class="code">restart</code>) will not be available for the <code class="code">control</code> program(s) to use.
+              </p>
+              <p class="p">
+                Thee are additional Rule Actions not used to execute (<code class="code">pid_file</code>, <code class="code">rerun</code>, and <code class="code">with</code>):
+              </p>
+              <ul>
+                <li>The <code class="code">pid_file</code> Object's Content designates the path to the <abbr title="Process Identifier">PID</abbr> file created by the called program.</li>
+                <li>
+                  <div>The <code class="code">rerun</code> Object's Content designates how to re-run a given execution Rule type.</div>
+                  <ul>
+                    <li>The first Content represents the execution type, which may be one of: <code class="code">freeze</code>, <code class="code">kill</code>, <code class="code">pause</code>, <code class="code">reload</code>, <code class="code">restart</code>, <code class="code">resume</code>, <code class="code">start</code>, <code class="code">stop</code>, and <code class="code">thaw</code>.</li>
+                    <li>The second Content represents when to run this re-run is triggered, which is either <code class="code">success</code> (return code of 0) or <code class="code">failure</code> (return code is not 0).</li>
+                    <li>
+                      <div>The third Content and more represent additional options for fine tuning how the re-run is Performed:</div>
+                      <ul>
+                        <li>When <code class="code">delay</code>, followed by a number of <em>MegaTime</em> (MT) (equivalent to milliseconds) in which to wait before attempting the re-run.</li>
+                        <li>When <code class="code">max</code>, followed by a positive number or the number 0 designating the maximum number of re-runs to perform.</li>
+                        <li>
+                          <div>When <code class="code">reset</code>, the <code class="code">max</code> re-run counter is reset for the opposite re-run when this re-run is triggered, such as:</div>
+                          <ul>
+                            <li>A <code class="code">rerun start success reset</code> and a <code class="code">rerun failure max 10</code>, the failure counter would reset to 0 when the <code class="code">success</code> re-run is performed and not when the <code class="code">failure</code> re-run is performed.</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>A <code class="code">max</code> of 0 designates that the re-run will happen infinitely.</li>
+                  </ul>
+                </li>
+                <li>
+                  <div>The <code class="code">with</code> Object's Content designates special flags designating very specific behavior to be applied to any single Rule Type.</div>
+                  <ul>
+                    <li>
+                      <div>The following flags are supported:</div>
+                      <ul>
+                        <li><code class="code">full_path</code>: Used only by Rule Types that execute something, wherein the entire full path is used for execution and is assigned as <code class="code">argument[0]</code> (such as <code class="code">/bin/bash</code>).</li>
+                        <li>    When not specified, the path provided is used and the <code class="code">argument[0]</code> will be the base name (such as <code class="code">bash</code>).</li>
+                        <li><code class="code">session_new</code>: Execute in a new session setting the process group to the executed process' id (making the executed process a <code class="code">controlling terminal</code>).</li>
+                        <li><code class="code">session_same</code>: Execute in the same session where the process group is set to the parent process id.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <p class="p">
+                IKI Variables:
+              </p>
+              <ul>
+                <li>All Rule Actions support IKI variable substitution.</li>
+                <li>The Rule Settings do not support IKI variable substitution.</li>
+                <li>
+                  <div>The following IKI variable names are supported:</div>
+                  <ul>
+                    <li>define</li>
+                    <li>parameter</li>
+                    <li>program</li>
+                  </ul>
+                  <p class="p">
+                    The <code class="code">define</code> IKI variables, such as <code class="code">define:"PATH"</code>, expand environment variables.
+                  </p>
+                  <p class="p">
+                    The <code class="code">parameter</code> IKI variables, such as <code class="code">parameter:"hello"</code>, expand IKI variables defined using the <code class="code">parameter</code> Setting Rule Type.
+                  </p>
+                  <p class="p">
+                    The <code class="code">program</code> IKI variables, such as <code class="code">program:"verbose:option"</code>, expand program arguments (where <code class="code">verbose:option</code> might expand into <code class="code">-v</code> ).
+                  </p>
+                  <p class="p">
+                    Only the following <code class="code">program</code> IKI variables are supported:
+                  </p>
+                  <ul>
+                    <li>
+                      <div><code class="code">dark</code>:</div>
+                      <ul>
+                        <li>This variable holds the <code class="code">dark</code> program parameters, such as <code class="code">+d</code>.</li>
+                        <li>This supports <code class="code">:option</code>.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div><code class="code">light</code>:</div>
+                      <ul>
+                        <li>This variable holds the <code class="code">light</code> program parameters, such as <code class="code">+l</code>.</li>
+                        <li>This supports <code class="code">:option</code>.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div><code class="code">no_color</code>:</div>
+                      <ul>
+                        <li>This variable holds the <code class="code">no_color</code> program parameters, such as <code class="code">+n</code>.</li>
+                        <li>This supports <code class="code">:option</code>.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div><code class="code">quiet</code>:</div>
+                      <ul>
+                        <li>This variable holds the <code class="code">quiet</code> program parameters, such as <code class="code">+Q</code>.</li>
+                        <li>This supports <code class="code">:option</code>.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div><code class="code">error</code>:</div>
+                      <ul>
+                        <li>This variable holds the <code class="code">error</code> program parameters, such as <code class="code">+E</code>.</li>
+                        <li>This supports <code class="code">:option</code>.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div><code class="code">normal</code>:</div>
+                      <ul>
+                        <li>This variable holds the <code class="code">normal</code> program parameters, such as <code class="code">+N</code>.</li>
+                        <li>This supports <code class="code">:option</code>.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div><code class="code">verbose</code>:</div>
+                      <ul>
+                        <li>This variable holds the <code class="code">verbose</code> program parameters, such as <code class="code">+V</code>.</li>
+                        <li>This supports <code class="code">:option</code>.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div><code class="code">debug</code>:</div>
+                      <ul>
+                        <li>This variable holds the <code class="code">debug</code> program parameters, such as <code class="code">+D</code>.</li>
+                        <li>This supports <code class="code">:option</code>.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div><code class="code">cgroup</code>:</div>
+                      <ul>
+                        <li>This variable holds the <code class="code">cgroup</code> program parameters, such as <code class="code">-c /sys/fs/cgroup/</code>.</li>
+                        <li>This supports both <code class="code">:option</code> and <code class="code">:value</code>.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div><code class="code">daemon</code>:</div>
+                      <ul>
+                        <li>This variable holds the <code class="code">daemon</code> program parameters, such as <code class="code">-d</code>.</li>
+                        <li>This supports <code class="code">:option</code>.</li>
+                      </ul>
+                    <li>
+                      <div><code class="code">init</code>:
+                      <ul>
+                        <li>This variable holds the <code class="code">init</code> program parameters, such as <code class="code">-I</code>.</li>
+                        <li>This supports <code class="code">:option</code>.</li>
+                      </ul>
+                    <li>
+                      <div><code class="code">interruptible</code>:
+                      <ul>
+                        <li>This variable holds the <code class="code">interruptible</code> program parameters, such as <code class="code">-i</code>.</li>
+                        <li>This supports <code class="code">:option</code>.</li>
+                      </ul>
+                    <li>
+                      <div><code class="code">pid</code>:
+                      <ul>
+                        <li>This variable holds the <code class="code">pid</code> program parameters, such as <code class="code">-p controller/run/default.pid</code>.</li>
+                        <li>This supports both <code class="code">:option</code> and <code class="code">:value</code>.</li>
+                      </ul>
+                    <li>
+                      <div><code class="code">settings</code>:
+                      <ul>
+                        <li>This variable holds the <code class="code">settings</code> program parameters, such as <code class="code">-s controller/</code>.</li>
+                        <li>This supports both <code class="code">:option</code> and <code class="code">:value</code>.</li>
+                      </ul>
+                    <li>
+                      <div><code class="code">simulate</code>:
+                      <ul>
+                        <li>This variable holds the <code class="code">simulate</code> program parameters, such as <code class="code">-S</code>.</li>
+                        <li>This supports <code class="code">:option</code>.</li>
+                      <ul>
+                    <li>
+                      <div><code class="code">socket</code>:
+                      <ul>
+                        <li>This variable holds the <code class="code">socket</code> program parameters, such as <code class="code">-k controller/run/default.socket</code>.</li>
+                        <li>This supports both <code class="code">:option</code> and <code class="code">:value</code>.</li>
+                      </ul>
+                    <li>
+                      <div><code class="code">uninterruptible</code>:
+                      <ul>
+                        <li>This variable holds the <code class="code">uninterruptible</code> program parameters, such as <code class="code">-U</code>.</li>
+                        <li>This supports <code class="code">:option</code>.</li>
+                      </ul>
+                    <li>
+                      <div><code class="code">validate</code>:
+                      <ul>
+                        <li>This variable holds the <code class="code">validate</code> program parameters, such as <code class="code">-v</code>.</li>
+                        <li>This supports <code class="code">:option</code>.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

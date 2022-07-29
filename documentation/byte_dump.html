@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="author" content="Kevin Day">
     <meta name="description" content="Byte Dump program documentation.">
-    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Make, Fake, Open-Source">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Byte Dump, Open-Source">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
@@ -52,12 +52,9 @@
           <div class="nav-item block back">
             <a href="documentation.html" class="nav-text link back">Back</a>
           </div>
-          <div class="nav-item block unlink">
+          <div class="nav-item block highlight unlink">
             <div class="nav-text notice">Documentation</div>
             <div class="nav-text unlink">Byte Dump</div>
-          </div>
-          <div class="nav-item block">
-            <a href="documentation/byte_dump.html#about" class="nav-text link">About</a>
           </div>
           <div class="nav-item block">
             <a href="documentation/byte_dump.html#parameters-standard" class="nav-text link">Standard Parameters</a>
@@ -67,6 +64,7 @@
           </div>
           <div class="nav-item block">
             <div class="nav-text notice">Specifications</div>
+            <a href="documentation/byte_dump/specifications.html" class="nav-text link">Byte Dump</a>
           </div>
           <div class="nav-item block">
             <div class="nav-text notice">APIs</div>
@@ -84,23 +82,17 @@
             <h1 class="section-title h h1">Byte Dump Documentation</h1>
           </header>
 
-          <section id="about" class="section">
-            <header class="section-header header">
-              <h2 class="section-title h h2">About</h2>
-            </header>
-
-            <div class="section-content">
-              <p class="p">
-                The <strong>byte_dump</strong> program is a tool for parsing and printing the bytes of all data within one or more files.
-              </p>
-              <p class="p">
-                This tool operates similar to the classic <strong>hexdump</strong> program and provides similar functionality. However, the <strong>byte_dump</strong> program is not intended to be a complete replacemenet. Unlike the <strong>hexdump</strong> program, the <strong>byte_dump</strong> program is fully <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> aware and even validates the Unicode sequences.
-              </p>
-              <p class="p">
-                This tool is designed to be scriptable and accepts piped input, treating the piped input as a file being read.
-              </p>
-            </div>
-          </section>
+          <div class="main-content">
+            <p class="p">
+              The <strong>byte_dump</strong> program is a tool for parsing and printing the bytes of all data within one or more files.
+            </p>
+            <p class="p">
+              This tool operates similar to the classic <strong>hexdump</strong> program and provides similar functionality. However, the <strong>byte_dump</strong> program is not intended to be a complete replacemenet. Unlike the <strong>hexdump</strong> program, the <strong>byte_dump</strong> program is fully <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> aware and even validates the Unicode sequences.
+            </p>
+            <p class="p">
+              This tool is designed to be scriptable and accepts piped input, treating the piped input as a file being read.
+            </p>
+          </div>
 
           <section id="parameters-standard" class="section">
             <header class="section-header header separate">

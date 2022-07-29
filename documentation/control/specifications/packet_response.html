@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Documentation - Control - Specification - Packet Response</title>
+
+    <base href="../../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Control program Packet Response specification.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Control, Open-Source, Specification">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="documentation/control/specifications/packet_response.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js specification">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="news.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item active"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="documentation.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Documentation</div>
+            <a href="documentation/control.html" class="nav-text link">Control</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/control.html#parameters-standard" class="nav-text link">Standard Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/control.html#parameters-program" class="nav-text link">Program Parameters</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">Specifications</div>
+            <a href="documentation/control/specifications.html" class="nav-text link">Control</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/control/specifications/settings.html" class="nav-text link">Settings</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/control/specifications/packet_request.html" class="nav-text link">Packet Request</a>
+          </div>
+          <div class="nav-item highlight block">
+            <a href="documentation/control/specifications/packet_response.html" class="nav-text link">Packet Response</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">APIs</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="documentation/control/specifications/packet_response.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="documentation/control/specifications/packet_response.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">Control Packet Response Specification</h1>
+          </header>
+
+          <div class="main-content">
+            <p class="p">
+              The <strong>Control</strong> follows a <em>Packet Response Specification</em>.
+              This specification is incomplete at this time as the functionality is not yet written.
+              This specification is intended to be shared with the <strong>Controller</strong> program.
+            </p>
+          </div>
+
+          <section id="documentation" class="section sub separate">
+            <header class="section-header header">
+              <h2 class="section-title h h2">Control Packet Response Documentation</h2>
+            </header>
+
+            <div class="section-content">
+              <p class="p">
+                The <strong>Control</strong> program sends packets and receives packet responses from the <strong>Controller</strong> program over the <strong>Controller</strong> program's control socket.
+                This documentation describes the expected response packets and how these response packets are handled.
+              </p>
+              <p class="p">
+                The communications to/from the <strong>Controller</strong> program utilize the <code class="code">FSS-000F (Simple Packet)</code>.
+                This Simple Packet is expected to contain within it the <code class="code">FSS-000E (Payload)</code> format.
+              </p>
+              <p class="p">
+                The Payload contains within it a Header and a Payload.
+                Note the potential confusion here between the Payload when referring to the Packet format and the Payload referring to the Content within the Payload Packet.
+                The "<em>Payload Header</em>" refers to either the Object (<code class="code">header:</code>) or Content within the Payload Packet representing the header.
+                The "<em>Payload Object</em>" refers to the Object within the Payload Packet (ie: <code class="code">payload:</code>).
+                The "<em>Payload Content</em>" refers to the Content within the Payload Packet.
+              </p>
+              <p class="p">
+                The <code class="code">FSS-000E (Payload)</code> is very flexible in what it allows within the Header of the Payload Packet.
+                The <strong>Control</strong> program is more restrictive and supports only a subset of the possibilities (which this is explicitly allowed by the Specification).
+              </p>
+              <p class="p">
+                The <strong>Control</strong> program only supports the following Payload Packet header Objects for the response:
+              </p>
+              <ul>
+                <li>
+                  <code class="code">status</code>: Allows only a single status header Object.
+                </li>
+                <li>
+                  <code class="code">type</code>: Allows only a single type header Object and may only be one of: <code class="code">controller</code>, <code class="code">error</code>, or <code class="code">init</code>.
+                </li>
+                <li>
+                  <code class="code">action</code>: Allows only a single action header Object and must only be one of: <code class="code">freeze</code>, <code class="code">kexec</code>, <code class="code">kill</code>, <code class="code">pause</code>, <code class="code">reboot</code>, <code class="code">reload</code>, <code class="code">rerun</code>, <code class="code">restart</code>, <code class="code">resume</code>, <code class="code">shutdown</code>, <code class="code">start</code>, <code class="code">stop</code>, and <code class="code">thaw</code>.
+                </li>
+                <li>
+                  <code class="code">length</code>: Allows only a single length header Object and must properly describe the length of the entire Payload Packet as per the referenced Specifications.
+                </li>
+              </ul>
+              <p class="p">
+                The <code class="code">error</code> type response Payload Packet is treated as an error response.
+                For any error responses that are associated with an action, then the action header is provided (otherwise it is not expected and is ignored).
+                For any error responses the Payload Content may be empty but when it is not, then the Payload Content is a single string representing a message further describing the error or the reason for the error.
+                These error responses represents errors in attempting to perform some action.
+                These responses are not used for actions that return an error as the result of a proper execution or performing of that action.
+              </p>
+              <p class="p">
+                The <code class="code">controller</code> type response Payload Packet represents a response regarding the result of performing a requested action.
+                There must always be an <code class="code">action</code> designating the action this response is in regards to.
+              </p>
+              <p class="p">
+                Only the following are (currently) supported as a status:
+              </p>
+              <ul>
+                <li>
+                  <code class="code">F_busy</code>: When unable to perform the action as because the service is too busy or the
+                </li>
+                <li>
+                  <code class="code">F_done</code>: When successfully performed the action but the action does not return success or failure.
+                </li>
+                <li>
+                  <code class="code">F_failure</code>: When successfully performed the action and the action returned some sort of failure or error.
+                </li>
+                <li>
+                  <code class="code">F_success</code>: When successfully performed the action and the action returned some sort of success.
+                </li>
+              </ul>
+              <p class="p">
+                When using the <param class="parameter">-R/--return</param> parameter, the program prints specially formatted messages to help make the output more scriptable.
+              </p>
+              <p class="p">
+                The form <code class="code">response [type] [action] [status]</code>.
+              </p>
+              <p class="p">
+                Examples:
+              </p>
+              <ul>
+                <li>
+                  A response that designates the action failed might look like: <code class="code">response controller my_action F_failure</code>.
+                </li>
+                <li>
+                  A response that designates the controller ran out of memory, preventing the action from being run: <code class="code">response error my_action F_memory_not</code>.
+                </li>
+                <li>
+                  A response that designates the controller ran successfully: <code class="code">response controller my_action F_success</code>.
+                </li>
+              </ul>
+              <p class="p">
+                When the <strong>Control</strong> program fails to function due to some error, there will be no specially formatted message printed.
+                When the <strong>Controller</strong> program fails before it can perform the requested action, then a <code class="code">response error [action] [status]</code> formatted message is printed.
+                When the <strong>Controller</strong> program successfully performs the action but the result of that action is an error, then a <code class="code">response controller [action] F_failure</code> formatted message is printed.
+              </p>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

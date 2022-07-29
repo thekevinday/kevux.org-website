@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="author" content="Kevin Day">
     <meta name="description" content="FSS Basic Read program documentation.">
-    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Make, Fake, Open-Source">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, FSS, FSS Basic Read, Open-Source">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
@@ -52,12 +52,9 @@
           <div class="nav-item block back">
             <a href="documentation.html" class="nav-text link back">Back</a>
           </div>
-          <div class="nav-item block unlink">
+          <div class="nav-item block highlight unlink">
             <div class="nav-text notice">Documentation</div>
             <div class="nav-text unlink">FSS Basic Read</div>
-          </div>
-          <div class="nav-item block">
-            <a href="documentation/fss_basic_read.html#about" class="nav-text link">About</a>
           </div>
           <div class="nav-item block">
             <a href="documentation/fss_basic_read.html#parameters-standard" class="nav-text link">Standard Parameters</a>
@@ -67,6 +64,7 @@
           </div>
           <div class="nav-item block">
             <div class="nav-text notice">Specifications</div>
+            <a href="documentation/fss_basic_read/specifications.html" class="nav-text link">FSS Basic Read</a>
           </div>
           <div class="nav-item block">
             <div class="nav-text notice">APIs</div>
@@ -84,23 +82,17 @@
             <h1 class="section-title h h1">FSS Basic Read Documentation</h1>
           </header>
 
-          <section id="about" class="section">
-            <header class="section-header header">
-              <h2 class="section-title h h2">About</h2>
-            </header>
-
-            <div class="section-content">
-              <p class="p">
-                The <strong>fss_basic_read</strong> program is a tool for reading and processing strings that follow the FSS-0000 (Basic) standard.
-              </p>
-              <p class="p">
-                This tool is designed to be scriptable and accepts piped input, treating the piped input as a file being read.
-              </p>
-              <p class="p">
-                This tool shares parameters between with the other <abbr title="Featureless Settings Specification">FSS</abbr> Read and Write programs to make scripting consistent across the <abbr title="Featureless Settings Specification">FSS</abbr> Read and Write programs even if any given program neither needs nor uses the parameter.
-              </p>
-            </div>
-          </section>
+          <div class="main-content">
+            <p class="p">
+              The <strong>fss_basic_read</strong> program is a tool for reading and processing strings that follow the <code class="code">FSS-0000 (Basic)</code> standard.
+            </p>
+            <p class="p">
+              This tool is designed to be scriptable and accepts piped input, treating the piped input as a file being read.
+            </p>
+            <p class="p">
+              This tool shares parameters between with the other <abbr title="Featureless Settings Specification">FSS</abbr> Read and Write programs to make scripting consistent across the <abbr title="Featureless Settings Specification">FSS</abbr> Read and Write programs even if any given program neither needs nor uses the parameter.
+            </p>
+          </div>
 
           <section id="parameters-standard" class="section">
             <header class="section-header header separate">

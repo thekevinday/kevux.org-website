@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="author" content="Kevin Day">
     <meta name="description" content="UTF8 program documentation.">
-    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Make, Fake, Open-Source">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, UTF-8, Open-Source">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
@@ -52,12 +52,9 @@
           <div class="nav-item block back">
             <a href="documentation.html" class="nav-text link back">Back</a>
           </div>
-          <div class="nav-item block unlink">
+          <div class="nav-item block highlight unlink">
             <div class="nav-text notice">Documentation</div>
             <div class="nav-text unlink">UTF8</div>
-          </div>
-          <div class="nav-item block">
-            <a href="documentation/utf8.html#about" class="nav-text link">About</a>
           </div>
           <div class="nav-item block">
             <a href="documentation/utf8.html#parameters-standard" class="nav-text link">Standard Parameters</a>
@@ -67,6 +64,7 @@
           </div>
           <div class="nav-item block">
             <div class="nav-text notice">Specifications</div>
+            <a href="documentation/utf8/specifications.html" class="nav-text link">UTF8</a>
           </div>
           <div class="nav-item block">
             <div class="nav-text notice">APIs</div>
@@ -84,29 +82,23 @@
             <h1 class="section-title h h1">UTF8 Documentation</h1>
           </header>
 
-          <section id="about" class="section">
-            <header class="section-header header">
-              <h2 class="section-title h h2">About</h2>
-            </header>
-
-            <div class="section-content">
-              <p class="p">
-                The <strong>UTF8</strong> program is a tool for converting from a <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte sequence to the Unicode code point. The byte sequence can also be referred to as the binary representation of the code even though the byte sequence is considered text. The term <em>"byte sequence"</em> here is used to refer to a sequence of bytes intended to represent something, which in this case is a Unicode character. The Unicode code point is the Unicode designation uniquely identifying that particular sequence. The Unicode code point is not specific to <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> and persists across different encodings, such as <abbr title="Unicode Transformation Format 16-bit">UTF-16</abbr>.
-              </p>
-              <p class="p">
-                The idea behind the <strong>UTF8</strong> program is to provide the answer to the question of what some special <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> character is or to provide a way to create the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> character given the Unicode code point.
-              </p>
-              <p class="p">
-                This tool is intended to be scriptable, should handle both piped data and files, and can convert entire files.
-              </p>
-              <p class="p">
-                This tool can be used to validate a given byte sequence or can be used to get the character width of some byte sequence or code point.
-              </p>
-              <p class="p">
-                This tool can be used to store binary data in a text-friendly format and then restore the binary data.
-              </p>
-            </div>
-          </section>
+          <div class="main-content">
+            <p class="p">
+              The <strong>UTF8</strong> program is a tool for converting from a <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte sequence to the Unicode code point. The byte sequence can also be referred to as the binary representation of the code even though the byte sequence is considered text. The term <em>"byte sequence"</em> here is used to refer to a sequence of bytes intended to represent something, which in this case is a Unicode character. The Unicode code point is the Unicode designation uniquely identifying that particular sequence. The Unicode code point is not specific to <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> and persists across different encodings, such as <abbr title="Unicode Transformation Format 16-bit">UTF-16</abbr>.
+            </p>
+            <p class="p">
+              The idea behind the <strong>UTF8</strong> program is to provide the answer to the question of what some special <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> character is or to provide a way to create the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> character given the Unicode code point.
+            </p>
+            <p class="p">
+              This tool is intended to be scriptable, should handle both piped data and files, and can convert entire files.
+            </p>
+            <p class="p">
+              This tool can be used to validate a given byte sequence or can be used to get the character width of some byte sequence or code point.
+            </p>
+            <p class="p">
+              This tool can be used to store binary data in a text-friendly format and then restore the binary data.
+            </p>
+          </div>
 
           <section id="parameters-standard" class="section">
             <header class="section-header header separate">

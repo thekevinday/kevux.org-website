@@ -4,10 +4,10 @@
 #
 
 Featureless Settings Specification: 000C - IKI Text:
-  The IKI specifications are separate specifications from the FSS specification.
+  The IKI specifications are separate specifications from the FSS.
   This is simply a more formal way to designate that this format utilizes IKI syntax.
 
-  The IKI syntax may be used in any FSS specification.
+  The IKI syntax may be used in any FSS.
   The IKI format may be added to the.
 
   See the iki.txt specification for details on the IKI specifications.
@@ -15,9 +15,9 @@ Featureless Settings Specification: 000C - IKI Text:
   Example\:
     # fss-000c iki-0000
 
-    This is a emphasis:"formal example" utilizing the FSS headers.
+    This is a formal example utilizing the FSS headers.
 
   Example\:
     # iki-0000
 
-    This is a emphasis:"informal example" utilizing the IKI headers.
+    This is a informal example utilizing the IKI headers.

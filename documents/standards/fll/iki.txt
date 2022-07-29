@@ -7,42 +7,43 @@ IKI Specifications:
   IKI is a minimally structured WIKI-like syntax meant to be simpler than WIKI syntax.
 
   The IKI syntax provides a vocabulary name (with specific context associated with it) followed by quoted code that is associated with the given vocabulary name.
-  The vocabulary represents a list of allowed object names that may also have specific contextual meaning defined by a given IKI specification.
-  The variable name is considered the "Object".
-  The variable variable is considered the "Content".
+  The vocabulary represents a list of allowed variable names that may also have specific contextual meaning defined by a given IKI specification.
+  The variable name is considered the Object.
+  The variable value is considered the Content.
 
-  The IKI format will use iki-0000 to represent an IKI with no explicitly defined vocabulary.
-  Whereas iki-0001 and beyond represent a specific IKI vocabulary.
+  The IKI format will use "iki-0000" to represent an IKI with no explicitly defined vocabulary.
+  Whereas "iki-0001" and beyond represent a specific IKI vocabulary.
 
   A potential IKI variable name starts on word (or "_", "-", "+") characters.
-  Whitespace and non-word (and non "_", "-", "+") character punctuations may not exist as part of the variable name.
+  White space and non-word (and non "_", "-", "+") character punctuations may not exist as part of the variable name.
   The only Unicode dash-like characters allowed as a "dash" are those intended to connect, such as the Unicode hyphens (U+2010 and U+2011).
 
-  Any valid IKI data may be escaped to make it treated as non-IKI data by prepending a backslash "\" before the colon ":" that is before the opening quote (single or double).
+  Any potential IKI data must be escaped to make it treated as non-IKI data by prepending a backslash "\" before the colon ":" that is before the opening quote (single or double). Potential IKI data refers to any valid IKI sequence without considering the closing single quote "'" or closing double quote """.
 
   Unicode punctuation connector characters are supported just like "_", except when they connect outside the current line (such as U+FE33 "︳").
-  Unicode invisible punctuations (such as invisible plus: U+2064) are not considered a punctuations in this standard (because they a zero-width characters), therefore they are not to be considered a valid '_', '-', or '+' Unicode equivalents.
+  Unicode invisible punctuations (such as invisible plus: U+2064) are not considered a punctuations in this standard (because they a zero-width characters), therefore they are not to be considered a valid "_", "-", or "+" Unicode equivalents.
 
   Key\:
-    \o = any printable word character, including "_", "-", "+" (and Unicode equivalents).
-    \c = any character, including whitespace and non-printing, and any delimited quote (used as the opening quote) or a any quote (undelimited) not used as the opening quote.
-    \q = either a single quote (') or a double quote (").
-    \x = any character.
-    \W = any non-word character, discluding "_", "-", "+" (and Unicode equivalents).
-    \e = an optional escape sequence of any number of backslashes, such as "\".
-    * = 0 or more occurrences.
-    ~ = one or more occurrences, or 0 if at start of file.
+    "\o" = any printable word character, including "_", "-", "+" (and Unicode equivalents).
+    "\c" = any character, including white space and non-printing, and any delimited quote (used as the opening quote) or a any quote (undelimited) not used as the opening quote.
+    "\q" = either a single quote "'" or a double quote """.
+    "\x" = any character.
+    "\W" = any non-word character, discluding "_", "-", "+" (and Unicode equivalents).
+    "\e" = an optional escape sequence of any number of backslashes, such as "\".
+    "*" = zero or more occurrences.
+    "~" = one or more occurrences, or zero if at start of file.
 
   Before Structure\:
-    \x*\W~\*:*
+    "\x*\W~\*:*"
 
   Structure\:
-    \o\e:\q\c\q
+    "\o\e:\q\c\q"
 
   After Structure\:
+    ""
 
   Example\:
-    # fss-000c iki-0000
+    code:'# fss-000c iki-0000
 
     This is my sentence, anything can go here but sometimes I want to emphasis:"emphasize some text".
 
@@ -52,7 +53,7 @@ IKI Specifications:
 
     Quotes may be included, such as: code:"const char *string = \"My \\\"quoted\\\" C string.\";".
 
-    The following emphasis\:"is escaped to not be treated as IKI data".
+    The following emphasis:"is escaped to not be treated as IKI data".'
 
   Objects would be\:
     1) emphasis
@@ -63,3 +64,8 @@ IKI Specifications:
     1.1) emphasize some text
     2.1) http://www.example.com/url with space/
     3.1) const char *string = "My \"quoted\" C string.";
+
+  The following are core specifications (each with a common name associated with the specification number)\:
+  - fss-0000: Unrestricted
+  - fss-0001: Basic
+  - fss-0002: Simple Script

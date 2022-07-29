@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Documentation - Controller - Specification - Exit</title>
+
+    <base href="../../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Controller program <strong>Exit</strong> specification.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Controller, Open-Source, Specification">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="documentation/controller/specifications/exit.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js specification">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="news.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item active"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="documentation.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Documentation</div>
+            <a href="documentation/controller.html" class="nav-text link">Controller</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller.html#parameters-standard" class="nav-text link">Standard Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller.html#parameters-program" class="nav-text link">Program Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller.html#simulate" class="nav-text link">Simulate</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller.html#time" class="nav-text link">Time</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">Specifications</div>
+            <a href="documentation/controller/specifications.html" class="nav-text link">Controller</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller/specifications/action.html" class="nav-text link">Action</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller/specifications/entry.html" class="nav-text link">Entry</a>
+          </div>
+          <div class="nav-item highlight block">
+            <a href="documentation/controller/specifications/exit.html" class="nav-text link">Exit</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller/specifications/packet.html" class="nav-text link">Packet</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/controller/specifications/rule.html" class="nav-text link">Rule</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">APIs</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="documentation/controller/specifications/exit.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="documentation/controller/specifications/exit.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">Controller <strong>Exit</strong> Specifications</h1>
+          </header>
+
+          <div class="main-content">
+            <p class="p">
+              The <strong>Exit</strong> files follow the <code class="code">FSS-0005 (Somewhat Basic List)</code> format.
+            </p>
+            <p class="p">
+              An <strong>Exit</strong> file name is expected to have the file extension <code class="code">.exit</code>.
+            </p>
+            <p class="p">
+              For each <strong>Exit</strong> file:
+            </p>
+            <ul>
+              <li>The outer most part is a <code class="code">FSS-0002 (Basic List)</code>.</li>
+              <li>The <em>Basic List Object</em> is considered the <code class="code">Item</code>.</li>
+              <li>The <em>Basic List Content</em> are considered the <code class="code">Actions</code>.</li>
+              <li>The <em>Actions</em> are <code class="code">FSS-0001 (Extended)</code>.</li>
+              <li>Each <em>Action Object</em> is the <code class="code">Action Name</code>.</li>
+              <li>Each <em>Action Content</em> are the <code class="code">Action Parameters</code>.</li>
+            </ul>
+            <p class="p">
+              The <strong>Items</strong>:
+            </p>
+            <ul>
+              <li><code class="code">main</code>: required.</li>
+              <li>
+                <code class="code">settings</code>: optional, Actions may be one of:
+                <ul>
+                  <li>
+                    <div><code class="code">control</code>: One to two Content.</div>
+                    <ul>
+                      <li>The first Content is a relative or absolute path to a socket file.</li>
+                      <li>The second Content an optional <code class="code">readonly</code>.</li>
+                    </ul>
+                  </li>
+                  <li><code class="code">pid</code>: Exactly one Content that is one of <code class="code">disable</code>, <code class="code">require</code>, or <code class="code">ready</code>.</li>
+                  <li><code class="code">session</code>: Exactly one Content that is one of <code class="code">new</code> or <code class="code">same</code>.</li>
+                  <li><code class="code">show</code>: Exactly one Content that is one of <code class="code">normal</code> or <code class="code">init</code>.</li>
+                  <li><code class="code">timeout</code>: One or Two content with the first being one of <code class="code">exit</code>, <code class="code">start</code>, <code class="code">stop</code>, or <code class="code">kill</code> and the (optional) second Content being a positive whole number or 0.</li>
+                </ul>
+              </li>
+            </ul>
+            <p class="p">
+              The <strong>Exit</strong> file may have any other valid Item Objects, but only the above are reserved.
+            </p>
+            <p class="p">
+              The Actions:
+            </p>
+            <ul>
+              <li>
+                <div><code class="code">consider</code>: One or more Content.</div>
+                <ul>
+                  <li>The first Content is the relative file path (without any leading/trailing slashes and without file extension).</li>
+                  <li>The second Content is the basename for a rule file.</li>
+                  <li>
+                    <div>The third and beyond may only be one of:</div>
+                    <ul>
+                      <li>asynchronous</li>
+                      <li>require</li>
+                      <li>wait</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div><code class="code">failsafe</code>: One Content that is a valid Object name, except for the reserved <code class="code">main</code>.</div>
+              </li>
+              <li>
+                <div><code class="code">freeze</code>: Two or more Content.</div>
+                <ul>
+                  <li>The first Content that is the relative directory path (without any leading/trailing slashes).</li>
+                  <li>The second Content that is the basename for a rule file.</li>
+                  <li>
+                    <div>The third and beyond may only be one of:</div>
+                    <ul>
+                      <li>asynchronous</li>
+                      <li>require</li>
+                      <li>wait</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div><code class="code">item</code>: One Content that is a valid Object name, except for the reserved <code class="code">main</code>.</div>
+              </li>
+              <li>
+                <div><code class="code">kill</code>: Two or more Content.</div>
+                <ul>
+                  <li>The first Content that is the relative directory path (without any leading/trailing slashes).</li>
+                  <li>The second Content that is the basename for a rule file.</li>
+                  <li>
+                    <div>The third and beyond may only be one of:</div>
+                    <ul>
+                      <li>asynchronous</li>
+                      <li>require</li>
+                      <li>wait</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div><code class="code">pause</code>: Two or more Content.</div>
+                <ul>
+                  <li>The first Content that is the relative directory path (without any leading/trailing slashes).</li>
+                  <li>The second Content that is the basename for a rule file.</li>
+                  <li>
+                    <div>The third and beyond may only be one of:</div>
+                    <ul>
+                      <li>asynchronous</li>
+                      <li>require</li>
+                      <li>wait</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div><code class="code">ready</code>: Zero or One Content.</div>
+                <ul>
+                  <li>
+                    <div>The first may only be one of:</div>
+                    <ul>
+                      <li>wait</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div><code class="code">reload</code>: Two or more Content.</div>
+                <ul>
+                  <li>The first Content that is the relative directory path (without any leading/trailing slashes).</li>
+                  <li>The second Content that is the basename for a rule file.</li>
+                  <li>
+                    <div>The third and beyond may only be one of:</div>
+                    <ul>
+                      <li>asynchronous</li>
+                      <li>require</li>
+                      <li>wait</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div><code class="code">restart</code>: Two or more Content.</div>
+                <ul>
+                  <li>The first Content that is the relative directory path (without any leading/trailing slashes).</li>
+                  <li>The second Content that is the basename for a rule file.</li>
+                  <li>
+                    <div>The third and beyond may only be one of:</div>
+                    <ul>
+                      <li>asynchronous</li>
+                      <li>require</li>
+                      <li>wait</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div><code class="code">resume</code>: Two or more Content.</div>
+                <ul>
+                  <li>The first Content that is the relative directory path (without any leading/trailing slashes).</li>
+                  <li>The second Content that is the basename for a rule file.</li>
+                  <li>
+                    <div>The third and beyond may only be one of:</div>
+                    <ul>
+                      <li>asynchronous</li>
+                      <li>require</li>
+                      <li>wait</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div><code class="code">start</code>: Two or more Content.</div>
+                <ul>
+                  <li>The first Content that is the relative directory path (without any leading/trailing slashes).</li>
+                  <li>The second Content that is the basename for a rule file.</li>
+                  <li>
+                    <div>The third and beyond may only be one of:</div>
+                    <ul>
+                      <li>asynchronous</li>
+                      <li>require</li>
+                      <li>wait</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div><code class="code">stop</code>: Two or more Content.</div>
+                <ul>
+                  <li>The first Content that is the relative directory path (without any leading/trailing slashes).</li>
+                  <li>The second Content that is the basename for a rule file.</li>
+                  <li>
+                    <div>The third and beyond may only be one of:</div>
+                    <ul>
+                      <li>asynchronous</li>
+                      <li>require</li>
+                      <li>wait</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div><code class="code">thaw</code>: Two or more Content.</div>
+                <ul>
+                  <li>The first Content that is the relative directory path (without any leading/trailing slashes).</li>
+                  <li>The second Content that is the basename for a rule file.</li>
+                  <li>
+                    <div>The third and beyond may only be one of:</div>
+                    <ul>
+                      <li>asynchronous</li>
+                      <li>require</li>
+                      <li>wait</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div><code class="code">timeout</code>: One or two Content.</div>
+                <ul>
+                  <li>
+                    <div>The first being one of:</div>
+                    <ul>
+                      <li>exit</li>
+                      <li>start</li>
+                      <li>stop</li>
+                      <li>kill</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>The (optional) second Content being a positive whole number or 0.</li>
+            </ul>
+          </div>
+
+          <section id="documentation" class="section sub separate">
+            <header class="section-header header">
+              <h2 class="section-title h h2">Exit Documentation</h2>
+            </header>
+
+            <div class="section-content">
+              <p class="p">
+                This describes the intent and purpose of an <strong>Exit</strong> file.
+              </p>
+              <p class="p">
+                An <strong>Exit</strong> file, such as <code class="code">default.exit</code>, is intended to store a set of rules in which the controller will process on execution.
+                These are used to run some set of commands, such as shutting down a system.
+              </p>
+              <p class="p">
+                An <strong>Exit</strong> is a special variation or subset of an <strong>Entry</strong>.
+              </p>
+              <p class="p">
+                The <code class="code">settings</code> item Object:
+              </p>
+              <ul>
+                <li>Represents <strong>Exit</strong> settings and is not an <code class="code">item</code> that can be executed.</li>
+                <li>A number of settings are supported, but if this Item Object is not specified, then defaults are used.</li>
+                <li>
+                  <div>
+                    The following settings are available: <code class="code">pid</code> and <code class="code">show</code>.
+                  </div>
+                  <p class="p">
+                    The <code class="code">define</code> setting:
+                  </p>
+                  <ul>
+                    <li>Use this to define an environment variable (this overwrites any existing environment variable with this name).</li>
+                    <li>A define is both exported as an environment variable as well as exposed as an IKI variable.</li>
+                    <li>Example IKI variable substitution: for <code class="code">define PATH /bin:/sbin</code>, the associated IKI variable would look like: <code class="code">define:"PATH"</code>.</li>
+                    <li>All environment variables, including those defined using this, must be in the <code class="code">environment</code> list in any given Rule to be exported to the executed process.</li>
+                    <li>Environment variables added here that are not added to the environment are still exposed as an IKI variable.</li>
+                    <li>This is only expanded within any Rule operated on by this <strong>Exit</strong>.</li>
+                  </ul>
+                  <p class="p">
+                    The <code class="code">mode</code> setting:
+                  </p>
+                  <ul>
+                    <li>Represents the mode in which the <strong>Exit</strong> is operating in.</li>
+                    <li>
+                      <div>The following modes are supported: <code class="code">program</code> and <code class="code">service</code>.</div>
+                      <p class="p">
+                        The <code class="code">program</code> mode:
+                      </p>
+                      <ul>
+                        <li>Designates that the <strong>Exit</strong> operates as a program and exits when complete.</li>
+                        <li>Will call the <code class="code">exit</code> with the same name as this <strong>Exit</strong>, but with the extension <code class="code">exit</code>, such as <code class="code">default.exit</code>.</li>
+                        <li>Supports the Item Action <code class="code">execute</code> to execute a program (switching the <code class="code">controller</code> program entirely with the executed process).</li>
+                      </ul>
+                      <p class="p">
+                        The <code class="code">service</code> mode:
+                      </p>
+                      <ul>
+                        <li>Designates that the <strong>Exit</strong> operates as a service and will sit and wait for control commands when complete.</li>
+                        <li>Will call the <code class="code">exit</code> with the same name as this <strong>Exit</strong>, but with the extension <code class="code">exit</code>, such as <code class="code">default.exit</code>.</li>
+                        <li>Does not support the Item Action <code class="code">execute</code>.</li>
+                        <li>This is the default mode.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <p class="p">
+                    The <code class="code">parameter</code> setting:
+                  </p>
+                  <ul>
+                    <li>Use this to define an IKI variable name and value.</li>
+                    <li>These do not conflict with environment variables and are not exposed as environment variables.</li>
+                    <li>Example IKI variable substitution: for <code class="code">parameter hello world</code>, the associated IKI variable would look like: <code class="code">parameter:"hello"</code>.</li>
+                    <li>This is only expanded within any Rule operated on by this <strong>Exit</strong>.</li>
+                  </ul>
+                  <p class="p">
+                    The <code class="code">pid</code> setting:
+                  </p>
+                  <ul>
+                    <li>Represents how the <strong>Exit</strong> <abbr title="Process Identifier">PID</abbr> file is generated or not.</li>
+                    <li>The following modes are supported: <code class="code">disable</code>, <code class="code">require</code>, and <code class="code">ready</code>.</li>
+                    <li>For <code class="code">disable</code>, not <abbr title="Process Identifier">PID</abbr> file representing the <strong>Exit</strong> is created.</li>
+                    <li>For <code class="code">require</code>, check to see if the <abbr title="Process Identifier">PID</abbr> file exists for an <strong>Exit</strong> at startup and then when <code class="code">ready</code> create a <abbr title="Process Identifier">PID</abbr> file, display error on <abbr title="Process Identifier">PID</abbr> file already exists or on failure and then fail.</li>
+                    <li>For <code class="code">ready</code>, when <code class="code">ready</code> create a <abbr title="Process Identifier">PID</abbr> file, display error on failure and then fail (does not check if <abbr title="Process Identifier">PID</abbr> file exists).</li>
+                  </ul>
+                  <p class="p">
+                    The <code class="code">show</code> setting:
+                  </p>
+                  <ul>
+                    <li>Represents the way <strong>Exit</strong> processing presents information to the screen.</li>
+                    <li>This applies only to the <strong>Exit</strong> and Rule processing itself and does not handle the output of programs and scripts being executed by some <strong>Exit</strong> or Rule.</li>
+                    <li>The following show options are supported: <code class="code">normal</code> and <code class="code">init</code>.</li>
+                    <li>For <code class="code">normal</code>, will not report the start or stop of some <strong>Exit</strong> or Rule execution but will report any errors or warnings as appropriate.</li>
+                    <li>For <code class="code">init</code>, will report when starting programs and may include reporting success and failure status.</li>
+                  </ul>
+                  <p class="p">
+                    The <code class="code">timeout</code> setting:
+                  </p>
+                  <ul>
+                    <li>Represents the default timeouts for the <strong>Exit</strong>.</li>
+                    <li>See the <code class="code">timeout</code> Action below for details.</li>
+                  </ul>
+                </li>
+              </ul>
+              <p class="p">
+                The <code class="code">main</code> item Object:
+              </p>
+              <ul>
+                <li>Each <code class="code">item</code> supports the following Action Names: <code class="code">consider</code>, <code class="code">execute</code>, <code class="code">failsafe</code>, <code class="code">freeze</code>, <code class="code">item</code>, <code class="code">kill</code>, <code class="code">pause</code>, <code class="code">reload</code>, <code class="code">restart</code>, <code class="code">ready</code>, <code class="code">resume</code>, <code class="code">start</code>, <code class="code">stop</code>, and <code class="code">timeout</code>.</li>
+                <li>Of those types, the following are considered a <code class="code">rule</code> Action: <code class="code">freeze</code>, <code class="code">kill</code>, <code class="code">pause</code>, <code class="code">reload</code>, <code class="code">restart</code>, <code class="code">resume</code>, <code class="code">start</code>, <code class="code">stop</code>, and <code class="code">thaw</code>.</li>
+                <li>
+                  <p class="p">
+                    The <code class="code">consider</code> Item Action:
+                  </p>
+                  <ul>
+                    <li>A special case of a <code class="code">rule</code> Action.</li>
+                    <li>All Action Parameters are the same as with the <code class="code">rule</code> Action Parameters.</li>
+                    <li>The difference is that <code class="code">consider</code> is only processed (instead of being processed and executed) and when some <code class="code">rule</code> Action designates that this consideration is required (via <code class="code">need</code>), wanted (via <code class="code">want</code>), or wished for (via <code class="code">wish</code>) from the within the Rule file.</li>
+                    <li>If this is determined to be executed, then this is immediately executed when needed, wanted or wished for and applies all properties as appropriate (such as <code class="code">asynchronous</code>, for example).</li>
+                    <li>If this is determined not to be executed, then this <code class="code">consider</code> is ignored as if it was never there in the first place.</li>
+                  </ul>
+                  <p class="p">
+                    The <code class="code">execute</code> Item Action:
+                  </p>
+                  <ul>
+                    <li>Execute into the specified program.</li>
+                    <li>On successful execution, the controller program will no longer be running and will be replaced with the designated program.</li>
+                    <li>This Item Action is only supported when operating in <code class="code">program</code> mode.</li>
+                  </ul>
+                  <p class="p">
+                    The <code class="code">failsafe</code> Item Action:
+                  </p>
+                  <ul>
+                    <li>Accepts only a valid Item Name in which will be executed when a failure is detected.</li>
+                    <li>Only a single <code class="code">failsafe</code> Item Action may function at a time.</li>
+                    <li>Each successive <code class="code">failsafe</code> Item Action specified replaces the previously defined <code class="code">failsafe</code> Item Action (in a top-down manner).</li>
+                    <li>When operating in <code class="code">failsafe</code>, the <code class="code">require</code> Item Action is ignored (given that it is meaningless once operating in <code class="code">failsafe</code> mode).</li>
+                  </ul>
+                  <p class="p">
+                    The <code class="code">failsafe</code> Item Action:
+                  </p>
+                  <ul>
+                    <li>Accepts only a valid Item Name in which will be executed when a failure is detected.</li>
+                    <li>Only a single <code class="code">failsafe</code> Item Action may function at a time.</li>
+                    <li>Each successive <code class="code">failsafe</code> Item Action specified replaces the previously defined <code class="code">failsafe</code> Item Action (in a top-down manner).</li>
+                    <li>When operating in <code class="code">failsafe</code>, the <code class="code">require</code> Item Action is ignored (given that it is meaningless once operating in <code class="code">failsafe</code> mode).</li>
+                  </ul>
+                  <p class="p">
+                    The <code class="code">freeze</code> Item Action:
+                  </p>
+                  <ul>
+                    <li>A <code class="code">rule</code> Action for freezing some Control Group.</li>
+                    <li>This Item Action will process the <code class="code">freeze</code> inner Content of the named Rule.</li>
+                    <li>This is specific to Control Groups and is not yet fully implemented.</li>
+                    <li>Once implemented this documentation will need to be updated and clarified.</li>
+                  <p class="p">
+                    The <code class="code">item</code> Item Action:
+                  </p>
+                  <ul>
+                    <li>Accepts only a valid Item Name in which will be immediately executed.</li>
+                    <li>Any valid Item Name, except for the reserved <code class="code">main</code>, may be used.</li>
+                  </ul>
+                  <p class="p">
+                    The <code class="code">kill</code> Item Action:
+                  </p>
+                  <ul>
+                    <li>A <code class="code">rule</code> Action for forcibly terminating some process.</li>
+                    <li>This Item Action will process the <code class="code">kill</code> inner Content of the named Rule.</li>
+                  </ul>
+                  <p class="p">
+                    The <code class="code">pause</code> Item Action:
+                  </p>
+                  <ul>
+                    <li>A <code class="code">rule</code> Action for pausing some process.</li>
+                    <li>This Item Action will process the <code class="code">pause</code> inner Content of the named Rule.</li>
+                  </ul>
+                  <p class="p">
+                    The <code class="code">reload</code> Item Action:
+                  </p>
+                  <ul>
+                    <li>A <code class="code">rule</code> Action for pausing some process.</li>
+                    <li>This Item Action will process the <code class="code">reload</code> inner Content of the named Rule.</li>
+                  </ul>
+                  <p class="p">
+                    The <code class="code">restart</code> Item Action:
+                  </p>
+                  <ul>
+                    <li>A <code class="code">rule</code> Action for pausing some process.</li>
+                    <li>This Item Action will process the <code class="code">restart</code> inner Content of the named Rule.</li>
+                  </ul>
+                  <p class="p">
+                    The <code class="code">resume</code> Item Action:
+                  </p>
+                  <ul>
+                    <li>A <code class="code">rule</code> Action for pausing some process.</li>
+                    <li>This Item Action will process the <code class="code">resume</code> inner Content of the named Rule.</li>
+                  </ul>
+                  <p class="p">
+                    The <code class="code">ready</code> Item Action:
+                  </p>
+                  <ul>
+                    <li>Instructs the controller program when it is safe to perform normal tasks, such as creating the <abbr title="Process Identifier">PID</abbr> file.</li>
+                    <li>When not specified, the state is always assumed to be ready.</li>
+                    <li>For example, the controller program may be used as a full blown <code class="code">init</code> replacement and therefore may need to mount the <code class="code">/var/run/</code> directory.</li>
+                    <li>If the <abbr title="Process Identifier">PID</abbr> file is created at program start, then the <code class="code">/var/run/</code>controller.pid would be written before the <code class="code">/var/run/</code> directory is ready.</li>
+                    <li>This could be a problem, such as on a read-only file system the <abbr title="Process Identifier">PID</abbr> creation fails and controller bails out on error.</li>
+                    <li>Adding <code class="code">ready</code> essentially specifies a point in time in the <strong>Exit</strong> in which things are expected to be safe for such basic operations.</li>
+                    <li>When the optional <code class="code">wait</code> is provided, then <code class="code">ready</code> will wait for all currently started asynchronous processes to complete before operating.</li>
+                  </ul>
+                  <p class="p">
+                    The <code class="code">start</code> Item Action:
+                  </p>
+                  <ul>
+                    <li>A <code class="code">rule</code> Action for pausing some process.</li>
+                    <li>This Item Action will process the <code class="code">start</code> inner Content of the named Rule.</li>
+                  </ul>
+                  <p class="p">
+                    The <code class="code">stop</code> Item Action:
+                  </p>
+                  <ul>
+                    <li>A <code class="code">rule</code> Action for pausing some process.</li>
+                    <li>This Item Action will process the <code class="code">stop</code> inner Content of the named Rule.</li>
+                  </ul>
+                  <p class="p">
+                    The <code class="code">thaw</code> Item Action:
+                  </p>
+                  <ul>
+                    <li>A <code class="code">rule</code> Action for unfreezing some Control Group.</li>
+                    <li>This Item Action will process the <code class="code">thaw</code> inner Content of the named Rule.</li>
+                    <li>This is specific to Control Groups and is not yet fully implemented.</li>
+                    <li>Once implemented this documentation will need to be updated and clarified.</li>
+                  </ul>
+                  <p class="p">
+                    The <code class="code">timeout</code> Item Action:
+                  </p>
+                  <ul>
+                    <li>(This is not currently fully implemented, only <code class="code">exit</code> is implemented.)</li>
+                    <li>Provides default global settings for each of the four special situations: <code class="code">exit</code>, <code class="code">kill</code>, <code class="code">start</code>, and <code class="code">stop</code>.</li>
+                    <li>Each of these may only have a single one exist at a time (one <code class="code">exit</code>, one <code class="code">kill</code>, one <code class="code">start</code>, and one <code class="code">stop</code>).</li>
+                    <li>Each successive <code class="code">timeout</code> Item Action, specific to each Action Name (such as <code class="code">start</code>), specified replaces the previously defined <code class="code">timeout</code> Action (in a top-down manner).</li>
+                    <li>The second Content for each of these, when specified, may be a 0 or greater whole number representing the number of <em>MegaTime</em> (MT) (equivalent to milliseconds).</li>
+                    <li>For <code class="code">kill</code>, this represents the number of <em>MegaTime</em> to wait after stopping some Rule and that Rule has not yet stopped to forcefully stop the Rule (aka kill the Rule).</li>
+                    <li>For <code class="code">start</code>, this represents the number of <em>MegaTime</em> to wait after starting some Rule before assuming something went wrong and the Rule is returned as failed.</li>
+                    <li>For <code class="code">stop</code>, this represents the number of <em>MegaTime</em> to wait after stopping some Rule before assuming something went wrong and the Rule is returned as failed.</li>
+                    <li>If the second Content is not specified, then this disables the type (prevents the specified timeout action).</li>
+                    <li>For <code class="code">exit</code>, this represents the number of <em>MegaTime</em> to wait when the Controller program is exiting (such as having received a terminate signal).</li>
+                    <li>In this case, a terminate signal is sent to all child processes.</li>
+                    <li>The <code class="code">exit</code> timeout represents the amount of time to wait after sending the terminate signal before sending a kill signal to each child process still running.</li>
+                    <li>When disabled, the program will not send a kill signal will continue running until all child processes to terminate.</li>
+                    <li>The <code class="code">exit</code> timeout does not get applied to any Rule.</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="documentation-rule" class="section sub separate">
+            <header class="section-header header">
+              <h2 class="section-title h h2">Exit Rule Documentation</h2>
+            </header>
+
+            <div class="section-content">
+              <p class="p">
+                There are multiple Exit Actions that are considered <code class="code">rule</code> Actions.
+                These are: <code class="code">freeze</code>, <code class="code">kill</code>, <code class="code">pause</code>, <code class="code">reload</code>, <code class="code">restart</code>, <code class="code">resume</code>, <code class="code">start</code>, <code class="code">stop</code>, and <code class="code">thaw</code>.
+              </p>
+              <p class="p">
+                The <code class="code">rule</code> Actions immediately execute a named Rule file.
+              </p>
+              <ul>
+                <li>
+                  <p class="p">
+                    The first Action Parameter represents the Rule directory, which is a relative directory path the Rule file is to be found.
+                  </p>
+                  <ul>
+                    <li>Do not include leading or trailing slashes.</li>
+                    <li>This is relative to the settings rules directory.</li>
+                  </ul>
+                </li>
+                <li>
+                  <p class="p">
+                    The second Action Parameter represents the base name for the Rule file, without the file extension.
+                  </p>
+                  <ul>
+                    <li>This must not have any directory paths.</li>
+                  </ul>
+                </li>
+                <li>
+                  <p class="p">
+                    The remaining Action Parameters may be specified in any order\:
+                  </p>
+                  <ul>
+                    <li><code class="code">asynchronous</code>: Designates that execution will not block (wait).</li>
+                    <li><code class="code">require</code>: Designates that this Rule must succeed or trigger execution of failsafe.</li>
+                    <li><code class="code">wait</code>: Designates that this Rule will not execute until all other Actions before this (including <code class="code">asynchronous</code> ones) finish executing (in a top-down manner).</li>
+                  </ul>
+                </li>
+              </ul>
+              <p class="p">
+                The full path to the <code class="code">rule</code> is relative to the settings, such that if the controller Rule settings are found in <code class="code">/etc/controller/rules/</code>, then for a directory called <code class="code">[directory]</code> and a Rule base name of <code class="code">[base_name]</code>, the resulting path would be: <code class="code">/etc/controller/rules/[directory]/[base_name].rule</code>.
+              </p>
+              <p class="p">
+                It is important to note that for any given <code class="code">rule</code>, execution within that <code class="code">rule</code> may be internally asynchronous (even if the <code class="code">rule</code> is synchronous).
+                For example, a service that is often called a daemon will execute in the background.
+                Until that execution succeeds and the daemon goes into the background the representing Rule will block.
+                After the daemon goes into the background, then the representing Rule will no longer block and be fully executed.
+              </p>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

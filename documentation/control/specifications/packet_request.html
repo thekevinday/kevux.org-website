@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Documentation - Control - Specification - Packet Request</title>
+
+    <base href="../../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Control program Packet Request specification.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Control, Open-Source, Specification">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="documentation/control/specifications/packet_request.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js specification">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="news.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item active"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="documentation.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Documentation</div>
+            <a href="documentation/control.html" class="nav-text link">Control</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/control.html#parameters-standard" class="nav-text link">Standard Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/control.html#parameters-program" class="nav-text link">Program Parameters</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">Specifications</div>
+            <a href="documentation/control/specifications.html" class="nav-text link">Control</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/control/specifications/settings.html" class="nav-text link">Settings</a>
+          </div>
+          <div class="nav-item highlight block">
+            <a href="documentation/control/specifications/packet_request.html" class="nav-text link">Packet Request</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/control/specifications/packet_response.html" class="nav-text link">Packet Response</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">APIs</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="documentation/control/specifications/packet_request.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="documentation/control/specifications/packet_request.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">Control Packet Request Specification</h1>
+          </header>
+
+          <div class="main-content">
+            <p class="p">
+              The <strong>Control</strong> follows a <em>Packet Request Specification</em>.
+              This specification is incomplete at this time as the functionality is not yet written.
+              This specification is intended to be shared with the <strong>Controller</strong> program.
+            </p>
+          </div>
+
+          <section id="documentation" class="section sub separate">
+            <header class="section-header header">
+              <h2 class="section-title h h2">Control Packet Request Documentation</h2>
+            </header>
+
+            <div class="section-content">
+              <p class="p">
+                The <strong>Control</strong> program sends packets and receives packet responses from the <strong>Controller</strong> program over the <strong>Controller</strong> program's control socket.
+                This documentation describes the request packets sent by this program.
+              </p>
+              <p class="p">
+                The purpose of these request packets are to ask the <strong>Controller</strong> program to perform a requested action.
+              </p>
+              <p class="p">
+                The communications to/from the <strong>Controller</strong> program utilize the <code class="code">FSS-000F (Simple Packet)</code>.
+                This Simple Packet is expected to contain within it the <code class="code">FSS-000E (Payload)</code> format.
+              </p>
+              <p class="p">
+                The Payload contains within it a Header and a Payload.
+                Note the potential confusion here between the Payload when referring to the Packet format and the Payload referring to the Content within the Payload Packet.
+                To avoid this, henceforth "<em>Payload Packet</em>" refers to the <code class="code">FSS-000E (Payload)</code> used within the <code class="code">FSS-000F (Simple Packet)</code>.
+                The "<em>Payload Header</em>" refers to either the Object (<code class="code">header:</code>) or Content within the Payload Packet representing the header.
+                The "<em>Payload Object</em>" refers to the Object within the Payload Packet (ie: <code class="code">payload:</code>).
+                The "<em>Payload Content</em>" refers to the Content within the Payload Packet.
+              </p>
+              <p class="p">
+                The <code class="code">FSS-000E (Payload)</code> is very flexible in what it allows within the Header of the Payload Packet.
+                The <strong>Control</strong> program is more restrictive and supports only a subset of the possibilities (which this is explicitly allowed by the Specification).
+              </p>
+              <p class="p">
+                The <strong>Control</strong> program only supports the following Payload Packet header Objects for the request:
+              </p>
+              <ul>
+                <li><code class="code">type</code>: Allows only a single type header Object and may only be one of: <code class="code">controller</code>, <code class="code">error</code>, or <code class="code">init</code>.</li>
+                <li><code class="code">length</code>: Allows only a single length header Object and must properly describe the length of the entire Payload Packet as per the referenced Specifications.</li>
+                <li><code class="code">action</code>: Allows only a single action header Object and whose first Content must only be one of: <code class="code">freeze</code>, <code class="code">kexec</code>, <code class="code">kill</code>, <code class="code">pause</code>, <code class="code">reboot</code>, <code class="code">reload</code>, <code class="code">rerun</code>, <code class="code">restart</code>, <code class="code">resume</code>, <code class="code">shutdown</code>, <code class="code">start</code>, <code class="code">stop</code>, and <code class="code">thaw</code>.</li>
+              </ul>
+              <p class="p">
+                The number of Content associated with a action are specific to the requirements of that action.
+              </p>
+              <p class="p">
+                The Payload Content is not used and should always be of length 0.
+              </p>
+              <p class="p">
+                The Payload Content represents the rule being started in <code class="code">FSS-0001 (Extended)</code> format, such as <code class="code">service sshd</code>.
+              </p>
+              <p class="p">
+                For example, given the command: <code class="code">control start service sshd in 5 minutes</code>.
+                The <code class="code">action</code> Object would be <code class="code">start service sshd in 5 minutes</code>.
+              </p>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

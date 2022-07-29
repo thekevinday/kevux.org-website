@@ -52,12 +52,9 @@
           <div class="nav-item block back">
             <a href="documentation.html" class="nav-text link back">Back</a>
           </div>
-          <div class="nav-item block unlink">
+          <div class="nav-item block highlight unlink">
             <div class="nav-text notice">Documentation</div>
             <div class="nav-text unlink">Featureless Make</div>
-          </div>
-          <div class="nav-item block">
-            <a href="documentation/fake.html#about" class="nav-text link">About</a>
           </div>
           <div class="nav-item block">
             <a href="documentation/fake.html#parameters-standard" class="nav-text link">Standard Parameters</a>
@@ -70,6 +67,7 @@
           </div>
           <div class="nav-item block">
             <div class="nav-text notice">Specifications</div>
+            <a href="documentation/fake/specifications.html" class="nav-text link">Featureless Make</a>
           </div>
           <div class="nav-item block">
             <div class="nav-text notice">APIs</div>
@@ -86,42 +84,36 @@
             <h1 class="section-title h h1">Featureless Make Documentation</h1>
           </header>
 
-          <section id="about" class="section">
-            <header class="section-header header">
-              <h2 class="section-title h h2">About</h2>
-            </header>
-
-            <div class="section-content">
-              <p class="p">
-                The <strong>fake</strong> program, also called <strong>Featureless Make</strong> is the flagship program of the <abbr title="Featureless Linux Library">FLL</abbr> project and provides the ability to compile source code and perform various actions not unlike how the <strong>GNU Make</strong> program operates.
-              </p>
-              <p class="p">
-                This tools is directly intended to be a replacement to the <strong>GNU Make</strong> program but not as a replacement for all of the <strong>GNU Make</strong> functionality. Instead, the <strong>fake</strong> program follows the ideology that a build program should not involve itself with system-specific behavior, such as installing to a system.
-              </p>
-              <p class="p">
-                Despite this non-standard ideology, the <strong>fake</strong> program is flexible enough to be used as an installer. In fact, this tool is used to not only build the entire <abbr title="Featureless Linux Library">FLL</abbr> but it can also compile and run unit tests for the project.
-              </p>
-              <p class="p">
-                A bootstrap script is provided in all <abbr title="Featureless Linux Library">FLL</abbr> projects that operates with almost complete one-to-one functionality to this tool to allow for the system to build itself. A great example of this is the test script used to run unit tests on services like Github where this project must compile itself and then use itself to run unit tests against itself.
-              </p>
-              <p class="p">
-                While most of the programs provided with the <abbr title="Featureless Linux Library">FLL</abbr> are young and not well tested, the <strong>fake</strong> program is considered mature.
-              </p>
-              <p class="p">
-                There are two primary operations in which this tool executes:
-              </p>
-              <ol>
-                <li>The <strong>build</strong> operation.</li>
-                <li>The <strong>make</strong> operation.</li>
-              </ol>
-              <p class="p">
-                The <strong>build</strong> mode is derived from the idea that most of the compilation process is redundant and can be simplified to a pre-define set of configuration settings. This reduces the amount of efforted needed to write and mainting a build system at the cost of flexibility.
-              </p>
-              <p class="p">
-                The <strong>make</strong> mode is the mode for operating as a replacement to the <strong>GNU Make</strong> program. This provides scriptable ways to perform just about any task needed when building a system. Many of the <strong>build</strong> mode settings are available (but are not required) and this mode can even call the <strong>build</strong> mode itself.
-              </p>
-            </div>
-          </section>
+          <div class="main-content">
+            <p class="p">
+              The <strong>fake</strong> program, also called <strong>Featureless Make</strong> is the flagship program of the <abbr title="Featureless Linux Library">FLL</abbr> project and provides the ability to compile source code and perform various actions not unlike how the <strong>GNU Make</strong> program operates.
+            </p>
+            <p class="p">
+              This tools is directly intended to be a replacement to the <strong>GNU Make</strong> program but not as a replacement for all of the <strong>GNU Make</strong> functionality. Instead, the <strong>fake</strong> program follows the ideology that a build program should not involve itself with system-specific behavior, such as installing to a system.
+            </p>
+            <p class="p">
+              Despite this non-standard ideology, the <strong>fake</strong> program is flexible enough to be used as an installer. In fact, this tool is used to not only build the entire <abbr title="Featureless Linux Library">FLL</abbr> but it can also compile and run unit tests for the project.
+            </p>
+            <p class="p">
+              A bootstrap script is provided in all <abbr title="Featureless Linux Library">FLL</abbr> projects that operates with almost complete one-to-one functionality to this tool to allow for the system to build itself. A great example of this is the test script used to run unit tests on services like Github where this project must compile itself and then use itself to run unit tests against itself.
+            </p>
+            <p class="p">
+              While most of the programs provided with the <abbr title="Featureless Linux Library">FLL</abbr> are young and not well tested, the <strong>fake</strong> program is considered mature.
+            </p>
+            <p class="p">
+              There are two primary operations in which this tool executes:
+            </p>
+            <ol>
+              <li>The <strong>build</strong> operation.</li>
+              <li>The <strong>make</strong> operation.</li>
+            </ol>
+            <p class="p">
+              The <strong>build</strong> mode is derived from the idea that most of the compilation process is redundant and can be simplified to a pre-define set of configuration settings. This reduces the amount of efforted needed to write and mainting a build system at the cost of flexibility.
+            </p>
+            <p class="p">
+              The <strong>make</strong> mode is the mode for operating as a replacement to the <strong>GNU Make</strong> program. This provides scriptable ways to perform just about any task needed when building a system. Many of the <strong>build</strong> mode settings are available (but are not required) and this mode can even call the <strong>build</strong> mode itself.
+            </p>
+          </div>
 
           <section id="parameters-standard" class="section">
             <header class="section-header header separate">

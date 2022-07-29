@@ -2,40 +2,39 @@
 #
 # license: open-standard-license-1.0
 #
-#
-# Note: This file is in fss-0002 format and as a result the example below has to be escaped (can potentially be confusing when reading this raw).
-#       The "header\:" in the example below is actually "header:" when processed by fss-0002.
 
 Featureless Settings Specification: 000e - Payload:
-  This is a fss-0002 Basic List with two required objects\:
-  1) "header".
-  2) "payload".
+  This is a "FSS-0002 (Basic List)" with two required objects\:
+  1) header.
+  2) payload.
 
-  The header's Content is of type fss-0001 Extended.
-  The payload's Content is of any type including raw binary data.
+  The header\:
+  - The header's Content is of type "FSS-0001 (Extended)".
+  - The header is recommended to have the Objects length, status, part, and total.
+  - The recommended length represents the size of the payload.
+  - The recommended part represents a single part of a set of packets for when the data being transmitted is split across multiple payloads.
+  - The recommended total represents the total number of parts representing a complete data transmitted across multiple payloads.
+  - The recommended status represents status codes (such as success or failure) and multiple.
+  - The Content for the recommended length and status are positive whole numbers (including zero) that may be in binary, octal, decimal, duodecimal, or hexidecimal numerical format.
 
-  The payload is required to be the last list Object in the file.
-  The payload is recommended to have its size designated in some manner in the "header".
-  The designated size is recommended to use the fss-0001 Object "length".
-  The fss-0001 Content "part" is suggested to be used for fss-0001 Object "length" to represent a part of a set of packets intended to represent a single object spread across multiple payloads.
-  The fss-0001 Object "total" with the Content being a whole positive number is suggested to be used to represent the total number of packets that represent a whole.
-  The fss-0001 Object "part" with the Content being a whole positive number is suggested to be used to represent the number identifying which part of the whole it is.
-  The payload may contain anything, including NULL characters.
-  The payload is terminated by the EOF (end of file) character or when a some designated length is reached.
-  The length used to designate the payload size does not necessarily have to be defined in the 'header".
-  That is to say, if the payload is expected to be of some pre-defined or static length then a length does even if that length is not provided in the "header".
-  Nothing in the payload may be considered a valid list Object and therefore there will be no escaping allowed (No further fss-0002 Basic List Objects are allowed at this point).
-  Comments are not considered comments inside the payload and are instead considered part of the payload, as-is.
-  The payload may be empty (length may be zero), but the list Object "payload" must still exist.
+  The payload\:
+  - The payload's Content may contain anything, including raw binary data.
+  - The payload is required to be the last list Object in the file.
+  - The payload is recommended to have its size designated in some manner in the header (such as with the recommended length).
+  - The payload is terminated by the EOF character or by the recommended length header.
+  - The payload may be empty (length may be zero), but the list Object payload must still exist.
+  - Nothing in the payload may be considered a valid list Object by the outer "FSS-0002 (Basic List)" and therefore escaping is unnecessary (No further processing by the outer "FSS-0002 (Basic List)" is allowed at this point).
+  - Comments in the payload are not considered comments and are instead considered part of the payload, as-is.
+  - Essentially, the payload should be treated as binary data embedded in a text file.
 
-  The length and status may be in binary, octal, decimal, duodecimal, or hexidecimal numerical format.
-  The status may alternatively be represented as the status name string.
-  What the status code represents is application specific (or specific to a sub-standard) but may often be used to represent FLL status codes.
-  The status, when representing an FLL status code as a number, may contain error and warning bit.
-  The status, when representing an FLL status code as a number, the status number is binary sensitive and may not be portable across binaries or systems.
-  For FLL status codes, consider using status as a name string to ensure cross-system or cross-binary compatibility.
+  The recommended length header Object used to designate the payload size does not necessarily have to be defined in the header.
+  That is to say, if the payload is expected to be of some pre-defined or static length then a length does not need to be provided in the header.
 
-  Other than the reserved list Objects "header" and "payload" any other valid Object may be specified.
+  The recommended status header Object may be a string, such as "F_none", or a positive whole number.
+  What the status code represents is application specific (or specific to a sub-standard) but may often be used to represent FLL status code.
+  - The FLL status code is a 16-bit digit whose first two high-order bits represent error and warning ( representing signal).
+  - The FLL status code as a number is binary sensitive and may not be portable across binaries or systems.
+  - For best portability, consider using status as a name string to ensure cross-system or cross-binary compatibility.
 
   Example\:
     # fss-000e

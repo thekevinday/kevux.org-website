@@ -4,32 +4,34 @@
 #
 
 Featureless Settings Specification: 0000 - Basic:
-  Each Object starts at the beginning of a line and whitespace to the left of the Object is not treated as part of the object.
-  Whitespace separates an Object from the Content.
+  Each Object starts at the beginning of a line and white space to the left of the Object is not treated as part of the object.
+  White space separates an Object from the Content.
   An Object may be preceded by a newline, in which case means that the Object has no Content.
-  If only printing whitespace follows a valid Object, that Object is considered to have no Content.
+  If only printing white spaces or non-printable characters follow a valid Object, then that Object is considered to have no Content.
 
   Content exists on the same line as the Object.
   Content is represented as a single Content column terminated by a newline.
-  Content column consists of everything following the first non-whitespace character until the newline.
-  Content column includes trailing whitespace before newline is reached.
-  Content column does not include any of the leading whitespace.
+  Content column consists of everything following the first non-white space character until the newline.
+  Content column includes trailing white space before newline is reached.
+  Content column does not include any of the leading white space.
   No delimits are supported in the Content.
 
   Key\:
-    \s = whitespace, except newline.
-    \b = either whitespace or printable, except newline.
-    \q = non-whitespace or quoted whitespace with no whitespace outside of the quotes.
-    \n = newline.
-    * = zero or more occurrences.
-    + = one or more occurrences.
+    "\s" = White space, except newline.
+    "\b" = Either white space or printable, except newline.
+    "\q" = Non-white space or quoted white space with no white space outside of the quotes.
+    "\n" = Newline.
+    "*" = Zero or more occurrences.
+    "+" = One or more occurrences.
 
   Before Structure\:
+    ""
 
   Structure\:
-    \s*\q+\s+\b*\n
+    "\s*\q+\s+\b*\n"
 
   After Structure\:
+    ""
 
   Example\:
     # fss-0000

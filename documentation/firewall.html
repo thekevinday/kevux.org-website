@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="author" content="Kevin Day">
     <meta name="description" content="Firewall program documentation.">
-    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Make, Fake, Open-Source">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Firewall, Iptables, Open-Source">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
@@ -52,12 +52,9 @@
           <div class="nav-item block back">
             <a href="documentation.html" class="nav-text link back">Back</a>
           </div>
-          <div class="nav-item block unlink">
+          <div class="nav-item block highlight unlink">
             <div class="nav-text notice">Documentation</div>
             <div class="nav-text unlink">Firewall</div>
-          </div>
-          <div class="nav-item block">
-            <a href="documentation/firewall.html#about" class="nav-text link">About</a>
           </div>
           <div class="nav-item block">
             <a href="documentation/firewall.html#parameters-standard" class="nav-text link">Standard Parameters</a>
@@ -67,6 +64,7 @@
           </div>
           <div class="nav-item block">
             <div class="nav-text notice">Specifications</div>
+            <a href="documentation/firewall/specifications.html" class="nav-text link">Firewall</a>
           </div>
           <div class="nav-item block">
             <div class="nav-text notice">APIs</div>
@@ -84,23 +82,17 @@
             <h1 class="section-title h h1">Firewall Documentation</h1>
           </header>
 
-          <section id="about" class="section">
-            <header class="section-header header">
-              <h2 class="section-title h h2">About</h2>
-            </header>
-
-            <div class="section-content">
-              <p class="p">
-                The <strong>firewall</strong> program is a tool for simplifying and automating the <strong>iptables</strong> program.
-              </p>
-              <p class="p">
-                This tool is set to be replaced now that both the <strong>firewall</strong> and the <strong>iptables</strong> programs are outdated. The latest <strong>iptables</strong> program replacement (the <strong>nftables</strong> program) is superior and the <strong>firewall</strong> will need major rewrites to utilize the replacement.
-              </p>
-              <p class="p">
-                This tools is one of the original two programs of the <abbr title="Featureless Linux Library">FLL</abbr> project and is designed to be a fully functional proof of concept for the <abbr title="Featureless Linux Library">FLL</abbr> project.
-              </p>
-            </div>
-          </section>
+          <div class="main-content">
+            <p class="p">
+              The <strong>firewall</strong> program is a tool for simplifying and automating the <strong>iptables</strong> program.
+            </p>
+            <p class="p">
+              This tool is set to be replaced now that both the <strong>firewall</strong> and the <strong>iptables</strong> programs are outdated. The latest <strong>iptables</strong> program replacement (the <strong>nftables</strong> program) is superior and the <strong>firewall</strong> will need major rewrites to utilize the replacement.
+            </p>
+            <p class="p">
+              This tools is one of the original two programs of the <abbr title="Featureless Linux Library">FLL</abbr> project and is designed to be a fully functional proof of concept for the <abbr title="Featureless Linux Library">FLL</abbr> project.
+            </p>
+          </div>
 
           <section id="parameters-standard" class="section">
             <header class="section-header header separate">

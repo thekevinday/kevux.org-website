@@ -81,6 +81,10 @@
   display: block;
 
   font-weight: normal;
+}
+
+.kevux > .content-block > .nav-block > .nav-menu > .nav-item.highlight,
+.kevux > .content-block > .nav-block > .nav-menu > .nav-item.highlight > .nav-text.unlink {
   background-color: #e5f5c9;
 }
 
@@ -104,6 +108,7 @@
 
 .kevux > .content-block > .main-block .grid {
   column-gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .kevux > .content-block > .main-block .grid.wide {
@@ -200,10 +205,12 @@
   color: #724801;
 }
 
+.kevux.specification > .content-block > .main-block .table.context-parameters > .set > .row:nth-child(even),
 .kevux.documentation > .content-block > .main-block .table.context-parameters > .set > .row:nth-child(even) {
   background-color: #efefef;
 }
 
+.kevux.specification > .content-block > .main-block .table.context-parameters > .set > .row > .column:nth-child(1),
 .kevux.documentation > .content-block > .main-block .table.context-parameters > .set > .row > .column:nth-child(1) {
   text-align: center;
 }

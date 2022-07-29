@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Documentation - Control - Specification - Settings</title>
+
+    <base href="../../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Control program Settings specification.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Control, Open-Source, Specification">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="documentation/control/specifications/settings.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js specification">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="news.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item active"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="documentation.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Documentation</div>
+            <a href="documentation/control.html" class="nav-text link">Control</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/control.html#parameters-standard" class="nav-text link">Standard Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/control.html#parameters-program" class="nav-text link">Program Parameters</a>
+          </div>
+          <div class="nav-item block unlink">
+            <div class="nav-text notice">Specifications</div>
+            <a href="documentation/control/specifications.html" class="nav-text link">Control</a>
+          </div>
+          <div class="nav-item highlight block">
+            <a href="documentation/control/specifications/settings.html" class="nav-text link">Settings</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/control/specifications/packet_request.html" class="nav-text link">Packet Request</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/control/specifications/packet_response.html" class="nav-text link">Packet Response</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">APIs</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="documentation/control/specifications/settings.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="documentation/control/specifications/settings.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">Control Settings Specification</h1>
+          </header>
+
+          <div class="main-content">
+            <p class="p">
+              The <strong>Control</strong> defines the <em>Settings Specification</em>.
+              This specification describes how the settings file is used by the <strong>Control</strong> program.
+            </p>
+            <p class="p">
+              The control settings "<em>settings</em>" file follows the <code class="code">FSS-0001 (Extended)</code> format.
+            </p>
+            <p class="p">
+              Each Object represents a settings property name.
+              There is only a distinct set of setting property names (see below).
+            </p>
+            <p class="p">
+              Each Content represents the values associated with that property.
+              Additional restrictions are applied to each Content depending on each specific Object name (see below).
+            </p>
+            <p class="p">
+              Object Names and their respective Content purpose/restrictions:
+            </p>
+            <ul>
+              <li><code class="code">name_socket</code>: Must only be a single valid filename, without the directory.</li>
+              <li><code class="code">path_socket</code>: Must only be a single valid directory.</li>
+              <li><code class="code">path_socket_prefix</code>: Zero or one string representing a file name.</li>
+              <li><code class="code">path_socket_suffix</code>: Zero or one string representing a file name.</li>
+            </ul>
+          </div>
+
+          <section id="documentation" class="section sub separate">
+            <header class="section-header header">
+              <h2 class="section-title h h2">Control Settings Documentation</h2>
+            </header>
+
+            <div class="section-content">
+              <p class="p">
+                The settings file provides default or system-wide settings.
+                The system-wide settings file is loaded by default but a custom settings file may be alternatively specified.
+                Using this avoids the need to add additional paramters to the command line when calling the <strong>Control</strong> program.
+              </p>
+              <p class="p">
+                When this file is not specified any hardcoded defaults compiled into the program are used.
+              </p>
+              <p class="p">
+                The location of the settings file is compile time specific and should be changed depending on the particular design of the system.
+                The default path for the control settings file is something like <code class="code">/etc/control/settings</code>.
+              </p>
+              <ul>
+                <li>
+                  <div>
+                    <code class="code">name_socket</code>
+                  </div>
+                  <p class="p">
+                    This represents the file name used to construct the full socket path.
+                    The file name represents the name of the file but any file extensions, such as <code class="code">.suffix</code>, should likely use <code class="code">path_socket_suffix</code> to specify the file extension.
+                  </p>
+                  <p class="p">
+                    When not defined the compiled in default is used.
+                    The default socket path directory is generally <code class="code">default</code> but this could be changed during compile time.
+                  </p>
+                  <p class="p">
+                    This is required to not be empty so when the Object <code class="code">path_socket</code> is defined without any Content, then an error is expected to be thrown.
+                  </p>
+                  <p class="p">
+                    This is used along with the <code class="code">path_socket</code>, <code class="code">path_socket_prefix</code>, and the <code class="code">path_socket_suffix</code> to construct the socket file.
+                  </p>
+                </li>
+                <li>
+                  <div>
+                    <code class="code">path_socket</code>
+                  </div>
+                  <p class="p">
+                    This represents the directory path to the socket file provided by the controller or init service.
+                    This directory path is separate from the file name part so that the name can be more dynamically constructed without having to specify a full directory path each time.
+                  </p>
+                  <p class="p">
+                    When not defined the compiled in default is used.
+                    The default socket path directory is generally <code class="code">/var/run/controller</code> but this could be changed during compile time.
+                  </p>
+                  <p class="p">
+                    When the Object <code class="code">path_socket</code> is defined without any Content, then no path is added (resulting in the socket relative to the callers current working directory).
+                  </p>
+                  <p class="p">
+                    This is used along with the <code class="code">path_socket_prefix</code>, the <code class="code">path_socket_suffix</code>, and the <code class="code">name_socket</code> to construct the socket file.
+                    A full socket path might look something like <code class="code">/var/run/controller/controller-default.socket</code>.
+                  </p>
+                  <p class="p">
+                    It is common for the <strong>Controller</strong> program to be compiled as an init program.
+                    In this case it may be common for the full socket path to instead be something more like <code class="code">/var/run/init/init-default.socket</code>.
+                  </p>
+                </li>
+                <li>
+                  <div>
+                    <code class="code">path_socket_prefix</code>
+                  </div>
+                  <p class="p">
+                    This represents a prefix used to construct the full socket path.
+                    This prefix is prepended to the socket file name.
+                  </p>
+                  <p class="p">
+                    When not defined the compiled in default is used.
+                    The default path prefix is generally <code class="code">controller-</code> but this could be changed during compile time.
+                  </p>
+                  <p class="p">
+                    When the Object <code class="code">path_socket_prefix</code> is defined without any Content, then no prefix is prepended.
+                  </p>
+                  <p class="p">
+                    This is used along with the <code class="code">path_socket</code>, the <code class="code">path_socket_suffix</code>, and the <code class="code">name_socket</code> to construct the socket file.
+                  </p>
+                </li>
+                <li>
+                  <div>
+                    <code class="code">path_socket_suffix</code>
+                  </div>
+                  </p>
+                  <p class="p">
+                    This represents a suffix used to construct the full socket path.
+                    This suffix is appended to the socket file name.
+                  </p>
+                  <p class="p">
+                    When not defined the compiled in default is used.
+                    The default path suffix is generally <code class="code">.socket</code> but this could be changed during compile time.
+                  </p>
+                  <p class="p">
+                    When the Object <code class="code">path_socket_suffix</code> is defined without any Content, then no suffix is appended.
+                  </p>
+                  <p class="p">
+                    This is used along with the <code class="code">path_socket</code>, the <code class="code">path_socket_prefix</code>, and the <code class="code">name_socket</code> to construct the socket file.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
