@@ -4,6 +4,7 @@ RewriteEngine on
 
 ErrorDocument 403 /access_denied.html
 ErrorDocument 404 /not_found.html
+ErrorDocument 500 /server_error.html
 
 RewriteBase "/"
 RewriteRule (^\.|/\.) /not_found.html [L]
