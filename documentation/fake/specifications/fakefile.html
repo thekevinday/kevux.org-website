@@ -1,0 +1,1526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Documentation - Featureless Make - Specification - Fakefile</title>
+
+    <base href="../../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Featureless Make program fakefile specification.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Featureless Make, Open-Source, Specification">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="documentation/fake/specifications/fakefile.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js specification">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="news.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item active"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="documentation.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Documentation</div>
+            <a href="documentation/fake.html" class="nav-text link">Featureless Make</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fake.html#parameters-standard" class="nav-text link">Standard Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fake.html#parameters-program" class="nav-text link">Program Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fake.html#operations" class="nav-text link">Operations</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Specifications</div>
+            <a href="documentation/fake/specifications.html" class="nav-text link">Featureless Make</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fake/specifications/defines.html" class="nav-text link">Defines</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fake/specifications/dependencies.html" class="nav-text link">Dependencies</a>
+          </div>
+          <div class="nav-item block highlight unlink">
+            <div class="nav-text unlink">Fakefile</div>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fake/specifications/settings.html" class="nav-text link">Settings</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">APIs</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="documentation/fake/specifications/fakefile.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="documentation/fake/specifications/fakefile.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">Featureless Make Fakefile Specification</h1>
+          </header>
+
+          <div class="main-content">
+            <p class="p">
+              The <strong>fakefile</strong> file follows the <code class="code">FSS-0005 (Somewhat Basic List)</code> format with a sub-format of <code class="code">IKI-0002 (Simple Script)</code>.
+            </p>
+            <p class="p">
+              A <strong>fakefile</strong> is broken up into multiple Basic Lists, referred to as Sections, with two special purpose reserved Sections.
+            </p>
+            <p class="p">
+              The Sections are broken up into multiple Extended Objects and their respective Contents, referred to as Section Operations.
+            </p>
+            <p class="p">
+              Each of these non-reserved Sections acts as a set to perform some set of Section Operations.
+            </p>
+            <p class="p">
+              Each of these Section Operations perform a single command or action based on a set of reserved Section Operation types.
+            </p>
+            <p class="p">
+              Each of these Section Operations have a set of Arguments associated with them.
+            </p>
+            <p class="p">
+              How these Arguments are interpreted and processed are specific to each Operation type.
+            </p>
+            <p class="p">
+              The Section Operations are represented by the Extended Object name and the Extended Content represents the Operation Arguments.
+            </p>
+            <p class="p">
+              Each of these Section Operations support IKI variable substitution within their respective Arguments.
+            </p>
+            <p class="p">
+              The Operation Extended Object does not support IKI variable substitution.
+            </p>
+            <p class="p">
+              The reserved Settings Section does not support IKI variable substitution.
+            </p>
+            <p class="p">
+              The <code class="code">IKI-0002 (Simple Script)</code> vocabulary context is further clarified as follows:
+            </p>
+            <ul>
+              <li><code class="code">context</code>: The value is case-sensitive variable name.</li>
+              <li><code class="code">define</code>: The value must be a case-sensitive valid environment variable name (alpha-numeric or underscore, but no leading digits).</li>
+              <li>
+                <div><code class="code">parameter</code>: The value is a case-sensitive variable name.</div>
+                <ul>
+                  <li>Many parameters also support <code class="code">:option</code> and <code class="code">:value</code> appended at the end of the value.</li>
+                </ul>
+              </li>
+            </ul>
+            <p class="p">
+              The reserved Section Objects are:
+            </p>
+            <ul>
+              <li><code class="code">settings</code>: contains a list of Settings Objects and Content in <code class="code">FSS-0001 (Extended)</code> format.</li>
+              <li><code class="code">main:</code> contains a list of Operation Objects and Content in <code class="code">FSS-0001 (Extended)</code> format.</li>
+            </ul>
+            <p class="p">
+              The Settings Objects are:
+            </p>
+            <ul>
+              <li><code class="code">compiler</code>: Only one Content, which must only be a valid filename.</li>
+              <li><code class="code">define</code>: First Content represents variable name (case-sensitive), remaining Content represents the value.</li>
+              <li><code class="code">environment</code>: Zero or more Content representing valid environment variable names (alpha-numeric with underscore, but cannot begin with a number).</li>
+              <li><code class="code">fail</code>: Only one Content, which must be either <code class="code">exit</code>, <code class="code">warn</code> or <code class="code">ignore</code> (quotes not required) (case-sensitive).</li>
+              <li><code class="code">indexer</code>: Only one Content, which must only be a valid filename.</li>
+              <li><code class="code">indexer_arguments: Zero or more arguments supported by the indexer specified in code:</code>build_indexer".</li>
+              <li><code class="code">load_build</code>: Only one Content, which must be either <code class="code">yes</code> or <code class="code">no</code> (quotes not required) (case-sensitive).</li>
+              <li><code class="code">parameter</code>: First Content represents variable name (case-sensitive), remaining Content represents the value.</li>
+            </ul>
+            <p class="p">
+              The build settings may also be specified in the Settings Section.
+            </p>
+            <p class="p">
+              The Section Operation Objects are:
+            </p>
+            <ul>
+              <li><code class="code">and</code>: One or more Content. First Content is the condition or <code class="code">no_dereference</code> (when <code class="code">no_dereference</code>, then the Second Content is the condition, etc..), remaining Content are specific to the condition.</li>
+              <li><code class="code">break</code>: Zero or one Content. If specified, First content must be one of <code class="code">success</code> or <code class="code">failure</code>.</li>
+              <li><code class="code">build</code>: Zero or more Content. First Content represents file name of the settings file to use, Second Content and on represent custom modes to use.</li>
+              <li><code class="code">clean</code>: Zero Content.</li>
+              <li><code class="code">clone</code>: Two or more Content representing paths to files.</li>
+              <li><code class="code">compile</code>: One or more Content as parameters to compiler.</li>
+              <li><code class="code">copy</code>: Two or more Content representing paths to files.</li>
+              <li><code class="code">define</code>: First Content represents variable name (case-sensitive), remaining Content represents the value.</li>
+              <li><code class="code">delete</code>: One or more Content representing paths to files.</li>
+              <li><code class="code">deletes</code>: One or more Content representing paths to files.</li>
+              <li><code class="code">else</code>: Zero Content.</li>
+              <li><code class="code">exit</code>: Zero or One Content. If specified, First content must be one of <code class="code">succeed</code> or <code class="code">fail</code>.</li>
+              <li><code class="code">fail</code>: One Content. First Content must be one of <code class="code">exit</code>, <code class="code">warn</code>, or <code class="code">ignore</code> (case-sensitive).</li>
+              <li><code class="code">group</code>: Two or more Content. First Content is group name, number, or <code class="code">no_dereference</code> (when <code class="code">no_dereference</code>, then the second Content is the group name or number, etc..), remaining Content are paths to files.</li>
+              <li><code class="code">groups</code>: Two or more Content. First Content is group name, number, or <code class="code">no_dereference</code> (when <code class="code">no_dereference</code>, then the second Content is the group name or number, etc..), remaining Content are paths to files.</li>
+              <li><code class="code">if</code>: One or more Content. First Content is the condition or is <code class="code">no_dereference</code> (when <code class="code">no_dereference</code>, then the Second Content is the condition, etc..), remaining Content are specific to the condition.</li>
+              <li><code class="code">index</code>: One or more Content.</li>
+              <li><code class="code">link</code>: Two to Four Content. The first and second Content may be either <code class="code">force</code> or <code class="code">strict</code>, the second to last Content is the link target file, and the last Content is the pointer file (the link).</li>
+              <li><code class="code">mode</code>: Two or more Content. First Content is the mode, remaining Content are paths to files.</li>
+              <li><code class="code">modes</code>: Two or more Content. First Content is the mode, remaining Content are paths to files.</li>
+              <li><code class="code">move</code>: Two or more Content representing paths to files.</li>
+              <li><code class="code">operate</code>: One Content. First Content is the name of a valid Section Object, except for the reserved Section Objects.</li>
+              <li><code class="code">or</code>: One or more Content. First Content is the condition or <code class="code">no_dereference</code> (when <code class="code">no_dereference</code>, then the Second Content is the condition, etc..), remaining Content are specific to the condition.</li>
+              <li><code class="code">owner</code>: Two or more Content. First Content is owner name, number, or <code class="code">no_dereference</code> (when <code class="code">no_dereference</code>, then the second Content is the owner name or number, etc..), remaining Content are paths to files.</li>
+              <li><code class="code">owners</code>: Two or more Content. First Content is owner name, number, or <code class="code">no_dereference</code> (when <code class="code">no_dereference</code>, then the second Content is the owner name or number, etc..), remaining Content are paths to files.</li>
+              <li><code class="code">parameter</code>: First Content represents variable name (case-sensitive), remaining Content represents the value.</li>
+              <li><code class="code">pop</code>: Zero Content.</li>
+              <li><code class="code">print</code>: Zero or more Content.</li>
+              <li><code class="code">run</code>: One or more Content. First Content is the name of the program (or script) and all remaining Content are passed as arguments to the named program (or script).</li>
+              <li><code class="code">shell</code>: One or more Content. First Content is the file path of the program (or script) and all remaining Content are passed as arguments to the named program (or script).</li>
+              <li><code class="code">skeleton</code>: Zero Content.</li>
+              <li><code class="code">to</code>: One Content. First Content is the directory path.</li>
+              <li><code class="code">top</code>: Zero Content.</li>
+              <li><code class="code">touch</code>: Two or more Content. First Content is one of <code class="code">file</code> or <code class="code">directory</code>, remaining Content are paths to files.</li>
+              <li><code class="code">write</code>: One or more Content. First Content the file to write to, remaining Content represent the string to write.</li>
+            </ul>
+            <p class="p">
+              The <code class="code">if</code> Section Operation conditions are:
+            </p>
+            <ul>
+              <li><code class="code">==</code>: Two or more Content.</li>
+              <li><code class="code">&gt;</code>: Two or more Content.</li>
+              <li><code class="code">&lt;</code>: Two or more Content.</li>
+              <li><code class="code">&gt;=</code>: Two or more Content.</li>
+              <li><code class="code">&lt;=</code>: Two or more Content.</li>
+              <li><code class="code">&lt;&gt;</code>: Two or more Content.</li>
+              <li><code class="code">define</code>: One or more Content are valid environment variable name.</li>
+              <li><code class="code">exist</code>: One or more Content representing the files to check the existence of.</li>
+              <li><code class="code">failure</code>: has no other Content.</li>
+              <li><code class="code">group</code>: First Content is the name of a group. Second or more Content are paths to files.</li>
+              <li><code class="code">is</code>: First Content is a list of <code class="code">block</code>, <code class="code">character</code>, <code class="code">no_dereference</code>, <code class="code">directory</code>, <code class="code">fifo</code>, <code class="code">link</code>, <code class="code">regular</code> , or <code class="code">socket</code> followed by "for" and then the Remaining Content that are paths to files.</li>
+              <li><code class="code">mode</code>: First Content is either <code class="code">has</code>, <code class="code">is</code>, or <code class="code">no_dereference</code>. Second Content is a valid file mode. Third or more Content are paths to files.</li>
+              <li><code class="code">no_dereference</code>: A non-condition inserted before any of <code class="code">exist</code>, <code class="code">is</code>, and <code class="code">mode</code> (then the second Content is the actual condition followed by any Content associated with that condition).</li>
+              <li><code class="code">not</code>: First Content is one of <code class="code">define</code>, <code class="code">exist</code>, <code class="code">group</code>, <code class="code">is</code>, <code class="code">mode</code>, <code class="code">no_dereference</code>, <code class="code">owner</code>, or <code class="code">parameter</code> and all remaining Content are based on the First Content's <code class="code">if</code> Section Operation Content rules.</li>
+              <li><code class="code">owner</code>: First Content is the name of an owner. Second or more Content are paths to files.</li>
+              <li><code class="code">parameter</code>: One or more Content are valid IKI names.</li>
+              <li><code class="code">success</code>: has no other Content.</li>
+            </ul>
+            <p class="p">
+              The <code class="code">if</code> Section Operation conditions and numbers:
+            </p>
+            <ul>
+              <li>
+                <div>The numbers may be represented in any of the forms:</div>
+                <ol>
+                  <li><code class="code">decimal</code>: all numbers without a base-type prefix are of base-type 10, referred to as decimal.</li>
+                  <li><code class="code">binary</code>: all numbers with the prefix <code class="code">0b</code> (uppercase or lowercase <code class="code">b</code>) are of base-type 2, referred to as binary.</li>
+                  <li><code class="code">octal</code>: all numbers with the prefix <code class="code">0o</code> (that is zero followed by the letter <code class="code">o</code>, uppercase or lowercase <code class="code">o</code>) are of base-type 8, referred to as octal.</li>
+                  <li><code class="code">duodecimal</code>: all numbers with the prefix <code class="code">0d</code> (uppercase or lowercase <code class="code">d</code>) are of base-type 12, referred to as duodecimal.</li>
+                  <li><code class="code">hexadecimal</code>: all numbers with the prefix <code class="code">0x</code> (uppercase or lowercase <code class="code">x</code>) are of base-type 16, referred to as hexadecimal.</li>
+                </ol>
+                <p class="p">
+                  (At this time) The numbers may be of a max value of 2^64, or 18446744073709551615, positive or negative.
+                </p>
+                <p class="p">
+                  (At this time) The numbers may only be whole numbers.
+                </p>
+                <p class="p">
+                  Note: There are plans to impose no limits on the number size or any decimal values, but this requires significant work is not to be implemented at this time.
+                  Once this restriction is lifted, it should be conditional upon an implementation for what the maximum supported numbers or digits may be.
+                </p>
+                <div>
+                  Only the following <code class="code">if</code> Section Operation conditions use these operators:
+                </div>
+                <ul>
+                  <li><code class="code">&gt;</code></li>
+                  <li><code class="code">&lt;</code></li>
+                  <li><code class="code">&gt;=</code></li>
+                  <li><code class="code">&lt;=</code></li>
+                </ul>
+              </li>
+            </ul>
+            <p class="p">
+              The <code class="code">if</code> Section Operation condition <code class="code">parameter</code>:
+            </p>
+            <ul>
+              <li>The following reserved words are available for parameter names: <code class="code">build</code>, <code class="code">color</code>, <code class="code">current</code>, <code class="code">data</code>, <code class="code">define</code>, <code class="code">fakefile</code>, <code class="code">mode</code>, <code class="code">process</code>, <code class="code">return</code>, <code class="code">settings</code>, <code class="code">sources</code>, <code class="code">top</code>, <code class="code">verbosity</code>, and <code class="code">work</code>.</li>
+              <li>Each of the reserved words supports having <code class="code">:option</code> and <code class="code">:value</code> appended, such as: <code class="code">work:value</code>.</li>
+            </ul>
+          </div>
+
+          <section id="documentation-rule" class="section sub separate">
+            <header class="section-header header">
+              <h2 class="section-title h h2">Fakefile Documentation</h2>
+            </header>
+
+            <div class="section-content">
+              <p class="p">
+                This describes intent and purposes of the <strong>fakefile</strong> file settings.
+              </p>
+              <p class="p">
+                All files specified are relative to the project root.
+              </p>
+              <p class="p">
+                The reserved Section Names are defined as follows:
+              </p>
+              <ul>
+                <li>
+                  <div><code class="code">settings</code>:</div>
+                  <p class="p">
+                    Any configuration specific to this <strong>fakefile</strong> is stored here.
+                  </p>
+                  <p class="p">
+                    This includes the declaration of define and parameter IKI variable substitution values.
+                  </p>
+                  <p class="p">
+                    The build settings may also be specified in the Settings Section.
+                  </p>
+                  <p class="p">
+                    The following settings are available (in addition to the build settings):
+                  </p>
+                  <ul>
+                    <li>
+                      <div><code class="code">compiler</code>:</div>
+                      <ul>
+                        <li>
+                          <div>This represents the name of the compiler program to use, such as <code class="code">gcc</code>.</div>
+                          <p class="p">
+                            The programs <code class="code">gcc</code> and <code class="code">clang</code> are known to work.
+                          </p>
+                          <p class="p">
+                            Many of the parameters in the settings file can be changed if using a non-GCC, but there may be certain hard-coded functionality that may need to be changed.
+                          </p>
+                          <p class="p">
+                            When specified and <code class="code">load_build</code> is <code class="code">true</code>, then this will override the <code class="code">build_compiler</code> specified in the loaded build settings.
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div><code class="code">define</code>:</div>
+                      <ul>
+                        <li>
+                          <div>This represents an environment variable to define on run.</div>
+                          <p class="p">
+                            The environment variable name is case-sensitive.
+                          </p>
+                          <p class="p">
+                            This replaces the value of any existing environment variable with this name.
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div><code class="code">environment</code>:</div>
+                      <ul>
+                        <li>
+                          <div>This represents all environment variables that are exposed when executing sub-programs.</div>
+                          <p class="p">
+                            This is not auto-populated for environment variables defined in the <code class="code">define</code> setting.
+                          </p>
+                          <p class="p">
+                            When defined with no Content, then this means that no environment variables are exposed.
+                          </p>
+                          <p class="p">
+                            When not defined at all, then all environment variables are exposed.
+                          </p>
+                          <p class="p">
+                            Environment variables may still be exposed if <code class="code">load_build</code> is <code class="code">true</code> and the build setting file defines any environment variable names.
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div><code class="code">fail</code>:</div>
+                      <ul>
+                        <li>
+                          <div>Designates the fail mode when running external programs, such as through the <code class="code">run</code> or <code class="code">shell</code> operations.</div>
+                          <p class="p">
+                            There are three options:
+                          </p>
+                          <ol>
+                            <li><code class="code">exit</code>: Designates to exit the program on failure, printing an error message.</li>
+                            <li><code class="code">warn</code>: Designates to continue on and if in verbose mode then print a warning.</li>
+                            <li><code class="code">ignore</code>: Designates to do nothing.</li>
+                          </ol>
+                          <p class="p">
+                            The return code for programs can still be retrieved through using the reserved IKI vaiable <code class="code">return</code>.
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div><code class="code">indexer</code>:</div>
+                      <ul>
+                        <li>
+                          <div>This represents the name of the indexer program to use, such as <code class="code">ar</code>.</div>
+                          <p class="p">
+                            An indexer is often called a linker.
+                          </p>
+                          <p class="p">
+                            Similar to <code class="code">build_compiler</code>, any linker that supports the <code class="code">ar</code> program parameters is effectively supported.
+                          </p>
+                          <p class="p">
+                            When specified and <code class="code">load_build</code> is <code class="code">true</code>, then this will override the <code class="code">build_indexer</code> specified in the loaded build settings.
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div><code class="code">indexer_arguments</code>:</div>
+                      <ul>
+                        <li>
+                          <div>This represents arguments needed to build an archive file from object files, such as <code class="code">rcs</code>.</div>
+                          <p class="p">
+                            These arguments are placed immediately before the object files passed to the <code class="code">indexer</code> program.
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div><code class="code">load_build</code>:</div>
+                      <ul>
+                        <li>
+                          <div>This represents whether or not to load the load the build settings file.</div>
+                          <p class="p">
+                            The first Content value may be <code class="code">true</code> to load the build settings and <code class="code">false</code> to not load the build settings file.
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div><code class="code">parameter</code>:</div>
+                      <ul>
+                        <li>
+                          <div>This defines an IKI variable name to substitute with the value.</div>
+                          <p class="p">
+                            This replaces the value of any existing environment variable with this name.
+                          </p>
+                          <p class="p">
+                            The first Content value represents the IKI variable name.
+                          </p>
+                          <p class="p">
+                            All Content values after the first represent the values the matching IKI variable is replaced with.
+                          </p>
+                          <p class="p">
+                            The parameter variable name <code class="code">return</code> is used to store the return result of a <code class="code">run</code> or <code class="code">shell</code> operation.
+                          </p>
+                          <p class="p">
+                            Setting this here only sets the default <code class="code">return</code> parameter variable value.
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                <li>
+                  <div><code class="code">main</code>:</div>
+                  <p class="p">
+                    This is the main entry point when processing the <strong>fakefile</strong>.
+                  </p>
+                  <p class="p">
+                    This is processed top-down until the end of the list is reached.
+                  </p>
+                  <p class="p">
+                    The following operations are available:
+                  </p>
+                  <ul>
+                    <li>
+                      <div><code class="code">and</code>:</div>
+                      <p class="p">
+                        A special type of an <code class="code">if</code> operation.
+                      </p>
+                      <p class="p">
+                        May only be specified following a valid <code class="code">if</code>, <code class="code">and</code>, or <code class="code">or</code> operation.
+                      </p>
+                      <p class="p">
+                        This is executed only if the previous <code class="code">if</code> operation result is true.
+                      </p>
+                      <p class="p">
+                        When executed, this performs the test and returns true or false as appropriate.
+                      </p>
+                      <p class="p">
+                        When not executed, this passes through the result of the previous <code class="code">if</code>, <code class="code">and</code>, or <code class="code">or</code> operation.
+                      </p>
+                      <p class="p">
+                    </li>
+                    <li>
+                      <div><code class="code">build</code>:</div>
+                      <p class="p">
+                        Run the fake build operation as if <code class="code">fake build</code> was run instead of <code class="code">fake make</code>.
+                      </p>
+                      <p class="p">
+                        Command line arguments are automatically passed to the fake build operation.
+                      </p>
+                      <p class="p">
+                        Accepts an optional Content that is a file name to a build settings file to use instead of the default.
+                      </p>
+                      <p class="p">
+                        This file name is relative to the data build directory (which can be changed by -D/--data parameter).
+                      </p>
+                      <p class="p">
+                        If the optional file name Content is specified, then it also supports additional modes to use instead of the default mode.
+                      </p>
+                      <p class="p">
+                        When no additional Content after the <code class="code">build</code> is specified, then the default (or program supplied) settings file and modes are used.
+                      </p>
+                      <p class="p">
+                        When the first Content after the <code class="code">build</code> is specified as an empty string, then the default (or program supplied) settings file is used.
+                      </p>
+                      <p class="p">
+                        When the second Content after the <code class="code">build</code> (and there is no third Content), then no modes are used.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">break</code>:</div>
+                      <p class="p">
+                        Perform an exit from the current make operation.
+                      </p>
+                      <p class="p">
+                        This only exists the current depth.
+                      </p>
+                      <p class="p">
+                        If the depth is at the top (aka: 0), then this is identical to the <code class="code">exit</code> section operation.
+                      </p>
+                      <p class="p">
+                        The second Content may be either 'succeed' or 'fail' to designate on whether or not to exit as success or failure.
+                      </p>
+                      <p class="p">
+                        When set to <code class="code">failure</code> this will trigger any failure (with message), depending on the current fail state.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">clean</code>:</div>
+                      <p class="p">
+                        Run the fake clean operation as if <code class="code">fake clean</code> was run instead of <code class="code">fake make</code>.
+                      </p>
+                      <p class="p">
+                        Command line arguments are automatically passed to the fake build operation.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">clone</code>:</div>
+                      <p class="p">
+                        Copy all files (and directories), preserving all properties, into the last content.
+                      </p>
+                      <p class="p">
+                        If there are more than one file (or directory) being copied, then the final path must be a directory.
+                      </p>
+                      <p class="p">
+                        All Content, except last, represents the files to clone.
+                      </p>
+                      <p class="p">
+                        The last Content represents the destination file (or directory) to clone to.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">compile</code>:</div>
+                      <p class="p">
+                        Execute the compiler program, such as <code class="code">gcc</code>.
+                      </p>
+                      <p class="p">
+                        All Content are passed as arguments to the respective <code class="code">gcc</code> program.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">copy</code>:</div>
+                      <p class="p">
+                        Copy all files (and directories) into the last content.
+                      </p>
+                      <p class="p">
+                        If there are more than one file (or directory) being copied, then the final path must be a directory.
+                      </p>
+                      <p class="p">
+                        All Content, except last, represents the files to copy.
+                      </p>
+                      <p class="p">
+                        The last Content represents the destination file (or directory) to copy to.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">define</code>:</div>
+                      <p class="p">
+                        This represents an environment variable to define on run.
+                      </p>
+                      <p class="p">
+                        The environment variable name is case-sensitive.
+                      </p>
+                      <p class="p">
+                        This replaces the value of any existing environment variable with this name.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">delete</code>:</div>
+                      <p class="p">
+                        Delete one or more files or directories.
+                      </p>
+                      <p class="p">
+                        All Content must be the file or directory to be deleted.
+                      </p>
+                      <p class="p">
+                        If the path is a directory and is not empty, then this will not delete the directory.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">deletes</code>:</div>
+                      <p class="p">
+                        Identical to <code class="code">delete</code>, except that when the path is a directory and is not empty, then this will delete the directory.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">else</code>:</div>
+                      <p class="p">
+                        Performs a programmatic <code class="code">else</code> condition.
+                      </p>
+                      <p class="p">
+                        Must be specified following a valid if operation (and the operation it affects).
+                      </p>
+                      <p class="p">
+                        This has no Content.
+                      </p>
+                      <p class="p">
+                        An else operation may not follow this.
+                      </p>
+                      <p class="p">
+                        An if operation may immediately follow to represent an <code class="code">else if</code> condition.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">exit</code>:</div>
+                      <p class="p">
+                        Perform an exit from the entire make operation.
+                      </p>
+                      <p class="p">
+                        This always exits completely, regardless of the operation depth.
+                      </p>
+                      <p class="p">
+                        The second Content may be either 'success' or 'failure' to designate on whether or not to exit as success or failure.
+                      </p>
+                      <p class="p">
+                        When set to <code class="code">failure</code> this will trigger a failure message.
+                      </p>
+                      <p class="p">
+                        When set to <code class="code">failure</code>, the fail state will be forcibly changed to <code class="code">fail</code> regardless of the current fail state.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">fail</code>:</div>
+                      <p class="p">
+                        Toggle how the to handle an operation failure.
+                      </p>
+                      <p class="p">
+                        The first Content may be one of the following:
+                      </p>
+                      <ul>
+                        <li><code class="code">exit</code>: Set failure handler to exit on failure.</li>
+                        <li><code class="code">warn</code>: Set failure handler to print a warning on failure but continue on.</li>
+                        <li><code class="code">ignore</code>: Set failure handler to continue on regardless of failure.</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <div><code class="code">group</code>:</div>
+                      <p class="p">
+                        Change the group role for a given file.
+                      </p>
+                      <p class="p">
+                        The first Content represents the group to assign.
+                      </p>
+                      <p class="p">
+                        The second Content represents the file to assign the group to.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">groups</code>:</div>
+                      <p class="p">
+                        Identical to group operation, except this will recursively apply the mode to all files within the given file, if that file is a directory file path.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">if</code>:</div>
+                      <p class="p">
+                        Performs a programmatic <code class="code">if</code> condition.
+                      </p>
+                      <p class="p">
+                        May be specified following a valid <code class="code">else</code> operation.
+                      </p>
+                      <p class="p">
+                        The Content represents a set of conditions to perform.
+                      </p>
+                      <p class="p">
+                        The <code class="code">if</code> operation may be used in conjunction with the <code class="code">and</code>, <code class="code">or</code>, and the <code class="code">else</code> operations.
+                      </p>
+                      <p class="p">
+                        The conditional logic is different from normal logic found in most software programs.
+                      </p>
+                      <p class="p">
+                        There is only one order of operation, a top-down design where the current operation relates to the previous operation.
+                      </p>
+                      <p class="p">
+                        This is mostly relevant when <code class="code">if</code> operation is followed by an <code class="code">and</code> or an <code class="code">or</code> operation.
+                      </p>
+                      <p class="p">
+                        Consider the following:
+                      </p><pre class="preserve">
+if parameter xxx
+or parameter yyy
+and parameter zzz
+  print first
+else
+if parameter www
+  print second
+else
+  print third
+</pre>
+                      <p class="p">
+                        The resulting logic is as follows:
+                      </p>
+                      <ol>
+                        <li>If <code class="code">xxx</code> is defined, then...</li>
+                        <li>If result from (1) is TRUE or if <code class="code">yyy</code> is defined, then...</li>
+                        <li>If result from (2) is TRUE and if <code class="code">zzz</code> is defined, then...</li>
+                        <li>If result from (3) is FALSE, then...</li>
+                        <li>If result from (4) is TRUE, then...</li>
+                        <li>If result from (5) is FALSE, then...</li>
+                      </ol>
+                      <p class="p">
+                        For all conditions that rely on numbers, only whole numbers are (currently) supported.
+                      </p>
+                      <p class="p">
+                        conditions:
+                      </p>
+                      <ul>
+                        <li>
+                          <div><code class="code">== "left" "right"</code>:</div>
+                          <p class="p">
+                            Compare all parameters to be equal.
+                          </p>
+                          <p class="p">
+                            Requires 2 or more after the <code class="code">==</code>.
+                          </p>
+                          <p class="p">
+                            For example, <code class="code">if == 'a' 'b' 'c' 'd'</code> would test: <code class="code">'a' == 'b' && 'b' == 'c' && 'c' == 'd'</code>.
+                          </p>
+                          <p class="p">
+                            This performs only string-based comparisons.
+                          </p>
+                        </li>
+                        <li>
+                          <div><code class="code">&gt; "left string" "right string"</code>:</div>
+                          <p class="p">
+                            Compare <code class="code">left</code> to <code class="code">right</code> for greater than.
+                          </p>
+                          <p class="p">
+                            Requires 2 or more after the <code class="code">></code>.
+                          </p>
+                          <p class="p">
+                            For example, <code class="code">if &gt; 0 1 2 3</code> would test: <code class="code">0 &gt; 1 && 1 &gt; 2 && 2 &gt; 3</code>.
+                          </p>
+                          <p class="p">
+                            This performs only number-based comparisons.
+                          </p>
+                        </li>
+                        <li>
+                          <div><code class="code">&lt; "left string" "right string"</code>:</div>
+                          <p class="p">
+                            Compare <code class="code">left</code> to <code class="code">right</code> for less than.
+                          </p>
+                          <p class="p">
+                            Requires 2 or more after the <code class="code">></code>.
+                          </p>
+                          <p class="p">
+                            For example, <code class="code">if &lt; 0 1 2 3</code> would test: <code class="code">0 &lt; 1 && 1 &lt; 2 && 2 &lt; 3</code>.
+                          </p>
+                          <p class="p">
+                            This performs only number-based comparisons.
+                          </p>
+                        </li>
+                        <li>
+                          <div><code class="code">&gt;= "left string" "right string"</code>:</div>
+                          <p class="p">
+                            Compare <code class="code">left</code> to <code class="code">right</code> for greater than or equal to.
+                          </p>
+                          <p class="p">
+                            Requires 2 or more after the <code class="code">&gt;=</code>.
+                          </p>
+                          <p class="p">
+                            For example, <code class="code">if &gt;= 0 1 2 3</code> would test: <code class="code">0 &gt;= 1 && 1 &gt;= 2 && 2 &gt;= 3</code>.
+                          </p>
+                          <p class="p">
+                            This performs only number-based comparisons.
+                          </p>
+                        </li>
+                        <li>
+                          <div><code class="code">&lt;= "left string" "right string"</code>:</div>
+                          <p class="p">
+                            Compare <code class="code">left</code> to <code class="code">right</code> for less than or equal to.
+                          </p>
+                          <p class="p">
+                            Requires 2 or more after the <code class="code">&gt;=</code>.
+                          </p>
+                          <p class="p">
+                            For example, <code class="code">if &lt;= 0 1 2 3</code> would test: <code class="code">0 &lt;= 1 && 1 &lt;= 2 && 2 &lt;= 3</code>.
+                          </p>
+                          <p class="p">
+                            This performs only number-based comparisons.
+                          </p>
+                        </li>
+                        <li>
+                          <div><code class="code">&lt;&gt; "left" "right"</code>:</div>
+                          <p class="p">
+                            Compare all parameters to be not equal.
+                          </p>
+                          <p class="p">
+                            Requires 2 or more after the <code class="code">==</code>.
+                          </p>
+                          <p class="p">
+                            For example, <code class="code">if &lt;&gt; 'a' 'b' 'c'</code> would test: <code class="code">'a' &lt;&gt; 'b' && 'b' &lt;&gt; 'c' && 'a' &lt;&gt; 'c'</code>.
+                          </p>
+                          <p class="p">
+                            This performs only string-based comparisons.
+                          </p>
+                        </li>
+                        <li>
+                          <div><code class="code">define "some define name"</code>:</div>
+                          <p class="p">
+                            Test if one or more names are defined as an environment variable.
+                          </p>
+                          <p class="p">
+                            For example, <code class="code">if define PWD SHELL</code> would test if both the <code class="code">PWD</code> and the <code class="code">SHELL</code> variables are defined via the environment variables.
+                          </p>
+                        </li>
+                        <li>
+                          <div><code class="code">exist "file path"</code>:</div>
+                          <p class="p">
+                            Test if file exists.
+                          </p>
+                          <p class="p">
+                            For example, <code class="code">if exist "a.txt" "b.txt"</code> would test if both the file <code class="code">a.txt</code> and <code class="code">b.txt</code> exist.
+                          </p>
+                        </li>
+                        <li>
+                          <div><code class="code">failure</code>:</div>
+                          <p class="p">
+                            Test if the previous section operation failed.
+                          </p>
+                        </li>
+                        <li>
+                          <div><code class="code">group "some mode" "some file"</code>:</div>
+                          <p class="p">
+                            For example, <code class="code">if group friends a.txt b.txt</code> would test if both file <code class="code">a.txt</code> and <code class="code">b.txt</code> have a group named <code class="code">we</code>.
+                          </p>
+                        </li>
+                        <li>
+                          <div><code class="code">is block character directory fifo link regular socket for "file path"</code>:</div>
+                          <p class="p">
+                            Test if one or more files exist and if each file is any of the given types.
+                          </p>
+                          <p class="p">
+                            The given types must be followed by <code class="code">for</code> to designate where the the file paths begin.
+                          </p>
+                          <p class="p">
+                            For example, <code class="code">if is regular directory for "a.txt" "b.txt"</code> would test if both the file <code class="code">a.txt</code> and <code class="code">b.txt</code> exist and are either of type <code class="code">regular</code> or type <code class="code">directory</code>.
+                          </p>
+                        </li>
+                        <li>
+                          <div><code class="code">mode is/has "some mode" "some file"</code>:</div>
+                          <p class="p">
+                            Test if one or more files has the exact mode (<code class="code">is</code>) or has at least the given modes (<code class="code">has</code>).
+                          </p>
+                          <p class="p">
+                            For example, <code class="code">if mode is u+r a.txt b.txt</code> would test if both file <code class="code">a.txt</code> and <code class="code">b.txt</code> only have owner set to read.
+                          </p>
+                          <p class="p">
+                            For example, <code class="code">if mode has u+r a.txt b.txt</code> would test if both file <code class="code">a.txt</code> and <code class="code">b.txt</code> has owner set to read, and all other modes can be anything.
+                          </p>
+                        </li>
+                        <li>
+                          <div><code class="code">not</code>:</div>
+                          <p class="p">
+                            Perform the test expecting a false result rather than a true result.
+                          </p>
+                          <p class="p">
+                            This is to be immediately followed by a valid if condition as well as all appropriate valid content associated with that if condition.
+                          </p>
+                          <p class="p">
+                            Only the following if conditions are supported:
+                          </p>
+                          <ul>
+                            <li><code class="code">define</code>.</li>
+                            <li><code class="code">exist</code>.</li>
+                            <li><code class="code">group</code>.</li>
+                            <li><code class="code">is</code>.</li>
+                            <li><code class="code">mode</code>.</li>
+                            <li><code class="code">owner</code>.</li>
+                            <li><code class="code">parameter</code>.</li>
+                          </ul>
+                          <p class="p">
+                            Examples:
+                          </p>
+                          <ul>
+                            <li><code class="code">if not parameter work</code></li>
+                            <li><code class="code">if not exist documentation.txt</code></li>
+                          </ul>
+                        </li>
+                        <li>
+                          <div><code class="code">owner "some mode" "some file"</code>:</div>
+                          <p class="p">
+                            Test if one or more files has the given owner.
+                          </p>
+                          <p class="p">
+                            For example, <code class="code">if owner me a.txt b.txt</code> would test if both file <code class="code">a.txt</code> and <code class="code">b.txt</code> have an owner named <code class="code">me</code>.
+                          </p>
+                        </li>
+                        <li>
+                          <div><code class="code">parameter "some parameter name"</code>:</div>
+                          <p class="p">
+                            Test if one or more names are defined as a <code class="code">parameter</code> variable.
+                          </p>
+                          <p class="p">
+                            For example, <code class="code">if parameter verbose silent</code> would test if both the <code class="code">verbose</code> and the <code class="code">silent</code> variables are defined via the <code class="code">parameter</code> setting.
+                          </p>
+                          <p class="p">
+                            Reserved parameters that represent program arguments, three forms are available.
+                          </p>
+                          <p class="p">
+                            For example, the program argument -w/--work has the reserved word <code class="code">work</code> and has three forms:
+                          </p>
+                          <ol>
+                            <li><code class="code">work</code>.</li>
+                            <li><code class="code">work:option</code>.</li>
+                            <li><code class="code">work:value</code>.</li>
+                          </ol>
+                          <p class="p">
+                            In the case of form 1, the <code class="code">if parameter work</code> would be true if the argument is passed to the program or a default is provided.
+                          </p>
+                          <p class="p">
+                            In the case of form 2, the <code class="code">if parameter work:option</code> would be true if the argument is passed to the program.
+                          </p>
+                          <p class="p">
+                            In the case of form 3, the <code class="code">if parameter work:value</code> would be true if the argument is passed to the program and has a non-zero value.
+                          </p>
+                          <p class="p">
+                            Some reserved parameters, such as the <code class="code">verbosity</code>, has no <code class="code">value</code> and in this case would always return false for <code class="code">if parameter verbosity:value</code>.
+                          </p>
+                          <p class="p">
+                            The following are reserved parameters:
+                          </p>
+                          <ul>
+                            <li><code class="code">build</code>: Associated with <code class="code">-b/--build</code> parameter.</li>
+                            <li><code class="code">color</code>: Associated with <code class="code">+d/++dark</code>, <code class="code">+l/++light</code>, and <code class="code">+n/++no_color</code> parameters.</li>
+                            <li><code class="code">current</code>: The absolute path to the current working directory (present working directory) (Always has a trailing forward slash).</li>
+                            <li><code class="code">data</code>: Associated with <code class="code">-D/--data</code> parameter.</li>
+                            <li><code class="code">define</code>: Associated with <code class="code">-d/--define</code> parameter.</li>
+                            <li><code class="code">fakefile</code>: Associated with <code class="code">-f/--fakefile</code> parameter.</li>
+                            <li><code class="code">mode</code>: Associated with <code class="code">-m/--mode</code> parameter and possibly with the build settings default mode <code class="code">modes_default</code>.</li>
+                            <li><code class="code">process</code>: Associated with <code class="code">-p/--process</code> parameter.</li>
+                            <li><code class="code">return</code>: Contains the return value of a previous operation that produces a return code.</li>
+                            <li><code class="code">settings</code>: Associated with <code class="code">-s/--settings</code> parameter.</li>
+                            <li><code class="code">sources</code>: Associated with <code class="code">-S/--sources</code> parameter.</li>
+                            <li><code class="code">top</code>: The absolute path to the <code class="code">top</code> directory, which is the base project directory (Always has a trailing forward slash).</li>
+                            <li><code class="code">verbosity</code>: Associated with <code class="code">+Q/++quiet</code>, <code class="code">+E/++error</code>, <code class="code">+N/++normal</code>, <code class="code">+V/++verbose</code>, and <code class="code">+D/++debug</code> parameters.</li>
+                            <li><code class="code">work</code>: Associated with <code class="code">-w/--work</code> parameter.</li>
+                          </ul>
+                        </li>
+                        <li>
+                          <div><code class="code">succeed</code>:</div>
+                          <ul>
+                            <li>Test if the previous section operation succeeded.</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    <li>
+                      <div><code class="code">index</code>:</div>
+                      <p class="p">
+                        Execute the linker program, such as <code class="code">ar</code>.
+                      </p>
+                      <p class="p">
+                        All Content are passed as arguments to the respective <code class="code">ar</code> program.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">link</code>:</div>
+                      <p class="p">
+                        Create a symbolic link from some point to some target.
+                      </p>
+                      <p class="p">
+                        The first Content, when there are more than 2 arguments, may be either <code class="code">force</code> or <code class="code">strict</code>.
+                      </p>
+                      <p class="p">
+                        The second to last Content represents the target file.
+                      </p>
+                      <p class="p">
+                        The last Content represents the point file.
+                      </p>
+                      <p class="p">
+                        The <code class="code">force</code> Content designates that the point file will be overwritten if the file already exists.
+                      </p>
+                      <p class="p">
+                        The <code class="code">strict</code> Content requires that the target file already exists.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">mode</code>:</div>
+                      <p class="p">
+                        Change the mode permissions for a given file.
+                      </p>
+                      <p class="p">
+                        The first Content represents the mode to assign.
+                      </p>
+                      <p class="p">
+                        The second Content represents the file to assign the mode to.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">modes</code>:</div>
+                      <p class="p">
+                        Identical to mode operation, except this will recursively apply the mode to all files within the given file, if that file is a directory file path.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">move</code>:</div>
+                      <p class="p">
+                        Move all files (and directories) into the last content.
+                      </p>
+                      <p class="p">
+                        If there are more than one file (or directory) being copied, then the final path must be a directory.
+                      </p>
+                      <p class="p">
+                        All Content, except last, represents the files to move.
+                      </p>
+                      <p class="p">
+                        The last Content represents the destination file (or directory) to move to.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">operate</code>:</div>
+                      <p class="p">
+                        Begin execution of another Section.
+                      </p>
+                      <p class="p">
+                        The first Content represents the name of the Section Object to execute.
+                      </p>
+                      <p class="p">
+                        This may be neither the <code class="code">settings</code> Section no the <code class="code">main</code> Section.
+                      </p>
+                      <p class="p">
+                        Recursion is prohibited, a Section that is already on the operation stack may not be called again.
+                      </p>
+                      <p class="p">
+                        Once the operation is off the stack, it can then be called again.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">or</code>:</div>
+                      <p class="p">
+                        A special type of an <code class="code">if</code> operation.
+                      </p>
+                      <p class="p">
+                        May only be specified following a valid <code class="code">if</code>, <code class="code">and</code>, or <code class="code">or</code> operation.
+                      </p>
+                      <p class="p">
+                        This is executed only if the previous <code class="code">if</code> operation result is false.
+                      </p>
+                      <p class="p">
+                        When executed, this performs the test and returns true or false as appropriate.
+                      </p>
+                      <p class="p">
+                        When not executed, this passes through the result of the previous <code class="code">if</code>, <code class="code">and</code>, or <code class="code">or</code> operation.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">owner</code>:</div>
+                      <p class="p">
+                        Change the owner role for a given file.
+                      </p>
+                      <p class="p">
+                        The first Content represents the role to assign.
+                      </p>
+                      <p class="p">
+                        The second Content represents the file to assign the role to.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">owners</code>:</div>
+                      <p class="p">
+                        Identical to owner operation, except this will recursively apply the mode to all files within the given file, if that file is a directory file path.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">parameter</code>:</div>
+                      <p class="p">
+                        This represents a variable defined within the scope of the <strong>fakefile</strong>.
+                      </p>
+                      <p class="p">
+                        This is not exported as an environment variable and is therefore not visible to any executed programs or scripts.
+                      </p>
+                      <p class="p">
+                        This replaces the value of any existing parameter variable with this name.
+                      </p>
+                      <p class="p">
+                        The reserved parameter variable names (see IKI vocabulary context section below) may not be changed by this.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">pop</code>:</div>
+                      <p class="p">
+                        Pop a directory path of the path stack, thereby changing to the previous directory on the stack.
+                      </p>
+                      <p class="p">
+                        This is a change directory command similar to a back button in a browser.
+                      </p>
+                      <p class="p">
+                        This has no Content.
+                      </p>
+                      <p class="p">
+                        This does not generate an error if the path stack is empty.
+                      </p>
+                      <p class="p">
+                        If the directory popping to no longer exists, then an error occurs.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">print</code>:</div>
+                      <p class="p">
+                        Print the content to the output screen.
+                      </p>
+                      <p class="p">
+                        This always prints a newline at the end.
+                      </p>
+                      <p class="p">
+                        All Content is printed, and if no Content is provided, an empty line is printed.
+                      </p>
+                      <p class="p">
+                        The following escape sequences are supported for printing special characters:
+                      </p>
+                      <ul>
+                        <li><code class="code">\f</code>: Form Feed.</li>
+                        <li><code class="code">\n</code>: New Line.</li>
+                        <li><code class="code">\r</code>: Carriage Return.</li>
+                        <li><code class="code">\t</code>: Tab.</li>
+                        <li><code class="code">\v</code>: Vertical Tab.</li>
+                        <li><code class="code">\</code>: Backslash Character (may require additional slashes in certain circumstances.)</li>
+                        <li><code class="code">\0</code>: NULL Character.</li>
+                        <li><code class="code">\U+</code>: Unicode Sequence (followed by a valid Unicode sequence with a minimum 4 hexidecimal digits and a maximum of 6 hexidecimal digits).</li>
+                        <li><code class="code">\!</code>: Non-printing separator, allowing for <code class="code">\U+000A\!5</code> to be equivalent to <code class="code">\n5</code>.</li>
+                      </ul>
+                      <p class="p">
+                        If the Unicode is invalid, then nothing is printed for that character (the invalid character is skipped when printing).
+                      </p>
+                      <p class="p">
+                        Example Unicodes:
+                      </p>
+                      <ul>
+                        <li><code class="code">\U+000A</code>: Prints a new line, equivalent to <code class="code">\n</code>.</li>
+                        <li><code class="code">\U+2E19</code>: Prints the Unicode feather-like character <code class="code">⸙</code>.</li>
+                      </ul>
+                      <p class="p">
+                        Only <abbr title="American Standard Code for Information Interchange">ASCII</abbr> alpha-numeric hexidecimal digits are allowed in the Unicode sequence (upper or lower case).
+                      </p>
+                      <p class="p">
+                        Invalid or unknown escape sequences are not printed.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">run</code>:</div>
+                      <p class="p">
+                        Manually execute a remote program or script.
+                      </p>
+                      <p class="p">
+                        This program must be in the appropriate PATH environment or otherwise automatically detected when calling without a specific path to the program or script.
+                      </p>
+                      <p class="p">
+                        The first Content represents the program or script name.
+                      </p>
+                      <p class="p">
+                        All Content after the first are passed to the program or script when running.
+                      </p>
+                      <p class="p">
+                        After this executes the return result is made available via the <code class="code">return</code> parameter variable name.
+                      </p>
+                      <p class="p">
+                        Any existing value associated with <code class="code">return</code> gets replaced.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">shell</code>:</div>
+                      <p class="p">
+                        Manually execute a remote program or script using a specific path to the program or script.
+                      </p>
+                      <p class="p">
+                        This does not require the program to exist in PATH, but the path to the program or script must be relative to the project path.
+                      </p>
+                      <p class="p">
+                        The first Content represents the program or script name.
+                      </p>
+                      <p class="p">
+                        All Content after the first are passed to the program or script when running.
+                      </p>
+                      <p class="p">
+                        After this executes the return result is made available via the <code class="code">return</code> parameter variable name.
+                      </p>
+                      <p class="p">
+                        Any existing value associated with <code class="code">return</code> gets replaced.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">skeleton</code>:</div>
+                      <p class="p">
+                        Run the fake skeleton operation as if <code class="code">fake skeleton</code> was run instead of <code class="code">fake make</code>.
+                      </p>
+                      <p class="p">
+                        Command line arguments are automatically passed to the fake skeleton operation.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">to</code>:</div>
+                      <p class="p">
+                        Change to the directory within the project root path tree, pushing the previous directory onto the path stack.
+                      </p>
+                      <p class="p">
+                        The previous path is saved onto the path stack and may later be <code class="code">popped</code> off.
+                      </p>
+                      <p class="p">
+                        The first Content represents the path to change directory into.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">top</code>:</div>
+                      <p class="p">
+                        Change to the project root path, clearing the directory path stack.
+                      </p>
+                      <p class="p">
+                        This has no Content.
+                      </p>
+                      <p class="p">
+                        If the project root path no longer exists, then an error occurs.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">touch</code>:</div>
+                      <p class="p">
+                        Manually create a new file or a directory within the project root or update its last changed timestamp if the file already exists.
+                      </p>
+                      <p class="p">
+                        The first Content must be either <code class="code">file</code> or <code class="code">directory</code>.
+                      </p>
+                      <p class="p">
+                        The remaining Content must be a path to the file.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">write</code>:</div>
+                      <p class="p">
+                        Write strings to a file within the project root.
+                      </p>
+                      <p class="p">
+                        The Content after the first Content is appended to the file.
+                      </p>
+                      <p class="p">
+                        The first Content represents the file to write to.
+                      </p>
+                      <p class="p">
+                        If there is no Content beyond the first, then the file is truncated (all content within the file is deleted).
+                      </p>
+                      <p class="p">
+                        In all cases, if the file does not exist, the file is created.
+                      </p>
+                      <p class="p">
+                        When only the first Content exists, this acts similar to the <code class="code">touch</code> operation.
+                      </p>
+                      <p class="p">
+                        The major difference between the two is that the <code class="code">touch</code> operation does not alter the content within the file.
+                      </p>
+                      <p class="p">
+                        This does alter the content within the file.
+                      </p>
+                      <p class="p">
+                        A single space is printed between each argument.
+                      </p>
+                      <p class="p">
+                        To preserve spaces, wrap the message in quotes (single or double).
+                      </p>
+                      <p class="p">
+                        The following escape sequences are supported for printing special characters:
+                      </p>
+                      <ul>
+                        <li><code class="code">\f</code>: Form Feed.</li>
+                        <li><code class="code">\n</code>: New Line.</li>
+                        <li><code class="code">\r</code>: Carriage Return.</li>
+                        <li><code class="code">\t</code>: Tab.</li>
+                        <li><code class="code">\v</code>: Vertical Tab.</li>
+                        <li><code class="code">\</code>: Backslash Character (may require additional slashes in certain circumstances.)</li>
+                        <li><code class="code">\0</code>: NULL Character.</li>
+                        <li><code class="code">\U+</code>: Unicode Sequence (followed by a valid Unicode sequence with a minimum 4 hexidecimal digits and a maximum of 6 hexidecimal digits).</li>
+                        <li><code class="code">\!</code>: Non-printing separator, allowing for <code class="code">\U+000A\!5</code> to be equivalent to <code class="code">\n5</code>.</li>
+                      </li>
+                      <p class="p">
+                        If the Unicode is invalid, then nothing is printed for that character (the invalid character is skipped when printing).
+                      </p>
+                      <p class="p">
+                        Example Unicodes:
+                      </p>
+                      <ul>
+                        <li><code class="code">\U+000A</code>: Prints a new line, equivalent to <code class="code">\n</code>.</li>
+                        <li><code class="code">\U+2E19</code>: Prints the Unicode feather-like character <code class="code">⸙</code>.</li>
+                      </ul>
+                      <p class="p">
+                        Only <abbr title="American Standard Code for Information Interchange">ASCII</abbr> alpha-numeric hexidecimal digits are allowed in the Unicode sequence (upper or lower case).
+                      </p>
+                      <p class="p">
+                        Invalid or unknown escape sequences are not printed.
+                      </p>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <p class="p">
+                The IKI vocabulary context is supported and is further clarified as follows:
+              </p>
+              <ul>
+                <li>
+                  <div><code class="code">context</code>:</div>
+                  <ul>
+                    <li>
+                      <div>The context Object represents a name representing simple context or complex combination of context.</div>
+                      <p class="p">
+                        Context should wrap some text such that if some text begins with some context, the context should be reset at the end.
+                      </p>
+                      <p class="p">
+                        The most basic context is color context, such as: <code class="code">context:"notice" This is emphasized text context:"reset"</code>.
+                      </p>
+                      <p class="p">
+                        The use of IKI in this way is acceptable but it is not perfect.
+                      </p>
+                      <p class="p">
+                        IKI is not designed to be a replacement to markup.
+                      </p>
+                      <p class="p">
+                        The markup <code class="code">&lt;strong&gt;Example&lt;/strong&gt;</code> vs the IKI <code class="code">context:"notable" Example context:"notable"</code> has obvious differences in the spaces.
+                      </p>
+                      <p class="p">
+                        The IKI by design cannot be used like this: <code class="code">context:"notable"Examplecontext:"notable"</code> because the word <code class="code">Example</code> and the word <code class="code">context</code> collide.
+                      </p>
+                      <p class="p">
+                        This context will respect the programs <code class="code">++light</code>, <code class="code">++dark</code>, and <code class="code">++no_color</code> parameters.
+                      </p>
+                      <p class="p">
+                        The following context are available:
+                      </p>
+                      <ul>
+                        <li><code class="code">error</code>: Designate as an error, often printed in red.</li>
+                        <li><code class="code">important</code>: Designate as important.</li>
+                        <li><code class="code">normal</code>: Explicitly designate normal text.</li>
+                        <li><code class="code">notable</code>: Designate as notable (similar to <code class="code">strong</code> or <code class="code">bold</code> in <abbr title="Hyper Text Markup Language">HTML</abbr>).</li>
+                        <li><code class="code">reset</code>: Remove the context.</li>
+                        <li><code class="code">standout</code>: Designate to make notable (similar to <code class="code">italic</code> or <code class="code">emphasis</code> in <abbr title="Hyper Text Markup Language">HTML</abbr>).</li>
+                        <li><code class="code">success</code>: Designate as a success, often printed in bright green.</li>
+                        <li><code class="code">title</code>: Designate as a title.</li>
+                        <li><code class="code">warning</code>: Designate as a warning, often printed in some shade of orange.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <div><code class="code">define</code>:</div>
+                  <p class="p">
+                    The define Object represents environment variables passed to the program or created by the program.
+                  </p>
+                  <p class="p">
+                    The value represents the environment variable name and is case-sensitive.
+                  </p>
+                  <p class="p">
+                    This IKI variable gets substituted with the environment variable's value or NULL if not defined.
+                  </p>
+                  <p class="p">
+                    The <code class="code">settings</code> list supports declaring custom environment variables (which overwrite any existing environment variable with the same name).
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">parameter</code>:</div>
+                  <p class="p">
+                    The parameter Object represents a variable that is to be substituted.
+                  </p>
+                  <p class="p">
+                    The value represents the variable name and is case-sensitive.
+                  </p>
+                  <p class="p">
+                    This IKI variable gets substituted with the value defined in the <code class="code">settings</code> list or NULL if not defined.
+                  </p>
+                  <p class="p">
+                    The value may contain an additional <code class="code">:option</code> or <code class="code">:value</code> at the end of the name to designate getting only part of the parameter.
+                  </p>
+                  <p class="p">
+                    The following are reserved parameter variable names:
+                  </p>
+                  <ul>
+                    <li>
+                      <div><code class="code">build</code>:</div>
+                      <p class="p">
+                        This variable holds the <code class="code">build</code> program parameters, such as <code class="code">-b build/</code>.
+                      </p>
+                      <p class="p">
+                        This supports both <code class="code">:option</code> and <code class="code">:value</code>.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">color</code>:</div>
+                      <p class="p">
+                        This variable holds the color related program parameters, such as <code class="code">+n</code>.
+                      </p>
+                      <p class="p">
+                        This supports both <code class="code">:option</code> and <code class="code">:value</code> (value is always an empty string).
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">data</code>:</div>
+                      <p class="p">
+                        This variable holds the <code class="code">data</code> program parameters, such as <code class="code">-D data/</code>.
+                      </p>
+                      <p class="p">
+                        This supports both <code class="code">:option</code> and <code class="code">:value</code>.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">define</code>:</div>
+                      <p class="p">
+                        This variable holds the <code class="code">data</code> program parameters, such as <code class="code">-d define/</code>.
+                      </p>
+                      <p class="p">
+                        This supports both <code class="code">:option</code> and <code class="code">:value</code>.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">fakefile</code>:</div>
+                      <p class="p">
+                        This variable holds the <code class="code">fakefile</code> program parameters, such as <code class="code">-f fakefile</code>.
+                      </p>
+                      <p class="p">
+                        This supports both <code class="code">:option</code> and <code class="code">:value</code>.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">mode</code>:</div>
+                      <p class="p">
+                        This variable holds the <code class="code">fakefile</code> program parameters, such as <code class="code">-m monolithic</code>.
+                      </p>
+                      <p class="p">
+                        This supports both <code class="code">:option</code> and <code class="code">:value</code>.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">process</code>:</div>
+                      <p class="p">
+                        This variable holds the <code class="code">process</code> program parameters, such as <code class="code">-p process_name</code>.
+                      </p>
+                      <p class="p">
+                        This supports both <code class="code">:option</code> and <code class="code">:value</code>.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">return</code>:</div>
+                      <p class="p">
+                        This variable holds the return status from a previously run user-space applications, which happens with the <code class="code">run</code> and <code class="code">shell</code> section operations.
+                      </p>
+                      <p class="p">
+                        This does not represent the return code for each line, just only those lines that run user-space applications.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">settings</code>:</div>
+                      <p class="p">
+                        This variable holds the <code class="code">settings</code> program parameters, such as <code class="code">-s settings</code>.
+                      </p>
+                      <p class="p">
+                        This supports both <code class="code">:option</code> and <code class="code">:value</code>.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">sources</code>:</div>
+                      <p class="p">
+                        This variable holds the <code class="code">data</code> program parameters, such as <code class="code">-S sources/</code>.
+                      </p>
+                      <p class="p">
+                        This supports both <code class="code">:option</code> and <code class="code">:value</code>.
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">verbosity</code>:</div>
+                      <p class="p">
+                        This variable holds the verbosity related program parameters, such as <code class="code">+V</code>.
+                      </p>
+                      <p class="p">
+                        This supports both <code class="code">:option</code> and <code class="code">:value</code> (value is always an empty string).
+                      </p>
+                    </li>
+                    <li>
+                      <div><code class="code">work</code>:</div>
+                      <p class="p">
+                        This variable holds the <code class="code">work</code> program parameters, such as <code class="code">-w work/</code>.
+                      </p>
+                      <p class="p">
+                        This supports both <code class="code">:option</code> and <code class="code">:value</code>.
+                      </p>
+                      <p class="p">
+                        An example of getting just the <code class="code">:option</code> or <code class="code">:value</code> part of a parameter for the <code class="code">work</code> parameters:
+                      </p>
+                      <ul>
+                        <li>
+                          <div><code class="code">work:option</code>:</div>
+                          </p>
+                          <p class="p">
+                            This variable holds the option part of the <code class="code">work</code> program parameters, such as <code class="code">-w</code>.
+                          </p>
+                        </li>
+                        <li>
+                          <div><code class="code">work:value</code>:</div>
+                          <p class="p">
+                            This variable holds the value part of the <code class="code">work</code> program parameters, such as <code class="code">work/</code>.
+                          </p>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <p class="p">
+                The Content <code class="code">no_dereference</code> may be specified in certain cases relating to files.
+                These cases operate on a file that can be a link itself or the link target.
+                The default behavior is normally to dereference the link target.
+              </p>
+              <p class="p">
+                For example, consider a symbolic link, called <code class="code">some_file</code>, that points to a file that does not exist (which means that the link in question is a broken link).
+                The Operation <code class="code">if exist some_file</code> would return false.
+                The Operation <code class="code">if no_dereference exist some_file</code> would return true.
+                This is because the symbolic link itself, <code class="code">some_file</code>, does exist but the file it is pointing to does not.
+                The <code class="code">no_dereference</code> is ignored for conditions that do not need it.
+              </p>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

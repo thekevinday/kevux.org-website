@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Documentation - Featureless Make - Specification - Settings</title>
+
+    <base href="../../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Featureless Make program settings specification.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Featureless Make, Open-Source, Specification">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="documentation/fake/specifications/settings.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js specification">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="news.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item active"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="documentation.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Documentation</div>
+            <a href="documentation/fake.html" class="nav-text link">Featureless Make</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fake.html#parameters-standard" class="nav-text link">Standard Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fake.html#parameters-program" class="nav-text link">Program Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fake.html#operations" class="nav-text link">Operations</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Specifications</div>
+            <a href="documentation/fake/specifications.html" class="nav-text link">Featureless Make</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fake/specifications/defines.html" class="nav-text link">Defines</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fake/specifications/dependencies.html" class="nav-text link">Dependencies</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fake/specifications/fakefile.html" class="nav-text link">Fakefile</a>
+          </div>
+          <div class="nav-item block highlight unlink">
+            <div class="nav-text unlink">Settings</div>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">APIs</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="documentation/fake/specifications/settings.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="documentation/fake/specifications/settings.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">Featureless Make Settings Specification</h1>
+          </header>
+
+          <div class="main-content">
+            <p class="p">
+              The build settings <strong>settings</strong> file follows the <code class="code">FSS-0001 (Extended)</code> format.
+            </p>
+            <p class="p">
+              Each Object represents a settings property name.
+            </p>
+            <p class="p">
+              There is only a distinct set of setting property names (see below).
+            </p>
+            <p class="p">
+              Each Content represents the values associated with that property.
+            </p>
+            <p class="p">
+              Additional restrictions are applied to each Content depending on each specific Object name (see below).
+            </p>
+            <p class="p">
+              Object Names and their respective Content purpose/restrictions:
+            </p>
+            <ul>
+              <li><code class="code">build_compiler</code>: Must only be a valid filename.</li>
+              <li><code class="code">build_indexer</code>: Must only be a valid filename.</li>
+              <li><code class="code">build_indexer_arguments</code>: Zero or more arguments supported by the indexer specified in <code class="code">build_indexer</code>.</li>
+              <li><code class="code">build_language</code>: Must only be one of: <code class="code">bash</code>, <code class="code">c</code>, or <code class="code">c++</code>.</li>
+              <li><code class="code">build_libraries</code>: Must only contain any number of valid library include arguments that are valid for the compiler defined in "build_compiler" Object.</li>
+              <li><code class="code">build_libraries_shared</code>: Must only contain any number of valid library include arguments that are valid for the compiler defined in "build_compiler" Object.</li>
+              <li><code class="code">build_libraries_static</code>: Must only contain any number of valid library include arguments that are valid for the compiler defined in "build_compiler" Object.</li>
+              <li><code class="code">build_name</code>: Must only contain characters allowed in a filename.</li>
+              <li><code class="code">build_objects_library</code>: Must only contain any number of valid object file names relative to the appropriate <code class="code">path_object_*</code> path.</li>
+              <li><code class="code">build_objects_library_shared</code>: Must only contain any number of valid object file names relative to the <code class="code">path_object_shared</code> path.</li>
+              <li><code class="code">build_objects_library_static</code>: Must only contain any number of valid object file names relative to the <code class="code">path_object_static</code> path.</li>
+              <li><code class="code">build_objects_program</code>: Must only contain any number of valid object file names relative to the appropriate <code class="code">path_object_*</code> path.</li>
+              <li><code class="code">build_objects_program_shared</code>: Must only contain any number of valid object file names relative to the <code class="code">path_object_shared</code> path.</li>
+              <li><code class="code">build_objects_program_static</code>: Must only contain any number of valid object file names relative to the <code class="code">path_object_static</code> path.</li>
+              <li><code class="code">build_script</code>: Must only one of: <code class="code">yes</code> or <code class="code">no</code>.</li>
+              <li><code class="code">build_shared</code>: Must only one of: <code class="code">yes</code> or <code class="code">no</code>.</li>
+              <li><code class="code">build_sources_headers</code>: Must only contain any number of valid filenames.</li>
+              <li><code class="code">build_sources_headers_shared</code>: Must only contain any number of valid filenames.</li>
+              <li><code class="code">build_sources_headers_static</code>: Must only contain any number of valid filenames.</li>
+              <li><code class="code">build_sources_library</code>: Must only contain any number of valid filenames.</li>
+              <li><code class="code">build_sources_library_shared</code>: Must only contain any number of valid filenames.</li>
+              <li><code class="code">build_sources_library_static</code>: Must only contain any number of valid filenames.</li>
+              <li><code class="code">build_sources_object</code>: Must only contain any number of valid filenames.</li>
+              <li><code class="code">build_sources_object_shared</code>: Must only contain any number of valid filenames.</li>
+              <li><code class="code">build_sources_object_static</code>: Must only contain any number of valid filenames.</li>
+              <li><code class="code">build_sources_program</code>: Must only contain any number of valid filenames.</li>
+              <li><code class="code">build_sources_program_shared</code>: Must only contain any number of valid filenames.</li>
+              <li><code class="code">build_sources_program_static</code>: Must only contain any number of valid filenames.</li>
+              <li><code class="code">build_sources_script</code>: Must only contain any number of valid filenames.</li>
+              <li><code class="code">build_sources_setting</code>: Must only contain any number of valid filenames.</li>
+              <li><code class="code">build_static</code>: Must only one of: <code class="code">yes</code> or <code class="code">no</code>.</li>
+              <li><code class="code">defines</code>: Must only contain any number of valid macro names supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">defines_library</code>: Must only contain any number of valid macro names supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">defines_library_shared</code>: Must only contain any number of valid macro names supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">defines_library_static</code>: Must only contain any number of valid macro names supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">defines_object</code>: Must only contain any number of valid macro names supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">defines_object_shared</code>: Must only contain any number of valid macro names supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">defines_object_static</code>: Must only contain any number of valid macro names supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">defines_program</code>: Must only contain any number of valid macro names supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">defines_program_shared</code>: Must only contain any number of valid macro names supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">defines_program_static</code>: Must only contain any number of valid macro names supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">defines_shared</code>: Must only contain any number of valid macro names supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">defines_static</code>: Must only contain any number of valid macro names supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">environment</code>: Environment variable names, case-sensitive, usually uppercase. May only contain characters allowed in an environment variable.</li>
+              <li><code class="code">flags</code>: Must only contain any number of parameters supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">flags_library</code>: Must only contain any number of parameters supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">flags_library_shared</code>: Must only contain any number of parameters supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">flags_library_static</code>: Must only contain any number of parameters supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">flags_object</code>: Must only contain any number of parameters supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">flags_object_shared</code>: Must only contain any number of parameters supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">flags_object_static</code>: Must only contain any number of parameters supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">flags_program</code>: Must only contain any number of parameters supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">flags_program_shared</code>: Must only contain any number of parameters supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">flags_program_static</code>: Must only contain any number of parameters supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">flags_shared</code>: Must only contain any number of parameters supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">flags_static</code>: Must only contain any number of parameters supported by the compiler specified in <code class="code">build_compiler</code>.</li>
+              <li><code class="code">has_path_standard</code>: Must only one of: <code class="code">yes</code> or <code class="code">no</code>.</li>
+              <li><code class="code">modes</code>: Any valid word character, <code class="code">-</code>, or <code class="code">+</code>.</li>
+              <li><code class="code">modes_default</code>: May only be a single complete Content word defined in <code class="code">modes</code> Object.</li>
+              <li><code class="code">path_headers</code>: Must be a single valid path.</li>
+              <li><code class="code">path_language</code>: Must be a single valid path.</li>
+              <li><code class="code">path_library_script</code>: Must be a single valid path.</li>
+              <li><code class="code">path_library_shared</code>: Must be a single valid path.</li>
+              <li><code class="code">path_library_static</code>: Must be a single valid path.</li>
+              <li><code class="code">path_object_script</code>: Must be a single valid path.</li>
+              <li><code class="code">path_object_shared</code>: Must be a single valid path.</li>
+              <li><code class="code">path_object_static</code>: Must be a single valid path.</li>
+              <li><code class="code">path_program_script</code>: Must be a single valid path.</li>
+              <li><code class="code">path_program_shared</code>: Must be a single valid path.</li>
+              <li><code class="code">path_program_static</code>: Must be a single valid path.</li>
+              <li><code class="code">path_sources</code>: Must only be a valid directory path or not specified.</li>
+              <li><code class="code">path_sources_object</code>: Must only be a valid directory path or not specified.</li>
+              <li><code class="code">preserve_path_headers</code>: Must only be one of <code class="code">yes</code> or <code class="code">no</code>.</li>
+              <li><code class="code">process_post</code>: Must contain only a single valid filename.</li>
+              <li><code class="code">process_pre</code>: Must contain only a single valid filename.</li>
+              <li><code class="code">search_exclusive</code>: Must only one of: <code class="code">yes</code> or <code class="code">no</code>.</li>
+              <li><code class="code">search_shared</code>: Must only one of: <code class="code">yes</code> or <code class="code">no</code>.</li>
+              <li><code class="code">search_static</code>: Must only one of: <code class="code">yes</code> or <code class="code">no</code>.</li>
+              <li><code class="code">version_file</code>: Must only be one of: <code class="code">major</code>, <code class="code">minor</code>, <code class="code">micro</code>, or <code class="code">nano</code>.</li>
+              <li><code class="code">version_major</code>: Must only be a single value containing valid filename characters.</li>
+              <li><code class="code">version_major_prefix</code>: Must be zero or more valid filename characters.</li>
+              <li><code class="code">version_micro</code>: Must only be a single value containing valid filename characters.</li>
+              <li><code class="code">version_micro_prefix</code>: Must be zero or more valid filename characters.</li>
+              <li><code class="code">version_minor</code>: Must only be a single value containing valid filename characters.</li>
+              <li><code class="code">version_minor_prefix</code>: Must be zero or more valid filename characters.</li>
+              <li><code class="code">version_nano</code>: Must only be a single value containing valid filename characters.</li>
+              <li><code class="code">version_nano_prefix</code>: Must be zero or more valid filename characters.</li>
+              <li><code class="code">version_target</code>: Must only be one of: <code class="code">major</code>, <code class="code">minor</code>, <code class="code">micro</code>, or <code class="code">nano</code>.</li>
+            </ul>
+            <p class="p">
+              All Object names support having a <code class="code">-</code> and a <code class="code">mode</code> name, such as <code class="code">build_libraries-individual</code> for a mode called <code class="code">individual</code>, except for the <code class="code">modes</code> and the <code class="code">modes_default</code> Object names.
+            </p>
+          </div>
+
+          <section id="documentation-rule" class="section sub separate">
+            <header class="section-header header">
+              <h2 class="section-title h h2">Settings Documentation</h2>
+            </header>
+
+            <div class="section-content">
+              <p class="p">
+                This describes intent and purposes of the build <strong>settings</strong> file settings.
+              </p>
+              <p class="p">
+                The <strong>settings</strong> file is designed for very simple compilations that represent a single named program and/or a single named library.
+              </p>
+              <p class="p">
+                For specific details on the allowed formatting, see the settings.txt under the specifications folder.
+              </p>
+              <ul>
+                <li>
+                  <div><code class="code">build_compiler</code>:</div>
+                  <p class="p">
+                    This represents the name of the compiler program to use, such as <code class="code">gcc</code>.
+                  </p>
+                  <p class="p">
+                    This defaults to <code class="code">gcc</code> (the GNU C Compiler).
+                  </p>
+                  <p class="p">
+                    The programs <code class="code">gcc</code> and <code class="code">clang</code> are known to work.
+                  </p>
+                  <p class="p">
+                    Many of the parameters in the <strong>settings</strong> file can be changed if using a non-GCC, but there may be certain hard-coded functionality that may need to be changed.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_indexer</code>:</div>
+                  <p class="p">
+                    This represents the name of the indexer program to use, such as <code class="code">ar</code>.
+                  </p>
+                  <p class="p">
+                    An indexer is often called a linker.
+                  </p>
+                  <p class="p">
+                    This defaults to <code class="code">ar</code> (the GNU <code class="code">ar</code> program).
+                  </p>
+                  <p class="p">
+                    Similar to <code class="code">build_compiler</code>, any linker that supports the <code class="code">ar</code> program parameters is effectively supported.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_indexer_arguments</code>:</div>
+                  <p class="p">
+                    This represents arguments needed to build an archive file from object files, such as <code class="code">rcs</code>.
+                  </p>
+                  <p class="p">
+                    These arguments are placed immediately before the object files passed to the <code class="code">indexer</code> program.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_language</code>:</div>
+                  <p class="p">
+                    The programming language to build with.
+                  </p>
+                  <p class="p">
+                    The languages <code class="code">c</code> and <code class="code">c++</code> are supported (with <code class="code">bash</code> as a consideration for support).
+                  </p>
+                  <p class="p">
+                    The <code class="code">bash</code> language is not currently implemented and needs some consideration because there is nothing to compile.
+                  </p>
+                  <p class="p">
+                    The <code class="code">bash</code> language will likely build a set of individual scripts, and perhaps script dependencies, into a single Bash script.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_libraries</code>:</div>
+                  <p class="p">
+                    A collection of libraries to be linked against.
+                  </p>
+                  <p class="p">
+                    This should include the compiler specific parameter parts, such as the <code class="code">-l</code> prefix in <code class="code">-lc</code>.
+                  </p>
+                  <p class="p">
+                    The order of these may matter if the compiler (such as GCC or a linker via GCC) is order sensitive.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_libraries_shared</code>:</div>
+                  <p class="p">
+                    A collection of libraries to be linked against.
+                  </p>
+                  <p class="p">
+                    This should include the compiler specific parameter parts, such as the <code class="code">-l</code> prefix in <code class="code">-lc</code>.
+                  </p>
+                  <p class="p">
+                    The order of these may matter if the compiler (such as GCC or a linker via GCC) is order sensitive.
+                  </p>
+                  <p class="p">
+                    These are applied to only shared builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_libraries_static</code>:</div>
+                  <p class="p">
+                    A collection of libraries to be linked against.
+                  </p>
+                  <p class="p">
+                    This should include the compiler specific parameter parts, such as the <code class="code">-l</code> prefix in <code class="code">-lc</code>.
+                  </p>
+                  <p class="p">
+                    The order of these may matter if the compiler (such as GCC or a linker via GCC) is order sensitive.
+                  </p>
+                  <p class="p">
+                    These are applied to only static builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_objects_library</code>:</div>
+                  <p class="p">
+                    A collection of object files to be compile with when building libraries.
+                  </p>
+                  <p class="p">
+                    These are intended to represent already compiled object files.
+                  </p>
+                  <p class="p">
+                    These paths are relative to the <code class="code">path_object_script</code>, <code class="code">path_object_shared</code>, or <code class="code">path_object_static</code>.
+                  </p>
+                  <p class="p">
+                    The order of these may matter if the compiler (such as GCC or a linker via GCC) is order sensitive.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_objects_library_shared</code>:</div>
+                  <p class="p">
+                    A collection of object files to be compile with when building shared libraries.
+                  </p>
+                  <p class="p">
+                    These are intended to represent already compiled object files.
+                  </p>
+                  <p class="p">
+                    These paths are relative to the <code class="code">path_object_shared</code>.
+                  </p>
+                  <p class="p">
+                    The order of these may matter if the compiler (such as GCC or a linker via GCC) is order sensitive.
+                  </p>
+                  <p class="p">
+                    These are applied to only shared builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_objects_library_static</code>:</div>
+                  <p class="p">
+                    A collection of object files to be compile with when building static libraries.
+                  </p>
+                  <p class="p">
+                    These are intended to represent already compiled object files.
+                  </p>
+                  <p class="p">
+                    These paths are relative to the <code class="code">path_object_static</code>.
+                  </p>
+                  <p class="p">
+                    The order of these may matter if the compiler (such as GCC or a linker via GCC) is order sensitive.
+                  </p>
+                  <p class="p">
+                    These are applied to only static builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_objects_program</code>:</div>
+                  <p class="p">
+                    A collection of object files to be compile with when building programs.
+                  </p>
+                  <p class="p">
+                    These are intended to represent already compiled object files.
+                  </p>
+                  <p class="p">
+                    These paths are relative to the <code class="code">path_object_script</code>, <code class="code">path_object_shared</code>, or <code class="code">path_object_static</code>.
+                  </p>
+                  <p class="p">
+                    The order of these may matter if the compiler (such as GCC or a linker via GCC) is order sensitive.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_objects_program_shared</code>:</div>
+                  <p class="p">
+                    A collection of object files to be compile with when building shared programs.
+                  </p>
+                  <p class="p">
+                    These are intended to represent already compiled object files.
+                  </p>
+                  <p class="p">
+                    These paths are relative to the <code class="code">path_object_shared</code>.
+                  </p>
+                  <p class="p">
+                    The order of these may matter if the compiler (such as GCC or a linker via GCC) is order sensitive.
+                  </p>
+                  <p class="p">
+                    These are applied to only shared builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_objects_program_static</code>:</div>
+                  <p class="p">
+                    A collection of object files to be compile with when building static programs.
+                  </p>
+                  <p class="p">
+                    These are intended to represent already compiled object files.
+                  </p>
+                  <p class="p">
+                    These paths are relative to the <code class="code">path_object_static</code>.
+                  </p>
+                  <p class="p">
+                    The order of these may matter if the compiler (such as GCC or a linker via GCC) is order sensitive.
+                  </p>
+                  <p class="p">
+                    These are applied to only static builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_name</code>:</div>
+                  <p class="p">
+                    The name of the build, which often represent the project name.
+                  </p>
+                  <p class="p">
+                    If program sources are specified, then this will be used as the program name.
+                  </p>
+                  <p class="p">
+                    If library sources are specified, then this will be used in the library name, such as <code class="code">libX.so</code> where <code class="code">X</code> would be the <code class="code">build_name</code> value.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_script</code>:</div>
+                  <p class="p">
+                    When <code class="code">yes</code>, the build process will build any scripts, such as a Bash script.
+                  </p>
+                  <p class="p">
+                    This is currently not implemented.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_shared</code>:</div>
+                  <p class="p">
+                    When <code class="code">yes</code>, the build process will compile any source code for any supported language that supports shared library linking.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_sources_headers</code>:</div>
+                  <p class="p">
+                    A collection of header files.
+                  </p>
+                  <p class="p">
+                    May include a relative sub-path to each individual header (such as: <code class="code">level_0/a.h level_0/b.h level_1/c.h</code>).
+                  </p>
+                  <p class="p">
+                    The order of these may matter if the compiler (such as GCC or a linker via GCC) is order sensitive.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_sources_headers_shared</code>:</div>
+                  <p class="p">
+                    A collection of header files.
+                  </p>
+                  <p class="p">
+                    May include a relative sub-path to each individual header (such as: <code class="code">level_0/a.h level_0/b.h level_1/c.h</code>).
+                  </p>
+                  <p class="p">
+                    The order of these may matter if the compiler (such as GCC or a linker via GCC) is order sensitive.
+                  </p>
+                  <p class="p">
+                    Be careful not to have any conflicting names between this and build_sources_headers_static in case of when static and shared builds are both enabled.
+                  </p>
+                  <p class="p">
+                    These are applied to only shared builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_sources_headers_static</code>:</div>
+                  <p class="p">
+                    A collection of header files.
+                  </p>
+                  <p class="p">
+                    May include a relative sub-path to each individual header (such as: <code class="code">level_0/a.h level_0/b.h level_1/c.h</code>).
+                  </p>
+                  <p class="p">
+                    The order of these may matter if the compiler (such as GCC or a linker via GCC) is order sensitive.
+                  </p>
+                  <p class="p">
+                    These files are used when compiling the library.
+                  </p>
+                  <p class="p">
+                    Be careful not to have any conflicting names between this and build_sources_headers_shared in case of when static and shared builds are both enabled.
+                  </p>
+                  <p class="p">
+                    These are applied to only static builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_sources_library</code>:</div>
+                  <p class="p">
+                    A collection of library related source files.
+                  </p>
+                  <p class="p">
+                    May include a relative sub-path to each individual source file (such as: <code class="code">level_0/a.c level_0/b.c level_1/c.c</code>).
+                  </p>
+                  <p class="p">
+                    The order of these may matter if the compiler (such as GCC or a linker via GCC) is order sensitive.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_sources_library_shared</code>:</div>
+                  <p class="p">
+                    A collection of library related source files.
+                  </p>
+                  <p class="p">
+                    May include a relative sub-path to each individual source file (such as: <code class="code">level_0/a.c level_0/b.c level_1/c.c</code>).
+                  </p>
+                  <p class="p">
+                    The order of these may matter if the compiler (such as GCC or a linker via GCC) is order sensitive.
+                  </p>
+                  <p class="p">
+                    These are applied to only shared builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_sources_library_static</code>:</div>
+                  <p class="p">
+                    A collection of library related source files.
+                  </p>
+                  <p class="p">
+                    May include a relative sub-path to each individual source file (such as: <code class="code">level_0/a.c level_0/b.c level_1/c.c</code>).
+                  </p>
+                  <p class="p">
+                    The order of these may matter if the compiler (such as GCC or a linker via GCC) is order sensitive.
+                  </p>
+                  <p class="p">
+                    These are applied to only static builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_sources_object</code>:</div>
+                  <p class="p">
+                    A single source file used for generating an object file.
+                  </p>
+                  <p class="p">
+                    The source file is located within the path designated by <code class="code">path_sources_object</code>.
+                  </p>
+                  <p class="p">
+                    The built object does not get linked and therefore no linker arguments apply.
+                  </p>
+                  <p class="p">
+                    The built object file is named using the <code class="code">build_name</code> with the <code class="code">.o</code> extension.
+                  </p>
+                  <p class="p">
+                    May include a relative sub-path to each individual source file (such as: <code class="code">level_0/a.c</code>).
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_sources_object_shared</code>:</div>
+                  <p class="p">
+                    A single source file used for generating an object file.
+                  </p>
+                  <p class="p">
+                    The source file is located within the path designated by <code class="code">path_sources_object</code>.
+                  </p>
+                  <p class="p">
+                    The built object does not get linked and therefore no linker arguments apply.
+                  </p>
+                  <p class="p">
+                    The built object file is named using the <code class="code">build_name</code> with the <code class="code">.o</code> extension.
+                  </p>
+                  <p class="p">
+                    May include a relative sub-path to each individual source file (such as: <code class="code">level_0/a.c</code>).
+                  </p>
+                  <p class="p">
+                    These are applied to only shared builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_sources_object_static</code>:</div>
+                  <p class="p">
+                    A single source file used for generating an object file.
+                  </p>
+                  <p class="p">
+                    The source file is located within the path designated by <code class="code">path_sources_object</code>.
+                  </p>
+                  <p class="p">
+                    The built object does not get linked and therefore no linker arguments apply.
+                  </p>
+                  <p class="p">
+                    The built object file is named using the <code class="code">build_name</code> with the <code class="code">.o</code> extension.
+                  </p>
+                  <p class="p">
+                    May include a relative sub-path to each individual source file (such as: <code class="code">level_0/a.c</code>).
+                  </p>
+                  <p class="p">
+                    These are applied to only static builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_sources_program</code>:</div>
+                  <p class="p">
+                    A collection of program related source files.
+                  </p>
+                  <p class="p">
+                    May include a relative sub-path to each individual source file (such as: <code class="code">level_0/a.c level_0/b.c level_1/c.c</code>).
+                  </p>
+                  <p class="p">
+                    The order of these may matter if the compiler (such as GCC or a linker via GCC) is order sensitive.
+                  </p>
+                  <p class="p">
+                    These files are used when compiling the program.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_sources_program_shared</code>:</div>
+                  <p class="p">
+                    A collection of program related source files.
+                  </p>
+                  <p class="p">
+                    May include a relative sub-path to each individual source file (such as: <code class="code">level_0/a.c level_0/b.c level_1/c.c</code>).
+                  </p>
+                  <p class="p">
+                    The order of these may matter if the compiler (such as GCC or a linker via GCC) is order sensitive.
+                  </p>
+                  <p class="p">
+                    These files are used when compiling the program for shared builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_sources_program_static</code>:</div>
+                  <p class="p">
+                    A collection of program related source files.
+                  </p>
+                  <p class="p">
+                    May include a relative sub-path to each individual source file (such as: <code class="code">level_0/a.c level_0/b.c level_1/c.c</code>).
+                  </p>
+                  <p class="p">
+                    The order of these may matter if the compiler (such as GCC or a linker via GCC) is order sensitive.
+                  </p>
+                  <p class="p">
+                    These files are used when compiling the program for static builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_sources_script</code>:</div>
+                  <p class="p">
+                    A collection of script files.
+                  </p>
+                  <p class="p">
+                    These are settings files used by the project and are simply copied over to the build directory.
+                  </p>
+                  <p class="p">
+                    Unless a pre-process script (or in theory post-process script) is configured to alter these, they are not modified.
+                  </p>
+                  <p class="p">
+                    Unlike the <code class="code">compile_language</code> setting <code class="code">bash</code>, this is not for built Bash script, but is instead for any valid scripting language (including Bash).
+                  </p>
+                  <p class="p">
+                    These could be in any language.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_sources_setting</code>:</div>
+                  <p class="p">
+                    A collection of settings files.
+                  </p>
+                  <p class="p">
+                    These are settings files used by the project and are simply copied over to the build directory.
+                  </p>
+                  <p class="p">
+                    Unless a pre-process script (or in theory post-process script) is configured to alter these, they are not modified.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">build_static</code>:</div>
+                  <p class="p">
+                    When <code class="code">yes</code>, the build process will compile any source code for any supported language that supports static library linking.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">defines</code>:</div>
+                  <p class="p">
+                    A collection of macro names.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters required by the <code class="code">build_compiler</code>, such as the <code class="code">-D</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These will be appended to the compiler for compiled languages such as <code class="code">C</code> and <code class="code">C++</code>.
+                  </p>
+                  <p class="p">
+                    These are applied to both shared and static builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">defines_library</code>:</div>
+                  <p class="p">
+                    A collection of macro names.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters required by the <code class="code">build_compiler</code>, such as the <code class="code">-D</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These will be appended to the compiler for compiled languages such as <code class="code">C</code> and <code class="code">C++</code>.
+                  </p>
+                  <p class="p">
+                    These are applied to only library builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">defines_library_shared</code>:</div>
+                  <p class="p">
+                    A collection of macro names.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters required by the <code class="code">build_compiler</code>, such as the <code class="code">-D</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These will be appended to the compiler for compiled languages such as <code class="code">C</code> and <code class="code">C++</code>.
+                  </p>
+                  <p class="p">
+                    These are applied to only shared library builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">defines_library_static</code>:</div>
+                  <p class="p">
+                    A collection of macro names.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters required by the <code class="code">build_compiler</code>, such as the <code class="code">-D</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These will be appended to the compiler for compiled languages such as <code class="code">C</code> and <code class="code">C++</code>.
+                  </p>
+                  <p class="p">
+                    These are applied to only static library builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">defines_object</code>:</div>
+                  <p class="p">
+                    A collection of macro names.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters required by the <code class="code">build_compiler</code>, such as the <code class="code">-D</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These will be appended to the compiler for compiled languages such as <code class="code">C</code> and <code class="code">C++</code>.
+                  </p>
+                  <p class="p">
+                    These are applied to only object builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">defines_object_shared</code>:</div>
+                  <p class="p">
+                    A collection of macro names.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters required by the <code class="code">build_compiler</code>, such as the <code class="code">-D</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These will be appended to the compiler for compiled languages such as <code class="code">C</code> and <code class="code">C++</code>.
+                  </p>
+                  <p class="p">
+                    These are applied to only shared object builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">defines_object_static</code>:</div>
+                  <p class="p">
+                    A collection of macro names.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters required by the <code class="code">build_compiler</code>, such as the <code class="code">-D</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These will be appended to the compiler for compiled languages such as <code class="code">C</code> and <code class="code">C++</code>.
+                  </p>
+                  <p class="p">
+                    These are applied to only static object builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">defines_program</code>:</div>
+                  <p class="p">
+                    A collection of macro names.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters required by the <code class="code">build_compiler</code>, such as the <code class="code">-D</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These will be appended to the compiler for compiled languages such as <code class="code">C</code> and <code class="code">C++</code>.
+                  </p>
+                  <p class="p">
+                    These are applied to only program builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">defines_program_shared</code>:</div>
+                  <p class="p">
+                    A collection of macro names.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters required by the <code class="code">build_compiler</code>, such as the <code class="code">-D</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These will be appended to the compiler for compiled languages such as <code class="code">C</code> and <code class="code">C++</code>.
+                  </p>
+                  <p class="p">
+                    These are applied to only shared program builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">defines_program_static</code>:</div>
+                  <p class="p">
+                    A collection of macro names.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters required by the <code class="code">build_compiler</code>, such as the <code class="code">-D</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These will be appended to the compiler for compiled languages such as <code class="code">C</code> and <code class="code">C++</code>.
+                  </p>
+                  <p class="p">
+                    These are applied to only shared program builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">defines_shared</code>:</div>
+                  <p class="p">
+                    A collection of macro names.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters required by the <code class="code">build_compiler</code>, such as the <code class="code">-D</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These will be appended to the compiler for compiled languages such as <code class="code">C</code> and <code class="code">C++</code>.
+                  </p>
+                  <p class="p">
+                    These are applied to only shared builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">defines_static</code>:</div>
+                  <p class="p">
+                    A collection of macro names.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters required by the <code class="code">build_compiler</code>, such as the <code class="code">-D</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These will be appended to the compiler for compiled languages such as <code class="code">C</code> and <code class="code">C++</code>.
+                  </p>
+                  <p class="p">
+                    These are applied to only static builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">environment</code>:</div>
+                  <p class="p">
+                    A collection of environment names to pass from the callers environment into the executed programs environment.
+                  </p>
+                  <p class="p">
+                    When provided, all environment variables are removed when calling user-space programs, such as <code class="code">gcc</code>.
+                  </p>
+                  <p class="p">
+                    To remove all environment variables define this with no Content.
+                  </p>
+                  <p class="p">
+                    When not provided, all environment variables are loaded.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">flags</code>:</div>
+                  <p class="p">
+                    A collection of any flag supported by the <code class="code">build_compiler</code>, such as <code class="code">gcc</code>.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters to defined this, such as the <code class="code">-f</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These are applied to both shared and static builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">flags_library</code>:</div>
+                  <p class="p">
+                    A collection of any flag supported by the <code class="code">build_compiler</code>, such as <code class="code">gcc</code>.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters to defined this, such as the <code class="code">-f</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These are applied when building a library.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">flags_library_shared</code>:</div>
+                  <p class="p">
+                    A collection of any flag supported by the <code class="code">build_compiler</code>, such as <code class="code">gcc</code>.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters to defined this, such as the <code class="code">-f</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These are applied to only library shared builds.
+                  </p>
+                <li>
+                  <div><code class="code">flags_library_static</code>:</div>
+                  <p class="p">
+                    A collection of any flag supported by the <code class="code">build_compiler</code>, such as <code class="code">gcc</code>.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters to defined this, such as the <code class="code">-f</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These are applied to only library static builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">flags_object</code>:</div>
+                  <p class="p">
+                    A collection of any flag supported by the <code class="code">build_compiler</code>, such as <code class="code">gcc</code>.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters to defined this, such as the <code class="code">-f</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These are applied when building an object.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">flags_object_shared</code>:</div>
+                  <p class="p">
+                    A collection of any flag supported by the <code class="code">build_compiler</code>, such as <code class="code">gcc</code>.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters to defined this, such as the <code class="code">-f</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These are applied to only object shared builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">flags_object_static</code>:</div>
+                  <p class="p">
+                    A collection of any flag supported by the <code class="code">build_compiler</code>, such as <code class="code">gcc</code>.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters to defined this, such as the <code class="code">-f</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These are applied to only object static builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">flags_program</code>:</div>
+                  <p class="p">
+                    A collection of any flag supported by the <code class="code">build_compiler</code>, such as <code class="code">gcc</code>.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters to defined this, such as the <code class="code">-f</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These are applied when building a program.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">flags_program_shared</code>:</div>
+                  <p class="p">
+                    A collection of any flag supported by the <code class="code">build_compiler</code>, such as <code class="code">gcc</code>.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters to defined this, such as the <code class="code">-f</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These are applied to only program shared builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">flags_program_static</code>:</div>
+                  <p class="p">
+                    A collection of any flag supported by the <code class="code">build_compiler</code>, such as <code class="code">gcc</code>.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters to defined this, such as the <code class="code">-f</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These are applied to only program static builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">flags_shared</code>:</div>
+                  <p class="p">
+                    A collection of any flag supported by the <code class="code">build_compiler</code>, such as <code class="code">gcc</code>.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters to defined this, such as the <code class="code">-f</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These are applied to only shared builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">flags_static</code>:</div>
+                  <p class="p">
+                    A collection of any flag supported by the <code class="code">build_compiler</code>, such as <code class="code">gcc</code>.
+                  </p>
+                  <p class="p">
+                    This includes the any compiler specific parameters to defined this, such as the <code class="code">-f</code> used by <code class="code">gcc</code> and <code class="code">clang</code>.
+                  </p>
+                  <p class="p">
+                    These are applied to only static builds.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">has_path_standard</code>:</div>
+                  <p class="p">
+                    When <code class="code">yes</code>, the sources path will be built using the sources path with the language, such as <code class="code">sources/c/</code>.
+                  </p>
+                  <p class="p">
+                    When <code class="code">no</code>, the default sources path structure is not used and instead <code class="code">path_sources</code> is used.
+                  </p>
+                  <p class="p">
+                    When the parameter <code class="code">-S/--sources</code> is specified, such as <code class="code">-S xxx</code>, then when this is set to <code class="code">yes</code> is used then the path would be <code class="code">xxx/c/</code> and when this is set to <code class="code">no</code> then the path would be <code class="code">xxx/</code>.
+                  </p>
+                  <p class="p">
+                    This defaults to <code class="code">yes</code>.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">modes</code>:</div>
+                  </p>
+                  <p class="p">
+                    A collection of available build modes.
+                  </p>
+                  <p class="p">
+                    Build modes provide custom variants of the build process where certain settings are appended onto others.
+                  </p>
+                  <p class="p">
+                    See the settings.txt specification for a list of which setting names this applies to.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">modes_default</code>:</div>
+                  <p class="p">
+                    The name of the default mode to use when no mode is specified.
+                  </p>
+                  <p class="p">
+                    This must be one of the modes specified in the <code class="code">modes</code> setting.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">path_headers</code>:</div>
+                  </p>
+                  <p class="p">
+                    A sub-path in which headers are to be installed under.
+                  </p>
+                  <p class="p">
+                    For example, the <abbr title="Featureless Linux Library">FLL</abbr> project might use the <code class="code">level_0</code>, <code class="code">level_1</code>, etc.. headers without requiring that structure within the source.
+                  </p>
+                  <p class="p">
+                    A resulting build destination for a <code class="code">path_headers</code> of <code class="code">level_0</code> would be something like <code class="code">build/includes/level_0/</code>.
+                  </p>
+                  <p class="p">
+                    If <code class="code">path_headers</code> is <code class="code">level_0</code>, <code class="code">preserve_path_headers</code> is <code class="code">yes</code>, and <code class="code">build_sources_headers</code> has <code class="code">xxx/a.h yyy/zzz/b.h</code>, then the headers would be at: <code class="code">build/includes/level_0/xxx/a.h build/includes/level_0/yyy/zzz/b.h</code>
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">path_language</code>:</div>
+                  <p class="p">
+                    A sub-path in which to find the source files for the currently defined language.
+                  </p>
+                  <p class="p">
+                    If the <code class="code">build_language</code> is changed, it is recommended to change this as well to match.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">path_library_script</code>:</div>
+                  <p class="p">
+                    A sub-path representing the destination where the built library script files are placed.
+                  </p>
+                  <p class="p">
+                    This defaults to <code class="code">script</code>.
+                  </p>
+                  <p class="p">
+                    This is currently not implemented.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">path_library_shared</code>:</div>
+                  <p class="p">
+                    A sub-path representing the destination where the built shared library files are placed.
+                  </p>
+                  <p class="p">
+                    This defaults to <code class="code">shared</code>.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">path_library_static</code>:</div>
+                  <p class="p">
+                    A sub-path representing the destination where the built shared library files are placed.
+                  </p>
+                  <p class="p">
+                    This defaults to <code class="code">static</code>.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">path_object_script</code>:</div>
+                  <p class="p">
+                    A sub-path representing the destination where the built object script files are placed.
+                  </p>
+                  <p class="p">
+                    This defaults to <code class="code">script</code>.
+                  </p>
+                  <p class="p">
+                    This is currently not implemented.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">path_object_shared</code>:</div>
+                  <p class="p">
+                    A sub-path representing the destination where the built object library files are placed.
+                  </p>
+                  <p class="p">
+                    This defaults to <code class="code">shared</code>.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">path_object_static</code>:</div>
+                  <p class="p">
+                    A sub-path representing the destination where the built object library files are placed.
+                  </p>
+                  <p class="p">
+                    This defaults to <code class="code">static</code>.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">path_program_script</code>:</div>
+                  <p class="p">
+                    A sub-path representing the destination where the built program script files are placed.
+                  </p>
+                  <p class="p">
+                    This defaults to <code class="code">script</code>.
+                  </p>
+                  <p class="p">
+                    This is currently not implemented.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">path_program_shared</code>:</div>
+                  <p class="p">
+                    A sub-path representing the destination where the built shared program files are placed.
+                  </p>
+                  <p class="p">
+                    This defaults to <code class="code">shared</code>.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">path_program_static</code>:</div>
+                  </p>
+                  <p class="p">
+                    A sub-path representing the destination where built shared program files are placed.
+                  </p>
+                  <p class="p">
+                    This defaults to <code class="code">static</code>.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">path_sources</code>:</div>
+                  <p class="p">
+                    A sub-path representing where the source files are found.
+                  </p>
+                  <p class="p">
+                    This defaults to <code class="code">sources</code>.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">path_sources_object</code>:</div>
+                  <p class="p">
+                    A sub-path representing where the object source files are found.
+                  </p>
+                  <p class="p">
+                    This is used by <code class="code">build_sources_object</code>.
+                  </p>
+                  <p class="p">
+                    This defaults to <code class="code">sources</code>.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">preserve_path_headers</code>:</div>
+                  <p class="p">
+                    When this is <code class="code">yes</code>, then the relative directory structure in the source (as defined in <code class="code">build_sources_headers</code>) is preserved.
+                  </p>
+                  <p class="p">
+                    If the <code class="code">build_sources_headers</code> has the header files <code class="code">xxx/a.h yyy/zzz/b.h</code> and this is <code class="code">yes</code>, then the directories <code class="code">xxx/</code> and <code class="code">yyy/zzz/</code> are created and the files are stored within them.
+                  </p>
+                  <p class="p">
+                    If the <code class="code">build_sources_headers</code> has the header files <code class="code">xxx/a.h yyy/zzz/b.h</code> and this is <code class="code">no</code>, then the directories <code class="code">xxx/</code> and <code class="code">yyy/zzz/</code> are stripped before installing.
+                  </p>
+                  <p class="p">
+                    When this is <code class="code">no</code> and the <code class="code">build_sources_headers</code> has header files <code class="code">xxx/a.h yyy/a.h</code>, then one of the <code class="code">a.h</code> files will be overwritten, depending on order they were supplied.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">process_post</code>:</div>
+                  <p class="p">
+                    The filename (relative to the <code class="code">data/build/</code> directory) of a script to execute after the <code class="code">build</code> operation successfully completes.
+                  </p>
+                  <p class="p">
+                    A small subset of parameters from the main execution are passed to this script during execution as parameters (using short parameter codes):
+                  </p>
+                  <ul>
+                    <li>Color context parameters, such as: <code class="code">+l</code>, <code class="code">+n</code>, and <code class="code">+d</code>.</li>
+                    <li>Operation mode, such as: <code class="code">build</code>, <code class="code">clean</code>, <code class="code">make</code>, or <code class="code">skeleton</code>.</li>
+                    <li>Verbosity parameters, such as: <code class="code">+q</code>, <code class="code">+D</code>, or <code class="code">+V</code>.</li>
+                    <li>Define parameters, such as <code class="code">-d X</code> or <code class="code">-d Y</code>, whereas <code class="code">X</code> or <code class="code">Y</code> are any valid argument associated with <code class="code">-d</code>.</li>
+                    <li>Process parameter, such as <code class="code">-p X</code>, whereas <code class="code">X</code> is any valid argument associated with <code class="code">-p</code>.</li>
+                    <li>Settings parameter, such as <code class="code">-s X', whereas code:</code>X" is any valid argument associated with <code class="code">-s</code>.</li>
+                    <li>Build Path parameter, such as <code class="code">-b X', whereas code:</code>X" is any valid argument associated with <code class="code">-b</code>.</li>
+                    <li>Data Path parameter, such as <code class="code">-D X', whereas code:</code>X" is any valid argument associated with <code class="code">-D</code>.</li>
+                    <li>Sources Path parameter, such as <code class="code">-S X', whereas code:</code>X" is any valid argument associated with <code class="code">-S</code>.</li>
+                    <li>Work Path parameter, such as <code class="code">-w X', whereas code:</code>X" is any valid argument associated with <code class="code">-w</code>.</li>
+                  </ul>
+                </li>
+                <li>
+                  <div><code class="code">process_pre</code>:</div>
+                  <p class="p">
+                    The filename (relative to the <code class="code">data/build/</code> directory) of a script to execute before the <code class="code">build</code> operation is executed.
+                  </p>
+                  <p class="p">
+                    A small subset of parameters from the main execution are passed to this script during execution as parameters (using short parameter codes):
+                  </p>
+                  <ul>
+                    <li>Color context parameters, such as: <code class="code">+l</code>, <code class="code">+n</code>, and <code class="code">+d</code>.</li>
+                    <li>Operation mode, such as: <code class="code">build</code>, <code class="code">clean</code>, <code class="code">make</code>, or <code class="code">skeleton</code>.</li>
+                    <li>Verbosity parameters, such as: <code class="code">+q</code>, <code class="code">+D</code>, or <code class="code">+V</code>.</li>
+                    <li>Define parameters, such as <code class="code">-d X</code> or <code class="code">-d Y</code>, whereas <code class="code">X</code> or <code class="code">Y</code> are any valid argument associated with <code class="code">-d</code>.</li>
+                    <li>Process parameter, such as <code class="code">-p X</code>, whereas <code class="code">X</code> is any valid argument associated with <code class="code">-p</code>.</li>
+                    <li>Settings parameter, such as <code class="code">-s X', whereas code:</code>X" is any valid argument associated with <code class="code">-s</code>.</li>
+                    <li>Build Path parameter, such as <code class="code">-b X', whereas code:</code>X" is any valid argument associated with <code class="code">-b</code>.</li>
+                    <li>Data Path parameter, such as <code class="code">-D X', whereas code:</code>X" is any valid argument associated with <code class="code">-D</code>.</li>
+                    <li>Sources Path parameter, such as <code class="code">-S X', whereas code:</code>X" is any valid argument associated with <code class="code">-S</code>.</li>
+                    <li>Work Path parameter, such as <code class="code">-w X', whereas code:</code>X" is any valid argument associated with <code class="code">-w</code>.</li>
+                  </ul>
+                </li>
+                <li>
+                  <div><code class="code">search_exclusive</code>:</div>
+                  <p class="p">
+                    When <code class="code">yes</code>, the search path during compile for shared libraries will only include shared library paths.
+                  </p>
+                  <p class="p">
+                    When <code class="code">no</code>, the search path during compile time for shared libraries will include shared library paths followed by static library paths.
+                  </p>
+                  <p class="p">
+                    Setting this to <code class="code">yes</code> helps prevent static libraries from ending up in shared libraries (very useful when bootstrapping a system).
+                  </p>
+                  <p class="p">
+                    Setting this to <code class="code">no</code> allows for including static libraries if no shared libraries are found but static are.
+                  </p>
+                  <p class="p">
+                    This does not alter search paths introduced automatically by the <code class="code">build_compiler</code> or <code class="code">build_indexer</code>, so it is still possible for static libraries to end up even when this is set to <code class="code">yes</code>.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">search_shared</code>:</div>
+                  <p class="p">
+                    When <code class="code">yes</code>, shared library paths are searched during compile.
+                  </p>
+                  <p class="p">
+                    Both this and <code class="code">search_static</code> cannot be <code class="code">no</code> at the same time.
+                  </p>
+                  <p class="p">
+                    This defaults to <code class="code">yes</code>.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">search_shared</code>:</div>
+                  <p class="p">
+                    When <code class="code">yes</code>, static library paths are searched during compile.
+                  </p>
+                  <p class="p">
+                    Both this and search_shared cannot be <code class="code">no</code> at the same time.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">version_file</code>:</div>
+                  <p class="p">
+                    Designates which version should be used when building the symbolic links.
+                  </p>
+                  <p class="p">
+                    Any version prefixes are used as defined.
+                  </p>
+                  <p class="p">
+                    A Symbolic link is created against this created file such that <code class="code">libX.so</code> is a link to <code class="code">libX.so.A</code>.
+                  </p>
+                  <p class="p">
+                    For all files other than when file is <code class="code">major</code>, another symbolic link is created against this such that <code class="code">libX.so.A</code> is a link to <code class="code">libX.so.A.X</code> such that X is the respective <code class="code">B</code>, <code class="code">B.C', or code:</code>B.C.D" as described below.
+                  </p>
+                  <p class="p">
+                    The default file is <code class="code">major</code>.
+                  </p>
+                  <p class="p">
+                    When <code class="code">major</code> is used, the file created is <code class="code">libX.so.A</code>, whereas <code class="code">X</code> is the <code class="code">build_name</code> and <code class="code">A</code> is the major version.
+                  </p>
+                  <p class="p">
+                    When <code class="code">minor</code> is used, the file created is <code class="code">libX.so.A.B</code>, whereas <code class="code">X</code> is the <code class="code">build_name</code> and <code class="code">A.B</code> is the major and minor versions, respectively.
+                  </p>
+                  <p class="p">
+                    When <code class="code">micro</code> is used, the file created is <code class="code">libX.so.A.B.C</code>, whereas <code class="code">X</code> is the <code class="code">build_name</code> and <code class="code">A.B.C</code> is the major, minor, and micro versions, respectively.
+                  </p>
+                  <p class="p">
+                    When <code class="code">nano</code> is used, the file created is <code class="code">libX.so.A.B.C.D</code>, whereas <code class="code">X</code> is the <code class="code">build_name</code> and <code class="code">A.B.C.D</code> is the major, minor, micro, and nano versions, respectively.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">version_major</code>:</div>
+                  <p class="p">
+                    The major version number (or in theory any characters allowed in a filename).
+                  </p>
+                  <p class="p">
+                    This should generally be a positive number or 0.
+                  </p>
+                  <p class="p">
+                    Anything else is currently untested but allowed.
+                  </p>
+                  <p class="p">
+                    With a structure of <code class="code">A.B.C</code>, the major version would be the <code class="code">A</code>.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">version_major_prefix</code>:</div>
+                  <p class="p">
+                    The version major prefix is the character used to designate the start of the major version.
+                  </p>
+                  <p class="p">
+                    This can zero or more characters.
+                  </p>
+                  <p class="p">
+                    With a structure of <code class="code">A.B.C</code>, the major version prefix would be before the <code class="code">A</code>.
+                  </p>
+                  <p class="p">
+                    This is only added if <code class="code">version_major</code> is not empty.
+                  </p>
+                  <p class="p">
+                    This defaults to the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> period character <code class="code">.</code>.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">version_minor</code>:</div>
+                  <p class="p">
+                    The minor version number (or in theory any characters allowed in a filename).
+                  </p>
+                  <p class="p">
+                    This should generally be a positive number or 0.
+                  </p>
+                  <p class="p">
+                    Anything else is currently untested but allowed.
+                  </p>
+                  <p class="p">
+                    With a structure of <code class="code">A.B.C</code>, the minor version would be the <code class="code">B</code>.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">version_minor_prefix</code>:</div>
+                  <p class="p">
+                    The version minor prefix is the character used to separate the major from the minor.
+                  </p>
+                  <p class="p">
+                    This can zero or more characters.
+                  </p>
+                  <p class="p">
+                    With a structure of <code class="code">A.B.C</code>, the minor version prefix would be the <code class="code">.</code> before the <code class="code">B</code>.
+                  </p>
+                  <p class="p">
+                    This is only added if <code class="code">version_minor</code> is not empty.
+                  </p>
+                  <p class="p">
+                    This defaults to the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> period character <code class="code">.</code>.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">version_micro</code>:</div>
+                  <p class="p">
+                    The micro version number (or in theory any characters allowed in a filename).
+                  </p>
+                  <p class="p">
+                    This should generally be a positive number or 0.
+                  </p>
+                  <p class="p">
+                    Anything else is currently untested but allowed.
+                  </p>
+                  <p class="p">
+                    With a structure of <code class="code">A.B.C</code>, the micro version would be the <code class="code">C</code>.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">version_micro_prefix</code>:</div>
+                  <p class="p">
+                    The version micro prefix is the character used to separate the minor from the micro.
+                  </p>
+                  <p class="p">
+                    This can zero or more characters.
+                  </p>
+                  <p class="p">
+                    With a structure of <code class="code">A.B.C</code>, the micro version prefix would be the <code class="code">.</code> before the <code class="code">C</code>.
+                  </p>
+                  <p class="p">
+                    This is only added if <code class="code">version_micro</code> is not empty.
+                  </p>
+                  <p class="p">
+                    This defaults to the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> period character <code class="code">.</code>.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">version_nano</code>:</div>
+                  <p class="p">
+                    The nano version number (or in theory any characters allowed in a filename).
+                  </p>
+                  <p class="p">
+                    This should generally be a positive number or 0.
+                  </p>
+                  <p class="p">
+                    Anything else is currently untested but allowed.
+                  </p>
+                  <p class="p">
+                    With a structure of <code class="code">A.B.C.D</code>, the micro version prefix would be the <code class="code">.</code> before the <code class="code">D</code>.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">version_nano_prefix</code>:</div>
+                  <p class="p">
+                    The version nano prefix is the character used to separate the micro from the nano.
+                  </p>
+                  <p class="p">
+                    This can zero or more characters.
+                  </p>
+                  <p class="p">
+                    With a structure of <code class="code">A.B.C.D</code>, the minor version would be the <code class="code">.</code> before the <code class="code">D</code>.
+                  </p>
+                  <p class="p">
+                    This is only added if <code class="code">version_nano</code> is not empty.
+                  </p>
+                  <p class="p">
+                    This defaults to the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> period character <code class="code">.</code>.
+                  </p>
+                </li>
+                <li>
+                  <div><code class="code">version_target</code>:</div>
+                  <p class="p">
+                    Designates which version should be used when linking the shared library.
+                  </p>
+                  <p class="p">
+                    Any version prefixes are used as defined.
+                  </p>
+                  <p class="p">
+                    The default target is <code class="code">micro</code>.
+                  </p>
+                  <p class="p">
+                    When <code class="code">major</code> is used, a shared library is generated with <code class="code">-Wl,-soname,libX.so.A</code>, whereas <code class="code">X</code> is the <code class="code">build_name</code> and <code class="code">A</code> is the major version.
+                  </p>
+                  <p class="p">
+                    When <code class="code">minor</code> is used, a shared library is generated with <code class="code">-Wl,-soname,libX.so.A.B</code>, whereas <code class="code">X</code> is the <code class="code">build_name</code> and <code class="code">A.B</code> is the major and minor versions, respectively.
+                  </p>
+                  <p class="p">
+                    When <code class="code">micro</code> is used, a shared library is generated with <code class="code">-Wl,-soname,libX.so.A.B.C</code>, whereas <code class="code">X</code> is the <code class="code">build_name</code> and <code class="code">A.B.C</code> is the major, minor, and micro versions, respectively.
+                  </p>
+                  <p class="p">
+                    When <code class="code">nano</code> is used, a shared library is generated with <code class="code">-Wl,-soname,libX.so.A.B.C.D</code>, whereas <code class="code">X</code> is the <code class="code">build_name</code> and <code class="code">A.B.C.D</code> is the major, minor, micro, and nano versions, respectively.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

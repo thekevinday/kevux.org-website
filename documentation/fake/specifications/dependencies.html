@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Documentation - FSS Extended Read - Specifications</title>
+    <title>Documentation - Featureless Make - Specification - Dependencies</title>
 
-    <base href="../../">
+    <base href="../../../">
 
     <meta charset="UTF-8">
     <meta name="author" content="Kevin Day">
-    <meta name="description" content="FSS Extended Read program specifications.">
-    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, FSS Extended Read, Open-Source, Specification">
+    <meta name="description" content="Featureless Make program dependencies specification.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Featureless Make, Open-Source, Specification">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
@@ -23,7 +23,7 @@
     <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
     <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
 
-    <link rel="canonical" href="documentation/fss_extended_read/specifications.html">
+    <link rel="canonical" href="documentation/fake/specifications/dependencies.html">
     <link type="image/x-icon" rel="icon" href="images/kevux.ico">
     <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
     <link type="text/html" rel="license" href="licenses.html">
@@ -54,24 +54,39 @@
           </div>
           <div class="nav-item block">
             <div class="nav-text notice">Documentation</div>
-            <a href="documentation/fss_extended_read.html" class="nav-text link">FSS Extended Read</a>
+            <a href="documentation/fake.html" class="nav-text link">Featureless Make</a>
           </div>
           <div class="nav-item block">
-            <a href="documentation/fss_extended_read.html#parameters-standard" class="nav-text link">Standard Parameters</a>
+            <a href="documentation/fake.html#parameters-standard" class="nav-text link">Standard Parameters</a>
           </div>
           <div class="nav-item block">
-            <a href="documentation/fss_extended_read.html#parameters-program" class="nav-text link">Program Parameters</a>
+            <a href="documentation/fake.html#parameters-program" class="nav-text link">Program Parameters</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fake.html#operations" class="nav-text link">Operations</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Specifications</div>
+            <a href="documentation/fake/specifications.html" class="nav-text link">Featureless Make</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fake/specifications/defines.html" class="nav-text link">Defines</a>
           </div>
           <div class="nav-item block highlight unlink">
-            <div class="nav-text notice">Specifications</div>
-            <div class="nav-text unlink">FSS Extended Read</div>
+            <div class="nav-text unlink">Dependencies</div>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fake/specifications/fakefile.html" class="nav-text link">Fakefile</a>
+          </div>
+          <div class="nav-item block">
+            <a href="documentation/fake/specifications/settings.html" class="nav-text link">Settings</a>
           </div>
           <div class="nav-item block">
             <div class="nav-text notice">APIs</div>
           </div>
           <div class="nav-item block ellipses">
-            <a href="documentation/fss_extended_read/specifications.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
-            <a href="documentation/fss_extended_read/specifications.html" class="nav-text link close">Collapse Menu</a>
+            <a href="documentation/fake/specifications/dependencies.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="documentation/fake/specifications/dependencies.html" class="nav-text link close">Collapse Menu</a>
           </div>
         </nav>
       </div>
@@ -79,13 +94,26 @@
       <div role="document" class="main-block">
         <main class="main">
           <header class="section-header header">
-            <h1 class="section-title h h1">FSS Extended Read Specifications</h1>
+            <h1 class="section-title h h1">Featureless Make Dependencies Specification</h1>
           </header>
 
           <div class="main-content">
             <p class="p">
-              The <abbr title="Featureless Linux Library">FLL</abbr> project provides several <a href="fll/specifications.html" class="link">specifications</a>.
-              The <strong>FSS Extended Read</strong> does not directly use or provide any of these specifications.
+              The build settings <strong>dependencies</strong> file follows the <code class="code">FSS-0001 (Extended)</code> format.
+            </p>
+            <p class="p">
+              Each Object represents a specific project name as it would be linked against.
+            </p>
+            <p class="p">
+              Each Content represents associated information, such as a version number.
+            </p>
+            <p class="p">
+              Future versions of this will clarify what and how Content, such as version numbers, are to be used and processed.
+            </p>
+            <p class="p">
+              This file is originally intended for dependencies provided by the <abbr title="Featureless Linux Library">FLL</abbr> project.
+              Order matters, and the provided order represents the order of dependencies.
+              The first entry therefore has no preceding dependency and the last dependency could potentially depend on all dependencies above it.
             </p>
           </div>
         </main>
