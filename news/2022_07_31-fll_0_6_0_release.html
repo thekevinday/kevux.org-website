@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>News - 2022/07/31 - FLL 0.6.0 Release</title>
+
+    <base href="../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="News post on 2022/07/31.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, News">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="news/2022_07_31-fll_0_6_0_release.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js news">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item active"><a href="news.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="news.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block highlight unlink">
+            <div class="nav-text notice">2022 / 07 / 31</div>
+            <div class="nav-text unlink">FLL 0.6.0 Release</div>
+          </div>
+          <div class="nav-item block">
+            <a href="news/2022_07_31-fll_0_6_0_release.html#example_makefile" class="nav-text link">Example Makefile</a>
+          </div>
+          <div class="nav-item block">
+            <a href="news/2022_07_31-fll_0_6_0_release.html#example_fakefile" class="nav-text link">Example Fakefile</a>
+          </div>
+          <div class="nav-item block">
+            <a href="news/2022_07_31-fll_0_6_0_release.html#example_controller" class="nav-text link">Example Controller Files</a>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="news/2022_07_31-fll_0_6_0_release.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="news/2022_07_31-fll_0_6_0_release.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">2022 / 07 / 31 - FLL 0.6.0 Release</h1>
+          </header>
+
+          <div class="main-content">
+            <p class="p">
+              The Featureless Linux Library stable version 0.6.0 is released.
+            </p>
+            <p class="p">
+              Several new programs are introduced since the 0.4.0 stable release series:
+            </p>
+            <ul>
+              <li>control</li>
+              <li>controller</li>
+              <li>fss_embedded_list_read</li>
+              <li>fss_embedded_list_write</li>
+              <li>fss_extended_list_write</li>
+              <li>fss_identify</li>
+              <li>fss_payload_read</li>
+              <li>fss_payload_write</li>
+              <li>iki_write</li>
+              <li>utf8</li>
+            </ul>
+            <p class="p">
+              Most notable of these programs are the <strong>controller</strong> program and the <strong>utf8</strong> program.
+            </p>
+            <p class="p">
+              The <strong>controller</strong> program is a re-interpretation of the <strong>Featureless Make</strong> program written in a more generalized fashion that is focused on performing a set of tasks.
+              This is very similar to a system initialize program such as <em>sysvinit</em>.
+              Support for running as a system initialize replacement is partially complete.
+              There is currently no way to send messages to the <strong>controller</strong> program to start and stop anything.
+              The <strong>control</strong> program, which is used to communicate to the <strong>controller</strong> program is also incomplete.
+              The next <abbr title="Featureless Linux Library">FLL</abbr> development verrsion, the 0.7.0 series, will heavily focused on network protocols.
+            </p>
+            <p class="p">
+              The <strong>utf8</strong> program is a handy tool to convert from <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> characters to their Unicode value or vice-versa.
+              This can convert entire files.
+            </p>
+            <p class="p">
+              <strong>Featureless Make</strong> has some major changes.
+              The <strong>fake</strong> program now accepts piped data, which must be a valid <em>fakefile</em>.
+              There are new Objects available for the <a href="documentation/fake/specifications/settings.html" class="link">build settings</a> and the <a href="documentation/fake/specifications/fakefile.html" class="link">fakefile</a>.
+            </p>
+            <p class="p">
+              The default behavior of <strong>Featureless Make</strong> is now more similar to the <em>GNU make</em> program.
+              When running <code class="code">fake</code> with no parameters, it will first search for a <code class="code">fakefile</code> in the current directory before checking for one at <code class="code">data/build/fakefile</code>.
+              This is analogous to how running <code class="code">make</code> with no parameters will search for a <code class="code">Makefile</code> in the current directory.
+            </p>
+            <p class="p">
+              One major change is the complete rewrite of the printing functionality.
+              The new design is heavily focused around formatted printing, similar to the <code class="code">printf()</code> family of functions.
+              Unlike the standard <code class="code">printf()</code> family of functions, the new formatted printing understands the <abbr title="Featureless Linux Library">FLL</abbr> special structures such as dynamic strings.
+              The new formatted printing is <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> aware and can handle printing raw strings, printing safe strings, and printing NULL characters.
+              A safe string is a string where control codes or invalid Unicode sequences are replaced with place holders.
+            </p>
+            <p class="p">
+              That standard console options have changed.
+              All output changing parameters have had their short parameter argument made upper case.
+              For example, <code class="code">+q</code> is now <code class="code">+Q</code>.
+            </p>
+            <p class="p">
+              A new <code class="code">+E/++error</code> parameter is introduced.
+              This new parameter acts almost identical to <code class="code">+Q/++Quiet</code>.
+              The difference is that error messages are still printed.
+            </p>
+            <p class="p">
+              The documentation may be found with the source code.
+              Much of this website has been updated to also provide <a href="documentation.html" class="link">most of this documentation</a> as well.
+              The <abbr title="Application Programming Interface">API</abbr> is currently only available in the source code via the header files.
+            </p>
+            <p class="p">
+              A major improvement of this release is safer and more stable code.
+              This is thanks to a massive amount of time and effort spent into writing unit tests.
+              The unit tests process is performed using the <strong>Featureless Make</strong> program.
+              In addition to the unit tests, the static analyzer from GCC has been used to better identify and resolve problems.
+            </p>
+            <p class="p">
+              The following are changes since the 0.5.10 development release.
+            </p>
+            <p class="p">
+              <strong>Security Fixes:</strong>
+            </p>
+            <ul>
+              <li><strong>FLL</strong>: Environment value has invalid read in f_environment_set().</li>
+              <li><strong>FLL</strong>: Invalid read for formatted printing using partial ranges on a string.</li>
+              <li><strong>FLL</strong>: Invalid reads on NULL terminated strings with a max width greater than 1.</li>
+              <li><strong>FLL</strong>: Add support for +E/++error and change '+q' to '+Q'.</li>
+              <li><strong>Featureless Make</strong>: Invalid read when using -s/--settings.</li>
+              <li><strong>Featureless Make</strong>: Invalid read when processing not condition minimum value.</li>
+              <li><strong>Featureless Make</strong>: Invalid read when processing an empty fakefile.</li>
+            </ul>
+            <p class="p">
+              <strong>Features:</strong>
+            </p>
+            <ul>
+              <li><strong>FLL</strong>: Add missing function f_environment_get_all().</li>
+              <li><strong>FLL</strong>: Add missing signal functions f_signal_action(), f_signal_pause(), and f_signal_suspend().</li>
+              <li><strong>Controller</strong>: Expose the "define" and "parameter" at the Entry and Exit level.</li>
+              <li><strong>Featureless Make</strong>: Now supports a piped fakefile.</li>
+              <li><strong>Featureless Make</strong>: Now supports the "write" operation.</li>
+              <li><strong>Featureless Make</strong>: Now supports to the "print" operation for escape sequences just like the "write" operation has.</li>
+              <li><strong>Featureless Make</strong>: Now supports the "top" parameter.</li>
+              <li><strong>Featureless Make</strong>: Now supports the "current" parameter.</li>
+              <li><strong>Featureless Make</strong>: Improve user experience by defaulting specified fakefile and build settings file to present working directory.</li>
+            </ul>
+            <p class="p">
+              <strong>Bug Fixes:</strong>
+            </p>
+            <ul>
+              <li><strong>FLL</strong>: IKI variables are incorrectly being processed when there is a non-IKI IKI-like string.</li>
+              <li><strong>FLL</strong>: Single quotes are not being properly detected in FSS Extended Read functions.</li>
+              <li><strong>FLL</strong>: private_f_file_open_at() has an incomplete set if ifdef conditions.</li>
+              <li><strong>Byte Dump</strong>: Parameter after either the -N or -W is being processed when it should not be.</li>
+              <li><strong>Controller</strong>: Incorrect information is printed on certain errors.</li>
+              <li><strong>Controller</strong>: Delimits are not being applied for IKI variables.</li>
+              <li><strong>Controller</strong>: "State is now ..." should not be printed when quiet is passed.</li>
+              <li><strong>Controller</strong>: Guarantee that the child processes are terminated.</li>
+              <li><strong>Controller</strong>: IKI substitution is incorrectly applied.</li>
+              <li><strong>Featureless Make</strong>: Condition blocks are still being processed when they should be skipped.</li>
+              <li><strong>Featureless Make</strong>: Empty strings improperly pass validation checks.</li>
+              <li><strong>Featureless Make</strong>: IKI variable substitution results in incorrect parameter structure.</li>
+              <li><strong>Featureless Make</strong>: Error verbosity is not being preserved.</li>
+              <li><strong>Featureless Make</strong>: Text is being incorrectly stripped out.</li>
+              <li><strong>Featureless Make</strong>: The copy operation doesn't work properly with trailing slashes.</li>
+              <li><strong>Featureless Make</strong>: Copy should destination should be the base name rather than the entire path.</li>
+              <li><strong>Featureless Make</strong>: Link operation is incorrect, support new link arguments, and clone, copy, and move operations failure problems.</li>
+              <li><strong>Featureless Make</strong>: Block is incorrectly being reset when an else condition precedes an if condition.</li>
+            </ul>
+            <p class="p">
+              <strong>Refactors:</strong>
+            </p>
+            <ul>
+              <li><strong>Controller</strong>: Use "settings" instead of "setting" for better consistency between fake program and controller program.</li>
+              <li><strong>Featureless Make</strong>: Rename "script" to "engine" to avoid possible confusion with the different uses of "script".</li>
+              <li><strong>Featureless Make</strong>: "if defined parameter" and similar are simplified into something more like "if define" and "if parameter".</li>
+              <li><strong>Featureless Make</strong>: Rename "exists" to "exist".</li>
+            </ul>
+            <p class="p">
+              <strong>Updates:</strong>
+            </p>
+            <ul>
+              <li><strong>FLL</strong>: Change execute error code handling to better accommodate standard GNU Bash return codes.</li>
+              <li><strong>FLL</strong>: Further reduce memory allocation pressure by increasing default small allocation.</li>
+              <li><strong>FLL</strong>: Restrict environment to PATH and LD_LIBRARY_PATH by default in all FLL build settings files.</li>
+              <li><strong>FLL</strong>: The standard program setup should explicitly unblock all signals other than the default</li>
+              <li><strong>FLL</strong>: Clarify IKI standard in regards to delimits and improve specification file.</li>
+              <li><strong>FLL</strong>: Improve specification files.</li>
+              <li><strong>FLL</strong>: The f_color needs to follow latest practices with private functions.</li>
+              <li><strong>Controller</strong>: Change default controller settings path to './'.</li>
+              <li><strong>Controller</strong>: Strip out NULL characters after applying delimits.</li>
+              <li><strong>Controller</strong>: Timeout changes.</li>
+              <li><strong>Featureless Make</strong>: Make environment variable handling design consistent between fake and controller programs.</li>
+              <li><strong>Featureless Make</strong>: Ensure first if block is initialized to operate.</li>
+              <li><strong>Featureless Make</strong>: Replace Unicode Terminate escape sequence with Non-printing escape sequence.</li>
+              <li><strong>Featureless Make</strong>: Reduce number of allocations by pre-determining size when easily possible.</li>
+              <li><strong>Featureless Make</strong>: Organize the validate operation into separate type functions and improve error handling logic.</li>
+              <li><strong>Featureless Make</strong>: The example bzip2 now supports running the tests.</li>
+            </ul>
+            <p class="p">
+              Check out the project on the <a href="fll.html#release" class="link"><abbr title="Featureless Linux Library">FLL</abbr> release</a> page.
+            </p>
+            <p class="p">
+              The project is built like a tool chest.
+              Individuals who are unfamiliar with the project should have an easier time trying out the pre-packaged <a href="https://sourceforge.net/projects/fll/files/FLL-0.5/0.6.0/monolithic/" class="link external">monolithic sources</a>.
+              These <a href="https://sourceforge.net/projects/fll/files/FLL-0.5/0.6.0/programs/" class="link external">programs</a>, by default, are designed to build against a library built using the monolithic source tree.
+            </p>
+            <p class="p">
+              <strong>Kevin Day</strong>
+            </p>
+          </div>
+
+          <article id="example_makefile" class="article">
+            <header class="article-header header">
+              <h2 class="article-title h h2">Example Bzip2 Makefile</h2>
+            </header>
+
+            <div class="article-content">
+              <p class="p">
+                <strong>Bzip2</strong> has a simple <code class="code">Makefile</code> that is used here as an example of the differences between a <code class="code">Makefile</code> and a <code class="code">fakefile</code>.
+              </p>
+              <p class="p">
+                This is taken straight out of the <strong>Bzip2</strong>, version 1.0.8, source code and is under its own separate copyright.
+                This is file has a copyright of: <em>Copyright (C) 1996-2019 Julian Seward</em>.
+                The use here as an example should be technically under the <em>Fair Use</em> laws.
+                Just in case, the entire file is provided with the copyright comments with it.
+                The Bzip2 source code may be found at <a href="https://www.sourceware.org/bzip2/" class="link external">https://www.sourceware.org/bzip2/</a>.
+              </p><pre class="preserve">
+# ------------------------------------------------------------------
+# This file is part of bzip2/libbzip2, a program and library for
+# lossless, block-sorting data compression.
+#
+# bzip2/libbzip2 version 1.0.8 of 13 July 2019
+# Copyright (C) 1996-2019 Julian Seward <jseward@acm.org>
+#
+# Please read the WARNING, DISCLAIMER and PATENTS sections in the
+# README file.
+#
+# This program is released under the terms of the license contained
+# in the file LICENSE.
+# ------------------------------------------------------------------
+
+SHELL=/bin/sh
+
+# To assist in cross-compiling
+CC=gcc
+AR=ar
+RANLIB=ranlib
+LDFLAGS=
+
+BIGFILES=-D_FILE_OFFSET_BITS=64
+CFLAGS=-Wall -Winline -O2 -g $(BIGFILES)
+
+# Where you want it installed when you do 'make install'
+PREFIX=/usr/local
+
+
+OBJS= blocksort.o  \
+      huffman.o    \
+      crctable.o   \
+      randtable.o  \
+      compress.o   \
+      decompress.o \
+      bzlib.o
+
+all: libbz2.a bzip2 bzip2recover test
+
+bzip2: libbz2.a bzip2.o
+  $(CC) $(CFLAGS) $(LDFLAGS) -o bzip2 bzip2.o -L. -lbz2
+
+bzip2recover: bzip2recover.o
+  $(CC) $(CFLAGS) $(LDFLAGS) -o bzip2recover bzip2recover.o
+
+libbz2.a: $(OBJS)
+  rm -f libbz2.a
+  $(AR) cq libbz2.a $(OBJS)
+  @if ( test -f $(RANLIB) -o -f /usr/bin/ranlib -o \
+    -f /bin/ranlib -o -f /usr/ccs/bin/ranlib ) ; then \
+    echo $(RANLIB) libbz2.a ; \
+    $(RANLIB) libbz2.a ; \
+  fi
+
+check: test
+test: bzip2
+  @cat words1
+  ./bzip2 -1  < sample1.ref > sample1.rb2
+  ./bzip2 -2  < sample2.ref > sample2.rb2
+  ./bzip2 -3  < sample3.ref > sample3.rb2
+  ./bzip2 -d  < sample1.bz2 > sample1.tst
+  ./bzip2 -d  < sample2.bz2 > sample2.tst
+  ./bzip2 -ds < sample3.bz2 > sample3.tst
+  cmp sample1.bz2 sample1.rb2
+  cmp sample2.bz2 sample2.rb2
+  cmp sample3.bz2 sample3.rb2
+  cmp sample1.tst sample1.ref
+  cmp sample2.tst sample2.ref
+  cmp sample3.tst sample3.ref
+  @cat words3
+
+install: bzip2 bzip2recover
+  if ( test ! -d $(PREFIX)/bin ) ; then mkdir -p $(PREFIX)/bin ; fi
+  if ( test ! -d $(PREFIX)/lib ) ; then mkdir -p $(PREFIX)/lib ; fi
+  if ( test ! -d $(PREFIX)/man ) ; then mkdir -p $(PREFIX)/man ; fi
+  if ( test ! -d $(PREFIX)/man/man1 ) ; then mkdir -p $(PREFIX)/man/man1 ; fi
+  if ( test ! -d $(PREFIX)/include ) ; then mkdir -p $(PREFIX)/include ; fi
+  cp -f bzip2 $(PREFIX)/bin/bzip2
+  cp -f bzip2 $(PREFIX)/bin/bunzip2
+  cp -f bzip2 $(PREFIX)/bin/bzcat
+  cp -f bzip2recover $(PREFIX)/bin/bzip2recover
+  chmod a+x $(PREFIX)/bin/bzip2
+  chmod a+x $(PREFIX)/bin/bunzip2
+  chmod a+x $(PREFIX)/bin/bzcat
+  chmod a+x $(PREFIX)/bin/bzip2recover
+  cp -f bzip2.1 $(PREFIX)/man/man1
+  chmod a+r $(PREFIX)/man/man1/bzip2.1
+  cp -f bzlib.h $(PREFIX)/include
+  chmod a+r $(PREFIX)/include/bzlib.h
+  cp -f libbz2.a $(PREFIX)/lib
+  chmod a+r $(PREFIX)/lib/libbz2.a
+  cp -f bzgrep $(PREFIX)/bin/bzgrep
+  ln -s -f $(PREFIX)/bin/bzgrep $(PREFIX)/bin/bzegrep
+  ln -s -f $(PREFIX)/bin/bzgrep $(PREFIX)/bin/bzfgrep
+  chmod a+x $(PREFIX)/bin/bzgrep
+  cp -f bzmore $(PREFIX)/bin/bzmore
+  ln -s -f $(PREFIX)/bin/bzmore $(PREFIX)/bin/bzless
+  chmod a+x $(PREFIX)/bin/bzmore
+  cp -f bzdiff $(PREFIX)/bin/bzdiff
+  ln -s -f $(PREFIX)/bin/bzdiff $(PREFIX)/bin/bzcmp
+  chmod a+x $(PREFIX)/bin/bzdiff
+  cp -f bzgrep.1 bzmore.1 bzdiff.1 $(PREFIX)/man/man1
+  chmod a+r $(PREFIX)/man/man1/bzgrep.1
+  chmod a+r $(PREFIX)/man/man1/bzmore.1
+  chmod a+r $(PREFIX)/man/man1/bzdiff.1
+  echo ".so man1/bzgrep.1" > $(PREFIX)/man/man1/bzegrep.1
+  echo ".so man1/bzgrep.1" > $(PREFIX)/man/man1/bzfgrep.1
+  echo ".so man1/bzmore.1" > $(PREFIX)/man/man1/bzless.1
+  echo ".so man1/bzdiff.1" > $(PREFIX)/man/man1/bzcmp.1
+
+clean:
+  rm -f *.o libbz2.a bzip2 bzip2recover \
+  sample1.rb2 sample2.rb2 sample3.rb2 \
+  sample1.tst sample2.tst sample3.tst
+
+blocksort.o: blocksort.c
+  @cat words0
+  $(CC) $(CFLAGS) -c blocksort.c
+huffman.o: huffman.c
+  $(CC) $(CFLAGS) -c huffman.c
+crctable.o: crctable.c
+  $(CC) $(CFLAGS) -c crctable.c
+randtable.o: randtable.c
+  $(CC) $(CFLAGS) -c randtable.c
+compress.o: compress.c
+  $(CC) $(CFLAGS) -c compress.c
+decompress.o: decompress.c
+  $(CC) $(CFLAGS) -c decompress.c
+bzlib.o: bzlib.c
+  $(CC) $(CFLAGS) -c bzlib.c
+bzip2.o: bzip2.c
+  $(CC) $(CFLAGS) -c bzip2.c
+bzip2recover.o: bzip2recover.c
+  $(CC) $(CFLAGS) -c bzip2recover.c
+
+
+distclean: clean
+  rm -f manual.ps manual.html manual.pdf
+
+DISTNAME=bzip2-1.0.8
+dist: check manual
+  rm -f $(DISTNAME)
+  ln -s -f . $(DISTNAME)
+  tar cvf $(DISTNAME).tar \
+     $(DISTNAME)/blocksort.c \
+     $(DISTNAME)/huffman.c \
+     $(DISTNAME)/crctable.c \
+     $(DISTNAME)/randtable.c \
+     $(DISTNAME)/compress.c \
+     $(DISTNAME)/decompress.c \
+     $(DISTNAME)/bzlib.c \
+     $(DISTNAME)/bzip2.c \
+     $(DISTNAME)/bzip2recover.c \
+     $(DISTNAME)/bzlib.h \
+     $(DISTNAME)/bzlib_private.h \
+     $(DISTNAME)/Makefile \
+     $(DISTNAME)/LICENSE \
+     $(DISTNAME)/bzip2.1 \
+     $(DISTNAME)/bzip2.1.preformatted \
+     $(DISTNAME)/bzip2.txt \
+     $(DISTNAME)/words0 \
+     $(DISTNAME)/words1 \
+     $(DISTNAME)/words2 \
+     $(DISTNAME)/words3 \
+     $(DISTNAME)/sample1.ref \
+     $(DISTNAME)/sample2.ref \
+     $(DISTNAME)/sample3.ref \
+     $(DISTNAME)/sample1.bz2 \
+     $(DISTNAME)/sample2.bz2 \
+     $(DISTNAME)/sample3.bz2 \
+     $(DISTNAME)/dlltest.c \
+     $(DISTNAME)/manual.html \
+     $(DISTNAME)/manual.pdf \
+     $(DISTNAME)/manual.ps \
+     $(DISTNAME)/README \
+     $(DISTNAME)/README.COMPILATION.PROBLEMS \
+     $(DISTNAME)/README.XML.STUFF \
+     $(DISTNAME)/CHANGES \
+     $(DISTNAME)/libbz2.def \
+     $(DISTNAME)/libbz2.dsp \
+     $(DISTNAME)/dlltest.dsp \
+     $(DISTNAME)/makefile.msc \
+     $(DISTNAME)/unzcrash.c \
+     $(DISTNAME)/spewG.c \
+     $(DISTNAME)/mk251.c \
+     $(DISTNAME)/bzdiff \
+     $(DISTNAME)/bzdiff.1 \
+     $(DISTNAME)/bzmore \
+     $(DISTNAME)/bzmore.1 \
+     $(DISTNAME)/bzgrep \
+     $(DISTNAME)/bzgrep.1 \
+     $(DISTNAME)/Makefile-libbz2_so \
+     $(DISTNAME)/bz-common.xsl \
+     $(DISTNAME)/bz-fo.xsl \
+     $(DISTNAME)/bz-html.xsl \
+     $(DISTNAME)/bzip.css \
+     $(DISTNAME)/entities.xml \
+     $(DISTNAME)/manual.xml \
+     $(DISTNAME)/format.pl \
+     $(DISTNAME)/xmlproc.sh
+  gzip -v $(DISTNAME).tar
+
+# For rebuilding the manual from sources on my SuSE 9.1 box
+
+MANUAL_SRCS=  bz-common.xsl bz-fo.xsl bz-html.xsl bzip.css \
+    entities.xml manual.xml
+
+manual: manual.html manual.ps manual.pdf
+
+manual.ps: $(MANUAL_SRCS)
+  ./xmlproc.sh -ps manual.xml
+
+manual.pdf: $(MANUAL_SRCS)
+  ./xmlproc.sh -pdf manual.xml
+
+manual.html: $(MANUAL_SRCS)
+  ./xmlproc.sh -html manual.xml
+</pre>
+            </div>
+          </article>
+
+          <article id="example_fakefile" class="article">
+            <header class="article-header header">
+              <h2 class="article-title h h2">Example Bzip2 Fakefile</h2>
+            </header>
+
+            <div class="article-content">
+              <p class="p">
+                <strong>Featureless Make</strong> has a different design ideology that the <em>GNU Make</em> project.
+                The file should, <em>relatively speaking</em>, be easy to read within consideration of the technical field and the complexity of the tasks at hand.
+                The build system should not be involved with installing to the system.
+                Installation should be a distribution level task.
+                This does not mean that <strong>Featureless Make</strong> cannot do that.
+                All this means is that the project is optimized to compile or build the files.
+              </p>
+              <p class="p">
+                What this means is that there is not a one to one relationship between a typical <code class="code">Makefile</code> and typical <code class="code">fakefile</code>.
+                This example focuses on how a <code class="code">fakefile</code> should be designed.
+                This is also a proof of concept design that intentionally goes out of its way to use both build systems offered by <strong>Featureless Make</strong>.
+              </p>
+              <p class="p">
+                There are three files used for this example to create a <code class="code">bzip2</code> and a <code class="code">bzip2recover</code> binary.
+                The first is <code class="code">fakefile</code>.
+              </p><pre class="preserve">
+# fss-0005 iki-0002
+#
+# This is designed for compiling bzip2-1.0.8.
+#
+# To use this do the following:
+#   1) Download and extract bzip2-1.0.8.
+#   2) Change into the extracted bzip2-1.0.8 directory.
+#   3) Create the directory path "data/build/" within this bzip2-1.0.8 directory.
+#   4) Copy the files fakefile-bzip2, settings-bzip2, and settings-bzip2recover) into the created directory path "data/build/".
+#   5) Use the featureless make build operation to make, such as: "fake".
+
+settings:
+  environment PATH LD_LIBRARY_PATH
+
+main:
+  operate bzip2
+  operate bzip2recover
+  operate scripts
+  operate tests
+
+bzip2:
+  print
+  print Building settings-bzip2.
+  build settings-bzip2
+
+bzip2recover:
+  print
+  print Building settings-bzip2recover.
+  build settings-bzip2recover
+
+scripts:
+  print
+  print Copying bzip2 scripts.
+  touch directory build build/programs build/programs/scripts
+  copy bzdiff bzgrep build/programs/scripts
+
+tests:
+  print
+  print Performing tests.
+
+  # Conditionally setup the LD_LIBRARY_PATH to include the just compiled libraries.
+  if define LD_LIBRARY_PATH
+  and parameter work
+    define LD_LIBRARY_PATH 'build/libraries/shared:parameter:"work:value"libraries/shared:define:"LD_LIBRARY_PATH"'
+
+  else
+  if define LD_LIBRARY_PATH
+    define LD_LIBRARY_PATH 'build/libraries/shared:define:"LD_LIBRARY_PATH"'
+
+  else
+  if parameter work
+    define LD_LIBRARY_PATH 'build/libraries/shared:parameter:"work:value"libraries/shared'
+
+  # Setup the PATH to use the just compiled programs.
+  define PATH programs/static:programs/shared:define:"PATH"
+
+  # Execute the tests (redirects are not currently supported, so execute using bash).
+  run cat words1
+  run bash -c 'bzip2 -1  < sample1.ref > sample1.rb2'
+  run bash -c 'bzip2 -2  < sample2.ref > sample2.rb2'
+  run bash -c 'bzip2 -3  < sample3.ref > sample3.rb2'
+  run bash -c 'bzip2 -d  < sample1.bz2 > sample1.tst'
+  run bash -c 'bzip2 -d  < sample2.bz2 > sample2.tst'
+  run bash -c 'bzip2 -ds < sample3.bz2 > sample3.tst'
+  run cmp sample1.bz2 sample1.rb2
+  run cmp sample2.bz2 sample2.rb2
+  run cmp sample3.bz2 sample3.rb2
+  run cmp sample1.tst sample1.ref
+  run cmp sample2.tst sample2.ref
+  run cmp sample3.tst sample3.ref
+  run cat words3
+</pre>
+              <p class="p">
+                The second is <code class="code">settings-bzip2</code>.
+              </p><pre class="preserve">
+# fss-0001
+#
+# This is designed for compiling bzip2-1.0.8.
+#
+# To use this do the following:
+#   1) Download and extract bzip2-1.0.8.
+#   2) Change into the extracted bzip2-1.0.8 directory.
+#   3) Create the directory path "data/build/" within this bzip2-1.0.8 directory.
+#   4) Copy this file (settings-bzip2) into the created directory path "data/build/".
+#   5) Use the featureless make build operation to build, such as: "fake build -s settings-bzip2".
+
+build_name bzip2
+
+version_major 1
+version_minor 0
+version_micro 8
+version_file micro
+version_target major
+
+modes gcc clang
+modes_default gcc
+
+build_compiler gcc
+build_compiler-clang clang
+build_indexer ar
+build_indexer_arguments rcs
+build_language c
+build_libraries -lc
+build_sources_program blocksort.c huffman.c crctable.c randtable.c compress.c decompress.c bzlib.c bzip2.c
+build_sources_headers bzlib.h
+build_script no
+
+path_sources
+has_path_standard no
+preserve_path_headers no
+
+environment PATH LD_LIBRARY_PATH
+
+defines -D_FILE_OFFSET_BITS=64
+
+flags -z now -g -fdiagnostics-color=always -Wall -Winline -O2
+flags-clang -Wno-logical-op-parentheses
+flags_library -fPIC
+flags_program -fPIE
+</pre>
+              <p class="p">
+                The third is <code class="code">settings-bzip2recover</code>.
+              </p><pre class="preserve">
+# fss-0001
+#
+# This is designed for compiling bzip2-1.0.8.
+#
+# To use this do the following:
+#   1) download and extract bzip2-1.0.8.
+#   2) change into the extracted bzip2-1.0.8 directory.
+#   3) create the directory path "data/build/" within this bzip2-1.0.8 directory.
+#   4) copy this file (settings-bzip2recover) into the created directory path "data/build/".
+#   5) use the featureless make build operation to build, such as: "fake build -s settings-bzip2recover".
+
+build_name bzip2recover
+
+version_major 1
+version_minor 0
+version_micro 8
+version_file micro
+version_target major
+
+modes gcc clang
+modes_default gcc
+
+build_compiler gcc
+build_compiler-clang clang
+build_indexer ar
+build_indexer_arguments rcs
+build_language c
+build_libraries -lc
+build_sources_program bzip2recover.c
+build_script no
+
+path_sources
+has_path_standard no
+preserve_path_headers no
+
+environment PATH LD_LIBRARY_PATH
+
+defines -D_FILE_OFFSET_BITS=64
+
+flags -z now -g -fdiagnostics-color=always -Wall -Winline -O2
+flags-clang -Wno-logical-op-parentheses
+flags_library -fPIC
+flags_program -fPIE
+</pre>
+            </div>
+          </article>
+
+          <article id="example_controller" class="article">
+            <header class="article-header header">
+              <h2 class="article-title h h2">Example Controller Files</h2>
+            </header>
+
+            <div class="article-content">
+              <p class="p">
+                The <strong>Controller</strong> program has a similar design ideology to that of the <strong>Featureless Make</strong> program.
+                A key difference is that the <strong>Controller</strong> program operates more like a service, a program, or a <em>sysvinit</em> alternative rather than as a build system.
+              </p>
+              <p class="p">
+                An example usage would be to start the <code class="code">htop</code> program.
+                In this example, when the <code class="code">htop</code> program quits, the controller program will restart after a delay for a max of 3 times.
+                The controller command using these files would be executed using the command <code class="code">controller htop-command</code>.
+                Only two files are necessary to accomplish this task.
+                The first file is the <em>Entry</em> file, called <code class="code">entries/htop-command.entry</code>.
+              </p><pre class="preserve">
+# fss-0005
+
+settings:
+  mode program
+
+  control htop.socket
+  control_user 0
+  control_group 0
+  control_mode ug+rwx,o-rwx
+
+main:
+  start command htop
+</pre>
+              <p class="p">
+                The second file is is the <em>Rule</em> file, called <code class="code">rules/command/htop.rule</code>.
+              </p><pre class="preserve">
+# fss-000d
+
+settings:
+  name "Run htop"
+
+command:
+  start htop
+
+  rerun start success delay 3000 max 3
+</pre>
+            </div>
+          </article>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
