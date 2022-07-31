@@ -5,34 +5,34 @@
 
 Featureless Settings Specification: 000e - Payload:
   This is a "FSS-0002 (Basic List)" with two required objects\:
-  1) header.
-  2) payload.
+  1) "header".
+  2) "payload".
 
-  The header\:
-  - The header's Content is of type "FSS-0001 (Extended)".
-  - The header is recommended to have the Objects length, status, part, and total.
-  - The recommended length represents the size of the payload.
-  - The recommended part represents a single part of a set of packets for when the data being transmitted is split across multiple payloads.
-  - The recommended total represents the total number of parts representing a complete data transmitted across multiple payloads.
-  - The recommended status represents status codes (such as success or failure) and multiple.
-  - The Content for the recommended length and status are positive whole numbers (including zero) that may be in binary, octal, decimal, duodecimal, or hexidecimal numerical format.
+  The "header"\:
+  - The "header"'s Content is of type "FSS-0001 (Extended)".
+  - The "header" is recommended to have the Objects "length", "status", "part", and "total".
+  - The recommended "length" represents the size of the "payload".
+  - The recommended "part" represents a single part of a set of packets for when the data being transmitted is split across multiple payloads.
+  - The recommended "total" represents the total number of parts representing a complete data transmitted across multiple payloads.
+  - The recommended "status" represents status codes (such as success or failure) and multiple.
+  - The Content for the recommended "length" and "status" are positive whole numbers (including zero) that may be in "binary", "octal", "decimal", "duodecimal", or "hexidecimal" numerical format.
 
-  The payload\:
-  - The payload's Content may contain anything, including raw binary data.
-  - The payload is required to be the last list Object in the file.
-  - The payload is recommended to have its size designated in some manner in the header (such as with the recommended length).
-  - The payload is terminated by the EOF character or by the recommended length header.
-  - The payload may be empty (length may be zero), but the list Object payload must still exist.
-  - Nothing in the payload may be considered a valid list Object by the outer "FSS-0002 (Basic List)" and therefore escaping is unnecessary (No further processing by the outer "FSS-0002 (Basic List)" is allowed at this point).
-  - Comments in the payload are not considered comments and are instead considered part of the payload, as-is.
-  - Essentially, the payload should be treated as binary data embedded in a text file.
+  The "payload"\:
+  - The "payload"'s Content may contain anything, including raw binary data.
+  - The "payload" is "required" to be the last list Object in the file.
+  - The "payload" is recommended to have its size designated in some manner in the "header" (such as with the recommended "length").
+  - The "payload" is terminated by the EOF character or by the recommended "length" header.
+  - The "payload" may be empty (length may be zero), but the list Object "payload" must still exist.
+  - Nothing in the "payload" may be considered a valid list Object by the outer "FSS-0002 (Basic List)" and therefore escaping is unnecessary (No further processing by the outer "FSS-0002 (Basic List)" is allowed at this point).
+  - Comments in the "payload" are not considered comments and are instead considered part of the payload, as-is.
+  - Essentially, the "payload" should be treated as binary data embedded in a text file.
 
-  The recommended length header Object used to designate the payload size does not necessarily have to be defined in the header.
-  That is to say, if the payload is expected to be of some pre-defined or static length then a length does not need to be provided in the header.
+  The recommended "length" "header" Object used to designate the "payload" size does not necessarily have to be defined in the "header".
+  That is to say, if the "payload" is expected to be of some pre-defined or static length then a length does not need to be provided in the "header".
 
-  The recommended status header Object may be a string, such as "F_none", or a positive whole number.
+  The recommended "status" "header" Object may be a string, such as "F_none", or a positive whole number.
   What the status code represents is application specific (or specific to a sub-standard) but may often be used to represent FLL status code.
-  - The FLL status code is a 16-bit digit whose first two high-order bits represent error and warning ( representing signal).
+  - The FLL status code is a 16-bit digit whose first two high-order bits represent "error" and "warning" ( representing "signal").
   - The FLL status code as a number is binary sensitive and may not be portable across binaries or systems.
   - For best portability, consider using status as a name string to ensure cross-system or cross-binary compatibility.
 

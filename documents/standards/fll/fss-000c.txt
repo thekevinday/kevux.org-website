@@ -15,9 +15,9 @@ Featureless Settings Specification: 000C - IKI Text:
   Example\:
     # fss-000c iki-0000
 
-    This is a formal example utilizing the FSS headers.
+    This is a "formal example" utilizing the FSS headers.
 
   Example\:
     # iki-0000
 
-    This is a informal example utilizing the IKI headers.
+    This is a "informal example" utilizing the IKI headers.
