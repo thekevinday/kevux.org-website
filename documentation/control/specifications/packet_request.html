@@ -93,9 +93,9 @@
 
           <div class="main-content">
             <p class="p">
-              The <strong>Control</strong> follows a <em>Packet Request Specification</em>.
+              The <strong class="strong">Control</strong> follows a <em class="em">Packet Request Specification</em>.
               This specification is incomplete at this time as the functionality is not yet written.
-              This specification is intended to be shared with the <strong>Controller</strong> program.
+              This specification is intended to be shared with the <strong class="strong">Controller</strong> program.
             </p>
           </div>
 
@@ -106,30 +106,30 @@
 
             <div class="section-content">
               <p class="p">
-                The <strong>Control</strong> program sends packets and receives packet responses from the <strong>Controller</strong> program over the <strong>Controller</strong> program's control socket.
+                The <strong class="strong">Control</strong> program sends packets and receives packet responses from the <strong class="strong">Controller</strong> program over the <strong class="strong">Controller</strong> program's control socket.
                 This documentation describes the request packets sent by this program.
               </p>
               <p class="p">
-                The purpose of these request packets are to ask the <strong>Controller</strong> program to perform a requested action.
+                The purpose of these request packets are to ask the <strong class="strong">Controller</strong> program to perform a requested action.
               </p>
               <p class="p">
-                The communications to/from the <strong>Controller</strong> program utilize the <code class="code">FSS-000F (Simple Packet)</code>.
+                The communications to/from the <strong class="strong">Controller</strong> program utilize the <code class="code">FSS-000F (Simple Packet)</code>.
                 This Simple Packet is expected to contain within it the <code class="code">FSS-000E (Payload)</code> format.
               </p>
               <p class="p">
                 The Payload contains within it a Header and a Payload.
                 Note the potential confusion here between the Payload when referring to the Packet format and the Payload referring to the Content within the Payload Packet.
-                To avoid this, henceforth "<em>Payload Packet</em>" refers to the <code class="code">FSS-000E (Payload)</code> used within the <code class="code">FSS-000F (Simple Packet)</code>.
-                The "<em>Payload Header</em>" refers to either the Object (<code class="code">header:</code>) or Content within the Payload Packet representing the header.
-                The "<em>Payload Object</em>" refers to the Object within the Payload Packet (ie: <code class="code">payload:</code>).
-                The "<em>Payload Content</em>" refers to the Content within the Payload Packet.
+                To avoid this, henceforth "<em class="em">Payload Packet</em>" refers to the <code class="code">FSS-000E (Payload)</code> used within the <code class="code">FSS-000F (Simple Packet)</code>.
+                The "<em class="em">Payload Header</em>" refers to either the Object (<code class="code">header:</code>) or Content within the Payload Packet representing the header.
+                The "<em class="em">Payload Object</em>" refers to the Object within the Payload Packet (ie: <code class="code">payload:</code>).
+                The "<em class="em">Payload Content</em>" refers to the Content within the Payload Packet.
               </p>
               <p class="p">
                 The <code class="code">FSS-000E (Payload)</code> is very flexible in what it allows within the Header of the Payload Packet.
-                The <strong>Control</strong> program is more restrictive and supports only a subset of the possibilities (which this is explicitly allowed by the Specification).
+                The <strong class="strong">Control</strong> program is more restrictive and supports only a subset of the possibilities (which this is explicitly allowed by the Specification).
               </p>
               <p class="p">
-                The <strong>Control</strong> program only supports the following Payload Packet header Objects for the request:
+                The <strong class="strong">Control</strong> program only supports the following Payload Packet header Objects for the request:
               </p>
               <ul>
                 <li><code class="code">type</code>: Allows only a single type header Object and may only be one of: <code class="code">controller</code>, <code class="code">error</code>, or <code class="code">init</code>.</li>

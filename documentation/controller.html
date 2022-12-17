@@ -105,28 +105,28 @@
 
           <div class="main-content">
             <p class="p">
-              The <strong>controller</strong> program is a tool for controller other programs.
+              The <strong class="strong">controller</strong> program is a tool for controller other programs.
             </p>
             <p class="p">
-              This tool is designed to configured to perform and execute any tasks given across multiple languages and it also has support for operating as an <strong>init</strong> program. There are special compile-time configurations needed to make this properly operate as an <strong>init</strong> program.
+              This tool is designed to configured to perform and execute any tasks given across multiple languages and it also has support for operating as an <strong class="strong">init</strong> program. There are special compile-time configurations needed to make this properly operate as an <strong class="strong">init</strong> program.
             </p>
             <p class="p">
-              This tool operates similar to the <strong>fake</strong> program and can even be seen as an evolution to the <strong>fake</strong> program. The <strong>controller</strong> program, however is not a replacement to the <strong>fake</strong> program as it is more generalized.
+              This tool operates similar to the <strong class="strong">fake</strong> program and can even be seen as an evolution to the <strong class="strong">fake</strong> program. The <strong class="strong">controller</strong> program, however is not a replacement to the <strong class="strong">fake</strong> program as it is more generalized.
             </p>
             <p class="p">
               This tool also provides additional features for making it easierr to test and write controller instructions. These features include partial simulation and validation modes.
             </p>
             <p class="p">
-              In partial simulation mode, anything that the <strong>controller</strong> program has full control over and can simulate is simulated. Actual programs and scripts themselves, therefore, cannot be simulated. However, it may be possible to use an environment variables or similar and pass settings to the called program or script if the called program or script is simulation and testing aware.
+              In partial simulation mode, anything that the <strong class="strong">controller</strong> program has full control over and can simulate is simulated. Actual programs and scripts themselves, therefore, cannot be simulated. However, it may be possible to use an environment variables or similar and pass settings to the called program or script if the called program or script is simulation and testing aware.
             </p>
             <p class="p">
               The validation mode is for making this tool more scriptable. By providing validation, the controller instructions can be validated, in which case a success or failure result is returned and any problems or warnings may be printed to the caller of this tool.
             </p>
             <p class="p">
-              This tool is not currently fully functional as an <strong>init</strong> program replacement because the networking aspects are not yet written or fully hashed out. The <strong>contol</strong> program is also another key part to the <strong>contoller</strong> program in getting this to work as an <strong>init</strong> program. Ideally, once this support is complete, it should be possible to replace init programs, such as <strong>SystemD</strong>, with the <strong>controller</strong> program.
+              This tool is not currently fully functional as an <strong class="strong">init</strong> program replacement because the networking aspects are not yet written or fully hashed out. The <strong class="strong">contol</strong> program is also another key part to the <strong class="strong">contoller</strong> program in getting this to work as an <strong class="strong">init</strong> program. Ideally, once this support is complete, it should be possible to replace init programs, such as <strong class="strong">SystemD</strong>, with the <strong class="strong">controller</strong> program.
             </p>
             <p class="p">
-              Further development will be made on this once the <strong>controller</strong> program is updated. The next development series is planned to focus on networking, which will include support for this.
+              Further development will be made on this once the <strong class="strong">controller</strong> program is updated. The next development series is planned to focus on networking, which will include support for this.
             </p>
           </div>
 
@@ -201,7 +201,7 @@
                 </table>
               </div>
               <p class="p">
-                The <code class="code">+Q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong>utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code class="code">+Q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code class="code">+Q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
+                The <code class="code">+Q/++quiet</code> parameter silences all output that is not the intent and purpose of the program. For example, the purpose of the <strong class="strong">utf8</strong> program is to print the Unicode code point or the <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> byte code. The <code class="code">+Q/++quiet</code> will not suppress this output. The new line printed at the end of the program, is however, not printed. The <code class="code">+Q/++quiet</code> is ideal for using in scripting to help guarantee more consistent and controlled output.
               </p>
               <p class="p">
                 The <code class="code">+N/++no_color</code> simplifies the output to avoid the special color character codes. The special color character codes tend to take up a lot of extra space and may slow down printing performance.
@@ -301,7 +301,7 @@
                 This describes the intent and purpose of the simulation and validation parameters.
               </p>
               <p class="p">
-                The <strong>controller</strong> program is designed to support being run as an alternative to an <code class="code">init</code> program (such as <code class="code">Sysvinit</code> or <code class="code">SystemD</code>).
+                The <strong class="strong">controller</strong> program is designed to support being run as an alternative to an <code class="code">init</code> program (such as <code class="code">Sysvinit</code> or <code class="code">SystemD</code>).
                 To help prevent problems, simulation and validation functionality is provided.
               </p>
               <ul>
@@ -310,9 +310,9 @@
                   The <code class="code">validate</code> functionality:
                 </p>
                 <p class="p">
-                  By itself will simply check the syntax of the <strong>Entry</strong> and Rule files (for Rule files specified in the <strong>Entry</strong> or <strong>Exit</strong> file).
+                  By itself will simply check the syntax of the <strong class="strong">Entry</strong> and Rule files (for Rule files specified in the <strong class="strong">Entry</strong> or <strong class="strong">Exit</strong> file).
                   Errors are reported and nothing is executed.
-                  The <strong>controller</strong> program will return 0 on validation success and 1 on validation failure.
+                  The <strong class="strong">controller</strong> program will return 0 on validation success and 1 on validation failure.
                 </p>
               </li>
 
@@ -321,10 +321,10 @@
                   The <code class="code">simulate</code> functionality:
                 </p>
                 <p class="p">
-                  By itself will perform a simulated execution of all Rules designated by an <strong>Entry</strong> or <strong>Exit</strong> file.
+                  By itself will perform a simulated execution of all Rules designated by an <strong class="strong">Entry</strong> or <strong class="strong">Exit</strong> file.
                   The simulation is not a true simulation in that no program is ever called to perform any operations.
                   Furthermore, any <code class="code">script</code> specified inside a Rule is only simulated as a whole and not its individual parts.
-                  Once the <strong>Entry</strong> file is finished executing, the <code class="code">simulate</code> will continue to run waiting on <strong>control</strong> commands.
+                  Once the <strong class="strong">Entry</strong> file is finished executing, the <code class="code">simulate</code> will continue to run waiting on <strong class="strong">control</strong> commands.
                 </p>
               </li>
 
@@ -352,17 +352,17 @@
 
             <div class="section-content">
               <p class="p">
-                The <strong>controller</strong> program utilizes the unit of measurement called a <em>Time</em>, represented with uppercase <em>T</em>.
-                For comparison, a unit of <em>Time</em> is equivalent to a nanosecond, or 10^-9 seconds.
-                A <em>MegaTime</em> (MT) is therefore equivalent to a millisecond such that a millisecond is 10^-3 seconds.
+                The <strong class="strong">controller</strong> program utilizes the unit of measurement called a <em class="em">Time</em>, represented with uppercase <em class="em">T</em>.
+                For comparison, a unit of <em class="em">Time</em> is equivalent to a nanosecond, or 10^-9 seconds.
+                A <em class="em">MegaTime</em> (MT) is therefore equivalent to a millisecond such that a millisecond is 10^-3 seconds.
               </p>
               <p class="p">
-                A unit of <em>Time</em> is intended to represent some unit of <em>Time</em> such that a single 64-bit integer may hold all units of <em>Time</em> for a single calendar year.
-                This unit of <em>Time</em> does not and must not include Years (unlike <em>Unixtime</em>).
-                To convert from <em>Time</em> to <em>Unixtime</em>, one must have a year (which could be assumed to be the current year) and then calculate all of those calendar oddities.
+                A unit of <em class="em">Time</em> is intended to represent some unit of <em class="em">Time</em> such that a single 64-bit integer may hold all units of <em class="em">Time</em> for a single calendar year.
+                This unit of <em class="em">Time</em> does not and must not include Years (unlike <em class="em">Unixtime</em>).
+                To convert from <em class="em">Time</em> to <em class="em">Unixtime</em>, one must have a year (which could be assumed to be the current year) and then calculate all of those calendar oddities.
               </p>
               <p class="p">
-                A unit of <em>Time</em> by default is assumed to be in <abbr title="Coordinated Universal Time">UTC</abbr>.
+                A unit of <em class="em">Time</em> by default is assumed to be in <abbr title="Coordinated Universal Time">UTC</abbr>.
               </p>
               <ul>
                 <li>1 (Earth) year ~= <code class="code">31536000000000000 Time</code> or <code class="code">31536000 GT (GigaTime)</code>.</li>
@@ -372,26 +372,26 @@
                 <li>1 (Earth) second = <code class="code">1000000000 Time</code> or <code class="code">1 GT (GigaTime)</code>.</li>
               </ul>
               <p class="p">
-                Consequentially, 1 day in units of <em>Time</em> is easily represented as <code class="code">86.4 TT</code> (<em>TeraTime</em>).
+                Consequentially, 1 day in units of <em class="em">Time</em> is easily represented as <code class="code">86.4 TT</code> (<em class="em">TeraTime</em>).
               </p>
               <p class="p">
-                The <em>Time</em> may be stored in its <code class="code">year string format</code>.
-                In this format, a Year may be prepended to the <em>Time</em> followed by a single colon ':' to associate a year with the <em>Time</em>.
+                The <em class="em">Time</em> may be stored in its <code class="code">year string format</code>.
+                In this format, a Year may be prepended to the <em class="em">Time</em> followed by a single colon ':' to associate a year with the <em class="em">Time</em>.
                 This Year has no minimum or maximum but may not have decimals.
                 For example, <code class="code">2020:86400000000000</code> would represent: January 02, 2020 0:00 <abbr title="Coordinated Universal Time">UTC</abbr>.
                 For example, <code class="code">2020:86.4 TT</code> would represent: January 02, 2020 0:00 <abbr title="Coordinated Universal Time">UTC</abbr>.
               </p>
               <p class="p">
-                A second unit of <em>Time</em>, called <em>EpochTime</em>, works the same way as <em>Time</em> except it represents seconds.
+                A second unit of <em class="em">Time</em>, called <em class="em">EpochTime</em>, works the same way as <em class="em">Time</em> except it represents seconds.
                 This unit is designated <code class="code">E</code>.
-                The format is similar to <em>Time</em>, except there are two colons: <code class="code">1970::1620874738</code> would represent: May 13, 2021 2:58:58 <abbr title="Coordinated Universal Time">UTC</abbr>.
+                The format is similar to <em class="em">Time</em>, except there are two colons: <code class="code">1970::1620874738</code> would represent: May 13, 2021 2:58:58 <abbr title="Coordinated Universal Time">UTC</abbr>.
                 When the year is not specified, then this is identical to UNIX Epoch.
               </p>
               <p class="p">
-                A unit of <em>EpochTime</em> by default is assumed to be in <abbr title="Coordinated Universal Time">UTC</abbr>.
+                A unit of <em class="em">EpochTime</em> by default is assumed to be in <abbr title="Coordinated Universal Time">UTC</abbr>.
               </p>
               <ul>
-                <li>1 (Earth) year ~= <code class="code">31536000 EpochTime</code> or <code class="code">31.536 GE</code> (<em>GigaEpochTime</em>).</li>
+                <li>1 (Earth) year ~= <code class="code">31536000 EpochTime</code> or <code class="code">31.536 GE</code> (<em class="em">GigaEpochTime</em>).</li>
                 <li>1 (Earth) day = <code class="code">86400 EpochTime</code></li>
                 <li>1 (Earth) hour = <code class="code">3600 EpochTime</code></li>
                 <li>1 (Earth) minute = <code class="code">60 EpochTime</code></li>
@@ -399,7 +399,7 @@
                 <li>1 GT (GigaTime) = <code class="code">1 EpochTime</code></li>
               </ul>
               <p class="p">
-                Consequentially, 1 day in units of <em>EpochTime</em> is easily represented as <code class="code">86.4 KE</code> (<em>KiloEpochTime</em>).
+                Consequentially, 1 day in units of <em class="em">EpochTime</em> is easily represented as <code class="code">86.4 KE</code> (<em class="em">KiloEpochTime</em>).
               </p>
             </div>
           </section>

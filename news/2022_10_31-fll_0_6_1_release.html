@@ -78,7 +78,7 @@
               This release should be more portable and testable.
             </p>
             <p class="p">
-              The <strong>BASH</strong> alternative <strong>ZSH</strong> is now supported for the following scripts:
+              The <strong class="strong">BASH</strong> alternative <strong class="strong">ZSH</strong> is now supported for the following scripts:
             </p>
             <ul>
               <li>bootstrap-example.sh</li>
@@ -88,8 +88,8 @@
               <li>test.sh</li>
             </ul>
             <p class="p">
-              In order to run these scripts under <strong>ZSH</strong>, one must defined the <strong>SHELL_ENGINE</strong> environment variable with the value <code class="code">zsh</code>.
-              Compatibility of <strong>ZSH</strong> is not well tested and there may be bugs.
+              In order to run these scripts under <strong class="strong">ZSH</strong>, one must defined the <strong class="strong">SHELL_ENGINE</strong> environment variable with the value <code class="code">zsh</code>.
+              Compatibility of <strong class="strong">ZSH</strong> is not well tested and there may be bugs.
             </p>
             <p class="p">
               Changes in the <code class="code">iki_read</code> program involving the <code class="code">--substitute</code> and the <code class="code">--wrap</code> parameters.
@@ -120,57 +120,57 @@
               The following are changes since the 0.6.0 stable release.
             </p>
             <p class="p">
-              <strong>Security Fixes:</strong>
+              <strong class="strong">Security Fixes:</strong>
             </p>
             <ul>
               <li>None.</li>
             </ul>
             <p class="p">
-              <strong>Features:</strong>
+              <strong class="strong">Features:</strong>
             </p>
             <ul>
-              <li><strong>FLL</strong>: Add support for <code class="code">stand_alone</code> builds in the package script.</li>
-              <li><strong>FLL</strong>: Add support for <strong>ZSH</strong> in addition to <strong>BASH</strong>.</li>
-              <li><strong>IKI Read</strong>: The <code class="code">iki_read</code> should still support the older <code class="code">--substitute</code> behavior.</li>
+              <li><strong class="strong">FLL</strong>: Add support for <code class="code">stand_alone</code> builds in the package script.</li>
+              <li><strong class="strong">FLL</strong>: Add support for <strong class="strong">ZSH</strong> in addition to <strong class="strong">BASH</strong>.</li>
+              <li><strong class="strong">IKI Read</strong>: The <code class="code">iki_read</code> should still support the older <code class="code">--substitute</code> behavior.</li>
             </ul>
             <p class="p">
-              <strong>Bug Fixes:</strong>
+              <strong class="strong">Bug Fixes:</strong>
             </p>
             <ul>
-              <li><strong>FLL</strong>: Mistakes in disable macros and remove redundant check.</li>
-              <li><strong>FLL</strong>: Functions <code class="code">private_f_file_flush()</code> and <code class="code">private_f_print_safely_get()</code> are not being included when needed.</li>
-              <li><strong>FLL</strong>: The <code class="code">fll_program_standard_signal_received()</code> needs a private implementation.</li>
-              <li><strong>FLL</strong>: <code class="code">private_f_memory_structure_resize()</code> is not returning the error status codes.</li>
-              <li><strong>Featureless Make</strong>: Content is incorrectly attempted to be processed even though it does not exist.</li>
-              <li><strong>Featureless Make</strong>: Featureless Make dependencies are not accurately communicated.</li>
-              <li><strong>IKI Read</strong>: The <code class="code">iki_read</code> should apply the <code class="code">--wrap</code> when using <code class="code">--substitute</code>.</li>
-              <li><strong>FSS Read Programs</strong>: Two zeros are printed when <code class="code">--total</code> is used and there are no matching Objects.</li>
+              <li><strong class="strong">FLL</strong>: Mistakes in disable macros and remove redundant check.</li>
+              <li><strong class="strong">FLL</strong>: Functions <code class="code">private_f_file_flush()</code> and <code class="code">private_f_print_safely_get()</code> are not being included when needed.</li>
+              <li><strong class="strong">FLL</strong>: The <code class="code">fll_program_standard_signal_received()</code> needs a private implementation.</li>
+              <li><strong class="strong">FLL</strong>: <code class="code">private_f_memory_structure_resize()</code> is not returning the error status codes.</li>
+              <li><strong class="strong">Featureless Make</strong>: Content is incorrectly attempted to be processed even though it does not exist.</li>
+              <li><strong class="strong">Featureless Make</strong>: Featureless Make dependencies are not accurately communicated.</li>
+              <li><strong class="strong">IKI Read</strong>: The <code class="code">iki_read</code> should apply the <code class="code">--wrap</code> when using <code class="code">--substitute</code>.</li>
+              <li><strong class="strong">FSS Read Programs</strong>: Two zeros are printed when <code class="code">--total</code> is used and there are no matching Objects.</li>
             </ul>
             <p class="p">
-              <strong>Refactors:</strong>
+              <strong class="strong">Refactors:</strong>
             </p>
             <ul>
               <li>None.</li>
             </ul>
             <p class="p">
-              <strong>Updates:</strong>
+              <strong class="strong">Updates:</strong>
             </p>
             <ul>
-              <li><strong>FLL</strong>: Enable Gitlab test support.</li>
-              <li><strong>FLL</strong>: Always ensure content size is zero when content is not found.</li>
-              <li><strong>FLL</strong>: Change logic to avoid potential negative numbers.</li>
-              <li><strong>FLL</strong>: Use resize functions rather than adjust functions for <code class="code">append</code> and <code class="code">append_all</code> functions.</li>
-              <li><strong>FLL</strong>: Add medium logos.</li>
-              <li><strong>FLL</strong>: <code class="code">f_memory_structure_increase_by()</code> shouldn't do anything if amount is zero.</li>
-              <li><strong>FLL</strong>: Cygwin documentation.</li>
-              <li><strong>FLL</strong>: Support Unicode 15.0.</li>
-              <li><strong>FLL</strong>: Slight improvement in UTF unassigned detection and add or correct some ranges.</li>
-              <li><strong>Featureless Make</strong>: Redesign behavior of pipe, allowing it to run properly inside software like Gitlab's CI or Github's CI.</li>
-              <li><strong>Featureless Make</strong>: Implement stand alone build for Featureless Make.</li>
-              <li><strong>Featureless Make</strong>: Describe modes being used when performing build or make.</li>
-              <li><strong>Featureless Make</strong>: Stand alone Featureless Make custom <code class="code">config.h</code> header.</li>
-              <li><strong>Utf8</strong>: The <code class="code">utf8</code> program should be using the stream read functions.</li>
-              <li><strong>Utf8</strong>: Implement stand alone build for <code class="code">utf8</code> program.</li>
+              <li><strong class="strong">FLL</strong>: Enable Gitlab test support.</li>
+              <li><strong class="strong">FLL</strong>: Always ensure content size is zero when content is not found.</li>
+              <li><strong class="strong">FLL</strong>: Change logic to avoid potential negative numbers.</li>
+              <li><strong class="strong">FLL</strong>: Use resize functions rather than adjust functions for <code class="code">append</code> and <code class="code">append_all</code> functions.</li>
+              <li><strong class="strong">FLL</strong>: Add medium logos.</li>
+              <li><strong class="strong">FLL</strong>: <code class="code">f_memory_structure_increase_by()</code> shouldn't do anything if amount is zero.</li>
+              <li><strong class="strong">FLL</strong>: Cygwin documentation.</li>
+              <li><strong class="strong">FLL</strong>: Support Unicode 15.0.</li>
+              <li><strong class="strong">FLL</strong>: Slight improvement in UTF unassigned detection and add or correct some ranges.</li>
+              <li><strong class="strong">Featureless Make</strong>: Redesign behavior of pipe, allowing it to run properly inside software like Gitlab's CI or Github's CI.</li>
+              <li><strong class="strong">Featureless Make</strong>: Implement stand alone build for Featureless Make.</li>
+              <li><strong class="strong">Featureless Make</strong>: Describe modes being used when performing build or make.</li>
+              <li><strong class="strong">Featureless Make</strong>: Stand alone Featureless Make custom <code class="code">config.h</code> header.</li>
+              <li><strong class="strong">Utf8</strong>: The <code class="code">utf8</code> program should be using the stream read functions.</li>
+              <li><strong class="strong">Utf8</strong>: Implement stand alone build for <code class="code">utf8</code> program.</li>
             </ul>
             <p class="p">
               Check out the project on the <a href="fll.html#release" class="link"><abbr title="Featureless Linux Library">FLL</abbr> release</a> page.
@@ -181,10 +181,10 @@
               These <a href="https://sourceforge.net/projects/fll/files/FLL-0.5/0.6.1/programs/" class="link external">programs</a>, by default, are designed to build against a library built using the monolithic source tree.
             </p>
             <p class="p">
-              The <strong>stand alone</strong> sources for the Featureless Make and UTF8 programs can be found <a href="https://sourceforge.net/projects/fll/files/FLL-0.6/0.6.1/stand_alone/" class="link external">pre-packaged at Sourceforge</a>.
+              The <strong class="strong">stand alone</strong> sources for the Featureless Make and UTF8 programs can be found <a href="https://sourceforge.net/projects/fll/files/FLL-0.6/0.6.1/stand_alone/" class="link external">pre-packaged at Sourceforge</a>.
             </p>
             <p class="p">
-              <strong>Kevin Day</strong>
+              <strong class="strong">Kevin Day</strong>
             </p>
           </div>
         </main>

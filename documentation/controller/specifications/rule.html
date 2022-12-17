@@ -116,15 +116,15 @@
             <ul>
               <li>The outer most part is a <code class="code">FSS-0002 (Basic List)</code>.</li>
               <li>The outer most part is a <code class="code">FSS-0002 (Basic List)</code>.</li>
-              <li>The Basic List Object is considered the <em>Rule Type</em>.</li>
-              <li>The Basic List Content is determined by the specific <em>Rule Type</em>.</li>
-              <li>The Content for each <em>Rule Type</em> is called the <em>Item</em>.</li>
-              <li>Each Item Object is the <em>Item Name</em>.</li>
-              <li>Each Item Content is either the <em>Action</em> or the <em>Setting</em>.</li>
-              <li>Each Action Object is the <em>Action Name</em>.</li>
-              <li>Each Action Content are the <em>Action Parameters</em>.</li>
-              <li>Each Setting Object is the <em>Setting Name</em>.</li>
-              <li>Each Setting Content are the <em>Setting Values</em>.</li>
+              <li>The Basic List Object is considered the <em class="em">Rule Type</em>.</li>
+              <li>The Basic List Content is determined by the specific <em class="em">Rule Type</em>.</li>
+              <li>The Content for each <em class="em">Rule Type</em> is called the <em class="em">Item</em>.</li>
+              <li>Each Item Object is the <em class="em">Item Name</em>.</li>
+              <li>Each Item Content is either the <em class="em">Action</em> or the <em class="em">Setting</em>.</li>
+              <li>Each Action Object is the <em class="em">Action Name</em>.</li>
+              <li>Each Action Content are the <em class="em">Action Parameters</em>.</li>
+              <li>Each Setting Object is the <em class="em">Setting Name</em>.</li>
+              <li>Each Setting Content are the <em class="em">Setting Values</em>.</li>
             </ul>
             <p class="p">
               The Rule Types:
@@ -158,7 +158,7 @@
               <li><code class="code">group</code>: One or more Content representing group names or group ids.</li>
               <li><code class="code">limit</code>: Three Content, with the first representing a valid resource type and the second and third being a valid resource limit number (positive whole number or 0).</li>
               <li><code class="code">name</code>: One Content, must have at least 1 graph character (non white space printing character) (leading and trailing white space are trimmed off).</li>
-              <li><code class="code">nice</code>: One Content, must be a valid number for process <em>niceness</em> (Any whole number inclusively between -20 to 19).</li>
+              <li><code class="code">nice</code>: One Content, must be a valid number for process <em class="em">niceness</em> (Any whole number inclusively between -20 to 19).</li>
               <li><code class="code">on</code>: Four Content, the first being a Rule Action, the second being <code class="code">need</code>, <code class="code">want</code>, or <code class="code">wish</code>, the third being a partial path, and the fourth being a Rule file name without <code class="code">.rule</code> extension.</li>
               <li><code class="code">parameter</code>: Two Content, the first Content must be a case-sensitive valid IKI name and the second being an IKI value.</li>
               <li><code class="code">path</code>: One Content representing a valid PATH environment string (such as <code class="code">/bin:/sbin:/usr/bin</code>).</li>
@@ -365,10 +365,10 @@
                 <li>Provides settings for each of the three special situations: <code class="code">kill</code>, <code class="code">start</code>, and <code class="code">stop</code>.</li>
                 <li>Each of these may only have a single one exist at a time (one <code class="code">kill</code>, one <code class="code">start</code>, and one <code class="code">stop</code>).</li>
                 <li>Each successive <code class="code">timeout</code> Item Action, specific to each Action Name (such as <code class="code">start</code>), specified replaces the previously defined <code class="code">timeout</code> Action (in a top-down manner).</li>
-                <li>The second Content for each of these, when specified, may be a 0 or greater whole number representing the number of <em>MegaTime</em> (MT) (equivalent to milliseconds).</li>
-                <li>For <code class="code">kill</code>, this represents the number of <em>MegaTime</em> to wait after stopping some Rule and that Rule has not yet stopped to forcefully stop the Rule (aka kill the Rule).</li>
-                <li>For <code class="code">start</code>, this represents the number of <em>MegaTime</em> to wait after starting some Rule before assuming something went wrong and the Rule is returned as failed.</li>
-                <li>For <code class="code">stop</code>, this represents the number of <em>MegaTime</em> to wait after stopping some Rule before assuming something went wrong and the Rule is returned as failed.</li>
+                <li>The second Content for each of these, when specified, may be a 0 or greater whole number representing the number of <em class="em">MegaTime</em> (MT) (equivalent to milliseconds).</li>
+                <li>For <code class="code">kill</code>, this represents the number of <em class="em">MegaTime</em> to wait after stopping some Rule and that Rule has not yet stopped to forcefully stop the Rule (aka kill the Rule).</li>
+                <li>For <code class="code">start</code>, this represents the number of <em class="em">MegaTime</em> to wait after starting some Rule before assuming something went wrong and the Rule is returned as failed.</li>
+                <li>For <code class="code">stop</code>, this represents the number of <em class="em">MegaTime</em> to wait after stopping some Rule before assuming something went wrong and the Rule is returned as failed.</li>
                 <li>If the second Content is not specified, then this disables the type (prevents the specified timeout action).</li>
               </ul>
               <p class="p">
@@ -417,7 +417,7 @@
                     <li>
                       <div>The third Content and more represent additional options for fine tuning how the re-run is Performed:</div>
                       <ul>
-                        <li>When <code class="code">delay</code>, followed by a number of <em>MegaTime</em> (MT) (equivalent to milliseconds) in which to wait before attempting the re-run.</li>
+                        <li>When <code class="code">delay</code>, followed by a number of <em class="em">MegaTime</em> (MT) (equivalent to milliseconds) in which to wait before attempting the re-run.</li>
                         <li>When <code class="code">max</code>, followed by a positive number or the number 0 designating the maximum number of re-runs to perform.</li>
                         <li>
                           <div>When <code class="code">reset</code>, the <code class="code">max</code> re-run counter is reset for the opposite re-run when this re-run is triggered, such as:</div>

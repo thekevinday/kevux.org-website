@@ -98,27 +98,27 @@
               <li>utf8</li>
             </ul>
             <p class="p">
-              Most notable of these programs are the <strong>controller</strong> program and the <strong>utf8</strong> program.
+              Most notable of these programs are the <strong class="strong">controller</strong> program and the <strong class="strong">utf8</strong> program.
             </p>
             <p class="p">
-              The <strong>controller</strong> program is a re-interpretation of the <strong>Featureless Make</strong> program written in a more generalized fashion that is focused on performing a set of tasks.
-              This is very similar to a system initialize program such as <em>sysvinit</em>.
+              The <strong class="strong">controller</strong> program is a re-interpretation of the <strong class="strong">Featureless Make</strong> program written in a more generalized fashion that is focused on performing a set of tasks.
+              This is very similar to a system initialize program such as <em class="em">sysvinit</em>.
               Support for running as a system initialize replacement is partially complete.
-              There is currently no way to send messages to the <strong>controller</strong> program to start and stop anything.
-              The <strong>control</strong> program, which is used to communicate to the <strong>controller</strong> program is also incomplete.
+              There is currently no way to send messages to the <strong class="strong">controller</strong> program to start and stop anything.
+              The <strong class="strong">control</strong> program, which is used to communicate to the <strong class="strong">controller</strong> program is also incomplete.
               The next <abbr title="Featureless Linux Library">FLL</abbr> development verrsion, the 0.7.0 series, will heavily focused on network protocols.
             </p>
             <p class="p">
-              The <strong>utf8</strong> program is a handy tool to convert from <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> characters to their Unicode value or vice-versa.
+              The <strong class="strong">utf8</strong> program is a handy tool to convert from <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> characters to their Unicode value or vice-versa.
               This can convert entire files.
             </p>
             <p class="p">
-              <strong>Featureless Make</strong> has some major changes.
-              The <strong>fake</strong> program now accepts piped data, which must be a valid <em>fakefile</em>.
+              <strong class="strong">Featureless Make</strong> has some major changes.
+              The <strong class="strong">fake</strong> program now accepts piped data, which must be a valid <em class="em">fakefile</em>.
               There are new Objects available for the <a href="documentation/fake/specifications/settings.html" class="link">build settings</a> and the <a href="documentation/fake/specifications/fakefile.html" class="link">fakefile</a>.
             </p>
             <p class="p">
-              The default behavior of <strong>Featureless Make</strong> is now more similar to the <em>GNU make</em> program.
+              The default behavior of <strong class="strong">Featureless Make</strong> is now more similar to the <em class="em">GNU make</em> program.
               When running <code class="code">fake</code> with no parameters, it will first search for a <code class="code">fakefile</code> in the current directory before checking for one at <code class="code">data/build/fakefile</code>.
               This is analogous to how running <code class="code">make</code> with no parameters will search for a <code class="code">Makefile</code> in the current directory.
             </p>
@@ -147,90 +147,90 @@
             <p class="p">
               A major improvement of this release is safer and more stable code.
               This is thanks to a massive amount of time and effort spent into writing unit tests.
-              The unit tests process is performed using the <strong>Featureless Make</strong> program.
+              The unit tests process is performed using the <strong class="strong">Featureless Make</strong> program.
               In addition to the unit tests, the static analyzer from GCC has been used to better identify and resolve problems.
             </p>
             <p class="p">
               The following are changes since the 0.5.10 development release.
             </p>
             <p class="p">
-              <strong>Security Fixes:</strong>
+              <strong class="strong">Security Fixes:</strong>
             </p>
             <ul>
-              <li><strong>FLL</strong>: Environment value has invalid read in f_environment_set().</li>
-              <li><strong>FLL</strong>: Invalid read for formatted printing using partial ranges on a string.</li>
-              <li><strong>FLL</strong>: Invalid reads on NULL terminated strings with a max width greater than 1.</li>
-              <li><strong>Featureless Make</strong>: Invalid read when using -s/--settings.</li>
-              <li><strong>Featureless Make</strong>: Invalid read when processing not condition minimum value.</li>
-              <li><strong>Featureless Make</strong>: Invalid read when processing an empty fakefile.</li>
+              <li><strong class="strong">FLL</strong>: Environment value has invalid read in f_environment_set().</li>
+              <li><strong class="strong">FLL</strong>: Invalid read for formatted printing using partial ranges on a string.</li>
+              <li><strong class="strong">FLL</strong>: Invalid reads on NULL terminated strings with a max width greater than 1.</li>
+              <li><strong class="strong">Featureless Make</strong>: Invalid read when using -s/--settings.</li>
+              <li><strong class="strong">Featureless Make</strong>: Invalid read when processing not condition minimum value.</li>
+              <li><strong class="strong">Featureless Make</strong>: Invalid read when processing an empty fakefile.</li>
             </ul>
             <p class="p">
-              <strong>Features:</strong>
+              <strong class="strong">Features:</strong>
             </p>
             <ul>
-              <li><strong>FLL</strong>: Add missing function f_environment_get_all().</li>
-              <li><strong>FLL</strong>: Add missing signal functions f_signal_action(), f_signal_pause(), and f_signal_suspend().</li>
-              <li><strong>FLL</strong>: Add support for +E/++error and change '+q' to '+Q'.</li>
-              <li><strong>Controller</strong>: Expose the "define" and "parameter" at the Entry and Exit level.</li>
-              <li><strong>Featureless Make</strong>: Now supports a piped fakefile.</li>
-              <li><strong>Featureless Make</strong>: Now supports the "write" operation.</li>
-              <li><strong>Featureless Make</strong>: Now supports to the "print" operation for escape sequences just like the "write" operation has.</li>
-              <li><strong>Featureless Make</strong>: Now supports the "top" parameter.</li>
-              <li><strong>Featureless Make</strong>: Now supports the "current" parameter.</li>
-              <li><strong>Featureless Make</strong>: Improve user experience by defaulting specified fakefile and build settings file to present working directory.</li>
+              <li><strong class="strong">FLL</strong>: Add missing function f_environment_get_all().</li>
+              <li><strong class="strong">FLL</strong>: Add missing signal functions f_signal_action(), f_signal_pause(), and f_signal_suspend().</li>
+              <li><strong class="strong">FLL</strong>: Add support for +E/++error and change '+q' to '+Q'.</li>
+              <li><strong class="strong">Controller</strong>: Expose the "define" and "parameter" at the Entry and Exit level.</li>
+              <li><strong class="strong">Featureless Make</strong>: Now supports a piped fakefile.</li>
+              <li><strong class="strong">Featureless Make</strong>: Now supports the "write" operation.</li>
+              <li><strong class="strong">Featureless Make</strong>: Now supports to the "print" operation for escape sequences just like the "write" operation has.</li>
+              <li><strong class="strong">Featureless Make</strong>: Now supports the "top" parameter.</li>
+              <li><strong class="strong">Featureless Make</strong>: Now supports the "current" parameter.</li>
+              <li><strong class="strong">Featureless Make</strong>: Improve user experience by defaulting specified fakefile and build settings file to present working directory.</li>
             </ul>
             <p class="p">
-              <strong>Bug Fixes:</strong>
+              <strong class="strong">Bug Fixes:</strong>
             </p>
             <ul>
-              <li><strong>FLL</strong>: IKI variables are incorrectly being processed when there is a non-IKI IKI-like string.</li>
-              <li><strong>FLL</strong>: Single quotes are not being properly detected in FSS Extended Read functions.</li>
-              <li><strong>FLL</strong>: private_f_file_open_at() has an incomplete set if ifdef conditions.</li>
-              <li><strong>Byte Dump</strong>: Parameter after either the -N or -W is being processed when it should not be.</li>
-              <li><strong>Controller</strong>: Incorrect information is printed on certain errors.</li>
-              <li><strong>Controller</strong>: Delimits are not being applied for IKI variables.</li>
-              <li><strong>Controller</strong>: "State is now ..." should not be printed when quiet is passed.</li>
-              <li><strong>Controller</strong>: Guarantee that the child processes are terminated.</li>
-              <li><strong>Controller</strong>: IKI substitution is incorrectly applied.</li>
-              <li><strong>Featureless Make</strong>: Condition blocks are still being processed when they should be skipped.</li>
-              <li><strong>Featureless Make</strong>: Empty strings improperly pass validation checks.</li>
-              <li><strong>Featureless Make</strong>: IKI variable substitution results in incorrect parameter structure.</li>
-              <li><strong>Featureless Make</strong>: Error verbosity is not being preserved.</li>
-              <li><strong>Featureless Make</strong>: Text is being incorrectly stripped out.</li>
-              <li><strong>Featureless Make</strong>: The copy operation doesn't work properly with trailing slashes.</li>
-              <li><strong>Featureless Make</strong>: Copy should destination should be the base name rather than the entire path.</li>
-              <li><strong>Featureless Make</strong>: Link operation is incorrect, support new link arguments, and clone, copy, and move operations failure problems.</li>
-              <li><strong>Featureless Make</strong>: Block is incorrectly being reset when an else condition precedes an if condition.</li>
+              <li><strong class="strong">FLL</strong>: IKI variables are incorrectly being processed when there is a non-IKI IKI-like string.</li>
+              <li><strong class="strong">FLL</strong>: Single quotes are not being properly detected in FSS Extended Read functions.</li>
+              <li><strong class="strong">FLL</strong>: private_f_file_open_at() has an incomplete set if ifdef conditions.</li>
+              <li><strong class="strong">Byte Dump</strong>: Parameter after either the -N or -W is being processed when it should not be.</li>
+              <li><strong class="strong">Controller</strong>: Incorrect information is printed on certain errors.</li>
+              <li><strong class="strong">Controller</strong>: Delimits are not being applied for IKI variables.</li>
+              <li><strong class="strong">Controller</strong>: "State is now ..." should not be printed when quiet is passed.</li>
+              <li><strong class="strong">Controller</strong>: Guarantee that the child processes are terminated.</li>
+              <li><strong class="strong">Controller</strong>: IKI substitution is incorrectly applied.</li>
+              <li><strong class="strong">Featureless Make</strong>: Condition blocks are still being processed when they should be skipped.</li>
+              <li><strong class="strong">Featureless Make</strong>: Empty strings improperly pass validation checks.</li>
+              <li><strong class="strong">Featureless Make</strong>: IKI variable substitution results in incorrect parameter structure.</li>
+              <li><strong class="strong">Featureless Make</strong>: Error verbosity is not being preserved.</li>
+              <li><strong class="strong">Featureless Make</strong>: Text is being incorrectly stripped out.</li>
+              <li><strong class="strong">Featureless Make</strong>: The copy operation doesn't work properly with trailing slashes.</li>
+              <li><strong class="strong">Featureless Make</strong>: Copy should destination should be the base name rather than the entire path.</li>
+              <li><strong class="strong">Featureless Make</strong>: Link operation is incorrect, support new link arguments, and clone, copy, and move operations failure problems.</li>
+              <li><strong class="strong">Featureless Make</strong>: Block is incorrectly being reset when an else condition precedes an if condition.</li>
             </ul>
             <p class="p">
-              <strong>Refactors:</strong>
+              <strong class="strong">Refactors:</strong>
             </p>
             <ul>
-              <li><strong>Controller</strong>: Use "settings" instead of "setting" for better consistency between fake program and controller program.</li>
-              <li><strong>Featureless Make</strong>: Rename "script" to "engine" to avoid possible confusion with the different uses of "script".</li>
-              <li><strong>Featureless Make</strong>: "if defined parameter" and similar are simplified into something more like "if define" and "if parameter".</li>
-              <li><strong>Featureless Make</strong>: Rename "exists" to "exist".</li>
+              <li><strong class="strong">Controller</strong>: Use "settings" instead of "setting" for better consistency between fake program and controller program.</li>
+              <li><strong class="strong">Featureless Make</strong>: Rename "script" to "engine" to avoid possible confusion with the different uses of "script".</li>
+              <li><strong class="strong">Featureless Make</strong>: "if defined parameter" and similar are simplified into something more like "if define" and "if parameter".</li>
+              <li><strong class="strong">Featureless Make</strong>: Rename "exists" to "exist".</li>
             </ul>
             <p class="p">
-              <strong>Updates:</strong>
+              <strong class="strong">Updates:</strong>
             </p>
             <ul>
-              <li><strong>FLL</strong>: Change execute error code handling to better accommodate standard GNU Bash return codes.</li>
-              <li><strong>FLL</strong>: Further reduce memory allocation pressure by increasing default small allocation.</li>
-              <li><strong>FLL</strong>: Restrict environment to PATH and LD_LIBRARY_PATH by default in all FLL build settings files.</li>
-              <li><strong>FLL</strong>: The standard program setup should explicitly unblock all signals other than the default</li>
-              <li><strong>FLL</strong>: Clarify IKI standard in regards to delimits and improve specification file.</li>
-              <li><strong>FLL</strong>: Improve specification files.</li>
-              <li><strong>FLL</strong>: The f_color needs to follow latest practices with private functions.</li>
-              <li><strong>Controller</strong>: Change default controller settings path to './'.</li>
-              <li><strong>Controller</strong>: Strip out NULL characters after applying delimits.</li>
-              <li><strong>Controller</strong>: Timeout changes.</li>
-              <li><strong>Featureless Make</strong>: Make environment variable handling design consistent between fake and controller programs.</li>
-              <li><strong>Featureless Make</strong>: Ensure first if block is initialized to operate.</li>
-              <li><strong>Featureless Make</strong>: Replace Unicode Terminate escape sequence with Non-printing escape sequence.</li>
-              <li><strong>Featureless Make</strong>: Reduce number of allocations by pre-determining size when easily possible.</li>
-              <li><strong>Featureless Make</strong>: Organize the validate operation into separate type functions and improve error handling logic.</li>
-              <li><strong>Featureless Make</strong>: The example bzip2 now supports running the tests.</li>
+              <li><strong class="strong">FLL</strong>: Change execute error code handling to better accommodate standard GNU Bash return codes.</li>
+              <li><strong class="strong">FLL</strong>: Further reduce memory allocation pressure by increasing default small allocation.</li>
+              <li><strong class="strong">FLL</strong>: Restrict environment to PATH and LD_LIBRARY_PATH by default in all FLL build settings files.</li>
+              <li><strong class="strong">FLL</strong>: The standard program setup should explicitly unblock all signals other than the default</li>
+              <li><strong class="strong">FLL</strong>: Clarify IKI standard in regards to delimits and improve specification file.</li>
+              <li><strong class="strong">FLL</strong>: Improve specification files.</li>
+              <li><strong class="strong">FLL</strong>: The f_color needs to follow latest practices with private functions.</li>
+              <li><strong class="strong">Controller</strong>: Change default controller settings path to './'.</li>
+              <li><strong class="strong">Controller</strong>: Strip out NULL characters after applying delimits.</li>
+              <li><strong class="strong">Controller</strong>: Timeout changes.</li>
+              <li><strong class="strong">Featureless Make</strong>: Make environment variable handling design consistent between fake and controller programs.</li>
+              <li><strong class="strong">Featureless Make</strong>: Ensure first if block is initialized to operate.</li>
+              <li><strong class="strong">Featureless Make</strong>: Replace Unicode Terminate escape sequence with Non-printing escape sequence.</li>
+              <li><strong class="strong">Featureless Make</strong>: Reduce number of allocations by pre-determining size when easily possible.</li>
+              <li><strong class="strong">Featureless Make</strong>: Organize the validate operation into separate type functions and improve error handling logic.</li>
+              <li><strong class="strong">Featureless Make</strong>: The example bzip2 now supports running the tests.</li>
             </ul>
             <p class="p">
               Check out the project on the <a href="fll.html#release" class="link"><abbr title="Featureless Linux Library">FLL</abbr> release</a> page.
@@ -241,7 +241,7 @@
               These <a href="https://sourceforge.net/projects/fll/files/FLL-0.5/0.6.0/programs/" class="link external">programs</a>, by default, are designed to build against a library built using the monolithic source tree.
             </p>
             <p class="p">
-              <strong>Kevin Day</strong>
+              <strong class="strong">Kevin Day</strong>
             </p>
           </div>
 
@@ -252,12 +252,12 @@
 
             <div class="article-content">
               <p class="p">
-                <strong>Bzip2</strong> has a simple <code class="code">Makefile</code> that is used here as an example of the differences between a <code class="code">Makefile</code> and a <code class="code">fakefile</code>.
+                <strong class="strong">Bzip2</strong> has a simple <code class="code">Makefile</code> that is used here as an example of the differences between a <code class="code">Makefile</code> and a <code class="code">fakefile</code>.
               </p>
               <p class="p">
-                This is taken straight out of the <strong>Bzip2</strong>, version 1.0.8, source code and is under its own separate copyright.
-                This is file has a copyright of: <em>Copyright (C) 1996-2019 Julian Seward</em>.
-                The use here as an example should be technically under the <em>Fair Use</em> laws.
+                This is taken straight out of the <strong class="strong">Bzip2</strong>, version 1.0.8, source code and is under its own separate copyright.
+                This is file has a copyright of: <em class="em">Copyright (C) 1996-2019 Julian Seward</em>.
+                The use here as an example should be technically under the <em class="em">Fair Use</em> laws.
                 Just in case, the entire file is provided with the copyright comments with it.
                 The Bzip2 source code may be found at <a href="https://www.sourceware.org/bzip2/" class="link external">https://www.sourceware.org/bzip2/</a>.
               </p><pre class="preserve">
@@ -489,17 +489,17 @@ manual.html: $(MANUAL_SRCS)
 
             <div class="article-content">
               <p class="p">
-                <strong>Featureless Make</strong> has a different design ideology that the <em>GNU Make</em> project.
-                The file should, <em>relatively speaking</em>, be easy to read within consideration of the technical field and the complexity of the tasks at hand.
+                <strong class="strong">Featureless Make</strong> has a different design ideology that the <em class="em">GNU Make</em> project.
+                The file should, <em class="em">relatively speaking</em>, be easy to read within consideration of the technical field and the complexity of the tasks at hand.
                 The build system should not be involved with installing to the system.
                 Installation should be a distribution level task.
-                This does not mean that <strong>Featureless Make</strong> cannot do that.
+                This does not mean that <strong class="strong">Featureless Make</strong> cannot do that.
                 All this means is that the project is optimized to compile or build the files.
               </p>
               <p class="p">
                 What this means is that there is not a one to one relationship between a typical <code class="code">Makefile</code> and typical <code class="code">fakefile</code>.
                 This example focuses on how a <code class="code">fakefile</code> should be designed.
-                This is also a proof of concept design that intentionally goes out of its way to use both build systems offered by <strong>Featureless Make</strong>.
+                This is also a proof of concept design that intentionally goes out of its way to use both build systems offered by <strong class="strong">Featureless Make</strong>.
               </p>
               <p class="p">
                 There are three files used for this example to create a <code class="code">bzip2</code> and a <code class="code">bzip2recover</code> binary.
@@ -682,15 +682,15 @@ flags_program -fPIE
 
             <div class="article-content">
               <p class="p">
-                The <strong>Controller</strong> program has a similar design ideology to that of the <strong>Featureless Make</strong> program.
-                A key difference is that the <strong>Controller</strong> program operates more like a service, a program, or a <em>sysvinit</em> alternative rather than as a build system.
+                The <strong class="strong">Controller</strong> program has a similar design ideology to that of the <strong class="strong">Featureless Make</strong> program.
+                A key difference is that the <strong class="strong">Controller</strong> program operates more like a service, a program, or a <em class="em">sysvinit</em> alternative rather than as a build system.
               </p>
               <p class="p">
                 An example usage would be to start the <code class="code">htop</code> program.
                 In this example, when the <code class="code">htop</code> program quits, the controller program will restart after a delay for a max of 3 times.
                 The controller command using these files would be executed using the command <code class="code">controller htop-command</code>.
                 Only two files are necessary to accomplish this task.
-                The first file is the <em>Entry</em> file, called <code class="code">entries/htop-command.entry</code>.
+                The first file is the <em class="em">Entry</em> file, called <code class="code">entries/htop-command.entry</code>.
               </p><pre class="preserve">
 # fss-0005
 
@@ -706,7 +706,7 @@ main:
   start command htop
 </pre>
               <p class="p">
-                The second file is is the <em>Rule</em> file, called <code class="code">rules/command/htop.rule</code>.
+                The second file is is the <em class="em">Rule</em> file, called <code class="code">rules/command/htop.rule</code>.
               </p><pre class="preserve">
 # fss-000d
 

@@ -84,44 +84,44 @@
                 This is a <code class="code">fss-0002 (Basic List)</code> with two required objects:
               </p>
               <ol>
-                <li><em>header</em>.</li>
-                <li><em>payload</em>.</li>
+                <li><em class="em">header</em>.</li>
+                <li><em class="em">payload</em>.</li>
               </ol>
               <p>
-                The <em>header</em>:
+                The <em class="em">header</em>:
               </p>
               <ul>
-                <li>The <em>header</em>'s Content is of type <code class="code">fss-0001 (Extended)</code>.</li>
-                <li>The <em>header</em> is recommended to have the Objects <em>length</em>, <em>status</em>, <em>part</em>, and <em>total</em>.</li>
-                <li>The recommended <em>length</em> represents the size of the <em>payload</em>.</li>
-                <li>The recommended <em>part</em> represents a single part of a set of packets for when the data being transmitted is split across multiple payloads.</li>
-                <li>The recommended <em>total</em> represents the total number of parts representing a complete data transmitted across multiple payloads.</li>
-                <li>The recommended <em>status</em> represents status codes (such as success or failure) and multiple.</li>
-                <li>The Content for the recommended <em>length</em> and <em>status</em> are positive whole numbers (including zero) that may be in <em>binary</em>, <em>octal</em>, <em>decimal</em>, <em>duodecimal</em>, or <em>hexidecimal</em> numerical format.</li>
+                <li>The <em class="em">header</em>'s Content is of type <code class="code">fss-0001 (Extended)</code>.</li>
+                <li>The <em class="em">header</em> is recommended to have the Objects <em class="em">length</em>, <em class="em">status</em>, <em class="em">part</em>, and <em class="em">total</em>.</li>
+                <li>The recommended <em class="em">length</em> represents the size of the <em class="em">payload</em>.</li>
+                <li>The recommended <em class="em">part</em> represents a single part of a set of packets for when the data being transmitted is split across multiple payloads.</li>
+                <li>The recommended <em class="em">total</em> represents the total number of parts representing a complete data transmitted across multiple payloads.</li>
+                <li>The recommended <em class="em">status</em> represents status codes (such as success or failure) and multiple.</li>
+                <li>The Content for the recommended <em class="em">length</em> and <em class="em">status</em> are positive whole numbers (including zero) that may be in <em class="em">binary</em>, <em class="em">octal</em>, <em class="em">decimal</em>, <em class="em">duodecimal</em>, or <em class="em">hexidecimal</em> numerical format.</li>
               </ul>
               <p>
-                The <em>payload</em>:
+                The <em class="em">payload</em>:
               </p>
               <ul>
-                <li>The <em>payload</em>'s Content may contain anything, including raw binary data.</li>
-                <li>The <em>payload</em> is <em>required</em> to be the last list Object in the file.</li>
-                <li>The <em>payload</em> is recommended to have its size designated in some manner in the <em>header</em> (such as with the recommended <em>length</em>).</li>
-                <li>The <em>payload</em> is terminated by the <abbr title="End of File">EOF</abbr> character or by the recommended <em>length</em> header.</li>
-                <li>The <em>payload</em> may be empty (length may be zero), but the list Object <em>payload</em> must still exist.</li>
-                <li>Nothing in the <em>payload</em> may be considered a valid list Object by the outer <code class="code">fss-0002 (Basic List)</code> and therefore escaping is unnecessary (No further processing by the outer <code class="code">fss-0002 (Basic List)</code> is allowed at this point).</li>
-                <li>Comments in the <em>payload</em> are not considered comments and are instead considered part of the payload, as-is.</li>
-                <li>Essentially, the <em>payload</em> should be treated as binary data embedded in a text file.</li>
+                <li>The <em class="em">payload</em>'s Content may contain anything, including raw binary data.</li>
+                <li>The <em class="em">payload</em> is <em class="em">required</em> to be the last list Object in the file.</li>
+                <li>The <em class="em">payload</em> is recommended to have its size designated in some manner in the <em class="em">header</em> (such as with the recommended <em class="em">length</em>).</li>
+                <li>The <em class="em">payload</em> is terminated by the <abbr title="End of File">EOF</abbr> character or by the recommended <em class="em">length</em> header.</li>
+                <li>The <em class="em">payload</em> may be empty (length may be zero), but the list Object <em class="em">payload</em> must still exist.</li>
+                <li>Nothing in the <em class="em">payload</em> may be considered a valid list Object by the outer <code class="code">fss-0002 (Basic List)</code> and therefore escaping is unnecessary (No further processing by the outer <code class="code">fss-0002 (Basic List)</code> is allowed at this point).</li>
+                <li>Comments in the <em class="em">payload</em> are not considered comments and are instead considered part of the payload, as-is.</li>
+                <li>Essentially, the <em class="em">payload</em> should be treated as binary data embedded in a text file.</li>
               </ul>
               <p>
-                The recommended <em>length</em> <em>header</em> Object used to designate the <em>payload</em> size does not necessarily have to be defined in the <em>header</em>.
-                That is to say, if the <em>payload</em> is expected to be of some pre-defined or static length then a length does not need to be provided in the <em>header</em>.
+                The recommended <em class="em">length</em> <em class="em">header</em> Object used to designate the <em class="em">payload</em> size does not necessarily have to be defined in the <em class="em">header</em>.
+                That is to say, if the <em class="em">payload</em> is expected to be of some pre-defined or static length then a length does not need to be provided in the <em class="em">header</em>.
               </p>
               <p>
-                The recommended <em>status</em> <em>header</em> Object may be a string, such as <code class="code">F_none</code>, or a positive whole number.
+                The recommended <em class="em">status</em> <em class="em">header</em> Object may be a string, such as <code class="code">F_none</code>, or a positive whole number.
                 What the status code represents is application specific (or specific to a sub-standard) but may often be used to represent <abbr title="Featureless Linux Library">FLL</abbr> status code.
               </p>
               <ul>
-                <li>The <abbr title="Featureless Linux Library">FLL</abbr> status code is a 16-bit digit whose first two high-order bits represent <em>error</em> and <em>warning</em> ( representing <em>signal</em>).</li>
+                <li>The <abbr title="Featureless Linux Library">FLL</abbr> status code is a 16-bit digit whose first two high-order bits represent <em class="em">error</em> and <em class="em">warning</em> ( representing <em class="em">signal</em>).</li>
                 <li>The <abbr title="Featureless Linux Library">FLL</abbr> status code as a number is binary sensitive and may not be portable across binaries or systems.</li>
                 <li>For best portability, consider using status as a name string to ensure cross-system or cross-binary compatibility.</li>
               </ul>

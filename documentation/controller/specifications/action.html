@@ -105,7 +105,7 @@
 
           <div class="main-content">
             <p class="p">
-              The <strong>Entry</strong>, <strong>Exit</strong>, and <strong>Rule</strong> files each utilize an <strong>Action</strong>.
+              The <strong class="strong">Entry</strong>, <strong class="strong">Exit</strong>, and <strong class="strong">Rule</strong> files each utilize an <strong class="strong">Action</strong>.
             </p>
           </div>
 
@@ -128,7 +128,7 @@
                 Should any <code class="code">control</code> or <code class="code">controller</code> program implementation not support any particular Action for any reason, one should report that the Action is unsupported.
               </p>
               <p class="p">
-                <strong>Freeze Action</strong>:
+                <strong class="strong">Freeze Action</strong>:
               </p>
               <ul>
                 <li>The Freeze Action is an extension of a Control Group.</li>
@@ -137,20 +137,20 @@
                 <li>This is the complement of the Thaw Action.</li>
                 <li>This designates that a processes Control Group is to be frozen.</li>
                 <li>All Rules (or any process not controlled by the <code class="code">controller</code>) that is within the same Control Group will be frozen.</li>
-                <li><em>(@todo consider instead designing this around the Control Groups instead of a <code class="code">rule</code>.)</em></li>
-                <li><em>(This documentation will likely change with consideration to the above @todo once this gets implemented.)</em></li>
+                <li><em class="em">(@todo consider instead designing this around the Control Groups instead of a <code class="code">rule</code>.)</em></li>
+                <li><em class="em">(This documentation will likely change with consideration to the above @todo once this gets implemented.)</em></li>
                 <li>This must not attempt to freeze (or unfreeze) the Control Group that the <code class="code">controller</code> belongs to.</li>
                 <li>Therefore, if a Rule does not specify a Control Group, then it is likely that the Freeze Action will be unsupported for that Rule/Control Group.</li>
               </ul>
               <p class="p">
-                <strong>Kill Action</strong>:
+                <strong class="strong">Kill Action</strong>:
               </p>
               <ul>
                 <li>Forcefully terminate some process controlled by the <code class="code">controller</code>.</li>
                 <li>This action cannot be blocked and it is recommended to use a Stop Action instead for a more proper termination.</li>
               </ul>
               <p class="p">
-                <strong>Pause Action</strong>:
+                <strong class="strong">Pause Action</strong>:
               </p>
               <ul>
                 <li>The Pause Action will pause (or freeze) the process controlled by the Rule.</li>
@@ -158,14 +158,14 @@
                 <li>This is complemented by the Resume Action.</li>
               </ul>
               <p class="p">
-                <strong>Restart Action</strong>:
+                <strong class="strong">Restart Action</strong>:
               </p>
               <ul>
                 <li>The Restart Action will either perform a Stop Action and then a Restart Action or it will perform the Restart Action designated in some Rule file.</li>
                 <li>Ideally this should inform some process to perform its own restart routines.</li>
               </ul>
               <p class="p">
-                <strong>Resume Action</strong>:
+                <strong class="strong">Resume Action</strong>:
               </p>
               <ul>
                 <li>The Resume Action will unpause (or unfreeze) the process controlled by the Rule.</li>
@@ -173,7 +173,7 @@
                 <li>This is complemented by the Pause Action.</li>
               </ul>
               <p class="p">
-                <strong>Reload Action</strong>:
+                <strong class="strong">Reload Action</strong>:
               </p>
               <ul>
                 <li>The Reload Action will perform the Reload Action designated in some Rule file.</li>
@@ -181,7 +181,7 @@
                 <li>Many programs often differentiate the concept <code class="code">reload</code> from the concept <code class="code">restart</code> in that the program remains running during a <code class="code">reload</code>.</li>
               </ul>
               <p class="p">
-                <strong>Start Action</strong>:
+                <strong class="strong">Start Action</strong>:
               </p>
               <ul>
                 <li>The Start Action will perform the Start Action designated in some Rule file.</li>
@@ -190,7 +190,7 @@
                 <li>This is complemented by the Stop Action.</li>
               </ul>
               <p class="p">
-                <strong>Stop Action</strong>:
+                <strong class="strong">Stop Action</strong>:
               </p>
               <ul>
                 <li>The Stop Action will perform the Stop Action designated in some Rule file.</li>
@@ -199,7 +199,7 @@
                 <li>This is complemented by the Start Action.</li>
               </ul>
               <p class="p">
-                <strong>Thaw Action</strong>:
+                <strong class="strong">Thaw Action</strong>:
               </p>
               <ul>
                 <li>The Thaw Action is an extension of a Control Group.</li>
@@ -208,8 +208,8 @@
                 <li>This is the complement of the Freeze Action.</li>
                 <li>This designates that a processes Control Group is to be unfrozen.</li>
                 <li>All Rules (or any process not controlled by the <code class="code">controller</code>) that is within the same Control Group will be frozen.</li>
-                <li><em>(@todo consider instead designing this around the Control Groups instead of a <code class="code">rule</code>.)</em></li>
-                <li><em>(This documentation will likely change with consideration to the above @todo once this gets implemented.)</em></li>
+                <li><em class="em">(@todo consider instead designing this around the Control Groups instead of a <code class="code">rule</code>.)</em></li>
+                <li><em class="em">(This documentation will likely change with consideration to the above @todo once this gets implemented.)</em></li>
                 <li>This must not attempt to thaw (or unthaw) the Control Group that the <code class="code">controller</code> belongs to.</li>
                 <li>Therefore, if a Rule does not specify a Control Group, then it is likely that the Thaw Action will be unsupported for that Rule/Control Group.</li>
               </ul>

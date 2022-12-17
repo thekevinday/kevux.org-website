@@ -77,12 +77,12 @@
               The primary focus of the 0.5.10 release is for releasing the 0.6.0 stable release.
             </p>
             <p class="p">
-              Unit tests for all <em>level_0</em> projects now exists (except for f_type which is not planned to ever have unit tests).
+              Unit tests for all <em class="em">level_0</em> projects now exists (except for f_type which is not planned to ever have unit tests).
             </p>
             <p class="p">
               Many problems and consistency issue have been identified by the written unit tests and fixed.
               The unit tests, however, are neither complete nor thorough.
-              There are almost no unit tests for <em>level_1</em>, <em>level_2</em>, or <em>level_3</em> projects.
+              There are almost no unit tests for <em class="em">level_1</em>, <em class="em">level_2</em>, or <em class="em">level_3</em> projects.
             </p>
             <p class="p">
               I noticed that the Unicode processing code is incomplete as of the 0.5.9 release.
@@ -93,142 +93,142 @@
               There are now over 3000 unit tests for all code in this repository.
             </p>
             <p class="p">
-              <strong>Security Fixes:</strong>
+              <strong class="strong">Security Fixes:</strong>
             </p>
             <ul>
-              <li><strong>FLL</strong>: Floating point exception due to incorrect number type used in conversion function.</li>
-              <li><strong>FLL</strong>: The realpath() calls malloc() and free() is not called (memory leak).</li>
-              <li><strong>FLL</strong>: Incorrect pointers result in incomplete memory deallocation in f_directory.</li>
-              <li><strong>Fake</strong>: Add missing NULL at the end of string.</li>
-              <li><strong>Fake</strong>: Add missing parameter checks and rename "data" to "custom".</li>
-              <li><strong>Fake</strong>: Wrong variable passed resulting in invalid read and writes in Fake.</li>
+              <li><strong class="strong">FLL</strong>: Floating point exception due to incorrect number type used in conversion function.</li>
+              <li><strong class="strong">FLL</strong>: The realpath() calls malloc() and free() is not called (memory leak).</li>
+              <li><strong class="strong">FLL</strong>: Incorrect pointers result in incomplete memory deallocation in f_directory.</li>
+              <li><strong class="strong">Fake</strong>: Add missing NULL at the end of string.</li>
+              <li><strong class="strong">Fake</strong>: Add missing parameter checks and rename "data" to "custom".</li>
+              <li><strong class="strong">Fake</strong>: Wrong variable passed resulting in invalid read and writes in Fake.</li>
             </ul>
             <p class="p">
-              <strong>Regression Fixes:</strong>
+              <strong class="strong">Regression Fixes:</strong>
             </p>
             <ul>
-              <li><strong>Controller</strong>: Remove invalid validation block.</li>
+              <li><strong class="strong">Controller</strong>: Remove invalid validation block.</li>
             </ul>
             <p class="p">
-              <strong>Features:</strong>
+              <strong class="strong">Features:</strong>
             </p>
             <ul>
-              <li><strong>FLL</strong>: Provide simple script for assisting in the mass generation of Unicode handling code.</li>
-              <li><strong>FLL</strong>: Provide rebuild option in package script.</li>
-              <li><strong>IKI Read</strong>: The iki_read program should support wrapping a variable value.</li>
-              <li><strong>IKI Read</strong>: The iki_read program should support a more generalized substitution process called "replace".</li>
-              <li><strong>UTF8</strong>: Add missing functionality allowing the utf8 program to convert back to binary data with invalid codepoints.</li>
+              <li><strong class="strong">FLL</strong>: Provide simple script for assisting in the mass generation of Unicode handling code.</li>
+              <li><strong class="strong">FLL</strong>: Provide rebuild option in package script.</li>
+              <li><strong class="strong">IKI Read</strong>: The iki_read program should support wrapping a variable value.</li>
+              <li><strong class="strong">IKI Read</strong>: The iki_read program should support a more generalized substitution process called "replace".</li>
+              <li><strong class="strong">UTF8</strong>: Add missing functionality allowing the utf8 program to convert back to binary data with invalid codepoints.</li>
             </ul>
             <p class="p">
-              <strong>Bug Fixes:</strong>
+              <strong class="strong">Bug Fixes:</strong>
             </p>
             <ul>
-              <li><strong>FLL</strong>: Signal code is not being set when accepted signal is received.</li>
-              <li><strong>FLL</strong>: Problems and clean ups exposed when writing f_thread unit tests.</li>
-              <li><strong>FLL</strong>: The < 0xc2 test is supposed to be against the first byte rather than the second.</li>
-              <li><strong>FLL</strong>: A typo resulting in treating < 0xc3 as invalid UTF-8 when it is instead < 0xc2.</li>
-              <li><strong>FLL</strong>: Add missing endianness check to f_convesion.</li>
-              <li><strong>FLL</strong>: Uppercase 'T' needs to be supported (fl_conversion).</li>
-              <li><strong>FLL</strong>: Problems exposed by unit tests in f_utf.</li>
-              <li><strong>FLL</strong>: Incorrect 4-width characters are generated.</li>
-              <li><strong>FLL</strong>: Problems exposed by unit tests for f_signal.</li>
-              <li><strong>FLL</strong>: Problems exposed by unit tests in f_file.</li>
-              <li><strong>FLL</strong>: Problems exposed by unit tests in f_conversion.</li>
-              <li><strong>FLL</strong>: When any of -c, -p, or -s is the last parameter in test.sh no error is thrown.</li>
-              <li><strong>FLL</strong>: Package building test failures do not properly fail.</li>
-              <li><strong>FLL</strong>: Fix problems exposed by unit tests in f_status.</li>
-              <li><strong>FLL</strong>: Incorrect variable used results in F_parameter error.</li>
-              <li><strong>FLL</strong>: The print functions are not printing the last letter in certain cases.</li>
-              <li><strong>FLL</strong>: Trimmed printing is not working as expected.</li>
-              <li><strong>FLL</strong>: Fix problems exposed by unit tests in f_print.</li>
-              <li><strong>FLL</strong>: The quotes are always being defined even when there are no quotes in the FSS read functions.</li>
-              <li><strong>FLL</strong>: Problems exposed by unit tests (f_socket).</li>
-              <li><strong>FLL</strong>: Remove extra zero from hex-digit (f_utf).</li>
-              <li><strong>FLL</strong>: Fix problems exposed by unit tests (fll_status_string).</li>
-              <li><strong>FLL</strong>: Problems exposed by unit tests and do some relevant code style clean up (f_execute).</li>
-              <li><strong>FLL</strong>: Add missing return value handling in f_fss.</li>
-              <li><strong>FLL</strong>: Incorrect and missing initializer macros in f_fss.</li>
-              <li><strong>FLL</strong>: The FSS object write functions don't handle all newlines.</li>
-              <li><strong>FLL</strong>: Fixes to f_path of problems exposed by unit tests.</li>
-              <li><strong>FLL</strong>: Invalid read in f_file_stream_read_until().</li>
-              <li><strong>FLL</strong>: NULL is a valid character, causing utf8 not to properly print NULL characters.</li>
-              <li><strong>FLL</strong>: The FILE type may not have a known storage size and use F_type_output_d.</li>
-              <li><strong>FLL</strong>: Problems in f_file functions exposed by unit tests.</li>
-              <li><strong>FLL</strong>: Problems in f_file regarding file mode exposed by unit tests.</li>
-              <li><strong>FLL</strong>: The f_file_is_at() function is not properly comparing the file type.</li>
-              <li><strong>FLL</strong>: Three-width UTF-8 characters are improperly being detected as unassigned.</li>
-              <li><strong>FLL</strong>: Unicode characters are not printing correctly.</li>
-              <li><strong>FLL</strong>: Fix problems exposed by f_file project tests.</li>
-              <li><strong>FLL</strong>: Memory handling related to or exposed by f_directory unit tests.</li>
-              <li><strong>FLL</strong>: Invalid memory deletion.</li>
-              <li><strong>FLL</strong>: For f_file, use off_t, pre-test for EOF or error, use sizeof(f_char_t), and use size_t rather than ssize_t.</li>
-              <li><strong>FLL</strong>: The f_capability should accept f_string_constant_t rather than f_string_static_t.</li>
-              <li><strong>Byte Dump</strong>: The byte_dump --first and --last are not always working as expected.</li>
-              <li><strong>Byte Dump</strong>: Trailing Unicode sequences that get cut off before the encoding is completed improperly display.</li>
-              <li><strong>Controller</strong>: Entry file not found when --settings is used.</li>
-              <li><strong>Controller</strong>: Incorrect rule name for controller boot settings file.</li>
-              <li><strong>Controller</strong>: When compiled as "init" the controller program does not use the correct paths.</li>
-              <li><strong>Fake</strong>: IKI variable substitution in fake doesn't always expand properly.</li>
-              <li><strong>Fake</strong>: Use '%Q' rather than '%S' when printing error.prefix and add missing error.prefix.</li>
-              <li><strong>Fake</strong>: Environment variables in fake are not being expanded.</li>
-              <li><strong>Fake</strong>: The fake program should not require the data directory when explicit fakefile or settings files are specified.</li>
-              <li><strong>Fake</strong>: Defaults should not be applied when an empty Object is specified.</li>
-              <li><strong>FSS Identify</strong>: The fss_identify needs the latest version of f_utf_is_digit().</li>
-              <li><strong>UTF8</strong>: Last character of file after conversion from code point is not printed by utf8 program.</li>
-              <li><strong>UTF8</strong>: Combining and Width detection for utf8 are not properly printing.</li>
+              <li><strong class="strong">FLL</strong>: Signal code is not being set when accepted signal is received.</li>
+              <li><strong class="strong">FLL</strong>: Problems and clean ups exposed when writing f_thread unit tests.</li>
+              <li><strong class="strong">FLL</strong>: The < 0xc2 test is supposed to be against the first byte rather than the second.</li>
+              <li><strong class="strong">FLL</strong>: A typo resulting in treating < 0xc3 as invalid UTF-8 when it is instead < 0xc2.</li>
+              <li><strong class="strong">FLL</strong>: Add missing endianness check to f_convesion.</li>
+              <li><strong class="strong">FLL</strong>: Uppercase 'T' needs to be supported (fl_conversion).</li>
+              <li><strong class="strong">FLL</strong>: Problems exposed by unit tests in f_utf.</li>
+              <li><strong class="strong">FLL</strong>: Incorrect 4-width characters are generated.</li>
+              <li><strong class="strong">FLL</strong>: Problems exposed by unit tests for f_signal.</li>
+              <li><strong class="strong">FLL</strong>: Problems exposed by unit tests in f_file.</li>
+              <li><strong class="strong">FLL</strong>: Problems exposed by unit tests in f_conversion.</li>
+              <li><strong class="strong">FLL</strong>: When any of -c, -p, or -s is the last parameter in test.sh no error is thrown.</li>
+              <li><strong class="strong">FLL</strong>: Package building test failures do not properly fail.</li>
+              <li><strong class="strong">FLL</strong>: Fix problems exposed by unit tests in f_status.</li>
+              <li><strong class="strong">FLL</strong>: Incorrect variable used results in F_parameter error.</li>
+              <li><strong class="strong">FLL</strong>: The print functions are not printing the last letter in certain cases.</li>
+              <li><strong class="strong">FLL</strong>: Trimmed printing is not working as expected.</li>
+              <li><strong class="strong">FLL</strong>: Fix problems exposed by unit tests in f_print.</li>
+              <li><strong class="strong">FLL</strong>: The quotes are always being defined even when there are no quotes in the FSS read functions.</li>
+              <li><strong class="strong">FLL</strong>: Problems exposed by unit tests (f_socket).</li>
+              <li><strong class="strong">FLL</strong>: Remove extra zero from hex-digit (f_utf).</li>
+              <li><strong class="strong">FLL</strong>: Fix problems exposed by unit tests (fll_status_string).</li>
+              <li><strong class="strong">FLL</strong>: Problems exposed by unit tests and do some relevant code style clean up (f_execute).</li>
+              <li><strong class="strong">FLL</strong>: Add missing return value handling in f_fss.</li>
+              <li><strong class="strong">FLL</strong>: Incorrect and missing initializer macros in f_fss.</li>
+              <li><strong class="strong">FLL</strong>: The FSS object write functions don't handle all newlines.</li>
+              <li><strong class="strong">FLL</strong>: Fixes to f_path of problems exposed by unit tests.</li>
+              <li><strong class="strong">FLL</strong>: Invalid read in f_file_stream_read_until().</li>
+              <li><strong class="strong">FLL</strong>: NULL is a valid character, causing utf8 not to properly print NULL characters.</li>
+              <li><strong class="strong">FLL</strong>: The FILE type may not have a known storage size and use F_type_output_d.</li>
+              <li><strong class="strong">FLL</strong>: Problems in f_file functions exposed by unit tests.</li>
+              <li><strong class="strong">FLL</strong>: Problems in f_file regarding file mode exposed by unit tests.</li>
+              <li><strong class="strong">FLL</strong>: The f_file_is_at() function is not properly comparing the file type.</li>
+              <li><strong class="strong">FLL</strong>: Three-width UTF-8 characters are improperly being detected as unassigned.</li>
+              <li><strong class="strong">FLL</strong>: Unicode characters are not printing correctly.</li>
+              <li><strong class="strong">FLL</strong>: Fix problems exposed by f_file project tests.</li>
+              <li><strong class="strong">FLL</strong>: Memory handling related to or exposed by f_directory unit tests.</li>
+              <li><strong class="strong">FLL</strong>: Invalid memory deletion.</li>
+              <li><strong class="strong">FLL</strong>: For f_file, use off_t, pre-test for EOF or error, use sizeof(f_char_t), and use size_t rather than ssize_t.</li>
+              <li><strong class="strong">FLL</strong>: The f_capability should accept f_string_constant_t rather than f_string_static_t.</li>
+              <li><strong class="strong">Byte Dump</strong>: The byte_dump --first and --last are not always working as expected.</li>
+              <li><strong class="strong">Byte Dump</strong>: Trailing Unicode sequences that get cut off before the encoding is completed improperly display.</li>
+              <li><strong class="strong">Controller</strong>: Entry file not found when --settings is used.</li>
+              <li><strong class="strong">Controller</strong>: Incorrect rule name for controller boot settings file.</li>
+              <li><strong class="strong">Controller</strong>: When compiled as "init" the controller program does not use the correct paths.</li>
+              <li><strong class="strong">Fake</strong>: IKI variable substitution in fake doesn't always expand properly.</li>
+              <li><strong class="strong">Fake</strong>: Use '%Q' rather than '%S' when printing error.prefix and add missing error.prefix.</li>
+              <li><strong class="strong">Fake</strong>: Environment variables in fake are not being expanded.</li>
+              <li><strong class="strong">Fake</strong>: The fake program should not require the data directory when explicit fakefile or settings files are specified.</li>
+              <li><strong class="strong">Fake</strong>: Defaults should not be applied when an empty Object is specified.</li>
+              <li><strong class="strong">FSS Identify</strong>: The fss_identify needs the latest version of f_utf_is_digit().</li>
+              <li><strong class="strong">UTF8</strong>: Last character of file after conversion from code point is not printed by utf8 program.</li>
+              <li><strong class="strong">UTF8</strong>: Combining and Width detection for utf8 are not properly printing.</li>
             </ul>
             <p class="p">
-              <strong>Updates:</strong>
+              <strong class="strong">Updates:</strong>
             </p>
             <ul>
-              <li><strong>FLL</strong>: Improve design in f_conversion to be safer when handling variables allowed to be replaced.</li>
-              <li><strong>FLL</strong>: Example bootstrap script now supports building all programs.</li>
-              <li><strong>FLL</strong>: White space function changes.</li>
-              <li><strong>FLL</strong>: Use "decimal" instead of "digit" (f_conversion).</li>
-              <li><strong>FLL</strong>: The f_utf project regarding digits and perform other clean ups.</li>
-              <li><strong>FLL</strong>: Use a regular int instead of uint8_t for counting digit in conversion function.</li>
-              <li><strong>FLL</strong>: Add script for generating Unicode Codepoints from integers.</li>
-              <li><strong>FLL</strong>: Generate Unicode script to support generating test data.</li>
-              <li><strong>FLL</strong>: Finish adding Unicode symbol handling code.</li>
-              <li><strong>FLL</strong>: Rename f_thread_signal() to f_thread_signal_write().</li>
-              <li><strong>FLL</strong>: Implement Math Symbol Category.</li>
-              <li><strong>FLL</strong>: Handle more cases of combining characters following white space.</li>
-              <li><strong>FLL</strong>: Add Unicode Symbols for currency and modifiers and minor comment clean ups.</li>
-              <li><strong>FLL</strong>: The f_utf punctuation codes.</li>
-              <li><strong>FLL</strong>: Tweak endiannes for f_utf_char_t.</li>
-              <li><strong>FLL</strong>: Use F_utf_not instead of F_utf and other resulting changes.</li>
-              <li><strong>FLL</strong>: Rewrite the f_serialize functions.</li>
-              <li><strong>FLL</strong>: The f_limit project is out of date.</li>
-              <li><strong>FLL</strong>: Add missing state.flag assignment in f_state_t_clear macro and fix syntax practice in initializer.</li>
-              <li><strong>FLL</strong>: Add missing function f_path_is_absolute() and fix existing f_path_is_*() functions.</li>
-              <li><strong>FLL</strong>: Utilize the state.flag to allow for fss read to not fail out on invalid UTF-8 code sequence and fix naming problems.</li>
-              <li><strong>FLL</strong>: Utilize the state.flag to allow for iki read to not fail out on invalid UTF-8 code sequence.</li>
-              <li><strong>FLL</strong>: The f_utf_is_* functions should be more specific on return state for F_failure.</li>
-              <li><strong>FLL</strong>: Add pictures of the Kohlrabi that I have decided to use to represent the FLL project.</li>
-              <li><strong>FLL</strong>: Remove unused code, cast (char) to (unsigned int) for array indexes, and fix bitwise problem.</li>
-              <li><strong>FLL</strong>: Add licenses to text files and clarify OSL text.</li>
-              <li><strong>FLL</strong>: Redesign f_file functions to not need struct stat passed and other improvements.</li>
-              <li><strong>FLL</strong>: Improve the logic for the read link f_file functions.</li>
-              <li><strong>FLL</strong>: Add missing checks to f_file_link_hard_at() and use F_file_descriptor.</li>
-              <li><strong>FLL</strong>: Implement file statistics flag enumeration, dereferencing/no-dereferencing, and also use F_stream_not.</li>
-              <li><strong>FLL</strong>: Simplify build settings files.</li>
-              <li><strong>All FSS Read Programs</strong>: Improve read program logic to allow for catching interrupts during file read.</li>
-              <li><strong>Controller</strong>: Add note about ulimit privileges potentially causes failure of example controller rules.</li>
-              <li><strong>Fake</strong>: Add additional checks just in case execution is attempted with both program name and arguments have no data.</li>
-              <li><strong>Fake</strong>: The featureless make should default to 'make' mode.</li>
-              <li><strong>Fake</strong>: The fake program should check file existence when clean is combined with another command like build or make.</li>
-              <li><strong>Fake</strong>: The fake "build" fakefile Object needs to support modes and fix a related bug.</li>
-              <li><strong>Fake</strong>: Use off_t instead of f_array_length_t to match uses in functions like f_file_size().</li>
-              <li><strong>Fake</strong>: The fake program should show the fakefile or setting being used when building.</li>
-              <li><strong>Fake</strong>: The example project build settings and fakefiles.</li>
-              <li><strong>FSS Embedded List Read</strong>: Remove extra error print in fss_embedded_list_read.</li>
-              <li><strong>IKI Write</strong>: Have iki_write use form-feed rather than end of line character for pipe input.</li>
+              <li><strong class="strong">FLL</strong>: Improve design in f_conversion to be safer when handling variables allowed to be replaced.</li>
+              <li><strong class="strong">FLL</strong>: Example bootstrap script now supports building all programs.</li>
+              <li><strong class="strong">FLL</strong>: White space function changes.</li>
+              <li><strong class="strong">FLL</strong>: Use "decimal" instead of "digit" (f_conversion).</li>
+              <li><strong class="strong">FLL</strong>: The f_utf project regarding digits and perform other clean ups.</li>
+              <li><strong class="strong">FLL</strong>: Use a regular int instead of uint8_t for counting digit in conversion function.</li>
+              <li><strong class="strong">FLL</strong>: Add script for generating Unicode Codepoints from integers.</li>
+              <li><strong class="strong">FLL</strong>: Generate Unicode script to support generating test data.</li>
+              <li><strong class="strong">FLL</strong>: Finish adding Unicode symbol handling code.</li>
+              <li><strong class="strong">FLL</strong>: Rename f_thread_signal() to f_thread_signal_write().</li>
+              <li><strong class="strong">FLL</strong>: Implement Math Symbol Category.</li>
+              <li><strong class="strong">FLL</strong>: Handle more cases of combining characters following white space.</li>
+              <li><strong class="strong">FLL</strong>: Add Unicode Symbols for currency and modifiers and minor comment clean ups.</li>
+              <li><strong class="strong">FLL</strong>: The f_utf punctuation codes.</li>
+              <li><strong class="strong">FLL</strong>: Tweak endiannes for f_utf_char_t.</li>
+              <li><strong class="strong">FLL</strong>: Use F_utf_not instead of F_utf and other resulting changes.</li>
+              <li><strong class="strong">FLL</strong>: Rewrite the f_serialize functions.</li>
+              <li><strong class="strong">FLL</strong>: The f_limit project is out of date.</li>
+              <li><strong class="strong">FLL</strong>: Add missing state.flag assignment in f_state_t_clear macro and fix syntax practice in initializer.</li>
+              <li><strong class="strong">FLL</strong>: Add missing function f_path_is_absolute() and fix existing f_path_is_*() functions.</li>
+              <li><strong class="strong">FLL</strong>: Utilize the state.flag to allow for fss read to not fail out on invalid UTF-8 code sequence and fix naming problems.</li>
+              <li><strong class="strong">FLL</strong>: Utilize the state.flag to allow for iki read to not fail out on invalid UTF-8 code sequence.</li>
+              <li><strong class="strong">FLL</strong>: The f_utf_is_* functions should be more specific on return state for F_failure.</li>
+              <li><strong class="strong">FLL</strong>: Add pictures of the Kohlrabi that I have decided to use to represent the FLL project.</li>
+              <li><strong class="strong">FLL</strong>: Remove unused code, cast (char) to (unsigned int) for array indexes, and fix bitwise problem.</li>
+              <li><strong class="strong">FLL</strong>: Add licenses to text files and clarify OSL text.</li>
+              <li><strong class="strong">FLL</strong>: Redesign f_file functions to not need struct stat passed and other improvements.</li>
+              <li><strong class="strong">FLL</strong>: Improve the logic for the read link f_file functions.</li>
+              <li><strong class="strong">FLL</strong>: Add missing checks to f_file_link_hard_at() and use F_file_descriptor.</li>
+              <li><strong class="strong">FLL</strong>: Implement file statistics flag enumeration, dereferencing/no-dereferencing, and also use F_stream_not.</li>
+              <li><strong class="strong">FLL</strong>: Simplify build settings files.</li>
+              <li><strong class="strong">All FSS Read Programs</strong>: Improve read program logic to allow for catching interrupts during file read.</li>
+              <li><strong class="strong">Controller</strong>: Add note about ulimit privileges potentially causes failure of example controller rules.</li>
+              <li><strong class="strong">Fake</strong>: Add additional checks just in case execution is attempted with both program name and arguments have no data.</li>
+              <li><strong class="strong">Fake</strong>: The featureless make should default to 'make' mode.</li>
+              <li><strong class="strong">Fake</strong>: The fake program should check file existence when clean is combined with another command like build or make.</li>
+              <li><strong class="strong">Fake</strong>: The fake "build" fakefile Object needs to support modes and fix a related bug.</li>
+              <li><strong class="strong">Fake</strong>: Use off_t instead of f_array_length_t to match uses in functions like f_file_size().</li>
+              <li><strong class="strong">Fake</strong>: The fake program should show the fakefile or setting being used when building.</li>
+              <li><strong class="strong">Fake</strong>: The example project build settings and fakefiles.</li>
+              <li><strong class="strong">FSS Embedded List Read</strong>: Remove extra error print in fss_embedded_list_read.</li>
+              <li><strong class="strong">IKI Write</strong>: Have iki_write use form-feed rather than end of line character for pipe input.</li>
             </ul>
             <p class="p">
               Check out the project on the <a href="fll.html#release" class="link"><abbr title="Featureless Linux Library">FLL</abbr> release</a> page.
             </p>
             <p class="p">
-              <strong>Kevin Day</strong>
+              <strong class="strong">Kevin Day</strong>
             </p>
           </div>
         </main>

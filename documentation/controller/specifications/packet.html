@@ -105,7 +105,7 @@
 
           <div class="main-content">
             <p class="p">
-              The <strong>controller</strong> program communicates use the <code class="code">FSS-000F (Packet)</code>.
+              The <strong class="strong">controller</strong> program communicates use the <code class="code">FSS-000F (Packet)</code>.
             </p>
             <p class="p">
               This specification declares how the Payload Block, which is in <code class="code">FSS-000E (Payload)</code> format, is required to be used.
@@ -239,14 +239,14 @@
                 </li>
               </ul>
               <p class="p">
-                The <strong>controller</strong> payload:
+                The <strong class="strong">controller</strong> payload:
               </p>
               <ul>
-                <li>Commands being sent to the <strong>controller</strong> and their respective responses utilize a <strong>controller</strong> payload.</li>
-                <li>These are pre-defined commands to rules or the <strong>controller</strong> program itself.</li>
+                <li>Commands being sent to the <strong class="strong">controller</strong> and their respective responses utilize a <strong class="strong">controller</strong> payload.</li>
+                <li>These are pre-defined commands to rules or the <strong class="strong">controller</strong> program itself.</li>
                 <li>Commands such as starting or stopping some rule, for example.</li>
                 <li>
-                  <div>A <strong>controller</strong> payload is also sent in response to a <strong>controller</strong> payload request to represent a success.</div>
+                  <div>A <strong class="strong">controller</strong> payload is also sent in response to a <strong class="strong">controller</strong> payload request to represent a success.</div>
                   <ul>
                     <li>The <code class="code">now</code> condition designates that the kexec, reboot, or shutdown is to begin immediately.</li>
                     <li>The <code class="code">at</code> condition designates that the kexec, reboot, or shutdown is to begin once a specific date and time is reached by the system clock.</li>
@@ -273,7 +273,7 @@
                 Multiple <code class="code">message</code> may exist in the response so long as they each match an <code class="code">action</code> in the request.
               </p>
               <p class="p">
-                The <strong>error</strong> payload:
+                The <strong class="strong">error</strong> payload:
               </p>
               <ul>
                 <li>The error payload is intended to communicate some sort of failure.</li>
@@ -283,7 +283,7 @@
                 <li>The <code class="code">payload</code> will contain a NULL terminated string representing the message used to describe the error.</li>
               </ul>
               <p class="p">
-                The <strong>init</strong> payload:
+                The <strong class="strong">init</strong> payload:
               </p>
               <ul>
                 <li>The init payload is intended exclusively for the <code class="code">init</code> operation mode and is expected to only be available when running as <code class="code">init</code>.</li>

@@ -100,29 +100,29 @@
       <div role="document" class="main-block">
         <main class="main">
           <header class="section-header header">
-            <h1 class="section-title h h1">Controller <strong>Exit</strong> Specifications</h1>
+            <h1 class="section-title h h1">Controller <strong class="strong">Exit</strong> Specifications</h1>
           </header>
 
           <div class="main-content">
             <p class="p">
-              The <strong>Exit</strong> files follow the <code class="code">FSS-0005 (Somewhat Basic List)</code> format.
+              The <strong class="strong">Exit</strong> files follow the <code class="code">FSS-0005 (Somewhat Basic List)</code> format.
             </p>
             <p class="p">
-              An <strong>Exit</strong> file name is expected to have the file extension <code class="code">.exit</code>.
+              An <strong class="strong">Exit</strong> file name is expected to have the file extension <code class="code">.exit</code>.
             </p>
             <p class="p">
-              For each <strong>Exit</strong> file:
+              For each <strong class="strong">Exit</strong> file:
             </p>
             <ul>
               <li>The outer most part is a <code class="code">FSS-0002 (Basic List)</code>.</li>
-              <li>The <em>Basic List Object</em> is considered the <code class="code">Item</code>.</li>
-              <li>The <em>Basic List Content</em> are considered the <code class="code">Actions</code>.</li>
-              <li>The <em>Actions</em> are <code class="code">FSS-0001 (Extended)</code>.</li>
-              <li>Each <em>Action Object</em> is the <code class="code">Action Name</code>.</li>
-              <li>Each <em>Action Content</em> are the <code class="code">Action Parameters</code>.</li>
+              <li>The <em class="em">Basic List Object</em> is considered the <code class="code">Item</code>.</li>
+              <li>The <em class="em">Basic List Content</em> are considered the <code class="code">Actions</code>.</li>
+              <li>The <em class="em">Actions</em> are <code class="code">FSS-0001 (Extended)</code>.</li>
+              <li>Each <em class="em">Action Object</em> is the <code class="code">Action Name</code>.</li>
+              <li>Each <em class="em">Action Content</em> are the <code class="code">Action Parameters</code>.</li>
             </ul>
             <p class="p">
-              The <strong>Items</strong>:
+              The <strong class="strong">Items</strong>:
             </p>
             <ul>
               <li><code class="code">main</code>: required.</li>
@@ -144,7 +144,7 @@
               </li>
             </ul>
             <p class="p">
-              The <strong>Exit</strong> file may have any other valid Item Objects, but only the above are reserved.
+              The <strong class="strong">Exit</strong> file may have any other valid Item Objects, but only the above are reserved.
             </p>
             <p class="p">
               The Actions:
@@ -342,20 +342,20 @@
 
             <div class="section-content">
               <p class="p">
-                This describes the intent and purpose of an <strong>Exit</strong> file.
+                This describes the intent and purpose of an <strong class="strong">Exit</strong> file.
               </p>
               <p class="p">
-                An <strong>Exit</strong> file, such as <code class="code">default.exit</code>, is intended to store a set of rules in which the controller will process on execution.
+                An <strong class="strong">Exit</strong> file, such as <code class="code">default.exit</code>, is intended to store a set of rules in which the controller will process on execution.
                 These are used to run some set of commands, such as shutting down a system.
               </p>
               <p class="p">
-                An <strong>Exit</strong> is a special variation or subset of an <strong>Entry</strong>.
+                An <strong class="strong">Exit</strong> is a special variation or subset of an <strong class="strong">Entry</strong>.
               </p>
               <p class="p">
                 The <code class="code">settings</code> item Object:
               </p>
               <ul>
-                <li>Represents <strong>Exit</strong> settings and is not an <code class="code">item</code> that can be executed.</li>
+                <li>Represents <strong class="strong">Exit</strong> settings and is not an <code class="code">item</code> that can be executed.</li>
                 <li>A number of settings are supported, but if this Item Object is not specified, then defaults are used.</li>
                 <li>
                   <div>
@@ -370,29 +370,29 @@
                     <li>Example IKI variable substitution: for <code class="code">define PATH /bin:/sbin</code>, the associated IKI variable would look like: <code class="code">define:"PATH"</code>.</li>
                     <li>All environment variables, including those defined using this, must be in the <code class="code">environment</code> list in any given Rule to be exported to the executed process.</li>
                     <li>Environment variables added here that are not added to the environment are still exposed as an IKI variable.</li>
-                    <li>This is only expanded within any Rule operated on by this <strong>Exit</strong>.</li>
+                    <li>This is only expanded within any Rule operated on by this <strong class="strong">Exit</strong>.</li>
                   </ul>
                   <p class="p">
                     The <code class="code">mode</code> setting:
                   </p>
                   <ul>
-                    <li>Represents the mode in which the <strong>Exit</strong> is operating in.</li>
+                    <li>Represents the mode in which the <strong class="strong">Exit</strong> is operating in.</li>
                     <li>
                       <div>The following modes are supported: <code class="code">program</code> and <code class="code">service</code>.</div>
                       <p class="p">
                         The <code class="code">program</code> mode:
                       </p>
                       <ul>
-                        <li>Designates that the <strong>Exit</strong> operates as a program and exits when complete.</li>
-                        <li>Will call the <code class="code">exit</code> with the same name as this <strong>Exit</strong>, but with the extension <code class="code">exit</code>, such as <code class="code">default.exit</code>.</li>
+                        <li>Designates that the <strong class="strong">Exit</strong> operates as a program and exits when complete.</li>
+                        <li>Will call the <code class="code">exit</code> with the same name as this <strong class="strong">Exit</strong>, but with the extension <code class="code">exit</code>, such as <code class="code">default.exit</code>.</li>
                         <li>Supports the Item Action <code class="code">execute</code> to execute a program (switching the <code class="code">controller</code> program entirely with the executed process).</li>
                       </ul>
                       <p class="p">
                         The <code class="code">service</code> mode:
                       </p>
                       <ul>
-                        <li>Designates that the <strong>Exit</strong> operates as a service and will sit and wait for control commands when complete.</li>
-                        <li>Will call the <code class="code">exit</code> with the same name as this <strong>Exit</strong>, but with the extension <code class="code">exit</code>, such as <code class="code">default.exit</code>.</li>
+                        <li>Designates that the <strong class="strong">Exit</strong> operates as a service and will sit and wait for control commands when complete.</li>
+                        <li>Will call the <code class="code">exit</code> with the same name as this <strong class="strong">Exit</strong>, but with the extension <code class="code">exit</code>, such as <code class="code">default.exit</code>.</li>
                         <li>Does not support the Item Action <code class="code">execute</code>.</li>
                         <li>This is the default mode.</li>
                       </ul>
@@ -405,33 +405,33 @@
                     <li>Use this to define an IKI variable name and value.</li>
                     <li>These do not conflict with environment variables and are not exposed as environment variables.</li>
                     <li>Example IKI variable substitution: for <code class="code">parameter hello world</code>, the associated IKI variable would look like: <code class="code">parameter:"hello"</code>.</li>
-                    <li>This is only expanded within any Rule operated on by this <strong>Exit</strong>.</li>
+                    <li>This is only expanded within any Rule operated on by this <strong class="strong">Exit</strong>.</li>
                   </ul>
                   <p class="p">
                     The <code class="code">pid</code> setting:
                   </p>
                   <ul>
-                    <li>Represents how the <strong>Exit</strong> <abbr title="Process Identifier">PID</abbr> file is generated or not.</li>
+                    <li>Represents how the <strong class="strong">Exit</strong> <abbr title="Process Identifier">PID</abbr> file is generated or not.</li>
                     <li>The following modes are supported: <code class="code">disable</code>, <code class="code">require</code>, and <code class="code">ready</code>.</li>
-                    <li>For <code class="code">disable</code>, not <abbr title="Process Identifier">PID</abbr> file representing the <strong>Exit</strong> is created.</li>
-                    <li>For <code class="code">require</code>, check to see if the <abbr title="Process Identifier">PID</abbr> file exists for an <strong>Exit</strong> at startup and then when <code class="code">ready</code> create a <abbr title="Process Identifier">PID</abbr> file, display error on <abbr title="Process Identifier">PID</abbr> file already exists or on failure and then fail.</li>
+                    <li>For <code class="code">disable</code>, not <abbr title="Process Identifier">PID</abbr> file representing the <strong class="strong">Exit</strong> is created.</li>
+                    <li>For <code class="code">require</code>, check to see if the <abbr title="Process Identifier">PID</abbr> file exists for an <strong class="strong">Exit</strong> at startup and then when <code class="code">ready</code> create a <abbr title="Process Identifier">PID</abbr> file, display error on <abbr title="Process Identifier">PID</abbr> file already exists or on failure and then fail.</li>
                     <li>For <code class="code">ready</code>, when <code class="code">ready</code> create a <abbr title="Process Identifier">PID</abbr> file, display error on failure and then fail (does not check if <abbr title="Process Identifier">PID</abbr> file exists).</li>
                   </ul>
                   <p class="p">
                     The <code class="code">show</code> setting:
                   </p>
                   <ul>
-                    <li>Represents the way <strong>Exit</strong> processing presents information to the screen.</li>
-                    <li>This applies only to the <strong>Exit</strong> and Rule processing itself and does not handle the output of programs and scripts being executed by some <strong>Exit</strong> or Rule.</li>
+                    <li>Represents the way <strong class="strong">Exit</strong> processing presents information to the screen.</li>
+                    <li>This applies only to the <strong class="strong">Exit</strong> and Rule processing itself and does not handle the output of programs and scripts being executed by some <strong class="strong">Exit</strong> or Rule.</li>
                     <li>The following show options are supported: <code class="code">normal</code> and <code class="code">init</code>.</li>
-                    <li>For <code class="code">normal</code>, will not report the start or stop of some <strong>Exit</strong> or Rule execution but will report any errors or warnings as appropriate.</li>
+                    <li>For <code class="code">normal</code>, will not report the start or stop of some <strong class="strong">Exit</strong> or Rule execution but will report any errors or warnings as appropriate.</li>
                     <li>For <code class="code">init</code>, will report when starting programs and may include reporting success and failure status.</li>
                   </ul>
                   <p class="p">
                     The <code class="code">timeout</code> setting:
                   </p>
                   <ul>
-                    <li>Represents the default timeouts for the <strong>Exit</strong>.</li>
+                    <li>Represents the default timeouts for the <strong class="strong">Exit</strong>.</li>
                     <li>See the <code class="code">timeout</code> Action below for details.</li>
                   </ul>
                 </li>
@@ -538,7 +538,7 @@
                     <li>For example, the controller program may be used as a full blown <code class="code">init</code> replacement and therefore may need to mount the <code class="code">/var/run/</code> directory.</li>
                     <li>If the <abbr title="Process Identifier">PID</abbr> file is created at program start, then the <code class="code">/var/run/</code>controller.pid would be written before the <code class="code">/var/run/</code> directory is ready.</li>
                     <li>This could be a problem, such as on a read-only file system the <abbr title="Process Identifier">PID</abbr> creation fails and controller bails out on error.</li>
-                    <li>Adding <code class="code">ready</code> essentially specifies a point in time in the <strong>Exit</strong> in which things are expected to be safe for such basic operations.</li>
+                    <li>Adding <code class="code">ready</code> essentially specifies a point in time in the <strong class="strong">Exit</strong> in which things are expected to be safe for such basic operations.</li>
                     <li>When the optional <code class="code">wait</code> is provided, then <code class="code">ready</code> will wait for all currently started asynchronous processes to complete before operating.</li>
                   </ul>
                   <p class="p">
@@ -572,12 +572,12 @@
                     <li>Provides default global settings for each of the four special situations: <code class="code">exit</code>, <code class="code">kill</code>, <code class="code">start</code>, and <code class="code">stop</code>.</li>
                     <li>Each of these may only have a single one exist at a time (one <code class="code">exit</code>, one <code class="code">kill</code>, one <code class="code">start</code>, and one <code class="code">stop</code>).</li>
                     <li>Each successive <code class="code">timeout</code> Item Action, specific to each Action Name (such as <code class="code">start</code>), specified replaces the previously defined <code class="code">timeout</code> Action (in a top-down manner).</li>
-                    <li>The second Content for each of these, when specified, may be a 0 or greater whole number representing the number of <em>MegaTime</em> (MT) (equivalent to milliseconds).</li>
-                    <li>For <code class="code">kill</code>, this represents the number of <em>MegaTime</em> to wait after stopping some Rule and that Rule has not yet stopped to forcefully stop the Rule (aka kill the Rule).</li>
-                    <li>For <code class="code">start</code>, this represents the number of <em>MegaTime</em> to wait after starting some Rule before assuming something went wrong and the Rule is returned as failed.</li>
-                    <li>For <code class="code">stop</code>, this represents the number of <em>MegaTime</em> to wait after stopping some Rule before assuming something went wrong and the Rule is returned as failed.</li>
+                    <li>The second Content for each of these, when specified, may be a 0 or greater whole number representing the number of <em class="em">MegaTime</em> (MT) (equivalent to milliseconds).</li>
+                    <li>For <code class="code">kill</code>, this represents the number of <em class="em">MegaTime</em> to wait after stopping some Rule and that Rule has not yet stopped to forcefully stop the Rule (aka kill the Rule).</li>
+                    <li>For <code class="code">start</code>, this represents the number of <em class="em">MegaTime</em> to wait after starting some Rule before assuming something went wrong and the Rule is returned as failed.</li>
+                    <li>For <code class="code">stop</code>, this represents the number of <em class="em">MegaTime</em> to wait after stopping some Rule before assuming something went wrong and the Rule is returned as failed.</li>
                     <li>If the second Content is not specified, then this disables the type (prevents the specified timeout action).</li>
-                    <li>For <code class="code">exit</code>, this represents the number of <em>MegaTime</em> to wait when the Controller program is exiting (such as having received a terminate signal).</li>
+                    <li>For <code class="code">exit</code>, this represents the number of <em class="em">MegaTime</em> to wait when the Controller program is exiting (such as having received a terminate signal).</li>
                     <li>In this case, a terminate signal is sent to all child processes.</li>
                     <li>The <code class="code">exit</code> timeout represents the amount of time to wait after sending the terminate signal before sending a kill signal to each child process still running.</li>
                     <li>When disabled, the program will not send a kill signal will continue running until all child processes to terminate.</li>

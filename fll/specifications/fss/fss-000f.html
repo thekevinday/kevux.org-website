@@ -96,13 +96,13 @@
               <p>
                 The Control Block is the first block in the packet and is considered endianless.
                 There exists only a single byte within the Control Block.
-                Regardless of the endianness of the packet, the leftmost bit is always the <em>string</em> or <em>binary</em> bit.
+                Regardless of the endianness of the packet, the leftmost bit is always the <em class="em">string</em> or <em class="em">binary</em> bit.
                 The second bit following that bit represents the endianness bit.
               </p>
               <p>
-                The <em>string</em> or <em>binary</em> bit, a value of 0 designates that the packet is in string format and a value of 1 designates that the packet is in binary format.
+                The <em class="em">string</em> or <em class="em">binary</em> bit, a value of 0 designates that the packet is in string format and a value of 1 designates that the packet is in binary format.
                 While the packet might be considered to be in string format, it is technically always in binary format due to the Control Block and Size Block.
-                This means that the bit designating the packet as a <em>string</em> packet or a <em>binary</em> packet is referring to whether or not the Payload Block is in <em>string</em> format or is in <em>binary</em> format.
+                This means that the bit designating the packet as a <em class="em">string</em> packet or a <em class="em">binary</em> packet is referring to whether or not the Payload Block is in <em class="em">string</em> format or is in <em class="em">binary</em> format.
               </p>
               <p>
                 The endianness bit designates whether or not the packet is in big endian or little endian format.
@@ -124,8 +124,8 @@
               <p>
                 The Payload Block is not defined by this standard of that that it exists and should be in <code class="code">fss-000e (Payload)</code> format.
                 The <code class="code">fss-000e (Payload)</code> may be represented in either string format or binary format.
-                The <code class="code">fss-000e (Payload)</code> may contain multiple <em>header</em>(s) but may only contain a single <em>payload</em>.
-                With this in mind, it is recommended that only a single <em>header</em> be supported in the Payload Block.
+                The <code class="code">fss-000e (Payload)</code> may contain multiple <em class="em">header</em>(s) but may only contain a single <em class="em">payload</em>.
+                With this in mind, it is recommended that only a single <em class="em">header</em> be supported in the Payload Block.
               </p>
               <p>
                 See the <a href="fll/specifications/fss/fss-000e.html" class="link">fss-000e (Payload)</a> specification for details on the syntax rules for the Payload Block.

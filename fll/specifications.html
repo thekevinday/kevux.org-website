@@ -145,10 +145,10 @@
 
             <div class="section-content">
               <p class="p">
-                The Featureless Linux Library defines several standards for use in this project. Many of these standards are defined via the Featureless Settings Specifications. Most of these are focused on settings files (configuration files) but are written general enough to support a wide range of uses. The original project that the <abbr title="Featureless Linux Library">FLL</abbr> project is built around is the <em>Featureless Make</em> program, also called <strong>Fake</strong>. The <strong>Fake</strong> program is a great example on how the <abbr title="Featureless Settings Specifications">FSS</abbr> are intended to be used.
+                The Featureless Linux Library defines several standards for use in this project. Many of these standards are defined via the Featureless Settings Specifications. Most of these are focused on settings files (configuration files) but are written general enough to support a wide range of uses. The original project that the <abbr title="Featureless Linux Library">FLL</abbr> project is built around is the <em class="em">Featureless Make</em> program, also called <strong class="strong">Fake</strong>. The <strong class="strong">Fake</strong> program is a great example on how the <abbr title="Featureless Settings Specifications">FSS</abbr> are intended to be used.
               </p>
               <p class="p">
-                The standards are not limited to those defined in the <abbr title="Featureless Settings Specifications">FSS</abbr>. There are the <em>IKI</em> standards (which is not an acronym). The term <em>IKI</em> plays off of the term <em>Wiki</em>. The <em>IKI</em> standard is intended to have simpler syntax than a <em>Wiki</em> syntax and is used in several <abbr title="Featureless Linux Library">FLL</abbr> projects and even inside standards defined by <abbr title="Featureless Settings Specifications">FSS</abbr>.
+                The standards are not limited to those defined in the <abbr title="Featureless Settings Specifications">FSS</abbr>. There are the <em class="em">IKI</em> standards (which is not an acronym). The term <em class="em">IKI</em> plays off of the term <em class="em">Wiki</em>. The <em class="em">IKI</em> standard is intended to have simpler syntax than a <em class="em">Wiki</em> syntax and is used in several <abbr title="Featureless Linux Library">FLL</abbr> projects and even inside standards defined by <abbr title="Featureless Settings Specifications">FSS</abbr>.
               </p>
             </div>
           </section>
@@ -160,32 +160,32 @@
 
             <div class="section-content">
               <p class="p">
-                The Featureless Settings Specifications describe a set of standards designed around the age-old design principle referred to as <em>Keep It Simple Stupid</em>, aka <abbr title="Keep It Simple Stupid">KISS</abbr>. The <abbr title="Featureless Settings Specifications">FSS</abbr> are primarily intended for settings files but are extensible enough to be used beyond that.
+                The Featureless Settings Specifications describe a set of standards designed around the age-old design principle referred to as <em class="em">Keep It Simple Stupid</em>, aka <abbr title="Keep It Simple Stupid">KISS</abbr>. The <abbr title="Featureless Settings Specifications">FSS</abbr> are primarily intended for settings files but are extensible enough to be used beyond that.
               </p>
               <p class="p">
                 The <abbr title="Featureless Settings Specifications">FSS</abbr> defines the following:
               </p>
               <ul>
                 <li>Will consist of numerous different kinds of specification files, depending on the type of information stored.</li>
-                <li>As with the practice of "<code class="code">#!/bin/bash</code>", the setting files <em>should</em> have the following: "<code class="code"># fss-????" format, such as "# FSS-0001</code>".</li>
+                <li>As with the practice of "<code class="code">#!/bin/bash</code>", the setting files <em class="em">should</em> have the following: "<code class="code"># fss-????" format, such as "# FSS-0001</code>".</li>
                 <li>Multiple sub-standards may be appended to the FSS header, using the same format structure, such as supporting IKI: "# FSS-0000 iki-0000" or HTML5: "# FSS-0000 html-0005".</li>
                 <li>With the <code class="code">?</code> representing the (hexadecimal/base-16) number that represents the particular specification structure.</li>
-                <li>All settings specifications <em>should</em> avoid any form of noise, relative to the data being stored.</li>
+                <li>All settings specifications <em class="em">should</em> avoid any form of noise, relative to the data being stored.</li>
                 <li><abbr title="Extensible Markup Language">XML</abbr> would be considered anti-<abbr title="Keep It Simple Stupid">KISS</abbr> due to the extreme level of noise generated by the <abbr title="Extensible Markup Language">XML</abbr> language (not easy to read).</li>
                 <li>The settings files are setup so that they should (reasonably) produce easy readability on both the console and in a GUI.</li>
                 <li>The specifications should strive for completeness (see the <a href="fll/specifications.html#completeness_theorem" class="link">Completeness Theorem</a>).</li>
               </ul>
               <p class="p">
-                The most basic form of <abbr title="Featureless Settings Specifications">FSS</abbr> consists of two main parts: an <em>Object</em> and the <em>Content</em>.
+                The most basic form of <abbr title="Featureless Settings Specifications">FSS</abbr> consists of two main parts: an <em class="em">Object</em> and the <em class="em">Content</em>.
               </p>
               <dl class="dl">
                 <div class="di">
-                  <dt class="dt"><strong>Object</strong></dt>
-                  <dd class="dd">Considered the name or identifier of some property or data. Objects do not require an associated <em>Content</em>.</dd>
+                  <dt class="dt"><strong class="strong">Object</strong></dt>
+                  <dd class="dd">Considered the name or identifier of some property or data. Objects do not require an associated <em class="em">Content</em>.</dd>
                 </div>
                 <div class="di">
-                  <dt class="dt"><strong>Content</strong></dt>
-                  <dd class="dd">The data associated with a given Object; all Content <em>must</em> have an associated <em>Object</em>.</dd>
+                  <dt class="dt"><strong class="strong">Content</strong></dt>
+                  <dd class="dd">The data associated with a given Object; all Content <em class="em">must</em> have an associated <em class="em">Object</em>.</dd>
                 </div>
               </dl>
               <p class="p">
@@ -196,7 +196,7 @@
               <p class="p">
                 Contents may be broken up into zero or more discrete sets of Content.
                 Each of these discrete sets of Content are referred to as a column.
-                These columns do not need to be setup in a column structure, the word <em>column</em> is simply used as a grouping terminology.
+                These columns do not need to be setup in a column structure, the word <em class="em">column</em> is simply used as a grouping terminology.
                 While a Content refers to the entire set, a column (more specifically, a Content column) refers to the individual discrete sets within the Content.
                 For example, in <code class="code">fss-000 (Basic)</code> the entire Content may be further represented as a single column.
                 For example, in <code class="code">fss-001 (Extended)</code> the entire Content may be further represented as multiple columns.
@@ -208,8 +208,8 @@
               <p class="p">
                 Unless otherwise specified, all specifications are newline sensitive (<code class="code">\n</code> only).
                 Newline characters are only <code class="code">\n</code> and are never anything else (<code class="code">\r</code> is not considered newline in any manner).
-                These specifications refer to characters that have printable representation as <em>printable</em>.
-                These specifications refer to characters that have no printable representation as <em>non-printable</em>.
+                These specifications refer to characters that have printable representation as <em class="em">printable</em>.
+                These specifications refer to characters that have no printable representation as <em class="em">non-printable</em>.
 
                 White spaces characters that are printable, such as tabs and spaces, must be considered the same type for the purposes of parsing.
                 Non-printing white spaces characters (zero-width characters) are ignored, are treated as placeholders for processing with the exception of combining characters.
@@ -244,7 +244,7 @@
               <p class="p">
                 Unless otherwise specified, character/data delimits are performed only when required and not unilaterally.
                 In the case of Objects, delimits would only apply when that Object could be potentially identified as an Object.
-                For example, <code class="code">FSS-0001 (Extended)</code> needs quotes to group parts that include spaces, if there is no initial quote, then a quote following the data <em>must not</em> be delimited.
+                For example, <code class="code">FSS-0001 (Extended)</code> needs quotes to group parts that include spaces, if there is no initial quote, then a quote following the data <em class="em">must not</em> be delimited.
               </p>
               <p class="p">
                 Such as these following three lines:
@@ -306,30 +306,30 @@ Object_2 This is multiple\" Contents and the trailing quote does not need to be 
                 This means that if there is white space before the designation symbol (the pound <code class="code">#</code> character) then that white space is ignored.
               </p>
               <p class="p">
-                Unless otherwise specified, all designation characters <em>must</em> represent <abbr title="American Standard Code for Information Interchange">ASCII</abbr> codes.
+                Unless otherwise specified, all designation characters <em class="em">must</em> represent <abbr title="American Standard Code for Information Interchange">ASCII</abbr> codes.
                 With designation characters being any character code used to designate how to identify an Object or Content (such as a colon <code class="code">:</code> at the end of a basic list).
                 This keeps the processing and logic simple and safe, for both <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> and <abbr title="American Standard Code for Information Interchange">ASCII</abbr>.
-                White space used for designation characters <em>must</em> include support for <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> white space characters, unless otherwise specified.
+                White space used for designation characters <em class="em">must</em> include support for <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> white space characters, unless otherwise specified.
                 However, these white space used as a designation character, must be printing white space that are not combining white space characters.
                 Any visible/graph character that is considered a white space (such as <code class="code">U+1680</code> <code class="code"> </code>) is not to be considered a white space, unless otherwise specified.
               </p>
               <p class="p">
                 When used for syntax matching purposes, zero-width Unicode characters are only to be considered zero-width unless otherwise specified.
-                For example, the <em>invisible plus</em> character (<code class="code">U+2064</code>) is not to be considered as a plus.
+                For example, the <em class="em">invisible plus</em> character (<code class="code">U+2064</code>) is not to be considered as a plus.
               </p>
               <p class="p">
                 The <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> <abbr title="Byte Order Mark">BOM</abbr> is not allowed as a Byte Order Mark; instead, it must always be treated as the character represented by its code (unless explicitly allowed to represent a <abbr title="Byte Order Mark">BOM</abbr> by a standard).
               </p>
               <p class="p">
-                The only Unicode dash-like characters allowed as a <em>dash</em> are those intended to connect, such as the Unicode hyphens (<code class="code">U+2010</code> and <code class="code">U+2011</code>) (unless otherwise specified).
+                The only Unicode dash-like characters allowed as a <em class="em">dash</em> are those intended to connect, such as the Unicode hyphens (<code class="code">U+2010</code> and <code class="code">U+2011</code>) (unless otherwise specified).
               </p>
               <p class="p">
-                In any specification where security is intended, if there exists a Unicode character that matches an <abbr title="American Standard Code for Information Interchange">ASCII</abbr> character, that Unicode character <em>may</em> be prohibited by that standard in favor of the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> equivalent.
+                In any specification where security is intended, if there exists a Unicode character that matches an <abbr title="American Standard Code for Information Interchange">ASCII</abbr> character, that Unicode character <em class="em">may</em> be prohibited by that standard in favor of the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> equivalent.
                 One such example is in the case of a <abbr title="Byte Order Mark">URL</abbr>, where the name could be used to trick a person (<code class="code">http://this-site.com/</code> vs <code class="code">http://this‐site.com/</code>).
                 This (potential insecure behavior) is allowed in general because a well written program would be able to detect and communicate the possible misunderstanding and thereby avoid mistakes without imposing any character restrictions.
               </p>
               <p class="p">
-                This is a common behavior for security reasons, each character used for any special purposes must be visibly distinct, with white space and non-printing characters as the exception to the words <em>visibly distinct</em>.
+                This is a common behavior for security reasons, each character used for any special purposes must be visibly distinct, with white space and non-printing characters as the exception to the words <em class="em">visibly distinct</em>.
               </p>
               <p class="p">
                 The following are core specifications (each with a common name associated with the specification number):
@@ -367,8 +367,8 @@ Object_2 This is multiple\" Contents and the trailing quote does not need to be 
               <p class="p">
                 The IKI syntax provides a vocabulary name (with specific context associated with it) followed by quoted code that is associated with the given vocabulary name.
                 The vocabulary represents a list of allowed variable names that may also have specific contextual meaning defined by a given IKI specification.
-                The variable name is considered the <em>Object</em>.
-                The variable value is considered the <em>Content</em>.
+                The variable name is considered the <em class="em">Object</em>.
+                The variable value is considered the <em class="em">Content</em>.
               </p>
               <p class="p">
                 The IKI format will use <code class="code">iki-0000</code> to represent an IKI with no explicitly defined vocabulary.
@@ -463,7 +463,7 @@ Contents would be:
 
             <div class="section-content">
               <p class="p">
-                The <strong>Completeness Theorem</strong> represents an informal theory by Kevin Day focusing on how software should be complete. The theory has not been formalized and the following is a basic explanation. A formal definition may be provided in the future.
+                The <strong class="strong">Completeness Theorem</strong> represents an informal theory by Kevin Day focusing on how software should be complete. The theory has not been formalized and the following is a basic explanation. A formal definition may be provided in the future.
               </p>
               <p class="p">
                 When developing software, one should not program for the minimum requirements. Instead, one should consider the scope of the project and its intended design. Taking that into consideration all functionality needed to achieve this should be considered and implemented.
@@ -475,22 +475,22 @@ Contents would be:
                 This does not conflict with <abbr title="Keep It Simple Stupid">KISS</abbr> but instead complements it.
               </p>
               <p class="p">
-                If this is not clear, then consider thinking of things this way. The <abbr title="Keep It Simple Stupid">KISS</abbr> focuses on keeping the design and process simple. The <strong>Completeness Theorem</strong> focuses on making sure the design is complete.
+                If this is not clear, then consider thinking of things this way. The <abbr title="Keep It Simple Stupid">KISS</abbr> focuses on keeping the design and process simple. The <strong class="strong">Completeness Theorem</strong> focuses on making sure the design is complete.
               </p>
               <p class="p">
-                Now if, say a car, is designed to follow <abbr title="Keep It Simple Stupid">KISS</abbr> but violates the <strong>Completeness Theorem</strong>, then that car could be built without doors. Not having doors simplifies the car. It is much simpler and easier to get in and out of.
+                Now if, say a car, is designed to follow <abbr title="Keep It Simple Stupid">KISS</abbr> but violates the <strong class="strong">Completeness Theorem</strong>, then that car could be built without doors. Not having doors simplifies the car. It is much simpler and easier to get in and out of.
               </p>
               <p class="p">
-                Using that example, a car designed to follow both <abbr title="Keep It Simple Stupid">KISS</abbr> and the <strong>Completeness Theorem</strong> would have doors.
+                Using that example, a car designed to follow both <abbr title="Keep It Simple Stupid">KISS</abbr> and the <strong class="strong">Completeness Theorem</strong> would have doors.
               </p>
               <p class="p">
-                To better understand the <strong>Completeness Theorem</strong>, again take the car example. If the car is intended to be used only in say photo shoots and is not in any way intended ever to be used, then as per the <strong>Completeness Theorem</strong>, the car would not need an engine. Whereas a car designed and intended to be used that does not have an engine would fail to follow the <strong>Completeness Theorem</strong>.
+                To better understand the <strong class="strong">Completeness Theorem</strong>, again take the car example. If the car is intended to be used only in say photo shoots and is not in any way intended ever to be used, then as per the <strong class="strong">Completeness Theorem</strong>, the car would not need an engine. Whereas a car designed and intended to be used that does not have an engine would fail to follow the <strong class="strong">Completeness Theorem</strong>.
               </p>
               <p class="p">
-                The <strong>Completeness Theorem</strong> is subjective and is intended to be used as a guide.
+                The <strong class="strong">Completeness Theorem</strong> is subjective and is intended to be used as a guide.
               </p>
               <p class="p">
-                The <strong>Completeness Theorem</strong> asserts that perfection is impossible and pointless and one must instead understand what is necessary to complete the project rather than to handle all possibilities. Simply because perfection isn't possible doesn't mean one must lower their standards or have no standards. Determine what is or is not needed to complete the project and meet that rather than meet less than that.
+                The <strong class="strong">Completeness Theorem</strong> asserts that perfection is impossible and pointless and one must instead understand what is necessary to complete the project rather than to handle all possibilities. Simply because perfection isn't possible doesn't mean one must lower their standards or have no standards. Determine what is or is not needed to complete the project and meet that rather than meet less than that.
               </p>
             </div>
           </section>
@@ -504,11 +504,11 @@ Contents would be:
               <dl class="dl">
                 <div class="di">
                   <dt class="dt"><abbr title="Application Binary Interface">ABI</abbr></dt>
-                  <dd class="dd">An <em>Application Binary Interface</em> is a binary implementation of an <abbr title="Application Programming Interface">API</abbr> making it an implementation of a specification. An <abbr title="Application Binary Interface">ABI</abbr> is neither a specification nor a standard.</dd>
+                  <dd class="dd">An <em class="em">Application Binary Interface</em> is a binary implementation of an <abbr title="Application Programming Interface">API</abbr> making it an implementation of a specification. An <abbr title="Application Binary Interface">ABI</abbr> is neither a specification nor a standard.</dd>
                 </div>
                 <div class="di">
                   <dt class="dt"><abbr title="Application Programming Interface">API</abbr></dt>
-                  <dd class="dd">An <em>Application Programming Interface</em> is a specification of some implementation of a standard be it a formally defined standard or an informally defined standard. This is in effect, documentation. Note that this is a specification of an implementation rather than a specification of a standard.</dd>
+                  <dd class="dd">An <em class="em">Application Programming Interface</em> is a specification of some implementation of a standard be it a formally defined standard or an informally defined standard. This is in effect, documentation. Note that this is a specification of an implementation rather than a specification of a standard.</dd>
                 </div>
                 <div class="di">
                   <dt class="dt">Implementation</dt>
@@ -520,11 +520,11 @@ Contents would be:
                 </div>
                 <div class="di">
                   <dt class="dt"><abbr title="Software Binary Interface">SBI</abbr></dt>
-                  <dd class="dd">A <em>Software Binary Interface</em> is a new term created so that this project can more appropriately communicate the concept of what is traditionally referred to as an <abbr title="Application Binary Interface">ABI</abbr>. A <em>Software Binary Interface</em> is a more semantically accurate term intended to fully replace the misnamed <abbr title="Application Binary Interface">ABI</abbr> term.</dd>
+                  <dd class="dd">A <em class="em">Software Binary Interface</em> is a new term created so that this project can more appropriately communicate the concept of what is traditionally referred to as an <abbr title="Application Binary Interface">ABI</abbr>. A <em class="em">Software Binary Interface</em> is a more semantically accurate term intended to fully replace the misnamed <abbr title="Application Binary Interface">ABI</abbr> term.</dd>
                 </div>
                 <div class="di">
                   <dt class="dt">Service</dt>
-                  <dd class="dd">Any action or labor performed by one party for another party (such as one person helping another person). In regards to computers and networking a <em>service</em> is often used to represent a web service often provided by a website. It is common for people to misrepresent a web service by saying they are using an <abbr title="Application Programming Interface">API</abbr> when, in fact, they are using a web service.</dd>
+                  <dd class="dd">Any action or labor performed by one party for another party (such as one person helping another person). In regards to computers and networking a <em class="em">service</em> is often used to represent a web service often provided by a website. It is common for people to misrepresent a web service by saying they are using an <abbr title="Application Programming Interface">API</abbr> when, in fact, they are using a web service.</dd>
                 </div>
                 <div class="di">
                   <dt class="dt">Specification</dt>
@@ -532,7 +532,7 @@ Contents would be:
                 </div>
                 <div class="di">
                   <dt class="dt"><abbr title="Software Source Interface">SSI</abbr></dt>
-                  <dd class="dd">A <em>Software Source Interface</em> is a new term created so that this project can more appropriately communicate the concept of what is traditionally referred to as an <abbr title="Application Programming Interface">API</abbr>. A <em>Software Source Interface</em> is a more semantically accurate term intended to fully replace the misnamed <abbr title="Application Programming Interface">API</abbr> term.</dd>
+                  <dd class="dd">A <em class="em">Software Source Interface</em> is a new term created so that this project can more appropriately communicate the concept of what is traditionally referred to as an <abbr title="Application Programming Interface">API</abbr>. A <em class="em">Software Source Interface</em> is a more semantically accurate term intended to fully replace the misnamed <abbr title="Application Programming Interface">API</abbr> term.</dd>
                 </div>
                 <div class="di">
                   <dt class="dt">Standard</dt>
@@ -540,11 +540,11 @@ Contents would be:
                 </div>
                 <div class="di">
                   <dt class="dt"><abbr title="Web Service Interface">WSI</abbr></dt>
-                  <dd class="dd">A <em>Web Service Interface</em> is a new term created so that this project can more appropriately communicate the concept of a web service. A <em>Web Service Interface</em> describes the interface in which to communicate to and receive response from a web service and is described by or adheres to some web protocol.</dd>
+                  <dd class="dd">A <em class="em">Web Service Interface</em> is a new term created so that this project can more appropriately communicate the concept of a web service. A <em class="em">Web Service Interface</em> describes the interface in which to communicate to and receive response from a web service and is described by or adheres to some web protocol.</dd>
                 </div>
               </dl>
               <p class="p">
-                Based on this terminology, a standard is the representation of some set of rules and guidelines, however it is the specification that actually defines and describes those roles. The last '<em>S</em>' in <abbr title="Featureless Settings Specifications">FSS</abbr> can therefore be used to represent either "standard" or "specification" in casual speech. Given that an implementation is not a standard, an implementation can deviate from the standard (or the specification of some standard). Such deviations do not alter the standard nor do they alter the specification.
+                Based on this terminology, a standard is the representation of some set of rules and guidelines, however it is the specification that actually defines and describes those roles. The last '<em class="em">S</em>' in <abbr title="Featureless Settings Specifications">FSS</abbr> can therefore be used to represent either "standard" or "specification" in casual speech. Given that an implementation is not a standard, an implementation can deviate from the standard (or the specification of some standard). Such deviations do not alter the standard nor do they alter the specification.
               </p>
               <p class="p">
                 Good documentation practices suggest the documentation of an implementation. It is very easy to confuse the specification of an implementation of some standard with the specification of the standard itself. This has happened several times in history where some implementation violates the standard but despite being non-standard that implementation becomes popular. When the specification of that, now non-standard, implementation becomes popularized, those properly following the specification of the standard tend to suffer.
