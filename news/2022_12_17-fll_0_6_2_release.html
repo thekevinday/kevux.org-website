@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>News - 2022/12/17 - FLL 0.6.2 Release</title>
+
+    <base href="../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="News post on 2022/12/17.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, News">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="news/2022_12_17-fll_0_6_2_release.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js news">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item active"><a href="news.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="news.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block highlight unlink">
+            <div class="nav-text notice">2022 / 12 / 17</div>
+            <div class="nav-text unlink">FLL 0.6.2 Release</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="news/2022_12_17-fll_0_6_2_release.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="news/2022_12_17-fll_0_6_2_release.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">2022 / 12 / 17 - FLL 0.6.2 Release</h1>
+          </header>
+
+          <div class="main-content">
+            <p class="p">
+              The <strong class="strong">Featureless Linux Library</strong> stable version 0.6.2 is released.
+            </p>
+            <p class="p">
+              This release contains several security and bug fixes.
+              There are also several improvements to the building and packaging scripts.
+            </p>
+            <p class="p">
+              Added the following <code class="code">stand_alone</code> programs:
+            </p>
+            <ul>
+              <li><code class="code">byte_dump</code></li>
+              <li><code class="code">firewall</code></li>
+            </ul>
+            <p class="p">
+              The <code class="code">bootstrap.sh</code> and <code class="code">package.sh</code> scripts have received some needed improvements.
+              The <code class="code">bootstrap.sh</code> script now processes more of the build settings and then also more appropriately processes the additional modes.
+              The <code class="code">bootstrap.sh</code> now more properly processes the <code class="code">-s/--settings</code> parameter option.
+              The <code class="code">package.sh</code> script is now more versatile, allowing for additional dependencies files and optionally prepending a string to each generated package directory.
+            </p>
+            <p class="p">
+              Adding the referenced <code class="code">stand_alone</code> programs revealed quite a bit of minor mistakes in the macros, defines, and some dependencies.
+              Many of these might be considered breaking <abbr title="Application Programming Interface">API</abbr> changes but fixing these is deemed necessary.
+            </p>
+            <p class="p">
+              The flagship program is <strong class="strong">Featureless Make</strong>.
+              All projects and programs now have a <code class="code">fakefile</code> for building as they should have had.
+            </p>
+            <p class="p">
+              Problems with the Unicode handling have been identified and fixed.
+              The <abbr title="Featureless Linux Library">FLL</abbr> and implementing programs like <code class="code">byte_dump</code> and <code class="code">utf8</code> should now have more accurate handling of Unicode characters.
+            </p>
+            <p class="p">
+              The project now contains a generated list of all disable defines for each project under the <code class="code">build/disable</code> directory.
+              Use these to construct all the needed disable defines to reduce the amount of unneeded code.
+              These are now used when building the <code class="code">stand_alone</code> programs.
+            </p>
+            <p class="p">
+              The documents and specifications have seen some major clean up.
+              All of the documents and specifications should now utilize IKI.
+              The <strong class="strong">Time</strong> and <strong class="strong">EpochTime</strong> standard written a while back now have formal documents and specifications.
+              The <strong class="strong">Time</strong> and <strong class="strong">EpochTime</strong> documents and specifications are now at the top-level directory of the source code.
+            </p>
+            <p class="p">
+              Documentation explicitly describing the <em class="em">lossy allocation</em> strategy used by this project is now provided.
+            </p>
+
+            <p class="p">
+              The following are changes since the 0.6.1 stable release.
+            </p>
+            <p class="p">
+              <strong class="strong">Security Fixes:</strong>
+            </p>
+            <ul>
+              <li><strong class="strong">FLL</strong>: Invalid access when calling fake without <code class="code">make</code> or <code class="code">build</code>.</li>
+              <li><strong class="strong">FLL</strong>: Invalid write in <abbr title="Featureless Settings Specifications">FSS</abbr> functions and ensure a reset used length on error.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Features:</strong>
+            </p>
+            <ul>
+              <li><strong class="strong">FLL</strong>: Add support for additional dependencies and settings files in <code class="code">level_3</code> (in the <code class="code">package.sh</code> script).</li>
+              <li><strong class="strong">FLL</strong>: Add support for a prepending a prefix to build directory names (in the <code class="code">package.sh</code> script).</li>
+              <li><strong class="strong">Featureless Make</strong>: Add <code class="code">import</code> Object to <code class="code">fakefile</code> and settings specifications (Support is not implemented in <code class="code">0.6.x</code>).</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Bug Fixes:</strong>
+            </p>
+            <ul>
+              <li><strong class="strong">FLL</strong>: Incomplete <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> <code class="code">zero-width</code> detection, particularly for combining characters.</li>
+              <li><strong class="strong">FLL</strong>: Add missing <code class="code">f_type_array</code> dependency.</li>
+              <li><strong class="strong">FLL</strong>: The <code class="code">level_0</code> console should use private functions.</li>
+              <li><strong class="strong">FLL</strong>: The <code class="code">fss_payload_write</code> should not allow <code class="code">payload</code> to be something other than last when specified.</li>
+              <li><strong class="strong">FLL</strong>: Incorrect <code class="code">ifndef</code> defines for some functions and structures.</li>
+              <li><strong class="strong">FLL</strong>: Add missing <code class="code">ifdefs</code> for <code class="code">f_file_stat()</code> and <code class="code">f_file_stat_at()</code>.</li>
+              <li><strong class="strong">FLL</strong>: The private <code class="code">is_zero_width</code> function is also needed by the <code class="code">is_graph</code> functions.</li>
+              <li><strong class="strong">FLL</strong>: The <code class="code">f_environment_max_length</code> should be <code class="code">f_environment_max_length_d</code>.</li>
+              <li><strong class="strong">FLL</strong>: Some of the level checking defines have an <code class="code">s</code> that should not be there.</li>
+              <li><strong class="strong">FLL</strong>: <code class="code">_di_string_ascii_s_</code> is missing the <code class="code">_f</code>.</li>
+              <li><strong class="strong">FLL</strong>: The bootstrap script needs to treat <code class="code">-s/--settings</code> as a possible path.</li>
+              <li><strong class="strong">FLL</strong>: The bootstrap script needs to support settings-specific built files.</li>
+              <li><strong class="strong">FLL</strong>: <abbr title="Featureless Settings Specifications">FSS</abbr> write functions should use <code class="code">quote</code> when passed rather than <code class="code">f_fss_delimit_quote_single_s</code>.</li>
+              <li><strong class="strong">FLL</strong>: <code class="code">_GNU_SOURCE</code> should be wrapped in an <code class="code">ifndef</code>.</li>
+              <li><strong class="strong">FLL</strong>: The <code class="code">-mode</code> functionality is incomplete and incorrect in the <code class="code">bootstrap.sh</code> script.</li>
+              <li><strong class="strong">Byte Dump</strong>: Incorrect spacing when combining <code class="code">--unicode</code> with other digit displays.</li>
+              <li><strong class="strong">Byte Dump</strong>: Invalid print of character when a placeholder should be printed in <code class="code">byte_dump</code>.</li>
+              <li><strong class="strong">Featureless Make</strong>: The IKI variables that expand reserved words should expand into multiple parameters.</li>
+              <li><strong class="strong">Firewall</strong>: Add missing dependencies and remove incorrect library from <code class="code">firewall</code> program.</li>
+              <li><strong class="strong">FSS Payload Write</strong>: The first character never gets printed for payload Content.</li>
+              <li><strong class="strong">Multiple Programs</strong>: The <code class="code">type_array</code> is probably a dependency for most of these.</li>
+              <li><strong class="strong">Multiple Programs</strong>: Imprecise desciption for <code class="code">--partial</code>.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Refactors:</strong>
+            </p>
+            <ul>
+              <li>None.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Updates:</strong>
+            </p>
+            <ul>
+              <li><strong class="strong">FLL</strong>: All projects should have a <code class="code">fakefile</code>.</li>
+              <li><strong class="strong">FLL</strong>: Fix and improve <abbr title="Featureless Settings Specifications">FSS</abbr> unit test regarding zero-width.</li>
+              <li><strong class="strong">FLL</strong>: <abbr title="Featureless Settings Specifications">FSS</abbr> and IKI specifications now support backticks for quoting similar to single and double quotes (Support is not implemented in <code class="code">0.6.x</code>).</li>
+              <li><strong class="strong">FLL</strong>: Add pre-built define files for stand alone use.</li>
+              <li><strong class="strong">FLL</strong>: Wrap the conversion digits defines in <code class="code">_di_f_conversion_digits_d_</code>.</li>
+              <li><strong class="strong">FLL</strong>: The <code class="code">ifndef</code> wrappers should end in <code class="code">_t_</code> to represent it wrapping a type.</li>
+              <li><strong class="strong">FLL</strong>: The <code class="code">fake</code> <code class="code">stand_alone</code> build defines.</li>
+              <li><strong class="strong">FLL</strong>: The disable defines files need to be updated when defines change.</li>
+              <li><strong class="strong">FLL</strong>: Remove unused <code class="code">test</code> mode and add <code class="code">clang</code> mode to <code class="code">stand_alone</code> builds.</li>
+              <li><strong class="strong">FLL</strong>: Style guide documentation.</li>
+              <li><strong class="strong">FLL</strong>: The status code wrapping defines should end in <code class="code">_e</code>.</li>
+              <li><strong class="strong">FLL</strong>: The <code class="code">_di_compiler_attributes_</code> should be <code class="code">_di_compiler_attributes_d_</code>.</li>
+              <li><strong class="strong">FLL</strong>: The status code wrapping global constant string wrapping defines should end in <code class="code">_s</code>.</li>
+              <li><strong class="strong">FLL</strong>: The define <code class="code">_di_f_array_t_</code> should be <code class="code">_di_f_array_length_t_</code>.</li>
+              <li><strong class="strong">FLL</strong>: Add mising <code class="code">_d</code> in wrapping defines.</li>
+              <li><strong class="strong">FLL</strong>: Add more notes to <code class="code">disable</code> <code class="code">about.txt</code> documentation.</li>
+              <li><strong class="strong">FLL</strong>: Add not implemented clarifications for <code class="code">0.6.x</code> versions.</li>
+              <li><strong class="strong">FLL</strong>: Add <code class="code">fakefile</code> for the FLL monolithic and level builds.</li>
+              <li><strong class="strong">FLL</strong>: Out of date build documentation.</li>
+              <li><strong class="strong">FLL</strong>: Add <em class="em">lossy allocation</em> documentation.</li>
+              <li><strong class="strong">FLL</strong>: Build and other documentation, fixing or adding IKI support.</li>
+              <li><strong class="strong">FLL</strong>: Add formal specification for <strong class="strong">Time</strong> and <strong class="strong">EpochTime</strong> and use IKI in the files.</li>
+              <li><strong class="strong">FLL</strong>: Documentation and specifications (All of the documentation and specifications should now be IKI based).</li>
+              <li><strong class="strong">Featureless Make</strong>: The <code class="code">stand_alone</code> <code class="code">fake</code> <code class="code">config.h</code> file.</li>
+              <li><strong class="strong">Featureless Make</strong>: Improve some of the <strong class="strong">Featureless Make</strong> documentation and specifications.</li>
+              <li><strong class="strong">Featureless Make</strong>: Slight changes to design around the build settings arguments.</li>
+              <li><strong class="strong">Firewall</strong>: Add <code class="code">stand_alone</code> <code class="code">firewall</code> build.</li>
+            </ul>
+            <p class="p">
+              Check out the project on the <a href="fll.html#release" class="link"><abbr title="Featureless Linux Library">FLL</abbr> release</a> page.
+            </p>
+            <p class="p">
+              The project is built like a tool chest.
+              Individuals who are unfamiliar with the project should have an easier time trying out the pre-packaged <a href="https://sourceforge.net/projects/fll/files/FLL-0.6/0.6.2/monolithic/" class="link external">monolithic sources</a>.
+              These <a href="https://sourceforge.net/projects/fll/files/FLL-0.6/0.6.2/programs/" class="link external">programs</a>, by default, are designed to build against a library built using the monolithic source tree.
+            </p>
+            <p class="p">
+              The <strong class="strong">stand alone</strong> sources for the Featureless Make and UTF8 programs can be found <a href="https://sourceforge.net/projects/fll/files/FLL-0.6/0.6.2/stand_alone/" class="link external">pre-packaged at Sourceforge</a>.
+            </p>
+            <p class="p">
+              <strong class="strong">Kevin Day</strong>
+            </p>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
