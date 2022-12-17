@@ -1,0 +1,128 @@
+# fss-0002 iki-0000
+#
+# license: open-standard-license-1.0
+#
+# This file (assumed to be named fakefile.txt) can be more easily read using the following iki_read commands:
+#   iki_read fakefile.txt +Q -w -WW character "'" "'" code '"' '"'
+#
+# To read the "Fakefile Specification" section of this file, use this command sequence:
+#   fss_basic_list_read fakefile.txt +Q -cn "Fakefile Specification" | iki_read +Q -w -WW character "'" "'" code '"' '"'
+#
+
+Fakefile Specification:
+  The file:"fakefile" file follows the code:"FSS-0005 (Somewhat Basic List)" format with a sub-format of code:"IKI-0002 (Simple Script)".
+
+  A file:"fakefile" is broken up into multiple bold:"Basic Lists", referred to as bold:"Sections", with two special purpose reserved bold:"Sections".
+  The bold:"Sections" are broken up into multiple bold:"Extended Objects" and their respective bold:"Contents", referred to as bold"Section Operations".
+
+  Each of these non-reserved Sections acts as a set to perform some set of bold:"Section Operations".
+  Each of these bold:"Section Operations" perform a single command or action based on a set of reserved bold:"Section Operation" types.
+  Each of these bold:"Section Operations" have a set of bold:"Arguments" associated with them.
+
+  How these bold:"Arguments" are interpreted and processed are specific to each bold:"Operation" type.
+  The bold:"Section Operations" are represented by the bold:"Extended Object" name and the bold:"Extended Content" represents the bold:"Operation Arguments".
+  Each of these bold:"Section Operations" support bold:"IKI" variable substitution within their respective bold:"Arguments".
+  The bold:"Operation Extended Object" does not support bold:"IKI" variable substitution.
+  The reserved bold:"Settings Section" does not support bold:"IKI" variable substitution.
+
+  The code:"IKI-0002 (Simple Script)" vocabulary context is further clarified as follows\:
+    - code:"context": The value is case-sensitive variable name.
+    - code:"define": The value must be a case-sensitive valid environment variable name (alpha-numeric or underscore, but no leading digits).
+    - code:"parameter": The value is a case-sensitive variable name.
+      - Many parameters also support code:":option" and code:":value" appended at the end of the value.
+
+  The reserved bold:"Section Objects" are\:
+    - code:"settings": contains a list of bold:"Settings Objects" and bold:"Content" in code:"FSS-0001 (Extended)" format.
+    - code:"main:" contains a list of bold:"Operation Objects" and bold:"Content" in code:"FSS-0001 (Extended)" format.
+
+  The bold:"Settings Objects" are\:
+    - code:"compiler": Only one bold:"Content", which must only be a valid filename.
+    - code:"define": First bold:"Content" represents variable name (case-sensitive), remaining bold:"Content" represents the value.
+    - code:"environment": Zero or more bold:"Content" representing valid environment variable names (alpha-numeric with underscore, but cannot begin with a number).
+    - code:"fail": Only one bold:"Content", which must be either code:"exit", code:"warn" or code:"ignore" (quotes not required) (case-sensitive).
+    - code:"import": Only one bold:"Content", which must only be a valid filename.
+    - code:"indexer": Only one bold:"Content", which must only be a valid filename.
+    - code:"indexer_arguments: Zero or more arguments supported by the indexer specified in code:"build_indexer".
+    - code:"load_build": Only one bold:"Content", which must be either code:"yes" or code:"no" (quotes not required) (case-sensitive).
+    - code:"parameter": First bold:"Content" represents variable name (case-sensitive), remaining bold:"Content" represents the value.
+
+  The build settings may also be specified in the bold:"Settings Section".
+
+  The bold:"Section Operation Objects" are\:
+    - code:"and": One or more bold:"Content". First bold:"Content" is the condition or code:"no_dereference" (when code:"no_dereference", then the second bold:"Content" is the condition, etc..), remaining bold:"Content" are specific to the condition.
+    - code:"break": Zero or one bold:"Content". If specified, First bold:"Content" must be one of code:"success" or code:"failure".
+    - code:"build": Zero or more bold:"Content". First bold:"Content" represents file name of the settings file to use, second bold:"Content" and on represent custom modes to use.
+    - code:"clean": Zero bold:"Content".
+    - code:"clone": Two or more bold:"Content" representing paths to files.
+    - code:"compile": One or more bold:"Content" as parameters to compiler.
+    - code:"copy": Two or more bold:"Content" representing paths to files.
+    - code:"define": First bold:"Content" represents variable name (case-sensitive), remaining bold:"Content" represents the value.
+    - code:"delete": One or more bold:"Content" representing paths to files.
+    - code:"deletes": One or more bold:"Content" representing paths to files.
+    - code:"else": Zero bold:"Content".
+    - code:"exit": Zero or one bold:"Content". If specified, first bold:"Content" must be one of code:"succeed" or code:"fail".
+    - code:"fail": One Content. First bold:"Content" must be one of code:"exit", code:"warn", or code:"ignore" (case-sensitive).
+    - code:"group": Two or more bold:"Content". First bold:"Content" is group name, number, or code:"no_dereference" (when code:"no_dereference", then the second bold:"Content" is the group name or number, etc..), remaining bold:"Content" are paths to files.
+    - code:"groups": Two or more bold:"Content". First bold:"Content" is group name, number, or code:"no_dereference" (when code:"no_dereference", then the second bold:"Content" is the group name or number, etc..), remaining bold:"Content" are paths to files.
+    - code:"if": One or more bold:"Content". First bold:"Content" is the condition or is code:"no_dereference" (when code:"no_dereference", then the second bold:"Content" is the condition, etc..), remaining bold:"Content" are specific to the condition.
+    - code:"index": One or more bold:"Content".
+    - code:"link": Two to Four bold:"Content". The first and second bold:"Content" may be either code:"force" or code:"strict", the second to last bold:"Content" is the link target file, and the last bold:"Content" is the pointer file (the link).
+    - code:"mode": Two or more bold:"Content". First bold:"Content" is the mode, remaining bold:"Content" are paths to files.
+    - code:"modes": Two or more bold:"Content". First bold:"Content" is the mode, remaining bold:"Content" are paths to files.
+    - code:"move": Two or more bold:"Content" representing paths to files.
+    - code:"operate": One bold:"Content". First bold:"Content" is the name of a valid bold:"Section Object", except for the reserved bold:"Section Objects".
+    - code:"or": One or more bold:"Content". First bold:"Content" is the condition or code:"no_dereference" (when code:"no_dereference", then the second bold:"Content" is the condition, etc..), remaining bold:"Content" are specific to the condition.
+    - code:"owner": Two or more Content. First bold:"Content" is owner name, number, or code:"no_dereference" (when code:"no_dereference", then the second bold:"Content" is the owner name or number, etc..), remaining bold:"Content" are paths to files.
+    - code:"owners": Two or more bold:"Content". First bold:"Content" is owner name, number, or code:"no_dereference" (when code:"no_dereference", then the second bold:"Content" is the owner name or number, etc..), remaining bold:"Content" are paths to files.
+    - code:"parameter": First bold:"Content" represents variable name (case-sensitive), remaining bold:"Content" represents the value.
+    - code:"pop": Zero bold:"Content".
+    - code:"print": Zero or more bold:"Content".
+    - code:"run": One or more bold:"Content". First bold:"Content" is the name of the program (or script) and all remaining bold:"Content" are passed as arguments to the named program (or script).
+    - code:"shell": One or more bold:"Content". First bold:"Content" is the file path of the program (or script) and all remaining bold:"Content" are passed as arguments to the named program (or script).
+    - code:"skeleton": Zero bold:"Content".
+    - code:"to": One bold:"Content". First bold:"Content" is the directory path.
+    - code:"top": Zero bold:"Content".
+    - code:"touch": Two or more bold:"Content". First bold:"Content" is one of code:"file" or code:"directory", remaining bold:"Content" are paths to files.
+    - code:"write": One or more bold:"Content". First bold:"Content" the file to write to, remaining bold:"Content" represent the string to write.
+
+    The code:"if" bold:"Section Operation" conditions are\:
+      - code:"==": Two or more bold:"Content".
+      - code:">": Two or more bold:"Content".
+      - code:"<": Two or more bold:"Content".
+      - code:">=": Two or more bold:"Content".
+      - code:"<=": Two or more bold:"Content".
+      - code:"<>": Two or more bold:"Content".
+      - code:"define": One or more bold:"Content" are valid environment variable name.
+      - code:"exist": One or more bold:"Content" representing the files to check the existence of.
+      - code:"failure": has no other bold:"Content".
+      - code:"group": First bold:"Content" is the name of a group. Second or more bold:"Content" are paths to files.
+      - code:"is": First bold:"Content" is a list of code:"block", code:"character", code:"no_dereference", code:"directory", code:"fifo", code:"link", code:"regular" , or code:"socket" followed by "for" and then the remaining bold:"Content" that are paths to files.
+      - code:"mode": First bold:"Content" is either code:"has", code:"is", or code:"no_dereference". Second bold:"Content" is a valid file mode. Third or more bold:"Content" are paths to files.
+      - code:"no_dereference": A non-condition inserted before any of code:"exist", code:"is", and code:"mode" (then the second bold:"Content" is the actual condition followed by any bold:"Content" associated with that condition).
+      - code:"not": First bold:"Content" is one of code:"define", code:"exist", code:"group", code:"is", code:"mode", code:"no_dereference", code:"owner", or code:"parameter" and all remaining bold:"Content" are based on the first bold:"Content"'s code:"if" bold:"Section Operation Content" rules.
+      - code:"owner": First bold:"Content" is the name of an owner. Second or more bold:"Content" are paths to files.
+      - code:"parameter": One or more bold:"Content" are valid bold:"IKI" names.
+      - code:"success": has no other bold:"Content".
+
+  The code:"if" bold:"Section Operation" conditions and numbers\:
+    The numbers may be represented in any of the forms\:
+      1) code:"decimal": all numbers without a base-type prefix are of base-type 10, referred to as decimal.
+      2) code:"binary": all numbers with the prefix code:"0b" (uppercase or lowercase character:'b') are of base-type 2, referred to as binary.
+      3) code:"octal": all numbers with the prefix code:"0o" (that is zero followed by the letter character:'o', uppercase or lowercase character:'o') are of base-type 8, referred to as octal.
+      4) code:"duodecimal": all numbers with the prefix code:"0d" (uppercase or lowercase character:'d') are of base-type 12, referred to as duodecimal.
+      5) code:"hexadecimal": all numbers with the prefix code:"0x" (uppercase or lowercase character:'x') are of base-type 16, referred to as hexadecimal.
+
+    (At this time) The numbers may be of a max value of 2^64, or 18446744073709551615, positive or negative.
+    (At this time) The numbers may only be whole numbers.
+    Note: There are plans to impose no limits on the number size or any decimal values, but this requires significant work is not to be implemented at this time.
+    Once this restriction is lifted, it should be conditional upon an implementation for what the maximum supported numbers or digits may be.
+
+    Only the following code:"if" Section Operation conditions use these operators\:
+      - code:">"
+      - code:"<"
+      - code:">="
+      - code:"<="
+
+  The code:"if" bold:"Section Operation" condition code:"parameter"\:
+    The following reserved words are available for parameter names: code:"build", code:"color", code:"current", code:"data", code:"define", code:"fakefile", code:"mode", code:"process", code:"return", code:"settings", code:"sources", code:"top", code:"verbosity", and code:"work".
+    Each of the reserved words supports having code:":option" and code:":value" appended, such as: code:"work:value".

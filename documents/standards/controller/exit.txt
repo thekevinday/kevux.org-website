@@ -1,0 +1,125 @@
+# fss-0002
+#
+# license: open-standard-license-1.0
+#
+
+Exit Specification:
+  The Exit files follow the FSS-0005 (Somewhat Basic List) format.
+
+  An Exit file name is expected to have the file extension ".exit".
+
+  For each Exit file\:
+    - The outer most part is a FSS-0002 (Basic List).
+    - The Basic List Object is considered the "Item".
+    - The Basic List Content are considered the "Actions".
+    - The "Actions" are FSS-0001 (Extended).
+    - Each Action Object is the "Action Name".
+    - Each Action Content are the "Action Parameters".
+
+  The Items\:
+    - "main": required.
+
+    - "settings": optional, Actions may be one of\:
+      - "pid": Exactly one Content that is one of "disable", "require", or "ready".
+      - "session": Exactly one Content that is one of  "new" or "same".
+      - "show": Exactly one Content that is one of  "normal" or "init".
+      - "timeout": One or Two content with the first being one of "exit", "start", "stop", or "kill" and the (optional) second Content being a positive whole number or 0.
+
+    The Exit file may have any other valid Item Objects, but only the above are reserved.
+
+    The Actions\:
+      - "consider": One or more Content.
+        The first Content that is the relative file path (without any leading/trailing slashes and without file extension).
+        The second Content that is the basename for a rule file.
+        The third and beyond may only be one of\:
+          - "asynchronous"
+          - "require"
+          - "wait"
+
+      - "failsafe": One Content that is a valid Object name, except for the reserved "main".
+
+      - "freeze": Two or more Content.
+        The first Content that is the relative directory path (without any leading/trailing slashes).
+        The second Content that is the basename for a rule file.
+        The third and beyond may only be one of\:
+          - "asynchronous"
+          - "require"
+          - "wait"
+
+      - "item": One Content that is a valid Object name, except for the reserved "main".
+
+      - "kill": Two or more Content.
+        The first Content that is the relative directory path (without any leading/trailing slashes).
+        The second Content that is the basename for a rule file.
+        The third and beyond may only be one of\:
+          - "asynchronous"
+          - "require"
+          - "wait"
+
+      - "pause": Two or more Content.
+        The first Content that is the relative directory path (without any leading/trailing slashes).
+        The second Content that is the basename for a rule file.
+        The third and beyond may only be one of\:
+          - "asynchronous"
+          - "require"
+          - "wait"
+
+      - "ready": Zero or One Content.
+        The first may only be one of\:
+        - "wait"
+
+      - "reload": Two or more Content.
+        The first Content that is the relative directory path (without any leading/trailing slashes).
+        The second Content that is the basename for a rule file.
+        The third and beyond may only be one of\:
+          - "asynchronous"
+          - "require"
+          - "wait"
+
+      - "restart": Two or more Content.
+        The first Content that is the relative directory path (without any leading/trailing slashes).
+        The second Content that is the basename for a rule file.
+        The third and beyond may only be one of\:
+          - "asynchronous"
+          - "require"
+          - "wait"
+
+      - "resume": Two or more Content.
+        The first Content that is the relative directory path (without any leading/trailing slashes).
+        The second Content that is the basename for a rule file.
+        The third and beyond may only be one of\:
+          - "asynchronous"
+          - "require"
+          - "wait"
+
+      - "start": Two or more Content.
+        The first Content that is the relative directory path (without any leading/trailing slashes).
+        The second Content that is the basename for a rule file.
+        The third and beyond may only be one of\:
+          - "asynchronous"
+          - "require"
+          - "wait"
+
+      - "stop": Two or more Content.
+        The first Content that is the relative directory path (without any leading/trailing slashes).
+        The second Content that is the basename for a rule file.
+        The third and beyond may only be one of\:
+          - "asynchronous"
+          - "require"
+          - "wait"
+
+      - "thaw": Two or more Content.
+        The first Content that is the relative directory path (without any leading/trailing slashes).
+        The second Content that is the basename for a rule file.
+        The third and beyond may only be one of\:
+          - "asynchronous"
+          - "require"
+          - "wait"
+
+      - "timeout": Two Content.
+        The first being one of\:
+          - "exit"
+          - "start"
+          - "stop"
+          - "kill"
+        The (optional) second Content being a positive whole number or 0.
