@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FLL - Specifications - Time and EpochTime</title>
+
+    <base href="../../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Featurless Linux Library Specifications">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, specification, standard, Time, EpochTime">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="fll/specifications/other/time.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js fll specifications">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="news.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item active"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="fll/specifications.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block highlight unlink">
+            <div class="nav-text notice">FLL Specification</div>
+            <div class="nav-text unlink">Time and EpochTime</div>
+          </div>
+          <div class="nav-item block">
+            <a href="fll/specifications/other/time.html#time" class="nav-text link">Time</a>
+          </div>
+          <div class="nav-item block">
+            <a href="fll/specifications/other/time.html#epochtime" class="nav-text link">EpochTime</a>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="fll/specifications/other/time.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="fll/specifications/other/time.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">Featureless Linux Library Specification</h1>
+          </header>
+
+          <section id="time_epochtime" class="section">
+            <header class="section-header header">
+              <h2 class="section-title h h2">Time and EpochTime</h2>
+            </header>
+
+            <div class="section-content">
+              <p class="p">
+                There are two units of <strong class="strong">Time</strong>, the first is simply called <strong class="strong">Time</strong> and the second is called <strong class="strong">EpochTime</strong>.
+              </p>
+              <p class="p">
+                Both <strong class="strong">Time</strong> and <strong class="strong">EpochTime</strong> are measured without the year but may contain a year to designate the point in the counting begins.
+                These are both represented by a single 64-bit (unsigned) integer.
+                The default timezone is always <abbr title="Coordinated Universal Time">UTC</abbr>.
+              </p>
+              <p class="p">
+                The common form is intended as the non-technical form that is form common use.
+                This may have a negative value or be more than 64-bit digits long.
+                This is simply not expected to be interpreted as a unit of time on a computer (but nothing stops it from being interpreted).
+              </p>
+              <p class="p">
+                The technical forms are limit to 64-bit unsigned for technical use but should technology advance to a point where larger bits are needed then this allows for that.
+                The systems should expect 64-bit and larger bits would have to become common before something larger than 64-bit is the expected or assumed default.
+                Negative signs can be allowed but they must not prevent the full use of the 64-bit.
+                The implementation of how this is done is left to the implementer except that the signs are immediately to the left of the digit.
+                For example <code class="code">2022:-5</code> would be 5 units after the start of the year 2022.
+                Because the negative is allowed, so must the positive character (such as <code class="code">2022:+5</code>).
+                A positive value is the default interpretation when no sign is valid.
+              </p>
+            </div>
+          </section>
+
+          <section id="time" class="section">
+            <header class="section-header header separate">
+              <h2 class="section-title h h2">Time</h2>
+            </header>
+
+            <div class="section-content">
+              <p class="p">
+                The unit of time called <strong class="strong">Time</strong> is counted increments of a nanosecond, or 10^-9 seconds.
+                A unit of <strong class="strong">Time</strong> is, therefore, equivalent to a nanosecond.
+                The default year for <strong class="strong">Time</strong> is the current year.
+              </p>
+              <p class="p">
+                The unit <strong class="strong">Time</strong> has two technical forms and one common form, with the year and without the year.
+              </p>
+              <p class="p">
+                Key:
+              </p>
+              <ul>
+                <li><code class="code">\s</code> = White space.</li>
+                <li><code class="code">\d</code> = The digits used to represent time (a digit).</li>
+                <li><code class="code">*</code> = Zero or more occurrences.</li>
+                <li><code class="code">+</code> = One or more occurrences.</li>
+                <li><code class="code">:</code> = A single colon <code class="code">:</code> (<code class="code">U+003A</code>).</li>
+                <li><code class="code">"</code> = A single double-quote <code class="code">"</code> (<code class="code">U+003A</code>).</li>
+              </ul>
+              <p class="p">
+                The common form of <strong class="strong">Time</strong>:
+              </p>
+              <p class="p">
+                Before Structure:
+              </p>
+              <ul>
+                <li><code class="code"></code></li>
+              </ul>
+              <p class="p">
+                Structure:
+              </p>
+              <ul>
+                <li><code class="code">\s*\d+\s*\U*\s*</code></li>
+              </ul>
+              <p class="p">
+                After Structure:
+              </p>
+              <ul>
+                <li><code class="code"></code></li>
+              </ul>
+              <p class="p">
+                Example:
+              </p>
+              <ul>
+                <li><code class="code">86400</code></li>
+                <li><code class="code">86400 T</code></li>
+                <li><code class="code">86400 Time</code></li>
+              </ul>
+              <p class="p">
+                The first technical form of <strong class="strong">Time</strong>:
+              </p>
+              <p class="p">
+                Before Structure:
+              </p>
+              <ul>
+                <li><code class="code"></code></li>
+              </ul>
+              <p class="p">
+                Structure:
+              </p>
+              <ul>
+                <li><code class="code">\s*\d+:\d+\s*\U*\s*</code></li>
+              </ul>
+              <p class="p">
+                After Structure:
+              </p>
+              <ul>
+                <li><code class="code"></code></li>
+              </ul>
+              <p class="p">
+                Example:
+              </p>
+              <ul>
+                <li><code class="code">2022:86400</code></li>
+                <li><code class="code">2022:86400 T</code></li>
+                <li><code class="code">2022:86400 Time</code></li>
+                <li><code class="code">2022:86400 MT</code></li>
+                <li><code class="code">2022:86400 MegaTime</code></li>
+              </ul>
+              <p class="p">
+                The second technical form of <strong class="strong">Time</strong>:
+              </p>
+              <p class="p">
+                Before Structure:
+              </p>
+              <ul>
+                <li><code class="code"></code></li>
+              </ul>
+              <p class="p">
+                Structure:
+              </p>
+              <ul>
+                <li><code class="code">\s*:\d+\s*\U*\s*</code></li>
+              </ul>
+              <p class="p">
+                After Structure:
+              </p>
+              <ul>
+                <li><code class="code"></code></li>
+              </ul>
+              <p class="p">
+                Example:
+              </p>
+              <ul>
+                <li><code class="code">:86400</code></li>
+                <li><code class="code">:86400 T</code></li>
+                <li><code class="code">:86400 Time</code></li>
+                <li><code class="code">:86400 MT</code></li>
+                <li><code class="code">:86400 MegaTime</code></li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="epochtime" class="section">
+            <header class="section-header header separate">
+              <h2 class="section-title h h2">EpochTime</h2>
+            </header>
+
+            <div class="section-content">
+              <p class="p">
+                The unit of time called <strong class="strong">EpochTime</strong> is counted increments of a second, or 10^-9 seconds.
+                A unit of <strong class="strong">EpochTime</strong> is, therefore, equivalent to a second.
+                The default year for <strong class="strong">EpochTime</strong> is the <strong class="strong">UNIX Epoch</strong>, sometimes called <strong class="strong">Unix time</strong>.
+              </p>
+              <p class="p">
+                The unit <strong class="strong">EpochTime</strong> has two technical forms and one common form, with the year and without the year.
+              </p>
+              <p class="p">
+                The common form of <strong class="strong">EpochTime</strong>:
+              </p>
+              <p class="p">
+                Before Structure:
+              </p>
+              <ul>
+                <li><code class="code"></code></li>
+              </ul>
+              <p class="p">
+                Structure:
+              </p>
+              <ul>
+                <li><code class="code">\s*\d+\s*\U*\s*</code></li>
+              </ul>
+              <p class="p">
+                After Structure:
+              </p>
+              <ul>
+                <li><code class="code"></code></li>
+              </ul>
+              <p class="p">
+                Example:
+              </p>
+              <ul>
+                <li><code class="code">86400</code></li>
+                <li><code class="code">86400 ET</code></li>
+                <li><code class="code">86400 EpochTime</code></li>
+                <li><code class="code">86400 MET</code></li>
+                <li><code class="code">86400 MegaEpochTime</code></li>
+              </ul>
+              <p class="p">
+                The first technical form of <strong class="strong">EpochTime</strong>:
+              </p>
+              <p class="p">
+                Before Structure:
+              </p>
+              <ul>
+                <li><code class="code"></code></li>
+              </ul>
+              <p class="p">
+                Structure:
+              </p>
+              <ul>
+                <li><code class="code">\s*\d+::\d+\s*\U*\s*</code></li>
+              </ul>
+              <p class="p">
+                After Structure:
+              </p>
+              <ul>
+                <li><code class="code"></code></li>
+              </ul>
+              <p class="p">
+                Example:
+              </p>
+              <ul>
+                <li><code class="code">2022::86400</code></li>
+                <li><code class="code">2022::86400 ET</code></li>
+                <li><code class="code">2022::86400 EpochTime</code></li>
+                <li><code class="code">2022::86400 MET</code></li>
+                <li><code class="code">2022::86400 MegaEpochTime</code></li>
+              </ul>
+              <p class="p">
+                The second technical form of <strong class="strong">Time</strong>:
+              </p>
+              <p class="p">
+                Before Structure:
+              </p>
+              <ul>
+                <li><code class="code"></code></li>
+              </ul>
+              <p class="p">
+                Structure:
+              </p>
+              <ul>
+                <li><code class="code">\s*:\d+\s*\U*\s*</code></li>
+              </ul>
+              <p class="p">
+                After Structure:
+              </p>
+              <ul>
+                <li><code class="code"></code></li>
+              </ul>
+              <p class="p">
+                Example:
+              </p>
+              <ul>
+                <li><code class="code">::86400</code></li>
+                <li><code class="code">::86400 ET</code></li>
+                <li><code class="code">::86400 EpochTime</code></li>
+                <li><code class="code">::86400 MET</code></li>
+                <li><code class="code">::86400 MegaEpochTime</code></li>
+              </ul>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

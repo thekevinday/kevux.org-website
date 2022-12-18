@@ -120,6 +120,12 @@
             <a href="fll/specifications/iki/iki-0002.html" class="nav-text link"><div>IKI-0002</div><div>(Simple Script)</div></a>
           </div>
           <div class="nav-item block">
+            <a href="fll/specifications.html#other" class="nav-text link">Other</a>
+          </div>
+          <div class="nav-item block">
+            <a href="fll/specifications/other/time.html" class="nav-text link">Time and EpochTime</a>
+          </div>
+          <div class="nav-item block">
             <a href="fll/specifications.html#completeness_theorem" class="nav-text link">Completeness Theorem</a>
           </div>
           <div class="nav-item block">
@@ -145,7 +151,7 @@
 
             <div class="section-content">
               <p class="p">
-                The Featureless Linux Library defines several standards for use in this project. Many of these standards are defined via the Featureless Settings Specifications. Most of these are focused on settings files (configuration files) but are written general enough to support a wide range of uses. The original project that the <abbr title="Featureless Linux Library">FLL</abbr> project is built around is the <em class="em">Featureless Make</em> program, also called <strong class="strong">Fake</strong>. The <strong class="strong">Fake</strong> program is a great example on how the <abbr title="Featureless Settings Specifications">FSS</abbr> are intended to be used.
+                The <strong class="strong">Featureless Linux Library</strong> defines several standards for use in this project. Many of these standards are defined via the Featureless Settings Specifications. Most of these are focused on settings files (configuration files) but are written general enough to support a wide range of uses. The original project that the <abbr title="Featureless Linux Library">FLL</abbr> project is built around is the <em class="em">Featureless Make</em> program, also called <strong class="strong">Fake</strong>. The <strong class="strong">Fake</strong> program is a great example on how the <abbr title="Featureless Settings Specifications">FSS</abbr> are intended to be used.
               </p>
               <p class="p">
                 The standards are not limited to those defined in the <abbr title="Featureless Settings Specifications">FSS</abbr>. There are the <em class="em">IKI</em> standards (which is not an acronym). The term <em class="em">IKI</em> plays off of the term <em class="em">Wiki</em>. The <em class="em">IKI</em> standard is intended to have simpler syntax than a <em class="em">Wiki</em> syntax and is used in several <abbr title="Featureless Linux Library">FLL</abbr> projects and even inside standards defined by <abbr title="Featureless Settings Specifications">FSS</abbr>.
@@ -300,8 +306,8 @@ Object_2 This is multiple\" Contents and the trailing quote does not need to be 
               <p class="p">
                 Unless otherwise specified, comments are designated by the pound symbol <code class="code">#</code> but only if only white space is to the left of the pound or the pound <code class="code">#</code> is at the start of the line.
                 There is no support for inline comments.
-                Unless otherwise specified, the start comment may be delimited by <code class="code">" in the same manner as Objects and Contents are.
-                This delimit only applies to the start of a comment (the pound code:</code>#" character) as there is no terminating character for a comment (other than a newline <code class="code">\n</code>).
+                Unless otherwise specified, the start comment may be delimited by <code class="code">\</code> in the same manner as Objects and Contents are.
+                This delimit only applies to the start of a comment (the pound <code class="code">#</code> character) as there is no terminating character for a comment (other than a newline <code class="code">\n</code>).
                 A line containing a valid comment is in its entirety ignored.
                 This means that if there is white space before the designation symbol (the pound <code class="code">#</code> character) then that white space is ignored.
               </p>
@@ -452,6 +458,24 @@ Contents would be:
                 <li><a href="fll/specifications/iki/iki-0000.html" class="link">iki-0000: Unrestricted</a></li>
                 <li><a href="fll/specifications/iki/iki-0001.html" class="link">iki-0001: Basic</a></li>
                 <li><a href="fll/specifications/iki/iki-0002.html" class="link">iki-0002: Simple Script</a></li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="other" class="section">
+            <header class="section-header header separate">
+              <h2 class="section-title h h2">Other</h2>
+            </header>
+
+            <div class="section-content">
+              <p class="p">
+                The <abbr title="Featureless Settings Specifications">FSS</abbr> and the <strong class="strong">IKI</strong> are not the only standards provided by the <abbr title="Featureless Linux Library">FLL</abbr>.
+              </p>
+              <p class="p">
+                The following are other specifications that are provided:
+              </p>
+              <ul>
+                <li><a href="fll/specifications/other/time.html" class="link">Time and EpochTime</a></li>
               </ul>
             </div>
           </section>
