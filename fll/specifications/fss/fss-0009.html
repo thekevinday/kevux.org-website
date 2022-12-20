@@ -80,16 +80,17 @@
             </header>
 
             <div class="section-content">
-              <p>
+              <p class="p">
                 This is based off of <code class="code">fss-0000 (Basic)</code>, except the Object is at the end of the line.
               </p>
-              <p>
+              <p class="p">
                 Each Object starts at the end of a line and white space to the left of the Object is not treated as part of the object.
                 White space separates an Object from the Content.
                 An Object may be preceded by a newline, in which case means that the Object has no Content.
                 If only printing white spaces or non-printable characters precedes a valid Object, then that Object is considered to have no Content.
+                An Object may be quoted to include whitespace where a single quote <code class="code">'</code> (<code class="code">U+0027</code>), a double quote <code class="code">"</code> (<code class="code">U+0022</code>), or a backtick <code class="code">`</code> (<code class="code">U+0060</code>) are used to quote.
               </p>
-              <p>
+              <p class="p">
                 Content exists on the same line as the Object.
                 Content is represented as a single Content column that begins at a newline.
                 Content column consists of everything following the first non-white space character at the start of the line until the Object is reached.
@@ -97,36 +98,36 @@
                 Content column does not include any of the white space between the last non-white space character and the start of the Object.
                 No delimits are supported in the Content.
               </p>
-              <p>
+              <p class="p">
                 Key:
               </p>
               <ul>
-                <li><code class="code">\s</code> = white space, except newline.</li>
-                <li><code class="code">\b</code> = either white space or printable, except newline.</li>
-                <li><code class="code">\q</code> = non-white space or quoted white space with no white space outside of the quotes.</li>
-                <li><code class="code">\n</code> = newline.</li>
-                <li><code class="code">*</code> = zero or more occurrences.</li>
-                <li><code class="code">+</code> = one or more occurrences.</li>
+                <li><code class="code">\s</code> = White space, except newline.</li>
+                <li><code class="code">\b</code> = Either white space or printable, except newline.</li>
+                <li><code class="code">\q</code> = Non-white space or quoted white space (and non-whitespace) with no white space outside of the quotes.</li>
+                <li><code class="code">\n</code> = Newline.</li>
+                <li><code class="code">*</code> = Zero or more occurrences.</li>
+                <li><code class="code">+</code> = One or more occurrences.</li>
               </ul>
-              <p>
+              <p class="p">
                 Before Structure:
               </p>
               <ul>
                 <li><code class="code"></code></li>
               </ul>
-              <p>
+              <p class="p">
                 Structure:
               </p>
               <ul>
                 <li><code class="code">\s*\b*\s+\q+\s*\n</code></li>
               </ul>
-              <p>
+              <p class="p">
                 After Structure:
               </p>
               <ul>
                 <li><code class="code"></code></li>
               </ul>
-              <p>
+              <p class="p">
                 Example:
               </p><pre class="preserve">
 # fss-0009
@@ -134,7 +135,7 @@
 Content from newline. "The Object"
 object set. Second
 </pre>
-              <p>
+              <p class="p">
                 Example Results:
               </p><pre class="preserve">
 Object would be:

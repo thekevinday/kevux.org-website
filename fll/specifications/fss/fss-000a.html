@@ -80,52 +80,53 @@
             </header>
 
             <div class="section-content">
-              <p>
+              <p class="p">
                 This is based off of <code class="code">fss-0001 (Extended)</code>, except the Object is at the end of the line.
               </p>
-              <p>
+              <p class="p">
                 Each Object starts at the end of a line and white space to the left of the Object is not treated as an object.
                 White space separates an Object from the Content.
                 An Object may be followed by a newline, in which case means that the Object has no Content.
                 If only printing white spaces or non-printable characters follow a valid Object, then that Object is considered to have no Content.
+                An Object may be quoted to include whitespace where a single quote <code class="code">'</code> (<code class="code">U+0027</code>), a double quote <code class="code">"</code> (<code class="code">U+0022</code>), or a backtick <code class="code">`</code> (<code class="code">U+0060</code>) are used to quote.
               </p>
-              <p>
+              <p class="p">
                 Content exists on the same line as the Object.
                 Content is represented as multiple Content columns.
                 Content columns are white space separated parts within the Content is terminated by the start of the Object.
                 Any number of Content columns may exist in the Content until the Object is reached.
               </p>
-              <p>
+              <p class="p">
                 Key:
               </p>
               <ul>
                 <li><code class="code">\s</code> = White space, except newline.</li>
                 <li><code class="code">\b</code> = Either white space or printable, except newline.</li>
-                <li><code class="code">\q</code> = Non-white space or quoted white space, no white space outside of quotes.</li>
+                <li><code class="code">\q</code> = Non-white space or quoted white space (and non-whitespace) with no white space outside of the quotes.</li>
                 <li><code class="code">\n</code> = Newline.</li>
                 <li><code class="code">*</code> = Zero or more occurrences.</li>
                 <li><code class="code">+</code> = One or more occurrences.</li>
                 <li><code class="code">()*</code> = Grouping that repeats zero or more times.</li>
               </ul>
-              <p>
+              <p class="p">
                 Before Structure:
               </p>
               <ul>
                 <li><code class="code"></code></li>
               </ul>
-              <p>
+              <p class="p">
                 Structure:
               </p>
               <ul>
                 <li><code class="code">\s*(\s*\q+)*\s+\q+\s*\n</code></li>
               </ul>
-              <p>
+              <p class="p">
                 After Structure:
               </p>
               <ul>
                 <li><code class="code"></code></li>
               </ul>
-              <p>
+              <p class="p">
                 Example:
               </p><pre class="preserve">
 # fss-000a
@@ -133,7 +134,7 @@
 Content "content 2" content_3. "The Object"
 object set. Second
 </pre>
-              <p>
+              <p class="p">
                 Example Results:
               </p><pre class="preserve">
 Objects would be:

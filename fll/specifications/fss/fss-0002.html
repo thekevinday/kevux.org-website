@@ -80,23 +80,23 @@
             </header>
 
             <div class="section-content">
-              <p>
+              <p class="p">
                 Each Object starts at the beginning of a line and white space to the left of the Object is not treated as an object.
                 A colon <code class="code">:</code> (<code class="code">U+003A</code>) followed by any white space until a newline terminates a valid Object.
                 Non-white space printable characters may not follow the colon of a valid Object.
               </p>
-              <p>
+              <p class="p">
                 Content is represented as a single Content column of every line following a valid object until the end of file (or string) or until the next valid Object is found.
                 Any Content that could be interpreted as a valid Object must have the colon delimited.
               </p>
-              <p>
-                There is no single-quote or double-quote delimitation in this specification.
-                Only the colon that would result in a valid Object can be delimited.
+              <p class="p">
+                There is no single-quote, double-quote, or backtick delimitation in this specification.
+                Only a colon <code class="code">:</code> (<code class="code">U+003A</code>) that would result in a valid Object can be delimited.
               </p>
-              <p>
+              <p class="p">
                 Empty Objects are allowed, that is, the length of the object may be zero.
               </p>
-              <p>
+              <p class="p">
                 Key:
               </p>
               <ul>
@@ -107,25 +107,25 @@
                 <li><code class="code">\n</code> = Newline.</li>
                 <li><code class="code">*</code> = Zero or more occurrences.</li>
               </ul>
-              <p>
+              <p class="p">
                 Before Structure:
               </p>
               <ul>
                 <li><code class="code"></code></li>
               </ul>
-              <p>
+              <p class="p">
                 Structure:
               </p>
               <ul>
                 <li><code class="code">\s*\o\l*:\s*\n\c*\n*</code></li>
               </ul>
-              <p>
+              <p class="p">
                 After Structure:
               </p>
               <ul>
                 <li><code class="code"></code></li>
               </ul>
-              <p>
+              <p class="p">
                 Example:
               </p><pre class="preserve">
 # fss-0002
@@ -139,7 +139,7 @@ Second:
   All white space, including newline (and leading white space) is "part of content."
   # Valid comments are still ignored.
 </pre>
-              <p>
+              <p class="p">
                 Example Results:
               </p><pre class="preserve">
   Objects would be:

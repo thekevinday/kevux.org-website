@@ -80,31 +80,31 @@
             </header>
 
             <div class="section-content">
-              <p>
+              <p class="p">
                 Each Object starts at the beginning of a line and white space to the left of the Object is not treated as an object.
                 An open-brace <code class="code">{</code> (<code class="code">U+007B</code>) followed by any white space until a newline terminates a possible valid Object.
                 An Object is not considered fully valid until a valid close-brace <code class="code">}</code> (<code class="code">U+007D</code>) is found, designating the end of the Content.
-                Non-white space printable characters may not follow the open-brace of a valid Object.
+                Non-white space printable characters may not follow the open-brace <code class="code">{</code> (<code class="code">U+007B</code>) of a valid Object.
               </p>
-              <p>
-                Content is represented as a single Content column of every line following a valid object until the end of file (or string) or until a non-delimited close-brace <code class="code">}</code>.
+              <p class="p">
+                Content is represented as a single Content column of every line following a valid object until the end of file (or string) or until a non-delimited close-brace <code class="code">}</code> (<code class="code">U+007D</code>).
                 Any Content column that could be interpreted as an end of Content must be delimited if it should be part of the Content.
-                White space may follow a valid close-brace but a terminating newline must be present to designate a valid end of Content.
+                White space may follow a valid close-brace <code class="code">}</code> (<code class="code">U+007D</code>) but a terminating newline must be present to designate a valid end of Content.
               </p>
-              <p>
-                There is no single-quote or double-quote delimitation in this specification.
-                Only the open-brace that would result in a valid Object or the close-brace that would terminate valid Content can be delimited.
-                When inside potentially valid Content (which follows a valid Object) the open-brace cannot be delimited because this standard is not-recursive.
+              <p class="p">
+                There is no single-quote, double-quote, or backtick delimitation in this specification.
+                Only an open-brace <code class="code">{</code> (<code class="code">U+007B</code>) that would result in a valid Object or a close-brace <code class="code">}</code> (<code class="code">U+007D</code>) that would terminate valid Content can be delimited.
+                When inside potentially valid Content (which follows a valid Object) the open-brace <code class="code">{</code> (<code class="code">U+007B</code>) cannot be delimited because this standard is not-recursive.
                 When not inside any potentially valid Content (that is, there is no previous unclosed Object), then the Object may be delimited.
-                Likewise, the close-brace may only be delimited if it is within any potentially valid Content.
+                Likewise, the close-brace <code class="code">}</code> (<code class="code">U+007D</code>) may only be delimited if it is within any potentially valid Content.
               </p>
-              <p>
-                Each delimit slash in a delimitable open-brace is treated as a potential delimit such that two slashes represents a single delimited slash (<code class="code">\\{</code> would represent <code class="code">\{</code>).
-                Only the first delimit slash in a delimitable close-brace is treated as a potential delimit (<code class="code">\\\}</code> would represent <code class="code">\\}</code>).
+              <p class="p">
+                Each delimit slash in a delimitable open-brace <code class="code">{</code> (<code class="code">U+007B</code>) is treated as a potential delimit such that two slashes represents a single delimited slash (<code class="code">\\{</code> would represent <code class="code">\{</code>).
+                Only the first delimit slash in a delimitable close-brace <code class="code">}</code> (<code class="code">U+007D</code>) is treated as a potential delimit (<code class="code">\\\}</code> would represent <code class="code">\\}</code>).
               </p>
-              <p>
+              <p class="p">
                 Empty Objects are allowed, that is, the length of the object may be zero.
-              <p>
+              <p class="p">
                 Key:
               </p>
               <ul>
@@ -115,25 +115,25 @@
                 <li><code class="code">\n</code> = Newline.</li>
                 <li><code class="code">*</code> = Zero or more occurrences.</li>
               </ul>
-              <p>
+              <p class="p">
                 Before Structure:
               </p>
               <ul>
                 <li><code class="code"></code></li>
               </ul>
-              <p>
+              <p class="p">
                 Structure:
               </p>
               <ul>
                 <li><code class="code">\s*\o\l*{\s*\n\c*\n\s*}\s*\n</code></li>
               </ul>
-              <p>
+              <p class="p">
                 After Structure:
               </p>
               <ul>
                 <li><code class="code"></code></li>
               </ul>
-              <p>
+              <p class="p">
                 Example:
               </p><pre class="preserve">
 # fss-0003
@@ -150,7 +150,7 @@ Second {
   # Valid comments are still ignored.
 }
 </pre>
-              <p>
+              <p class="p">
                 Example Results:
               </p><pre class="preserve">
 Objects would be:

@@ -80,32 +80,32 @@
             </header>
 
             <div class="section-content">
-              <p>
+              <p class="p">
                 This is a special case that follows <code class="code">fss-0002 (Basic List)</code>, and different <abbr title="Featureless Settings Specifications">FSS</abbr> formats inside this <code class="code">fss-0002 (Basic List)</code>.
                 This <code class="code">fss-0002 (Basic List)</code> is considered the "Outer List" and the Content of this Outer List is considered the "Inner Content".
               </p>
-              <p>
+              <p class="p">
                 The Inner Content may be any of the following <abbr title="Featureless Settings Specifications">FSS</abbr> formats: <code class="code">fss-0000 (Basic)</code>, <code class="code">fss-0001 (Extended)</code>, and <code class="code">fss-0003 (Extended List)</code>.
                 The way in which each format is determined is first to see if the Inner Content Object would be a valid Extended List Object.
                 If the Inner Content Object is not a valid <code class="code">fss-0003 (Extended List)</code> Object, then check to see if it is an <code class="code">fss-0000 (Basic)</code> or <code class="code">fss-0001 (Extended)</code> Object.
               </p>
-              <p>
+              <p class="p">
                 The <code class="code">fss-0000 (Basic)</code> and <code class="code">fss-0001 (Extended)</code> Objects have the same format for Object names but the <code class="code">fss-0003 (Extended List)</code> Object is slightly different.
                 Anything that would match an <code class="code">fss-0003 (Extended List)</code> Object must therefore be an <code class="code">fss-0003 (Extended List)</code> Object.
               </p>
-              <p>
+              <p class="p">
                 This supports the use of <code class="code">iki-0000 (Unrestricted)</code> but only within the Content of the outermost <code class="code">fss-0002 (Basic List)</code>.
                 That is to say, the IKI is only processed once.
                 Additional restrictions on the use of IKI syntax is allowed if explicitly defined in the implementing specification.
                 This additional restriction may also include using a more restrictive IKI syntax, such as <code class="code">iki-0001 (Basic)</code>.
               </p>
-              <p>
+              <p class="p">
                 Anything implementing this specification may impose its own restrictions on when to determine if the Inner Content is what <abbr title="Featureless Settings Specifications">FSS</abbr> format, based on Object names.
               </p>
-              <p>
+              <p class="p">
                 See the <a href="fll/specifications/fss/fss-0000.html" class="link">fss-0000 (Basic)</a>, <a href="fll/specifications/fss/fss-0001.html" class="link">fss-0001 (Extended)</a>, and <a href="fll/specifications/fss/fss-0003.html" class="link">fss-0003 (Extended List)</a> specifications for details on the syntax rules.
               </p>
-              <p>
+              <p class="p">
                 Example:
               </p><pre class="preserve">
 # fss-000d
@@ -126,7 +126,7 @@ command:
   start mount -a -O no_netdev
   stop umount -arf -O no_netdev
 </pre>
-            <p>
+            <p class="p">
               Example Results:
             </p><pre class="preserve">
 Outer List Objects would be:

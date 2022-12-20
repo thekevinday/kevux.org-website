@@ -82,7 +82,7 @@
             </header>
 
             <div class="section-content">
-              <p>
+              <p class="p">
                 This specification provides no restrictions on the vocabulary.
               </p>
             </div>
@@ -94,32 +94,32 @@
             </header>
 
             <div class="section-content">
-              <p>
+              <p class="p">
                 IKI is a minimally structured WIKI-like syntax meant to be simpler than WIKI syntax.
               </p>
-              <p>
+              <p class="p">
                 The IKI syntax provides a vocabulary name (with specific context associated with it) followed by quoted code that is associated with the given vocabulary name.
                 The vocabulary represents a list of allowed variable names that may also have specific contextual meaning defined by a given IKI specification.
                 The variable name is considered the <em class="em">Object</em>.
                 The variable value is considered the <em class="em">Content</em>.
               </p>
-              <p>
+              <p class="p">
                 The IKI format will use <code class="code">iki-0000</code> to represent an IKI with no explicitly defined vocabulary.
                 Whereas <code class="code">iki-0001</code> and beyond represent a specific IKI vocabulary.
               </p>
-              <p>
+              <p class="p">
                 A potential IKI variable name starts on word (or <code class="code">_</code>, <code class="code">-</code>, <code class="code">+</code>) characters.
                 White space and non-word (and non <code class="code">_</code>, <code class="code">-</code>, <code class="code">+</code>) character punctuations may not exist as part of the variable name.
                 The only Unicode dash-like characters allowed as a "dash" are those intended to connect, such as the Unicode hyphens (<code class="code">U+2010</code> and <code class="code">U+2011</code>).
               </p>
-              <p>
+              <p class="p">
                 Any valid IKI data may be escaped to make it treated as non-IKI data by prepending a backslash <code class="code">" before the colon code:</code>:" that is before the opening quote (single or double).
               </p>
-              <p>
+              <p class="p">
                 Unicode punctuation connector characters are supported just like <code class="code">_</code>, except when they connect outside the current line (such as <code class="code">U+FE33</code> <code class="code">︳</code>).
                 Unicode invisible punctuations (such as invisible plus: <code class="code">U+2064</code>) are not considered a punctuations in this standard (because they a zero-width characters), therefore they are not to be considered a valid <code class="code">_</code>, <code class="code">-</code>, or <code class="code">+</code> Unicode equivalents.
               </p>
-              <p>
+              <p class="p">
                 Key:
               </p>
               <ul>
@@ -132,25 +132,25 @@
                   <li><code class="code">*</code> = zero or more occurrences.</li>
                   <li><code class="code">~</code> = one or more occurrences, or zero if at start of file.</li>
               </ul>
-              <p>
+              <p class="p">
                 Before Structure:
               </p>
               <ul>
                 <li><code class="code">\x*\W~\*:*</code></li>
               </ul>
-              <p>
+              <p class="p">
                 Structure:
               </p>
               <ul>
                 <li><code class="code">\o\e:\q\c\q</code></li>
               </ul>
-              <p>
+              <p class="p">
                 After Structure:
               </p>
               <ul>
                 <li><code class="code"></code></li>
               </ul>
-              <p>
+              <p class="p">
                 Example File:
               </p><pre class="preserve">
 # fss-000c iki-0000
@@ -165,7 +165,7 @@ Quotes may be included, such as: code:"const char *string = \"My \\\"quoted\\\" 
 
 The following emphasis\:"is escaped to not be treated as IKI data".
 </pre>
-              <p>
+              <p class="p">
                 Example Results:
               </p><pre class="preserve margin-below">
 Objects would be:

@@ -80,14 +80,14 @@
             </header>
 
             <div class="section-content">
-              <p>
+              <p class="p">
                 This is a <code class="code">fss-0002 (Basic List)</code> with two required objects:
               </p>
               <ol>
                 <li><em class="em">header</em>.</li>
                 <li><em class="em">payload</em>.</li>
               </ol>
-              <p>
+              <p class="p">
                 The <em class="em">header</em>:
               </p>
               <ul>
@@ -99,7 +99,7 @@
                 <li>The recommended <em class="em">status</em> represents status codes (such as success or failure) and multiple.</li>
                 <li>The Content for the recommended <em class="em">length</em> and <em class="em">status</em> are positive whole numbers (including zero) that may be in <em class="em">binary</em>, <em class="em">octal</em>, <em class="em">decimal</em>, <em class="em">duodecimal</em>, or <em class="em">hexidecimal</em> numerical format.</li>
               </ul>
-              <p>
+              <p class="p">
                 The <em class="em">payload</em>:
               </p>
               <ul>
@@ -112,11 +112,11 @@
                 <li>Comments in the <em class="em">payload</em> are not considered comments and are instead considered part of the payload, as-is.</li>
                 <li>Essentially, the <em class="em">payload</em> should be treated as binary data embedded in a text file.</li>
               </ul>
-              <p>
+              <p class="p">
                 The recommended <em class="em">length</em> <em class="em">header</em> Object used to designate the <em class="em">payload</em> size does not necessarily have to be defined in the <em class="em">header</em>.
                 That is to say, if the <em class="em">payload</em> is expected to be of some pre-defined or static length then a length does not need to be provided in the <em class="em">header</em>.
               </p>
-              <p>
+              <p class="p">
                 The recommended <em class="em">status</em> <em class="em">header</em> Object may be a string, such as <code class="code">F_none</code>, or a positive whole number.
                 What the status code represents is application specific (or specific to a sub-standard) but may often be used to represent <abbr title="Featureless Linux Library">FLL</abbr> status code.
               </p>
@@ -125,7 +125,7 @@
                 <li>The <abbr title="Featureless Linux Library">FLL</abbr> status code as a number is binary sensitive and may not be portable across binaries or systems.</li>
                 <li>For best portability, consider using status as a name string to ensure cross-system or cross-binary compatibility.</li>
               </ul>
-              <p>
+              <p class="p">
                 Example:
               </p><pre class="preserve">
 # fss-000e
@@ -138,7 +138,7 @@ header:
 payload:
 The program is out of memory.
 </pre>
-              <p>
+              <p class="p">
                 Example Results:
               </p><pre class="preserve">
 Outer Objects would be:
