@@ -210,6 +210,27 @@
                   </tbody>
                 </table>
               </div>
+              <p class="p">
+                The <abbr title="Featureless Linux Library">FLL</abbr> programs use a <strong class="strong">16-bit unsigned integer</strong> to represent the return status of programs and functions.
+              </p>
+              <p class="p">
+                Programs may print a generic error with one of these codes.
+                This is a tool for converting to or converting from these codes.
+              </p>
+              <p class="p">
+                The <strong class="strong">16-bit unsigned integer</strong> also has the first two high-order bits used to represent flags.
+                These flags are the <strong class="strong">error</strong> bit and the <strong class="strong">warning</strong> bit.
+                When neither of these flags are set, then the status is considered <strong class="strong">fine</strong>.
+              </p>
+              <p class="p">
+                This operates identical to the status_codes program except that this program handles additional codes regarding FSS.
+                These special codes numericaly appear after the <code class="code">F_status_code_last</code> code.
+                These codes stop at the <code class="code">F_fss_status_code_last</code> code.
+              </p>
+              <p class="p">
+                Each code will be printed on its own line.
+                Errors regarding each code may be printed on its own line.
+              </p>
             </div>
           </section>
         </main>

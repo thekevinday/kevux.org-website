@@ -187,11 +187,6 @@
 
                   <tbody class="body set">
                     <tr class="row">
-                      <td class="column"><code class="code">-f</code></td>
-                      <td class="column"><code class="code">--file</code></td>
-                      <td class="column">Specify a file to send data to.</td>
-                    </tr>
-                    <tr class="row">
                       <td class="column"><code class="code">-c</code></td>
                       <td class="column"><code class="code">--content</code></td>
                       <td class="column">The Content to write.</td>
@@ -200,6 +195,11 @@
                       <td class="column"><code class="code">-d</code></td>
                       <td class="column"><code class="code">--double</code></td>
                       <td class="column">Use double quotes (default).</td>
+                    </tr>
+                    <tr class="row">
+                      <td class="column"><code class="code">-f</code></td>
+                      <td class="column"><code class="code">--file</code></td>
+                      <td class="column">Specify a file to send data to.</td>
                     </tr>
                     <tr class="row">
                       <td class="column"><code class="code">-o</code></td>
@@ -215,7 +215,16 @@
                 </table>
               </div>
               <p class="p">
-                This special piped input format uses the <abbr title="American Standard Code for Information Interchange">ASCII</abbr> form-feed character '<kbd>\f</kbd>' (U+000C) as a separator.
+                This program will accept Object and Content strings to generate an IKI string, such as <code class="code">object:"content"</code>.
+                Each Object must have a Content (and each Content must have an Object).
+              </p>
+              <p class="p">
+                The Object is also called the Vocabulary.
+                A complete Object and Content set is also called a Variable.
+              </p>
+              <p class="p">
+                When piping main to this program, a single form-feed character (<kbd>\f</kbd>) (U+000C) must be used to separate each Object from each Content.
+                Furthermore, each Object must be followed by a Content.
               </p>
             </div>
           </section>
