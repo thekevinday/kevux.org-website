@@ -1,0 +1,627 @@
+# fss-0002 iki-0000
+#
+# license: open-standard-license-1.0
+#
+# This file (assumed to be named fakefile.txt) can be more easily read using the following iki_read commands:
+#   iki_read fakefile.txt +Q -w -rrr ASCII ASCII GCC GCC HTML HTML -WW character "'" "'" code '"' '"'
+#
+# To read the "Fakefile Documentation" section of this file, use this command sequence:
+#   fss_basic_list_read fakefile.txt +Q -cn "Fakefile Documentation" | iki_read +Q -w -rrr ASCII ASCII GCC GCC HTML HTML -WW character "'" "'" code '"' '"'
+#
+
+Fakefile Documentation:
+  This describes intent and purposes of the file:"fakefile" file settings.
+  For specific details on the allowed formatting, see the file:"fakefile.txt" under the specifications folder.
+
+  All files specified are relative to the project root.
+
+  The reserved Section Names are defined as follows\:
+  - code:"settings"\:
+    Any configuration specific to this file:"fakefile" is stored here.
+    This includes the declaration of define and parameter IKI variable substitution values.
+
+    The build settings may also be specified in the bold:"Settings Section".
+
+    The following settings are available (in addition to the build settings)\:
+    - code:"compiler"\:
+      This represents the name of the compiler program to use, such as code:"gcc".
+
+      The programs code:"gcc" and code:"clang" are known to work.
+      Many of the parameters in the settings file can be changed if not using GCC:"GNU Compiler Collection", but there may be certain hard-coded functionality that may need to be changed.
+
+      When specified and code:"load_build" is code:"true", then this will override the code:"build_compiler" specified in the loaded build settings.
+
+    - code:"define"\:
+      This represents an environment variable to define on run.
+      The environment variable name is case-sensitive.
+      This replaces the value of any existing environment variable with this name.
+
+    - code:"environment"\:
+      This represents all environment variables that are exposed when executing sub-programs.
+      This is not auto-populated for environment variables defined in the code:"define" setting.
+
+      When defined with no bold:"Content", then this means that no environment variables are exposed.
+      When not defined at all, then all environment variables are exposed.
+      Environment variables may still be exposed if code:"load_build" is code:"true" and the build setting file defines any environment variable names.
+
+    - code:"fail"\:
+      Designates the fail mode when running external programs, such as through the code:"run" or code:"shell" operations.
+
+      There are three options\:
+        - code:"exit": Designates to exit the program on failure, printing an error message.
+        - code:"warn": Designates to continue on and if in verbose mode then print a warning.
+        - code:"ignore": Designates to do nothing.
+
+      The return code for programs can still be retrieved through using the reserved bold:"IKI" variable code:"return".
+
+    - code:"import"\:
+      Load this file:"fakefile".
+      The code:"settings" section data from the imported file:"fakefile" is treated as if it were appended to the end of the current file:"fakefile" code:"setting" section.
+      Each section in the imported file:"fakefile" is treated as if it were appended to either the end of a matching section, if found, or appended at the end of the file:"fakefile", if no matches are found.
+      This a non-recursive operation and the imported file itself cannot perform an import.
+      Relative paths are relative to the importing file.
+      Absolute paths that start with code:"./" are relative to the project root rather than the importing file.
+      Absolute paths that start with code:"/" are treated normally.
+
+      This is neither implemented nor supported by Featureless Make 0.6.x and earlier.
+
+    - code:"indexer"\:
+      This represents the name of the indexer program to use, such as code:"ar".
+      An indexer is often called a linker.
+
+      Similar to code:"build_compiler", any linker that supports the code:"ar" program parameters is effectively supported.
+
+      When specified and code:"load_build" is code:"true", then this will override the code:"build_indexer" specified in the loaded build settings.
+
+    - code:"indexer_arguments"\:
+      This represents arguments needed to build an archive file from object files, such as code:"rcs".
+      These arguments are placed immediately before the object files passed to the code:"indexer" program.
+
+    - code:"load_build"\:
+      This represents whether or not to load the load the build settings file.
+      The first Content value may be code:"true" to load the build settings and code:"false" to not load the build settings file.
+
+    - code:"parameter"\:
+      This defines an IKI variable name to substitute with the value.
+      This replaces the value of any existing environment variable with this name.
+
+      The first bold:"Content" value represents the bold:"IKI" variable name.
+      All bold:"Content" values after the first represent the values the matching bold:"IKI" variable is replaced with.
+
+      The parameter variable name code:"return" is used to store the return result of a code:"run" or code:"shell" operation.
+      Setting this here only sets the default code:"return" parameter variable value.
+
+  - code:"main"\:
+    This is the main entry point when processing the file:"fakefile".
+    This is processed top-down until the end of the list is reached.
+
+    The following operations are available\:
+    - code:"and"\:
+      A special type of an code:"if" operation.
+      May only be specified following a valid code:"if", code:"and", or code:"or" operation.
+      This is executed only if the previous code:"if" operation result is true.
+
+      When executed, this performs the test and returns true or false as appropriate.
+      When not executed, this passes through the result of the previous code:"if", code:"and", or code:"or" operation.
+
+    - code:"build"\:
+      Run the fake build operation as if code:"fake build" was run instead of code:"fake make".
+      Command line arguments are automatically passed to the fake build operation.
+
+      Accepts an optional bold:"Content" that is a file name to a build settings file to use instead of the default.
+      This file name is relative to the data build directory (which can be changed by code:"-D/--data" parameter).
+
+      If the optional file name Content is specified, then it also supports additional modes to use instead of the default mode.
+
+      When no additional bold:"Content" after the code:"build" is specified, then the default (or program supplied) settings file and modes are used.
+      When the first bold:"Content" after the code:"build" is specified as an empty string, then the default (or program supplied) settings file is used.
+      When the second bold:"Content" after the code:"build" (and there is no third bold:"Content"), then no modes are used.
+
+    - code:"break"\:
+      Perform an exit from the current make operation.
+      This only exists the current depth.
+      If the depth is at the top (aka: 0), then this is identical to the code:"exit" section operation.
+      The second bold:"Content" may be either code:"succeed" or code:"failure" to designate on whether or not to exit as a success or as a failure.
+      When set to code:"failure" this will trigger any failure (with message), depending on the current fail state.
+
+    - code:"clean"\:
+      Run the fake clean operation as if code:"fake clean" was run instead of code:"fake make".
+      Command line arguments are automatically passed to the build operation.
+
+    - code:"clone"\:
+      Copy all files (and directories), preserving all properties, into the last content.
+      If there are more than one file (or directory) being copied, then the final path must be a directory.
+
+      All bold:"Content", except last, represents the files to clone.
+      The last bold:"Content" represents the destination file (or directory) to clone to.
+
+    - code:"compile"\:
+      Execute the compiler program, such as code:"gcc".
+
+      All bold:"Content" are passed as arguments to the respective code:"gcc" program.
+
+    - code:"copy"\:
+      Copy all files (and directories) into the last content.
+      If there are more than one file (or directory) being copied, then the final path must be a directory.
+
+      All bold:"Content", except last, represents the files to copy.
+      The last bold:"Content" represents the destination file (or directory) to copy to.
+
+    - code:"define"\:
+      This represents an environment variable to define on run.
+      The environment variable name is case-sensitive.
+      This replaces the value of any existing environment variable with this name.
+
+    - code:"delete"\:
+      Delete one or more files or directories.
+
+      All bold:"Content" must be the file or directory to be deleted.
+
+      If the path is a directory and is not empty, then this will not delete the directory.
+
+    - code:"deletes"\:
+      Identical to code:"delete", except that when the path is a directory and is not empty, then this will delete the directory.
+
+    - code:"else"\:
+      Performs a programmatic code:"else" condition.
+      Must be specified following a valid if operation (and the operation it affects).
+
+      This has no bold:"Content".
+
+      An else operation may not follow this.
+      An if operation may immediately follow to represent an code:"else if" condition.
+
+    - code:"exit"\:
+      Perform an exit from the entire make operation.
+      This always exits completely, regardless of the operation depth.
+      The second bold:"Content" may be either code:"success" or code:"failure" to designate on whether or not to exit as success or failure.
+
+      When set to code:"failure" this will trigger a failure message.
+      When set to code:"failure", the fail state will be forcibly changed to code:"failure" regardless of the current fail state.
+
+    - code:"fail"\:
+      Toggle how the to handle an operation failure.
+
+      The first bold:"Content" may be one of the following\:
+        code:"exit": Set failure handler to exit on failure.
+        code:"warn": Set failure handler to print a warning on failure but continue on.
+        code:"ignore": Set failure handler to continue on regardless of failure.
+
+    - code:"group"\:
+      Change the group role for a given file.
+
+      The first bold:"Content" represents the group to assign.
+      The second bold:"Content" represents the file to assign the group to.
+
+    - code:"groups"\:
+      Identical to group operation, except this will recursively apply the mode to all files within the given file, if that file is a directory file path.
+
+    - code:"if"\:
+      Performs a programmatic code:"if" condition.
+      May be specified following a valid code:"else" operation.
+
+      The bold:"Content" represents a set of conditions to perform.
+
+      The code:"if" operation may be used in conjunction with the code:"and", code:"or", and the code:"else" operations.
+
+      The conditional logic is different from normal logic found in most software programs.
+      There is only one order of operation, a top-down design where the current operation relates to the previous operation.
+      This is mostly relevant when code:"if" operation is followed by an code:"and" or an code:"or" operation.
+
+      Consider the following\:
+        code:"if parameter xxx
+        or parameter yyy
+        and parameter zzz
+          print first
+        else
+        if parameter www
+          print second
+        else
+          print third"
+
+      The resulting logic is as follows\:
+        1) If code:"xxx" is defined, then...
+        2) If result from (1) is TRUE or if code:"yyy" is defined, then...
+        3) If result from (2) is TRUE and if code:"zzz" is defined, then...
+        4) If result from (3) is FALSE, then...
+        5) If result from (4) is TRUE, then...
+        6) If result from (5) is FALSE, then...
+
+      For all conditions that rely on numbers, only whole numbers are (currently) supported.
+
+      conditions\:
+        - code:"== \"left\" \"right\""\:
+          Compare all parameters to be equal.
+          Requires 2 or more after the code:"==".
+          For example, code:"if == 'a' 'b' 'c' 'd'" would test: code:"'a' == 'b' && 'b' == 'c' && 'c' == 'd'".
+          This performs only string-based comparisons.
+
+        - code:"> \"left string\" \"right string\""\:
+          Compare code:"left" to code:"right" for greater than.
+          Requires 2 or more after the code:">".
+          For example, code:"if > 0 1 2 3" would test: code:"0 > 1 && 1 > 2 && 2 > 3".
+          This performs only number-based comparisons.
+
+        - code:"< \"left string\" \"right string\""\:
+          Compare code:"left" to code:"right" for less than.
+          Requires 2 or more after the code:">".
+          For example, code:"if < 0 1 2 3" would test: code:"0 < 1 && 1 < 2 && 2 < 3".
+          This performs only number-based comparisons.
+
+        - code:">= \"left string\" \"right string\""\:
+          Compare code:"left" to code:"right" for greater than or equal to.
+          Requires 2 or more after the code:">=".
+          For example, code:"if >= 0 1 2 3" would test: code:"0 >= 1 && 1 >= 2 && 2 >= 3".
+          This performs only number-based comparisons.
+
+        - code:"<= \"left string\" \"right string\""\:
+          Compare code:"left" to code:"right" for less than or equal to.
+          Requires 2 or more after the code:">=".
+          For example, code:"if <= 0 1 2 3" would test: code:"0 <= 1 && 1 <= 2 && 2 <= 3".
+          This performs only number-based comparisons.
+
+        - code:"<> \"left\" \"right\""\:
+          Compare all parameters to be not equal.
+          Requires 2 or more after the code:"==".
+          For example, code:"if <> 'a' 'b' 'c'" would test: code:"'a' <> 'b' && 'b' <> 'c' && 'a' <> 'c'".
+          This performs only string-based comparisons.
+
+        - code:"define \"some define name\""\:
+          Test if one or more names are defined as an environment variable.
+          For example, code:"if define PWD SHELL" would test if both the code:"PWD" and the code:"SHELL" variables are defined via the environment variables.
+
+        - code:"exist \"file path\""\:
+          Test if file exists.
+          For example, code:"if exist \"a.txt\" \"b.txt\"" would test if both the file code:"a.txt" and code:"b.txt" exist.
+
+        - code:"failure"\:
+          Test if the previous section operation failed.
+
+        - code:"group \"some mode\" \"some file\""\:
+          For example, code:"if group friends a.txt b.txt" would test if both file code:"a.txt" and code:"b.txt" have a group named code:"we".
+
+        - code:"is block character directory fifo link regular socket for \"file path\""\:
+          Test if one or more files exist and if each file is any of the given types.
+          The given types must be followed by code:"for" to designate where the the file paths begin.
+          For example, code:"if is regular directory for \"a.txt\" \"b.txt\"" would test if both the file code:"a.txt" and code:"b.txt" exist and are either of type code:"regular" or type code:"directory".
+
+        - code:"mode is/has \"some mode\" \"some file\""\:
+          Test if one or more files has the exact mode (code:"is") or has at least the given modes (code:"has").
+          For example, code:"if mode is u+r a.txt b.txt" would test if both file code:"a.txt" and code:"b.txt" only have owner set to read.
+          For example, code:"if mode has u+r a.txt b.txt" would test if both file code:"a.txt" and code:"b.txt" has owner set to read, and all other modes can be anything.
+
+        - code:"not"\:
+          Perform the test expecting a false result rather than a true result.
+          This is to be immediately followed by a valid if condition as well as all appropriate valid content associated with that if condition.
+
+          Only the following if conditions are supported\:
+            - code:"define".
+            - code:"exist".
+            - code:"group".
+            - code:"is".
+            - code:"mode".
+            - code:"owner".
+            - code:"parameter".
+
+          Examples\:
+            - code:"if not parameter work"
+            - code:"if not exist documentation.txt"
+
+        - code:"owner \"some mode\" \"some file\""\:
+          Test if one or more files has the given owner.
+          For example, code:"if owner me a.txt b.txt" would test if both file code:"a.txt" and code:"b.txt" have an owner named code:"me".
+
+        - code:"parameter \"some parameter name\""\:
+          Test if one or more names are defined as a code:"parameter" variable.
+          For example, code:"if parameter verbose silent" would test if both the code:"verbose" and the code:"silent" variables are defined via the code:"parameter" setting.
+
+          Reserved parameters that represent program arguments, three forms are available.
+          For example, the program argument code:"-w/--work" has the reserved word code:"work" and has three forms\:
+            1) code:"work".
+            2) code:"work:option".
+            3) code:"work:value".
+
+          In the case of form 1, the code:"if parameter work" would be true if the argument is passed to the program or a default is provided.
+          In the case of form 2, the code:"if parameter work:option" would be true if the argument is passed to the program.
+          In the case of form 3, the code:"if parameter work:value" would be true if the argument is passed to the program and has a non-zero value.
+
+          Some reserved parameters, such as the code:"verbosity", has no code:"value" and in this case would always return false for code:"if parameter verbosity:value".
+
+          Multi-valued reserved parameters expand into multiple parameters (such as when using multiple code:"-m/--mode").
+          Avoid this behavior by wrapping the the bold:"IKI" variable in quotes.
+
+          The following are reserved parameters\:
+            - code:"build": Associated with code:"-b/--build" parameter.
+            - code:"color": Associated with code:"+d/++dark", code:"+l/++light", and code:"+n/++no_color" parameters.
+            - code:"current": The absolute path to the current working directory (present working directory) (Always has a trailing forward slash).
+            - code:"data": Associated with code:"-D/--data" parameter.
+            - code:"define": Associated with code:"-d/--define" parameter.
+            - code:"fakefile": Associated with code:"-f/--fakefile" parameter.
+            - code:"mode": Associated with code:"-m/--mode" parameter and possibly with the build settings default mode code:"modes_default".
+            - code:"process": Associated with code:"-p/--process" parameter.
+            - code:"return": Contains the return value of a previous operation that produces a return code.
+            - code:"settings": Associated with code:"-s/--settings" parameter.
+            - code:"sources": Associated with code:"-S/--sources" parameter.
+            - code:"top": The absolute path to the code:"top" directory, which is the base project directory (Always has a trailing forward slash).
+            - code:"verbosity": Associated with code:"+Q/++quiet", code:"+E/++error", code:"+N/++normal", code:"+V/++verbose", and code:"+D/++debug" parameters.
+            - code:"work": Associated with code:"-w/--work" parameter.
+
+        - code:"succeed"\:
+          Test if the previous section operation succeeded.
+
+    - code:"index"\:
+      Execute the linker program, such as code:"ar".
+
+      All bold:"Content" are passed as arguments to the respective code:"ar" program.
+
+    - code:"link"\:
+      Create a symbolic link from some point to some target.
+
+      The first bold:"Content", when there are more than 2 arguments, may be either code:"force" or code:"strict".
+      The second to last bold:"Content" represents the target file.
+      The last bold:"Content" represents the point file.
+
+      The code:"force" bold:"Content" designates that the point file will be overwritten if the file already exists.
+      The code:"strict" bold:"Content" requires that the target file already exists.
+
+    - code:"mode"\:
+      Change the mode permissions for a given file.
+
+      The first bold:"Content" represents the mode to assign.
+      The second bold:"Content" represents the file to assign the mode to.
+
+    - code:"modes"\:
+      Identical to mode operation, except this will recursively apply the mode to all files within the given file, if that file is a directory file path.
+
+    - code:"move"\:
+      Move all files (and directories) into the last content.
+      If there are more than one file (or directory) being copied, then the final path must be a directory.
+
+      All bold:"Content", except last, represents the files to move.
+      The last bold:"Content" represents the destination file (or directory) to move to.
+
+    - code:"operate"\:
+      Begin execution of another Section.
+
+      The first bold:"Content" represents the name of the Section Object to execute.
+      This may be neither the code:"settings" Section no the code:"main" Section.
+      Recursion is prohibited, a Section that is already on the operation stack may not be called again.
+      Once the operation is off the stack, it can then be called again.
+
+    - code:"or"\:
+      A special type of an code:"if" operation.
+      May only be specified following a valid code:"if", code:"and", or code:"or" operation.
+      This is executed only if the previous code:"if" operation result is false.
+
+      When executed, this performs the test and returns true or false as appropriate.
+      When not executed, this passes through the result of the previous code:"if", code:"and", or code:"or" operation.
+
+    - code:"owner"\:
+      Change the owner role for a given file.
+
+      The first bold:"Content" represents the role to assign.
+      The second bold:"Content" represents the file to assign the role to.
+
+    - code:"owners"\:
+      Identical to owner operation, except this will recursively apply the mode to all files within the given file, if that file is a directory file path.
+
+    - code:"parameter"\:
+      This represents a variable defined within the scope of the file:"fakefile".
+      This is not exported as an environment variable and is therefore not visible to any executed programs or scripts.
+      This replaces the value of any existing parameter variable with this name.
+      The reserved parameter variable names (see IKI vocabulary context section below) may not be changed by this.
+
+    - code:"pop"\:
+      Pop a directory path of the path stack, thereby changing to the previous directory on the stack.
+      This is a change directory command similar to a back button in a browser.
+
+      This has no bold:"Content".
+
+      This does not generate an error if the path stack is empty.
+      If the directory popping to no longer exists, then an error occurs.
+
+    - code:"print"\:
+      Print the content to the output screen.
+      This always prints a newline at the end.
+
+      All bold:"Content" is printed, and if no bold:"Content" is provided, an empty line is printed.
+
+      The following escape sequences are supported for printing special characters\:
+        - character:"\f": Form Feed.
+        - character:"\n": New Line.
+        - character:"\r": Carriage Return.
+        - character:"\t": Tab.
+        - character:"\v": Vertical Tab.
+        - character:"\\": Backslash Character (may require additional slashes in certain circumstances.)
+        - character:"\0": NULL Character.
+        - character:"\U+": Unicode Sequence (followed by a valid Unicode sequence with a minimum 4 hexidecimal digits and a maximum of 6 hexidecimal digits).
+        - character:"\!": Non-printing separator, allowing for code:"\U+000A\!5" to be equivalent to code:"\n5".
+
+      If the Unicode is invalid, then nothing is printed for that character (the invalid character is skipped when printing).
+      Example Unicodes\:
+        - code:"\U+000A": Prints a new line, equivalent to character:"\n".
+        - code:"\U+2E19": Prints the Unicode feather-like character character:"⸙".
+
+      Only ASCII:"American Standard Code for Information Interchange" alpha-numeric hexidecimal digits are allowed in the Unicode sequence (upper or lower case).
+
+      Invalid or unknown escape sequences are not printed.
+
+    - code:"run"\:
+      Manually execute a remote program or script.
+      This program must be in the appropriate code:"PATH" environment or otherwise automatically detected when calling without a specific path to the program or script.
+
+      The first bold:"Content" represents the program or script name.
+      All bold:"Content" after the first are passed to the program or script when running.
+
+      After this executes the return result is made available via the code:"return" parameter variable name.
+      Any existing value associated with code:"return" gets replaced.
+
+    - code:"shell"\:
+      Manually execute a remote program or script using a specific path to the program or script.
+      This does not require the program to exist in code:"PATH", but the path to the program or script must be relative to the project path.
+
+      The first bold:"Content" represents the program or script name.
+      All bold:"Content" after the first are passed to the program or script when running.
+
+      After this executes the return result is made available via the code:"return" parameter variable name.
+      Any existing value associated with code:"return" gets replaced.
+
+    - code:"skeleton"\:
+      Run the fake skeleton operation as if code:"fake skeleton" was run instead of code:"fake make".
+      Command line arguments are automatically passed to the fake skeleton operation.
+
+    - code:"to"\:
+      Change to the directory within the project root path tree, pushing the previous directory onto the path stack.
+      The previous path is saved onto the path stack and may later be code:"popped" off.
+
+      The first bold:"Content" represents the path to change directory into.
+
+    - code:"top"\:
+      Change to the project root path, clearing the directory path stack.
+
+      This has no bold:"Content".
+      If the project root path no longer exists, then an error occurs.
+
+    - code:"touch"\:
+      Manually create a new file or a directory within the project root or update its last changed timestamp if the file already exists.
+
+      The first bold:"Content" must be either code:"file" or code:"directory".
+      The remaining bold:"Content" must be a path to the file.
+
+    - code:"write"\:
+      Write strings to a file within the project root.
+      The bold:"Content" after the first bold:"Content" is appended to the file.
+
+      The first bold:"Content" represents the file to write to.
+      If there is no bold:"Content" beyond the first, then the file is truncated (all content within the file is deleted).
+
+      In all cases, if the file does not exist, the file is created.
+
+      When only the first bold:"Content" exists, this acts similar to the code:"touch" operation.
+      The major difference between the two is that the code:"touch" operation does not alter the content within the file.
+      This does alter the content within the file.
+
+      A single space is printed between each argument.
+      To preserve spaces, wrap the message in quotes (single or double).
+
+      The following escape sequences are supported for printing special characters\:
+        - character:"\f": Form Feed.
+        - character:"\n": New Line.
+        - character:"\r": Carriage Return.
+        - character:"\t": Tab.
+        - character:"\v": Vertical Tab.
+        - character:"\\": Backslash Character (may require additional slashes in certain circumstances.)
+        - character:"\0": NULL Character.
+        - character:"\U+": Unicode Sequence (followed by a valid Unicode sequence with a minimum 4 hexidecimal digits and a maximum of 6 hexidecimal digits).
+        - character:"\!": Non-printing separator, allowing for code:"\U+000A\!5" to be equivalent to code:"\n5".
+
+      If the Unicode is invalid, then nothing is printed for that character (the invalid character is skipped when printing).
+      Example Unicodes\:
+        - code:"\U+000A": Prints a new line, equivalent to character:"\n".
+        - code:"\U+2E19": Prints the Unicode feather-like character character:"⸙".
+
+      Only ASCII:"American Standard Code for Information Interchange" alpha-numeric hexidecimal digits are allowed in the Unicode sequence (upper or lower case).
+
+      Invalid or unknown escape sequences are not printed.
+
+  The IKI vocabulary context is supported and is further clarified as follows\:
+  - code:"context"\:
+    The context Object represents a name representing simple context or complex combination of context.
+    Context should wrap some text such that if some text begins with some context, the context should be reset at the end.
+    The most basic context is color context, such as: code:"context:\"notice\" This is emphasized text context:\"reset\"".
+
+    The use of IKI in this way is acceptable but it is not perfect.
+    IKI is not designed to be a replacement to markup.
+    The markup code:"<strong>Example</strong>" vs the IKI code:"context:\"notable\" Example context:\"notable\"" has obvious differences in the spaces.
+    The IKI by design cannot be used like this: code:"context:\"notable\"Examplecontext:\"notable\"" because the word code:"Example" and the word code:"context" collide.
+
+    This context will respect the programs code:"++light", code:"++dark", and code:"++no_color" parameters.
+
+    The following context are available\:
+      - code:"error": Designate as an error, often printed in red.
+      - code:"important": Designate as important.
+      - code:"normal": Explicitly designate normal text.
+      - code:"notable": Designate as notable (similar to code:"strong" or code:"bold" in HTML:"Hyper Text Markup Language").
+      - code:"reset": Remove the context.
+      - code:"standout": Designate to make notable (similar to code:"italic" or code:"emphasis" in HTML:"Hyper Text Markup Language").
+      - code:"success": Designate as a success, often printed in bright green.
+      - code:"title": Designate as a title.
+      - code:"warning": Designate as a warning, often printed in some shade of orange.
+
+  - code:"define"\:
+    The define Object represents environment variables passed to the program or created by the program.
+    The value represents the environment variable name and is case-sensitive.
+    This IKI variable gets substituted with the environment variable's value or NULL if not defined.
+    The code:"settings" list supports declaring custom environment variables (which overwrite any existing environment variable with the same name).
+
+  - code:"parameter"\:
+    The parameter Object represents a variable that is to be substituted.
+    The value represents the variable name and is case-sensitive.
+    This IKI variable gets substituted with the value defined in the code:"settings" list or NULL if not defined.
+    The value may contain an additional code:":option" or code:":value" at the end of the name to designate getting only part of the parameter.
+
+    The following are reserved parameter variable names\:
+    - code:"build"\:
+      This variable holds the code:"build" program parameters, such as code:"-b build/".
+      This supports both code:":option" and code:":value".
+
+    - code:"color"\:
+      This variable holds the color related program parameters, such as code:"+n".
+      This supports both code:":option" and code:":value" (value is always an empty string).
+
+    - code:"data"\:
+      This variable holds the code:"data" program parameters, such as code:"-D data/".
+      This supports both code:":option" and code:":value".
+
+    - code:"define"\:
+      This variable holds the code:"data" program parameters, such as code:"-d define/".
+      This supports both code:":option" and code:":value".
+
+    - code:"fakefile"\:
+      This variable holds the code:"fakefile" program parameters, such as code:"-f fakefile".
+      This supports both code:":option" and code:":value".
+
+    - code:"mode"\:
+      This variable holds the code:"fakefile" program parameters, such as code:"-m monolithic".
+      This supports both code:":option" and code:":value".
+
+    - code:"process"\:
+      This variable holds the code:"process" program parameters, such as code:"-p process_name".
+      This supports both code:":option" and code:":value".
+
+    - code:"return"\:
+      This variable holds the return status from a previously run user-space applications, which happens with the code:"run" and code:"shell" section operations.
+      This does not represent the return code for each line, just only those lines that run user-space applications.
+
+    - code:"settings"\:
+      This variable holds the code:"settings" program parameters, such as code:"-s settings".
+      This supports both code:":option" and code:":value".
+
+    - code:"sources"\:
+      This variable holds the code:"data" program parameters, such as code:"-S sources/".
+      This supports both code:":option" and code:":value".
+
+    - code:"verbosity"\:
+      This variable holds the verbosity related program parameters, such as code:"+V".
+      This supports both code:":option" and code:":value" (value is always an empty string).
+
+    - code:"work"\:
+      This variable holds the code:"work" program parameters, such as code:"-w work/".
+      This supports both code:":option" and code:":value".
+
+    An example of getting just the code:":option" or code:":value" part of a parameter for the code:"work" parameters\:
+    - code:"work:option"\:
+      This variable holds the option part of the code:"work" program parameters, such as code:"-w".
+
+    - code:"work:value"\:
+      This variable holds the value part of the code:"work" program parameters, such as code:"work/".
+
+  The bold:"Content" code:"no_dereference" may be specified in certain cases relating to files.
+  These cases operate on a file that can be a link itself or the link target.
+  The default behavior is normally to dereference the link target.
+
+  For example, consider a symbolic link, called code:"some_file", that points to a file that does not exist (which means that the link in question is a broken link).
+  The Operation code:"if exist some_file" would return false.
+  The Operation code:"if no_dereference exist some_file" would return true.
+  This is because the symbolic link itself, code:"some_file", does exist but the file it is pointing to does not.
+  The code:"no_dereference" is ignored for conditions that do not need it.
