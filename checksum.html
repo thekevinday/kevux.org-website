@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kevux Systems and Software - Checksum</title>
+
+    <base href="">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="Information regarding checksums and security keys.">
+    <meta name="keywords" content="Kevin Day, Kevux, Open-Source, Checksum, SHA, SHA2, GPG, PGP">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="checksum.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item"><a href="news.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="index.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block">
+            <div class="nav-text notice">Checksum</div>
+            <a href="checksum.html#about" class="nav-text link">About</a>
+          </div>
+          <div class="nav-item block">
+            <a href="checksum.html#sha2" class="nav-text link">SHA2</a>
+          </div>
+          <div class="nav-item block">
+            <a href="checksum.html#gpg" class="nav-text link">GPG / PGP</a>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="checksum.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="checksum.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">Checksum</h1>
+          </header>
+
+          <article id="about" class="article">
+            <header class="article-header header">
+              <h2 class="article-title h h2">About</h2>
+            </header>
+
+            <div class="article-content">
+              <p class="p">
+                Files get corrupted and malicious actors tamper with files.
+                There are many things that can go wrong when transfering files between two parties.
+                Checksums and signatures are provided to help protect against these kinds of problems.
+              </p>
+            </div>
+          </article>
+
+          <article id="sha2" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">SHA2</h2>
+            </header>
+
+            <div class="article-content">
+              <p class="p">
+                The checksum algorithm known as SHA2 is utilized as a quick and simple integrity check on files.
+                This also functions as a poor mans authentication but offers no real security that the checksum itself is valid.
+                The <abbr title="GNU PG">GPG</abbr> checksums are a more appropriate choice for authentication.
+              </p>
+              <p class="p">
+                There are several variations of this algorithm.
+              </p>
+              <ol>
+                <li><strong class="strong">SHA512</strong>: A 512-byte version of SHA2 that results the largest, strongest, and slowest checksums.
+                <li><strong class="strong">SHA385</strong>: A 384-byte version of SHA2.
+                <li><strong class="strong">SHA256</strong>: A 256-byte version of SHA2.
+                <li><strong class="strong">SHA224</strong>: A 224-byte version of SHA2 that results in the smallest, weakest, and fastest checksums.
+              </ol>
+            </div>
+          </article>
+
+          <article id="gpg" class="article">
+            <header class="article-header header separate">
+              <h2 class="article-title h h2">GPG / PGP</h2>
+            </header>
+
+            <div class="article-content">
+              <p class="p">
+                The <abbr title="GNU PG">GPG</abbr> is an open-source implementation, or perhaps version, of the PGP standard.
+                This provides signatures and even encryption of files that are often called keys.
+                There are several different forms of security and data integrity.
+                Within the <abbr title="GNU PG">GPG</abbr> key, checksums algorithms like SHA2 are also used.
+              </p>
+              <p class="p">
+                There are public and private parts to a <abbr title="GNU PG">GPG</abbr> key.
+                The public part of a <abbr title="GNU PG">GPG</abbr> key is given out publically so that the person receiving the files can verify the integrity and authenticity of the files.
+                These keys are even used to verify and encrypt e-mails.
+              </p>
+              <p class="p">
+                The following are public keys from Kevin Day and are themselves signed and checksumed.
+              </p>
+              <ol>
+                <li><strong class="strong">2024 and earlier</strong>: <a href="documents/checksum/kevin_day/2017/kevin_day-76E903396DAD0A83.public" class="link download">Kevin Day 76E903396DAD0A83</a> (<a href="documents/checksum/kevin_day/2017/kevin_day-76E903396DAD0A83.public.sha256" class="link download">SHA256</a>) (<a href="documents/checksum/kevin_day/2017/kevin_day-76E903396DAD0A83.public.asc" class="link download">GPG</a>).</li>
+                <li><strong class="strong">2023 and later</strong>: <a href="documents/checksum/kevin_day/2023/kevin_day-02E939B8F7EFE597.public" class="link download">Kevin Day 02E939B8F7EFE597</a> (<a href="documents/checksum/kevin_day/2023/kevin_day-02E939B8F7EFE597.public.sha256" class="link download">SHA256</a>) (<a href="documents/checksum/kevin_day/2023/kevin_day-02E939B8F7EFE597.public.asc" class="link download">GPG</a>).</li>
+              </ol>
+              <p class="p">
+                The key identified by <strong class="strong">76E903396DAD0A83</strong> is authenticated via the key identified by <strong class="strong">02E939B8F7EFE597</strong>.
+                This key will expire near the start of 2024 and will not be used again.
+                This followed the old, and perhaps lazy, practice of using the master key for signing everything.
+                This also utilizes older and less trusted algorithms.
+              </p>
+              <p class="p">
+                The key identified by <strong class="strong">02E939B8F7EFE597</strong> is authenticated via the key identified by <strong class="strong">76E903396DAD0A83</strong>.
+                This key has been created near the start of 2023 and will be used until such time a replacement comes about.
+                This follows the newer practice of signing using subkeys, making the master key unavailable.
+                This key utilizes newer algorithms.
+              </p>
+              <p class="p">
+                These public keys should be downloaded imported into your own key chain to perform integrity checking and authentication.
+              </p>
+            </div>
+          </article>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
