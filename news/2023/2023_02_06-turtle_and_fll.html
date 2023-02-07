@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>News - 2023/02/06 - Turtle and FLL</title>
+
+    <base href="../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="News post on 2023/02/06.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, News, 2023">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="news/2023/2023_02_06-turtle_and_fll.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js news">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item active"><a href="news.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="news/2023.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block highlight unlink">
+            <div class="nav-text notice">2023 / 02 / 06</div>
+            <div class="nav-text unlink">Turtle and FLL</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="news/2023/2023_02_06-turtle_and_fll.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="news/2023/2023_02_06-turtle_and_fll.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">2023 / 02 / 06 - Turtle and FLL</h1>
+          </header>
+
+          <div class="main-content">
+            <p class="p">
+              I am slowly getting back into building the next <strong class="strong">Turtle Kevux</strong> distribution.
+              This distribution is being re-developed in parallel to the <strong class="strong">Featureless Linux Library</strong>.
+              I am testing out the 0.6.x releases of the <abbr title="Featureless Linux Library">FLL</abbr> and the Controller program.
+            </p>
+            <p class="p">
+              The Controller program is not truly part of the <abbr title="Featureless Linux Library">FLL</abbr>.
+              This program is in the 0.6.x release of the <abbr title="Featureless Linux Library">FLL</abbr> for convenience reasons but will soon be separated into its own dedicated project.
+              The problems and missing functionality discovered while trying to utilize the 0.6.x version of the Controller program will be developed either in the 0.6.x release (for non-breaking changes) or the 0.7.x.
+            </p>
+            <p class="p">
+              As for the <strong class="strong">Turtle Kevux</strong> distribution, I have the system now booting.
+              I experimented with the trying to build the kernel without the hard disk drivers compiled in.
+              I want to use two initrds such that the first is the filesystem that does not change and the second contains the kernel modules.
+              This will take more time to figure out than I am willing to spend on this.
+              I decided to go back to the old way of booting the system and I am compiling the disk drivers into the kernel.
+            </p>
+            <p class="p">
+              I can now focus on the Controller program as the Init program with the kernel now booting and with a working initrd (which is actually an initramfs, technically speaking).
+            </p>
+            <p class="p">
+              The first problem is that it boots way too fast.
+              Instantly.
+              Probably because I am using an example template that is incomplete and theoretical.
+              All of the messages and errors fill the screen before I can see the first message.
+            </p>
+            <p class="p">
+              A second problem is that the <code class="code">agetty</code> program doesn't like something about the Init program using the console and has segmentation faults on <code class="code">tty1</code>.
+              This requires investigation.
+              For the time being I am going to just not do anything on <code class="code">tty1</code>.
+              I suspect that I will need to add new features to the Controller program to stop printing or release control over <code class="code">tty1</code> before calling the appropriate <code class="code">agetty</code>.
+              I've been planning on eventually adding custom file input and output controls.
+              This many now happen sooner than later due to the <code class="code">agetty</code> situation.
+            </p>
+            <p class="p">
+              The next step in Turtle Kevux that is to be performed in conjunction with the Init program is to start building the packages for the on-system compilation.
+              I do not plan on using the Turtle Kevux Installation Scripts (<abbr title="Turtle Kevux Installation Scripts">TKIS</abbr>) for the normal system packages.
+              Most of the <abbr title="Turtle Kevux Installation Scripts">TKIS</abbr> includes hacks, patches, and work-arounds due to differences between host systems and packages.
+            </p>
+            <p class="p">
+              One of the major problems I noticed is that the CMake is a horrible build system.
+              This system segmentation faults consistently while bootstrapping within the system.
+              The cause is not immediately clear but might be related to the system security practices.
+            </p>
+            <p class="p">
+              <code class="code">cmake-3.25.2/bootstrap: line 2042: 29217 Segmentation fault "${cmake_bootstrap_dir}/cmake" "${cmake_source_dir}" "-C${cmake_bootstrap_dir}/InitialCacheFlags.cmake" "-G${cmake_bootstrap_generator}" ${cmake_options} ${cmake_bootstrap_system_libs} "$@"</code>
+            </p>
+            <p class="p">
+              Looking into the code I find numerous potential memory leaks and failing to reset variables to <code class="code">NULL</code> from just glancing through with the help of <code class="code">valgrind</code>.
+            </p>
+            <p class="p">
+              <code class="code">==36556== Invalid free() / delete / delete[] / realloc()</code>
+            </p>
+            <p class="p">
+              <code class="code">==36556==    at 0x48C51CB: free (vg_replace_malloc.c:884)</code>
+            </p>
+            <p class="p">
+              <code class="code">==36556==    by 0x60FC24: cmListFileLexerSetToken (in /tkis-1.1.0/work/cmake-3.25.2/Bootstrap.cmk/cmake)</code>
+            </p>
+            <p class="p">
+              <code class="code">Address 0x4b0dcc0 is in a rw- mapped file /lib/x64/libgcc_s.so.1 segment</code>
+            </p>
+            <p class="p">
+              The CMake code itself is an utter mess.
+              Projects that use CMake will either have to be removed entirely and not used or I will have to craft my own build rules using the Featureless Make system.
+              I really do not want to spend time dealing with this problem but it is what it is.
+            </p>
+            <p class="p">
+              <strong class="strong">Kevin Day</strong>
+            </p>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

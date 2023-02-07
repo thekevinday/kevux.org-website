@@ -54,6 +54,10 @@
             <a href="news.html" class="nav-text link back">Back</a>
           </div>
           <div class="nav-item block">
+            <div class="nav-text notice">2023 / 02 / 06</div>
+            <a href="news/2023/2023_02_06-turtle_and_fll.html" class="nav-text link">Turtle and FLL</a>
+          </div>
+          <div class="nav-item block">
             <div class="nav-text notice">2023 / 01 / 14</div>
             <a href="news/2023/2023_01_14-fll_0_6_3_release.html" class="nav-text link">FLL 0.6.3 Release</a>
           </div>
@@ -70,8 +74,35 @@
             <h1 class="section-title h h1">Year 2023 News</h1>
           </header>
 
-          <article id="2023_01_14-fll_0_6_3_release" class="article">
+          <article id="2023_02_06-turtle_and_fll" class="article">
             <header class="article-header header">
+              <h2 id="2023_02_06-turtle_and_fll-title" class="article-title h h2">2023 / 02 / 06 - Turtle and FLL</h2>
+            </header>
+
+            <div class="article-content">
+              <p class="p">
+                I am slowly getting back into building the next <strong class="strong">Turtle Kevux</strong> distribution.
+                This distribution is being re-developed in parallel to the <strong class="strong">Featureless Linux Library</strong>.
+                I am testing out the 0.6.x releases of the <abbr title="Featureless Linux Library">FLL</abbr> and the Controller program.
+              </p>
+              <p class="p">
+                As for the <strong class="strong">Turtle Kevux</strong> distribution, I have the system now booting.
+                I experimented with the trying to build the kernel without the hard disk drivers compiled in.
+                I want to use two initrds such that the first is the filesystem that does not change and the second contains the kernel modules.
+                This will take more time to figure out than I am willing to spend on this.
+                I decided to go back to the old way of booting the system and I am compiling the disk drivers into the kernel.
+              </p>
+              <p class="p">
+                I can now focus on the Controller program as the Init program with the kernel now booting and with a working initrd (which is actually an initramfs, technically speaking).
+              </p>
+              <p class="p">
+                <a id="2023_02_06-turtle_and_fll-more" href="news/2023/2023_02_06-turtle_and_fll.html" class="content link" aria-labelledby="2023_02_06-turtle_and_fll-more 2023_02_06-turtle_and_fll-title">Continue reading…</a>
+              </p>
+            </div>
+          </article>
+
+          <article id="2023_01_14-fll_0_6_3_release" class="article">
+            <header class="article-header header separate">
               <h2 id="2023_01_14-fll_0_6_3_release-title" class="article-title h h2">2023 / 01 / 14 - FLL 0.6.3 Release</h2>
             </header>
 
