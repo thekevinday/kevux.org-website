@@ -110,7 +110,7 @@
               Most of the <abbr title="Turtle Kevux Installation Scripts">TKIS</abbr> includes hacks, patches, and work-arounds due to differences between host systems and packages.
             </p>
             <p class="p">
-              One of the major problems I noticed is that the CMake is a horrible build system.
+              One of the major problems I noticed is that the <strong class="strong">CMake</strong> is a horrible build system.
               This system segmentation faults consistently while bootstrapping within the system.
               The cause is not immediately clear but might be related to the system security practices.
             </p>
@@ -133,10 +133,26 @@
               <code class="code">Address 0x4b0dcc0 is in a rw- mapped file /lib/x64/libgcc_s.so.1 segment</code>
             </p>
             <p class="p">
-              The CMake code itself is an utter mess.
-              Projects that use CMake will either have to be removed entirely and not used or I will have to craft my own build rules using the Featureless Make system.
+              The <strong class="strong">CMake</strong> code itself is an utter mess.
+              Projects that use <strong class="strong">CMake</strong> will either have to be removed entirely and not used or I will have to craft my own build rules using the Featureless Make system.
               I really do not want to spend time dealing with this problem but it is what it is.
             </p>
+
+            <section class="subsection box update" id="turtle_and_fll-main-2023_02_11-update">
+              <header class="article-header header">
+                <h3 class="subsection-title h h3">2023 / 02 / 11 Update</h3>
+              </header>
+
+              <div class="subsection-content">
+                <p class="p">
+                  Further investigation has shown that <strong class="strong">CMake</strong> is no the main culprit here. There appears to be something wrong with the system libraries. The likely candidates are <strong class="strong">Musl libc</strong>, <strong class="strong">GCC</strong>, <strong class="strong">Binutils</strong>, and <strong class="strong">Valgrind</strong>. The problem might be made worse when threads are in use. Even the <code class="code">ls</code> command is showing problems. I would not be surprised if there is some sort of optimization problem.
+                </p>
+                <p class="p">
+                  I intend to first try different versions of <strong class="strong">Musl</strong>. The compiler and the linker are additional points of interest. I must also consider <strong class="strong">Valgrind</strong> to be mis-reporting. However, I believe the mis-reporting to be unlikely as I can identify bad behavior in several programs that works fine outside of this environment.
+                </p>
+              </div>
+            </section>
+
             <p class="p">
               <strong class="strong">Kevin Day</strong>
             </p>
