@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>News - 2023/03/16 - FLL 0.6.4 Release</title>
+
+    <base href="../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="News post on 2023/03/16.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, News, 2023">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="news/2023/2023_03_16-fll_0_6_4_release.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+    <link type="text/html" rel="prev" href="news/2023/2023_02_06-turtle_and_fll.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js news">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item active"><a href="news.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="news/2023.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block highlight unlink">
+            <div class="nav-text notice">2023 / 03 / 16</div>
+            <div class="nav-text unlink">FLL 0.6.4 Release</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="news/2023/2023_03_16-fll_0_6_4_release.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="news/2023/2023_03_16-fll_0_6_4_release.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">2023 / 03 / 16 - FLL 0.6.4 Release</h1>
+          </header>
+
+          <div class="main-content">
+            <p class="p">
+              The <strong class="strong">Featureless Linux Library</strong> stable version 0.6.4 is released.
+            </p>
+            <p class="p">
+              This release contains numerous bug fixes and code clean ups.
+              There are also some features implemented as either a solution to a bug or to accommodate changes to a specification.
+              This change also revisits some of the copyrights and further clarifies them.
+            </p>
+            <p class="p">
+              Adds the following stand alone programs:
+            </p>
+            <ul>
+              <li><code class="code">controller</code></li>
+              <li><code class="code">fss_identify</code></li>
+              <li><code class="code">iki_read</code></li>
+              <li><code class="code">iki_write</code></li>
+            </ul>
+            <p class="p">
+              Copyrights are now displayed when the programs are passed the <code class="code">+C/++copyright</code> standardized parameter.
+            </p>
+            <p class="p">
+              The build and package scripts are improved to better automate stand alone package building.
+            </p>
+            <p class="p">
+              This preemptively adds Kevux specific path global support to easy the package build process for Turtle Kevux.
+              This is done in a non-<abbr title="Application Programming Interface">API</abbr> and a non-<abbr title="Application Binary Interface">ABI</abbr> breaking manner.
+            </p>
+            <p class="p">
+              The IKI standard is found to be slightly lacking.
+              There is a strong need for IKI variables immediately after word-characters that are not part of the variable name.
+              The IKI standard and specification is now updated to utilize open bracket '<code class="code">[</code>' (<code class="code">U+005B</code>) and close bracket '<code class="code">]</code>' (<code class="code">U+005D</code>), commonly referred to as "wrap" or "wrapping".
+              Such an IKI variable looks like <code class="code">[vocabulary]:"content"</code> (as opposed to <code class="code">vocabulary:"content"</code>).
+              New functionality is provided to keep this project compliant with the recent changes to the IKI standard and specifications.
+            </p>
+            <p class="p">
+              A major behavioral bug has been found in the Controller program regarding the "program" operation mode.
+              Solving this the simple way would then break other behavior.
+              To avoid this, a new feature is implemented, called the "helper" operation mode.
+              The "helper" operation mode provides an alternative to "program" operation mode to allow for starting tasks.
+            </p>
+            <p class="p">
+              The recent work involving Featureless Make in the 0.7.x development branches has exposed a number of problems whose fixes have been back ported.
+            </p>
+            <p class="p">
+              The Controller program has now be successfully tested and run under a SystemD system using "cgroups".
+              A quick and simple SystemD "cgroup" example Controller is now provided.
+            </p>
+            <p class="p">
+              The following are changes since the 0.6.3 stable release.
+            </p>
+            <p class="p">
+              <strong class="strong">Security Fixes:</strong>
+            </p>
+            <ul>
+              <li><strong class="strong">Featureless Make:</strong> Invalid read or write while expanding operations.</li>
+              <li><strong class="strong">Featureless Make:</strong> Add extra check range checks in Featureless Make build skeleton.</li>
+              <li><strong class="strong">Multiple Programs:</strong> NULL pointer dereference in writer due to pipe function result handling.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Features:</strong>
+            </p>
+            <ul>
+              <li><strong class="strong">FLL:</strong> Provide program parameter for displaying copyright.</li>
+              <li><strong class="strong">FLL:</strong> Enable support for stand_alone packaging with 'all'.</li>
+              <li><strong class="strong">FLL:</strong> Implement wrap support for IKI standard to be compliant with recent changes.</li>
+              <li><strong class="strong">Controller:</strong> The content action cache, comments, and delimits are not being properly cleared.</li>
+              <li><strong class="strong">Controller:</strong> Add support for 'helper' mode to compliment the 'program' mode.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Bug Fixes:</strong>
+            </p>
+            <ul>
+              <li><strong class="strong">FLL:</strong> Status Code stand alone has incorrect files added.</li>
+              <li><strong class="strong">FLL:</strong> Stand alone build file problems and bad define macros.</li>
+              <li><strong class="strong">FLL:</strong> Incorrect dependencies for individual build modes.</li>
+              <li><strong class="strong">FLL:</strong> Fix unterminated quote handling issue addressed by specifications clarification.</li>
+              <li><strong class="strong">FLL:</strong> Miscellaneous problems in file functions and Featureless Make related code.</li>
+              <li><strong class="strong">FLL:</strong> Control group function is partially outdated and uses incorrect integer.</li>
+              <li><strong class="strong">FLL:</strong> The bootstrap script "<code class="code">-d/--define</code>" command does not match the Fake command.</li>
+              <li><strong class="strong">FLL:</strong> Short console arguments should not match when a single invalid exists.</li>
+              <li><strong class="strong">Controller:</strong> The control read only option is not being loaded.</li>
+              <li><strong class="strong">Controller:</strong> Remove out of place single quote in print.</li>
+              <li><strong class="strong">Controller:</strong> The Entry is not printing on simulate and validate combined mode.</li>
+              <li><strong class="strong">Controller:</strong> Multiple cancellations may occur, use mutex lock to prevent.</li>
+              <li><strong class="strong">Controller:</strong> Consistently use the same color context for the entry name.</li>
+              <li><strong class="strong">Featureless Make</strong>: Dead code in return status handling.</li>
+              <li><strong class="strong">Featureless Make</strong>: Number too large error should be returned as an error.</li>
+              <li><strong class="strong">Featureless Make</strong>: Add missing "extern" to functions in header.</li>
+              <li><strong class="strong">Featureless Make</strong>: Return result lost in Featureless Make for f_string_dynamic_append_nulless() call.</li>
+              <li><strong class="strong">Featureless Make</strong>: Set error status when link target is an empty string.</li>
+              <li><strong class="strong">Featureless Make</strong>: Printed error message is not utilize verbosity quite mode.</li>
+              <li><strong class="strong">Featureless Make</strong>: Print message is missing the percent before the 'Q' causing invalid printing.</li>
+              <li><strong class="strong">Featureless Make</strong>: Argument variable passed is a pointer, print the value not the pointer.</li>
+              <li><strong class="strong">Featureless Make</strong>: Fix typo in 'original' word.</li>
+              <li><strong class="strong">Featureless Make</strong>: Multiple single-valued Objects should used last instead of first Object.</li>
+              <li><strong class="strong">Featureless Make</strong>: Incorrect and confusing warning message in Featureless Make.</li>
+              <li><strong class="strong">Featureless Make</strong>: Invalid defines, incorrect comments, missing flags, and missing dependencies.</li>
+              <li><strong class="strong">Featureless Make</strong>: The build settings 'path_sources' is incorrectly added.</li>
+              <li><strong class="strong">Featureless Make</strong>: The -S/--sources parameter is not being correctly used.</li>
+              <li><strong class="strong">Featureless Make</strong>: Incorrect documentation in fakefile.txt.</li>
+              <li><strong class="strong">Featureless Make</strong>: Fakefile processing with color context is producing extra spaces when unquoted.</li>
+              <li><strong class="strong">Featureless Make</strong>: Incorrect stream used when printing output in verbose directory recursion.</li>
+              <li><strong class="strong">Featureless Make</strong>: The stream is locked again rather than unlocked after being locked.</li>
+              <li><strong class="strong">Multiple Programs:</strong> FSS Write programs don't correctly handle multi-Content per Object situations.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Refactors:</strong>
+            </p>
+            <ul>
+              <li>None.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Updates:</strong>
+            </p>
+            <ul>
+              <li><strong class="strong">FLL</strong>: Add unit tests for <code class="code">fll_path</code>.</li>
+              <li><strong class="strong">FLL</strong>: Further clarify quoting in <abbr title="Featureless Settings Specifications">FSS</abbr> specifications.</li>
+              <li><strong class="strong">FLL</strong>: Clarify <abbr title="Featureless Settings Specifications">FSS</abbr> specifications in regards to quote behavior.</li>
+              <li><strong class="strong">FLL</strong>: Style guide documentation.</li>
+              <li><strong class="strong">FLL</strong>: Program man pages, adding copyright, fixing help, and adding missing period.</li>
+              <li><strong class="strong">FLL</strong>: Open Standard License to be 1.0 or later rather than just 1.0.</li>
+              <li><strong class="strong">FLL</strong>: Fakefile specification.</li>
+              <li><strong class="strong">FLL</strong>: Add fanalyzer build mode.</li>
+              <li><strong class="strong">FLL</strong>: Add locale environment variable support, install, and help support in fakefiles.</li>
+              <li><strong class="strong">FLL</strong>: Add new standard global type, "<code class="code">_g</code>".</li>
+              <li><strong class="strong">Controller</strong>: Man page for controller specification changes regarding "helper" mode.</li>
+              <li><strong class="strong">Controller</strong>: Add example controller script for running under SystemD using cgroups.</li>
+              <li><strong class="strong">Controller</strong>: Add stand alone controller build.</li>
+              <li><strong class="strong">Controller</strong>: Controller and Control man page documentation.</li>
+              <li><strong class="strong">Featureless Make</strong>: Further Fakefile processing with IKI replacement space problems.</li>
+              <li><strong class="strong">Featureless Make</strong>: Use the signal check counter more consistently in Featureless Make.</li>
+              <li><strong class="strong">Featureless Make</strong>: Print message rather than an error when termination signal is received.</li>
+              <li><strong class="strong">Featureless Make</strong>: Allocate extra space for the terminating NULL.</li>
+              <li><strong class="strong">Featureless Make</strong>: Use <code class="code">f_string_dynamic_append_nulless()</code> instead of <code class="code">f_string_dynamic_append()</code>.</li>
+              <li><strong class="strong">Featureless Make</strong>: Featureless Make stand alone build now needs <code class="code">f_file_stream_read</code> instead of <code class="code">f_file_read</code>.</li>
+              <li><strong class="strong">Featureless Make</strong>: Use <code class="code">f_file_stream_read()</code> instead of <code class="code">f_file_read()</code> after opening as a stream.</li>
+              <li><strong class="strong">Featureless Make</strong>: Use pre-existing cache rather than using a new variable.</li>
+              <li><strong class="strong">Firewall</strong>: Add additional sanity checks.</li>
+              <li><strong class="strong">Multiple Programs</strong>: Change man page year and month from January 2023 to March 2023.</li>
+              <li><strong class="strong">Multiple Programs</strong>: Add stand alone <code class="code">fss_identify</code>, <code class="code">iki_read</code>, ad <code class="code">iki_write</code> builds.</li>
+              <li><strong class="strong">Multiple Programs</strong>: Program man pages, adding copyright, fixing help, and adding missing period.
+            </ul>
+            <p class="p">
+              Check out the project on the <a href="fll.html#release" class="link"><abbr title="Featureless Linux Library">FLL</abbr> release</a> page.
+            </p>
+            <p class="p">
+              The project is built like a tool chest.
+              Individuals who are unfamiliar with the project should have an easier time trying out the pre-packaged <a href="https://sourceforge.net/projects/fll/files/FLL-0.6/0.6.4/monolithic/" class="link external">monolithic sources</a>.
+              These <a href="https://sourceforge.net/projects/fll/files/FLL-0.6/0.6.4/programs/" class="link external">programs</a>, by default, are designed to build against a library built using the monolithic source tree.
+            </p>
+            <p class="p">
+              The <strong class="strong">stand alone</strong> sources for the several programs can be found <a href="https://sourceforge.net/projects/fll/files/FLL-0.6/0.6.4/stand_alone/" class="link external">pre-packaged at Sourceforge</a>.
+            </p>
+            <p class="p">
+              <strong class="strong">Kevin Day</strong>
+            </p>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
