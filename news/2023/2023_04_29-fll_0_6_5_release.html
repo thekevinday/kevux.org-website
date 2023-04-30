@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>News - 2023/04/29 - FLL 0.6.5 Release</title>
+
+    <base href="../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="News post on 2023/04/29.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, News, 2023">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="news/2023/2023_04_29-fll_0_6_5_release.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+    <link type="text/html" rel="prev" href="news/2023/2023_03_16-fll_0_6_4_release.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js news">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item active"><a href="news.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="news/2023.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block highlight unlink">
+            <div class="nav-text notice">2023 / 04 / 29</div>
+            <div class="nav-text unlink">FLL 0.6.5 Release</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="news/2023/2023_04_29-fll_0_6_5_release.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="news/2023/2023_04_29-fll_0_6_5_release.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">2023 / 03 / 16 - FLL 0.6.5 Release</h1>
+          </header>
+
+          <div class="main-content">
+            <p class="p">
+              The <strong class="strong">Featureless Linux Library</strong> stable version 0.6.5 is released.
+            </p>
+            <p class="p">
+              This release contains fixes and improvements discovered during daily use and several back ported fixes.
+            </p>
+            <p class="p">
+              Adds the following stand alone programs:
+            </p>
+            <ul>
+              <li><code class="code">fss_payload_read</code></li>
+              <li><code class="code">fss_payload_write</code></li>
+            </ul>
+            <p class="p">
+              There are several build system improvements to make the project easier to use.
+              Several of the project build scripts are out of date in parameter handling and processing.
+              Proper Featureless Make functionality that is expected to be supported by the boostrapt script is found lacking in a few small ways.
+            </p>
+            <p class="p">
+              The build setting files and fakefile files in this project should now have some more environment variables added by default.
+              These added environment variables are focused on locale.
+            </p>
+            <p class="p">
+              The function <code class="code">fl_string_dynamic_partial_compare_trim()</code> has been found to not be exposed in the header files by accident.
+              This means that the previous <abbr title="Application Programming Interface">API</abbr> is not consistent with the compiled <abbr title="Application Binary Interface">ABI</abbr>.
+              The function is now present that the <abbr title="Application Programming Interface">API</abbr> should now be consistent with the <abbr title="Application Binary Interface">ABI</abbr>.
+            </p>
+            <p class="p">
+              The Featureless Make program is not as usable in the previous releases when using commands like "<code class="code">fake help</code>".
+              This is due to an oversight where there may be no "<code class="code">main</code>" section for a file that only has a "<code class="code">help</code>" section.
+              This bug is fixed such that an error is no longer produced when missing "<code class="code">main</code>" in the cases where the "<code class="code">main</code>" section is not required.
+            </p>
+            <p class="p">
+              Parameter expansion problems in regards to quotes in Featureless Make is now resolved.
+            </p>
+            <p class="p">
+              The way threading is being used and linked to based on the default projects settings has been improved upon.
+              Any relevant documentation is updated accordingly.
+            </p>
+            <p class="p">
+              Overall the project is proven to be rather stable and there have been very few bugs that needed to be resolved.
+            </p>
+            <p class="p">
+              The following are changes since the 0.6.4 stable release.
+            </p>
+            <p class="p">
+              <strong class="strong">Security Fixes:</strong>
+            </p>
+            <ul>
+              <li><strong class="strong">FLL:</strong> <code class="code">fl_directory_list()</code> is not appending a NULL.</li>
+              <li><strong class="strong">FLL:</strong> Add the locale specific environment variables to everything by default.</li>
+              <li><strong class="strong">FLL:</strong> Invalid read in trim comparison functions.</li>
+              <li><strong class="strong">Featureless Make:</strong> <code class="code">fake_build_arguments_standard_add()</code> is treating static path the same as shared.</li>
+              <li><strong class="strong">FSS Basic List Read:</strong> Invalid read in help output due to incorrect size assigned to static string.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Features:</strong>
+            </p>
+            <ul>
+              <li>None.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Bug Fixes:</strong>
+            </p>
+            <ul>
+              <li><strong class="strong">FLL:</strong> Fix return codes and clean up package.sh.</li>
+              <li><strong class="strong">FLL:</strong> Incorrect return code in tests causes false failures in CI.</li>
+              <li><strong class="strong">FLL:</strong> Incorrect wrapping define usage.</li>
+              <li><strong class="strong">FLL:</strong> Invalid macro name for <code class="code">f_string_map_multi_t</code> and <code class="code">f_utf_string_map_multi_t</code>.</li>
+              <li><strong class="strong">FLL:</strong> Rebuild the disable defines file and update the readme.</li>
+              <li><strong class="strong">FLL:</strong> Add missing function <code class="code">fl_string_dynamic_partial_compare_trim()</code>.</li>
+              <li><strong class="strong">FLL:</strong> The <code class="code">fl_string parsing</code> functions do not check <code class="code">buffer.used</code>.</li>
+              <li><strong class="strong">FLL:</strong> Out of date repository build scripts.</li>
+              <li><strong class="strong">FLL:</strong> Out of date <code class="code">install.sh</code> and Featureless Make helper scripts.</li>
+              <li><strong class="strong">Featureless Make</strong>: Stand alone build fails to compile due to missing <code class="code">f_string_append_nulless()</code>.</li>
+              <li><strong class="strong">Featureless Make</strong>: The stage files should not begin with "<code class="code">-</code>".</li>
+              <li><strong class="strong">Featureless Make</strong>: Remove extra arguments being added.</li>
+              <li><strong class="strong">Featureless Make</strong>: When specifying a specific section name, do not care if there is no "<code class="code">main</code>" section.</li>
+              <li><strong class="strong">Featureless Make</strong>: Incorrect file path in error message.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Refactors:</strong>
+            </p>
+            <ul>
+              <li>None.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Updates:</strong>
+            </p>
+            <ul>
+              <li><strong class="strong">FLL</strong>: Month name to April in man pages.</li>
+              <li><strong class="strong">FLL</strong>: Improve thread configuration, document modes in build settings files, and update build scripts.</li>
+              <li><strong class="strong">FLL</strong>: Back port utf string compare unit tests.</li>
+              <li><strong class="strong">FLL</strong>: Back port utf string compare code from 0.7.x.</li>
+              <li><strong class="strong">FLL</strong>: Back port unit tests from 0.7.x development.</li>
+              <li><strong class="strong">FLL</strong>: Add the locale specific environment variables to everything by default.</li>
+              <li><strong class="strong">Featureless Make</strong>: Use <code class="code">f_string_append_nulless()</code> instead of <code class="code">f_string_append()</code> just in case.</li>
+              <li><strong class="strong">Featureless Make</strong>: Don't call <code class="code">f_file_exists()</code> until after child status is checked.</li>
+              <li><strong class="strong">FSS Payload Read/Write</strong>: Add stand alone build for <code class="code">fss_payload_read and fss_payload_write</code>.</li>
+            </ul>
+            <p class="p">
+              Check out the project on the <a href="fll.html#release" class="link"><abbr title="Featureless Linux Library">FLL</abbr> release</a> page.
+            </p>
+            <p class="p">
+              The project is built like a tool chest.
+              Individuals who are unfamiliar with the project should have an easier time trying out the pre-packaged <a href="https://sourceforge.net/projects/fll/files/FLL-0.6/0.6.5/monolithic/" class="link external">monolithic sources</a>.
+              These <a href="https://sourceforge.net/projects/fll/files/FLL-0.6/0.6.5/programs/" class="link external">programs</a>, by default, are designed to build against a library built using the monolithic source tree.
+            </p>
+            <p class="p">
+              The <strong class="strong">stand alone</strong> sources for the several programs can be found <a href="https://sourceforge.net/projects/fll/files/FLL-0.6/0.6.5/stand_alone/" class="link external">pre-packaged at Sourceforge</a>.
+            </p>
+            <p class="p">
+              <strong class="strong">Kevin Day</strong>
+            </p>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
