@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>News - 2023/05/06 - Turtle Development</title>
+
+    <base href="../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="News post on 2023/05/06.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, News, 2023">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="news/2023/2023_05_06-turtle_development.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+    <link type="text/html" rel="prev" href="news/2023/2023_05_06-turtle_development.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js news">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item active"><a href="news.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="news/2023.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block highlight unlink">
+            <div class="nav-text notice">2023 / 05 / 06</div>
+            <div class="nav-text unlink">Turtle Development</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="news/2023/2023_05_06-turtle_development.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="news/2023/2023_05_06-turtle_development.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">2023 / 05 / 06 - Turtle Development</h1>
+          </header>
+
+          <div class="main-content">
+            <p class="p">
+              I decided briefly return my focus to <strong class="strong">Turtle Kevux</strong> development following the recent 0.6.5 release of the Featureless Linux Library (<abbr title="Featureless Linux Library">FLL</abbr>). Several good things were discovered. The most notable is that both <a href="https://musl.libc.org/" class="link external">musl-libc</a> (vesion 1.2.4) and <a href="https://valgrind.org/" class="link external">valgrind</a> (version 3.21.0) made some relevant releases. The problems that I have been facing appear to have been resolved. Attempting to boot the kernel revealed some additional problems. These problems are primarily that the display does not display and gives the false impression that the system did not boot.
+            </p>
+            <p class="p">
+              I updated the kernel to fix some of the problems with the display and at least in <a href="https://www.qemu.org/" class="link external">Qemu</a> the command line is visible. I believe recent changes in the kernel to make booting faster have resulting in buggier displays when a good <code class="code">initrd</code> with the kernel modules setup is not available. My custom initrd work has not yet been resumed and so for now I am booting into bash.
+            </p>
+            <p class="p">
+              With a version of <strong class="strong">Kevux</strong> that, technically speaking, can be booted up, I have been able to finally spend some time and effort on using the <strong class="strong">Controller</strong> program as an <strong class="strong">Init</strong> program. Doing this revealed to me that I have quite a ways to go. The biggest hurdle is that I need to learn and understand how setting up the <abbr title="Teletypewriter">TTY</abbr> safely and properly. Process management also needs to be performed for processes that are not directly managed by the <strong class="strong">Controller</strong> program.
+            </p>
+            <p class="p">
+              I believe that <a href="https://suckless.org/" class="link external">Suckless</a> has an <code class="code">sinit</code> program that can be used as a guide to teach me how an <code class="code">init</code> program must run as far as the basics. I believe I should also provide this <code class="code">sinit</code> program as an option.
+            </p>
+            <p class="p">
+              Going forward I plan on making much of the <a href="https://suckless.org/" class="link external">Suckless</a> software available on the <strong class="strong">Turtle Kevux</strong> distribution. This <a href="https://suckless.org/" class="link external">Suckless</a> software is very similar to my <abbr title="Featureless Linux Library">FLL</abbr> software. The main difference being that the <abbr title="Featureless Linux Library">FLL</abbr> is accepting several design costs that tend to make the software relatively larger and more complex. Consider the <abbr title="Featureless Linux Library">FLL</abbr> <em class="em">Fat Embedded</em> and the <a href="https://suckless.org/" class="link external">Suckless</a> software as <em class="em">Real Embedded</em> or <em class="em">Real Simple</em>.
+            </p>
+            <p class="p">
+              The <strong class="strong">Controller</strong> needs more work before the <strong class="strong">Turtle Kevux</strong> distribution is even ready to boot. Further development of the <strong class="strong">Controller</strong> program is dependent on the mass refactoring that is currently ongoing in the <abbr title="Featureless Linux Library">FLL</abbr>. Using the <code class="code">sinit</code> program may be the quickest way to get this distribution moving forward.
+            </p>
+            <p class="p">
+              The plan right now is to make another pass of the <strong class="strong">Turtle Kevux</strong> development and to update the website with that development code for any brave fools out there to dabble in.
+            </p>
+            <p class="p">
+              <strong class="strong">Kevin Day</strong>
+            </p>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
