@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>News - 2023/12/31 - FLL 0.6.8 Release</title>
+
+    <base href="../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="News post on 2023/12/31.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, News, 2023">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="news/2023/2023_12_31-fll_0_6_8_release.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+    <link type="text/html" rel="prev" href="news/2023/2023_09_07-fll_0_6_7_release.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js news">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item active"><a href="news.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="news/2023.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block highlight unlink">
+            <div class="nav-text notice">2023 / 12 / 31</div>
+            <div class="nav-text unlink">FLL 0.6.8 Release</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="news/2023/2023_12_31-fll_0_6_8_release.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="news/2023/2023_12_31-fll_0_6_8_release.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">2023 / 12 / 31 - FLL 0.6.8 Release</h1>
+          </header>
+
+          <div class="main-content">
+            <p class="p">
+              The <strong class="strong">Featureless Linux Library</strong> stable version 0.6.8 is released.
+            </p>
+            <p class="p">
+              This release is for the start of a new year.
+            </p>
+            <p class="p">
+              My plans going forward are to attempt to date releases using UTC and I date this release as <code class="code">Sun 31 Dec 2023 08:52 PM UTC</code>.
+            </p>
+            <p class="p">
+              There are not many changes and there are no code-based bug fixes.
+              Only a single bug fix exists and it is in a specification.
+            </p>
+            <p class="p">
+              This contains mostly specification updates, clarifications, and fixes.
+            </p>
+            <p class="p">
+              The Payload and Simple Packet specifications have "<em class="em">type</em>" added as a recommended Object in the header section for the Payload.
+              The size of units is rewritten to make more sense in the Payload and Simple Packet specifications.
+              The Payload specification now allows for the "payload" section to be optional.
+            </p>
+            <p class="p">
+              The most notable code change is the explicit casting of <code class="code">uint32_t</code> when doing bit-wise operations for left and right shifting.
+              The goal here is to increase the integrity of the design and not allow any opportunity for the compiler or architecture to use a different size.
+            </p>
+            <p class="p">
+              The following are changes since the 0.6.6 stable release.
+            </p>
+            <p class="p">
+              <strong class="strong">Exploit Fixes:</strong>
+            </p>
+            <ul>
+              <li>None.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Security Fixes:</strong>
+            </p>
+            <ul>
+              <li>None.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Features:</strong>
+            </p>
+            <ul>
+              <li>None.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Bug Fixes:</strong>
+            </p>
+            <ul>
+              <li><strong class="strong">FLL:</strong> Fix incorrect wording regarding negative times and add some clarification regarding defaults (in specification).</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Refactors:</strong>
+            </p>
+            <ul>
+              <li>None.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Regressions:</strong>
+            </p>
+            <ul>
+              <li>None.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Updates:</strong>
+            </p>
+            <ul>
+              <li><strong class="strong">FLL:</strong> Specifications for <em class="em">Payload</em> and <em class="em">Simple Packet</em>.</li>
+              <li><strong class="strong">FLL:</strong> The <em class="em">FSS-000E (Payload)</em> specification should allow for the "<em class="em">payload</em>" Section to be optional.</li>
+              <li><strong class="strong">FLL:</strong> Explicitly cast <abbr title="Unicode Transformation Format 8-bit">UTF-8</abbr> conversion to/from to a <code class="code">uint32_t</code>.</li>
+              <li><strong class="strong">Control:</strong> Use <code class="code">size_t</code> and perform explicit casts in <em class="em">Control</em> program.</li>
+            </ul>
+            <p class="p">
+              Check out the project on the <a href="fll.html#release" class="link"><abbr title="Featureless Linux Library">FLL</abbr> release</a> page.
+            </p>
+            <p class="p">
+              The project is built like a tool chest.
+              Individuals who are unfamiliar with the project should have an easier time trying out the pre-packaged <a href="https://sourceforge.net/projects/fll/files/FLL-0.6/0.6.8/monolithic/" class="link external">monolithic sources</a>.
+              These <a href="https://sourceforge.net/projects/fll/files/FLL-0.6/0.6.8/programs/" class="link external">programs</a>, by default, are designed to build against a library built using the monolithic source tree.
+            </p>
+            <p class="p">
+              The <strong class="strong">stand alone</strong> sources for the several programs can be found <a href="https://sourceforge.net/projects/fll/files/FLL-0.6/0.6.8/stand_alone/" class="link external">pre-packaged at Sourceforge</a>.
+            </p>
+            <p class="p">
+              <strong class="strong">Kevin Day</strong>
+            </p>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

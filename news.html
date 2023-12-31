@@ -51,6 +51,10 @@
       <div id="nav-expanded" class="nav-block">
         <nav id="kevux-document-nav" class="nav-menu">
           <div class="nav-item block">
+            <div class="nav-text notice">2023 / 12 / 31</div>
+            <a href="news/2023/2023_12_31-fll_0_6_8_release.html" class="nav-text link">FLL 0.6.8 Release</a>
+          </div>
+          <div class="nav-item block">
             <div class="nav-text notice">2023 / 09 / 07</div>
             <a href="news/2023/2023_09_07-fll_0_6_7_release.html" class="nav-text link">FLL 0.6.7 Release</a>
           </div>
@@ -110,8 +114,45 @@
             <h1 class="section-title h h1">News</h1>
           </header>
 
-          <article id="2023_09_07-fll_0_6_7_release" class="article">
+          <article id="2023_12_31-fll_0_6_8_release" class="article">
             <header class="article-header header">
+              <h2 id="2023_12_31-fll_0_6_8_release-title" class="article-title h h2">2023 / 12 / 31 - FLL 0.6.8 Release</h2>
+            </header>
+
+            <div class="article-content">
+              <p class="p">
+                The <strong class="strong">Featureless Linux Library</strong> stable version 0.6.8 is released.
+              </p>
+              <p class="p">
+                This release is for the start of a new year.
+              </p>
+              <p class="p">
+                My plans going forward are to attempt to date releases using UTC and I date this release as <code class="code">Sun 31 Dec 2023 08:52 PM UTC</code>.
+              </p>
+              <p class="p">
+                There are not many changes and there are no code-based bug fixes.
+                Only a single bug fix exists and it is in a specification.
+              </p>
+              <p class="p">
+                This contains mostly specification updates, clarifications, and fixes.
+              </p>
+              <p class="p">
+                The Payload and Simple Packet specifications have "<em class="em">type</em>" added as a recommended Object in the header section for the Payload.
+                The size of units is rewritten to make more sense in the Payload and Simple Packet specifications.
+                The Payload specification now allows for the "payload" section to be optional.
+              </p>
+              <p class="p">
+                The most notable code change is the explicit casting of <code class="code">uint32_t</code> when doing bit-wise operations for left and right shifting.
+                The goal here is to increase the integrity of the design and not allow any opportunity for the compiler or architecture to use a different size.
+              </p>
+              <p class="p">
+                <a id="2023_12_31-fll_0_6_8_release-more" href="news/2023/2023_12_31-fll_0_6_8_release.html" class="content link" aria-labelledby="2023_12_31-fll_0_6_8_release-more 2023_12_31-fll_0_6_8_release-title">Continue reading…</a>
+              </p>
+            </div>
+          </article>
+
+          <article id="2023_09_07-fll_0_6_7_release" class="article">
+            <header class="article-header header separate">
               <h2 id="2023_09_07-fll_0_6_7_release-title" class="article-title h h2">2023 / 09 / 07 - FLL 0.6.7 Release</h2>
             </header>
 
