@@ -296,3 +296,8 @@
   background-color: #404040;
   color: #ffffff;
 }
+
+.kevux > .content-block .super {
+  font-size: 55%;
+  vertical-align: super;
+}
