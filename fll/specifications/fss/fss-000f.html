@@ -28,6 +28,7 @@
     <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
     <link type="text/html" rel="license" href="licenses.html">
     <link type="text/html" rel="prev" href="fll/specifications/fss/fss-000e.html">
+    <link type="text/html" rel="next" href="fll/specifications/fss/fss-0010.html">
   </head>
 
   <body id="kevux" class="kevux no-js fll specifications">
@@ -80,6 +81,9 @@
 
             <div class="section-content">
               <p class="p">
+                The version date of this specification is <code class="code">2023/11/14</code>.
+              </p>
+              <p class="p">
                 This is a network packet format that contains <code class="code">fss-000e (Payload)</code> within it.
               </p>
               <p class="p">
@@ -94,41 +98,65 @@
                 <li>Payload Block.</li>
               </ol>
               <p class="p">
-                The Control Block is the first block in the packet and is considered endianless.
-                There exists only a single byte within the Control Block.
-                Regardless of the endianness of the packet, the leftmost bit is always the <em class="em">string</em> or <em class="em">binary</em> bit.
-                The second bit following that bit represents the endianness bit.
+                The <strong class="strong">Control Block</strong> is the first block in the packet and is considered endianless.
+                There exists only a single byte within the <strong class="strong">Control Block</strong> (8-bits).
+                Regardless of the endianness of the packet, leftmost bit is always the endianness bit.
+                The second bit following that endianness bit represents the <em class="em">string</em> or <em class="em">binary</em> bit.
               </p>
               <p class="p">
-                The <em class="em">string</em> or <em class="em">binary</em> bit, a value of 0 designates that the packet is in string format and a value of 1 designates that the packet is in binary format.
-                While the packet might be considered to be in string format, it is technically always in binary format due to the Control Block and Size Block.
-                This means that the bit designating the packet as a <em class="em">string</em> packet or a <em class="em">binary</em> packet is referring to whether or not the Payload Block is in <em class="em">string</em> format or is in <em class="em">binary</em> format.
-              </p>
+                Control Block Structure:
+              </p><pre class="preserve">
+[ Endianness Bit ] [ String / Binary Bit ] [ Remaining 6 Bits (unused) ]
+[ size: 1 bit    ] [ size: 1 bit         ] [ size: 6 bits              ]
+</pre>
               <p class="p">
                 The endianness bit designates whether or not the packet is in big endian or little endian format.
                 A bit value of 0 designates that this packet is in little endian and a value of 1 designates that this packet is in big endian format.
-                All binary data within this packet, following the Control Block, must respect this endianness bit (including the Size Block).
+                All <em class="em">binary</em> data within this packet, following the Control Block, must respect this endianness bit (including the <strong class="strong">Size Block</strong>).
+              </p>
+              <p class="p">
+                The <em class="em">string</em> or <em class="em">binary</em> bit, a value of 0 designates that the packet is in string format and a value of 1 designates that the packet is in <em class="em">binary</em> format.
+                While the packet might be considered to be in string format, it is technically always in <em class="em">binary</em> format due to the <strong class="strong">Control Block</strong> and <strong class="strong">Size Block</strong>.
+                This means that the <em class="em">binary</em> bit designating the packet as either a <em class="em">string</em> packet or a <em class="em">binary</em> packet is referring to whether or not the <strong class="strong">Payload Block</strong> is in <em class="em">string</em> or <em class="em">binary</em> format.
+                The <strong class="strong">Payload Block</strong> itself can contain <em class="em">binary</em> data even when in <em class="em">string</em> format as per <code class="code">FSS-000e (Payload)</code>.
               </p>
               <p class="p">
                 The remaining bits are not defined by this standard and are expected to be 0.
                 Non-formal or local uses may utilize these remaining 6 bits as desired.
-                However, there may be additional standards that expand upon this and utilize these remaining Control bits.
-                Anything that utilizes these unused Control bits may add or remove additional Blocks after the Control Block as they see fit.
+                However, there may be additional standards that expand upon this and utilize these remaining <strong class="strong">Control</strong> bits.
+                Anything that utilizes these unused <strong class="strong">Control</strong> bits may add or remove additional <strong class="strong">Blocks</strong> after the <strong class="strong">Control Block</strong> as they see fit.
+                One possible use of the remaining bits is to designate a different variation of this <strong class="strong">Simple Packet</strong> standard.
               </p>
               <p class="p">
-                The Size Block is an unsigned 32-bit integer representing the size of the entire packet, including the Control Block and Size Block.
+                Size Block Structure:
+              </p><pre class="preserve">
+[ Size Block    ]
+[ size: 32 bits ]
+</pre>
+              <p class="p">
+                The <strong class="strong">Size Block</strong> is an unsigned 32-bit integer representing the size of the entire packet in bytes, including the <strong class="strong">Control Block</strong> and <strong class="strong">Size Block</strong>.
                 This size must exactly match the packet to be a valid packet.
                 The size represents number of bytes in the file.
-                The Control Block is 1 byte long and the Size Block is 4 bytes long and so the maximum available size is (2^32)-6.
+                The <strong class="strong">Control Block</strong> is 1 byte long and the <strong class="strong">Size Block</strong> is 4 bytes long, therefore the maximum available size of the entire <strong class="strong">Simple Packet</strong> structure is <code class="code">(2^32)-6</code>.
               </p>
               <p class="p">
-                The Payload Block is not defined by this standard of that that it exists and should be in <code class="code">fss-000e (Payload)</code> format.
-                The <code class="code">fss-000e (Payload)</code> may be represented in either string format or binary format.
-                The <code class="code">fss-000e (Payload)</code> may contain multiple <em class="em">header</em>(s) but may only contain a single <em class="em">payload</em>.
-                With this in mind, it is recommended that only a single <em class="em">header</em> be supported in the Payload Block.
+
               </p>
               <p class="p">
-                See the <a href="fll/specifications/fss/fss-000e.html" class="link">fss-000e (Payload)</a> specification for details on the syntax rules for the Payload Block.
+                Payload Block Structure:
+              </p><pre class="preserve">
+[ Payload Block        ]
+[ size: (2^32)-6 bytes ]
+</pre>
+              <p class="p">
+                The <strong class="strong">Payload Block</strong> is not defined by this standard other than that it exists and should be in <code class="code">FSS-000e (Payload)</code> format.
+                The <code class="code">FSS-000e (Payload)</code> may be represented in either <em class="em">string</em> format or <em class="em">binary</em> format.
+                The <code class="code">FSS-000e (Payload)</code> may contain multiple <em class="em">header</em>(s) but may only contain a single <em class="em">payload</em>.
+                With this in mind, it is recommended that only a single <em class="em">header</em> be supported in the <strong class="strong">Payload Block</strong>.
+                The <em class="em">payload</em> <strong class="strong">Content</strong> may be in either a <em class="em">binary</em> or <em class="em">string</em> format regardless of the <em class="em">binary</em> bit in the <strong class="strong">Simple Packet</strong> <strong class="strong">Header Block</strong>.
+              </p>
+              <p class="p">
+                See the <a href="fll/specifications/fss/fss-000e.html" class="link">fss-000e (Payload)</a> specification file for details on the syntax rules for the <strong class="strong">Payload Block</strong>.
               </p>
               <p class="p">
                 Example Packet Structure:
