@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>News - 2024/03/03 - FLL 0.6.9 Release</title>
+
+    <base href="../../">
+
+    <meta charset="UTF-8">
+    <meta name="author" content="Kevin Day">
+    <meta name="description" content="News post on 2024/03/03.">
+    <meta name="keywords" content="Kevin Day, Kevux, FLL, Featureless, Linux, Library, Distribution, Open-Source, News, 2024">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="text/css" rel="stylesheet" media="all" href="css/kevux.css">
+    <link type="text/css" rel="stylesheet" media="only screen" href="css/kevux-screen.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px)" href="css/kevux-screen-desktop.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:500px)" href="css/kevux-screen-mobile.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:1201px)" href="css/kevux-screen-large.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:501px) and (max-device-width:1200px)" href="css/kevux-screen-normal.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width:251px) and (max-device-width:500px)" href="css/kevux-screen-small.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width:250px)" href="css/kevux-screen-tiny.css">
+    <link type="text/css" rel="stylesheet" media="only print" href="css/kevux-print.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:landscape)" href="css/kevux-print-landscape.css">
+    <link type="text/css" rel="stylesheet" media="only print and (orientation:portrait)" href="css/kevux-print-portrait.css">
+
+    <link rel="canonical" href="news/2024/2024_03_03-fll_0_6_9_release.html">
+    <link type="image/x-icon" rel="icon" href="images/kevux.ico">
+    <link type="image/x-icon" rel="shortcut" href="images/kevux.ico">
+    <link type="text/html" rel="license" href="licenses.html">
+    <link type="text/html" rel="prev" href="news/2024/2024_02_24-programming_happenings.html">
+  </head>
+
+  <body id="kevux" class="kevux no-js news">
+    <div role="banner" class="header-block">
+      <header class="header-section header">
+        <div class="header-site">Kevux Systems and Software</div>
+      </header>
+
+      <div class="nav-block">
+        <nav id="kevux-site-nav" class="nav-menu">
+          <div class="nav-item active"><a href="news.html" class="nav-text link">News</a></div>
+          <div class="nav-item"><a href="distributions.html" class="nav-text link">Distributions</a></div>
+          <div class="nav-item"><a href="fll.html" class="nav-text link">FLL</a></div>
+          <div class="nav-item"><a href="projects.html" class="nav-text link">Projects</a></div>
+          <div class="nav-item"><a href="documentation.html" class="nav-text link">Documentation</a></div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <div id="nav-expanded" class="nav-block">
+        <nav id="kevux-document-nav" class="nav-menu">
+          <div class="nav-item block back">
+            <a href="news/2024.html" class="nav-text link back">Back</a>
+          </div>
+          <div class="nav-item block highlight unlink">
+            <div class="nav-text notice">2024 / 03 / 03</div>
+            <div class="nav-text unlink">FLL 0.6.9 Release</div>
+          </div>
+          <div class="nav-item block ellipses">
+            <a href="news/2024/2024_03_03-fll_0_6_9_release.html#nav-expanded" class="nav-text link open" title="Expand Menu">…</a>
+            <a href="news/2024/2024_03_03-fll_0_6_9_release.html" class="nav-text link close">Collapse Menu</a>
+          </div>
+        </nav>
+      </div>
+
+      <div role="document" class="main-block">
+        <main class="main">
+          <header class="section-header header">
+            <h1 class="section-title h h1">2024 / 03 / 03 - FLL 0.6.9 Release</h1>
+          </header>
+
+          <div class="main-content">
+            <p class="p">
+              The <strong class="strong">Featureless Linux Library</strong> stable version 0.6.9 is released.
+            </p>
+            <p class="p">
+              This release address newly discovered bugs and problems that have been exposed by unit tests from the 0.7 development branch and some real world use cases.
+            </p>
+            <p class="p">
+              This brings in some security related problems and upgrading is recommended.
+            </p>
+            <p class="p">
+              A significant amount of development in the 0.7 development code base has yielded a number of changes worth back porting into this 0.6 stable code base.
+            </p>
+            <p class="p">
+              This brings in a new feature for the test scripts to make testing for integrity and security bugs easier.
+              This change does not break API.
+            </p>
+            <p class="p">
+              The specification documentation is updated to use the word "<em class="em">grave</em>" in place of "<em class="em">backtick</em>" to be more consistent with the more commonly accepted terminology for that character.
+            </p>
+            <p class="p">
+              The firewall program has seen some considerable review and bug fixes.
+            </p>
+            <p class="p">
+              The man pages have been refreshed.
+              The process is partially automated and then manually cleaned up.
+            </p>
+            <p class="p">
+              The <a href="licenses/oslv1.html" class="link">Open Standard License 1.0</a> has been formalized (<a href="licenses/oslv1.html" class="link"><abbr title="Open Standard License version 1">OSLv1</abbr></a>).
+              This project is updated to ensure that this is in use.
+              The project has already been using this standard for some time but during that time the standard was considered a draft.
+            </p>
+            <p class="p">
+              The following are changes since the 0.6.8 stable release.
+            </p>
+            <p class="p">
+              <strong class="strong">Exploit Fixes:</strong>
+            </p>
+            <ul>
+              <li>None.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Security Fixes:</strong>
+            </p>
+            <ul>
+              <li><strong class="strong">FLL:</strong> Conversion is not handling NULL case when base unit is an unsupported type.</li>
+              <li><strong class="strong">FLL:</strong> The <code class="code">fl_print_format_convert()</code> is missing the check on the pointer and update the related documentation comments.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Features:</strong>
+            </p>
+            <ul>
+              <li>None.</li>
+              <li><strong class="strong">FLL:</strong> Add -a/--analyze to test.sh script.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Bug Fixes:</strong>
+            </p>
+            <ul>
+              <li><strong class="strong">FLL:</strong> Functions <code class="code">private_fl_fss_basic_read()</code> and <code class="code">private_fl_fss_basic_write()</code> are missing "<code class="code">const</code>".</li>
+              <li><strong class="strong">FLL:</strong> Incorrect stop position is calculated when <abbr title="Featureless Settings Specifications">FSS</abbr> content ends at the start position on <abbr title="Featureless Settings Specifications">FSS</abbr> read operations.</li>
+              <li><strong class="strong">FLL:</strong> FSS Extended read fails to handle non-terminated quote as per specification.</li>
+              <li><strong class="strong">FLL:</strong> FSS Basic List and FSS Extended List print comment at the start of the Content.</li>
+              <li><strong class="strong">FLL:</strong> If the first character has a width greater than one then <code class="code">F_utf_fragment</code> is incorrectly returned when using quotes.</li>
+              <li><strong class="strong">Featureless Make:</strong> Incorrect mode display when featureless make is building settings.</li>
+              <li><strong class="strong">Firewall:</strong> Error message is saying "lock" when it should say "stop".</li>
+              <li><strong class="strong">Firewall:</strong> Firewall program is not printing error when <code class="code">fll_fss_extended_read()</code> fails.</li>
+              <li><strong class="strong">Firewall:</strong> Firewall program if condition is setting an error flag rather than checking the value.</li>
+              <li><strong class="strong">Firewall:</strong> Firewall length check from range is not calculating 0 correctly.</li>
+              <li><strong class="strong">Firewall:</strong> The debug mode is not working in firewall.</li>
+              <li><strong class="strong">Firewall:</strong> De-allocation call is missing in firewall program when "firewall stop" is used.</li>
+              <li><strong class="strong">FSS Extended Write:</strong> Is improperly associating Content with its respective Object.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Refactors:</strong>
+            </p>
+            <ul>
+              <li><strong class="strong">FLL:</strong> The <em class="em">backtick</em> into the <em class="em">grave</em>, for the specifications.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Regressions:</strong>
+            </p>
+            <ul>
+              <li>None.</li>
+            </ul>
+            <p class="p">
+              <strong class="strong">Updates:</strong>
+            </p>
+            <ul>
+              <li><strong class="strong">FLL:</strong> The <em class="em">FSS-000E</em> specification needs to say "one required object" and not "two required objects".</li>
+              <li><strong class="strong">FLL:</strong> Optimize bitwise logic regarding removing bits.</li>
+              <li><strong class="strong">FLL:</strong> Make the <code class="code">-m</code> thread option in the example bootstrap script more easily customizable.</li>
+              <li><strong class="strong">FLL:</strong> Add hopefully more secure compiler flags by default.</li>
+              <li><strong class="strong">FLL:</strong> Make sure stand alone builds have consistent buid mode settings.</li>
+              <li><strong class="strong">FLL:</strong> Backport improved return code failure reporting to firewall from 0.7 development.</li>
+              <li><strong class="strong">FLL:</strong> Backport fixes for <code class="code">bootstrap-example.sh</code>, <code class="code">package.sh</code>, and <code class="code">test.sh</code> scripts.</li>
+              <li><strong class="strong">FLL:</strong> Back port settings configurations, such as <abbr title="GNU Compiler Collection">GCC</abbr> and flags.</li>
+              <li><strong class="strong">FLL:</strong> Back port the ability to explicitly skip a program in the bootstrap example script.</li>
+              <li><strong class="strong">FLL:</strong> Documentation man pages.</li>
+              <li><strong class="strong">FLL:</strong> Make the Open Standard License 1.0 formal.</li>
+              <li><strong class="strong">FLL:</strong> Disable -fstrict-flex-arrays=3 flag because it doesn't work on <abbr title="GNU Compiler Collection">GCC</abbr> 11.</li>
+              <li><strong class="strong">FLL:</strong> Add missing snippet from the <a href="licenses/oslv1.html" class="link"><abbr title="Open Standard License version 1">OSLv1</abbr></a> license.</li>
+            </ul>
+            <p class="p">
+              Check out the project on the <a href="fll.html#release" class="link"><abbr title="Featureless Linux Library">FLL</abbr> release</a> page.
+            </p>
+            <p class="p">
+              The project is built like a tool chest.
+              Individuals who are unfamiliar with the project should have an easier time trying out the pre-packaged <a href="https://sourceforge.net/projects/fll/files/FLL-0.6/0.6.9/monolithic/" class="link external">monolithic sources</a>.
+              These <a href="https://sourceforge.net/projects/fll/files/FLL-0.6/0.6.9/programs/" class="link external">programs</a>, by default, are designed to build against a library built using the monolithic source tree.
+            </p>
+            <p class="p">
+              The <strong class="strong">stand alone</strong> sources for the several programs can be found <a href="https://sourceforge.net/projects/fll/files/FLL-0.6/0.6.9/stand_alone/" class="link external">pre-packaged at Sourceforge</a>.
+            </p>
+            <p class="p">
+              <strong class="strong">Kevin Day</strong>
+            </p>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
