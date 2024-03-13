@@ -97,11 +97,14 @@
               <ul>
                 <li>The <em class="em">header</em>'s Content is of type <code class="code">FSS-0001 (Extended)</code>.</li>
                 <li>The <em class="em">header</em> is recommended to have the Objects <em class="em">length</em>, <em class="em">status</em>, <em class="em">part</em>, <em class="em">total</em>, and <em class="em">type</em>.</li>
+                The <em class="em">header</em> is suggested to have the Objects <em class="em">salt</em> and <em class="em">time</em>.
                 <li>The recommended <em class="em">length</em> represents the size of the <em class="em">payload</em>.</li>
                 <li>The recommended <em class="em">part</em> represents a single part of a set of packets for when the data being transmitted is split across multiple payloads.</li>
                 <li>The recommended <em class="em">status</em> represents status codes (such as success or failure) and multiple.</li>
                 <li>The recommended <em class="em">total</em> represents the total number of parts representing a complete data transmitted across multiple payloads.</li>
                 <li>The recommended <em class="em">type</em> represents the type of information being transmitted.</li>
+                <li>The suggested <em class="em">salt</em> represents random arbitrary data to further assist in making packets more unique during compression.</li>
+                <li>The suggested <em class="em">time</em> represents some form of time unit, such as a time stamp.</li>
                 <li>The Content for the recommended <em class="em">length</em> and <em class="em">status</em> are positive whole numbers (including zero) that may be in <em class="em">binary</em>, <em class="em">octal</em>, <em class="em">decimal</em>, <em class="em">duodecimal</em>, or <em class="em">hexidecimal</em> numerical format.</li>
                 <li>There may be multiple <em class="em">header</em> Object and associated Content but the behavior is not defined by this standard.</li>
                 <li>For guaranteed safe and compatible behavior, only a single <em class="em">header</em> Object and associated Content should be defined.</li>
